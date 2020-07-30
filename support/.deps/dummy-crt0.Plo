@@ -1,0 +1,3 @@
+dummy-crt0.lo: dummy-crt0.c /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

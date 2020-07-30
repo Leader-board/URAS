@@ -1,0 +1,13 @@
+libsupport_la-board.lo: board.c /usr/include/stdc-predef.h \
+ ../config/x86_64/boards/none/boardsupport.c support.h ../config.h \
+ ../config/x86_64/chips/generic/chipsupport.h
+
+/usr/include/stdc-predef.h:
+
+../config/x86_64/boards/none/boardsupport.c:
+
+support.h:
+
+../config.h:
+
+../config/x86_64/chips/generic/chipsupport.h:
