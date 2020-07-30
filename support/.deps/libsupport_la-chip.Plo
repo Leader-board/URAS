@@ -1,1 +1,11 @@
-# dummy
+libsupport_la-chip.lo: chip.c /usr/include/stdc-predef.h ../config.h \
+ ../config/x86_64/chips/generic/chipsupport.c \
+ ../config/x86_64/chips/generic/chipsupport.h
+
+/usr/include/stdc-predef.h:
+
+../config.h:
+
+../config/x86_64/chips/generic/chipsupport.c:
+
+../config/x86_64/chips/generic/chipsupport.h:
