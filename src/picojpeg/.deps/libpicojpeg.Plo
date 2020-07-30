@@ -1,5 +1,1 @@
-libpicojpeg.lo: libpicojpeg.c /usr/include/stdc-predef.h picojpeg.h
-
-/usr/include/stdc-predef.h:
-
-picojpeg.h:
+# dummy
