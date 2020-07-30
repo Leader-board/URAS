@@ -2,6 +2,8 @@
 cd src
 for d in *
 do
-    (cd "$d" && (\time -o ../results/res_"$d".txt ./"$d"))
+    cd "$d"
+    \time -o ../results/res_"$d".txt ./"$d"
+    cd ../
 done
 cd ../
