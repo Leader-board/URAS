@@ -1,10 +1,8 @@
 # go to the beebs/src directory
 cd src
-for d in *
-do
-    cd "$d"
-#    \time -o ../results/res_"$d".txt ./"$d"
-    { time ./$d ; } 2> ../results/$d.txt
-#    cd ../
-done
-cd ../
+find . -maxdepth 1 -type d \( ! -name . \) -exec bash -c "cd '{}' && pwd && /usr/bin/time -ao ../../results/{}.txt ./{}" \;
+find . -maxdepth 1 -type d \( ! -name . \) -exec bash -c "cd '{}' && pwd && /usr/bin/time -ao ../../results/{}.txt ./{}" \;
+find . -maxdepth 1 -type d \( ! -name . \) -exec bash -c "cd '{}' && pwd && /usr/bin/time -ao ../../results/{}.txt ./{}" \;
+find . -maxdepth 1 -type d \( ! -name . \) -exec bash -c "cd '{}' && pwd && /usr/bin/time -ao ../../results/{}.txt ./{}" \;
+find . -maxdepth 1 -type d \( ! -name . \) -exec bash -c "cd '{}' && pwd && /usr/bin/time -ao ../../results/{}.txt ./{}" \;
+
