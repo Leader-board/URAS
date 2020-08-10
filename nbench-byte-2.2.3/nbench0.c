@@ -55,6 +55,8 @@
 #include "nbench0.h"
 #include "hardware.h"
 
+int testnum = 0; // (testnum + 1)th benchmark. We run only one test
+
 /*************
 **** main ****
 *************/
@@ -170,12 +172,17 @@ UCommandLine();
 /*
 ** Handle any command-line arguments.
 */
-if(argc>1)
-        for(i=1;i<argc;i++)
-                if(parse_arg(argv[i])==-1)
-                {       display_help(argv[0]);
-                        exit(0);
-                }
+if(argc == 2)
+{
+// use the first argument as the test number (up to 9)
+testnum = stoi(argv[1]);
+}
+        // for(i=1;i<argc;i++)
+        //         if(parse_arg(argv[i])==-1)
+        //         {       display_help(argv[0]);
+        //                 exit(0);
+        //         }
+
 /*
 ** Output header
 */
@@ -237,7 +244,7 @@ output_string("                    :                  : Pentium 90* : AMD K6/233
 output_string("--------------------:------------------:-------------:------------\n");
 #endif
 
-for(i=0;i<1;i++) // default i < NUMTESTS
+for(i=testnum;i<(testnum + 1);i++) // default i < NUMTESTS
 {
         if(tests_to_do[i])
         {       sprintf(buffer,"%s    :",ftestnames[i]);

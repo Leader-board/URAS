@@ -1,0 +1,2152 @@
+aha-compress.txt:PARENT: Child's exit code is: 0
+aha-compress.txt:
+aha-compress.txt:	Total Energy:	2.06032 J
+aha-compress.txt:	Average Power:	20.5682 W
+aha-compress.txt:	Time:	0.10017 sec
+aha-compress.txt:PARENT: Child's exit code is: 0
+aha-compress.txt:
+aha-compress.txt:	Total Energy:	2.06059 J
+aha-compress.txt:	Average Power:	20.571 W
+aha-compress.txt:	Time:	0.10017 sec
+aha-compress.txt:PARENT: Child's exit code is: 0
+aha-compress.txt:
+aha-compress.txt:	Total Energy:	2.06566 J
+aha-compress.txt:	Average Power:	20.6219 W
+aha-compress.txt:	Time:	0.100168 sec
+aha-compress.txt:PARENT: Child's exit code is: 0
+aha-compress.txt:
+aha-compress.txt:	Total Energy:	2.06516 J
+aha-compress.txt:	Average Power:	20.6165 W
+aha-compress.txt:	Time:	0.10017 sec
+aha-compress.txt:PARENT: Child's exit code is: 0
+aha-compress.txt:
+aha-compress.txt:	Total Energy:	2.06685 J
+aha-compress.txt:	Average Power:	20.633 W
+aha-compress.txt:	Time:	0.100172 sec
+aha-mont64.txt:PARENT: Child's exit code is: 0
+aha-mont64.txt:
+aha-mont64.txt:	Total Energy:	1.92459 J
+aha-mont64.txt:	Average Power:	19.2127 W
+aha-mont64.txt:	Time:	0.100173 sec
+aha-mont64.txt:PARENT: Child's exit code is: 0
+aha-mont64.txt:
+aha-mont64.txt:	Total Energy:	1.92506 J
+aha-mont64.txt:	Average Power:	19.2178 W
+aha-mont64.txt:	Time:	0.100171 sec
+aha-mont64.txt:PARENT: Child's exit code is: 0
+aha-mont64.txt:
+aha-mont64.txt:	Total Energy:	1.92372 J
+aha-mont64.txt:	Average Power:	19.2048 W
+aha-mont64.txt:	Time:	0.100169 sec
+aha-mont64.txt:PARENT: Child's exit code is: 0
+aha-mont64.txt:
+aha-mont64.txt:	Total Energy:	1.92245 J
+aha-mont64.txt:	Average Power:	19.1917 W
+aha-mont64.txt:	Time:	0.100171 sec
+aha-mont64.txt:PARENT: Child's exit code is: 0
+aha-mont64.txt:
+aha-mont64.txt:	Total Energy:	1.92387 J
+aha-mont64.txt:	Average Power:	19.2053 W
+aha-mont64.txt:	Time:	0.100174 sec
+bs.txt:PARENT: Child's exit code is: 0
+bs.txt:
+bs.txt:	Total Energy:	1.86185 J
+bs.txt:	Average Power:	18.5867 W
+bs.txt:	Time:	0.100171 sec
+bs.txt:PARENT: Child's exit code is: 0
+bs.txt:
+bs.txt:	Total Energy:	1.86078 J
+bs.txt:	Average Power:	18.5757 W
+bs.txt:	Time:	0.100173 sec
+bs.txt:PARENT: Child's exit code is: 0
+bs.txt:
+bs.txt:	Total Energy:	1.86693 J
+bs.txt:	Average Power:	18.638 W
+bs.txt:	Time:	0.100168 sec
+bs.txt:PARENT: Child's exit code is: 0
+bs.txt:
+bs.txt:	Total Energy:	1.86678 J
+bs.txt:	Average Power:	18.6363 W
+bs.txt:	Time:	0.100169 sec
+bs.txt:PARENT: Child's exit code is: 0
+bs.txt:
+bs.txt:	Total Energy:	1.86028 J
+bs.txt:	Average Power:	18.5706 W
+bs.txt:	Time:	0.100173 sec
+bubblesort.txt:PARENT: Child's exit code is: 0
+bubblesort.txt:
+bubblesort.txt:	Total Energy:	4.65875 J
+bubblesort.txt:	Average Power:	23.2629 W
+bubblesort.txt:	Time:	0.200265 sec
+bubblesort.txt:PARENT: Child's exit code is: 0
+bubblesort.txt:
+bubblesort.txt:	Total Energy:	4.65378 J
+bubblesort.txt:	Average Power:	23.2379 W
+bubblesort.txt:	Time:	0.200267 sec
+bubblesort.txt:PARENT: Child's exit code is: 0
+bubblesort.txt:
+bubblesort.txt:	Total Energy:	4.65121 J
+bubblesort.txt:	Average Power:	23.2253 W
+bubblesort.txt:	Time:	0.200265 sec
+bubblesort.txt:PARENT: Child's exit code is: 0
+bubblesort.txt:
+bubblesort.txt:	Total Energy:	4.63651 J
+bubblesort.txt:	Average Power:	23.152 W
+bubblesort.txt:	Time:	0.200264 sec
+bubblesort.txt:PARENT: Child's exit code is: 0
+bubblesort.txt:
+bubblesort.txt:	Total Energy:	4.65891 J
+bubblesort.txt:	Average Power:	23.2642 W
+bubblesort.txt:	Time:	0.200261 sec
+cnt.txt:PARENT: Child's exit code is: 0
+cnt.txt:
+cnt.txt:	Total Energy:	1.89107 J
+cnt.txt:	Average Power:	18.8784 W
+cnt.txt:	Time:	0.100171 sec
+cnt.txt:PARENT: Child's exit code is: 0
+cnt.txt:
+cnt.txt:	Total Energy:	1.89244 J
+cnt.txt:	Average Power:	18.8919 W
+cnt.txt:	Time:	0.100172 sec
+cnt.txt:PARENT: Child's exit code is: 0
+cnt.txt:
+cnt.txt:	Total Energy:	1.89293 J
+cnt.txt:	Average Power:	18.896 W
+cnt.txt:	Time:	0.100176 sec
+cnt.txt:PARENT: Child's exit code is: 0
+cnt.txt:
+cnt.txt:	Total Energy:	1.89601 J
+cnt.txt:	Average Power:	18.9277 W
+cnt.txt:	Time:	0.100171 sec
+cnt.txt:PARENT: Child's exit code is: 0
+cnt.txt:
+cnt.txt:	Total Energy:	1.88972 J
+cnt.txt:	Average Power:	18.8642 W
+cnt.txt:	Time:	0.100175 sec
+compress.txt:PARENT: Child's exit code is: 0
+compress.txt:
+compress.txt:	Total Energy:	1.87971 J
+compress.txt:	Average Power:	18.7647 W
+compress.txt:	Time:	0.100173 sec
+compress.txt:PARENT: Child's exit code is: 0
+compress.txt:
+compress.txt:	Total Energy:	1.8808 J
+compress.txt:	Average Power:	18.7759 W
+compress.txt:	Time:	0.100171 sec
+compress.txt:PARENT: Child's exit code is: 0
+compress.txt:
+compress.txt:	Total Energy:	1.85875 J
+compress.txt:	Average Power:	18.5554 W
+compress.txt:	Time:	0.100173 sec
+compress.txt:PARENT: Child's exit code is: 0
+compress.txt:
+compress.txt:	Total Energy:	1.88405 J
+compress.txt:	Average Power:	18.8079 W
+compress.txt:	Time:	0.100173 sec
+compress.txt:PARENT: Child's exit code is: 0
+compress.txt:
+compress.txt:	Total Energy:	1.87921 J
+compress.txt:	Average Power:	18.7598 W
+compress.txt:	Time:	0.100172 sec
+cover.txt:PARENT: Child's exit code is: 0
+cover.txt:
+cover.txt:	Total Energy:	1.91953 J
+cover.txt:	Average Power:	19.1613 W
+cover.txt:	Time:	0.100177 sec
+cover.txt:PARENT: Child's exit code is: 0
+cover.txt:
+cover.txt:	Total Energy:	1.92068 J
+cover.txt:	Average Power:	19.1731 W
+cover.txt:	Time:	0.100176 sec
+cover.txt:PARENT: Child's exit code is: 0
+cover.txt:
+cover.txt:	Total Energy:	1.9187 J
+cover.txt:	Average Power:	19.1539 W
+cover.txt:	Time:	0.100173 sec
+cover.txt:PARENT: Child's exit code is: 0
+cover.txt:
+cover.txt:	Total Energy:	1.91809 J
+cover.txt:	Average Power:	19.1474 W
+cover.txt:	Time:	0.100175 sec
+cover.txt:PARENT: Child's exit code is: 0
+cover.txt:
+cover.txt:	Total Energy:	1.91902 J
+cover.txt:	Average Power:	19.1565 W
+cover.txt:	Time:	0.100176 sec
+crc.txt:PARENT: Child's exit code is: 0
+crc.txt:
+crc.txt:	Total Energy:	1.87962 J
+crc.txt:	Average Power:	18.7647 W
+crc.txt:	Time:	0.100168 sec
+crc.txt:PARENT: Child's exit code is: 0
+crc.txt:
+crc.txt:	Total Energy:	1.87988 J
+crc.txt:	Average Power:	18.7658 W
+crc.txt:	Time:	0.100176 sec
+crc.txt:PARENT: Child's exit code is: 0
+crc.txt:
+crc.txt:	Total Energy:	1.87851 J
+crc.txt:	Average Power:	18.7527 W
+crc.txt:	Time:	0.100173 sec
+crc.txt:PARENT: Child's exit code is: 0
+crc.txt:
+crc.txt:	Total Energy:	1.87779 J
+crc.txt:	Average Power:	18.7457 W
+crc.txt:	Time:	0.100172 sec
+crc.txt:PARENT: Child's exit code is: 0
+crc.txt:
+crc.txt:	Total Energy:	1.87752 J
+crc.txt:	Average Power:	18.7428 W
+crc.txt:	Time:	0.100173 sec
+crc32.txt:PARENT: Child's exit code is: 0
+crc32.txt:
+crc32.txt:	Total Energy:	1.86244 J
+crc32.txt:	Average Power:	18.5924 W
+crc32.txt:	Time:	0.100172 sec
+crc32.txt:PARENT: Child's exit code is: 0
+crc32.txt:
+crc32.txt:	Total Energy:	1.84091 J
+crc32.txt:	Average Power:	18.3779 W
+crc32.txt:	Time:	0.10017 sec
+crc32.txt:PARENT: Child's exit code is: 0
+crc32.txt:
+crc32.txt:	Total Energy:	1.84088 J
+crc32.txt:	Average Power:	18.3774 W
+crc32.txt:	Time:	0.100171 sec
+crc32.txt:PARENT: Child's exit code is: 0
+crc32.txt:
+crc32.txt:	Total Energy:	1.86551 J
+crc32.txt:	Average Power:	18.6221 W
+crc32.txt:	Time:	0.100177 sec
+crc32.txt:PARENT: Child's exit code is: 0
+crc32.txt:
+crc32.txt:	Total Energy:	1.86392 J
+crc32.txt:	Average Power:	18.6065 W
+crc32.txt:	Time:	0.100176 sec
+ctl-stack.txt:PARENT: Child's exit code is: 0
+ctl-stack.txt:
+ctl-stack.txt:	Total Energy:	2.03172 J
+ctl-stack.txt:	Average Power:	20.2823 W
+ctl-stack.txt:	Time:	0.100172 sec
+ctl-stack.txt:PARENT: Child's exit code is: 0
+ctl-stack.txt:
+ctl-stack.txt:	Total Energy:	2.00677 J
+ctl-stack.txt:	Average Power:	20.0337 W
+ctl-stack.txt:	Time:	0.10017 sec
+ctl-stack.txt:PARENT: Child's exit code is: 0
+ctl-stack.txt:
+ctl-stack.txt:	Total Energy:	2.03568 J
+ctl-stack.txt:	Average Power:	20.3218 W
+ctl-stack.txt:	Time:	0.100172 sec
+ctl-stack.txt:PARENT: Child's exit code is: 0
+ctl-stack.txt:
+ctl-stack.txt:	Total Energy:	2.03743 J
+ctl-stack.txt:	Average Power:	20.3387 W
+ctl-stack.txt:	Time:	0.100175 sec
+ctl-stack.txt:PARENT: Child's exit code is: 0
+ctl-stack.txt:
+ctl-stack.txt:	Total Energy:	2.03911 J
+ctl-stack.txt:	Average Power:	20.3561 W
+ctl-stack.txt:	Time:	0.100172 sec
+ctl-string.txt:PARENT: Child's exit code is: 0
+ctl-string.txt:
+ctl-string.txt:	Total Energy:	1.94717 J
+ctl-string.txt:	Average Power:	19.4379 W
+ctl-string.txt:	Time:	0.100174 sec
+ctl-string.txt:PARENT: Child's exit code is: 0
+ctl-string.txt:
+ctl-string.txt:	Total Energy:	1.94868 J
+ctl-string.txt:	Average Power:	19.4532 W
+ctl-string.txt:	Time:	0.100173 sec
+ctl-string.txt:PARENT: Child's exit code is: 0
+ctl-string.txt:
+ctl-string.txt:	Total Energy:	1.92596 J
+ctl-string.txt:	Average Power:	19.2262 W
+ctl-string.txt:	Time:	0.100174 sec
+ctl-string.txt:PARENT: Child's exit code is: 0
+ctl-string.txt:
+ctl-string.txt:	Total Energy:	1.95183 J
+ctl-string.txt:	Average Power:	19.4848 W
+ctl-string.txt:	Time:	0.100172 sec
+ctl-string.txt:PARENT: Child's exit code is: 0
+ctl-string.txt:
+ctl-string.txt:	Total Energy:	1.94803 J
+ctl-string.txt:	Average Power:	19.4468 W
+ctl-string.txt:	Time:	0.100172 sec
+ctl-vector.txt:PARENT: Child's exit code is: 0
+ctl-vector.txt:
+ctl-vector.txt:	Total Energy:	1.94438 J
+ctl-vector.txt:	Average Power:	19.4108 W
+ctl-vector.txt:	Time:	0.10017 sec
+ctl-vector.txt:PARENT: Child's exit code is: 0
+ctl-vector.txt:
+ctl-vector.txt:	Total Energy:	1.94371 J
+ctl-vector.txt:	Average Power:	19.4039 W
+ctl-vector.txt:	Time:	0.100171 sec
+ctl-vector.txt:PARENT: Child's exit code is: 0
+ctl-vector.txt:
+ctl-vector.txt:	Total Energy:	1.94347 J
+ctl-vector.txt:	Average Power:	19.4011 W
+ctl-vector.txt:	Time:	0.100173 sec
+ctl-vector.txt:PARENT: Child's exit code is: 0
+ctl-vector.txt:
+ctl-vector.txt:	Total Energy:	1.92422 J
+ctl-vector.txt:	Average Power:	19.209 W
+ctl-vector.txt:	Time:	0.100173 sec
+ctl-vector.txt:PARENT: Child's exit code is: 0
+ctl-vector.txt:
+ctl-vector.txt:	Total Energy:	1.94724 J
+ctl-vector.txt:	Average Power:	19.4393 W
+ctl-vector.txt:	Time:	0.10017 sec
+ctl.txt:PARENT: Child's exit code is: 0
+ctl.txt:
+ctl.txt:	Total Energy:	1.86568 J
+ctl.txt:	Average Power:	18.6245 W
+ctl.txt:	Time:	0.100173 sec
+ctl.txt:PARENT: Child's exit code is: 0
+ctl.txt:
+ctl.txt:	Total Energy:	1.8674 J
+ctl.txt:	Average Power:	18.6416 W
+ctl.txt:	Time:	0.100174 sec
+ctl.txt:PARENT: Child's exit code is: 0
+ctl.txt:
+ctl.txt:	Total Energy:	1.86249 J
+ctl.txt:	Average Power:	18.5918 W
+ctl.txt:	Time:	0.100178 sec
+ctl.txt:PARENT: Child's exit code is: 0
+ctl.txt:
+ctl.txt:	Total Energy:	1.86079 J
+ctl.txt:	Average Power:	18.5758 W
+ctl.txt:	Time:	0.100173 sec
+ctl.txt:PARENT: Child's exit code is: 0
+ctl.txt:
+ctl.txt:	Total Energy:	1.86449 J
+ctl.txt:	Average Power:	18.6123 W
+ctl.txt:	Time:	0.100175 sec
+cubic.txt:PARENT: Child's exit code is: 0
+cubic.txt:
+cubic.txt:	Total Energy:	1.97516 J
+cubic.txt:	Average Power:	19.7181 W
+cubic.txt:	Time:	0.10017 sec
+cubic.txt:PARENT: Child's exit code is: 0
+cubic.txt:
+cubic.txt:	Total Energy:	1.97758 J
+cubic.txt:	Average Power:	19.7423 W
+cubic.txt:	Time:	0.10017 sec
+cubic.txt:PARENT: Child's exit code is: 0
+cubic.txt:
+cubic.txt:	Total Energy:	1.97639 J
+cubic.txt:	Average Power:	19.7302 W
+cubic.txt:	Time:	0.100171 sec
+cubic.txt:PARENT: Child's exit code is: 0
+cubic.txt:
+cubic.txt:	Total Energy:	1.97948 J
+cubic.txt:	Average Power:	19.7608 W
+cubic.txt:	Time:	0.100172 sec
+cubic.txt:PARENT: Child's exit code is: 0
+cubic.txt:
+cubic.txt:	Total Energy:	1.9552 J
+cubic.txt:	Average Power:	19.5184 W
+cubic.txt:	Time:	0.100172 sec
+dijkstra.txt:PARENT: Child's exit code is: 0
+dijkstra.txt:
+dijkstra.txt:	Total Energy:	20.1224 J
+dijkstra.txt:	Average Power:	25.1323 W
+dijkstra.txt:	Time:	0.800659 sec
+dijkstra.txt:PARENT: Child's exit code is: 0
+dijkstra.txt:
+dijkstra.txt:	Total Energy:	20.1153 J
+dijkstra.txt:	Average Power:	25.1236 W
+dijkstra.txt:	Time:	0.800654 sec
+dijkstra.txt:PARENT: Child's exit code is: 0
+dijkstra.txt:
+dijkstra.txt:	Total Energy:	20.1069 J
+dijkstra.txt:	Average Power:	25.1129 W
+dijkstra.txt:	Time:	0.800662 sec
+dijkstra.txt:PARENT: Child's exit code is: 0
+dijkstra.txt:
+dijkstra.txt:	Total Energy:	18.2353 J
+dijkstra.txt:	Average Power:	26.0286 W
+dijkstra.txt:	Time:	0.700588 sec
+dijkstra.txt:PARENT: Child's exit code is: 0
+dijkstra.txt:
+dijkstra.txt:	Total Energy:	20.1314 J
+dijkstra.txt:	Average Power:	25.1433 W
+dijkstra.txt:	Time:	0.800665 sec
+dtoa.txt:PARENT: Child's exit code is: 0
+dtoa.txt:
+dtoa.txt:	Total Energy:	1.89598 J
+dtoa.txt:	Average Power:	18.9267 W
+dtoa.txt:	Time:	0.100175 sec
+dtoa.txt:PARENT: Child's exit code is: 0
+dtoa.txt:
+dtoa.txt:	Total Energy:	1.89612 J
+dtoa.txt:	Average Power:	18.9288 W
+dtoa.txt:	Time:	0.100171 sec
+dtoa.txt:PARENT: Child's exit code is: 0
+dtoa.txt:
+dtoa.txt:	Total Energy:	1.90149 J
+dtoa.txt:	Average Power:	18.9821 W
+dtoa.txt:	Time:	0.100173 sec
+dtoa.txt:PARENT: Child's exit code is: 0
+dtoa.txt:
+dtoa.txt:	Total Energy:	1.90207 J
+dtoa.txt:	Average Power:	18.9878 W
+dtoa.txt:	Time:	0.100173 sec
+dtoa.txt:PARENT: Child's exit code is: 0
+dtoa.txt:
+dtoa.txt:	Total Energy:	1.89761 J
+dtoa.txt:	Average Power:	18.943 W
+dtoa.txt:	Time:	0.100175 sec
+duff.txt:PARENT: Child's exit code is: 0
+duff.txt:
+duff.txt:	Total Energy:	1.87465 J
+duff.txt:	Average Power:	18.7137 W
+duff.txt:	Time:	0.100175 sec
+duff.txt:PARENT: Child's exit code is: 0
+duff.txt:
+duff.txt:	Total Energy:	1.87617 J
+duff.txt:	Average Power:	18.7288 W
+duff.txt:	Time:	0.100176 sec
+duff.txt:PARENT: Child's exit code is: 0
+duff.txt:
+duff.txt:	Total Energy:	1.87347 J
+duff.txt:	Average Power:	18.7022 W
+duff.txt:	Time:	0.100174 sec
+duff.txt:PARENT: Child's exit code is: 0
+duff.txt:
+duff.txt:	Total Energy:	1.87238 J
+duff.txt:	Average Power:	18.691 W
+duff.txt:	Time:	0.100175 sec
+duff.txt:PARENT: Child's exit code is: 0
+duff.txt:
+duff.txt:	Total Energy:	1.87303 J
+duff.txt:	Average Power:	18.6976 W
+duff.txt:	Time:	0.100175 sec
+edn.txt:PARENT: Child's exit code is: 0
+edn.txt:
+edn.txt:	Total Energy:	2.47055 J
+edn.txt:	Average Power:	24.6646 W
+edn.txt:	Time:	0.100166 sec
+edn.txt:PARENT: Child's exit code is: 0
+edn.txt:
+edn.txt:	Total Energy:	2.47125 J
+edn.txt:	Average Power:	24.6716 W
+edn.txt:	Time:	0.100166 sec
+edn.txt:PARENT: Child's exit code is: 0
+edn.txt:
+edn.txt:	Total Energy:	2.47067 J
+edn.txt:	Average Power:	24.6655 W
+edn.txt:	Time:	0.100167 sec
+edn.txt:PARENT: Child's exit code is: 0
+edn.txt:
+edn.txt:	Total Energy:	2.47516 J
+edn.txt:	Average Power:	24.7106 W
+edn.txt:	Time:	0.100166 sec
+edn.txt:PARENT: Child's exit code is: 0
+edn.txt:
+edn.txt:	Total Energy:	2.46751 J
+edn.txt:	Average Power:	24.6342 W
+edn.txt:	Time:	0.100166 sec
+expint.txt:PARENT: Child's exit code is: 0
+expint.txt:
+expint.txt:	Total Energy:	1.92647 J
+expint.txt:	Average Power:	19.2318 W
+expint.txt:	Time:	0.100171 sec
+expint.txt:PARENT: Child's exit code is: 0
+expint.txt:
+expint.txt:	Total Energy:	1.94475 J
+expint.txt:	Average Power:	19.4139 W
+expint.txt:	Time:	0.100173 sec
+expint.txt:PARENT: Child's exit code is: 0
+expint.txt:
+expint.txt:	Total Energy:	1.95166 J
+expint.txt:	Average Power:	19.4833 W
+expint.txt:	Time:	0.100171 sec
+expint.txt:PARENT: Child's exit code is: 0
+expint.txt:
+expint.txt:	Total Energy:	1.95023 J
+expint.txt:	Average Power:	19.4688 W
+expint.txt:	Time:	0.100172 sec
+expint.txt:PARENT: Child's exit code is: 0
+expint.txt:
+expint.txt:	Total Energy:	1.95189 J
+expint.txt:	Average Power:	19.485 W
+expint.txt:	Time:	0.100174 sec
+fac.txt:PARENT: Child's exit code is: 0
+fac.txt:
+fac.txt:	Total Energy:	1.87018 J
+fac.txt:	Average Power:	18.6697 W
+fac.txt:	Time:	0.100172 sec
+fac.txt:PARENT: Child's exit code is: 0
+fac.txt:
+fac.txt:	Total Energy:	1.87033 J
+fac.txt:	Average Power:	18.6708 W
+fac.txt:	Time:	0.100174 sec
+fac.txt:PARENT: Child's exit code is: 0
+fac.txt:
+fac.txt:	Total Energy:	1.8672 J
+fac.txt:	Average Power:	18.6379 W
+fac.txt:	Time:	0.100183 sec
+fac.txt:PARENT: Child's exit code is: 0
+fac.txt:
+fac.txt:	Total Energy:	1.86746 J
+fac.txt:	Average Power:	18.6426 W
+fac.txt:	Time:	0.100172 sec
+fac.txt:PARENT: Child's exit code is: 0
+fac.txt:
+fac.txt:	Total Energy:	1.86797 J
+fac.txt:	Average Power:	18.6472 W
+fac.txt:	Time:	0.100174 sec
+fasta.txt:PARENT: Child's exit code is: 0
+fasta.txt:
+fasta.txt:	Total Energy:	20.8109 J
+fasta.txt:	Average Power:	25.9778 W
+fasta.txt:	Time:	0.801104 sec
+fasta.txt:PARENT: Child's exit code is: 0
+fasta.txt:
+fasta.txt:	Total Energy:	20.9274 J
+fasta.txt:	Average Power:	25.9226 W
+fasta.txt:	Time:	0.807304 sec
+fasta.txt:PARENT: Child's exit code is: 0
+fasta.txt:
+fasta.txt:	Total Energy:	20.9244 J
+fasta.txt:	Average Power:	25.9421 W
+fasta.txt:	Time:	0.806583 sec
+fasta.txt:PARENT: Child's exit code is: 0
+fasta.txt:
+fasta.txt:	Total Energy:	20.9085 J
+fasta.txt:	Average Power:	25.9219 W
+fasta.txt:	Time:	0.806594 sec
+fasta.txt:PARENT: Child's exit code is: 0
+fasta.txt:
+fasta.txt:	Total Energy:	20.7989 J
+fasta.txt:	Average Power:	25.9774 W
+fasta.txt:	Time:	0.800651 sec
+fdct.txt:PARENT: Child's exit code is: 0
+fdct.txt:
+fdct.txt:	Total Energy:	1.88301 J
+fdct.txt:	Average Power:	18.7976 W
+fdct.txt:	Time:	0.100173 sec
+fdct.txt:PARENT: Child's exit code is: 0
+fdct.txt:
+fdct.txt:	Total Energy:	1.8806 J
+fdct.txt:	Average Power:	18.7735 W
+fdct.txt:	Time:	0.100173 sec
+fdct.txt:PARENT: Child's exit code is: 0
+fdct.txt:
+fdct.txt:	Total Energy:	1.88133 J
+fdct.txt:	Average Power:	18.781 W
+fdct.txt:	Time:	0.100172 sec
+fdct.txt:PARENT: Child's exit code is: 0
+fdct.txt:
+fdct.txt:	Total Energy:	1.88174 J
+fdct.txt:	Average Power:	18.7851 W
+fdct.txt:	Time:	0.100172 sec
+fdct.txt:PARENT: Child's exit code is: 0
+fdct.txt:
+fdct.txt:	Total Energy:	1.88263 J
+fdct.txt:	Average Power:	18.7932 W
+fdct.txt:	Time:	0.100176 sec
+fibcall.txt:PARENT: Child's exit code is: 0
+fibcall.txt:
+fibcall.txt:	Total Energy:	1.86505 J
+fibcall.txt:	Average Power:	18.6179 W
+fibcall.txt:	Time:	0.100175 sec
+fibcall.txt:PARENT: Child's exit code is: 0
+fibcall.txt:
+fibcall.txt:	Total Energy:	1.86591 J
+fibcall.txt:	Average Power:	18.6276 W
+fibcall.txt:	Time:	0.100169 sec
+fibcall.txt:PARENT: Child's exit code is: 0
+fibcall.txt:
+fibcall.txt:	Total Energy:	1.86316 J
+fibcall.txt:	Average Power:	18.599 W
+fibcall.txt:	Time:	0.100175 sec
+fibcall.txt:PARENT: Child's exit code is: 0
+fibcall.txt:
+fibcall.txt:	Total Energy:	1.86241 J
+fibcall.txt:	Average Power:	18.5916 W
+fibcall.txt:	Time:	0.100175 sec
+fibcall.txt:PARENT: Child's exit code is: 0
+fibcall.txt:
+fibcall.txt:	Total Energy:	1.86824 J
+fibcall.txt:	Average Power:	18.6503 W
+fibcall.txt:	Time:	0.100172 sec
+fir.txt:PARENT: Child's exit code is: 0
+fir.txt:
+fir.txt:	Total Energy:	9.8653 J
+fir.txt:	Average Power:	24.6388 W
+fir.txt:	Time:	0.400397 sec
+fir.txt:PARENT: Child's exit code is: 0
+fir.txt:
+fir.txt:	Total Energy:	9.8524 J
+fir.txt:	Average Power:	24.6067 W
+fir.txt:	Time:	0.400395 sec
+fir.txt:PARENT: Child's exit code is: 0
+fir.txt:
+fir.txt:	Total Energy:	9.85477 J
+fir.txt:	Average Power:	24.6122 W
+fir.txt:	Time:	0.400402 sec
+fir.txt:PARENT: Child's exit code is: 0
+fir.txt:
+fir.txt:	Total Energy:	9.88791 J
+fir.txt:	Average Power:	24.6952 W
+fir.txt:	Time:	0.400398 sec
+fir.txt:PARENT: Child's exit code is: 0
+fir.txt:
+fir.txt:	Total Energy:	9.86316 J
+fir.txt:	Average Power:	24.6334 W
+fir.txt:	Time:	0.400397 sec
+frac.txt:PARENT: Child's exit code is: 0
+frac.txt:
+frac.txt:	Total Energy:	1.8945 J
+frac.txt:	Average Power:	18.9129 W
+frac.txt:	Time:	0.10017 sec
+frac.txt:PARENT: Child's exit code is: 0
+frac.txt:
+frac.txt:	Total Energy:	1.89926 J
+frac.txt:	Average Power:	18.9602 W
+frac.txt:	Time:	0.100171 sec
+frac.txt:PARENT: Child's exit code is: 0
+frac.txt:
+frac.txt:	Total Energy:	1.90056 J
+frac.txt:	Average Power:	18.9728 W
+frac.txt:	Time:	0.100173 sec
+frac.txt:PARENT: Child's exit code is: 0
+frac.txt:
+frac.txt:	Total Energy:	1.89781 J
+frac.txt:	Average Power:	18.9453 W
+frac.txt:	Time:	0.100173 sec
+frac.txt:PARENT: Child's exit code is: 0
+frac.txt:
+frac.txt:	Total Energy:	1.89748 J
+frac.txt:	Average Power:	18.9433 W
+frac.txt:	Time:	0.100166 sec
+huffbench.txt:PARENT: Child's exit code is: 0
+huffbench.txt:
+huffbench.txt:	Total Energy:	14.9064 J
+huffbench.txt:	Average Power:	24.8219 W
+huffbench.txt:	Time:	0.600534 sec
+huffbench.txt:PARENT: Child's exit code is: 0
+huffbench.txt:
+huffbench.txt:	Total Energy:	14.9114 J
+huffbench.txt:	Average Power:	24.83 W
+huffbench.txt:	Time:	0.600539 sec
+huffbench.txt:PARENT: Child's exit code is: 0
+huffbench.txt:
+huffbench.txt:	Total Energy:	14.9204 J
+huffbench.txt:	Average Power:	24.8453 W
+huffbench.txt:	Time:	0.600533 sec
+huffbench.txt:PARENT: Child's exit code is: 0
+huffbench.txt:
+huffbench.txt:	Total Energy:	14.9145 J
+huffbench.txt:	Average Power:	24.8354 W
+huffbench.txt:	Time:	0.600534 sec
+huffbench.txt:PARENT: Child's exit code is: 0
+huffbench.txt:
+huffbench.txt:	Total Energy:	14.9125 J
+huffbench.txt:	Average Power:	24.8321 W
+huffbench.txt:	Time:	0.600534 sec
+insertsort.txt:PARENT: Child's exit code is: 0
+insertsort.txt:
+insertsort.txt:	Total Energy:	1.86963 J
+insertsort.txt:	Average Power:	18.6649 W
+insertsort.txt:	Time:	0.100168 sec
+insertsort.txt:PARENT: Child's exit code is: 0
+insertsort.txt:
+insertsort.txt:	Total Energy:	1.87001 J
+insertsort.txt:	Average Power:	18.6658 W
+insertsort.txt:	Time:	0.100184 sec
+insertsort.txt:PARENT: Child's exit code is: 0
+insertsort.txt:
+insertsort.txt:	Total Energy:	1.86852 J
+insertsort.txt:	Average Power:	18.6536 W
+insertsort.txt:	Time:	0.100169 sec
+insertsort.txt:PARENT: Child's exit code is: 0
+insertsort.txt:
+insertsort.txt:	Total Energy:	1.86835 J
+insertsort.txt:	Average Power:	18.6518 W
+insertsort.txt:	Time:	0.10017 sec
+insertsort.txt:PARENT: Child's exit code is: 0
+insertsort.txt:
+insertsort.txt:	Total Energy:	1.86891 J
+insertsort.txt:	Average Power:	18.6574 W
+insertsort.txt:	Time:	0.10017 sec
+janne_complex.txt:PARENT: Child's exit code is: 0
+janne_complex.txt:
+janne_complex.txt:	Total Energy:	1.85973 J
+janne_complex.txt:	Average Power:	18.5651 W
+janne_complex.txt:	Time:	0.100173 sec
+janne_complex.txt:PARENT: Child's exit code is: 0
+janne_complex.txt:
+janne_complex.txt:	Total Energy:	1.85933 J
+janne_complex.txt:	Average Power:	18.561 W
+janne_complex.txt:	Time:	0.100174 sec
+janne_complex.txt:PARENT: Child's exit code is: 0
+janne_complex.txt:
+janne_complex.txt:	Total Energy:	1.86667 J
+janne_complex.txt:	Average Power:	18.6341 W
+janne_complex.txt:	Time:	0.100175 sec
+janne_complex.txt:PARENT: Child's exit code is: 0
+janne_complex.txt:
+janne_complex.txt:	Total Energy:	1.86455 J
+janne_complex.txt:	Average Power:	18.6129 W
+janne_complex.txt:	Time:	0.100175 sec
+janne_complex.txt:PARENT: Child's exit code is: 0
+janne_complex.txt:
+janne_complex.txt:	Total Energy:	1.86758 J
+janne_complex.txt:	Average Power:	18.6415 W
+janne_complex.txt:	Time:	0.100184 sec
+jfdctint.txt:PARENT: Child's exit code is: 0
+jfdctint.txt:
+jfdctint.txt:	Total Energy:	1.89351 J
+jfdctint.txt:	Average Power:	18.9024 W
+jfdctint.txt:	Time:	0.100173 sec
+jfdctint.txt:PARENT: Child's exit code is: 0
+jfdctint.txt:
+jfdctint.txt:	Total Energy:	1.88802 J
+jfdctint.txt:	Average Power:	18.8476 W
+jfdctint.txt:	Time:	0.100173 sec
+jfdctint.txt:PARENT: Child's exit code is: 0
+jfdctint.txt:
+jfdctint.txt:	Total Energy:	1.89378 J
+jfdctint.txt:	Average Power:	18.9057 W
+jfdctint.txt:	Time:	0.10017 sec
+jfdctint.txt:PARENT: Child's exit code is: 0
+jfdctint.txt:
+jfdctint.txt:	Total Energy:	1.89143 J
+jfdctint.txt:	Average Power:	18.8798 W
+jfdctint.txt:	Time:	0.100183 sec
+jfdctint.txt:PARENT: Child's exit code is: 0
+jfdctint.txt:
+jfdctint.txt:	Total Energy:	1.89308 J
+jfdctint.txt:	Average Power:	18.8985 W
+jfdctint.txt:	Time:	0.100171 sec
+lcdnum.txt:PARENT: Child's exit code is: 0
+lcdnum.txt:
+lcdnum.txt:	Total Energy:	1.86006 J
+lcdnum.txt:	Average Power:	18.5685 W
+lcdnum.txt:	Time:	0.100173 sec
+lcdnum.txt:PARENT: Child's exit code is: 0
+lcdnum.txt:
+lcdnum.txt:	Total Energy:	1.86044 J
+lcdnum.txt:	Average Power:	18.5723 W
+lcdnum.txt:	Time:	0.100173 sec
+lcdnum.txt:PARENT: Child's exit code is: 0
+lcdnum.txt:
+lcdnum.txt:	Total Energy:	1.86652 J
+lcdnum.txt:	Average Power:	18.6329 W
+lcdnum.txt:	Time:	0.100173 sec
+lcdnum.txt:PARENT: Child's exit code is: 0
+lcdnum.txt:
+lcdnum.txt:	Total Energy:	1.86456 J
+lcdnum.txt:	Average Power:	18.6132 W
+lcdnum.txt:	Time:	0.100174 sec
+lcdnum.txt:PARENT: Child's exit code is: 0
+lcdnum.txt:
+lcdnum.txt:	Total Energy:	1.86623 J
+lcdnum.txt:	Average Power:	18.63 W
+lcdnum.txt:	Time:	0.100173 sec
+levenshtein.txt:PARENT: Child's exit code is: 0
+levenshtein.txt:
+levenshtein.txt:	Total Energy:	2.35478 J
+levenshtein.txt:	Average Power:	23.5076 W
+levenshtein.txt:	Time:	0.100171 sec
+levenshtein.txt:PARENT: Child's exit code is: 0
+levenshtein.txt:
+levenshtein.txt:	Total Energy:	2.33061 J
+levenshtein.txt:	Average Power:	23.2663 W
+levenshtein.txt:	Time:	0.100171 sec
+levenshtein.txt:PARENT: Child's exit code is: 0
+levenshtein.txt:
+levenshtein.txt:	Total Energy:	2.3553 J
+levenshtein.txt:	Average Power:	23.5133 W
+levenshtein.txt:	Time:	0.100169 sec
+levenshtein.txt:PARENT: Child's exit code is: 0
+levenshtein.txt:
+levenshtein.txt:	Total Energy:	2.35097 J
+levenshtein.txt:	Average Power:	23.4688 W
+levenshtein.txt:	Time:	0.100174 sec
+levenshtein.txt:PARENT: Child's exit code is: 0
+levenshtein.txt:
+levenshtein.txt:	Total Energy:	2.32924 J
+levenshtein.txt:	Average Power:	23.2524 W
+levenshtein.txt:	Time:	0.100172 sec
+ludcmp.txt:PARENT: Child's exit code is: 0
+ludcmp.txt:
+ludcmp.txt:	Total Energy:	1.88403 J
+ludcmp.txt:	Average Power:	18.807 W
+ludcmp.txt:	Time:	0.100177 sec
+ludcmp.txt:PARENT: Child's exit code is: 0
+ludcmp.txt:
+ludcmp.txt:	Total Energy:	1.87886 J
+ludcmp.txt:	Average Power:	18.756 W
+ludcmp.txt:	Time:	0.100174 sec
+ludcmp.txt:PARENT: Child's exit code is: 0
+ludcmp.txt:
+ludcmp.txt:	Total Energy:	1.8851 J
+ludcmp.txt:	Average Power:	18.8186 W
+ludcmp.txt:	Time:	0.100172 sec
+ludcmp.txt:PARENT: Child's exit code is: 0
+ludcmp.txt:
+ludcmp.txt:	Total Energy:	1.8811 J
+ludcmp.txt:	Average Power:	18.7784 W
+ludcmp.txt:	Time:	0.100174 sec
+ludcmp.txt:PARENT: Child's exit code is: 0
+ludcmp.txt:
+ludcmp.txt:	Total Energy:	1.88177 J
+ludcmp.txt:	Average Power:	18.7851 W
+ludcmp.txt:	Time:	0.100174 sec
+matmult-float.txt:PARENT: Child's exit code is: 0
+matmult-float.txt:
+matmult-float.txt:	Total Energy:	2.0562 J
+matmult-float.txt:	Average Power:	20.5275 W
+matmult-float.txt:	Time:	0.100168 sec
+matmult-float.txt:PARENT: Child's exit code is: 0
+matmult-float.txt:
+matmult-float.txt:	Total Energy:	2.05583 J
+matmult-float.txt:	Average Power:	20.523 W
+matmult-float.txt:	Time:	0.100172 sec
+matmult-float.txt:PARENT: Child's exit code is: 0
+matmult-float.txt:
+matmult-float.txt:	Total Energy:	2.05675 J
+matmult-float.txt:	Average Power:	20.5326 W
+matmult-float.txt:	Time:	0.10017 sec
+matmult-float.txt:PARENT: Child's exit code is: 0
+matmult-float.txt:
+matmult-float.txt:	Total Energy:	2.0526 J
+matmult-float.txt:	Average Power:	20.4907 W
+matmult-float.txt:	Time:	0.100172 sec
+matmult-float.txt:PARENT: Child's exit code is: 0
+matmult-float.txt:
+matmult-float.txt:	Total Energy:	2.05281 J
+matmult-float.txt:	Average Power:	20.4929 W
+matmult-float.txt:	Time:	0.100172 sec
+matmult-int.txt:PARENT: Child's exit code is: 0
+matmult-int.txt:
+matmult-int.txt:	Total Energy:	4.91173 J
+matmult-int.txt:	Average Power:	24.5263 W
+matmult-int.txt:	Time:	0.200264 sec
+matmult-int.txt:PARENT: Child's exit code is: 0
+matmult-int.txt:
+matmult-int.txt:	Total Energy:	4.93259 J
+matmult-int.txt:	Average Power:	24.631 W
+matmult-int.txt:	Time:	0.200259 sec
+matmult-int.txt:PARENT: Child's exit code is: 0
+matmult-int.txt:
+matmult-int.txt:	Total Energy:	4.9136 J
+matmult-int.txt:	Average Power:	24.5354 W
+matmult-int.txt:	Time:	0.200266 sec
+matmult-int.txt:PARENT: Child's exit code is: 0
+matmult-int.txt:
+matmult-int.txt:	Total Energy:	4.94115 J
+matmult-int.txt:	Average Power:	24.6724 W
+matmult-int.txt:	Time:	0.20027 sec
+matmult-int.txt:PARENT: Child's exit code is: 0
+matmult-int.txt:
+matmult-int.txt:	Total Energy:	4.93419 J
+matmult-int.txt:	Average Power:	24.6385 W
+matmult-int.txt:	Time:	0.200263 sec
+matmult.txt:PARENT: Child's exit code is: 0
+matmult.txt:
+matmult.txt:	Total Energy:	1.86154 J
+matmult.txt:	Average Power:	18.5835 W
+matmult.txt:	Time:	0.100172 sec
+matmult.txt:PARENT: Child's exit code is: 0
+matmult.txt:
+matmult.txt:	Total Energy:	1.86319 J
+matmult.txt:	Average Power:	18.6003 W
+matmult.txt:	Time:	0.10017 sec
+matmult.txt:PARENT: Child's exit code is: 0
+matmult.txt:
+matmult.txt:	Total Energy:	1.86073 J
+matmult.txt:	Average Power:	18.5717 W
+matmult.txt:	Time:	0.100192 sec
+matmult.txt:PARENT: Child's exit code is: 0
+matmult.txt:
+matmult.txt:	Total Energy:	1.86057 J
+matmult.txt:	Average Power:	18.5728 W
+matmult.txt:	Time:	0.100177 sec
+matmult.txt:PARENT: Child's exit code is: 0
+matmult.txt:
+matmult.txt:	Total Energy:	1.86188 J
+matmult.txt:	Average Power:	18.5866 W
+matmult.txt:	Time:	0.100173 sec
+mergesort.txt:PARENT: Child's exit code is: 0
+mergesort.txt:
+mergesort.txt:	Total Energy:	7.10074 J
+mergesort.txt:	Average Power:	23.6431 W
+mergesort.txt:	Time:	0.30033 sec
+mergesort.txt:PARENT: Child's exit code is: 0
+mergesort.txt:
+mergesort.txt:	Total Energy:	7.11368 J
+mergesort.txt:	Average Power:	23.6865 W
+mergesort.txt:	Time:	0.300326 sec
+mergesort.txt:PARENT: Child's exit code is: 0
+mergesort.txt:
+mergesort.txt:	Total Energy:	7.09665 J
+mergesort.txt:	Average Power:	23.6293 W
+mergesort.txt:	Time:	0.300332 sec
+mergesort.txt:PARENT: Child's exit code is: 0
+mergesort.txt:
+mergesort.txt:	Total Energy:	7.0966 J
+mergesort.txt:	Average Power:	23.6292 W
+mergesort.txt:	Time:	0.300332 sec
+mergesort.txt:PARENT: Child's exit code is: 0
+mergesort.txt:
+mergesort.txt:	Total Energy:	7.11583 J
+mergesort.txt:	Average Power:	23.6931 W
+mergesort.txt:	Time:	0.300333 sec
+miniz.txt:PARENT: Child's exit code is: 0
+miniz.txt:
+miniz.txt:	Total Energy:	1.86542 J
+miniz.txt:	Average Power:	18.6223 W
+miniz.txt:	Time:	0.100171 sec
+miniz.txt:PARENT: Child's exit code is: 0
+miniz.txt:
+miniz.txt:	Total Energy:	1.86845 J
+miniz.txt:	Average Power:	18.6525 W
+miniz.txt:	Time:	0.100172 sec
+miniz.txt:PARENT: Child's exit code is: 0
+miniz.txt:
+miniz.txt:	Total Energy:	1.86958 J
+miniz.txt:	Average Power:	18.6634 W
+miniz.txt:	Time:	0.100174 sec
+miniz.txt:PARENT: Child's exit code is: 0
+miniz.txt:
+miniz.txt:	Total Energy:	1.86958 J
+miniz.txt:	Average Power:	18.6634 W
+miniz.txt:	Time:	0.100174 sec
+miniz.txt:PARENT: Child's exit code is: 0
+miniz.txt:
+miniz.txt:	Total Energy:	1.84489 J
+miniz.txt:	Average Power:	18.4171 W
+miniz.txt:	Time:	0.100173 sec
+minver.txt:PARENT: Child's exit code is: 0
+minver.txt:
+minver.txt:	Total Energy:	1.88037 J
+minver.txt:	Average Power:	18.7712 W
+minver.txt:	Time:	0.100173 sec
+minver.txt:PARENT: Child's exit code is: 0
+minver.txt:
+minver.txt:	Total Energy:	1.87526 J
+minver.txt:	Average Power:	18.7202 W
+minver.txt:	Time:	0.100173 sec
+minver.txt:PARENT: Child's exit code is: 0
+minver.txt:
+minver.txt:	Total Energy:	1.87695 J
+minver.txt:	Average Power:	18.7373 W
+minver.txt:	Time:	0.100172 sec
+minver.txt:PARENT: Child's exit code is: 0
+minver.txt:
+minver.txt:	Total Energy:	1.87762 J
+minver.txt:	Average Power:	18.7438 W
+minver.txt:	Time:	0.100173 sec
+minver.txt:PARENT: Child's exit code is: 0
+minver.txt:
+minver.txt:	Total Energy:	1.88005 J
+minver.txt:	Average Power:	18.7682 W
+minver.txt:	Time:	0.100172 sec
+nbody.txt:PARENT: Child's exit code is: 0
+nbody.txt:
+nbody.txt:	Total Energy:	2.59799 J
+nbody.txt:	Average Power:	25.9376 W
+nbody.txt:	Time:	0.100163 sec
+nbody.txt:PARENT: Child's exit code is: 0
+nbody.txt:
+nbody.txt:	Total Energy:	2.59448 J
+nbody.txt:	Average Power:	25.9026 W
+nbody.txt:	Time:	0.100163 sec
+nbody.txt:PARENT: Child's exit code is: 0
+nbody.txt:
+nbody.txt:	Total Energy:	2.59068 J
+nbody.txt:	Average Power:	25.8642 W
+nbody.txt:	Time:	0.100165 sec
+nbody.txt:PARENT: Child's exit code is: 0
+nbody.txt:
+nbody.txt:	Total Energy:	2.59909 J
+nbody.txt:	Average Power:	25.9525 W
+nbody.txt:	Time:	0.100148 sec
+nbody.txt:PARENT: Child's exit code is: 0
+nbody.txt:
+nbody.txt:	Total Energy:	2.58949 J
+nbody.txt:	Average Power:	25.8518 W
+nbody.txt:	Time:	0.100167 sec
+ndes.txt:PARENT: Child's exit code is: 0
+ndes.txt:
+ndes.txt:	Total Energy:	2.21104 J
+ndes.txt:	Average Power:	22.0727 W
+ndes.txt:	Time:	0.100171 sec
+ndes.txt:PARENT: Child's exit code is: 0
+ndes.txt:
+ndes.txt:	Total Energy:	2.21445 J
+ndes.txt:	Average Power:	22.1071 W
+ndes.txt:	Time:	0.100169 sec
+ndes.txt:PARENT: Child's exit code is: 0
+ndes.txt:
+ndes.txt:	Total Energy:	2.2115 J
+ndes.txt:	Average Power:	22.0773 W
+ndes.txt:	Time:	0.100171 sec
+ndes.txt:PARENT: Child's exit code is: 0
+ndes.txt:
+ndes.txt:	Total Energy:	2.22058 J
+ndes.txt:	Average Power:	22.1655 W
+ndes.txt:	Time:	0.100182 sec
+ndes.txt:PARENT: Child's exit code is: 0
+ndes.txt:
+ndes.txt:	Total Energy:	2.22 J
+ndes.txt:	Average Power:	22.1619 W
+ndes.txt:	Time:	0.100172 sec
+nettle-aes.txt:PARENT: Child's exit code is: 0
+nettle-aes.txt:
+nettle-aes.txt:	Total Energy:	2.21811 J
+nettle-aes.txt:	Average Power:	22.1437 W
+nettle-aes.txt:	Time:	0.100169 sec
+nettle-aes.txt:PARENT: Child's exit code is: 0
+nettle-aes.txt:
+nettle-aes.txt:	Total Energy:	2.21361 J
+nettle-aes.txt:	Average Power:	22.0987 W
+nettle-aes.txt:	Time:	0.100169 sec
+nettle-aes.txt:PARENT: Child's exit code is: 0
+nettle-aes.txt:
+nettle-aes.txt:	Total Energy:	2.21265 J
+nettle-aes.txt:	Average Power:	22.0887 W
+nettle-aes.txt:	Time:	0.100171 sec
+nettle-aes.txt:PARENT: Child's exit code is: 0
+nettle-aes.txt:
+nettle-aes.txt:	Total Energy:	2.21664 J
+nettle-aes.txt:	Average Power:	22.1284 W
+nettle-aes.txt:	Time:	0.100172 sec
+nettle-aes.txt:PARENT: Child's exit code is: 0
+nettle-aes.txt:
+nettle-aes.txt:	Total Energy:	2.21577 J
+nettle-aes.txt:	Average Power:	22.1193 W
+nettle-aes.txt:	Time:	0.100174 sec
+nettle-arcfour.txt:PARENT: Child's exit code is: 0
+nettle-arcfour.txt:
+nettle-arcfour.txt:	Total Energy:	2.05801 J
+nettle-arcfour.txt:	Average Power:	20.5448 W
+nettle-arcfour.txt:	Time:	0.100172 sec
+nettle-arcfour.txt:PARENT: Child's exit code is: 0
+nettle-arcfour.txt:
+nettle-arcfour.txt:	Total Energy:	2.05963 J
+nettle-arcfour.txt:	Average Power:	20.5607 W
+nettle-arcfour.txt:	Time:	0.100173 sec
+nettle-arcfour.txt:PARENT: Child's exit code is: 0
+nettle-arcfour.txt:
+nettle-arcfour.txt:	Total Energy:	2.06064 J
+nettle-arcfour.txt:	Average Power:	20.571 W
+nettle-arcfour.txt:	Time:	0.100172 sec
+nettle-arcfour.txt:PARENT: Child's exit code is: 0
+nettle-arcfour.txt:
+nettle-arcfour.txt:	Total Energy:	2.05693 J
+nettle-arcfour.txt:	Average Power:	20.5346 W
+nettle-arcfour.txt:	Time:	0.100169 sec
+nettle-arcfour.txt:PARENT: Child's exit code is: 0
+nettle-arcfour.txt:
+nettle-arcfour.txt:	Total Energy:	2.05637 J
+nettle-arcfour.txt:	Average Power:	20.5288 W
+nettle-arcfour.txt:	Time:	0.10017 sec
+nettle-cast128.txt:PARENT: Child's exit code is: 0
+nettle-cast128.txt:
+nettle-cast128.txt:	Total Energy:	1.88199 J
+nettle-cast128.txt:	Average Power:	18.7876 W
+nettle-cast128.txt:	Time:	0.100172 sec
+nettle-cast128.txt:PARENT: Child's exit code is: 0
+nettle-cast128.txt:
+nettle-cast128.txt:	Total Energy:	1.90318 J
+nettle-cast128.txt:	Average Power:	18.9986 W
+nettle-cast128.txt:	Time:	0.100175 sec
+nettle-cast128.txt:PARENT: Child's exit code is: 0
+nettle-cast128.txt:
+nettle-cast128.txt:	Total Energy:	1.90306 J
+nettle-cast128.txt:	Average Power:	18.9991 W
+nettle-cast128.txt:	Time:	0.100166 sec
+nettle-cast128.txt:PARENT: Child's exit code is: 0
+nettle-cast128.txt:
+nettle-cast128.txt:	Total Energy:	1.90608 J
+nettle-cast128.txt:	Average Power:	19.0283 W
+nettle-cast128.txt:	Time:	0.100171 sec
+nettle-cast128.txt:PARENT: Child's exit code is: 0
+nettle-cast128.txt:
+nettle-cast128.txt:	Total Energy:	1.90707 J
+nettle-cast128.txt:	Average Power:	19.0376 W
+nettle-cast128.txt:	Time:	0.100174 sec
+nettle-des.txt:PARENT: Child's exit code is: 0
+nettle-des.txt:
+nettle-des.txt:	Total Energy:	1.88484 J
+nettle-des.txt:	Average Power:	18.8161 W
+nettle-des.txt:	Time:	0.100172 sec
+nettle-des.txt:PARENT: Child's exit code is: 0
+nettle-des.txt:
+nettle-des.txt:	Total Energy:	1.88483 J
+nettle-des.txt:	Average Power:	18.8161 W
+nettle-des.txt:	Time:	0.100171 sec
+nettle-des.txt:PARENT: Child's exit code is: 0
+nettle-des.txt:
+nettle-des.txt:	Total Energy:	1.88342 J
+nettle-des.txt:	Average Power:	18.8013 W
+nettle-des.txt:	Time:	0.100175 sec
+nettle-des.txt:PARENT: Child's exit code is: 0
+nettle-des.txt:
+nettle-des.txt:	Total Energy:	1.88251 J
+nettle-des.txt:	Average Power:	18.7924 W
+nettle-des.txt:	Time:	0.100174 sec
+nettle-des.txt:PARENT: Child's exit code is: 0
+nettle-des.txt:
+nettle-des.txt:	Total Energy:	1.88597 J
+nettle-des.txt:	Average Power:	18.8268 W
+nettle-des.txt:	Time:	0.100175 sec
+nettle-md5.txt:PARENT: Child's exit code is: 0
+nettle-md5.txt:
+nettle-md5.txt:	Total Energy:	1.87675 J
+nettle-md5.txt:	Average Power:	18.7351 W
+nettle-md5.txt:	Time:	0.100173 sec
+nettle-md5.txt:PARENT: Child's exit code is: 0
+nettle-md5.txt:
+nettle-md5.txt:	Total Energy:	1.87936 J
+nettle-md5.txt:	Average Power:	18.7616 W
+nettle-md5.txt:	Time:	0.100171 sec
+nettle-md5.txt:PARENT: Child's exit code is: 0
+nettle-md5.txt:
+nettle-md5.txt:	Total Energy:	1.87613 J
+nettle-md5.txt:	Average Power:	18.7295 W
+nettle-md5.txt:	Time:	0.10017 sec
+nettle-md5.txt:PARENT: Child's exit code is: 0
+nettle-md5.txt:
+nettle-md5.txt:	Total Energy:	1.85803 J
+nettle-md5.txt:	Average Power:	18.5492 W
+nettle-md5.txt:	Time:	0.100168 sec
+nettle-md5.txt:PARENT: Child's exit code is: 0
+nettle-md5.txt:
+nettle-md5.txt:	Total Energy:	1.87787 J
+nettle-md5.txt:	Average Power:	18.7468 W
+nettle-md5.txt:	Time:	0.10017 sec
+nettle-sha256.txt:PARENT: Child's exit code is: 0
+nettle-sha256.txt:
+nettle-sha256.txt:	Total Energy:	1.91142 J
+nettle-sha256.txt:	Average Power:	19.0808 W
+nettle-sha256.txt:	Time:	0.100175 sec
+nettle-sha256.txt:PARENT: Child's exit code is: 0
+nettle-sha256.txt:
+nettle-sha256.txt:	Total Energy:	1.88559 J
+nettle-sha256.txt:	Average Power:	18.8228 W
+nettle-sha256.txt:	Time:	0.100176 sec
+nettle-sha256.txt:PARENT: Child's exit code is: 0
+nettle-sha256.txt:
+nettle-sha256.txt:	Total Energy:	1.90463 J
+nettle-sha256.txt:	Average Power:	19.0144 W
+nettle-sha256.txt:	Time:	0.100168 sec
+nettle-sha256.txt:PARENT: Child's exit code is: 0
+nettle-sha256.txt:
+nettle-sha256.txt:	Total Energy:	1.90816 J
+nettle-sha256.txt:	Average Power:	19.0484 W
+nettle-sha256.txt:	Time:	0.100174 sec
+nettle-sha256.txt:PARENT: Child's exit code is: 0
+nettle-sha256.txt:
+nettle-sha256.txt:	Total Energy:	1.90982 J
+nettle-sha256.txt:	Average Power:	19.0652 W
+nettle-sha256.txt:	Time:	0.100173 sec
+newlib-exp.txt:PARENT: Child's exit code is: 0
+newlib-exp.txt:
+newlib-exp.txt:	Total Energy:	1.86661 J
+newlib-exp.txt:	Average Power:	18.6346 W
+newlib-exp.txt:	Time:	0.100169 sec
+newlib-exp.txt:PARENT: Child's exit code is: 0
+newlib-exp.txt:
+newlib-exp.txt:	Total Energy:	1.86661 J
+newlib-exp.txt:	Average Power:	18.6337 W
+newlib-exp.txt:	Time:	0.100174 sec
+newlib-exp.txt:PARENT: Child's exit code is: 0
+newlib-exp.txt:
+newlib-exp.txt:	Total Energy:	1.86482 J
+newlib-exp.txt:	Average Power:	18.616 W
+newlib-exp.txt:	Time:	0.100173 sec
+newlib-exp.txt:PARENT: Child's exit code is: 0
+newlib-exp.txt:
+newlib-exp.txt:	Total Energy:	1.86426 J
+newlib-exp.txt:	Average Power:	18.6109 W
+newlib-exp.txt:	Time:	0.10017 sec
+newlib-exp.txt:PARENT: Child's exit code is: 0
+newlib-exp.txt:
+newlib-exp.txt:	Total Energy:	1.86714 J
+newlib-exp.txt:	Average Power:	18.6395 W
+newlib-exp.txt:	Time:	0.100171 sec
+newlib-log.txt:PARENT: Child's exit code is: 0
+newlib-log.txt:
+newlib-log.txt:	Total Energy:	1.86612 J
+newlib-log.txt:	Average Power:	18.6293 W
+newlib-log.txt:	Time:	0.100171 sec
+newlib-log.txt:PARENT: Child's exit code is: 0
+newlib-log.txt:
+newlib-log.txt:	Total Energy:	1.86775 J
+newlib-log.txt:	Average Power:	18.6451 W
+newlib-log.txt:	Time:	0.100174 sec
+newlib-log.txt:PARENT: Child's exit code is: 0
+newlib-log.txt:
+newlib-log.txt:	Total Energy:	1.87842 J
+newlib-log.txt:	Average Power:	18.7521 W
+newlib-log.txt:	Time:	0.100171 sec
+newlib-log.txt:PARENT: Child's exit code is: 0
+newlib-log.txt:
+newlib-log.txt:	Total Energy:	1.86389 J
+newlib-log.txt:	Average Power:	18.6065 W
+newlib-log.txt:	Time:	0.100174 sec
+newlib-log.txt:PARENT: Child's exit code is: 0
+newlib-log.txt:
+newlib-log.txt:	Total Energy:	1.86459 J
+newlib-log.txt:	Average Power:	18.6139 W
+newlib-log.txt:	Time:	0.100172 sec
+newlib-mod.txt:PARENT: Child's exit code is: 0
+newlib-mod.txt:
+newlib-mod.txt:	Total Energy:	1.86621 J
+newlib-mod.txt:	Average Power:	18.6304 W
+newlib-mod.txt:	Time:	0.10017 sec
+newlib-mod.txt:PARENT: Child's exit code is: 0
+newlib-mod.txt:
+newlib-mod.txt:	Total Energy:	1.84067 J
+newlib-mod.txt:	Average Power:	18.3756 W
+newlib-mod.txt:	Time:	0.100169 sec
+newlib-mod.txt:PARENT: Child's exit code is: 0
+newlib-mod.txt:
+newlib-mod.txt:	Total Energy:	1.86446 J
+newlib-mod.txt:	Average Power:	18.6124 W
+newlib-mod.txt:	Time:	0.100173 sec
+newlib-mod.txt:PARENT: Child's exit code is: 0
+newlib-mod.txt:
+newlib-mod.txt:	Total Energy:	1.86397 J
+newlib-mod.txt:	Average Power:	18.6075 W
+newlib-mod.txt:	Time:	0.100173 sec
+newlib-mod.txt:PARENT: Child's exit code is: 0
+newlib-mod.txt:
+newlib-mod.txt:	Total Energy:	1.86557 J
+newlib-mod.txt:	Average Power:	18.6231 W
+newlib-mod.txt:	Time:	0.100175 sec
+newlib-sqrt.txt:PARENT: Child's exit code is: 0
+newlib-sqrt.txt:
+newlib-sqrt.txt:	Total Energy:	1.88667 J
+newlib-sqrt.txt:	Average Power:	18.8345 W
+newlib-sqrt.txt:	Time:	0.100171 sec
+newlib-sqrt.txt:PARENT: Child's exit code is: 0
+newlib-sqrt.txt:
+newlib-sqrt.txt:	Total Energy:	1.88103 J
+newlib-sqrt.txt:	Average Power:	18.778 W
+newlib-sqrt.txt:	Time:	0.100172 sec
+newlib-sqrt.txt:PARENT: Child's exit code is: 0
+newlib-sqrt.txt:
+newlib-sqrt.txt:	Total Energy:	1.88602 J
+newlib-sqrt.txt:	Average Power:	18.8268 W
+newlib-sqrt.txt:	Time:	0.100177 sec
+newlib-sqrt.txt:PARENT: Child's exit code is: 0
+newlib-sqrt.txt:
+newlib-sqrt.txt:	Total Energy:	1.88528 J
+newlib-sqrt.txt:	Average Power:	18.8201 W
+newlib-sqrt.txt:	Time:	0.100174 sec
+newlib-sqrt.txt:PARENT: Child's exit code is: 0
+newlib-sqrt.txt:
+newlib-sqrt.txt:	Total Energy:	1.88504 J
+newlib-sqrt.txt:	Average Power:	18.818 W
+newlib-sqrt.txt:	Time:	0.100172 sec
+ns.txt:PARENT: Child's exit code is: 0
+ns.txt:
+ns.txt:	Total Energy:	1.93265 J
+ns.txt:	Average Power:	19.2933 W
+ns.txt:	Time:	0.100172 sec
+ns.txt:PARENT: Child's exit code is: 0
+ns.txt:
+ns.txt:	Total Energy:	1.93489 J
+ns.txt:	Average Power:	19.3155 W
+ns.txt:	Time:	0.100173 sec
+ns.txt:PARENT: Child's exit code is: 0
+ns.txt:
+ns.txt:	Total Energy:	1.93228 J
+ns.txt:	Average Power:	19.29 W
+ns.txt:	Time:	0.10017 sec
+ns.txt:PARENT: Child's exit code is: 0
+ns.txt:
+ns.txt:	Total Energy:	1.91254 J
+ns.txt:	Average Power:	19.0927 W
+ns.txt:	Time:	0.100171 sec
+ns.txt:PARENT: Child's exit code is: 0
+ns.txt:
+ns.txt:	Total Energy:	1.93355 J
+ns.txt:	Average Power:	19.3023 W
+ns.txt:	Time:	0.100172 sec
+nsichneu.txt:PARENT: Child's exit code is: 0
+nsichneu.txt:
+nsichneu.txt:	Total Energy:	1.89894 J
+nsichneu.txt:	Average Power:	18.9568 W
+nsichneu.txt:	Time:	0.100172 sec
+nsichneu.txt:PARENT: Child's exit code is: 0
+nsichneu.txt:
+nsichneu.txt:	Total Energy:	1.89197 J
+nsichneu.txt:	Average Power:	18.8866 W
+nsichneu.txt:	Time:	0.100175 sec
+nsichneu.txt:PARENT: Child's exit code is: 0
+nsichneu.txt:
+nsichneu.txt:	Total Energy:	1.90356 J
+nsichneu.txt:	Average Power:	19.0033 W
+nsichneu.txt:	Time:	0.10017 sec
+nsichneu.txt:PARENT: Child's exit code is: 0
+nsichneu.txt:
+nsichneu.txt:	Total Energy:	1.8949 J
+nsichneu.txt:	Average Power:	18.9166 W
+nsichneu.txt:	Time:	0.100171 sec
+nsichneu.txt:PARENT: Child's exit code is: 0
+nsichneu.txt:
+nsichneu.txt:	Total Energy:	1.89642 J
+nsichneu.txt:	Average Power:	18.9315 W
+nsichneu.txt:	Time:	0.100173 sec
+picojpeg.txt:PARENT: Child's exit code is: 0
+picojpeg.txt:
+picojpeg.txt:	Total Energy:	26.0443 J
+picojpeg.txt:	Average Power:	26.0229 W
+picojpeg.txt:	Time:	1.00082 sec
+picojpeg.txt:PARENT: Child's exit code is: 0
+picojpeg.txt:
+picojpeg.txt:	Total Energy:	26.0349 J
+picojpeg.txt:	Average Power:	26.014 W
+picojpeg.txt:	Time:	1.0008 sec
+picojpeg.txt:PARENT: Child's exit code is: 0
+picojpeg.txt:
+picojpeg.txt:	Total Energy:	26.0378 J
+picojpeg.txt:	Average Power:	26.0167 W
+picojpeg.txt:	Time:	1.00081 sec
+picojpeg.txt:PARENT: Child's exit code is: 0
+picojpeg.txt:
+picojpeg.txt:	Total Energy:	26.076 J
+picojpeg.txt:	Average Power:	26.0549 W
+picojpeg.txt:	Time:	1.00081 sec
+picojpeg.txt:PARENT: Child's exit code is: 0
+picojpeg.txt:
+picojpeg.txt:	Total Energy:	26.0684 J
+picojpeg.txt:	Average Power:	26.0475 W
+picojpeg.txt:	Time:	1.0008 sec
+prime.txt:PARENT: Child's exit code is: 0
+prime.txt:
+prime.txt:	Total Energy:	2.0314 J
+prime.txt:	Average Power:	20.2785 W
+prime.txt:	Time:	0.100175 sec
+prime.txt:PARENT: Child's exit code is: 0
+prime.txt:
+prime.txt:	Total Energy:	2.02953 J
+prime.txt:	Average Power:	20.261 W
+prime.txt:	Time:	0.100169 sec
+prime.txt:PARENT: Child's exit code is: 0
+prime.txt:
+prime.txt:	Total Energy:	2.03169 J
+prime.txt:	Average Power:	20.282 W
+prime.txt:	Time:	0.100172 sec
+prime.txt:PARENT: Child's exit code is: 0
+prime.txt:
+prime.txt:	Total Energy:	2.03027 J
+prime.txt:	Average Power:	20.2679 W
+prime.txt:	Time:	0.100172 sec
+prime.txt:PARENT: Child's exit code is: 0
+prime.txt:
+prime.txt:	Total Energy:	2.03366 J
+prime.txt:	Average Power:	20.3015 W
+prime.txt:	Time:	0.100173 sec
+qrduino.txt:PARENT: Child's exit code is: 0
+qrduino.txt:
+qrduino.txt:	Total Energy:	33.5301 J
+qrduino.txt:	Average Power:	25.7724 W
+qrduino.txt:	Time:	1.30101 sec
+qrduino.txt:PARENT: Child's exit code is: 0
+qrduino.txt:
+qrduino.txt:	Total Energy:	33.5384 J
+qrduino.txt:	Average Power:	25.7789 W
+qrduino.txt:	Time:	1.301 sec
+qrduino.txt:PARENT: Child's exit code is: 0
+qrduino.txt:
+qrduino.txt:	Total Energy:	33.5514 J
+qrduino.txt:	Average Power:	25.7896 W
+qrduino.txt:	Time:	1.30097 sec
+qrduino.txt:PARENT: Child's exit code is: 0
+qrduino.txt:
+qrduino.txt:	Total Energy:	33.5705 J
+qrduino.txt:	Average Power:	25.8035 W
+qrduino.txt:	Time:	1.30101 sec
+qrduino.txt:PARENT: Child's exit code is: 0
+qrduino.txt:
+qrduino.txt:	Total Energy:	33.5923 J
+qrduino.txt:	Average Power:	25.8203 W
+qrduino.txt:	Time:	1.301 sec
+qsort.txt:PARENT: Child's exit code is: 0
+qsort.txt:
+qsort.txt:	Total Energy:	1.86655 J
+qsort.txt:	Average Power:	18.634 W
+qsort.txt:	Time:	0.100169 sec
+qsort.txt:PARENT: Child's exit code is: 0
+qsort.txt:
+qsort.txt:	Total Energy:	1.86739 J
+qsort.txt:	Average Power:	18.642 W
+qsort.txt:	Time:	0.100171 sec
+qsort.txt:PARENT: Child's exit code is: 0
+qsort.txt:
+qsort.txt:	Total Energy:	1.86458 J
+qsort.txt:	Average Power:	18.6138 W
+qsort.txt:	Time:	0.100172 sec
+qsort.txt:PARENT: Child's exit code is: 0
+qsort.txt:
+qsort.txt:	Total Energy:	1.84579 J
+qsort.txt:	Average Power:	18.4266 W
+qsort.txt:	Time:	0.10017 sec
+qsort.txt:PARENT: Child's exit code is: 0
+qsort.txt:
+qsort.txt:	Total Energy:	1.86568 J
+qsort.txt:	Average Power:	18.6251 W
+qsort.txt:	Time:	0.10017 sec
+qurt.txt:PARENT: Child's exit code is: 0
+qurt.txt:
+qurt.txt:	Total Energy:	1.86957 J
+qurt.txt:	Average Power:	18.6632 W
+qurt.txt:	Time:	0.100174 sec
+qurt.txt:PARENT: Child's exit code is: 0
+qurt.txt:
+qurt.txt:	Total Energy:	1.87079 J
+qurt.txt:	Average Power:	18.6758 W
+qurt.txt:	Time:	0.100172 sec
+qurt.txt:PARENT: Child's exit code is: 0
+qurt.txt:
+qurt.txt:	Total Energy:	1.85013 J
+qurt.txt:	Average Power:	18.4697 W
+qurt.txt:	Time:	0.100171 sec
+qurt.txt:PARENT: Child's exit code is: 0
+qurt.txt:
+qurt.txt:	Total Energy:	1.87439 J
+qurt.txt:	Average Power:	18.7119 W
+qurt.txt:	Time:	0.100171 sec
+qurt.txt:PARENT: Child's exit code is: 0
+qurt.txt:
+qurt.txt:	Total Energy:	1.86919 J
+qurt.txt:	Average Power:	18.6598 W
+qurt.txt:	Time:	0.100172 sec
+recursion.txt:PARENT: Child's exit code is: 0
+recursion.txt:
+recursion.txt:	Total Energy:	1.87784 J
+recursion.txt:	Average Power:	18.7458 W
+recursion.txt:	Time:	0.100174 sec
+recursion.txt:PARENT: Child's exit code is: 0
+recursion.txt:
+recursion.txt:	Total Energy:	1.87782 J
+recursion.txt:	Average Power:	18.7454 W
+recursion.txt:	Time:	0.100175 sec
+recursion.txt:PARENT: Child's exit code is: 0
+recursion.txt:
+recursion.txt:	Total Energy:	1.8779 J
+recursion.txt:	Average Power:	18.7473 W
+recursion.txt:	Time:	0.100169 sec
+recursion.txt:PARENT: Child's exit code is: 0
+recursion.txt:
+recursion.txt:	Total Energy:	1.87671 J
+recursion.txt:	Average Power:	18.7341 W
+recursion.txt:	Time:	0.100176 sec
+recursion.txt:PARENT: Child's exit code is: 0
+recursion.txt:
+recursion.txt:	Total Energy:	1.87753 J
+recursion.txt:	Average Power:	18.7429 W
+recursion.txt:	Time:	0.100173 sec
+res.txt:0.00user 0.00system 0:00.00elapsed 100%CPU (0avgtext+0avgdata 1184maxresident)k
+res.txt:0inputs+0outputs (0major+52minor)pagefaults 0swaps
+results.txt:PARENT: Child's exit code is: 0
+results.txt:
+results.txt:	Total Energy:	1.86377 J
+results.txt:	Average Power:	18.6068 W
+results.txt:	Time:	0.100166 sec
+results.txt:PARENT: Child's exit code is: 0
+results.txt:
+results.txt:	Total Energy:	1.86505 J
+results.txt:	Average Power:	18.6192 W
+results.txt:	Time:	0.100168 sec
+results.txt:PARENT: Child's exit code is: 0
+results.txt:
+results.txt:	Total Energy:	1.86409 J
+results.txt:	Average Power:	18.6083 W
+results.txt:	Time:	0.100175 sec
+results.txt:PARENT: Child's exit code is: 0
+results.txt:
+results.txt:	Total Energy:	1.86284 J
+results.txt:	Average Power:	18.596 W
+results.txt:	Time:	0.100174 sec
+results.txt:PARENT: Child's exit code is: 0
+results.txt:
+results.txt:	Total Energy:	1.86415 J
+results.txt:	Average Power:	18.6086 W
+results.txt:	Time:	0.100177 sec
+rijndael.txt:PARENT: Child's exit code is: 0
+rijndael.txt:
+rijndael.txt:	Total Energy:	19.2441 J
+rijndael.txt:	Average Power:	27.4683 W
+rijndael.txt:	Time:	0.700591 sec
+rijndael.txt:PARENT: Child's exit code is: 0
+rijndael.txt:
+rijndael.txt:	Total Energy:	19.2475 J
+rijndael.txt:	Average Power:	27.473 W
+rijndael.txt:	Time:	0.700595 sec
+rijndael.txt:PARENT: Child's exit code is: 0
+rijndael.txt:
+rijndael.txt:	Total Energy:	19.2466 J
+rijndael.txt:	Average Power:	27.4719 W
+rijndael.txt:	Time:	0.700592 sec
+rijndael.txt:PARENT: Child's exit code is: 0
+rijndael.txt:
+rijndael.txt:	Total Energy:	19.2608 J
+rijndael.txt:	Average Power:	27.4922 W
+rijndael.txt:	Time:	0.700592 sec
+rijndael.txt:PARENT: Child's exit code is: 0
+rijndael.txt:
+rijndael.txt:	Total Energy:	19.2585 J
+rijndael.txt:	Average Power:	27.4889 W
+rijndael.txt:	Time:	0.700592 sec
+select.txt:PARENT: Child's exit code is: 0
+select.txt:
+select.txt:	Total Energy:	1.86516 J
+select.txt:	Average Power:	18.6192 W
+select.txt:	Time:	0.100174 sec
+select.txt:PARENT: Child's exit code is: 0
+select.txt:
+select.txt:	Total Energy:	1.86163 J
+select.txt:	Average Power:	18.5844 W
+select.txt:	Time:	0.100172 sec
+select.txt:PARENT: Child's exit code is: 0
+select.txt:
+select.txt:	Total Energy:	1.86221 J
+select.txt:	Average Power:	18.5905 W
+select.txt:	Time:	0.10017 sec
+select.txt:PARENT: Child's exit code is: 0
+select.txt:
+select.txt:	Total Energy:	1.86148 J
+select.txt:	Average Power:	18.581 W
+select.txt:	Time:	0.100182 sec
+select.txt:PARENT: Child's exit code is: 0
+select.txt:
+select.txt:	Total Energy:	1.86427 J
+select.txt:	Average Power:	18.6105 W
+select.txt:	Time:	0.100173 sec
+sglib-arraybinsearch.txt:PARENT: Child's exit code is: 0
+sglib-arraybinsearch.txt:
+sglib-arraybinsearch.txt:	Total Energy:	1.95528 J
+sglib-arraybinsearch.txt:	Average Power:	19.519 W
+sglib-arraybinsearch.txt:	Time:	0.100173 sec
+sglib-arraybinsearch.txt:PARENT: Child's exit code is: 0
+sglib-arraybinsearch.txt:
+sglib-arraybinsearch.txt:	Total Energy:	1.95827 J
+sglib-arraybinsearch.txt:	Average Power:	19.5489 W
+sglib-arraybinsearch.txt:	Time:	0.100173 sec
+sglib-arraybinsearch.txt:PARENT: Child's exit code is: 0
+sglib-arraybinsearch.txt:
+sglib-arraybinsearch.txt:	Total Energy:	1.95605 J
+sglib-arraybinsearch.txt:	Average Power:	19.5274 W
+sglib-arraybinsearch.txt:	Time:	0.10017 sec
+sglib-arraybinsearch.txt:PARENT: Child's exit code is: 0
+sglib-arraybinsearch.txt:
+sglib-arraybinsearch.txt:	Total Energy:	1.95573 J
+sglib-arraybinsearch.txt:	Average Power:	19.5238 W
+sglib-arraybinsearch.txt:	Time:	0.100172 sec
+sglib-arraybinsearch.txt:PARENT: Child's exit code is: 0
+sglib-arraybinsearch.txt:
+sglib-arraybinsearch.txt:	Total Energy:	1.93187 J
+sglib-arraybinsearch.txt:	Average Power:	19.2857 W
+sglib-arraybinsearch.txt:	Time:	0.100171 sec
+sglib-arrayheapsort.txt:PARENT: Child's exit code is: 0
+sglib-arrayheapsort.txt:
+sglib-arrayheapsort.txt:	Total Energy:	2.0692 J
+sglib-arrayheapsort.txt:	Average Power:	20.6567 W
+sglib-arrayheapsort.txt:	Time:	0.100171 sec
+sglib-arrayheapsort.txt:PARENT: Child's exit code is: 0
+sglib-arrayheapsort.txt:
+sglib-arrayheapsort.txt:	Total Energy:	2.07391 J
+sglib-arrayheapsort.txt:	Average Power:	20.7033 W
+sglib-arrayheapsort.txt:	Time:	0.100173 sec
+sglib-arrayheapsort.txt:PARENT: Child's exit code is: 0
+sglib-arrayheapsort.txt:
+sglib-arrayheapsort.txt:	Total Energy:	2.06989 J
+sglib-arrayheapsort.txt:	Average Power:	20.6633 W
+sglib-arrayheapsort.txt:	Time:	0.100172 sec
+sglib-arrayheapsort.txt:PARENT: Child's exit code is: 0
+sglib-arrayheapsort.txt:
+sglib-arrayheapsort.txt:	Total Energy:	2.06822 J
+sglib-arrayheapsort.txt:	Average Power:	20.6467 W
+sglib-arrayheapsort.txt:	Time:	0.100172 sec
+sglib-arrayheapsort.txt:PARENT: Child's exit code is: 0
+sglib-arrayheapsort.txt:
+sglib-arrayheapsort.txt:	Total Energy:	2.06819 J
+sglib-arrayheapsort.txt:	Average Power:	20.6464 W
+sglib-arrayheapsort.txt:	Time:	0.100172 sec
+sglib-arrayquicksort.txt:PARENT: Child's exit code is: 0
+sglib-arrayquicksort.txt:
+sglib-arrayquicksort.txt:	Total Energy:	1.95224 J
+sglib-arrayquicksort.txt:	Average Power:	19.4891 W
+sglib-arrayquicksort.txt:	Time:	0.100171 sec
+sglib-arrayquicksort.txt:PARENT: Child's exit code is: 0
+sglib-arrayquicksort.txt:
+sglib-arrayquicksort.txt:	Total Energy:	1.95108 J
+sglib-arrayquicksort.txt:	Average Power:	19.4773 W
+sglib-arrayquicksort.txt:	Time:	0.100172 sec
+sglib-arrayquicksort.txt:PARENT: Child's exit code is: 0
+sglib-arrayquicksort.txt:
+sglib-arrayquicksort.txt:	Total Energy:	1.95668 J
+sglib-arrayquicksort.txt:	Average Power:	19.5332 W
+sglib-arrayquicksort.txt:	Time:	0.100172 sec
+sglib-arrayquicksort.txt:PARENT: Child's exit code is: 0
+sglib-arrayquicksort.txt:
+sglib-arrayquicksort.txt:	Total Energy:	1.95639 J
+sglib-arrayquicksort.txt:	Average Power:	19.5301 W
+sglib-arrayquicksort.txt:	Time:	0.100173 sec
+sglib-arrayquicksort.txt:PARENT: Child's exit code is: 0
+sglib-arrayquicksort.txt:
+sglib-arrayquicksort.txt:	Total Energy:	1.95198 J
+sglib-arrayquicksort.txt:	Average Power:	19.4867 W
+sglib-arrayquicksort.txt:	Time:	0.10017 sec
+sglib-arraysort.txt:PARENT: Child's exit code is: 0
+sglib-arraysort.txt:
+sglib-arraysort.txt:	Total Energy:	1.86382 J
+sglib-arraysort.txt:	Average Power:	18.6056 W
+sglib-arraysort.txt:	Time:	0.100175 sec
+sglib-arraysort.txt:PARENT: Child's exit code is: 0
+sglib-arraysort.txt:
+sglib-arraysort.txt:	Total Energy:	1.86107 J
+sglib-arraysort.txt:	Average Power:	18.5791 W
+sglib-arraysort.txt:	Time:	0.10017 sec
+sglib-arraysort.txt:PARENT: Child's exit code is: 0
+sglib-arraysort.txt:
+sglib-arraysort.txt:	Total Energy:	1.86313 J
+sglib-arraysort.txt:	Average Power:	18.5989 W
+sglib-arraysort.txt:	Time:	0.100174 sec
+sglib-arraysort.txt:PARENT: Child's exit code is: 0
+sglib-arraysort.txt:
+sglib-arraysort.txt:	Total Energy:	1.84129 J
+sglib-arraysort.txt:	Average Power:	18.381 W
+sglib-arraysort.txt:	Time:	0.100174 sec
+sglib-arraysort.txt:PARENT: Child's exit code is: 0
+sglib-arraysort.txt:
+sglib-arraysort.txt:	Total Energy:	1.86673 J
+sglib-arraysort.txt:	Average Power:	18.636 W
+sglib-arraysort.txt:	Time:	0.100168 sec
+sglib-dllist.txt:PARENT: Child's exit code is: 0
+sglib-dllist.txt:
+sglib-dllist.txt:	Total Energy:	2.16652 J
+sglib-dllist.txt:	Average Power:	21.6284 W
+sglib-dllist.txt:	Time:	0.10017 sec
+sglib-dllist.txt:PARENT: Child's exit code is: 0
+sglib-dllist.txt:
+sglib-dllist.txt:	Total Energy:	2.16565 J
+sglib-dllist.txt:	Average Power:	21.6191 W
+sglib-dllist.txt:	Time:	0.100173 sec
+sglib-dllist.txt:PARENT: Child's exit code is: 0
+sglib-dllist.txt:
+sglib-dllist.txt:	Total Energy:	2.16383 J
+sglib-dllist.txt:	Average Power:	21.6014 W
+sglib-dllist.txt:	Time:	0.100171 sec
+sglib-dllist.txt:PARENT: Child's exit code is: 0
+sglib-dllist.txt:
+sglib-dllist.txt:	Total Energy:	2.16216 J
+sglib-dllist.txt:	Average Power:	21.5853 W
+sglib-dllist.txt:	Time:	0.100168 sec
+sglib-dllist.txt:PARENT: Child's exit code is: 0
+sglib-dllist.txt:
+sglib-dllist.txt:	Total Energy:	2.1647 J
+sglib-dllist.txt:	Average Power:	21.6101 W
+sglib-dllist.txt:	Time:	0.100171 sec
+sglib-hashtable.txt:PARENT: Child's exit code is: 0
+sglib-hashtable.txt:
+sglib-hashtable.txt:	Total Energy:	2.05519 J
+sglib-hashtable.txt:	Average Power:	20.5164 W
+sglib-hashtable.txt:	Time:	0.100173 sec
+sglib-hashtable.txt:PARENT: Child's exit code is: 0
+sglib-hashtable.txt:
+sglib-hashtable.txt:	Total Energy:	2.0576 J
+sglib-hashtable.txt:	Average Power:	20.5411 W
+sglib-hashtable.txt:	Time:	0.10017 sec
+sglib-hashtable.txt:PARENT: Child's exit code is: 0
+sglib-hashtable.txt:
+sglib-hashtable.txt:	Total Energy:	2.0547 J
+sglib-hashtable.txt:	Average Power:	20.5117 W
+sglib-hashtable.txt:	Time:	0.100172 sec
+sglib-hashtable.txt:PARENT: Child's exit code is: 0
+sglib-hashtable.txt:
+sglib-hashtable.txt:	Total Energy:	2.05875 J
+sglib-hashtable.txt:	Average Power:	20.5519 W
+sglib-hashtable.txt:	Time:	0.100173 sec
+sglib-hashtable.txt:PARENT: Child's exit code is: 0
+sglib-hashtable.txt:
+sglib-hashtable.txt:	Total Energy:	2.06073 J
+sglib-hashtable.txt:	Average Power:	20.5717 W
+sglib-hashtable.txt:	Time:	0.100173 sec
+sglib-listinsertsort.txt:PARENT: Child's exit code is: 0
+sglib-listinsertsort.txt:
+sglib-listinsertsort.txt:	Total Energy:	2.25534 J
+sglib-listinsertsort.txt:	Average Power:	22.5147 W
+sglib-listinsertsort.txt:	Time:	0.100172 sec
+sglib-listinsertsort.txt:PARENT: Child's exit code is: 0
+sglib-listinsertsort.txt:
+sglib-listinsertsort.txt:	Total Energy:	2.28009 J
+sglib-listinsertsort.txt:	Average Power:	22.7622 W
+sglib-listinsertsort.txt:	Time:	0.10017 sec
+sglib-listinsertsort.txt:PARENT: Child's exit code is: 0
+sglib-listinsertsort.txt:
+sglib-listinsertsort.txt:	Total Energy:	2.27864 J
+sglib-listinsertsort.txt:	Average Power:	22.7477 W
+sglib-listinsertsort.txt:	Time:	0.10017 sec
+sglib-listinsertsort.txt:PARENT: Child's exit code is: 0
+sglib-listinsertsort.txt:
+sglib-listinsertsort.txt:	Total Energy:	2.27968 J
+sglib-listinsertsort.txt:	Average Power:	22.7576 W
+sglib-listinsertsort.txt:	Time:	0.100172 sec
+sglib-listinsertsort.txt:PARENT: Child's exit code is: 0
+sglib-listinsertsort.txt:
+sglib-listinsertsort.txt:	Total Energy:	2.25546 J
+sglib-listinsertsort.txt:	Average Power:	22.5166 W
+sglib-listinsertsort.txt:	Time:	0.100169 sec
+sglib-listsort.txt:PARENT: Child's exit code is: 0
+sglib-listsort.txt:
+sglib-listsort.txt:	Total Energy:	2.07932 J
+sglib-listsort.txt:	Average Power:	20.7579 W
+sglib-listsort.txt:	Time:	0.10017 sec
+sglib-listsort.txt:PARENT: Child's exit code is: 0
+sglib-listsort.txt:
+sglib-listsort.txt:	Total Energy:	2.10027 J
+sglib-listsort.txt:	Average Power:	20.9666 W
+sglib-listsort.txt:	Time:	0.100172 sec
+sglib-listsort.txt:PARENT: Child's exit code is: 0
+sglib-listsort.txt:
+sglib-listsort.txt:	Total Energy:	2.10516 J
+sglib-listsort.txt:	Average Power:	21.0155 W
+sglib-listsort.txt:	Time:	0.100172 sec
+sglib-listsort.txt:PARENT: Child's exit code is: 0
+sglib-listsort.txt:
+sglib-listsort.txt:	Total Energy:	2.1039 J
+sglib-listsort.txt:	Average Power:	21.0024 W
+sglib-listsort.txt:	Time:	0.100174 sec
+sglib-listsort.txt:PARENT: Child's exit code is: 0
+sglib-listsort.txt:
+sglib-listsort.txt:	Total Energy:	2.10551 J
+sglib-listsort.txt:	Average Power:	21.0186 W
+sglib-listsort.txt:	Time:	0.100174 sec
+sglib-queue.txt:PARENT: Child's exit code is: 0
+sglib-queue.txt:
+sglib-queue.txt:	Total Energy:	2.09761 J
+sglib-queue.txt:	Average Power:	20.9401 W
+sglib-queue.txt:	Time:	0.100172 sec
+sglib-queue.txt:PARENT: Child's exit code is: 0
+sglib-queue.txt:
+sglib-queue.txt:	Total Energy:	2.10008 J
+sglib-queue.txt:	Average Power:	20.9643 W
+sglib-queue.txt:	Time:	0.100174 sec
+sglib-queue.txt:PARENT: Child's exit code is: 0
+sglib-queue.txt:
+sglib-queue.txt:	Total Energy:	2.07826 J
+sglib-queue.txt:	Average Power:	20.7471 W
+sglib-queue.txt:	Time:	0.100171 sec
+sglib-queue.txt:PARENT: Child's exit code is: 0
+sglib-queue.txt:
+sglib-queue.txt:	Total Energy:	2.07605 J
+sglib-queue.txt:	Average Power:	20.7244 W
+sglib-queue.txt:	Time:	0.100174 sec
+sglib-queue.txt:PARENT: Child's exit code is: 0
+sglib-queue.txt:
+sglib-queue.txt:	Total Energy:	2.09805 J
+sglib-queue.txt:	Average Power:	20.9445 W
+sglib-queue.txt:	Time:	0.100172 sec
+sglib-rbtree.txt:PARENT: Child's exit code is: 0
+sglib-rbtree.txt:
+sglib-rbtree.txt:	Total Energy:	2.45497 J
+sglib-rbtree.txt:	Average Power:	24.5088 W
+sglib-rbtree.txt:	Time:	0.100167 sec
+sglib-rbtree.txt:PARENT: Child's exit code is: 0
+sglib-rbtree.txt:
+sglib-rbtree.txt:	Total Energy:	2.44395 J
+sglib-rbtree.txt:	Average Power:	24.399 W
+sglib-rbtree.txt:	Time:	0.100166 sec
+sglib-rbtree.txt:PARENT: Child's exit code is: 0
+sglib-rbtree.txt:
+sglib-rbtree.txt:	Total Energy:	2.44525 J
+sglib-rbtree.txt:	Average Power:	24.411 W
+sglib-rbtree.txt:	Time:	0.10017 sec
+sglib-rbtree.txt:PARENT: Child's exit code is: 0
+sglib-rbtree.txt:
+sglib-rbtree.txt:	Total Energy:	2.44991 J
+sglib-rbtree.txt:	Average Power:	24.4577 W
+sglib-rbtree.txt:	Time:	0.100169 sec
+sglib-rbtree.txt:PARENT: Child's exit code is: 0
+sglib-rbtree.txt:
+sglib-rbtree.txt:	Total Energy:	2.42201 J
+sglib-rbtree.txt:	Average Power:	24.18 W
+sglib-rbtree.txt:	Time:	0.100166 sec
+slre.txt:PARENT: Child's exit code is: 0
+slre.txt:
+slre.txt:	Total Energy:	2.08768 J
+slre.txt:	Average Power:	20.8413 W
+slre.txt:	Time:	0.10017 sec
+slre.txt:PARENT: Child's exit code is: 0
+slre.txt:
+slre.txt:	Total Energy:	2.10847 J
+slre.txt:	Average Power:	21.0488 W
+slre.txt:	Time:	0.100171 sec
+slre.txt:PARENT: Child's exit code is: 0
+slre.txt:
+slre.txt:	Total Energy:	2.10945 J
+slre.txt:	Average Power:	21.0581 W
+slre.txt:	Time:	0.100173 sec
+slre.txt:PARENT: Child's exit code is: 0
+slre.txt:
+slre.txt:	Total Energy:	2.11023 J
+slre.txt:	Average Power:	21.0659 W
+slre.txt:	Time:	0.100173 sec
+slre.txt:PARENT: Child's exit code is: 0
+slre.txt:
+slre.txt:	Total Energy:	2.11316 J
+slre.txt:	Average Power:	21.0951 W
+slre.txt:	Time:	0.100173 sec
+sqrt.txt:PARENT: Child's exit code is: 0
+sqrt.txt:
+sqrt.txt:	Total Energy:	4.43382 J
+sqrt.txt:	Average Power:	22.1399 W
+sqrt.txt:	Time:	0.200264 sec
+sqrt.txt:PARENT: Child's exit code is: 0
+sqrt.txt:
+sqrt.txt:	Total Energy:	4.44699 J
+sqrt.txt:	Average Power:	22.2055 W
+sqrt.txt:	Time:	0.200265 sec
+sqrt.txt:PARENT: Child's exit code is: 0
+sqrt.txt:
+sqrt.txt:	Total Energy:	4.43394 J
+sqrt.txt:	Average Power:	22.1406 W
+sqrt.txt:	Time:	0.200263 sec
+sqrt.txt:PARENT: Child's exit code is: 0
+sqrt.txt:
+sqrt.txt:	Total Energy:	4.44792 J
+sqrt.txt:	Average Power:	22.2118 W
+sqrt.txt:	Time:	0.20025 sec
+sqrt.txt:PARENT: Child's exit code is: 0
+sqrt.txt:
+sqrt.txt:	Total Energy:	4.43422 J
+sqrt.txt:	Average Power:	22.1422 W
+sqrt.txt:	Time:	0.200261 sec
+st.txt:PARENT: Child's exit code is: 0
+st.txt:
+st.txt:	Total Energy:	1.99605 J
+st.txt:	Average Power:	19.9262 W
+st.txt:	Time:	0.100172 sec
+st.txt:PARENT: Child's exit code is: 0
+st.txt:
+st.txt:	Total Energy:	1.99954 J
+st.txt:	Average Power:	19.9615 W
+st.txt:	Time:	0.10017 sec
+st.txt:PARENT: Child's exit code is: 0
+st.txt:
+st.txt:	Total Energy:	1.97476 J
+st.txt:	Average Power:	19.7137 W
+st.txt:	Time:	0.100172 sec
+st.txt:PARENT: Child's exit code is: 0
+st.txt:
+st.txt:	Total Energy:	2.00105 J
+st.txt:	Average Power:	19.9762 W
+st.txt:	Time:	0.100172 sec
+st.txt:PARENT: Child's exit code is: 0
+st.txt:
+st.txt:	Total Energy:	1.99605 J
+st.txt:	Average Power:	19.9262 W
+st.txt:	Time:	0.100172 sec
+statemate.txt:PARENT: Child's exit code is: 0
+statemate.txt:
+statemate.txt:	Total Energy:	1.86911 J
+statemate.txt:	Average Power:	18.6583 W
+statemate.txt:	Time:	0.100176 sec
+statemate.txt:PARENT: Child's exit code is: 0
+statemate.txt:
+statemate.txt:	Total Energy:	1.87326 J
+statemate.txt:	Average Power:	18.7014 W
+statemate.txt:	Time:	0.100167 sec
+statemate.txt:PARENT: Child's exit code is: 0
+statemate.txt:
+statemate.txt:	Total Energy:	1.87372 J
+statemate.txt:	Average Power:	18.7044 W
+statemate.txt:	Time:	0.100175 sec
+statemate.txt:PARENT: Child's exit code is: 0
+statemate.txt:
+statemate.txt:	Total Energy:	1.87798 J
+statemate.txt:	Average Power:	18.7479 W
+statemate.txt:	Time:	0.10017 sec
+statemate.txt:PARENT: Child's exit code is: 0
+statemate.txt:
+statemate.txt:	Total Energy:	1.87022 J
+statemate.txt:	Average Power:	18.6703 W
+statemate.txt:	Time:	0.100171 sec
+stb_perlin.txt:PARENT: Child's exit code is: 0
+stb_perlin.txt:
+stb_perlin.txt:	Total Energy:	2.33435 J
+stb_perlin.txt:	Average Power:	23.3041 W
+stb_perlin.txt:	Time:	0.100169 sec
+stb_perlin.txt:PARENT: Child's exit code is: 0
+stb_perlin.txt:
+stb_perlin.txt:	Total Energy:	2.33122 J
+stb_perlin.txt:	Average Power:	23.2729 W
+stb_perlin.txt:	Time:	0.100169 sec
+stb_perlin.txt:PARENT: Child's exit code is: 0
+stb_perlin.txt:
+stb_perlin.txt:	Total Energy:	2.32832 J
+stb_perlin.txt:	Average Power:	23.2433 W
+stb_perlin.txt:	Time:	0.100172 sec
+stb_perlin.txt:PARENT: Child's exit code is: 0
+stb_perlin.txt:
+stb_perlin.txt:	Total Energy:	2.32619 J
+stb_perlin.txt:	Average Power:	23.2219 W
+stb_perlin.txt:	Time:	0.100172 sec
+stb_perlin.txt:PARENT: Child's exit code is: 0
+stb_perlin.txt:
+stb_perlin.txt:	Total Energy:	2.33047 J
+stb_perlin.txt:	Average Power:	23.2654 W
+stb_perlin.txt:	Time:	0.100169 sec
+stringsearch1.txt:PARENT: Child's exit code is: 0
+stringsearch1.txt:
+stringsearch1.txt:	Total Energy:	1.90244 J
+stringsearch1.txt:	Average Power:	18.9915 W
+stringsearch1.txt:	Time:	0.100173 sec
+stringsearch1.txt:PARENT: Child's exit code is: 0
+stringsearch1.txt:
+stringsearch1.txt:	Total Energy:	1.90198 J
+stringsearch1.txt:	Average Power:	18.9871 W
+stringsearch1.txt:	Time:	0.100172 sec
+stringsearch1.txt:PARENT: Child's exit code is: 0
+stringsearch1.txt:
+stringsearch1.txt:	Total Energy:	1.90157 J
+stringsearch1.txt:	Average Power:	18.9832 W
+stringsearch1.txt:	Time:	0.100171 sec
+stringsearch1.txt:PARENT: Child's exit code is: 0
+stringsearch1.txt:
+stringsearch1.txt:	Total Energy:	1.90117 J
+stringsearch1.txt:	Average Power:	18.9789 W
+stringsearch1.txt:	Time:	0.100173 sec
+stringsearch1.txt:PARENT: Child's exit code is: 0
+stringsearch1.txt:
+stringsearch1.txt:	Total Energy:	1.90154 J
+stringsearch1.txt:	Average Power:	18.9827 W
+stringsearch1.txt:	Time:	0.100172 sec
+strstr.txt:PARENT: Child's exit code is: 0
+strstr.txt:
+strstr.txt:	Total Energy:	1.86841 J
+strstr.txt:	Average Power:	18.6514 W
+strstr.txt:	Time:	0.100175 sec
+strstr.txt:PARENT: Child's exit code is: 0
+strstr.txt:
+strstr.txt:	Total Energy:	1.87019 J
+strstr.txt:	Average Power:	18.6689 W
+strstr.txt:	Time:	0.100177 sec
+strstr.txt:PARENT: Child's exit code is: 0
+strstr.txt:
+strstr.txt:	Total Energy:	1.87001 J
+strstr.txt:	Average Power:	18.668 W
+strstr.txt:	Time:	0.100172 sec
+strstr.txt:PARENT: Child's exit code is: 0
+strstr.txt:
+strstr.txt:	Total Energy:	1.8728 J
+strstr.txt:	Average Power:	18.6951 W
+strstr.txt:	Time:	0.100176 sec
+strstr.txt:PARENT: Child's exit code is: 0
+strstr.txt:
+strstr.txt:	Total Energy:	1.8741 J
+strstr.txt:	Average Power:	18.7081 W
+strstr.txt:	Time:	0.100176 sec
+tarai.txt:PARENT: Child's exit code is: 0
+tarai.txt:
+tarai.txt:	Total Energy:	1.8679 J
+tarai.txt:	Average Power:	18.6468 W
+tarai.txt:	Time:	0.100173 sec
+tarai.txt:PARENT: Child's exit code is: 0
+tarai.txt:
+tarai.txt:	Total Energy:	1.84334 J
+tarai.txt:	Average Power:	18.4017 W
+tarai.txt:	Time:	0.100172 sec
+tarai.txt:PARENT: Child's exit code is: 0
+tarai.txt:
+tarai.txt:	Total Energy:	1.86269 J
+tarai.txt:	Average Power:	18.5947 W
+tarai.txt:	Time:	0.100173 sec
+tarai.txt:PARENT: Child's exit code is: 0
+tarai.txt:
+tarai.txt:	Total Energy:	1.86591 J
+tarai.txt:	Average Power:	18.6268 W
+tarai.txt:	Time:	0.100173 sec
+tarai.txt:PARENT: Child's exit code is: 0
+tarai.txt:
+tarai.txt:	Total Energy:	1.86745 J
+tarai.txt:	Average Power:	18.6424 W
+tarai.txt:	Time:	0.100172 sec
+template.txt:PARENT: Child's exit code is: 0
+template.txt:
+template.txt:	Total Energy:	1.83868 J
+template.txt:	Average Power:	18.3551 W
+template.txt:	Time:	0.100173 sec
+template.txt:PARENT: Child's exit code is: 0
+template.txt:
+template.txt:	Total Energy:	1.86211 J
+template.txt:	Average Power:	18.5893 W
+template.txt:	Time:	0.100171 sec
+template.txt:PARENT: Child's exit code is: 0
+template.txt:
+template.txt:	Total Energy:	1.86284 J
+template.txt:	Average Power:	18.5968 W
+template.txt:	Time:	0.10017 sec
+template.txt:PARENT: Child's exit code is: 0
+template.txt:
+template.txt:	Total Energy:	1.8652 J
+template.txt:	Average Power:	18.6202 W
+template.txt:	Time:	0.100171 sec
+template.txt:PARENT: Child's exit code is: 0
+template.txt:
+template.txt:	Total Energy:	1.86595 J
+template.txt:	Average Power:	18.6273 W
+template.txt:	Time:	0.100173 sec
+trio-snprintf.txt:PARENT: Child's exit code is: 0
+trio-snprintf.txt:
+trio-snprintf.txt:	Total Energy:	1.92001 J
+trio-snprintf.txt:	Average Power:	19.167 W
+trio-snprintf.txt:	Time:	0.100173 sec
+trio-snprintf.txt:PARENT: Child's exit code is: 0
+trio-snprintf.txt:
+trio-snprintf.txt:	Total Energy:	1.8904 J
+trio-snprintf.txt:	Average Power:	18.8721 W
+trio-snprintf.txt:	Time:	0.100169 sec
+trio-snprintf.txt:PARENT: Child's exit code is: 0
+trio-snprintf.txt:
+trio-snprintf.txt:	Total Energy:	1.91328 J
+trio-snprintf.txt:	Average Power:	19.1 W
+trio-snprintf.txt:	Time:	0.100172 sec
+trio-snprintf.txt:PARENT: Child's exit code is: 0
+trio-snprintf.txt:
+trio-snprintf.txt:	Total Energy:	1.90865 J
+trio-snprintf.txt:	Average Power:	19.0535 W
+trio-snprintf.txt:	Time:	0.100173 sec
+trio-snprintf.txt:PARENT: Child's exit code is: 0
+trio-snprintf.txt:
+trio-snprintf.txt:	Total Energy:	1.91167 J
+trio-snprintf.txt:	Average Power:	19.0831 W
+trio-snprintf.txt:	Time:	0.100176 sec
+trio-sscanf.txt:PARENT: Child's exit code is: 0
+trio-sscanf.txt:
+trio-sscanf.txt:	Total Energy:	1.92375 J
+trio-sscanf.txt:	Average Power:	19.2043 W
+trio-sscanf.txt:	Time:	0.100173 sec
+trio-sscanf.txt:PARENT: Child's exit code is: 0
+trio-sscanf.txt:
+trio-sscanf.txt:	Total Energy:	1.92087 J
+trio-sscanf.txt:	Average Power:	19.1757 W
+trio-sscanf.txt:	Time:	0.100172 sec
+trio-sscanf.txt:PARENT: Child's exit code is: 0
+trio-sscanf.txt:
+trio-sscanf.txt:	Total Energy:	1.92165 J
+trio-sscanf.txt:	Average Power:	19.1838 W
+trio-sscanf.txt:	Time:	0.10017 sec
+trio-sscanf.txt:PARENT: Child's exit code is: 0
+trio-sscanf.txt:
+trio-sscanf.txt:	Total Energy:	1.92278 J
+trio-sscanf.txt:	Average Power:	19.1945 W
+trio-sscanf.txt:	Time:	0.100173 sec
+trio-sscanf.txt:PARENT: Child's exit code is: 0
+trio-sscanf.txt:
+trio-sscanf.txt:	Total Energy:	1.9245 J
+trio-sscanf.txt:	Average Power:	19.212 W
+trio-sscanf.txt:	Time:	0.100172 sec
+trio.txt:PARENT: Child's exit code is: 0
+trio.txt:
+trio.txt:	Total Energy:	1.85962 J
+trio.txt:	Average Power:	18.5644 W
+trio.txt:	Time:	0.100171 sec
+trio.txt:PARENT: Child's exit code is: 0
+trio.txt:
+trio.txt:	Total Energy:	1.85889 J
+trio.txt:	Average Power:	18.5566 W
+trio.txt:	Time:	0.100174 sec
+trio.txt:PARENT: Child's exit code is: 0
+trio.txt:
+trio.txt:	Total Energy:	1.86568 J
+trio.txt:	Average Power:	18.6244 W
+trio.txt:	Time:	0.100174 sec
+trio.txt:PARENT: Child's exit code is: 0
+trio.txt:
+trio.txt:	Total Energy:	1.86574 J
+trio.txt:	Average Power:	18.6259 W
+trio.txt:	Time:	0.100169 sec
+trio.txt:PARENT: Child's exit code is: 0
+trio.txt:
+trio.txt:	Total Energy:	1.86043 J
+trio.txt:	Average Power:	18.5721 W
+trio.txt:	Time:	0.100173 sec
+ud.txt:PARENT: Child's exit code is: 0
+ud.txt:
+ud.txt:	Total Energy:	1.8929 J
+ud.txt:	Average Power:	18.8963 W
+ud.txt:	Time:	0.100173 sec
+ud.txt:PARENT: Child's exit code is: 0
+ud.txt:
+ud.txt:	Total Energy:	1.8876 J
+ud.txt:	Average Power:	18.8438 W
+ud.txt:	Time:	0.100171 sec
+ud.txt:PARENT: Child's exit code is: 0
+ud.txt:
+ud.txt:	Total Energy:	1.89378 J
+ud.txt:	Average Power:	18.9055 W
+ud.txt:	Time:	0.100171 sec
+ud.txt:PARENT: Child's exit code is: 0
+ud.txt:
+ud.txt:	Total Energy:	1.89165 J
+ud.txt:	Average Power:	18.8842 W
+ud.txt:	Time:	0.100171 sec
+ud.txt:PARENT: Child's exit code is: 0
+ud.txt:
+ud.txt:	Total Energy:	1.89331 J
+ud.txt:	Average Power:	18.9002 W
+ud.txt:	Time:	0.100174 sec
+whetstone.txt:PARENT: Child's exit code is: 0
+whetstone.txt:
+whetstone.txt:	Total Energy:	4.67572 J
+whetstone.txt:	Average Power:	23.3481 W
+whetstone.txt:	Time:	0.200261 sec
+whetstone.txt:PARENT: Child's exit code is: 0
+whetstone.txt:
+whetstone.txt:	Total Energy:	4.6731 J
+whetstone.txt:	Average Power:	23.3346 W
+whetstone.txt:	Time:	0.200265 sec
+whetstone.txt:PARENT: Child's exit code is: 0
+whetstone.txt:
+whetstone.txt:	Total Energy:	4.67278 J
+whetstone.txt:	Average Power:	23.3331 W
+whetstone.txt:	Time:	0.200264 sec
+whetstone.txt:PARENT: Child's exit code is: 0
+whetstone.txt:
+whetstone.txt:	Total Energy:	4.66008 J
+whetstone.txt:	Average Power:	23.2698 W
+whetstone.txt:	Time:	0.200263 sec
+whetstone.txt:PARENT: Child's exit code is: 0
+whetstone.txt:
+whetstone.txt:	Total Energy:	4.67191 J
+whetstone.txt:	Average Power:	23.3285 W
+whetstone.txt:	Time:	0.200266 sec
+wikisort.txt:PARENT: Child's exit code is: 0
+wikisort.txt:
+wikisort.txt:	Total Energy:	20.9458 J
+wikisort.txt:	Average Power:	25.939 W
+wikisort.txt:	Time:	0.807503 sec
+wikisort.txt:PARENT: Child's exit code is: 0
+wikisort.txt:
+wikisort.txt:	Total Energy:	20.8311 J
+wikisort.txt:	Average Power:	26.017 W
+wikisort.txt:	Time:	0.800671 sec
+wikisort.txt:PARENT: Child's exit code is: 0
+wikisort.txt:
+wikisort.txt:	Total Energy:	20.8277 J
+wikisort.txt:	Average Power:	26.013 W
+wikisort.txt:	Time:	0.800665 sec
+wikisort.txt:PARENT: Child's exit code is: 0
+wikisort.txt:
+wikisort.txt:	Total Energy:	22.718 J
+wikisort.txt:	Average Power:	25.2218 W
+wikisort.txt:	Time:	0.900727 sec
+wikisort.txt:PARENT: Child's exit code is: 0
+wikisort.txt:
+wikisort.txt:	Total Energy:	22.7286 J
+wikisort.txt:	Average Power:	25.2337 W
+wikisort.txt:	Time:	0.900723 sec
