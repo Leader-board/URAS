@@ -1,0 +1,25 @@
+PARENT: Child's exit code is: 0
+
+	Total Energy:	1.88037 J
+	Average Power:	18.7712 W
+	Time:	0.100173 sec
+PARENT: Child's exit code is: 0
+
+	Total Energy:	1.87526 J
+	Average Power:	18.7202 W
+	Time:	0.100173 sec
+PARENT: Child's exit code is: 0
+
+	Total Energy:	1.87695 J
+	Average Power:	18.7373 W
+	Time:	0.100172 sec
+PARENT: Child's exit code is: 0
+
+	Total Energy:	1.87762 J
+	Average Power:	18.7438 W
+	Time:	0.100173 sec
+PARENT: Child's exit code is: 0
+
+	Total Energy:	1.88005 J
+	Average Power:	18.7682 W
+	Time:	0.100172 sec
