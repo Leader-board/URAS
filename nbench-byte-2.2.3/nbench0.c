@@ -175,7 +175,7 @@ UCommandLine();
 if(argc == 2)
 {
 // use the first argument as the test number (up to 9)
-testnum = stoi(argv[1]);
+testnum = atoi(argv[1]);
 }
         // for(i=1;i<argc;i++)
         //         if(parse_arg(argv[i])==-1)
