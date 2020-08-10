@@ -1,0 +1,145 @@
+
+BYTEmark* Native Mode Benchmark ver. 2 (10/95)
+Index-split by Andrew D. Balsa (11/97)
+Linux/Unix* port by Uwe F. Mayer (12/96,11/97)
+
+TEST                : Iterations/sec.  : Old Index   : New Index
+                    :                  : Pentium 90* : AMD K6/233*
+--------------------:------------------:-------------:------------
+NEURAL NET          :               0  :       0.00  :       0.00
+==========================ORIGINAL BYTEMARK RESULTS==========================
+INTEGER INDEX       : 1.000
+FLOATING-POINT INDEX: 0.000
+Baseline (MSDOS*)   : Pentium* 90, 256 KB L2-cache, Watcom* compiler 10.0
+==============================LINUX DATA BELOW===============================
+CPU                 : GenuineIntel Intel(R) Core(TM) i5-3470S CPU @ 2.90GHz 1677MHz
+L2 Cache            : 6144 KB
+OS                  : Linux 4.15.0-91-generic
+C compiler          : gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) 
+libc                : libc-2.27.so
+MEMORY INDEX        : 1.000
+INTEGER INDEX       : 1.000
+FLOATING-POINT INDEX: 0.000
+Baseline (LINUX)    : AMD K6/233*, 512 KB L2-cache, gcc 2.7.2.3, libc-5.4.38
+* Trademarks are property of their respective holder.
+PARENT: Child's exit code is: 0
+
+	Total Energy:	133.869 J
+	Average Power:	26.2002 W
+	Time:	5.10947 sec
+
+BYTEmark* Native Mode Benchmark ver. 2 (10/95)
+Index-split by Andrew D. Balsa (11/97)
+Linux/Unix* port by Uwe F. Mayer (12/96,11/97)
+
+TEST                : Iterations/sec.  : Old Index   : New Index
+                    :                  : Pentium 90* : AMD K6/233*
+--------------------:------------------:-------------:------------
+NEURAL NET          :               0  :       0.00  :       0.00
+==========================ORIGINAL BYTEMARK RESULTS==========================
+INTEGER INDEX       : 1.000
+FLOATING-POINT INDEX: 0.000
+Baseline (MSDOS*)   : Pentium* 90, 256 KB L2-cache, Watcom* compiler 10.0
+==============================LINUX DATA BELOW===============================
+CPU                 : GenuineIntel Intel(R) Core(TM) i5-3470S CPU @ 2.90GHz 1671MHz
+L2 Cache            : 6144 KB
+OS                  : Linux 4.15.0-91-generic
+C compiler          : gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) 
+libc                : libc-2.27.so
+MEMORY INDEX        : 1.000
+INTEGER INDEX       : 1.000
+FLOATING-POINT INDEX: 0.000
+Baseline (LINUX)    : AMD K6/233*, 512 KB L2-cache, gcc 2.7.2.3, libc-5.4.38
+* Trademarks are property of their respective holder.
+PARENT: Child's exit code is: 0
+
+	Total Energy:	133.919 J
+	Average Power:	26.2107 W
+	Time:	5.10935 sec
+
+BYTEmark* Native Mode Benchmark ver. 2 (10/95)
+Index-split by Andrew D. Balsa (11/97)
+Linux/Unix* port by Uwe F. Mayer (12/96,11/97)
+
+TEST                : Iterations/sec.  : Old Index   : New Index
+                    :                  : Pentium 90* : AMD K6/233*
+--------------------:------------------:-------------:------------
+NEURAL NET          :               0  :       0.00  :       0.00
+==========================ORIGINAL BYTEMARK RESULTS==========================
+INTEGER INDEX       : 1.000
+FLOATING-POINT INDEX: 0.000
+Baseline (MSDOS*)   : Pentium* 90, 256 KB L2-cache, Watcom* compiler 10.0
+==============================LINUX DATA BELOW===============================
+CPU                 : GenuineIntel Intel(R) Core(TM) i5-3470S CPU @ 2.90GHz 1675MHz
+L2 Cache            : 6144 KB
+OS                  : Linux 4.15.0-91-generic
+C compiler          : gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) 
+libc                : libc-2.27.so
+MEMORY INDEX        : 1.000
+INTEGER INDEX       : 1.000
+FLOATING-POINT INDEX: 0.000
+Baseline (LINUX)    : AMD K6/233*, 512 KB L2-cache, gcc 2.7.2.3, libc-5.4.38
+* Trademarks are property of their respective holder.
+PARENT: Child's exit code is: 0
+
+	Total Energy:	133.904 J
+	Average Power:	26.2077 W
+	Time:	5.10933 sec
+
+BYTEmark* Native Mode Benchmark ver. 2 (10/95)
+Index-split by Andrew D. Balsa (11/97)
+Linux/Unix* port by Uwe F. Mayer (12/96,11/97)
+
+TEST                : Iterations/sec.  : Old Index   : New Index
+                    :                  : Pentium 90* : AMD K6/233*
+--------------------:------------------:-------------:------------
+NEURAL NET          :               0  :       0.00  :       0.00
+==========================ORIGINAL BYTEMARK RESULTS==========================
+INTEGER INDEX       : 1.000
+FLOATING-POINT INDEX: 0.000
+Baseline (MSDOS*)   : Pentium* 90, 256 KB L2-cache, Watcom* compiler 10.0
+==============================LINUX DATA BELOW===============================
+CPU                 : GenuineIntel Intel(R) Core(TM) i5-3470S CPU @ 2.90GHz 1668MHz
+L2 Cache            : 6144 KB
+OS                  : Linux 4.15.0-91-generic
+C compiler          : gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) 
+libc                : libc-2.27.so
+MEMORY INDEX        : 1.000
+INTEGER INDEX       : 1.000
+FLOATING-POINT INDEX: 0.000
+Baseline (LINUX)    : AMD K6/233*, 512 KB L2-cache, gcc 2.7.2.3, libc-5.4.38
+* Trademarks are property of their respective holder.
+PARENT: Child's exit code is: 0
+
+	Total Energy:	133.916 J
+	Average Power:	26.2098 W
+	Time:	5.10939 sec
+
+BYTEmark* Native Mode Benchmark ver. 2 (10/95)
+Index-split by Andrew D. Balsa (11/97)
+Linux/Unix* port by Uwe F. Mayer (12/96,11/97)
+
+TEST                : Iterations/sec.  : Old Index   : New Index
+                    :                  : Pentium 90* : AMD K6/233*
+--------------------:------------------:-------------:------------
+NEURAL NET          :               0  :       0.00  :       0.00
+==========================ORIGINAL BYTEMARK RESULTS==========================
+INTEGER INDEX       : 1.000
+FLOATING-POINT INDEX: 0.000
+Baseline (MSDOS*)   : Pentium* 90, 256 KB L2-cache, Watcom* compiler 10.0
+==============================LINUX DATA BELOW===============================
+CPU                 : GenuineIntel Intel(R) Core(TM) i5-3470S CPU @ 2.90GHz 1678MHz
+L2 Cache            : 6144 KB
+OS                  : Linux 4.15.0-91-generic
+C compiler          : gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) 
+libc                : libc-2.27.so
+MEMORY INDEX        : 1.000
+INTEGER INDEX       : 1.000
+FLOATING-POINT INDEX: 0.000
+Baseline (LINUX)    : AMD K6/233*, 512 KB L2-cache, gcc 2.7.2.3, libc-5.4.38
+* Trademarks are property of their respective holder.
+PARENT: Child's exit code is: 0
+
+	Total Energy:	133.895 J
+	Average Power:	26.2057 W
+	Time:	5.10938 sec
