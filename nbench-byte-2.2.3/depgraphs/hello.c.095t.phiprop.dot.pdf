@@ -1,0 +1,55 @@
+digraph "hello.c.095t.phiprop" {
+	graph [bb="0,0,262,398",
+		overlap=false
+	];
+	node [label="\N"];
+	subgraph cluster_main {
+		graph [bb="8,8,254,390",
+			color=black,
+			label="main ()",
+			lheight=0.21,
+			lp="131,378.5",
+			lwidth=0.71,
+			style=dashed
+		];
+		fn_23_basic_block_0		 [fillcolor=white,
+			height=0.5,
+			label=ENTRY,
+			pos="141,341",
+			shape=Mdiamond,
+			style=filled,
+			width=1.7617];
+		fn_23_basic_block_1		 [fillcolor=white,
+			height=0.5,
+			label=EXIT,
+			pos="141,34",
+			shape=Mdiamond,
+			style=filled,
+			width=1.3532];
+		fn_23_basic_block_0:s -> fn_23_basic_block_1:n		 [constraint=true,
+			pos="e,141,52 141,323 141,264.45 17,337.05 17,278.5 17,278.5 17,278.5 17,96.5 17,41.836 125.08,101.49 139.43,62.006",
+			style=invis];
+		fn_23_basic_block_2		 [fillcolor=lightgrey,
+			height=1.2917,
+			label="{ FREQ:10000 |\<bb\ 2\>:\l|__printf_chk\ (1,\ \"hello.\\n\");\l|return\ 0;\l}",
+			pos="141,187.5",
+			rects="36.5,210.5,245.5,233.5 36.5,187.5,245.5,210.5 36.5,164.5,245.5,187.5 36.5,141.5,245.5,164.5",
+			shape=record,
+			style=filled,
+			width=2.9028];
+		fn_23_basic_block_0:s -> fn_23_basic_block_2:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="167,278.5",
+			pos="e,141,233.5 141,323 141,286.8 141,275.31 141,243.54",
+			style="solid,bold",
+			weight=100];
+		fn_23_basic_block_2:s -> fn_23_basic_block_1:n		 [color=black,
+			constraint=true,
+			label="[100%]",
+			lp="167,96.5",
+			pos="e,141,52 141,141.5 141,105.3 141,93.805 141,62.042",
+			style="solid,bold",
+			weight=10];
+	}
+}

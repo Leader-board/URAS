@@ -1,0 +1,2420 @@
+digraph "hardware.c.046t.profile_estimate" {
+	graph [bb="0,0,11854,7293",
+		overlap=false
+	];
+	node [label="\N"];
+	subgraph cluster_sprintf {
+		graph [bb="8,6657.5,658,7285",
+			color=black,
+			label="sprintf ()",
+			lheight=0.21,
+			lp="333,7273.5",
+			lwidth=0.89,
+			style=dashed
+		];
+		fn_10_basic_block_0		 [fillcolor=white,
+			height=0.5,
+			label=ENTRY,
+			pos="343,7236",
+			shape=Mdiamond,
+			style=filled,
+			width=1.7617];
+		fn_10_basic_block_1		 [fillcolor=white,
+			height=0.5,
+			label=EXIT,
+			pos="343,6683.5",
+			shape=Mdiamond,
+			style=filled,
+			width=1.3532];
+		fn_10_basic_block_0:s -> fn_10_basic_block_1:n		 [constraint=true,
+			pos="e,343,6701.5 343,7218 343,7144.9 17,7246.6 17,7173.5 17,7173.5 17,7173.5 17,6831.5 17,6679 328.52,6849.5 342.51,6711.5",
+			style=invis];
+		fn_10_basic_block_2		 [fillcolor=lightgrey,
+			height=1.6111,
+			label="{ FREQ:10000 |\<bb\ 2\>:\l|_1\ =\ __builtin_object_size\ (__s_3(D),\ 1);\l|_6\ =\ __builtin___sprintf_chk\ (__s_3(D),\ 1,\ _1,\ __\
+fmt_4(D),\ __builtin_va_arg_pack\ ());\l|return\ _6;\l}",
+			pos="343,7002.5",
+			rects="36,7037,650,7060 36,7014,650,7037 36,6991,650,7014 36,6968,650,6991 36,6945,650,6968",
+			shape=record,
+			style=filled,
+			width=8.5278];
+		fn_10_basic_block_0:s -> fn_10_basic_block_2:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="369,7173.5",
+			pos="e,343,7060.5 343,7218 343,7151.6 343,7132.4 343,7070.8",
+			style="solid,bold",
+			weight=100];
+		fn_10_basic_block_2:s -> fn_10_basic_block_1:n		 [color=black,
+			constraint=true,
+			label="[100%]",
+			lp="369,6831.5",
+			pos="e,343,6701.5 343,6944.5 343,6840 343,6811.3 343,6711.7",
+			style="solid,bold",
+			weight=10];
+	}
+	subgraph cluster_fprintf {
+		graph [bb="666,6657.5,1262,7285",
+			color=black,
+			label="fprintf ()",
+			lheight=0.21,
+			lp="964,7273.5",
+			lwidth=0.85,
+			style=dashed
+		];
+		fn_14_basic_block_0		 [fillcolor=white,
+			height=0.5,
+			label=ENTRY,
+			pos="974,7236",
+			shape=Mdiamond,
+			style=filled,
+			width=1.7617];
+		fn_14_basic_block_1		 [fillcolor=white,
+			height=0.5,
+			label=EXIT,
+			pos="974,6683.5",
+			shape=Mdiamond,
+			style=filled,
+			width=1.3532];
+		fn_14_basic_block_0:s -> fn_14_basic_block_1:n		 [constraint=true,
+			pos="e,974,6701.5 974,7218 974,7150.8 675,7240.7 675,7173.5 675,7173.5 675,7173.5 675,6831.5 675,6690.1 959.58,6838.8 973.47,6711.6",
+			style=invis];
+		fn_14_basic_block_2		 [fillcolor=lightgrey,
+			height=1.2917,
+			label="{ FREQ:10000 |\<bb\ 2\>:\l|_5\ =\ __fprintf_chk\ (__stream_2(D),\ 1,\ __fmt_3(D),\ __builtin_va_arg_pack\ ());\l|return\ _5;\l}",
+			pos="974,7002.5",
+			rects="694,7025.5,1254,7048.5 694,7002.5,1254,7025.5 694,6979.5,1254,7002.5 694,6956.5,1254,6979.5",
+			shape=record,
+			style=filled,
+			width=7.7778];
+		fn_14_basic_block_0:s -> fn_14_basic_block_2:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="1000,7173.5",
+			pos="e,974,7048.5 974,7218 974,7146.2 974,7125.7 974,7058.7",
+			style="solid,bold",
+			weight=100];
+		fn_14_basic_block_2:s -> fn_14_basic_block_1:n		 [color=black,
+			constraint=true,
+			label="[100%]",
+			lp="1000,6831.5",
+			pos="e,974,6701.5 974,6956.5 974,6846.6 974,6816.6 974,6711.6",
+			style="solid,bold",
+			weight=10];
+	}
+	subgraph cluster_printf {
+		graph [bb="1270,6657.5,1748,7285",
+			color=black,
+			label="printf ()",
+			lheight=0.21,
+			lp="1509,7273.5",
+			lwidth=0.78,
+			style=dashed
+		];
+		fn_15_basic_block_0		 [fillcolor=white,
+			height=0.5,
+			label=ENTRY,
+			pos="1519,7236",
+			shape=Mdiamond,
+			style=filled,
+			width=1.7617];
+		fn_15_basic_block_1		 [fillcolor=white,
+			height=0.5,
+			label=EXIT,
+			pos="1519,6683.5",
+			shape=Mdiamond,
+			style=filled,
+			width=1.3532];
+		fn_15_basic_block_0:s -> fn_15_basic_block_1:n		 [constraint=true,
+			pos="e,1519,6701.5 1519,7218 1519,7163.8 1279,7227.7 1279,7173.5 1279,7173.5 1279,7173.5 1279,6831.5 1279,6713.7 1505.1,6816.4 1518.4,\
+6711.6",
+			style=invis];
+		fn_15_basic_block_2		 [fillcolor=lightgrey,
+			height=1.2917,
+			label="{ FREQ:10000 |\<bb\ 2\>:\l|_4\ =\ __printf_chk\ (1,\ __fmt_2(D),\ __builtin_va_arg_pack\ ());\l|return\ _4;\l}",
+			pos="1519,7002.5",
+			rects="1298,7025.5,1740,7048.5 1298,7002.5,1740,7025.5 1298,6979.5,1740,7002.5 1298,6956.5,1740,6979.5",
+			shape=record,
+			style=filled,
+			width=6.1389];
+		fn_15_basic_block_0:s -> fn_15_basic_block_2:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="1545,7173.5",
+			pos="e,1519,7048.5 1519,7218 1519,7146.2 1519,7125.7 1519,7058.7",
+			style="solid,bold",
+			weight=100];
+		fn_15_basic_block_2:s -> fn_15_basic_block_1:n		 [color=black,
+			constraint=true,
+			label="[100%]",
+			lp="1545,6831.5",
+			pos="e,1519,6701.5 1519,6956.5 1519,6846.6 1519,6816.6 1519,6711.6",
+			style="solid,bold",
+			weight=10];
+	}
+	subgraph cluster_fgets {
+		graph [bb="1756,5264,3246,7285",
+			color=black,
+			label="fgets ()",
+			lheight=0.21,
+			lp="2501,7273.5",
+			lwidth=0.72,
+			style=dashed
+		];
+		fn_20_basic_block_0		 [fillcolor=white,
+			height=0.5,
+			label=ENTRY,
+			pos="2007,7236",
+			shape=Mdiamond,
+			style=filled,
+			width=1.7617];
+		fn_20_basic_block_1		 [fillcolor=white,
+			height=0.5,
+			label=EXIT,
+			pos="2502,5290",
+			shape=Mdiamond,
+			style=filled,
+			width=1.3532];
+		fn_20_basic_block_0:s -> fn_20_basic_block_1:n		 [constraint=true,
+			pos="e,2502,5308 2007,7218 2007,7163.3 1765,7228.2 1765,7173.5 1765,7173.5 1765,7173.5 1765,5426.5 1765,5098.3 2486.3,5628.2 2501.7,5318.4",
+			style=invis];
+		fn_20_basic_block_2		 [fillcolor=lightgrey,
+			height=1.9167,
+			label="{ FREQ:10000 |\<bb\ 2\>:\l|_1\ =\ __builtin_object_size\ (__s_10(D),\ 1);\l|if\ (_1\ !=\ 18446744073709551615)\l\ \ goto\ \<bb\ \
+3\>;\ [79.76%]\lelse\l\ \ goto\ \<bb\ 8\>;\ [20.24%]\l}",
+			pos="2007,7002.5",
+			rects="1852,7048,2162,7071 1852,7025,2162,7048 1852,7002,2162,7025 1852,6934,2162,7002",
+			shape=record,
+			style=filled,
+			width=4.3056];
+		fn_20_basic_block_0:s -> fn_20_basic_block_2:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="2033,7173.5",
+			pos="e,2007,7071.5 2007,7218 2007,7156.4 2007,7138.5 2007,7081.8",
+			style="solid,bold",
+			weight=100];
+		fn_20_basic_block_3		 [fillcolor=lightgrey,
+			height=1.9167,
+			label="{ FREQ:7976 |\<bb\ 3\>:\l|_2\ =\ __builtin_constant_p\ (__n_11(D));\l|if\ (_2\ ==\ 0)\l\ \ goto\ \<bb\ 5\>;\ [29.56%]\lelse\l\ \ \
+goto\ \<bb\ 4\>;\ [70.44%]\l}",
+			pos="2750,6683.5",
+			rects="2603.5,6729,2896.5,6752 2603.5,6706,2896.5,6729 2603.5,6683,2896.5,6706 2603.5,6615,2896.5,6683",
+			shape=record,
+			style=filled,
+			width=4.0694];
+		fn_20_basic_block_2:s -> fn_20_basic_block_3:n		 [color=black,
+			constraint=true,
+			label="[79%]",
+			lp="2754.5,6831.5",
+			pos="e,2750,6752.5 2007,6933.5 2007,6597.1 2734.8,7082.2 2749.8,6762.7",
+			style="solid,bold",
+			weight=10];
+		fn_20_basic_block_8		 [fillcolor=lightgrey,
+			height=0.97222,
+			label="{ FREQ:4700 |\<bb\ 8\>:\l|_18\ =\ __fgets_alias\ (__s_10(D),\ __n_11(D),\ __stream_12(D));\l}",
+			pos="2007,5760",
+			rects="1784,5771.5,2230,5794.5 1784,5748.5,2230,5771.5 1784,5725.5,2230,5748.5",
+			shape=record,
+			style=filled,
+			width=6.1944];
+		fn_20_basic_block_2:s -> fn_20_basic_block_8:n		 [color=black,
+			constraint=true,
+			label="[20%]",
+			lp="2028.5,6329.5",
+			pos="e,2007,5795 2007,6933.5 2007,6888.2 2007,6876.8 2007,6831.5 2007,6831.5 2007,6831.5 2007,5896.5 2007,5855.1 2007,5842.2 2007,5805.5",
+			style="solid,bold",
+			weight=10];
+		fn_20_basic_block_4		 [fillcolor=lightgrey,
+			height=1.5972,
+			label="{ FREQ:5618 |\<bb\ 4\>:\l|if\ (__n_11(D)\ \<=\ 0)\l\ \ goto\ \<bb\ 5\>;\ [32.39%]\lelse\l\ \ goto\ \<bb\ 6\>;\ [67.61%]\l}",
+			pos="2750,6329.5",
+			rects="2654.5,6363.5,2845.5,6386.5 2654.5,6340.5,2845.5,6363.5 2654.5,6272.5,2845.5,6340.5",
+			shape=record,
+			style=filled,
+			width=2.6528];
+		fn_20_basic_block_3:s -> fn_20_basic_block_4:n		 [color=black,
+			constraint=true,
+			label="[70%]",
+			lp="2771.5,6535.5",
+			pos="e,2750,6386.5 2750,6614.5 2750,6516.6 2750,6489.7 2750,6396.6",
+			style="solid,bold",
+			weight=10];
+		fn_20_basic_block_5		 [fillcolor=lightgrey,
+			height=1.1806,
+			label="{ FREQ:4177 |\<bb\ 5\>:\l|_16\ =\ __fgets_chk\ (__s_10(D),\ _1,\ __n_11(D),\ __stream_12(D));\lgoto\ \<bb\ 9\>;\ [100.00%]\l}",
+			pos="3006,5760",
+			rects="2774,5779,3238,5802 2774,5756,3238,5779 2774,5718,3238,5756",
+			shape=record,
+			style=filled,
+			width=6.4444];
+		fn_20_basic_block_3:s -> fn_20_basic_block_5:n		 [color=black,
+			constraint=true,
+			label="[29%]",
+			lp="2959.5,6123.5",
+			pos="e,3006,5802 2750,6614.5 2750,6523.9 2938,6626.1 2938,6535.5 2938,6535.5 2938,6535.5 2938,5896.5 2938,5848.4 2996.8,5852.8 3005,5812.1",
+			style="solid,bold",
+			weight=10];
+		fn_20_basic_block_4:s -> fn_20_basic_block_5:n		 [color=black,
+			constraint=true,
+			label="[32%]",
+			lp="2829.5,6010",
+			pos="e,3006,5802 2750,6272.5 2750,6201.4 2808,6194.6 2808,6123.5 2808,6123.5 2808,6123.5 2808,5896.5 2808,5802.6 2991.6,5892.3 3005.2,\
+5812.1",
+			style="solid,bold",
+			weight=10];
+		fn_20_basic_block_6		 [fillcolor=lightgrey,
+			height=1.9167,
+			label="{ FREQ:3799 |\<bb\ 6\>:\l|_4\ =\ (long\ unsigned\ int)\ __n_11(D);\l|if\ (_1\ \<\ _4)\l\ \ goto\ \<bb\ 7\>;\ [29.56%]\lelse\l\ \ \
+goto\ \<bb\ 8\>;\ [70.44%]\l}",
+			pos="2502,6010",
+			rects="2367.5,6055.5,2636.5,6078.5 2367.5,6032.5,2636.5,6055.5 2367.5,6009.5,2636.5,6032.5 2367.5,5941.5,2636.5,6009.5",
+			shape=record,
+			style=filled,
+			width=3.7361];
+		fn_20_basic_block_4:s -> fn_20_basic_block_6:n		 [color=black,
+			constraint=true,
+			label="[67%]",
+			lp="2540.5,6123.5",
+			pos="e,2502,6079 2750,6272.5 2750,6136.2 2514.4,6214.6 2502.5,6089.2",
+			style="solid,bold",
+			weight=10];
+		fn_20_basic_block_9		 [fillcolor=lightgrey,
+			height=1.2917,
+			label="{ FREQ:10000 |\<bb\ 9\>:\l|#\ _7\ =\ PHI\ \<_16(5),\ _14(7),\ _18(8)\>\l|return\ _7;\l}",
+			pos="2502,5525",
+			rects="2361.5,5548,2642.5,5571 2361.5,5525,2642.5,5548 2361.5,5502,2642.5,5525 2361.5,5479,2642.5,5502",
+			shape=record,
+			style=filled,
+			width=3.9028];
+		fn_20_basic_block_5:s -> fn_20_basic_block_9:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="2701,5623.5",
+			pos="e,2502,5571 3006,5718 3006,5662.9 2555.6,5632.7 2506.4,5580.3",
+			style="solid,bold",
+			weight=100];
+		fn_20_basic_block_7		 [fillcolor=lightgrey,
+			height=1.1806,
+			label="{ FREQ:1123 |\<bb\ 7\>:\l|_14\ =\ __fgets_chk_warn\ (__s_10(D),\ _1,\ __n_11(D),\ __stream_12(D));\lgoto\ \<bb\ 9\>;\ [100.00%]\l}",
+			pos="2502,5760",
+			rects="2248,5779,2756,5802 2248,5756,2756,5779 2248,5718,2756,5756",
+			shape=record,
+			style=filled,
+			width=7.0556];
+		fn_20_basic_block_6:s -> fn_20_basic_block_7:n		 [color=black,
+			constraint=true,
+			label="[29%]",
+			lp="2523.5,5896.5",
+			pos="e,2502,5802 2502,5941 2502,5882.7 2502,5865.7 2502,5812.1",
+			style="solid,bold",
+			weight=10];
+		fn_20_basic_block_6:s -> fn_20_basic_block_8:n		 [color=black,
+			constraint=true,
+			label="[70%]",
+			lp="2448.5,5896.5",
+			pos="e,2007,5795 2502,5941 2502,5886.8 2059.7,5855.8 2011.3,5804.2",
+			style="solid,bold",
+			weight=10];
+		fn_20_basic_block_7:s -> fn_20_basic_block_9:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="2528,5623.5",
+			pos="e,2502,5571 2502,5718 2502,5656.2 2502,5638.3 2502,5581.3",
+			style="solid,bold",
+			weight=100];
+		fn_20_basic_block_8:s -> fn_20_basic_block_9:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="2431,5623.5",
+			pos="e,2502,5571 2007,5725 2007,5670.5 2449.3,5632.9 2497.7,5580.3",
+			style="solid,bold",
+			weight=100];
+		fn_20_basic_block_9:s -> fn_20_basic_block_1:n		 [color=black,
+			constraint=true,
+			label="[100%]",
+			lp="2528,5426.5",
+			pos="e,2502,5308 2502,5479 2502,5406.6 2502,5385.9 2502,5318.3",
+			style="solid,bold",
+			weight=10];
+	}
+	subgraph cluster_strcpy {
+		graph [bb="3254,6657.5,3722,7285",
+			color=black,
+			label="strcpy ()",
+			lheight=0.21,
+			lp="3488,7273.5",
+			lwidth=0.85,
+			style=dashed
+		];
+		fn_29_basic_block_0		 [fillcolor=white,
+			height=0.5,
+			label=ENTRY,
+			pos="3498,7236",
+			shape=Mdiamond,
+			style=filled,
+			width=1.7617];
+		fn_29_basic_block_1		 [fillcolor=white,
+			height=0.5,
+			label=EXIT,
+			pos="3498,6683.5",
+			shape=Mdiamond,
+			style=filled,
+			width=1.3532];
+		fn_29_basic_block_0:s -> fn_29_basic_block_1:n		 [constraint=true,
+			pos="e,3498,6701.5 3498,7218 3498,7164.8 3263,7226.7 3263,7173.5 3263,7173.5 3263,7173.5 3263,6831.5 3263,6715.8 3484,6814.5 3497.4,6711.7",
+			style=invis];
+		fn_29_basic_block_2		 [fillcolor=lightgrey,
+			height=1.6111,
+			label="{ FREQ:10000 |\<bb\ 2\>:\l|_1\ =\ __builtin_object_size\ (__dest_3(D),\ 1);\l|_6\ =\ __builtin___strcpy_chk\ (__dest_3(D),\ __src_\
+4(D),\ _1);\l|return\ _6;\l}",
+			pos="3498,7002.5",
+			rects="3282.5,7037,3713.5,7060 3282.5,7014,3713.5,7037 3282.5,6991,3713.5,7014 3282.5,6968,3713.5,6991 3282.5,6945,3713.5,6968",
+			shape=record,
+			style=filled,
+			width=5.9861];
+		fn_29_basic_block_0:s -> fn_29_basic_block_2:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="3524,7173.5",
+			pos="e,3498,7060.5 3498,7218 3498,7151.6 3498,7132.4 3498,7070.8",
+			style="solid,bold",
+			weight=100];
+		fn_29_basic_block_2:s -> fn_29_basic_block_1:n		 [color=black,
+			constraint=true,
+			label="[100%]",
+			lp="3524,6831.5",
+			pos="e,3498,6701.5 3498,6944.5 3498,6840 3498,6811.3 3498,6711.7",
+			style="solid,bold",
+			weight=10];
+	}
+	subgraph cluster_atof {
+		graph [bb="3730,6657.5,3996,7285",
+			color=black,
+			label="atof ()",
+			lheight=0.21,
+			lp="3863,7273.5",
+			lwidth=0.60,
+			style=dashed
+		];
+		fn_46_basic_block_0		 [fillcolor=white,
+			height=0.5,
+			label=ENTRY,
+			pos="3873,7236",
+			shape=Mdiamond,
+			style=filled,
+			width=1.7617];
+		fn_46_basic_block_1		 [fillcolor=white,
+			height=0.5,
+			label=EXIT,
+			pos="3873,6683.5",
+			shape=Mdiamond,
+			style=filled,
+			width=1.3532];
+		fn_46_basic_block_0:s -> fn_46_basic_block_1:n		 [constraint=true,
+			pos="e,3873,6701.5 3873,7218 3873,7155.2 3739,7236.3 3739,7173.5 3739,7173.5 3739,7173.5 3739,6831.5 3739,6752.1 3861.7,6781.6 3872.3,\
+6711.6",
+			style=invis];
+		fn_46_basic_block_2		 [fillcolor=lightgrey,
+			height=1.2917,
+			label="{ FREQ:10000 |\<bb\ 2\>:\l|_4\ =\ strtod\ (__nptr_2(D),\ 0B);\l|return\ _4;\l}",
+			pos="3873,7002.5",
+			rects="3758,7025.5,3988,7048.5 3758,7002.5,3988,7025.5 3758,6979.5,3988,7002.5 3758,6956.5,3988,6979.5",
+			shape=record,
+			style=filled,
+			width=3.1944];
+		fn_46_basic_block_0:s -> fn_46_basic_block_2:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="3899,7173.5",
+			pos="e,3873,7048.5 3873,7218 3873,7146.2 3873,7125.7 3873,7058.7",
+			style="solid,bold",
+			weight=100];
+		fn_46_basic_block_2:s -> fn_46_basic_block_1:n		 [color=black,
+			constraint=true,
+			label="[100%]",
+			lp="3899,6831.5",
+			pos="e,3873,6701.5 3873,6956.5 3873,6846.6 3873,6816.6 3873,6711.6",
+			style="solid,bold",
+			weight=10];
+	}
+	subgraph cluster_output_string {
+		graph [bb="4004,5984,4523,7285",
+			color=black,
+			label="output_string ()",
+			lheight=0.21,
+			lp="4263.5,7273.5",
+			lwidth=1.57,
+			style=dashed
+		];
+		fn_52_basic_block_0		 [fillcolor=white,
+			height=0.5,
+			label=ENTRY,
+			pos="4167,7236",
+			shape=Mdiamond,
+			style=filled,
+			width=1.7617];
+		fn_52_basic_block_1		 [fillcolor=white,
+			height=0.5,
+			label=EXIT,
+			pos="4313,6010",
+			shape=Mdiamond,
+			style=filled,
+			width=1.3532];
+		fn_52_basic_block_0:s -> fn_52_basic_block_1:n		 [constraint=true,
+			pos="e,4313,6028 4167,7218 4167,7146.8 4013,7244.7 4013,7173.5 4013,7173.5 4013,7173.5 4013,6123.5 4013,5987.1 4298,6158.8 4312.4,6038",
+			style=invis];
+		fn_52_basic_block_2		 [fillcolor=lightgrey,
+			height=1.9167,
+			label="{ FREQ:10000 |\<bb\ 2\>:\l|__printf_chk\ (1,\ \"%s\",\ buffer_3(D));\l|if\ (write_to_file_5(D)\ !=\ 0)\l\ \ goto\ \<bb\ 3\>;\ [36.64%]\lelse\l\ \ \
+goto\ \<bb\ 4\>;\ [63.36%]\l}",
+			pos="4167,7002.5",
+			rects="4032.5,7048,4301.5,7071 4032.5,7025,4301.5,7048 4032.5,7002,4301.5,7025 4032.5,6934,4301.5,7002",
+			shape=record,
+			style=filled,
+			width=3.7361];
+		fn_52_basic_block_0:s -> fn_52_basic_block_2:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="4193,7173.5",
+			pos="e,4167,7071.5 4167,7218 4167,7156.4 4167,7138.5 4167,7081.8",
+			style="solid,bold",
+			weight=100];
+		fn_52_basic_block_3		 [fillcolor=lightgrey,
+			height=0.97222,
+			label="{ FREQ:3664 |\<bb\ 3\>:\l|__fprintf_chk\ (global_ofile_6(D),\ 1,\ \"%s\",\ buffer_3(D));\l}",
+			pos="4313,6683.5",
+			rects="4111.5,6695,4514.5,6718 4111.5,6672,4514.5,6695 4111.5,6649,4514.5,6672",
+			shape=record,
+			style=filled,
+			width=5.5972];
+		fn_52_basic_block_2:s -> fn_52_basic_block_3:n		 [color=black,
+			constraint=true,
+			label="[36%]",
+			lp="4263.5,6831.5",
+			pos="e,4313,6718.5 4167,6933.5 4167,6821.5 4304.3,6833.2 4312.6,6728.6",
+			style="solid,bold",
+			weight=10];
+		fn_52_basic_block_4		 [fillcolor=lightgrey,
+			height=0.97222,
+			label="{ FREQ:10000 |\<bb\ 4\>:\l|return;\l}",
+			pos="4313,6329.5",
+			rects="4258.5,6341,4367.5,6364 4258.5,6318,4367.5,6341 4258.5,6295,4367.5,6318",
+			shape=record,
+			style=filled,
+			width=1.5139];
+		fn_52_basic_block_2:s -> fn_52_basic_block_4:n		 [color=black,
+			constraint=true,
+			label="[63%]",
+			lp="4071.5,6683.5",
+			pos="e,4313,6364.5 4167,6933.5 4167,6864.5 4050,6900.5 4050,6831.5 4050,6831.5 4050,6831.5 4050,6535.5 4050,6399.6 4299.8,6498.6 4312.5,\
+6374.7",
+			style="solid,bold",
+			weight=10];
+		fn_52_basic_block_3:s -> fn_52_basic_block_4:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="4339,6535.5",
+			pos="e,4313,6364.5 4313,6648.5 4313,6525.7 4313,6492.5 4313,6374.6",
+			style="solid,bold",
+			weight=100];
+		fn_52_basic_block_4:s -> fn_52_basic_block_1:n		 [color=black,
+			constraint=true,
+			label="[100%]",
+			lp="4339,6123.5",
+			pos="e,4313,6028 4313,6294.5 4313,6179.5 4313,6148.3 4313,6038.2",
+			style="solid,bold",
+			weight=10];
+	}
+	subgraph cluster_removeNewLine {
+		graph [bb="4531,5734,4863,7285",
+			color=black,
+			label="removeNewLine ()",
+			lheight=0.21,
+			lp="4697,7273.5",
+			lwidth=1.85,
+			style=dashed
+		];
+		fn_53_basic_block_0		 [fillcolor=white,
+			height=0.5,
+			label=ENTRY,
+			pos="4697,7236",
+			shape=Mdiamond,
+			style=filled,
+			width=1.7617];
+		fn_53_basic_block_1		 [fillcolor=white,
+			height=0.5,
+			label=EXIT,
+			pos="4741,5760",
+			shape=Mdiamond,
+			style=filled,
+			width=1.3532];
+		fn_53_basic_block_0:s -> fn_53_basic_block_1:n		 [constraint=true,
+			pos="e,4741,5778 4697,7218 4697,7145.5 4540,7246 4540,7173.5 4540,7173.5 4540,7173.5 4540,5896.5 4540,5796.4 4727.1,5875.7 4740.3,5788.2",
+			style=invis];
+		fn_53_basic_block_2		 [fillcolor=lightgrey,
+			height=1.9167,
+			label="{ FREQ:10000 |\<bb\ 2\>:\l|_1\ =\ MEM[(const\ char\ *)s_11(D)];\l|if\ (_1\ !=\ 0)\l\ \ goto\ \<bb\ 3\>;\ [54.00%]\lelse\l\ \ goto\ \<\
+bb\ 5\>;\ [46.00%]\l}",
+			pos="4697,7002.5",
+			rects="4566.5,7048,4827.5,7071 4566.5,7025,4827.5,7048 4566.5,7002,4827.5,7025 4566.5,6934,4827.5,7002",
+			shape=record,
+			style=filled,
+			width=3.625];
+		fn_53_basic_block_0:s -> fn_53_basic_block_2:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="4723,7173.5",
+			pos="e,4697,7071.5 4697,7218 4697,7156.4 4697,7138.5 4697,7081.8",
+			style="solid,bold",
+			weight=100];
+		fn_53_basic_block_3		 [fillcolor=lightgrey,
+			height=2.875,
+			label="{ FREQ:5400 |\<bb\ 3\>:\l|_2\ =\ strlen\ (s_11(D));\l|_3\ =\ _2\ +\ 18446744073709551615;\l|_4\ =\ s_11(D)\ +\ _3;\l|_5\ =\ *_4;\l|\
+if\ (_5\ ==\ 10)\l\ \ goto\ \<bb\ 4\>;\ [37.68%]\lelse\l\ \ goto\ \<bb\ 5\>;\ [62.32%]\l}",
+			pos="4697,6683.5",
+			rects="4559,6763.5,4835,6786.5 4559,6740.5,4835,6763.5 4559,6717.5,4835,6740.5 4559,6694.5,4835,6717.5 4559,6671.5,4835,6694.5 4559,6648.5,\
+4835,6671.5 4559,6580.5,4835,6648.5",
+			shape=record,
+			style=filled,
+			width=3.8333];
+		fn_53_basic_block_2:s -> fn_53_basic_block_3:n		 [color=black,
+			constraint=true,
+			label="[54%]",
+			lp="4718.5,6831.5",
+			pos="e,4697,6786.5 4697,6933.5 4697,6871.7 4697,6853.8 4697,6796.8",
+			style="solid,bold",
+			weight=10];
+		fn_53_basic_block_5		 [fillcolor=lightgrey,
+			height=0.97222,
+			label="{ FREQ:10000 |\<bb\ 5\>:\l|return;\l}",
+			pos="4741,6010",
+			rects="4686.5,6021.5,4795.5,6044.5 4686.5,5998.5,4795.5,6021.5 4686.5,5975.5,4795.5,5998.5",
+			shape=record,
+			style=filled,
+			width=1.5139];
+		fn_53_basic_block_2:s -> fn_53_basic_block_5:n		 [color=black,
+			constraint=true,
+			label="[46%]",
+			lp="4844.5,6535.5",
+			pos="e,4741,6045 4697,6933.5 4697,6841.3 4808.6,6872.2 4844,6787 4879.3,6702 4866.6,6669.2 4844,6580 4835.6,6546.6 4812,6543.9 4812,6509.5 \
+4812,6509.5 4812,6509.5 4812,6123.5 4812,6080.1 4751.7,6090 4742.2,6054.9",
+			style="solid,bold",
+			weight=10];
+		fn_53_basic_block_4		 [fillcolor=lightgrey,
+			height=0.97222,
+			label="{ FREQ:2035 |\<bb\ 4\>:\l|*_4\ =\ 0;\l}",
+			pos="4741,6329.5",
+			rects="4691,6341,4791,6364 4691,6318,4791,6341 4691,6295,4791,6318",
+			shape=record,
+			style=filled,
+			width=1.3889];
+		fn_53_basic_block_3:s -> fn_53_basic_block_4:n		 [color=black,
+			constraint=true,
+			label="[37%]",
+			lp="4722.5,6535.5",
+			pos="e,4741,6364.5 4697,6580.5 4697,6486 4738,6464 4740.8,6374.6",
+			style="solid,bold",
+			weight=10];
+		fn_53_basic_block_3:s -> fn_53_basic_block_5:n		 [color=black,
+			constraint=true,
+			label="[62%]",
+			lp="4651.5,6329.5",
+			pos="e,4741,6045 4697,6580.5 4697,6544.6 4630,6571.4 4630,6535.5 4630,6535.5 4630,6535.5 4630,6123.5 4630,6066.9 4727.6,6100.5 4739.8,\
+6055.2",
+			style="solid,bold",
+			weight=10];
+		fn_53_basic_block_4:s -> fn_53_basic_block_5:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="4767,6123.5",
+			pos="e,4741,6045 4741,6294.5 4741,6187.1 4741,6157.7 4741,6055.2",
+			style="solid,bold",
+			weight=100];
+		fn_53_basic_block_5:s -> fn_53_basic_block_1:n		 [color=black,
+			constraint=true,
+			label="[100%]",
+			lp="4767,5896.5",
+			pos="e,4741,5778 4741,5975 4741,5891 4741,5867.5 4741,5788.5",
+			style="solid,bold",
+			weight=10];
+	}
+	subgraph cluster_runCommand {
+		graph [bb="4871,4297.5,5788,7285",
+			color=black,
+			label="runCommand ()",
+			lheight=0.21,
+			lp="5329.5,7273.5",
+			lwidth=1.57,
+			style=dashed
+		];
+		fn_54_basic_block_0		 [fillcolor=white,
+			height=0.5,
+			label=ENTRY,
+			pos="5234,7236",
+			shape=Mdiamond,
+			style=filled,
+			width=1.7617];
+		fn_54_basic_block_1		 [fillcolor=white,
+			height=0.5,
+			label=EXIT,
+			pos="5487,4323.5",
+			shape=Mdiamond,
+			style=filled,
+			width=1.3532];
+		fn_54_basic_block_0:s -> fn_54_basic_block_1:n		 [constraint=true,
+			pos="e,5487,4341.5 5234,7218 5234,7138.7 4880,7252.8 4880,7173.5 4880,7173.5 4880,7173.5 4880,4448.5 4880,4178 5471.7,4604.4 5486.7,4351.6",
+			style=invis];
+		fn_54_basic_block_2		 [fillcolor=lightgrey,
+			height=1.9167,
+			label="{ FREQ:10000 |\<bb\ 2\>:\l|pipe_7\ =\ popen\ (command_5(D),\ \"r\");\l|if\ (pipe_7\ ==\ 0B)\l\ \ goto\ \<bb\ 3\>;\ [30.00%]\lelse\l\ \ \
+goto\ \<bb\ 4\>;\ [70.00%]\l}",
+			pos="5234,7002.5",
+			rects="5091.5,7048,5376.5,7071 5091.5,7025,5376.5,7048 5091.5,7002,5376.5,7025 5091.5,6934,5376.5,7002",
+			shape=record,
+			style=filled,
+			width=3.9583];
+		fn_54_basic_block_0:s -> fn_54_basic_block_2:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="5260,7173.5",
+			pos="e,5234,7071.5 5234,7218 5234,7156.4 5234,7138.5 5234,7081.8",
+			style="solid,bold",
+			weight=100];
+		fn_54_basic_block_3		 [fillcolor=lightgrey,
+			height=1.1806,
+			label="{ FREQ:3000 |\<bb\ 3\>:\l|*result_8(D)\ =\ 0;\lgoto\ \<bb\ 11\>;\ [100.00%]\l}",
+			pos="5670,5290",
+			rects="5570,5309,5770,5332 5570,5286,5770,5309 5570,5248,5770,5286",
+			shape=record,
+			style=filled,
+			width=2.7778];
+		fn_54_basic_block_2:s -> fn_54_basic_block_3:n		 [color=black,
+			constraint=true,
+			label="[30%]",
+			lp="5758.5,6010",
+			pos="e,5670,5332 5234,6933.5 5234,6705.4 5737,7059.6 5737,6831.5 5737,6831.5 5737,6831.5 5737,5426.5 5737,5378.6 5679.1,5382.6 5670.9,\
+5342",
+			style="solid,bold",
+			weight=10];
+		fn_54_basic_block_4		 [fillcolor=lightgrey,
+			height=1.9167,
+			label="{ FREQ:7000 |\<bb\ 4\>:\l|_14\ =\ __builtin_object_size\ (result_8(D),\ 1);\l|if\ (_14\ !=\ 18446744073709551615)\l\ \ goto\ \<bb\ \
+5\>;\ [79.76%]\lelse\l\ \ goto\ \<bb\ 7\>;\ [20.24%]\l}",
+			pos="5234,6683.5",
+			rects="5069.5,6729,5398.5,6752 5069.5,6706,5398.5,6729 5069.5,6683,5398.5,6706 5069.5,6615,5398.5,6683",
+			shape=record,
+			style=filled,
+			width=4.5694];
+		fn_54_basic_block_2:s -> fn_54_basic_block_4:n		 [color=black,
+			constraint=true,
+			label="[70%]",
+			lp="5255.5,6831.5",
+			pos="e,5234,6752.5 5234,6933.5 5234,6856.5 5234,6834.8 5234,6762.5",
+			style="solid,bold",
+			weight=10];
+		fn_54_basic_block_11		 [fillcolor=lightgrey,
+			height=1.9167,
+			label="{ FREQ:10000 |\<bb\ 11\>:\l|_21\ =\ MEM[(const\ char\ *)result_8(D)];\l|if\ (_21\ !=\ 0)\l\ \ goto\ \<bb\ 12\>;\ [36.64%]\lelse\l\ \ \
+goto\ \<bb\ 13\>;\ [63.36%]\l}",
+			pos="5487,5040",
+			rects="5339,5085.5,5635,5108.5 5339,5062.5,5635,5085.5 5339,5039.5,5635,5062.5 5339,4971.5,5635,5039.5",
+			shape=record,
+			style=filled,
+			width=4.1111];
+		fn_54_basic_block_3:s -> fn_54_basic_block_11:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="5592,5153.5",
+			pos="e,5487,5109 5670,5248 5670,5175.6 5601.5,5188.7 5543,5146 5522.1,5130.8 5495.3,5136.6 5488.6,5118.9",
+			style="solid,bold",
+			weight=100];
+		fn_54_basic_block_5		 [fillcolor=lightgrey,
+			height=1.5972,
+			label="{ FREQ:5583 |\<bb\ 5\>:\l|if\ (_14\ \<=\ 1023)\l\ \ goto\ \<bb\ 6\>;\ [33.00%]\lelse\l\ \ goto\ \<bb\ 7\>;\ [67.00%]\l}",
+			pos="5234,6329.5",
+			rects="5138.5,6363.5,5329.5,6386.5 5138.5,6340.5,5329.5,6363.5 5138.5,6272.5,5329.5,6340.5",
+			shape=record,
+			style=filled,
+			width=2.6528];
+		fn_54_basic_block_4:s -> fn_54_basic_block_5:n		 [color=black,
+			constraint=true,
+			label="[79%]",
+			lp="5255.5,6535.5",
+			pos="e,5234,6386.5 5234,6614.5 5234,6516.6 5234,6489.7 5234,6396.6",
+			style="solid,bold",
+			weight=10];
+		fn_54_basic_block_7		 [fillcolor=lightgrey,
+			height=0.97222,
+			label="{ FREQ:5158 |\<bb\ 7\>:\l|_19\ =\ __fgets_alias\ (result_8(D),\ 1024,\ pipe_7);\l}",
+			pos="5077,6010",
+			rects="4899,6021.5,5255,6044.5 4899,5998.5,5255,6021.5 4899,5975.5,5255,5998.5",
+			shape=record,
+			style=filled,
+			width=4.9444];
+		fn_54_basic_block_4:s -> fn_54_basic_block_7:n		 [color=black,
+			constraint=true,
+			label="[20%]",
+			lp="5098.5,6329.5",
+			pos="e,5077,6045 5234,6614.5 5234,6536.4 5077,6613.6 5077,6535.5 5077,6535.5 5077,6535.5 5077,6123.5 5077,6092.3 5077,6082 5077,6055.2",
+			style="solid,bold",
+			weight=10];
+		fn_54_basic_block_6		 [fillcolor=lightgrey,
+			height=1.1806,
+			label="{ FREQ:1842 |\<bb\ 6\>:\l|_18\ =\ __fgets_chk_warn\ (result_8(D),\ _14,\ 1024,\ pipe_7);\lgoto\ \<bb\ 8\>;\ [100.00%]\l}",
+			pos="5487,6010",
+			rects="5273.5,6029,5700.5,6052 5273.5,6006,5700.5,6029 5273.5,5968,5700.5,6006",
+			shape=record,
+			style=filled,
+			width=5.9306];
+		fn_54_basic_block_5:s -> fn_54_basic_block_6:n		 [color=black,
+			constraint=true,
+			label="[33%]",
+			lp="5481.5,6123.5",
+			pos="e,5487,6052 5234,6272.5 5234,6126.8 5475.3,6197.6 5486.6,6062.1",
+			style="solid,bold",
+			weight=10];
+		fn_54_basic_block_5:s -> fn_54_basic_block_7:n		 [color=black,
+			constraint=true,
+			label="[67%]",
+			lp="5137.5,6123.5",
+			pos="e,5077,6045 5234,6272.5 5234,6153.1 5085.8,6166.9 5077.4,6055.1",
+			style="solid,bold",
+			weight=10];
+		fn_54_basic_block_8		 [fillcolor=lightgrey,
+			height=1.9167,
+			label="{ FREQ:7000 |\<bb\ 8\>:\l|#\ _20\ =\ PHI\ \<_19(7),\ _18(6)\>\l|if\ (_20\ ==\ 0B)\l\ \ goto\ \<bb\ 9\>;\ [30.00%]\lelse\l\ \ goto\ \<\
+bb\ 10\>;\ [70.00%]\l}",
+			pos="5487,5760",
+			rects="5369,5805.5,5605,5828.5 5369,5782.5,5605,5805.5 5369,5759.5,5605,5782.5 5369,5691.5,5605,5759.5",
+			shape=record,
+			style=filled,
+			width=3.2778];
+		fn_54_basic_block_6:s -> fn_54_basic_block_8:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="5513,5896.5",
+			pos="e,5487,5829 5487,5968 5487,5909.7 5487,5892.7 5487,5839.1",
+			style="solid,bold",
+			weight=100];
+		fn_54_basic_block_7:s -> fn_54_basic_block_8:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="5400,5896.5",
+			pos="e,5487,5829 5077,5975 5077,5881.8 5457.9,5922.5 5485.4,5838.9",
+			style="solid,bold",
+			weight=100];
+		fn_54_basic_block_9		 [fillcolor=lightgrey,
+			height=0.97222,
+			label="{ FREQ:2100 |\<bb\ 9\>:\l|*result_8(D)\ =\ 0;\l}",
+			pos="5487,5525",
+			rects="5417.5,5536.5,5556.5,5559.5 5417.5,5513.5,5556.5,5536.5 5417.5,5490.5,5556.5,5513.5",
+			shape=record,
+			style=filled,
+			width=1.9306];
+		fn_54_basic_block_8:s -> fn_54_basic_block_9:n		 [color=black,
+			constraint=true,
+			label="[30%]",
+			lp="5508.5,5623.5",
+			pos="e,5487,5560 5487,5691 5487,5636.3 5487,5620.1 5487,5570.1",
+			style="solid,bold",
+			weight=10];
+		fn_54_basic_block_10		 [fillcolor=lightgrey,
+			height=0.97222,
+			label="{ FREQ:7000 |\<bb\ 10\>:\l|pclose\ (pipe_7);\l}",
+			pos="5487,5290",
+			rects="5422.5,5301.5,5551.5,5324.5 5422.5,5278.5,5551.5,5301.5 5422.5,5255.5,5551.5,5278.5",
+			shape=record,
+			style=filled,
+			width=1.7917];
+		fn_54_basic_block_8:s -> fn_54_basic_block_10:n		 [color=black,
+			constraint=true,
+			label="[70%]",
+			lp="5614.5,5525",
+			pos="e,5487,5325 5487,5691 5487,5635.1 5593,5679.4 5593,5623.5 5593,5623.5 5593,5623.5 5593,5426.5 5593,5365 5498.7,5387.2 5488,5335.2",
+			style="solid,bold",
+			weight=10];
+		fn_54_basic_block_9:s -> fn_54_basic_block_10:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="5513,5426.5",
+			pos="e,5487,5325 5487,5490 5487,5420.2 5487,5400.3 5487,5335.4",
+			style="solid,bold",
+			weight=100];
+		fn_54_basic_block_10:s -> fn_54_basic_block_11:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="5513,5153.5",
+			pos="e,5487,5109 5487,5255 5487,5193.7 5487,5175.8 5487,5119.2",
+			style="solid,bold",
+			weight=100];
+		fn_54_basic_block_12		 [fillcolor=lightgrey,
+			height=0.97222,
+			label="{ FREQ:3664 |\<bb\ 12\>:\l|removeNewLine.part.1\ (result_8(D));\l}",
+			pos="5487,4813",
+			rects="5346,4824.5,5628,4847.5 5346,4801.5,5628,4824.5 5346,4778.5,5628,4801.5",
+			shape=record,
+			style=filled,
+			width=3.9167];
+		fn_54_basic_block_11:s -> fn_54_basic_block_12:n		 [color=black,
+			constraint=true,
+			label="[36%]",
+			lp="5508.5,4926.5",
+			pos="e,5487,4848 5487,4971 5487,4919.9 5487,4904.6 5487,4858.1",
+			style="solid,bold",
+			weight=10];
+		fn_54_basic_block_13		 [fillcolor=lightgrey,
+			height=0.97222,
+			label="{ FREQ:10000 |\<bb\ 13\>:\l|return;\l}",
+			pos="5487,4574",
+			rects="5432.5,4585.5,5541.5,4608.5 5432.5,4562.5,5541.5,4585.5 5432.5,4539.5,5541.5,4562.5",
+			shape=record,
+			style=filled,
+			width=1.5139];
+		fn_54_basic_block_11:s -> fn_54_basic_block_13:n		 [color=black,
+			constraint=true,
+			label="[63%]",
+			lp="5306.5,4813",
+			pos="e,5487,4609 5487,4971 5487,4925 5285,4972.5 5285,4926.5 5285,4926.5 5285,4926.5 5285,4699.5 5285,4604.8 5472.3,4699.8 5486.2,4619.1",
+			style="solid,bold",
+			weight=10];
+		fn_54_basic_block_12:s -> fn_54_basic_block_13:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="5513,4699.5",
+			pos="e,5487,4609 5487,4778 5487,4706.4 5487,4686 5487,4619.2",
+			style="solid,bold",
+			weight=100];
+		fn_54_basic_block_13:s -> fn_54_basic_block_1:n		 [color=black,
+			constraint=true,
+			label="[100%]",
+			lp="5513,4448.5",
+			pos="e,5487,4341.5 5487,4539 5487,4454.8 5487,4431.2 5487,4352",
+			style="solid,bold",
+			weight=10];
+	}
+	subgraph cluster_readProcCpuInfo {
+		graph [bb="5796,8,10899,7285",
+			color=black,
+			label="readProcCpuInfo ()",
+			lheight=0.21,
+			lp="8347.5,7273.5",
+			lwidth=1.93,
+			style=dashed
+		];
+		subgraph cluster_55_1 {
+			graph [bb="6794,16,10891,6441",
+				color=darkgreen,
+				fillcolor=grey88,
+				label="loop 1",
+				labeljust=l,
+				lheight=0.21,
+				lp="6824,6429.5",
+				lwidth=0.61,
+				penwidth=2,
+				style=filled
+			];
+			subgraph cluster_55_5 {
+				graph [bb="10236,815.5,10726,3028",
+					color=darkgreen,
+					fillcolor=grey77,
+					label="loop 5",
+					labeljust=l,
+					lheight=0.21,
+					lp="10266,3016.5",
+					lwidth=0.61,
+					penwidth=2,
+					style=filled
+				];
+				fn_55_basic_block_7				 [fillcolor=lightgrey,
+					height=1.9167,
+					label="{ FREQ:10000 |\<bb\ 7\>:\l|#\ cp_40\ =\ PHI\ \<&MEM[(void\ *)&buffer\ +\ 9B](62),\ cp_113(6)\>\l|if\ (cp_40\ \<\ buffer_end_94)\l\ \ \
+goto\ \<bb\ 8\>;\ [92.50%]\lelse\l\ \ goto\ \<bb\ 10\>;\ [7.50%]\l}",
+					pos="10481,2928",
+					rects="10244,2973.5,10718,2996.5 10244,2950.5,10718,2973.5 10244,2927.5,10718,2950.5 10244,2859.5,10718,2927.5",
+					shape=record,
+					style=filled,
+					width=6.5833];
+				fn_55_basic_block_8				 [fillcolor=lightgrey,
+					height=2.875,
+					label="{ FREQ:9250 |\<bb\ 8\>:\l|_112\ =\ *cp_40;\l|_8\ =\ _112\ ==\ 32;\l|_9\ =\ _112\ ==\ 58;\l|_10\ =\ _8\ \|\ _9;\l|if\ (_10\ !=\ 0)\l\ \ \
+goto\ \<bb\ 6\>;\ [50.00%]\lelse\l\ \ goto\ \<bb\ 9\>;\ [50.00%]\l}",
+					pos="10472,1936.5",
+					rects="10376,2016.5,10568,2039.5 10376,1993.5,10568,2016.5 10376,1970.5,10568,1993.5 10376,1947.5,10568,1970.5 10376,1924.5,10568,1947.5 \
+10376,1901.5,10568,1924.5 10376,1833.5,10568,1901.5",
+					shape=record,
+					style=filled,
+					width=2.6528];
+				fn_55_basic_block_7:s -> fn_55_basic_block_8:n				 [color=black,
+					constraint=true,
+					label="[92%]",
+					lp="10494,2415",
+					pos="e,10472,2039.5 10481,2859 10481,2850.8 10479,2849 10477,2841 10475,2829.3 10472,2826.5 10472,2814.5 10472,2814.5 10472,2814.5 10472,\
+2084.5 10472,2068.4 10472,2062 10472,2049.7",
+					style="solid,bold",
+					weight=10];
+				fn_55_basic_block_6				 [fillcolor=lightgrey,
+					height=0.97222,
+					label="{ FREQ:8903 |\<bb\ 6\>:\l|cp_113\ =\ cp_40\ +\ 1;\l}",
+					pos="10423,858.5",
+					rects="10340,870,10506,893 10340,847,10506,870 10340,824,10506,847",
+					shape=record,
+					style=filled,
+					width=2.3194];
+				fn_55_basic_block_8:s -> fn_55_basic_block_6:n				 [color=black,
+					constraint=true,
+					label="[50%]",
+					lp="10494,1430.5",
+					pos="e,10423,893.5 10472,1833.5 10472,1816.6 10472,1812.4 10472,1795.5 10472,1795.5 10472,1795.5 10472,942.5 10472,915.79 10435,921.72 \
+10425,903.68",
+					style="solid,bold",
+					weight=10];
+				fn_55_basic_block_9				 [fillcolor=lightgrey,
+					height=1.5972,
+					label="{ FREQ:4625 |\<bb\ 9\>:\l|if\ (_112\ ==\ 9)\l\ \ goto\ \<bb\ 6\>;\ [92.50%]\lelse\l\ \ goto\ \<bb\ 10\>;\ [7.50%]\l}",
+					pos="10340,1430.5",
+					rects="10244,1464.5,10436,1487.5 10244,1441.5,10436,1464.5 10244,1373.5,10436,1441.5",
+					shape=record,
+					style=filled,
+					width=2.6528];
+				fn_55_basic_block_8:s -> fn_55_basic_block_9:n				 [color=black,
+					constraint=true,
+					label="[50%]",
+					lp="10396,1660.5",
+					pos="e,10340,1487.5 10472,1833.5 10472,1787.2 10375,1841.8 10375,1795.5 10375,1795.5 10375,1795.5 10375,1525.5 10375,1516.6 10375,1513.2 \
+10370,1506 10364,1497.3 10352,1499.2 10345,1496.2",
+					style="solid,bold",
+					weight=10];
+				fn_55_basic_block_6:s -> fn_55_basic_block_7:n				 [color=blue,
+					constraint=false,
+					label="[100%]",
+					lp="10509,1660.5",
+					pos="e,10481,2997 10423,823.5 10423,814.22 10500,816.94 10506,823.5 10517,834.5 10508,878.06 10506,893.5 10503,924.16 10494,930.34 10490,\
+961 10485,1004.5 10469,1316.7 10490,1355 10497,1368.3 10512,1359.7 10519,1373 10544,1417.7 10531,1438.3 10519,1488 10516,1501.6 \
+10493,1530.4 10490,1544 10484,1569.2 10478,1754.3 10490,1777 10512,1817.4 10555,1792.6 10577,1833 10621,1913.8 10627,1962.5 10577,\
+2040 10567,2056.1 10553,2046.8 10538,2058 10513,2076.5 10501,2080.7 10490,2110 10480,2136.1 10476,2337.5 10490,2362 10497,2375.3 \
+10512,2366.7 10519,2380 10534,2407.2 10525,2419.6 10519,2450 10517,2458.6 10514,2459.9 10511,2468 10501,2490.9 10495,2495.6 10490,\
+2520 10486,2537.5 10473,2827.9 10485,2841 10520,2879.1 10683,2820.9 10718,2859 10718,2859 10532,2967 10490,2991.9",
+					style="dotted,bold",
+					weight=10];
+				fn_55_basic_block_9:s -> fn_55_basic_block_6:n				 [color=black,
+					constraint=true,
+					label="[92%]",
+					lp="10396,1139",
+					pos="e,10423,893.5 10340,1373.5 10340,1357.8 10361,1367.6 10370,1355 10375,1347.8 10375,1344.4 10375,1335.5 10375,1335.5 10375,1335.5 \
+10375,942.5 10375,916.06 10411,921.55 10421,903.6",
+					style="solid,bold",
+					weight=10];
+			}
+			subgraph cluster_55_4 {
+				graph [bb="8774,815.5,9282,3028",
+					color=darkgreen,
+					fillcolor=grey77,
+					label="loop 4",
+					labeljust=l,
+					lheight=0.21,
+					lp="8804,3016.5",
+					lwidth=0.61,
+					penwidth=2,
+					style=filled
+				];
+				fn_55_basic_block_16				 [fillcolor=lightgrey,
+					height=1.9167,
+					label="{ FREQ:6600 |\<bb\ 16\>:\l|#\ cp_41\ =\ PHI\ \<&MEM[(void\ *)&buffer\ +\ 10B](63),\ cp_108(15)\>\l|if\ (cp_41\ \<\ buffer_end_94)\l\ \ \
+goto\ \<bb\ 17\>;\ [92.50%]\lelse\l\ \ goto\ \<bb\ 19\>;\ [7.50%]\l}",
+					pos="9028,2928",
+					rects="8782,2973.5,9274,2996.5 8782,2950.5,9274,2973.5 8782,2927.5,9274,2950.5 8782,2859.5,9274,2927.5",
+					shape=record,
+					style=filled,
+					width=6.8333];
+				fn_55_basic_block_17				 [fillcolor=lightgrey,
+					height=2.875,
+					label="{ FREQ:6105 |\<bb\ 17\>:\l|_107\ =\ *cp_41;\l|_13\ =\ _107\ ==\ 32;\l|_14\ =\ _107\ ==\ 58;\l|_15\ =\ _13\ \|\ _14;\l|if\ (_15\ !=\ \
+0)\l\ \ goto\ \<bb\ 15\>;\ [50.00%]\lelse\l\ \ goto\ \<bb\ 18\>;\ [50.00%]\l}",
+					pos="9028,1936.5",
+					rects="8928,2016.5,9128,2039.5 8928,1993.5,9128,2016.5 8928,1970.5,9128,1993.5 8928,1947.5,9128,1970.5 8928,1924.5,9128,1947.5 8928,1901.5,\
+9128,1924.5 8928,1833.5,9128,1901.5",
+					shape=record,
+					style=filled,
+					width=2.7778];
+				fn_55_basic_block_16:s -> fn_55_basic_block_17:n				 [color=black,
+					constraint=true,
+					label="[92%]",
+					lp="9049.5,2415",
+					pos="e,9028,2039.5 9028,2859 9028,2839.2 9028,2834.3 9028,2814.5 9028,2814.5 9028,2814.5 9028,2084.5 9028,2068.4 9028,2062 9028,2049.7",
+					style="solid,bold",
+					weight=10];
+				fn_55_basic_block_15				 [fillcolor=lightgrey,
+					height=0.97222,
+					label="{ FREQ:5876 |\<bb\ 15\>:\l|cp_108\ =\ cp_41\ +\ 1;\l}",
+					pos="9017,858.5",
+					rects="8933.5,870,9100.5,893 8933.5,847,9100.5,870 8933.5,824,9100.5,847",
+					shape=record,
+					style=filled,
+					width=2.3194];
+				fn_55_basic_block_17:s -> fn_55_basic_block_15:n				 [color=black,
+					constraint=true,
+					label="[50%]",
+					lp="9014.5,1430.5",
+					pos="e,9017,893.5 9028,1833.5 9028,1810.5 8993,1818.5 8993,1795.5 8993,1795.5 8993,1795.5 8993,942.5 8993,922.23 9009.8,918.55 9015.3,\
+903.73",
+					style="solid,bold",
+					weight=10];
+				fn_55_basic_block_18				 [fillcolor=lightgrey,
+					height=1.5972,
+					label="{ FREQ:3052 |\<bb\ 18\>:\l|if\ (_107\ ==\ 9)\l\ \ goto\ \<bb\ 15\>;\ [92.50%]\lelse\l\ \ goto\ \<bb\ 19\>;\ [7.50%]\l}",
+					pos="9154,1430.5",
+					rects="9054,1464.5,9254,1487.5 9054,1441.5,9254,1464.5 9054,1373.5,9254,1441.5",
+					shape=record,
+					style=filled,
+					width=2.7778];
+				fn_55_basic_block_17:s -> fn_55_basic_block_18:n				 [color=black,
+					constraint=true,
+					label="[50%]",
+					lp="9107.5,1660.5",
+					pos="e,9154,1487.5 9028,1833.5 9028,1802.7 9086,1826.3 9086,1795.5 9086,1795.5 9086,1795.5 9086,1525.5 9086,1494.9 9139,1515.7 9151.4,\
+1497.2",
+					style="solid,bold",
+					weight=10];
+				fn_55_basic_block_15:s -> fn_55_basic_block_16:n				 [color=blue,
+					constraint=false,
+					label="[100%]",
+					lp="9165,1660.5",
+					pos="e,9028,2997 9017,823.5 9017,814.22 9093.9,816.94 9100.5,823.5 9106,829 9102.6,886.02 9100.5,893.5 9090.9,927.39 9068.6,927.11 9059,\
+961 9048,999.92 9039.3,1016.7 9059,1052 9066.4,1065.3 9079.5,1057.4 9088,1070 9150.6,1162.3 9063.7,1228.8 9132,1317 9156.8,1349.1 \
+9177.5,1339.4 9215,1355 9236,1363.7 9250,1354.3 9263,1373 9277.6,1394 9277.1,1466.7 9263,1488 9262.3,1489.1 9178.1,1524.3 9177,1525 \
+9165.7,1531.9 9160,1532.2 9154,1544 9117.4,1615.4 9145.3,1643.9 9142,1724 9136.2,1864.3 9144.7,1899.7 9137,2040 9126.6,2230.8 9105.9,\
+2277.2 9097,2468 9089.5,2628 9060.8,2700.3 9165,2822 9181.3,2841 9194.3,2832.9 9218,2841 9242.8,2849.4 9258.6,2837.9 9274,2859 9310.1,\
+2908.6 9317.4,2953.6 9274,2997 9265.5,3005.5 9081.1,3009.6 9037.3,3001.2",
+					style="dotted,bold",
+					weight=10];
+				fn_55_basic_block_18:s -> fn_55_basic_block_15:n				 [color=black,
+					constraint=true,
+					label="[92%]",
+					lp="9062.5,1139",
+					pos="e,9017,893.5 9154,1373.5 9154,1320.5 9041,1388.5 9041,1335.5 9041,1335.5 9041,1335.5 9041,942.5 9041,922.23 9024.2,918.55 9018.7,\
+903.73",
+					style="solid,bold",
+					weight=10];
+			}
+			subgraph cluster_55_3 {
+				graph [bb="8266,815.5,8766,3028",
+					color=darkgreen,
+					fillcolor=grey77,
+					label="loop 3",
+					labeljust=l,
+					lheight=0.21,
+					lp="8296,3016.5",
+					lwidth=0.61,
+					penwidth=2,
+					style=filled
+				];
+				fn_55_basic_block_25				 [fillcolor=lightgrey,
+					height=1.9167,
+					label="{ FREQ:4356 |\<bb\ 25\>:\l|#\ cp_42\ =\ PHI\ \<&MEM[(void\ *)&buffer\ +\ 7B](64),\ cp_103(24)\>\l|if\ (cp_42\ \<\ buffer_end_94)\l\ \ \
+goto\ \<bb\ 26\>;\ [92.50%]\lelse\l\ \ goto\ \<bb\ 28\>;\ [7.50%]\l}",
+					pos="8516,2928",
+					rects="8274.5,2973.5,8757.5,2996.5 8274.5,2950.5,8757.5,2973.5 8274.5,2927.5,8757.5,2950.5 8274.5,2859.5,8757.5,2927.5",
+					shape=record,
+					style=filled,
+					width=6.7083];
+				fn_55_basic_block_26				 [fillcolor=lightgrey,
+					height=2.875,
+					label="{ FREQ:4029 |\<bb\ 26\>:\l|_102\ =\ *cp_42;\l|_18\ =\ _102\ ==\ 32;\l|_19\ =\ _102\ ==\ 58;\l|_20\ =\ _18\ \|\ _19;\l|if\ (_20\ !=\ \
+0)\l\ \ goto\ \<bb\ 24\>;\ [50.00%]\lelse\l\ \ goto\ \<bb\ 27\>;\ [50.00%]\l}",
+					pos="8513,1936.5",
+					rects="8413,2016.5,8613,2039.5 8413,1993.5,8613,2016.5 8413,1970.5,8613,1993.5 8413,1947.5,8613,1970.5 8413,1924.5,8613,1947.5 8413,1901.5,\
+8613,1924.5 8413,1833.5,8613,1901.5",
+					shape=record,
+					style=filled,
+					width=2.7778];
+				fn_55_basic_block_25:s -> fn_55_basic_block_26:n				 [color=black,
+					constraint=true,
+					label="[92%]",
+					lp="8535.5,2415",
+					pos="e,8513,2039.5 8516,2859 8516,2839.2 8514,2834.3 8514,2814.5 8514,2814.5 8514,2814.5 8514,2084.5 8514,2068.4 8513.4,2062 8513.1,2049.7",
+					style="solid,bold",
+					weight=10];
+				fn_55_basic_block_24				 [fillcolor=lightgrey,
+					height=0.97222,
+					label="{ FREQ:3878 |\<bb\ 24\>:\l|cp_103\ =\ cp_42\ +\ 1;\l}",
+					pos="8464,858.5",
+					rects="8380.5,870,8547.5,893 8380.5,847,8547.5,870 8380.5,824,8547.5,847",
+					shape=record,
+					style=filled,
+					width=2.3194];
+				fn_55_basic_block_26:s -> fn_55_basic_block_24:n				 [color=black,
+					constraint=true,
+					label="[50%]",
+					lp="8534.5,1430.5",
+					pos="e,8464,893.5 8513,1833.5 8513,1816.6 8513,1812.4 8513,1795.5 8513,1795.5 8513,1795.5 8513,942.5 8513,915.79 8476.2,921.72 8466.4,\
+903.68",
+					style="solid,bold",
+					weight=10];
+				fn_55_basic_block_27				 [fillcolor=lightgrey,
+					height=1.5972,
+					label="{ FREQ:2015 |\<bb\ 27\>:\l|if\ (_102\ ==\ 9)\l\ \ goto\ \<bb\ 24\>;\ [92.50%]\lelse\l\ \ goto\ \<bb\ 28\>;\ [7.50%]\l}",
+					pos="8377,1430.5",
+					rects="8277,1464.5,8477,1487.5 8277,1441.5,8477,1464.5 8277,1373.5,8477,1441.5",
+					shape=record,
+					style=filled,
+					width=2.7778];
+				fn_55_basic_block_26:s -> fn_55_basic_block_27:n				 [color=black,
+					constraint=true,
+					label="[50%]",
+					lp="8435.5,1660.5",
+					pos="e,8377,1487.5 8513,1833.5 8513,1786.4 8414,1842.6 8414,1795.5 8414,1795.5 8414,1795.5 8414,1525.5 8414,1516.6 8414.4,1513.1 8409,\
+1506 8402,1496.8 8389,1499.5 8381.9,1496.2",
+					style="solid,bold",
+					weight=10];
+				fn_55_basic_block_24:s -> fn_55_basic_block_25:n				 [color=blue,
+					constraint=false,
+					label="[100%]",
+					lp="8727,1660.5",
+					pos="e,8516,2997 8464,823.5 8464,814.22 8540.6,817.29 8547.5,823.5 8716.3,975.8 8745.8,2631.9 8757.5,2859 8757.5,2859 8568.5,2967 8524.9,\
+2991.9",
+					style="dotted,bold",
+					weight=10];
+				fn_55_basic_block_27:s -> fn_55_basic_block_24:n				 [color=black,
+					constraint=true,
+					label="[92%]",
+					lp="8435.5,1139",
+					pos="e,8464,893.5 8377,1373.5 8377,1357.1 8399.1,1368.1 8409,1355 8414.4,1347.9 8414,1344.4 8414,1335.5 8414,1335.5 8414,1335.5 8414,\
+942.5 8414,915.52 8451.6,921.88 8461.6,903.76",
+					style="solid,bold",
+					weight=10];
+			}
+			subgraph cluster_55_2 {
+				graph [bb="7293,815.5,7793,3028",
+					color=darkgreen,
+					fillcolor=grey77,
+					label="loop 2",
+					labeljust=l,
+					lheight=0.21,
+					lp="7323,3016.5",
+					lwidth=0.61,
+					penwidth=2,
+					style=filled
+				];
+				fn_55_basic_block_34				 [fillcolor=lightgrey,
+					height=1.9167,
+					label="{ FREQ:2875 |\<bb\ 34\>:\l|#\ cp_43\ =\ PHI\ \<&MEM[(void\ *)&buffer\ +\ 10B](65),\ cp_98(33)\>\l|if\ (cp_43\ \<\ buffer_end_94)\l\ \ \
+goto\ \<bb\ 35\>;\ [92.50%]\lelse\l\ \ goto\ \<bb\ 37\>;\ [7.50%]\l}",
+					pos="7543,2928",
+					rects="7301.5,2973.5,7784.5,2996.5 7301.5,2950.5,7784.5,2973.5 7301.5,2927.5,7784.5,2950.5 7301.5,2859.5,7784.5,2927.5",
+					shape=record,
+					style=filled,
+					width=6.7083];
+				fn_55_basic_block_35				 [fillcolor=lightgrey,
+					height=2.875,
+					label="{ FREQ:2659 |\<bb\ 35\>:\l|_97\ =\ *cp_43;\l|_23\ =\ _97\ ==\ 32;\l|_24\ =\ _97\ ==\ 58;\l|_25\ =\ _23\ \|\ _24;\l|if\ (_25\ !=\ \
+0)\l\ \ goto\ \<bb\ 33\>;\ [50.00%]\lelse\l\ \ goto\ \<bb\ 36\>;\ [50.00%]\l}",
+					pos="7540,1936.5",
+					rects="7440,2016.5,7640,2039.5 7440,1993.5,7640,2016.5 7440,1970.5,7640,1993.5 7440,1947.5,7640,1970.5 7440,1924.5,7640,1947.5 7440,1901.5,\
+7640,1924.5 7440,1833.5,7640,1901.5",
+					shape=record,
+					style=filled,
+					width=2.7778];
+				fn_55_basic_block_34:s -> fn_55_basic_block_35:n				 [color=black,
+					constraint=true,
+					label="[92%]",
+					lp="7562.5,2415",
+					pos="e,7540,2039.5 7543,2859 7543,2839.2 7541,2834.3 7541,2814.5 7541,2814.5 7541,2814.5 7541,2084.5 7541,2068.4 7540.4,2062 7540.1,2049.7",
+					style="solid,bold",
+					weight=10];
+				fn_55_basic_block_33				 [fillcolor=lightgrey,
+					height=0.97222,
+					label="{ FREQ:2560 |\<bb\ 33\>:\l|cp_98\ =\ cp_43\ +\ 1;\l}",
+					pos="7491,858.5",
+					rects="7412,870,7570,893 7412,847,7570,870 7412,824,7570,847",
+					shape=record,
+					style=filled,
+					width=2.1944];
+				fn_55_basic_block_35:s -> fn_55_basic_block_33:n				 [color=black,
+					constraint=true,
+					label="[50%]",
+					lp="7561.5,1430.5",
+					pos="e,7491,893.5 7540,1833.5 7540,1816.6 7540,1812.4 7540,1795.5 7540,1795.5 7540,1795.5 7540,942.5 7540,915.79 7503.2,921.72 7493.4,\
+903.68",
+					style="solid,bold",
+					weight=10];
+				fn_55_basic_block_36				 [fillcolor=lightgrey,
+					height=1.5972,
+					label="{ FREQ:1330 |\<bb\ 36\>:\l|if\ (_97\ ==\ 9)\l\ \ goto\ \<bb\ 33\>;\ [92.50%]\lelse\l\ \ goto\ \<bb\ 37\>;\ [7.50%]\l}",
+					pos="7404,1430.5",
+					rects="7304,1464.5,7504,1487.5 7304,1441.5,7504,1464.5 7304,1373.5,7504,1441.5",
+					shape=record,
+					style=filled,
+					width=2.7778];
+				fn_55_basic_block_35:s -> fn_55_basic_block_36:n				 [color=black,
+					constraint=true,
+					label="[50%]",
+					lp="7462.5,1660.5",
+					pos="e,7404,1487.5 7540,1833.5 7540,1786.4 7441,1842.6 7441,1795.5 7441,1795.5 7441,1795.5 7441,1525.5 7441,1516.6 7441.4,1513.1 7436,\
+1506 7429,1496.8 7416,1499.5 7408.9,1496.2",
+					style="solid,bold",
+					weight=10];
+				fn_55_basic_block_33:s -> fn_55_basic_block_34:n				 [color=blue,
+					constraint=false,
+					label="[100%]",
+					lp="7575,1660.5",
+					pos="e,7543,2997 7491,823.5 7491,814.72 7563.8,817.29 7570,823.5 7575.5,829 7570.7,885.75 7570,893.5 7567.3,923.85 7560.7,930.65 7558,\
+961 7554.2,1004.6 7536.7,1316.7 7558,1355 7565.4,1368.3 7579.6,1359.7 7587,1373 7611.8,1417.7 7599.1,1438.3 7587,1488 7583.7,1501.6 \
+7561.3,1530.4 7558,1544 7550.9,1573.3 7538.9,1791.7 7558,1815 7584.2,1846.9 7622.8,1801.1 7649,1833 7707.4,1904.1 7699,1962.7 7649,\
+2040 7638.4,2056.4 7624.9,2046.8 7609,2058 7582.8,2076.5 7571,2080.3 7559,2110 7548.5,2136 7545.4,2337.5 7559,2362 7566.4,2375.3 \
+7580.6,2366.7 7588,2380 7603.1,2407.2 7594.5,2419.6 7588,2450 7586.2,2458.6 7583.4,2459.9 7580,2468 7570.3,2490.9 7563.8,2495.5 \
+7559,2520 7553.3,2549.3 7541.3,2764.9 7559,2789 7590.1,2831.2 7753.4,2816.8 7784.5,2859 7784.5,2859 7595.5,2967 7551.9,2991.9",
+					style="dotted,bold",
+					weight=10];
+				fn_55_basic_block_36:s -> fn_55_basic_block_33:n				 [color=black,
+					constraint=true,
+					label="[92%]",
+					lp="7462.5,1139",
+					pos="e,7491,893.5 7404,1373.5 7404,1357.1 7426.1,1368.1 7436,1355 7441.4,1347.9 7441,1344.4 7441,1335.5 7441,1335.5 7441,1335.5 7441,\
+942.5 7441,915.52 7478.6,921.88 7488.6,903.76",
+					style="solid,bold",
+					weight=10];
+			}
+			fn_55_basic_block_10			 [fillcolor=lightgrey,
+				height=1.9167,
+				label="{ FREQ:1097 |\<bb\ 10\>:\l|#\ cp_3\ =\ PHI\ \<cp_40(7),\ cp_40(9)\>\l|if\ (cp_3\ \<\ buffer_end_94)\l\ \ goto\ \<bb\ 11\>;\ [33.00%]\lelse\l\ \ \
+goto\ \<bb\ 12\>;\ [67.00%]\l}",
+				pos="10089,1139",
+				rects="9950,1184.5,10228,1207.5 9950,1161.5,10228,1184.5 9950,1138.5,10228,1161.5 9950,1070.5,10228,1138.5",
+				shape=record,
+				style=filled,
+				width=3.8611];
+			fn_55_basic_block_7:s -> fn_55_basic_block_10:n			 [color=black,
+				constraint=true,
+				label="[7%]",
+				lp="10150,1750.5",
+				pos="e,10089,1208 10481,2859 10481,2781 10133,2892.5 10133,2814.5 10133,2814.5 10133,2814.5 10133,1245.5 10133,1224 10102,1230.2 10092,\
+1217.8",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_9:s -> fn_55_basic_block_10:n			 [color=black,
+				constraint=true,
+				label="[7%]",
+				lp="10294,1290.5",
+				pos="e,10089,1208 10340,1373.5 10340,1340.8 10277,1368.2 10277,1335.5 10277,1335.5 10277,1335.5 10277,1245.5 10277,1226.8 10132,1228.5 \
+10097,1214.7",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_19			 [fillcolor=lightgrey,
+				height=1.9167,
+				label="{ FREQ:724 |\<bb\ 19\>:\l|#\ cp_4\ =\ PHI\ \<cp_41(16),\ cp_41(18)\>\l|if\ (cp_4\ \<\ buffer_end_94)\l\ \ goto\ \<bb\ 20\>;\ [33.00%]\lelse\l\ \ \
+goto\ \<bb\ 21\>;\ [67.00%]\l}",
+				pos="9438,1139",
+				rects="9290,1184.5,9586,1207.5 9290,1161.5,9586,1184.5 9290,1138.5,9586,1161.5 9290,1070.5,9586,1138.5",
+				shape=record,
+				style=filled,
+				width=4.1111];
+			fn_55_basic_block_16:s -> fn_55_basic_block_19:n			 [color=black,
+				constraint=true,
+				label="[7%]",
+				lp="9314,1750.5",
+				pos="e,9438,1208 9028,2859 9028,2837.8 9197.3,2845.4 9218,2841 9254.2,2833.3 9297,2851.5 9297,2814.5 9297,2814.5 9297,2814.5 9297,1245.5 \
+9297,1184.6 9421.4,1262.3 9436.5,1218.1",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_18:s -> fn_55_basic_block_19:n			 [color=black,
+				constraint=true,
+				label="[7%]",
+				lp="9240,1290.5",
+				pos="e,9438,1208 9154,1373.5 9154,1338.5 9223,1370.5 9223,1335.5 9223,1335.5 9223,1335.5 9223,1245.5 9223,1213.6 9260.8,1232.3 9292,1226 \
+9305.6,1223.3 9401,1224 9429.8,1214.3",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_28			 [fillcolor=lightgrey,
+				height=1.9167,
+				label="{ FREQ:478 |\<bb\ 28\>:\l|#\ cp_26\ =\ PHI\ \<cp_42(25),\ cp_42(27)\>\l|if\ (cp_26\ \<\ buffer_end_94)\l\ \ goto\ \<bb\ 29\>;\ [\
+33.00%]\lelse\l\ \ goto\ \<bb\ 30\>;\ [67.00%]\l}",
+				pos="8105,1139",
+				rects="7952.5,1184.5,8257.5,1207.5 7952.5,1161.5,8257.5,1184.5 7952.5,1138.5,8257.5,1161.5 7952.5,1070.5,8257.5,1138.5",
+				shape=record,
+				style=filled,
+				width=4.2361];
+			fn_55_basic_block_25:s -> fn_55_basic_block_28:n			 [color=black,
+				constraint=true,
+				label="[7%]",
+				lp="8173,1750.5",
+				pos="e,8105,1208 8516,2859 8516,2778.4 8156,2895.1 8156,2814.5 8156,2814.5 8156,2814.5 8156,1245.5 8156,1221.5 8119,1231.6 8108,1217.7",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_27:s -> fn_55_basic_block_28:n			 [color=black,
+				constraint=true,
+				label="[7%]",
+				lp="8326,1290.5",
+				pos="e,8105,1208 8377,1373.5 8377,1338.9 8309,1370.1 8309,1335.5 8309,1335.5 8309,1335.5 8309,1245.5 8309,1225.2 8150,1229.5 8112.7,1214.9",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_37			 [fillcolor=lightgrey,
+				height=1.9167,
+				label="{ FREQ:315 |\<bb\ 37\>:\l|#\ cp_21\ =\ PHI\ \<cp_43(34),\ cp_43(36)\>\l|if\ (cp_21\ \<\ buffer_end_94)\l\ \ goto\ \<bb\ 38\>;\ [\
+33.00%]\lelse\l\ \ goto\ \<bb\ 39\>;\ [67.00%]\l}",
+				pos="7132,1139",
+				rects="6979.5,1184.5,7284.5,1207.5 6979.5,1161.5,7284.5,1184.5 6979.5,1138.5,7284.5,1161.5 6979.5,1070.5,7284.5,1138.5",
+				shape=record,
+				style=filled,
+				width=4.2361];
+			fn_55_basic_block_34:s -> fn_55_basic_block_37:n			 [color=black,
+				constraint=true,
+				label="[7%]",
+				lp="7200,1750.5",
+				pos="e,7132,1208 7543,2859 7543,2778.4 7183,2895.1 7183,2814.5 7183,2814.5 7183,2814.5 7183,1245.5 7183,1221.5 7146,1231.6 7135,1217.7",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_36:s -> fn_55_basic_block_37:n			 [color=black,
+				constraint=true,
+				label="[7%]",
+				lp="7353,1290.5",
+				pos="e,7132,1208 7404,1373.5 7404,1338.9 7336,1370.1 7336,1335.5 7336,1335.5 7336,1335.5 7336,1245.5 7336,1225.2 7177,1229.5 7139.7,1214.9",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_42			 [fillcolor=lightgrey,
+				height=2.2361,
+				label="{ FREQ:7591 |\<bb\ 42\>:\l|#\ cpus_49\ =\ PHI\ \<cpus_2(41),\ 0(61)\>\l|_134\ =\ __fgets_alias\ (&buffer,\ 1024,\ info_73);\l|if\ (_\
+134\ !=\ 0B)\l\ \ goto\ \<bb\ 3\>;\ [85.00%]\lelse\l\ \ goto\ \<bb\ 43\>;\ [15.00%]\l}",
+				pos="6974,6329.5",
+				rects="6802,6386.5,7146,6409.5 6802,6363.5,7146,6386.5 6802,6340.5,7146,6363.5 6802,6317.5,7146,6340.5 6802,6249.5,7146,6317.5",
+				shape=record,
+				style=filled,
+				width=4.7778];
+			fn_55_basic_block_3			 [fillcolor=lightgrey,
+				height=2.5556,
+				label="{ FREQ:6452 |\<bb\ 3\>:\l|_5\ =\ strlen\ (&buffer);\l|buffer_end_94\ =\ &buffer\ +\ _5;\l|_6\ =\ strncmp\ (&buffer,\ \"processor\",\ \
+9);\l|if\ (_6\ ==\ 0)\l\ \ goto\ \<bb\ 4\>;\ [50.00%]\lelse\l\ \ goto\ \<bb\ 5\>;\ [50.00%]\l}",
+				pos="9499,5760",
+				rects="9349.5,5828.5,9648.5,5851.5 9349.5,5805.5,9648.5,5828.5 9349.5,5782.5,9648.5,5805.5 9349.5,5759.5,9648.5,5782.5 9349.5,5736.5,9648.5,\
+5759.5 9349.5,5668.5,9648.5,5736.5",
+				shape=record,
+				style=filled,
+				width=4.1528];
+			fn_55_basic_block_42:s -> fn_55_basic_block_3:n			 [color=black,
+				constraint=true,
+				label="[85%]",
+				lp="7956.5,6010",
+				pos="e,9499,5852 6974,6249.5 6974,6035.9 7772.8,6294.7 7930,6150 7938.8,6141.9 7935,6135.5 7935,6123.5 7935,6123.5 7935,6123.5 7935,5896.5 \
+7935,5886.1 9355.8,5865 9489,5853.6",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_4			 [fillcolor=lightgrey,
+				height=1.1806,
+				label="{ FREQ:3226 |\<bb\ 4\>:\l|cpus_116\ =\ cpus_49\ +\ 1;\lgoto\ \<bb\ 41\>;\ [100.00%]\l}",
+				pos="9566,301.5",
+				rects="9466,320.5,9666,343.5 9466,297.5,9666,320.5 9466,259.5,9666,297.5",
+				shape=record,
+				style=filled,
+				width=2.7778];
+			fn_55_basic_block_3:s -> fn_55_basic_block_4:n			 [color=black,
+				constraint=true,
+				label="[50%]",
+				lp="10774,2415",
+				pos="e,9566,343.5 9499,5668 9499,5598.3 10752,5693.2 10752,5623.5 10752,5623.5 10752,5623.5 10752,381.5 10752,318.47 9667.9,401.48 9572.7,\
+351.29",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_5			 [fillcolor=lightgrey,
+				height=1.9167,
+				label="{ FREQ:3226 |\<bb\ 5\>:\l|_7\ =\ strncmp\ (&buffer,\ \"vendor_id\",\ 9);\l|if\ (_7\ ==\ 0)\l\ \ goto\ \<bb\ 62\>;\ [34.00%]\lelse\l\ \ \
+goto\ \<bb\ 14\>;\ [66.00%]\l}",
+				pos="9499,5290",
+				rects="9349.5,5335.5,9648.5,5358.5 9349.5,5312.5,9648.5,5335.5 9349.5,5289.5,9648.5,5312.5 9349.5,5221.5,9648.5,5289.5",
+				shape=record,
+				style=filled,
+				width=4.1528];
+			fn_55_basic_block_3:s -> fn_55_basic_block_5:n			 [color=black,
+				constraint=true,
+				label="[50%]",
+				lp="9520.5,5525",
+				pos="e,9499,5359 9499,5668 9499,5648.2 9499,5643.3 9499,5623.5 9499,5623.5 9499,5623.5 9499,5426.5 9499,5400.2 9499,5391.2 9499,5369.3",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_41			 [fillcolor=lightgrey,
+				height=0.97222,
+				label="{ FREQ:6452 |\<bb\ 41\>:\l|#\ cpus_2\ =\ PHI\ \<cpus_116(4),\ cpus_49(13),\ cpus_49(39),\ cpus_49(30),\ cpus_49(21),\ cpus_49(12),\ \
+cpus_49(40),\ cpus_49(32),\ cpus_49(31),\ cpus_49(22)\>\l}",
+				pos="8913,59",
+				rects="8353,70.5,9473,93.5 8353,47.5,9473,70.5 8353,24.5,9473,47.5",
+				shape=record,
+				style=filled,
+				width=15.556];
+			fn_55_basic_block_4:s -> fn_55_basic_block_41:n			 [color=blue,
+				constraint=true,
+				label="[100%]",
+				lp="9530,176.5",
+				pos="e,8913,94 9566,259.5 9566,234.13 9530.5,258.4 9512,241 9505.2,234.58 9504,230.87 9504,221.5 9504,221.5 9504,221.5 9504,131.5 9504,\
+88.833 9452.4,117.12 9410,112 9397.4,110.48 8990.9,108.23 8922.7,97.248",
+				style="solid,bold",
+				weight=100];
+			fn_55_basic_block_62			 [fillcolor=lightgrey,
+				height=0.86111,
+				label="{ FREQ:1097 |\<bb\ 62\>:\lgoto\ \<bb\ 7\>;\ [100.00%]\l}",
+				pos="10481,3391.5",
+				rects="10386,3399,10576,3422 10386,3361,10576,3399",
+				shape=record,
+				style=filled,
+				width=2.6528];
+			fn_55_basic_block_5:s -> fn_55_basic_block_62:n			 [color=black,
+				constraint=true,
+				label="[34%]",
+				lp="9582.5,4323.5",
+				pos="e,10481,3422.5 9499,5221 9499,5180.3 9561,5194.2 9561,5153.5 9561,5153.5 9561,5153.5 9561,3516.5 9561,3314.5 10450,3617.3 10480,\
+3432.6",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_14			 [fillcolor=lightgrey,
+				height=1.9167,
+				label="{ FREQ:2129 |\<bb\ 14\>:\l|_12\ =\ strncmp\ (&buffer,\ \"model\ name\",\ 10);\l|if\ (_12\ ==\ 0)\l\ \ goto\ \<bb\ 63\>;\ [34.00%]\lelse\l\ \ \
+goto\ \<bb\ 23\>;\ [66.00%]\l}",
+				pos="9028,4813",
+				rects="8861,4858.5,9195,4881.5 8861,4835.5,9195,4858.5 8861,4812.5,9195,4835.5 8861,4744.5,9195,4812.5",
+				shape=record,
+				style=filled,
+				width=4.6389];
+			fn_55_basic_block_5:s -> fn_55_basic_block_14:n			 [color=black,
+				constraint=true,
+				label="[66%]",
+				lp="9458.5,5040",
+				pos="e,9028,4882 9499,5221 9499,5180.3 9437,5194.2 9437,5153.5 9437,5153.5 9437,5153.5 9437,4926.5 9437,4914.5 9441.1,4907.9 9432,4900 \
+9416.6,4886.6 9094.6,4901.3 9036.8,4887.1",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_41:s -> fn_55_basic_block_42:n			 [color=blue,
+				constraint=false,
+				label="[100%]",
+				lp="11819,2415",
+				pos="e,6974,6409.5 8913,24 8913,8.4444 9457.6,21.897 9473,24 10060,104.07 10394,-86.811 10757,381 12188,2223.9 12249,3837.9 10756,5631 \
+10231,6261.7 7962,6322.5 7146,6409.5 7129.7,6411.2 7014.4,6424.1 6982.3,6415.6",
+				style="dotted,bold",
+				weight=10];
+			fn_55_basic_block_62:s -> fn_55_basic_block_7:n			 [color=blue,
+				constraint=true,
+				label="[100%]",
+				lp="10507,3164.5",
+				pos="e,10481,2997 10481,3360.5 10481,3318.7 10481,3308.3 10481,3266.5 10481,3266.5 10481,3266.5 10481,3062.5 10481,3037.1 10481,3028.4 \
+10481,3007.3",
+				style="solid,bold",
+				weight=100];
+			fn_55_basic_block_63			 [fillcolor=lightgrey,
+				height=0.86111,
+				label="{ FREQ:724 |\<bb\ 63\>:\lgoto\ \<bb\ 16\>;\ [100.00%]\l}",
+				pos="9028,3391.5",
+				rects="8928,3399,9128,3422 8928,3361,9128,3399",
+				shape=record,
+				style=filled,
+				width=2.7778];
+			fn_55_basic_block_14:s -> fn_55_basic_block_63:n			 [color=black,
+				constraint=true,
+				label="[34%]",
+				lp="9049.5,4096.5",
+				pos="e,9028,3422.5 9028,4744 9028,4724.2 9028,4719.3 9028,4699.5 9028,4699.5 9028,4699.5 9028,3516.5 9028,3478.3 9028,3466.3 9028,3432.6",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_23			 [fillcolor=lightgrey,
+				height=1.9167,
+				label="{ FREQ:1405 |\<bb\ 23\>:\l|_17\ =\ strncmp\ (&buffer,\ \"cpu\ MHz\",\ 7);\l|if\ (_17\ ==\ 0)\l\ \ goto\ \<bb\ 64\>;\ [34.00%]\lelse\l\ \ \
+goto\ \<bb\ 32\>;\ [66.00%]\l}",
+				pos="8516,4323.5",
+				rects="8364.5,4369,8667.5,4392 8364.5,4346,8667.5,4369 8364.5,4323,8667.5,4346 8364.5,4255,8667.5,4323",
+				shape=record,
+				style=filled,
+				width=4.2083];
+			fn_55_basic_block_14:s -> fn_55_basic_block_23:n			 [color=black,
+				constraint=true,
+				label="[66%]",
+				lp="8762.5,4574",
+				pos="e,8516,4392.5 9028,4744 9028,4679.5 8741,4764 8741,4699.5 8741,4699.5 8741,4699.5 8741,4448.5 8741,4436.5 8744.7,4430.2 8736,4422 \
+8703,4390.7 8543.9,4434 8519.2,4402.3",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_63:s -> fn_55_basic_block_16:n			 [color=blue,
+				constraint=true,
+				label="[100%]",
+				lp="9054,3164.5",
+				pos="e,9028,2997 9028,3360.5 9028,3318.7 9028,3308.3 9028,3266.5 9028,3266.5 9028,3266.5 9028,3062.5 9028,3037.1 9028,3028.4 9028,3007.3",
+				style="solid,bold",
+				weight=100];
+			fn_55_basic_block_64			 [fillcolor=lightgrey,
+				height=0.86111,
+				label="{ FREQ:478 |\<bb\ 64\>:\lgoto\ \<bb\ 25\>;\ [100.00%]\l}",
+				pos="8516,3391.5",
+				rects="8416,3399,8616,3422 8416,3361,8616,3399",
+				shape=record,
+				style=filled,
+				width=2.7778];
+			fn_55_basic_block_23:s -> fn_55_basic_block_64:n			 [color=black,
+				constraint=true,
+				label="[34%]",
+				lp="8537.5,3881",
+				pos="e,8516,3422.5 8516,4254.5 8516,4229.6 8516,4223.4 8516,4198.5 8516,4198.5 8516,4198.5 8516,3516.5 8516,3478.3 8516,3466.3 8516,3432.6",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_32			 [fillcolor=lightgrey,
+				height=1.9167,
+				label="{ FREQ:927 |\<bb\ 32\>:\l|_22\ =\ strncmp\ (&buffer,\ \"cache\ size\",\ 10);\l|if\ (_22\ ==\ 0)\l\ \ goto\ \<bb\ 65\>;\ [34.00%]\lelse\l\ \ \
+goto\ \<bb\ 41\>;\ [66.00%]\l}",
+				pos="7543,3881",
+				rects="7382.5,3926.5,7703.5,3949.5 7382.5,3903.5,7703.5,3926.5 7382.5,3880.5,7703.5,3903.5 7382.5,3812.5,7703.5,3880.5",
+				shape=record,
+				style=filled,
+				width=4.4583];
+			fn_55_basic_block_23:s -> fn_55_basic_block_32:n			 [color=black,
+				constraint=true,
+				label="[66%]",
+				lp="8020.5,4096.5",
+				pos="e,7543,3950 8516,4254.5 8516,4138.9 7999,4314.1 7999,4198.5 7999,4198.5 7999,4198.5 7999,3994.5 7999,3982.5 8003.1,3975.8 7994,3968 \
+7976.6,3953 7612.7,3971.4 7551.6,3955.3",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_11			 [fillcolor=lightgrey,
+				height=0.97222,
+				label="{ FREQ:362 |\<bb\ 11\>:\l|__builtin___strcpy_chk\ (&vendor_id,\ cp_3,\ 1024);\l}",
+				pos="9963,858.5",
+				rects="9777.5,870,10148,893 9777.5,847,10148,870 9777.5,824,10148,847",
+				shape=record,
+				style=filled,
+				width=5.1528];
+			fn_55_basic_block_10:s -> fn_55_basic_block_11:n			 [color=black,
+				constraint=true,
+				label="[33%]",
+				lp="10048,987.5",
+				pos="e,9963,893.5 10089,1070 10089,1037.4 10026,1065.1 10026,1032.5 10026,1032.5 10026,1032.5 10026,942.5 10026,911.05 9976.5,924.74 \
+9965.2,903.51",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_12			 [fillcolor=lightgrey,
+				height=1.9167,
+				label="{ FREQ:1097 |\<bb\ 12\>:\l|_149\ =\ MEM[(const\ char\ *)&vendor_id];\l|if\ (_149\ !=\ 0)\l\ \ goto\ \<bb\ 13\>;\ [33.00%]\lelse\l\ \ \
+goto\ \<bb\ 41\>;\ [67.00%]\l}",
+				pos="9963,578",
+				rects="9809,623.5,10117,646.5 9809,600.5,10117,623.5 9809,577.5,10117,600.5 9809,509.5,10117,577.5",
+				shape=record,
+				style=filled,
+				width=4.2778];
+			fn_55_basic_block_10:s -> fn_55_basic_block_12:n			 [color=black,
+				constraint=true,
+				label="[67%]",
+				lp="10206,858.5",
+				pos="e,9963,647 10089,1070 10089,1024.2 10185,1078.3 10185,1032.5 10185,1032.5 10185,1032.5 10185,684.5 10185,638.38 9996.3,687.94 9966.9,\
+656.77",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_64:s -> fn_55_basic_block_25:n			 [color=blue,
+				constraint=true,
+				label="[100%]",
+				lp="8542,3164.5",
+				pos="e,8516,2997 8516,3360.5 8516,3318.7 8516,3308.3 8516,3266.5 8516,3266.5 8516,3266.5 8516,3062.5 8516,3037.1 8516,3028.4 8516,3007.3",
+				style="solid,bold",
+				weight=100];
+			fn_55_basic_block_32:s -> fn_55_basic_block_41:n			 [color=black,
+				constraint=true,
+				label="[66%]",
+				lp="6841.5,1570.5",
+				pos="e,8913,94 7543,3812 7543,3731.5 6820,3848 6820,3767.5 6820,3767.5 6820,3767.5 6820,1525.5 6820,1449.5 6816,1430.5 6816,1354.5 6816,\
+1354.5 6816,1354.5 6816,1264.5 6816,1169.7 6807,1146.3 6807,1051.5 6807,1051.5 6807,1051.5 6807,987.5 6807,901.26 6803,879.74 6803,\
+793.5 6803,793.5 6803,793.5 6803,131.5 6803,103.36 8747.4,121.7 8903.1,97.285",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_65			 [fillcolor=lightgrey,
+				height=0.86111,
+				label="{ FREQ:315 |\<bb\ 65\>:\lgoto\ \<bb\ 34\>;\ [100.00%]\l}",
+				pos="7543,3391.5",
+				rects="7443,3399,7643,3422 7443,3361,7643,3399",
+				shape=record,
+				style=filled,
+				width=2.7778];
+			fn_55_basic_block_32:s -> fn_55_basic_block_65:n			 [color=black,
+				constraint=true,
+				label="[34%]",
+				lp="7564.5,3642",
+				pos="e,7543,3422.5 7543,3812 7543,3792.2 7543,3787.3 7543,3767.5 7543,3767.5 7543,3767.5 7543,3516.5 7543,3478.3 7543,3466.3 7543,3432.6",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_11:s -> fn_55_basic_block_12:n			 [color=blue,
+				constraint=true,
+				label="[100%]",
+				lp="9989,729.5",
+				pos="e,9963,647 9963,823.5 9963,801.72 9963,796.28 9963,774.5 9963,774.5 9963,774.5 9963,684.5 9963,671.87 9963,666.42 9963,657.26",
+				style="solid,bold",
+				weight=100];
+			fn_55_basic_block_12:s -> fn_55_basic_block_41:n			 [color=black,
+				constraint=true,
+				label="[67%]",
+				lp="9426.5,301.5",
+				pos="e,8913,94 9963,509 9963,446.86 9405,533.64 9405,471.5 9405,471.5 9405,471.5 9405,131.5 9405,106.23 8986.9,118.98 8921.5,99.648",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_13			 [fillcolor=lightgrey,
+				height=1.1806,
+				label="{ FREQ:362 |\<bb\ 13\>:\l|removeNewLine.part.1\ (&vendor_id);\lgoto\ \<bb\ 41\>;\ [100.00%]\l}",
+				pos="9226,301.5",
+				rects="9083.5,320.5,9368.5,343.5 9083.5,297.5,9368.5,320.5 9083.5,259.5,9368.5,297.5",
+				shape=record,
+				style=filled,
+				width=3.9583];
+			fn_55_basic_block_12:s -> fn_55_basic_block_13:n			 [color=black,
+				constraint=true,
+				label="[33%]",
+				lp="9306.5,426.5",
+				pos="e,9226,343.5 9963,509 9963,493.35 9415.6,492.56 9400,491 9348.4,485.83 9285,523.34 9285,471.5 9285,471.5 9285,471.5 9285,381.5 9285,\
+354.45 9240.6,369.19 9228.8,353.25",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_20			 [fillcolor=lightgrey,
+				height=0.97222,
+				label="{ FREQ:239 |\<bb\ 20\>:\l|__builtin___strcpy_chk\ (&model_name,\ cp_4,\ 1024);\l}",
+				pos="9564,858.5",
+				rects="9369,870,9759,893 9369,847,9759,870 9369,824,9759,847",
+				shape=record,
+				style=filled,
+				width=5.4167];
+			fn_55_basic_block_19:s -> fn_55_basic_block_20:n			 [color=black,
+				constraint=true,
+				label="[33%]",
+				lp="9522.5,987.5",
+				pos="e,9564,893.5 9438,1070 9438,1037.4 9501,1065.1 9501,1032.5 9501,1032.5 9501,1032.5 9501,942.5 9501,911.05 9550.5,924.74 9561.8,903.51",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_21			 [fillcolor=lightgrey,
+				height=1.9167,
+				label="{ FREQ:724 |\<bb\ 21\>:\l|_150\ =\ MEM[(const\ char\ *)&model_name];\l|if\ (_150\ !=\ 0)\l\ \ goto\ \<bb\ 22\>;\ [33.00%]\lelse\l\ \ \
+goto\ \<bb\ 41\>;\ [67.00%]\l}",
+				pos="9564,578",
+				rects="9400.5,623.5,9727.5,646.5 9400.5,600.5,9727.5,623.5 9400.5,577.5,9727.5,600.5 9400.5,509.5,9727.5,577.5",
+				shape=record,
+				style=filled,
+				width=4.5417];
+			fn_55_basic_block_19:s -> fn_55_basic_block_21:n			 [color=black,
+				constraint=true,
+				label="[67%]",
+				lp="9329.5,858.5",
+				pos="e,9564,647 9438,1070 9438,1009.9 9308,1092.6 9308,1032.5 9308,1032.5 9308,1032.5 9308,684.5 9308,630.82 9531.1,694.8 9560.8,656.75",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_65:s -> fn_55_basic_block_34:n			 [color=blue,
+				constraint=true,
+				label="[100%]",
+				lp="7569,3164.5",
+				pos="e,7543,2997 7543,3360.5 7543,3318.7 7543,3308.3 7543,3266.5 7543,3266.5 7543,3266.5 7543,3062.5 7543,3037.1 7543,3028.4 7543,3007.3",
+				style="solid,bold",
+				weight=100];
+			fn_55_basic_block_13:s -> fn_55_basic_block_41:n			 [color=blue,
+				constraint=true,
+				label="[100%]",
+				lp="9140,176.5",
+				pos="e,8913,94 9226,259.5 9226,206.94 9114,274.06 9114,221.5 9114,221.5 9114,221.5 9114,131.5 9114,89.79 8944.6,131.35 8916.8,103.3",
+				style="solid,bold",
+				weight=100];
+			fn_55_basic_block_20:s -> fn_55_basic_block_21:n			 [color=blue,
+				constraint=true,
+				label="[100%]",
+				lp="9590,729.5",
+				pos="e,9564,647 9564,823.5 9564,801.72 9564,796.28 9564,774.5 9564,774.5 9564,774.5 9564,684.5 9564,671.87 9564,666.42 9564,657.26",
+				style="solid,bold",
+				weight=100];
+			fn_55_basic_block_21:s -> fn_55_basic_block_41:n			 [color=black,
+				constraint=true,
+				label="[67%]",
+				lp="8720.5,301.5",
+				pos="e,8913,94 9564,509 9564,484.95 8699,495.55 8699,471.5 8699,471.5 8699,471.5 8699,131.5 8699,86.992 8880.9,133.71 8909.3,103.45",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_22			 [fillcolor=lightgrey,
+				height=1.1806,
+				label="{ FREQ:239 |\<bb\ 22\>:\l|removeNewLine.part.1\ (&model_name);\lgoto\ \<bb\ 41\>;\ [100.00%]\l}",
+				pos="8913,301.5",
+				rects="8760.5,320.5,9065.5,343.5 8760.5,297.5,9065.5,320.5 8760.5,259.5,9065.5,297.5",
+				shape=record,
+				style=filled,
+				width=4.2361];
+			fn_55_basic_block_21:s -> fn_55_basic_block_22:n			 [color=black,
+				constraint=true,
+				label="[33%]",
+				lp="9080.5,426.5",
+				pos="e,8913,343.5 9564,509 9564,493.19 9295.8,492.19 9280,491 9181.7,483.55 9059,570.1 9059,471.5 9059,471.5 9059,471.5 9059,381.5 9059,\
+318.38 8929.6,399.85 8914.4,353.67",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_29			 [fillcolor=lightgrey,
+				height=0.97222,
+				label="{ FREQ:158 |\<bb\ 29\>:\l|__builtin___strcpy_chk\ (&cpu_MHz,\ cp_26,\ 1024);\l}",
+				pos="7990,858.5",
+				rects="7801.5,870,8178.5,893 7801.5,847,8178.5,870 7801.5,824,8178.5,847",
+				shape=record,
+				style=filled,
+				width=5.2361];
+			fn_55_basic_block_28:s -> fn_55_basic_block_29:n			 [color=black,
+				constraint=true,
+				label="[33%]",
+				lp="8069.5,987.5",
+				pos="e,7990,893.5 8105,1070 8105,1039.7 8048,1062.8 8048,1032.5 8048,1032.5 8048,1032.5 8048,942.5 8048,912.71 8002.8,923.63 7992.2,903.38",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_30			 [fillcolor=lightgrey,
+				height=1.9167,
+				label="{ FREQ:478 |\<bb\ 30\>:\l|_151\ =\ MEM[(const\ char\ *)&cpu_MHz];\l|if\ (_151\ !=\ 0)\l\ \ goto\ \<bb\ 31\>;\ [33.00%]\lelse\l\ \ \
+goto\ \<bb\ 41\>;\ [67.00%]\l}",
+				pos="7990,578",
+				rects="7837.5,623.5,8142.5,646.5 7837.5,600.5,8142.5,623.5 7837.5,577.5,8142.5,600.5 7837.5,509.5,8142.5,577.5",
+				shape=record,
+				style=filled,
+				width=4.2361];
+			fn_55_basic_block_28:s -> fn_55_basic_block_30:n			 [color=black,
+				constraint=true,
+				label="[67%]",
+				lp="8236.5,858.5",
+				pos="e,7990,647 8105,1070 8105,1018.3 8215,1084.2 8215,1032.5 8215,1032.5 8215,1032.5 8215,684.5 8215,637.57 8022.2,688.84 7993.5,656.49",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_22:s -> fn_55_basic_block_41:n			 [color=blue,
+				constraint=true,
+				label="[100%]",
+				lp="8939,176.5",
+				pos="e,8913,94 8913,259.5 8913,242.61 8913,238.39 8913,221.5 8913,221.5 8913,221.5 8913,131.5 8913,118.87 8913,113.42 8913,104.26",
+				style="solid,bold",
+				weight=100];
+			fn_55_basic_block_29:s -> fn_55_basic_block_30:n			 [color=blue,
+				constraint=true,
+				label="[100%]",
+				lp="8016,729.5",
+				pos="e,7990,647 7990,823.5 7990,801.72 7990,796.28 7990,774.5 7990,774.5 7990,774.5 7990,684.5 7990,671.87 7990,666.42 7990,657.26",
+				style="solid,bold",
+				weight=100];
+			fn_55_basic_block_30:s -> fn_55_basic_block_41:n			 [color=black,
+				constraint=true,
+				label="[67%]",
+				lp="8641.5,301.5",
+				pos="e,8913,94 7990,509 7990,491.47 8620,489.03 8620,471.5 8620,471.5 8620,471.5 8620,131.5 8620,85.782 8675.7,118.47 8721,112 8739.6,\
+109.34 8872.6,113.96 8905.6,100.8",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_31			 [fillcolor=lightgrey,
+				height=1.1806,
+				label="{ FREQ:158 |\<bb\ 31\>:\l|removeNewLine.part.1\ (&cpu_MHz);\lgoto\ \<bb\ 41\>;\ [100.00%]\l}",
+				pos="8442,301.5",
+				rects="8300.5,320.5,8583.5,343.5 8300.5,297.5,8583.5,320.5 8300.5,259.5,8583.5,297.5",
+				shape=record,
+				style=filled,
+				width=3.9306];
+			fn_55_basic_block_30:s -> fn_55_basic_block_31:n			 [color=black,
+				constraint=true,
+				label="[33%]",
+				lp="8380.5,426.5",
+				pos="e,8442,343.5 7990,509 7990,494.85 8230,492.68 8244,491 8295.5,484.83 8359,523.34 8359,471.5 8359,471.5 8359,471.5 8359,381.5 8359,\
+345.05 8426,376.17 8439.6,353.45",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_38			 [fillcolor=lightgrey,
+				height=1.2917,
+				label="{ FREQ:104 |\<bb\ 38\>:\l|_127\ =\ __builtin_object_size\ (cache_65(D),\ 1);\l|__builtin___strcpy_chk\ (cache_65(D),\ cp_21,\ _127);\l}",
+				pos="7014,858.5",
+				rects="6822,881.5,7206,904.5 6822,858.5,7206,881.5 6822,835.5,7206,858.5 6822,812.5,7206,835.5",
+				shape=record,
+				style=filled,
+				width=5.3333];
+			fn_55_basic_block_37:s -> fn_55_basic_block_38:n			 [color=black,
+				constraint=true,
+				label="[33%]",
+				lp="7094.5,987.5",
+				pos="e,7014,904.5 7132,1070 7132,1038.9 7073,1063.6 7073,1032.5 7073,1032.5 7073,1032.5 7073,942.5 7073,915.45 7028.6,930.19 7016.8,914.25",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_39			 [fillcolor=lightgrey,
+				height=1.9167,
+				label="{ FREQ:315 |\<bb\ 39\>:\l|_152\ =\ MEM[(const\ char\ *)cache_65(D)];\l|if\ (_152\ !=\ 0)\l\ \ goto\ \<bb\ 40\>;\ [33.00%]\lelse\l\ \ \
+goto\ \<bb\ 41\>;\ [67.00%]\l}",
+				pos="7014,578",
+				rects="6857,623.5,7171,646.5 6857,600.5,7171,623.5 6857,577.5,7171,600.5 6857,509.5,7171,577.5",
+				shape=record,
+				style=filled,
+				width=4.3611];
+			fn_55_basic_block_37:s -> fn_55_basic_block_39:n			 [color=black,
+				constraint=true,
+				label="[67%]",
+				lp="7263.5,858.5",
+				pos="e,7014,647 7132,1070 7132,1018.3 7242,1084.2 7242,1032.5 7242,1032.5 7242,1032.5 7242,684.5 7242,636.96 7046.6,689.31 7017.6,656.6",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_31:s -> fn_55_basic_block_41:n			 [color=blue,
+				constraint=true,
+				label="[100%]",
+				lp="8521,176.5",
+				pos="e,8913,94 8442,259.5 8442,230.52 8495,250.48 8495,221.5 8495,221.5 8495,221.5 8495,131.5 8495,77.467 8561.3,117.97 8615,112 8629.7,\
+110.36 8855.6,110.52 8903.9,98.78",
+				style="solid,bold",
+				weight=100];
+			fn_55_basic_block_38:s -> fn_55_basic_block_39:n			 [color=blue,
+				constraint=true,
+				label="[100%]",
+				lp="7040,729.5",
+				pos="e,7014,647 7014,812.5 7014,795.61 7014,791.39 7014,774.5 7014,774.5 7014,774.5 7014,684.5 7014,671.87 7014,666.42 7014,657.26",
+				style="solid,bold",
+				weight=100];
+			fn_55_basic_block_39:s -> fn_55_basic_block_41:n			 [color=black,
+				constraint=true,
+				label="[67%]",
+				lp="8260.5,301.5",
+				pos="e,8913,94 7014,509 7014,474.96 8239,505.54 8239,471.5 8239,471.5 8239,471.5 8239,131.5 8239,17.393 8381.1,118.79 8495,112 8516.2,\
+110.74 8846.5,116.14 8904.4,99.462",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_40			 [fillcolor=lightgrey,
+				height=0.97222,
+				label="{ FREQ:104 |\<bb\ 40\>:\l|removeNewLine.part.1\ (cache_65(D));\l}",
+				pos="8058,301.5",
+				rects="7912.5,313,8203.5,336 7912.5,290,8203.5,313 7912.5,267,8203.5,290",
+				shape=record,
+				style=filled,
+				width=4.0417];
+			fn_55_basic_block_39:s -> fn_55_basic_block_40:n			 [color=black,
+				constraint=true,
+				label="[33%]",
+				lp="7372.5,426.5",
+				pos="e,8058,336.5 7014,509 7014,433.65 7351,546.85 7351,471.5 7351,471.5 7351,471.5 7351,381.5 7351,306.32 7995.9,405.5 8053.8,345.99",
+				style="solid,bold",
+				weight=10];
+			fn_55_basic_block_40:s -> fn_55_basic_block_41:n			 [color=blue,
+				constraint=true,
+				label="[100%]",
+				lp="8139,176.5",
+				pos="e,8913,94 8058,266.5 8058,234.92 8113,253.08 8113,221.5 8113,221.5 8113,221.5 8113,131.5 8113,77.028 8179.8,117.07 8234,112 8251.5,\
+110.37 8823.3,112.52 8903.7,97.67",
+				style="solid,bold",
+				weight=100];
+		}
+		fn_55_basic_block_43		 [fillcolor=lightgrey,
+			height=1.9167,
+			label="{ FREQ:1139 |\<bb\ 43\>:\l|#\ cpus_176\ =\ PHI\ \<cpus_49(42)\>\l|if\ (cpus_176\ \>\ 1)\l\ \ goto\ \<bb\ 44\>;\ [64.00%]\lelse\l\ \ \
+goto\ \<bb\ 47\>;\ [36.00%]\l}",
+			pos="6632,6010",
+			rects="6498.5,6055.5,6765.5,6078.5 6498.5,6032.5,6765.5,6055.5 6498.5,6009.5,6765.5,6032.5 6498.5,5941.5,6765.5,6009.5",
+			shape=record,
+			style=filled,
+			width=3.7083];
+		fn_55_basic_block_42:s -> fn_55_basic_block_43:n		 [color=black,
+			constraint=true,
+			label="[15%]",
+			lp="6715.5,6123.5",
+			pos="e,6632,6079 6974,6249.5 6974,6155.5 6872.3,6190.6 6788,6149 6723.2,6117 6640.5,6151.3 6632.6,6089.3",
+			style="solid,bold",
+			weight=10];
+		fn_55_basic_block_0		 [fillcolor=white,
+			height=0.5,
+			label=ENTRY,
+			pos="6930,7236",
+			shape=Mdiamond,
+			style=filled,
+			width=1.7617];
+		fn_55_basic_block_1		 [fillcolor=white,
+			height=0.5,
+			label=EXIT,
+			pos="6073,1936.5",
+			shape=Mdiamond,
+			style=filled,
+			width=1.3532];
+		fn_55_basic_block_0:s -> fn_55_basic_block_1:n		 [constraint=true,
+			pos="e,6073,1954.5 6930,7218 6930,7180.5 7093,7211 7093,7173.5 7093,7173.5 7093,7173.5 7093,6805.5 7093,6679 7143.1,6584.6 7030,6528 \
+6933.5,6479.7 6860.6,6572.6 6790,6491 6748.7,6443.2 6785,5985.7 6785,5922.5 6785,5922.5 6785,5922.5 6785,2084.5 6785,1766.3 6088.2,\
+2265.2 6073.2,1964.6",
+			style=invis];
+		fn_55_basic_block_2		 [fillcolor=lightgrey,
+			height=3.5139,
+			label="{ FREQ:1554 |\<bb\ 2\>:\l|*cache_65(D)\ =\ 0;\l|*model_67(D)\ =\ 0;\l|cpu_MHz[0]\ =\ 0;\l|model_name[0]\ =\ 0;\l|vendor_id[0]\ =\ \
+0;\l|info_73\ =\ fopen\ (\"/proc/cpuinfo\",\ \"r\");\l|if\ (info_73\ !=\ 0B)\l\ \ goto\ \<bb\ 61\>;\ [73.26%]\lelse\l\ \ goto\ \<bb\ \
+60\>;\ [26.74%]\l}",
+			pos="6930,7002.5",
+			rects="6786.5,7105.5,7073.5,7128.5 6786.5,7082.5,7073.5,7105.5 6786.5,7059.5,7073.5,7082.5 6786.5,7036.5,7073.5,7059.5 6786.5,7013.5,7073.5,\
+7036.5 6786.5,6990.5,7073.5,7013.5 6786.5,6967.5,7073.5,6990.5 6786.5,6944.5,7073.5,6967.5 6786.5,6876.5,7073.5,6944.5",
+			shape=record,
+			style=filled,
+			width=3.9861];
+		fn_55_basic_block_0:s -> fn_55_basic_block_2:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="6956,7173.5",
+			pos="e,6930,7128.5 6930,7218 6930,7181.8 6930,7170.3 6930,7138.5",
+			style="solid,bold",
+			weight=100];
+		fn_55_basic_block_61		 [fillcolor=lightgrey,
+			height=0.86111,
+			label="{ FREQ:1139 |\<bb\ 61\>:\lgoto\ \<bb\ 42\>;\ [100.00%]\l}",
+			pos="6974,6683.5",
+			rects="6874,6691,7074,6714 6874,6653,7074,6691",
+			shape=record,
+			style=filled,
+			width=2.7778];
+		fn_55_basic_block_2:s -> fn_55_basic_block_61:n		 [color=black,
+			constraint=true,
+			label="[73%]",
+			lp="6959.5,6831.5",
+			pos="e,6974,6714.5 6930,6876.5 6930,6805.4 6970,6790.4 6973.7,6724.6",
+			style="solid,bold",
+			weight=10];
+		fn_55_basic_block_60		 [fillcolor=lightgrey,
+			height=2.25,
+			label="{ FREQ:1554 |\<bb\ 60\>:\l|buffer\ =\{v\}\ \{CLOBBER\};\l|vendor_id\ =\{v\}\ \{CLOBBER\};\l|model_name\ =\{v\}\ \{CLOBBER\};\l|cpu_\
+MHz\ =\{v\}\ \{CLOBBER\};\l|return;\l}",
+			pos="6073,2210",
+			rects="5947.5,2267.5,6198.5,2290.5 5947.5,2244.5,6198.5,2267.5 5947.5,2221.5,6198.5,2244.5 5947.5,2198.5,6198.5,2221.5 5947.5,2175.5,6198.5,\
+2198.5 5947.5,2152.5,6198.5,2175.5 5947.5,2129.5,6198.5,2152.5",
+			shape=record,
+			style=filled,
+			width=3.4861];
+		fn_55_basic_block_2:s -> fn_55_basic_block_60:n		 [color=black,
+			constraint=true,
+			label="[26%]",
+			lp="5843.5,4448.5",
+			pos="e,6073,2291 6930,6876.5 6930,6751.4 5805,6956.6 5805,6831.5 5805,6831.5 5805,6831.5 5805,5597.5 5805,5388.5 5822,5336.5 5822,5127.5 \
+5822,5127.5 5822,5127.5 5822,2335.5 5822,2282.6 6040.8,2339.1 6069.8,2300.7",
+			style="solid,bold",
+			weight=10];
+		fn_55_basic_block_61:s -> fn_55_basic_block_42:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="7000,6535.5",
+			pos="e,6974,6409.5 6974,6652.5 6974,6548 6974,6519.3 6974,6419.7",
+			style="solid,bold",
+			weight=100];
+		fn_55_basic_block_44		 [fillcolor=lightgrey,
+			height=1.5972,
+			label="{ FREQ:729 |\<bb\ 44\>:\l|if\ (cpus_176\ ==\ 2)\l\ \ goto\ \<bb\ 45\>;\ [34.00%]\lelse\l\ \ goto\ \<bb\ 46\>;\ [66.00%]\l}",
+			pos="6489,5760",
+			rects="6389,5794,6589,5817 6389,5771,6589,5794 6389,5703,6589,5771",
+			shape=record,
+			style=filled,
+			width=2.7778];
+		fn_55_basic_block_43:s -> fn_55_basic_block_44:n		 [color=black,
+			constraint=true,
+			label="[64%]",
+			lp="6638.5,5896.5",
+			pos="e,6489,5817 6632,5941 6632,5860.5 6501,5897.6 6489.8,5827.2",
+			style="solid,bold",
+			weight=10];
+		fn_55_basic_block_47		 [fillcolor=lightgrey,
+			height=2.5556,
+			label="{ FREQ:1139 |\<bb\ 47\>:\l|_28\ =\ strlen\ (model_67(D));\l|cp_77\ =\ model_67(D)\ +\ _28;\l|_29\ =\ vendor_id[0];\l|if\ (_29\ !=\ \
+0)\l\ \ goto\ \<bb\ 48\>;\ [50.00%]\lelse\l\ \ goto\ \<bb\ 51\>;\ [50.00%]\l}",
+			pos="6489,5290",
+			rects="6378,5358.5,6600,5381.5 6378,5335.5,6600,5358.5 6378,5312.5,6600,5335.5 6378,5289.5,6600,5312.5 6378,5266.5,6600,5289.5 6378,5198.5,\
+6600,5266.5",
+			shape=record,
+			style=filled,
+			width=3.0833];
+		fn_55_basic_block_43:s -> fn_55_basic_block_47:n		 [color=black,
+			constraint=true,
+			label="[36%]",
+			lp="6755.5,5623.5",
+			pos="e,6489,5382 6632,5941 6632,5896 6723,5941.5 6723,5896.5 6723,5896.5 6723,5896.5 6723,5649.5 6723,5615.1 6747.3,5612.5 6755,5579 \
+6765.8,5532.2 6783,5510 6755,5471 6738.4,5448 6531.7,5419 6494.7,5390.4",
+			style="solid,bold",
+			weight=10];
+		fn_55_basic_block_45		 [fillcolor=lightgrey,
+			height=1.5,
+			label="{ FREQ:248 |\<bb\ 45\>:\l|_136\ =\ __builtin_object_size\ (model_67(D),\ 1);\l|__builtin___strcpy_chk\ (model_67(D),\ \"Dual\",\ _\
+136);\lgoto\ \<bb\ 47\>;\ [100.00%]\l}",
+			pos="6019,5525",
+			rects="5824.5,5555.5,6213.5,5578.5 5824.5,5532.5,6213.5,5555.5 5824.5,5509.5,6213.5,5532.5 5824.5,5471.5,6213.5,5509.5",
+			shape=record,
+			style=filled,
+			width=5.4028];
+		fn_55_basic_block_44:s -> fn_55_basic_block_45:n		 [color=black,
+			constraint=true,
+			label="[34%]",
+			lp="6125.5,5623.5",
+			pos="e,6019,5579 6489,5703 6489,5598.6 6049.7,5681.1 6020.5,5589.1",
+			style="solid,bold",
+			weight=10];
+		fn_55_basic_block_46		 [fillcolor=lightgrey,
+			height=1.2917,
+			label="{ FREQ:481 |\<bb\ 46\>:\l|_138\ =\ __builtin_object_size\ (model_67(D),\ 1);\l|__builtin___sprintf_chk\ (model_67(D),\ 1,\ _138,\ \"%\
+d\ CPU\",\ cpus_176);\l}",
+			pos="6489,5525",
+			rects="6232,5548,6746,5571 6232,5525,6746,5548 6232,5502,6746,5525 6232,5479,6746,5502",
+			shape=record,
+			style=filled,
+			width=7.1389];
+		fn_55_basic_block_44:s -> fn_55_basic_block_46:n		 [color=black,
+			constraint=true,
+			label="[66%]",
+			lp="6510.5,5623.5",
+			pos="e,6489,5571 6489,5703 6489,5647.9 6489,5631.6 6489,5581.2",
+			style="solid,bold",
+			weight=10];
+		fn_55_basic_block_45:s -> fn_55_basic_block_47:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="6368,5426.5",
+			pos="e,6489,5382 6019,5471 6019,5421.1 6433.8,5433.3 6484,5390.9",
+			style="solid,bold",
+			weight=100];
+		fn_55_basic_block_46:s -> fn_55_basic_block_47:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="6515,5426.5",
+			pos="e,6489,5382 6489,5479 6489,5439.6 6489,5427.2 6489,5392.4",
+			style="solid,bold",
+			weight=100];
+		fn_55_basic_block_48		 [fillcolor=lightgrey,
+			height=1.5972,
+			label="{ FREQ:569 |\<bb\ 48\>:\l|if\ (model_67(D)\ !=\ cp_77)\l\ \ goto\ \<bb\ 49\>;\ [70.00%]\lelse\l\ \ goto\ \<bb\ 50\>;\ [30.00%]\l}",
+			pos="6421,5040",
+			rects="6320,5074,6522,5097 6320,5051,6522,5074 6320,4983,6522,5051",
+			shape=record,
+			style=filled,
+			width=2.8056];
+		fn_55_basic_block_47:s -> fn_55_basic_block_48:n		 [color=black,
+			constraint=true,
+			label="[50%]",
+			lp="6493.5,5153.5",
+			pos="e,6421,5097 6489,5198 6489,5147.5 6429.7,5150.4 6421.9,5107",
+			style="solid,bold",
+			weight=10];
+		fn_55_basic_block_51		 [fillcolor=lightgrey,
+			height=2.2361,
+			label="{ FREQ:1139 |\<bb\ 51\>:\l|#\ cp_45\ =\ PHI\ \<cp_77(47),\ cp_81(50)\>\l|_32\ =\ model_name[0];\l|if\ (_32\ !=\ 0)\l\ \ goto\ \<\
+bb\ 52\>;\ [50.00%]\lelse\l\ \ goto\ \<bb\ 55\>;\ [50.00%]\l}",
+			pos="6333,4323.5",
+			rects="6180.5,4380.5,6485.5,4403.5 6180.5,4357.5,6485.5,4380.5 6180.5,4334.5,6485.5,4357.5 6180.5,4311.5,6485.5,4334.5 6180.5,4243.5,6485.5,\
+4311.5",
+			shape=record,
+			style=filled,
+			width=4.2361];
+		fn_55_basic_block_47:s -> fn_55_basic_block_51:n		 [color=black,
+			constraint=true,
+			label="[50%]",
+			lp="6562.5,4813",
+			pos="e,6333,4403.5 6489,5198 6489,5167.6 6541,5183.9 6541,5153.5 6541,5153.5 6541,5153.5 6541,4448.5 6541,4404.9 6364.2,4443.6 6336.6,\
+4412.9",
+			style="solid,bold",
+			weight=10];
+		fn_55_basic_block_49		 [fillcolor=lightgrey,
+			height=1.2917,
+			label="{ FREQ:399 |\<bb\ 49\>:\l|cp_78\ =\ cp_77\ +\ 1;\l|*cp_77\ =\ 32;\l}",
+			pos="6333,4813",
+			rects="6254,4836,6412,4859 6254,4813,6412,4836 6254,4790,6412,4813 6254,4767,6412,4790",
+			shape=record,
+			style=filled,
+			width=2.1944];
+		fn_55_basic_block_48:s -> fn_55_basic_block_49:n		 [color=black,
+			constraint=true,
+			label="[70%]",
+			lp="6416.5,4926.5",
+			pos="e,6333,4859 6421,4983 6421,4919 6342,4925.6 6333.7,4869.1",
+			style="solid,bold",
+			weight=10];
+		fn_55_basic_block_50		 [fillcolor=lightgrey,
+			height=2.25,
+			label="{ FREQ:569 |\<bb\ 50\>:\l|#\ cp_44\ =\ PHI\ \<cp_77(48),\ cp_78(49)\>\l|_140\ =\ __builtin_object_size\ (cp_44,\ 1);\l|__builtin___\
+strcpy_chk\ (cp_44,\ &vendor_id,\ _140);\l|_31\ =\ strlen\ (&vendor_id);\l|cp_81\ =\ cp_44\ +\ _31;\l}",
+			pos="6333,4574",
+			rects="6144,4631.5,6522,4654.5 6144,4608.5,6522,4631.5 6144,4585.5,6522,4608.5 6144,4562.5,6522,4585.5 6144,4539.5,6522,4562.5 6144,4516.5,\
+6522,4539.5 6144,4493.5,6522,4516.5",
+			shape=record,
+			style=filled,
+			width=5.25];
+		fn_55_basic_block_48:s -> fn_55_basic_block_50:n		 [color=black,
+			constraint=true,
+			label="[30%]",
+			lp="6469.5,4813",
+			pos="e,6333,4655 6421,4983 6421,4955.2 6448,4954.3 6448,4926.5 6448,4926.5 6448,4926.5 6448,4699.5 6448,4648.8 6349.4,4700.8 6334.8,4665.3",
+			style="solid,bold",
+			weight=10];
+		fn_55_basic_block_49:s -> fn_55_basic_block_50:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="6359,4699.5",
+			pos="e,6333,4655 6333,4767 6333,4720.8 6333,4706.8 6333,4665.2",
+			style="solid,bold",
+			weight=100];
+		fn_55_basic_block_50:s -> fn_55_basic_block_51:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="6359,4448.5",
+			pos="e,6333,4403.5 6333,4493 6333,4456.8 6333,4445.3 6333,4413.5",
+			style="solid,bold",
+			weight=100];
+		fn_55_basic_block_52		 [fillcolor=lightgrey,
+			height=1.5972,
+			label="{ FREQ:569 |\<bb\ 52\>:\l|if\ (cp_45\ !=\ model_67(D))\l\ \ goto\ \<bb\ 53\>;\ [70.00%]\lelse\l\ \ goto\ \<bb\ 54\>;\ [30.00%]\l}",
+			pos="6293,4096.5",
+			rects="6192,4130.5,6394,4153.5 6192,4107.5,6394,4130.5 6192,4039.5,6394,4107.5",
+			shape=record,
+			style=filled,
+			width=2.8056];
+		fn_55_basic_block_51:s -> fn_55_basic_block_52:n		 [color=black,
+			constraint=true,
+			label="[50%]",
+			lp="6339.5,4198.5",
+			pos="e,6293,4153.5 6333,4243.5 6333,4203.3 6299.3,4198 6293.8,4163.5",
+			style="solid,bold",
+			weight=10];
+		fn_55_basic_block_55		 [fillcolor=lightgrey,
+			height=2.2361,
+			label="{ FREQ:1139 |\<bb\ 55\>:\l|#\ cp_47\ =\ PHI\ \<cp_45(51),\ cp_85(54)\>\l|_35\ =\ cpu_MHz[0];\l|if\ (_35\ !=\ 0)\l\ \ goto\ \<bb\ \
+56\>;\ [50.00%]\lelse\l\ \ goto\ \<bb\ 59\>;\ [50.00%]\l}",
+			pos="6293,3391.5",
+			rects="6140.5,3448.5,6445.5,3471.5 6140.5,3425.5,6445.5,3448.5 6140.5,3402.5,6445.5,3425.5 6140.5,3379.5,6445.5,3402.5 6140.5,3311.5,6445.5,\
+3379.5",
+			shape=record,
+			style=filled,
+			width=4.2361];
+		fn_55_basic_block_51:s -> fn_55_basic_block_55:n		 [color=black,
+			constraint=true,
+			label="[50%]",
+			lp="6532.5,3881",
+			pos="e,6293,3471.5 6333,4243.5 6333,4161.9 6511,4280.1 6511,4198.5 6511,4198.5 6511,4198.5 6511,3516.5 6511,3470.9 6325.7,3513.2 6296.8,\
+3481.3",
+			style="solid,bold",
+			weight=10];
+		fn_55_basic_block_53		 [fillcolor=lightgrey,
+			height=1.2917,
+			label="{ FREQ:399 |\<bb\ 53\>:\l|cp_82\ =\ cp_45\ +\ 1;\l|*cp_45\ =\ 32;\l}",
+			pos="6293,3881",
+			rects="6214,3904,6372,3927 6214,3881,6372,3904 6214,3858,6372,3881 6214,3835,6372,3858",
+			shape=record,
+			style=filled,
+			width=2.1944];
+		fn_55_basic_block_52:s -> fn_55_basic_block_53:n		 [color=black,
+			constraint=true,
+			label="[70%]",
+			lp="6314.5,3994.5",
+			pos="e,6293,3927 6293,4039.5 6293,3993 6293,3978.9 6293,3937",
+			style="solid,bold",
+			weight=10];
+		fn_55_basic_block_54		 [fillcolor=lightgrey,
+			height=2.25,
+			label="{ FREQ:569 |\<bb\ 54\>:\l|#\ cp_46\ =\ PHI\ \<cp_45(52),\ cp_82(53)\>\l|_142\ =\ __builtin_object_size\ (cp_46,\ 1);\l|__builtin___\
+strcpy_chk\ (cp_46,\ &model_name,\ _142);\l|_34\ =\ strlen\ (&model_name);\l|cp_85\ =\ cp_46\ +\ _34;\l}",
+			pos="6293,3642",
+			rects="6094,3699.5,6492,3722.5 6094,3676.5,6492,3699.5 6094,3653.5,6492,3676.5 6094,3630.5,6492,3653.5 6094,3607.5,6492,3630.5 6094,3584.5,\
+6492,3607.5 6094,3561.5,6492,3584.5",
+			shape=record,
+			style=filled,
+			width=5.5278];
+		fn_55_basic_block_52:s -> fn_55_basic_block_54:n		 [color=black,
+			constraint=true,
+			label="[30%]",
+			lp="6174.5,3881",
+			pos="e,6293,3723 6293,4039.5 6293,3974.1 6153,4059.9 6153,3994.5 6153,3994.5 6153,3994.5 6153,3767.5 6153,3706 6277.1,3778.7 6291.6,3733",
+			style="solid,bold",
+			weight=10];
+		fn_55_basic_block_53:s -> fn_55_basic_block_54:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="6319,3767.5",
+			pos="e,6293,3723 6293,3835 6293,3788.8 6293,3774.8 6293,3733.2",
+			style="solid,bold",
+			weight=100];
+		fn_55_basic_block_54:s -> fn_55_basic_block_55:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="6319,3516.5",
+			pos="e,6293,3471.5 6293,3561 6293,3524.8 6293,3513.3 6293,3481.5",
+			style="solid,bold",
+			weight=100];
+		fn_55_basic_block_56		 [fillcolor=lightgrey,
+			height=1.5972,
+			label="{ FREQ:569 |\<bb\ 56\>:\l|if\ (cp_47\ !=\ model_67(D))\l\ \ goto\ \<bb\ 57\>;\ [70.00%]\lelse\l\ \ goto\ \<bb\ 58\>;\ [30.00%]\l}",
+			pos="6188,3164.5",
+			rects="6087,3198.5,6289,3221.5 6087,3175.5,6289,3198.5 6087,3107.5,6289,3175.5",
+			shape=record,
+			style=filled,
+			width=2.8056];
+		fn_55_basic_block_55:s -> fn_55_basic_block_56:n		 [color=black,
+			constraint=true,
+			label="[50%]",
+			lp="6285.5,3266.5",
+			pos="e,6188,3221.5 6293,3311.5 6293,3253.8 6200.3,3279.3 6189.1,3231.7",
+			style="solid,bold",
+			weight=10];
+		fn_55_basic_block_59		 [fillcolor=lightgrey,
+			height=0.97222,
+			label="{ FREQ:1139 |\<bb\ 59\>:\l|fclose\ (info_73);\l}",
+			pos="6073,2415",
+			rects="6007.5,2426.5,6138.5,2449.5 6007.5,2403.5,6138.5,2426.5 6007.5,2380.5,6138.5,2403.5",
+			shape=record,
+			style=filled,
+			width=1.8194];
+		fn_55_basic_block_55:s -> fn_55_basic_block_59:n		 [color=black,
+			constraint=true,
+			label="[50%]",
+			lp="6345.5,2928",
+			pos="e,6073,2450 6293,3311.5 6293,3287.2 6324,3290.8 6324,3266.5 6324,3266.5 6324,3266.5 6324,2494.5 6324,2441.6 6105.2,2498.1 6076.2,\
+2459.7",
+			style="solid,bold",
+			weight=10];
+		fn_55_basic_block_57		 [fillcolor=lightgrey,
+			height=1.2917,
+			label="{ FREQ:399 |\<bb\ 57\>:\l|cp_86\ =\ cp_47\ +\ 1;\l|*cp_47\ =\ 32;\l}",
+			pos="6073,2928",
+			rects="5994,2951,6152,2974 5994,2928,6152,2951 5994,2905,6152,2928 5994,2882,6152,2905",
+			shape=record,
+			style=filled,
+			width=2.1944];
+		fn_55_basic_block_56:s -> fn_55_basic_block_57:n		 [color=black,
+			constraint=true,
+			label="[70%]",
+			lp="6161.5,3062.5",
+			pos="e,6073,2974 6188,3107.5 6188,3080.4 6158.6,3089.7 6140,3070 6106.7,3034.8 6077.3,3027 6073.4,2984.1",
+			style="solid,bold",
+			weight=10];
+		fn_55_basic_block_58		 [fillcolor=lightgrey,
+			height=3.2083,
+			label="{ FREQ:569 |\<bb\ 58\>:\l|#\ cp_48\ =\ PHI\ \<cp_47(56),\ cp_86(57)\>\l|_148\ =\ strtod\ (&cpu_MHz,\ 0B);\l|f_88\ =\ (float)\ _148;\l|_\
+38\ =\ f_88\ +\ 5.0e-1;\l|i_89\ =\ (int)\ _38;\l|__builtin___sprintf_chk\ (&cpu_MHz,\ 1,\ 1024,\ \"%dMHz\",\ i_89);\l|_144\ =\ __builtin_\
+object_size\ (cp_48,\ 1);\l|__builtin___strcpy_chk\ (cp_48,\ &cpu_MHz,\ _144);\l}",
+			pos="6073,2654.5",
+			rects="5841,2746.5,6305,2769.5 5841,2723.5,6305,2746.5 5841,2700.5,6305,2723.5 5841,2677.5,6305,2700.5 5841,2654.5,6305,2677.5 5841,2631.5,\
+6305,2654.5 5841,2608.5,6305,2631.5 5841,2585.5,6305,2608.5 5841,2562.5,6305,2585.5 5841,2539.5,6305,2562.5",
+			shape=record,
+			style=filled,
+			width=6.4444];
+		fn_55_basic_block_56:s -> fn_55_basic_block_58:n		 [color=black,
+			constraint=true,
+			label="[30%]",
+			lp="6209.5,2928",
+			pos="e,6073,2769.5 6188,3107.5 6188,3087.5 6188,3082.5 6188,3062.5 6188,3062.5 6188,3062.5 6188,2814.5 6188,2763.5 6088.6,2815.9 6074.6,\
+2779.4",
+			style="solid,bold",
+			weight=10];
+		fn_55_basic_block_57:s -> fn_55_basic_block_58:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="6099,2814.5",
+			pos="e,6073,2769.5 6073,2882 6073,2835.5 6073,2821.4 6073,2779.5",
+			style="solid,bold",
+			weight=100];
+		fn_55_basic_block_58:s -> fn_55_basic_block_59:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="6099,2494.5",
+			pos="e,6073,2450 6073,2539.5 6073,2503.3 6073,2491.8 6073,2460",
+			style="solid,bold",
+			weight=100];
+		fn_55_basic_block_59:s -> fn_55_basic_block_60:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="6099,2335.5",
+			pos="e,6073,2291 6073,2380 6073,2344.2 6073,2332.7 6073,2301.4",
+			style="solid,bold",
+			weight=100];
+		fn_55_basic_block_60:s -> fn_55_basic_block_1:n		 [color=black,
+			constraint=true,
+			label="[100%]",
+			lp="6099,2084.5",
+			pos="e,6073,1954.5 6073,2129 6073,2054.9 6073,2033.9 6073,1964.6",
+			style="solid,bold",
+			weight=10];
+	}
+	subgraph cluster_hardware {
+		graph [bb="10907,5984,11515,7285",
+			color=black,
+			label="hardware ()",
+			lheight=0.21,
+			lp="11211,7273.5",
+			lwidth=1.17,
+			style=dashed
+		];
+		fn_56_basic_block_0		 [fillcolor=white,
+			height=0.5,
+			label=ENTRY,
+			pos="11075,7236",
+			shape=Mdiamond,
+			style=filled,
+			width=1.7617];
+		fn_56_basic_block_1		 [fillcolor=white,
+			height=0.5,
+			label=EXIT,
+			pos="11221,6010",
+			shape=Mdiamond,
+			style=filled,
+			width=1.3532];
+		fn_56_basic_block_0:s -> fn_56_basic_block_1:n		 [constraint=true,
+			pos="e,11221,6028 11075,7218 11075,7144.6 10916,7246.9 10916,7173.5 10916,7173.5 10916,7173.5 10916,6123.5 10916,5985.1 11206,6160.7 \
+11220,6038.2",
+			style=invis];
+		fn_56_basic_block_2		 [fillcolor=lightgrey,
+			height=2.5556,
+			label="{ FREQ:10000 |\<bb\ 2\>:\l|os_command\ =\ \"uname\ -s\ -r\";\l|runCommand\ (&os_command,\ &os);\l|_1\ =\ strstr\ (&os,\ \"Linux\");\l|\
+if\ (_1\ !=\ 0B)\l\ \ goto\ \<bb\ 3\>;\ [49.47%]\lelse\l\ \ goto\ \<bb\ 4\>;\ [50.53%]\l}",
+			pos="11075,7002.5",
+			rects="10936,7071,11214,7094 10936,7048,11214,7071 10936,7025,11214,7048 10936,7002,11214,7025 10936,6979,11214,7002 10936,6911,11214,6979",
+			shape=record,
+			style=filled,
+			width=3.8472];
+		fn_56_basic_block_0:s -> fn_56_basic_block_2:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="11101,7173.5",
+			pos="e,11075,7094.5 11075,7218 11075,7166.6 11075,7151.3 11075,7104.6",
+			style="solid,bold",
+			weight=100];
+		fn_56_basic_block_3		 [fillcolor=lightgrey,
+			height=1.1806,
+			label="{ FREQ:4947 |\<bb\ 3\>:\l|readProcCpuInfo\ (&model,\ &cache);\lgoto\ \<bb\ 5\>;\ [100.00%]\l}",
+			pos="11075,6683.5",
+			rects="10936,6702.5,11214,6725.5 10936,6679.5,11214,6702.5 10936,6641.5,11214,6679.5",
+			shape=record,
+			style=filled,
+			width=3.875];
+		fn_56_basic_block_2:s -> fn_56_basic_block_3:n		 [color=black,
+			constraint=true,
+			label="[49%]",
+			lp="11096,6831.5",
+			pos="e,11075,6725.5 11075,6910.5 11075,6831.8 11075,6809.6 11075,6735.8",
+			style="solid,bold",
+			weight=10];
+		fn_56_basic_block_4		 [fillcolor=lightgrey,
+			height=1.2917,
+			label="{ FREQ:5053 |\<bb\ 4\>:\l|model[0]\ =\ 0;\l|cache[0]\ =\ 0;\l}",
+			pos="11290,6683.5",
+			rects="11233,6706.5,11347,6729.5 11233,6683.5,11347,6706.5 11233,6660.5,11347,6683.5 11233,6637.5,11347,6660.5",
+			shape=record,
+			style=filled,
+			width=1.5833];
+		fn_56_basic_block_2:s -> fn_56_basic_block_4:n		 [color=black,
+			constraint=true,
+			label="[50%]",
+			lp="11186,6831.5",
+			pos="e,11290,6729.5 11075,6910.5 11075,6789.1 11278,6850.7 11289,6739.7",
+			style="solid,bold",
+			weight=10];
+		fn_56_basic_block_5		 [fillcolor=lightgrey,
+			height=4.4861,
+			label="{ FREQ:10000 |\<bb\ 5\>:\l|__builtin___sprintf_chk\ (&buffer,\ 1,\ 1024,\ \"CPU\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ %s\\n\",\ &model);\l|\
+output_string\ (&buffer,\ write_to_file_10(D),\ global_ofile_11(D));\l|__builtin___sprintf_chk\ (&buffer,\ 1,\ 1024,\ \"L2\ Cache\ \ \ \ \ \ \ \ \ \ \ \ :\ %\
+s\\n\",\ &cache);\l|output_string\ (&buffer,\ write_to_file_10(D),\ global_ofile_11(D));\l|__builtin___sprintf_chk\ (&buffer,\ 1,\ \
+1024,\ \"OS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ %s\\n\",\ &os);\l|output_string\ (&buffer,\ write_to_file_10(D),\ global_ofile_11(\
+D));\l|buffer\ =\{v\}\ \{CLOBBER\};\l|os\ =\{v\}\ \{CLOBBER\};\l|model\ =\{v\}\ \{CLOBBER\};\l|cache\ =\{v\}\ \{CLOBBER\};\l|os_\
+command\ =\{v\}\ \{CLOBBER\};\l|return;\l}",
+			pos="11221,6329.5",
+			rects="10935,6467.5,11507,6490.5 10935,6444.5,11507,6467.5 10935,6421.5,11507,6444.5 10935,6398.5,11507,6421.5 10935,6375.5,11507,6398.5 \
+10935,6352.5,11507,6375.5 10935,6329.5,11507,6352.5 10935,6306.5,11507,6329.5 10935,6283.5,11507,6306.5 10935,6260.5,11507,6283.5 \
+10935,6237.5,11507,6260.5 10935,6214.5,11507,6237.5 10935,6191.5,11507,6214.5 10935,6168.5,11507,6191.5",
+			shape=record,
+			style=filled,
+			width=7.9444];
+		fn_56_basic_block_3:s -> fn_56_basic_block_5:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="11198,6535.5",
+			pos="e,11221,6490.5 11075,6641.5 11075,6575.1 11124,6573.6 11172,6528 11189,6511.9 11213,6515.9 11219,6500.5",
+			style="solid,bold",
+			weight=100];
+		fn_56_basic_block_4:s -> fn_56_basic_block_5:n		 [color=blue,
+			constraint=true,
+			label="[100%]",
+			lp="11263,6535.5",
+			pos="e,11221,6490.5 11290,6637.5 11290,6568.9 11228,6563.1 11221,6500.6",
+			style="solid,bold",
+			weight=100];
+		fn_56_basic_block_5:s -> fn_56_basic_block_1:n		 [color=black,
+			constraint=true,
+			label="[100%]",
+			lp="11247,6123.5",
+			pos="e,11221,6028 11221,6168.5 11221,6109.6 11221,6092.4 11221,6038.2",
+			style="solid,bold",
+			weight=10];
+	}
+}

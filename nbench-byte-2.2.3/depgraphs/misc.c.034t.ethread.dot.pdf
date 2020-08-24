@@ -1,0 +1,236 @@
+digraph "misc.c.034t.ethread" {
+	graph [bb="0,0,864,1198",
+		overlap=false
+	];
+	node [label="\N"];
+	subgraph cluster_randnum {
+		graph [bb="8,8,254,1190",
+			color=black,
+			label="randnum ()",
+			lheight=0.21,
+			lp="131,1178.5",
+			lwidth=1.11,
+			style=dashed
+		];
+		fn_25_basic_block_0		 [fillcolor=white,
+			height=0.5,
+			label=ENTRY,
+			pos="127,1141",
+			shape=Mdiamond,
+			style=filled,
+			width=1.7617];
+		fn_25_basic_block_1		 [fillcolor=white,
+			height=0.5,
+			label=EXIT,
+			pos="141,34",
+			shape=Mdiamond,
+			style=filled,
+			width=1.3532];
+		fn_25_basic_block_0:s -> fn_25_basic_block_1:n		 [constraint=true,
+			pos="e,141,52 127,1123 127,1070.3 17,1131.2 17,1078.5 17,1078.5 17,1078.5 17,96.5 17,41.836 125.08,101.49 139.43,62.006",
+			style=invis];
+		fn_25_basic_block_2		 [fillcolor=lightgrey,
+			height=1.5972,
+			label="{ FREQ:0 |\<bb\ 2\>:\l|if\ (lngval_8(D)\ !=\ 0)\l\ \ goto\ \<bb\ 3\>;\ [0.00%]\lelse\l\ \ goto\ \<bb\ 4\>;\ [0.00%]\l}",
+			pos="127,861.5",
+			rects="36,895.5,218,918.5 36,872.5,218,895.5 36,804.5,218,872.5",
+			shape=record,
+			style=filled,
+			width=2.5278];
+		fn_25_basic_block_0:s -> fn_25_basic_block_2:n		 [color=blue,
+			constraint=true,
+			label="[0%]",
+			lp="144,1078.5",
+			pos="e,127,918.5 127,1123 127,1035.6 127,1011.2 127,928.6",
+			style="solid,bold",
+			weight=100];
+		fn_25_basic_block_3		 [fillcolor=lightgrey,
+			height=1.2917,
+			label="{ FREQ:0 |\<bb\ 3\>:\l|randw[0]\ =\ 13;\l|randw[1]\ =\ 117;\l}",
+			pos="109,553.5",
+			rects="42,576.5,176,599.5 42,553.5,176,576.5 42,530.5,176,553.5 42,507.5,176,530.5",
+			shape=record,
+			style=filled,
+			width=1.8611];
+		fn_25_basic_block_2:s -> fn_25_basic_block_3:n		 [color=black,
+			constraint=true,
+			label="[0%]",
+			lp="128,644.5",
+			pos="e,109,599.5 127,804.5 127,716.52 110.34,692.74 109.08,609.66",
+			style="solid,bold",
+			weight=10];
+		fn_25_basic_block_4		 [fillcolor=lightgrey,
+			height=3.8472,
+			label="{ FREQ:0 |\<bb\ 4\>:\l|_1\ =\ randw[0];\l|_2\ =\ _1\ *\ 254754;\l|_3\ =\ randw[1];\l|_4\ =\ _3\ *\ 529562;\l|_5\ =\ _2\ +\ _4;\l|\
+interm_12\ =\ _5\ %\ 999563;\l|_6\ =\ randw[0];\l|randw[1]\ =\ _6;\l|randw[0]\ =\ interm_12;\l|return\ interm_12;\l}",
+			pos="141,279.5",
+			rects="36.5,394.5,245.5,417.5 36.5,371.5,245.5,394.5 36.5,348.5,245.5,371.5 36.5,325.5,245.5,348.5 36.5,302.5,245.5,325.5 36.5,279.5,245.5,\
+302.5 36.5,256.5,245.5,279.5 36.5,233.5,245.5,256.5 36.5,210.5,245.5,233.5 36.5,187.5,245.5,210.5 36.5,164.5,245.5,187.5 36.5,141.5,\
+245.5,164.5",
+			shape=record,
+			style=filled,
+			width=2.9028];
+		fn_25_basic_block_2:s -> fn_25_basic_block_4:n		 [color=black,
+			constraint=true,
+			label="[0%]",
+			lp="229,553.5",
+			pos="e,141,417.5 127,804.5 127,723.98 212,725.02 212,644.5 212,644.5 212,644.5 212,462.5 212,429.23 155.68,449.16 143.36,427.53",
+			style="solid,bold",
+			weight=10];
+		fn_25_basic_block_3:s -> fn_25_basic_block_4:n		 [color=blue,
+			constraint=true,
+			label="[0%]",
+			lp="146,462.5",
+			pos="e,141,417.5 109,507.5 109,468.7 135.74,461.1 140.33,427.66",
+			style="solid,bold",
+			weight=100];
+		fn_25_basic_block_4:s -> fn_25_basic_block_1:n		 [color=black,
+			constraint=true,
+			label="[0%]",
+			lp="158,96.5",
+			pos="e,141,52 141,141.5 141,105.3 141,93.805 141,62.042",
+			style="solid,bold",
+			weight=10];
+	}
+	subgraph cluster_randwc {
+		graph [bb="262,527.5,522,1190",
+			color=black,
+			label="randwc ()",
+			lheight=0.21,
+			lp="392,1178.5",
+			lwidth=0.96,
+			style=dashed
+		];
+		fn_23_basic_block_0		 [fillcolor=white,
+			height=0.5,
+			label=ENTRY,
+			pos="402,1141",
+			shape=Mdiamond,
+			style=filled,
+			width=1.7617];
+		fn_23_basic_block_1		 [fillcolor=white,
+			height=0.5,
+			label=EXIT,
+			pos="402,553.5",
+			shape=Mdiamond,
+			style=filled,
+			width=1.3532];
+		fn_23_basic_block_0:s -> fn_23_basic_block_1:n		 [constraint=true,
+			pos="e,402,571.5 402,1123 402,1061.5 271,1140 271,1078.5 271,1078.5 271,1078.5 271,644.5 271,581.62 387.58,631.73 400.79,581.65",
+			style=invis];
+		fn_23_basic_block_2		 [fillcolor=lightgrey,
+			height=3.8472,
+			label="{ FREQ:10000 |\<bb\ 2\>:\l|_6\ =\ randw[0];\l|_7\ =\ _6\ *\ 254754;\l|_8\ =\ randw[1];\l|_9\ =\ _8\ *\ 529562;\l|_10\ =\ _7\ +\ _\
+9;\l|interm_11\ =\ _10\ %\ 999563;\l|randw[1]\ =\ _6;\l|randw[0]\ =\ interm_11;\l|_5\ =\ interm_11\ %\ num_4(D);\l|return\ _5;\l}",
+			pos="402,861.5",
+			rects="290,976.5,514,999.5 290,953.5,514,976.5 290,930.5,514,953.5 290,907.5,514,930.5 290,884.5,514,907.5 290,861.5,514,884.5 290,838.5,\
+514,861.5 290,815.5,514,838.5 290,792.5,514,815.5 290,769.5,514,792.5 290,746.5,514,769.5 290,723.5,514,746.5",
+			shape=record,
+			style=filled,
+			width=3.1111];
+		fn_23_basic_block_0:s -> fn_23_basic_block_2:n		 [color=blue,
+			constraint=true,
+			label="[0%]",
+			lp="419,1078.5",
+			pos="e,402,999.5 402,1123 402,1071.6 402,1056.3 402,1009.6",
+			style="solid,bold",
+			weight=100];
+		fn_23_basic_block_2:s -> fn_23_basic_block_1:n		 [color=black,
+			constraint=true,
+			label="[0%]",
+			lp="419,644.5",
+			pos="e,402,571.5 402,723.5 402,659.51 402,640.98 402,581.78",
+			style="solid,bold",
+			weight=10];
+	}
+	subgraph cluster_abs_randwc {
+		graph [bb="530,8,856,1190",
+			color=black,
+			label="abs_randwc ()",
+			lheight=0.21,
+			lp="693,1178.5",
+			lwidth=1.40,
+			style=dashed
+		];
+		fn_24_basic_block_0		 [fillcolor=white,
+			height=0.5,
+			label=ENTRY,
+			pos="703,1141",
+			shape=Mdiamond,
+			style=filled,
+			width=1.7617];
+		fn_24_basic_block_1		 [fillcolor=white,
+			height=0.5,
+			label=EXIT,
+			pos="703,34",
+			shape=Mdiamond,
+			style=filled,
+			width=1.3532];
+		fn_24_basic_block_0:s -> fn_24_basic_block_1:n		 [constraint=true,
+			pos="e,703,52 703,1123 703,1047.5 539,1154 539,1078.5 539,1078.5 539,1078.5 539,96.5 539,24.811 686.77,117.17 701.77,62.145",
+			style=invis];
+		fn_24_basic_block_2		 [fillcolor=lightgrey,
+			height=4.7917,
+			label="{ FREQ:10000 |\<bb\ 2\>:\l|num.0_1\ =\ (int)\ num_3(D);\l|_9\ =\ randw[0];\l|_10\ =\ _9\ *\ 254754;\l|_11\ =\ randw[1];\l|_12\ =\ _\
+11\ *\ 529562;\l|_13\ =\ _10\ +\ _12;\l|interm_14\ =\ _13\ %\ 999563;\l|randw[1]\ =\ _9;\l|randw[0]\ =\ interm_14;\l|_15\ =\ interm_\
+14\ %\ num.0_1;\l|if\ (_15\ \<\ 0)\l\ \ goto\ \<bb\ 3\>;\ [0.00%]\lelse\l\ \ goto\ \<bb\ 4\>;\ [0.00%]\l}",
+			pos="703,861.5",
+			rects="590.5,1010.5,815.5,1033.5 590.5,987.5,815.5,1010.5 590.5,964.5,815.5,987.5 590.5,941.5,815.5,964.5 590.5,918.5,815.5,941.5 590.5,\
+895.5,815.5,918.5 590.5,872.5,815.5,895.5 590.5,849.5,815.5,872.5 590.5,826.5,815.5,849.5 590.5,803.5,815.5,826.5 590.5,780.5,815.5,\
+803.5 590.5,757.5,815.5,780.5 590.5,689.5,815.5,757.5",
+			shape=record,
+			style=filled,
+			width=3.125];
+		fn_24_basic_block_0:s -> fn_24_basic_block_2:n		 [color=blue,
+			constraint=true,
+			label="[0%]",
+			lp="720,1078.5",
+			pos="e,703,1033.5 703,1123 703,1086.8 703,1075.3 703,1043.5",
+			style="solid,bold",
+			weight=100];
+		fn_24_basic_block_3		 [fillcolor=lightgrey,
+			height=0.97222,
+			label="{ FREQ:0 |\<bb\ 3\>:\l|temp_7\ =\ -_15;\l}",
+			pos="703,553.5",
+			rects="640.5,565,765.5,588 640.5,542,765.5,565 640.5,519,765.5,542",
+			shape=record,
+			style=filled,
+			width=1.7361];
+		fn_24_basic_block_2:s -> fn_24_basic_block_3:n		 [color=black,
+			constraint=true,
+			label="[0%]",
+			lp="720,644.5",
+			pos="e,703,588.5 703,689.5 703,648.29 703,635.46 703,598.9",
+			style="solid,bold",
+			weight=10];
+		fn_24_basic_block_4		 [fillcolor=lightgrey,
+			height=1.6111,
+			label="{ FREQ:0 |\<bb\ 4\>:\l|#\ temp_2\ =\ PHI\ \<_15(2),\ temp_7(3)\>\l|_8\ =\ (u32)\ temp_2;\l|return\ _8;\l}",
+			pos="703,279.5",
+			rects="557.5,314,848.5,337 557.5,291,848.5,314 557.5,268,848.5,291 557.5,245,848.5,268 557.5,222,848.5,245",
+			shape=record,
+			style=filled,
+			width=4.0417];
+		fn_24_basic_block_2:s -> fn_24_basic_block_4:n		 [color=black,
+			constraint=true,
+			label="[0%]",
+			lp="819,553.5",
+			pos="e,703,337.5 703,689.5 703,641.17 802,692.83 802,644.5 802,644.5 802,644.5 802,462.5 802,395.23 712.8,406.89 703.74,347.64",
+			style="solid,bold",
+			weight=10];
+		fn_24_basic_block_3:s -> fn_24_basic_block_4:n		 [color=blue,
+			constraint=true,
+			label="[0%]",
+			lp="720,462.5",
+			pos="e,703,337.5 703,518.5 703,441.51 703,419.78 703,347.55",
+			style="solid,bold",
+			weight=100];
+		fn_24_basic_block_4:s -> fn_24_basic_block_1:n		 [color=black,
+			constraint=true,
+			label="[0%]",
+			lp="720,96.5",
+			pos="e,703,52 703,221.5 703,149.7 703,129.22 703,62.233",
+			style="solid,bold",
+			weight=10];
+	}
+}
