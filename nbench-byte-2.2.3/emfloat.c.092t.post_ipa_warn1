@@ -1,0 +1,3279 @@
+
+;; Function DivideInternalFPF (DivideInternalFPF, funcdef_no=51, decl_uid=2827, cgraph_uid=51, symbol_order=51)
+
+DivideInternalFPF (struct InternalFPF * x, struct InternalFPF * y, struct InternalFPF * z)
+{
+  int i;
+  short unsigned int carry;
+  short unsigned int * mantissa;
+  short unsigned int accum;
+  int i;
+  int i;
+  int i;
+  int n;
+  long int exponent_difference;
+  int i;
+  int i;
+  short unsigned int accum;
+  unsigned int accum;
+  int i;
+  short unsigned int accum;
+  int i;
+  short unsigned int accum;
+  int i;
+  int i;
+  int n;
+  int i;
+  int i;
+  int i;
+  int n;
+  int i;
+  int n;
+  int i;
+  int i;
+  int i;
+  int n;
+  int i;
+  int i;
+  int i;
+  int n;
+  int i;
+  struct InternalFPF locx;
+  short unsigned int extra_bits[4];
+  short unsigned int carry;
+  int j;
+  int i;
+  unsigned char _1;
+  int _2;
+  int _3;
+  unsigned char _4;
+  int _5;
+  int _6;
+  short unsigned int[4] * _7;
+  unsigned char _8;
+  unsigned char _9;
+  unsigned char _10;
+  short unsigned int[4] * _11;
+  unsigned char _12;
+  unsigned char _13;
+  unsigned char _14;
+  short unsigned int[4] * _16;
+  short unsigned int[4] * _17;
+  unsigned char _20;
+  unsigned char _21;
+  unsigned char _22;
+  short int _23;
+  unsigned short _24;
+  short int _25;
+  unsigned short _26;
+  unsigned short _27;
+  unsigned short _28;
+  short int _29;
+  short unsigned int _30;
+  short unsigned int _31;
+  short unsigned int _32;
+  short unsigned int _33;
+  short unsigned int[4] * _34;
+  short int _35;
+  unsigned short _36;
+  unsigned short _37;
+  short int _38;
+  short unsigned int _39;
+  signed short _40;
+  long unsigned int _54;
+  long unsigned int _55;
+  long unsigned int _71;
+  long unsigned int _72;
+  short unsigned int * _73;
+  short unsigned int _74;
+  int _75;
+  long unsigned int _84;
+  long unsigned int _85;
+  short unsigned int * _86;
+  short unsigned int _87;
+  int _88;
+  long unsigned int _97;
+  long unsigned int _98;
+  short unsigned int * _99;
+  short unsigned int _100;
+  int _101;
+  long unsigned int _107;
+  long unsigned int _108;
+  short unsigned int * _109;
+  short unsigned int _110;
+  int _111;
+  long unsigned int _120;
+  long unsigned int _121;
+  short unsigned int * _122;
+  short unsigned int _123;
+  int _124;
+  long unsigned int _132;
+  long unsigned int _133;
+  short unsigned int * _134;
+  short unsigned int _136;
+  long unsigned int _142;
+  long unsigned int _143;
+  short unsigned int * _144;
+  short unsigned int _146;
+  unsigned int _152;
+  unsigned int _154;
+  unsigned int _156;
+  short unsigned int _157;
+  short unsigned int _158;
+  short unsigned int _159;
+  long unsigned int _161;
+  long unsigned int _162;
+  short unsigned int * _163;
+  short unsigned int _165;
+  unsigned char _170;
+  unsigned char _171;
+  short unsigned int _238;
+  short unsigned int _239;
+  long unsigned int _240;
+  long unsigned int _242;
+  long unsigned int _245;
+  unsigned char _246;
+  short unsigned int _247;
+  short unsigned int _248;
+  short unsigned int[4] * _249;
+  long unsigned int _251;
+  long unsigned int _252;
+  short unsigned int * _253;
+  short unsigned int _254;
+  int _255;
+  short int _260;
+  int _261;
+  int _262;
+  unsigned short _267;
+  unsigned short _268;
+  unsigned short _269;
+  short int _270;
+  int _271;
+  unsigned char _273;
+  long unsigned int _275;
+  long unsigned int _276;
+  short unsigned int * _277;
+  long unsigned int _280;
+  long unsigned int _281;
+  short unsigned int * _282;
+  short unsigned int _284;
+  short unsigned int _291;
+  short unsigned int _292;
+
+  <bb 2> [81.50%]:
+  _1 = x_50(D)->type;
+  _2 = (int) _1;
+  _3 = _2 * 5;
+  _4 = y_51(D)->type;
+  _5 = (int) _4;
+  _6 = _3 + _5;
+  switch (_6) <default: <L54> [10.00%], case 0: <L56> [10.00%], case 1 ... 2: <L2> [10.00%], case 3: <L5> [10.00%], case 4: <L58> [10.00%], case 5: <L9> [10.00%], case 6 ... 7: <L59> [10.00%], case 8: <L5> [10.00%], case 9: <L58> [10.00%], case 10: <L9> [10.00%], case 11 ... 12: <L59> [10.00%], case 13: <L5> [10.00%], case 14: <L58> [10.00%], case 15 ... 17: <L12> [10.00%], case 18: <L56> [10.00%], case 19: <L58> [10.00%], case 20 ... 23: <L57> [10.00%], case 24: <L61> [10.00%]>
+
+<L56> [8.15%]:
+  z_52(D)->type = 4;
+  z_52(D)->exp = 32767;
+  z_52(D)->sign = 1;
+  z_52(D)->mantissa[0] = 16384;
+  goto <bb 5>; [100.00%]
+
+  <bb 4> [24.45%]:
+  z_52(D)->mantissa[i_68] = 0;
+  i_69 = i_68 + 1;
+
+  <bb 5> [32.60%]:
+  # i_68 = PHI <1(3), i_69(4)>
+  if (i_68 <= 3)
+    goto <bb 4>; [75.00%]
+  else
+    goto <bb 82> (<L54>); [25.00%]
+
+<L2> [8.15%]:
+  _7 = &y_51(D)->mantissa;
+  goto <bb 8>; [100.00%]
+
+  <bb 7> [32.60%]:
+  _71 = (long unsigned int) i_70;
+  _72 = _71 * 2;
+  _73 = _7 + _72;
+  _74 = *_73;
+  _75 = (int) _74;
+  n_77 = _75 | n_76;
+  i_78 = i_70 + 1;
+
+  <bb 8> [40.75%]:
+  # i_70 = PHI <0(6), i_78(7)>
+  # n_76 = PHI <0(6), n_77(7)>
+  if (i_70 <= 3)
+    goto <bb 7>; [80.00%]
+  else
+    goto <bb 9>; [20.00%]
+
+  <bb 9> [8.15%]:
+  # n_186 = PHI <n_76(8)>
+  if (n_186 == 0)
+    goto <bb 10>; [50.00%]
+  else
+    goto <bb 13> (<L5>); [50.00%]
+
+  <bb 10> [4.07%]:
+  z_52(D)->type = 4;
+  z_52(D)->exp = 32767;
+  z_52(D)->sign = 1;
+  z_52(D)->mantissa[0] = 16384;
+  goto <bb 12>; [100.00%]
+
+  <bb 11> [12.22%]:
+  z_52(D)->mantissa[i_79] = 0;
+  i_80 = i_79 + 1;
+
+  <bb 12> [16.30%]:
+  # i_79 = PHI <1(10), i_80(11)>
+  if (i_79 <= 3)
+    goto <bb 11>; [75.00%]
+  else
+    goto <bb 82> (<L54>); [25.00%]
+
+<L5> [12.22%]:
+  _8 = x_50(D)->sign;
+  _9 = y_51(D)->sign;
+  _10 = _8 ^ _9;
+  z_52(D)->type = 0;
+  z_52(D)->sign = _10;
+  z_52(D)->exp = -32767;
+  goto <bb 15>; [100.00%]
+
+  <bb 14> [48.90%]:
+  z_52(D)->mantissa[i_81] = 0;
+  i_82 = i_81 + 1;
+
+  <bb 15> [61.12%]:
+  # i_81 = PHI <0(13), i_82(14)>
+  if (i_81 <= 3)
+    goto <bb 14>; [80.00%]
+  else
+    goto <bb 82> (<L54>); [20.00%]
+
+<L9> [8.15%]:
+  _11 = &x_50(D)->mantissa;
+  goto <bb 18>; [100.00%]
+
+  <bb 17> [32.60%]:
+  _84 = (long unsigned int) i_83;
+  _85 = _84 * 2;
+  _86 = _11 + _85;
+  _87 = *_86;
+  _88 = (int) _87;
+  n_90 = _88 | n_89;
+  i_91 = i_83 + 1;
+
+  <bb 18> [40.75%]:
+  # i_83 = PHI <0(16), i_91(17)>
+  # n_89 = PHI <0(16), n_90(17)>
+  if (i_83 <= 3)
+    goto <bb 17>; [80.00%]
+  else
+    goto <bb 19>; [20.00%]
+
+  <bb 19> [8.15%]:
+  # n_105 = PHI <n_89(18)>
+  if (n_105 == 0)
+    goto <bb 20>; [50.00%]
+  else
+    goto <bb 23> (<L12>); [50.00%]
+
+  <bb 20> [4.07%]:
+  z_52(D)->type = 4;
+  z_52(D)->exp = 32767;
+  z_52(D)->sign = 1;
+  z_52(D)->mantissa[0] = 16384;
+  goto <bb 22>; [100.00%]
+
+  <bb 21> [12.22%]:
+  z_52(D)->mantissa[i_92] = 0;
+  i_93 = i_92 + 1;
+
+  <bb 22> [16.30%]:
+  # i_92 = PHI <1(20), i_93(21)>
+  if (i_92 <= 3)
+    goto <bb 21>; [75.00%]
+  else
+    goto <bb 82> (<L54>); [25.00%]
+
+<L12> [12.22%]:
+  z_52(D)->type = 3;
+  z_52(D)->sign = 0;
+  z_52(D)->exp = -32767;
+  goto <bb 25>; [100.00%]
+
+  <bb 24> [48.90%]:
+  z_52(D)->mantissa[i_94] = 0;
+  i_95 = i_94 + 1;
+
+  <bb 25> [61.12%]:
+  # i_94 = PHI <0(23), i_95(24)>
+  if (i_94 <= 3)
+    goto <bb 24>; [80.00%]
+  else
+    goto <bb 26>; [20.00%]
+
+  <bb 26> [12.22%]:
+  _12 = x_50(D)->sign;
+  _13 = y_51(D)->sign;
+  _14 = _12 ^ _13;
+  z_52(D)->sign = _14;
+  goto <bb 82> (<L54>); [100.00%]
+
+<L57> [8.15%]:
+  _55 = __builtin_object_size (x_50(D), 0);
+  __builtin___memmove_chk (x_50(D), z_52(D), 12, _55);
+  goto <bb 82> (<L54>); [100.00%]
+
+<L58> [8.15%]:
+  _54 = __builtin_object_size (y_51(D), 0);
+  __builtin___memmove_chk (y_51(D), z_52(D), 12, _54);
+  goto <bb 82> (<L54>); [100.00%]
+
+<L59> [8.15%]:
+  __builtin_memcpy (&locx, x_50(D), 12);
+  goto <bb 31>; [100.00%]
+
+  <bb 30> [32.60%]:
+  _97 = (long unsigned int) i_96;
+  _98 = _97 * 2;
+  _99 = &locx.mantissa + _98;
+  _100 = *_99;
+  _101 = (int) _100;
+  n_103 = _101 | n_102;
+  i_104 = i_96 + 1;
+
+  <bb 31> [40.75%]:
+  # i_96 = PHI <0(29), i_104(30)>
+  # n_102 = PHI <0(29), n_103(30)>
+  if (i_96 <= 3)
+    goto <bb 30>; [80.00%]
+  else
+    goto <bb 32>; [20.00%]
+
+  <bb 32> [8.15%]:
+  # n_187 = PHI <n_102(31)>
+  if (n_187 == 0)
+    goto <bb 33>; [50.00%]
+  else
+    goto <bb 43>; [50.00%]
+
+  <bb 33> [4.07%]:
+  _16 = &y_51(D)->mantissa;
+  goto <bb 35>; [100.00%]
+
+  <bb 34> [16.30%]:
+  _107 = (long unsigned int) i_106;
+  _108 = _107 * 2;
+  _109 = _16 + _108;
+  _110 = *_109;
+  _111 = (int) _110;
+  n_113 = _111 | n_112;
+  i_114 = i_106 + 1;
+
+  <bb 35> [20.37%]:
+  # i_106 = PHI <0(33), i_114(34)>
+  # n_112 = PHI <0(33), n_113(34)>
+  if (i_106 <= 3)
+    goto <bb 34>; [80.00%]
+  else
+    goto <bb 36>; [20.00%]
+
+  <bb 36> [4.07%]:
+  # n_15 = PHI <n_112(35)>
+  if (n_15 == 0)
+    goto <bb 37>; [50.00%]
+  else
+    goto <bb 40>; [50.00%]
+
+  <bb 37> [2.04%]:
+  z_52(D)->type = 4;
+  z_52(D)->exp = 32767;
+  z_52(D)->sign = 1;
+  z_52(D)->mantissa[0] = 16384;
+  goto <bb 39>; [100.00%]
+
+  <bb 38> [6.11%]:
+  z_52(D)->mantissa[i_115] = 0;
+  i_116 = i_115 + 1;
+
+  <bb 39> [8.15%]:
+  # i_115 = PHI <1(37), i_116(38)>
+  if (i_115 <= 3)
+    goto <bb 38>; [75.00%]
+  else
+    goto <bb 82> (<L54>); [25.00%]
+
+  <bb 40> [2.04%]:
+  z_52(D)->type = 0;
+  z_52(D)->sign = 0;
+  z_52(D)->exp = -32767;
+  goto <bb 42>; [100.00%]
+
+  <bb 41> [8.15%]:
+  z_52(D)->mantissa[i_117] = 0;
+  i_118 = i_117 + 1;
+
+  <bb 42> [10.19%]:
+  # i_117 = PHI <0(40), i_118(41)>
+  if (i_117 <= 3)
+    goto <bb 41>; [80.00%]
+  else
+    goto <bb 82> (<L54>); [20.00%]
+
+  <bb 43> [4.07%]:
+  _17 = &y_51(D)->mantissa;
+  goto <bb 45>; [100.00%]
+
+  <bb 44> [16.30%]:
+  _120 = (long unsigned int) i_119;
+  _121 = _120 * 2;
+  _122 = _17 + _121;
+  _123 = *_122;
+  _124 = (int) _123;
+  n_126 = _124 | n_125;
+  i_127 = i_119 + 1;
+
+  <bb 45> [20.37%]:
+  # i_119 = PHI <0(43), i_127(44)>
+  # n_125 = PHI <0(43), n_126(44)>
+  if (i_119 <= 3)
+    goto <bb 44>; [80.00%]
+  else
+    goto <bb 46>; [20.00%]
+
+  <bb 46> [4.07%]:
+  # n_128 = PHI <n_125(45)>
+  if (n_128 == 0)
+    goto <bb 47>; [50.00%]
+  else
+    goto <bb 50>; [50.00%]
+
+  <bb 47> [2.04%]:
+  z_52(D)->type = 3;
+  z_52(D)->sign = 0;
+  z_52(D)->exp = -32767;
+  goto <bb 49>; [100.00%]
+
+  <bb 48> [8.15%]:
+  z_52(D)->mantissa[i_129] = 0;
+  i_130 = i_129 + 1;
+
+  <bb 49> [10.19%]:
+  # i_129 = PHI <0(47), i_130(48)>
+  if (i_129 <= 3)
+    goto <bb 48>; [80.00%]
+  else
+    goto <bb 82> (<L54>); [20.00%]
+
+  <bb 50> [2.04%]:
+  z_52(D)->type = _1;
+  _20 = x_50(D)->sign;
+  _21 = y_51(D)->sign;
+  _22 = _20 ^ _21;
+  z_52(D)->sign = _22;
+  _23 = x_50(D)->exp;
+  _24 = (unsigned short) _23;
+  _25 = y_51(D)->exp;
+  _26 = (unsigned short) _25;
+  _27 = _24 - _26;
+  _28 = _27 + 128;
+  _29 = (short int) _28;
+  z_52(D)->exp = _29;
+  goto <bb 52>; [100.00%]
+
+  <bb 51> [8.15%]:
+  z_52(D)->mantissa[i_41] = 0;
+  extra_bits[i_41] = 0;
+  i_64 = i_41 + 1;
+
+  <bb 52> [10.19%]:
+  # i_41 = PHI <0(50), i_64(51)>
+  if (i_41 <= 3)
+    goto <bb 51>; [80.00%]
+  else
+    goto <bb 74>; [20.00%]
+
+  <bb 53> [46.18%]:
+  _142 = (long unsigned int) i_141;
+  _143 = _142 * 2;
+  _144 = &locx.mantissa + _143;
+  accum_145 = *_144;
+  _146 = accum_145 & 32768;
+  accum_147 = accum_145 << 1;
+  if (carry_231 != 0)
+    goto <bb 54>; [50.00%]
+  else
+    goto <bb 55>; [50.00%]
+
+  <bb 54> [23.09%]:
+  accum_148 = accum_147 | 1;
+
+  <bb 55> [46.18%]:
+  # accum_149 = PHI <accum_147(53), accum_148(54)>
+  *_144 = accum_149;
+  i_150 = i_141 + -1;
+
+  <bb 56> [57.73%]:
+  # i_141 = PHI <3(74), i_150(55)>
+  # carry_231 = PHI <0(74), _146(55)>
+  if (i_141 >= 0)
+    goto <bb 53>; [80.00%]
+  else
+    goto <bb 60>; [20.00%]
+
+  <bb 57> [46.18%]:
+  _132 = (long unsigned int) i_131;
+  _133 = _132 * 2;
+  _134 = &extra_bits + _133;
+  accum_135 = *_134;
+  _136 = accum_135 & 32768;
+  accum_137 = accum_135 << 1;
+  if (carry_232 != 0)
+    goto <bb 58>; [50.00%]
+  else
+    goto <bb 59>; [50.00%]
+
+  <bb 58> [23.09%]:
+  accum_138 = accum_137 | 1;
+
+  <bb 59> [46.18%]:
+  # accum_139 = PHI <accum_137(57), accum_138(58)>
+  *_134 = accum_139;
+  i_140 = i_131 + -1;
+
+  <bb 60> [57.73%]:
+  # i_131 = PHI <3(56), i_140(59)>
+  # carry_232 = PHI <carry_231(56), _136(59)>
+  if (i_131 >= 0)
+    goto <bb 57>; [80.00%]
+  else
+    goto <bb 61>; [20.00%]
+
+  <bb 61> [11.55%]:
+  # carry_18 = PHI <carry_232(60)>
+  if (carry_18 == 0)
+    goto <bb 65>; [50.00%]
+  else
+    goto <bb 67>; [50.00%]
+
+  <bb 62> [16.61%]:
+  _30 = y_51(D)->mantissa[j_42];
+  _31 = extra_bits[j_42];
+  if (_30 > _31)
+    goto <bb 68> (no_subtract); [5.00%]
+  else
+    goto <bb 63>; [95.00%]
+
+  <bb 63> [15.78%]:
+  if (_30 < _31)
+    goto <bb 67>; [5.00%]
+  else
+    goto <bb 64>; [95.00%]
+
+  <bb 64> [14.99%]:
+  j_59 = j_42 + 1;
+
+  <bb 65> [20.77%]:
+  # j_42 = PHI <0(61), j_59(64)>
+  if (j_42 <= 3)
+    goto <bb 62>; [80.00%]
+  else
+    goto <bb 67>; [20.00%]
+
+  <bb 66> [42.86%]:
+  _32 = y_51(D)->mantissa[j_43];
+  _33 = extra_bits[j_43];
+  accum_151 = (unsigned int) _33;
+  _152 = (unsigned int) _32;
+  accum_153 = accum_151 - _152;
+  _154 = (unsigned int) carry_233;
+  accum_155 = accum_153 - _154;
+  _156 = accum_155 >> 16;
+  _157 = (short unsigned int) _156;
+  _158 = _157 & 1;
+  _159 = (short unsigned int) accum_155;
+  MEM[(short unsigned int *)&extra_bits][j_43] = _159;
+  j_60 = j_43 + -1;
+
+  <bb 67> [53.58%]:
+  # j_43 = PHI <3(61), j_60(66), 3(65), 3(63)>
+  # carry_233 = PHI <0(61), _158(66), 0(65), 0(63)>
+  if (j_43 >= 0)
+    goto <bb 66>; [80.00%]
+  else
+    goto <bb 68> (no_subtract); [20.00%]
+
+  # carry_234 = PHI <0(62), 1(67)>
+no_subtract [11.55%]:
+  _34 = &z_52(D)->mantissa;
+  goto <bb 72>; [100.00%]
+
+  <bb 69> [46.18%]:
+  _161 = (long unsigned int) i_160;
+  _162 = _161 * 2;
+  _163 = _34 + _162;
+  accum_164 = *_163;
+  _165 = accum_164 & 32768;
+  accum_166 = accum_164 << 1;
+  if (carry_235 != 0)
+    goto <bb 70>; [50.00%]
+  else
+    goto <bb 71>; [50.00%]
+
+  <bb 70> [23.09%]:
+  accum_167 = accum_166 | 1;
+
+  <bb 71> [46.18%]:
+  # accum_168 = PHI <accum_166(69), accum_167(70)>
+  *_163 = accum_168;
+  i_169 = i_160 + -1;
+
+  <bb 72> [57.73%]:
+  # i_160 = PHI <3(68), i_169(71)>
+  # carry_235 = PHI <carry_234(68), _165(71)>
+  if (i_160 >= 0)
+    goto <bb 69>; [80.00%]
+  else
+    goto <bb 73>; [20.00%]
+
+  <bb 73> [11.55%]:
+  _35 = z_52(D)->exp;
+  _36 = (unsigned short) _35;
+  _37 = _36 + 65535;
+  _38 = (short int) _37;
+  z_52(D)->exp = _38;
+
+  <bb 74> [13.58%]:
+  _39 = z_52(D)->mantissa[0];
+  _40 = (signed short) _39;
+  if (_40 >= 0)
+    goto <bb 56>; [85.00%]
+  else
+    goto <bb 82> (<L54>); [15.00%]
+
+  <bb 75> [23.45%]:
+  _238 = x_50(D)->mantissa[i_237];
+  _239 = y_51(D)->mantissa[i_237];
+  if (_238 > _239)
+    goto <bb 76>; [5.00%]
+  else
+    goto <bb 77>; [95.00%]
+
+  <bb 76> [1.17%]:
+  _240 = __builtin_object_size (x_50(D), 0);
+  __builtin___memmove_chk (x_50(D), z_52(D), 12, _240);
+  goto <bb 82> (<L54>); [100.00%]
+
+  <bb 77> [22.28%]:
+  if (_238 < _239)
+    goto <bb 78>; [5.00%]
+  else
+    goto <bb 79>; [95.00%]
+
+  <bb 78> [1.11%]:
+  _245 = __builtin_object_size (y_51(D), 0);
+  __builtin___memmove_chk (y_51(D), z_52(D), 12, _245);
+  goto <bb 82> (<L54>); [100.00%]
+
+  <bb 79> [21.17%]:
+  i_241 = i_237 + 1;
+
+  # i_237 = PHI <0(2), i_241(79)>
+<L61> [29.32%]:
+  if (i_237 <= 3)
+    goto <bb 75>; [80.00%]
+  else
+    goto <bb 81>; [20.00%]
+
+  <bb 81> [5.86%]:
+  _242 = __builtin_object_size (x_50(D), 0);
+  __builtin___memmove_chk (x_50(D), z_52(D), 12, _242);
+
+<L54> [81.50%]:
+  _170 = z_52(D)->type;
+  _171 = _170 + 255;
+  if (_171 <= 1)
+    goto <bb 83>; [24.54%]
+  else
+    goto <bb 108>; [75.46%]
+
+  <bb 83> [20.00%]:
+  _249 = &z_52(D)->mantissa;
+  goto <bb 85>; [100.00%]
+
+  <bb 84> [80.00%]:
+  _251 = (long unsigned int) i_250;
+  _252 = _251 * 2;
+  _253 = _249 + _252;
+  _254 = *_253;
+  _255 = (int) _254;
+  n_257 = _255 | n_256;
+  i_258 = i_250 + 1;
+
+  <bb 85> [100.00%]:
+  # i_250 = PHI <0(83), i_258(84)>
+  # n_256 = PHI <0(83), n_257(84)>
+  if (i_250 <= 3)
+    goto <bb 84>; [80.00%]
+  else
+    goto <bb 86>; [20.00%]
+
+  <bb 86> [20.00%]:
+  # n_259 = PHI <n_256(85)>
+  if (n_259 == 0)
+    goto <bb 87>; [33.00%]
+  else
+    goto <bb 88>; [67.00%]
+
+  <bb 87> [6.60%]:
+  __builtin_puts (&"Error:  zero significand in denormalize"[0]);
+
+  <bb 88> [20.00%]:
+  _260 = z_52(D)->exp;
+  _261 = (int) _260;
+  _262 = _261 + 32767;
+  exponent_difference_263 = (long int) _262;
+  if (exponent_difference_263 < 0)
+    goto <bb 89>; [39.77%]
+  else
+    goto <bb 106>; [60.23%]
+
+  <bb 89> [7.95%]:
+  exponent_difference_264 = -exponent_difference_263;
+  if (exponent_difference_263 < -63)
+    goto <bb 90>; [67.00%]
+  else
+    goto <bb 93>; [33.00%]
+
+  <bb 90> [5.33%]:
+  z_52(D)->type = 0;
+  z_52(D)->exp = -32767;
+  goto <bb 92>; [100.00%]
+
+  <bb 91> [21.32%]:
+  z_52(D)->mantissa[i_265] = 0;
+  i_266 = i_265 + 1;
+
+  <bb 92> [26.65%]:
+  # i_265 = PHI <0(90), i_266(91)>
+  if (i_265 <= 3)
+    goto <bb 91>; [80.00%]
+  else
+    goto <bb 106>; [20.00%]
+
+  <bb 93> [2.62%]:
+  _267 = (unsigned short) _260;
+  _268 = (unsigned short) exponent_difference_264;
+  _269 = _267 + _268;
+  _270 = (short int) _269;
+  z_52(D)->exp = _270;
+  _271 = (int) exponent_difference_264;
+  mantissa_272 = &z_52(D)->mantissa;
+  _273 = z_52(D)->type;
+  if (_273 != 0)
+    goto <bb 94>; [54.00%]
+  else
+    goto <bb 106>; [46.00%]
+
+  <bb 94> [1.42%]:
+  if (_271 > 63)
+    goto <bb 96>; [50.00%]
+  else
+    goto <bb 105>; [50.00%]
+
+  <bb 95> [2.13%]:
+  _275 = (long unsigned int) i_274;
+  _276 = _275 * 2;
+  _277 = mantissa_272 + _276;
+  *_277 = 0;
+  i_278 = i_274 + 1;
+
+  <bb 96> [2.83%]:
+  # i_274 = PHI <0(94), i_278(95)>
+  if (i_274 <= 2)
+    goto <bb 95>; [75.00%]
+  else
+    goto <bb 97>; [25.00%]
+
+  <bb 97> [0.71%]:
+  MEM[(short unsigned int *)z_52(D) + 10B] = 1;
+  goto <bb 106>; [100.00%]
+
+  <bb 98> [16.06%]:
+  _280 = (long unsigned int) i_279;
+  _281 = _280 * 2;
+  _282 = mantissa_272 + _281;
+  accum_283 = *_282;
+  _284 = accum_283 & 1;
+  accum_285 = accum_283 >> 1;
+  if (carry_286 != 0)
+    goto <bb 99>; [50.00%]
+  else
+    goto <bb 100>; [50.00%]
+
+  <bb 99> [8.03%]:
+  accum_287 = accum_285 | 32768;
+
+  <bb 100> [16.06%]:
+  # accum_288 = PHI <accum_285(98), accum_287(99)>
+  *_282 = accum_288;
+  i_289 = i_279 + 1;
+
+  <bb 101> [20.08%]:
+  # i_279 = PHI <i_289(100), 0(105)>
+  # carry_286 = PHI <_284(100), 0(105)>
+  if (i_279 <= 3)
+    goto <bb 98>; [80.00%]
+  else
+    goto <bb 102>; [20.00%]
+
+  <bb 102> [4.02%]:
+  # carry_290 = PHI <carry_286(101)>
+  if (carry_290 != 0)
+    goto <bb 103>; [50.00%]
+  else
+    goto <bb 104>; [50.00%]
+
+  <bb 103> [2.01%]:
+  _291 = MEM[(short unsigned int *)z_52(D) + 10B];
+  _292 = _291 | 1;
+  MEM[(short unsigned int *)z_52(D) + 10B] = _292;
+
+  <bb 104> [4.02%]:
+  i_294 = i_293 + 1;
+
+  <bb 105> [4.72%]:
+  # i_293 = PHI <0(94), i_294(104)>
+  if (_271 > i_293)
+    goto <bb 101>; [85.00%]
+  else
+    goto <bb 106>; [15.00%]
+
+  <bb 106> [20.00%]:
+  _246 = z_52(D)->type;
+  if (_246 != 0)
+    goto <bb 107>; [54.00%]
+  else
+    goto <bb 108>; [46.00%]
+
+  <bb 107> [10.80%]:
+  _247 = z_52(D)->mantissa[3];
+  _248 = _247 & 65528;
+  z_52(D)->mantissa[3] = _248;
+
+  <bb 108> [81.50%]:
+  extra_bits ={v} {CLOBBER};
+  locx ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function AddSubInternalFPF (AddSubInternalFPF, funcdef_no=49, decl_uid=2819, cgraph_uid=49, symbol_order=49)
+
+AddSubInternalFPF (unsigned char operation, struct InternalFPF * x, struct InternalFPF * y, struct InternalFPF * z)
+{
+  int i;
+  short unsigned int carry;
+  short unsigned int * mantissa;
+  short unsigned int accum;
+  int i;
+  int i;
+  int i;
+  int n;
+  long int exponent_difference;
+  int i;
+  short unsigned int carry;
+  short unsigned int accum;
+  int i;
+  int i;
+  short unsigned int carry;
+  short unsigned int * mantissa;
+  short unsigned int accum;
+  int i;
+  int i;
+  short unsigned int carry;
+  short unsigned int * mantissa;
+  short unsigned int accum;
+  int i;
+  int i;
+  int i;
+  short unsigned int accum;
+  unsigned int accum;
+  int i;
+  int n;
+  unsigned int accum;
+  unsigned int accum;
+  struct InternalFPF locy;
+  struct InternalFPF locx;
+  int i;
+  short unsigned int carry;
+  short unsigned int borrow;
+  int exponent_difference;
+  unsigned char _1;
+  int _2;
+  int _3;
+  unsigned char _4;
+  int _5;
+  int _6;
+  unsigned char _7;
+  unsigned char _8;
+  unsigned char _9;
+  unsigned char _10;
+  unsigned char _11;
+  short int _12;
+  int _13;
+  short int _14;
+  int _15;
+  unsigned char _17;
+  unsigned char _18;
+  unsigned char _19;
+  short int _20;
+  int _21;
+  unsigned char _22;
+  unsigned char _23;
+  unsigned char _24;
+  short int _25;
+  unsigned char _26;
+  unsigned char _27;
+  unsigned char _28;
+  short unsigned int _29;
+  short unsigned int _30;
+  unsigned char _31;
+  short unsigned int _32;
+  short unsigned int[4] * _33;
+  unsigned char _34;
+  unsigned char _35;
+  short unsigned int _36;
+  short unsigned int _37;
+  short int _38;
+  unsigned short _39;
+  unsigned short _40;
+  short int _41;
+  short unsigned int[4] * _42;
+  short unsigned int _43;
+  short unsigned int _44;
+  short unsigned int _45;
+  signed short _46;
+  long unsigned int _83;
+  long unsigned int _92;
+  long unsigned int _93;
+  long unsigned int _94;
+  unsigned int _96;
+  unsigned int _98;
+  unsigned int _100;
+  short unsigned int _101;
+  short unsigned int _102;
+  short unsigned int _103;
+  unsigned int _104;
+  unsigned int _106;
+  unsigned int _108;
+  short unsigned int _109;
+  short unsigned int _110;
+  short unsigned int _111;
+  long unsigned int _113;
+  long unsigned int _114;
+  short unsigned int * _115;
+  short unsigned int _116;
+  int _117;
+  unsigned int _122;
+  unsigned int _124;
+  unsigned int _126;
+  short unsigned int _127;
+  short unsigned int _128;
+  short unsigned int _129;
+  long unsigned int _131;
+  long unsigned int _132;
+  short unsigned int * _133;
+  short unsigned int _135;
+  unsigned char _142;
+  unsigned char _143;
+  unsigned char _172;
+  long unsigned int _174;
+  long unsigned int _175;
+  short unsigned int * _176;
+  long unsigned int _179;
+  long unsigned int _180;
+  short unsigned int * _181;
+  short unsigned int _183;
+  short unsigned int _190;
+  short unsigned int _191;
+  unsigned char _195;
+  long unsigned int _197;
+  long unsigned int _198;
+  short unsigned int * _199;
+  long unsigned int _202;
+  long unsigned int _203;
+  short unsigned int * _204;
+  short unsigned int _206;
+  short unsigned int _213;
+  short unsigned int _214;
+  short unsigned int[4] * _217;
+  long unsigned int _219;
+  long unsigned int _220;
+  short unsigned int * _221;
+  short unsigned int _223;
+  short int _229;
+  unsigned short _230;
+  unsigned short _231;
+  short int _232;
+  short unsigned int _233;
+  signed short _234;
+  short unsigned int _236;
+  short unsigned int _237;
+  long unsigned int _238;
+  long unsigned int _241;
+  long unsigned int _243;
+  unsigned char _244;
+  short unsigned int _245;
+  short unsigned int _246;
+  short unsigned int[4] * _247;
+  long unsigned int _249;
+  long unsigned int _250;
+  short unsigned int * _251;
+  short unsigned int _252;
+  int _253;
+  short int _258;
+  int _259;
+  int _260;
+  unsigned short _265;
+  unsigned short _266;
+  unsigned short _267;
+  short int _268;
+  int _269;
+  unsigned char _271;
+  long unsigned int _273;
+  long unsigned int _274;
+  short unsigned int * _275;
+  long unsigned int _278;
+  long unsigned int _279;
+  short unsigned int * _280;
+  short unsigned int _282;
+  short unsigned int _289;
+  short unsigned int _290;
+
+  <bb 2> [81.50%]:
+  _1 = x_58(D)->type;
+  _2 = (int) _1;
+  _3 = _2 * 5;
+  _4 = y_59(D)->type;
+  _5 = (int) _4;
+  _6 = _3 + _5;
+  switch (_6) <default: <L63> [12.50%], case 0: <L67> [12.50%], case 1 ... 3: <L70> [12.50%], case 4: <L69> [12.50%], case 5: <L68> [12.50%], case 6 ... 7: <L71> [12.50%], case 8: <L70> [12.50%], case 9: <L69> [12.50%], case 10: <L68> [12.50%], case 11 ... 12: <L71> [12.50%], case 13: <L70> [12.50%], case 14: <L69> [12.50%], case 15 ... 17: <L68> [12.50%], case 18: <L72> [12.50%], case 19: <L69> [12.50%], case 20 ... 23: <L68> [12.50%], case 24: <L74> [12.50%]>
+
+<L67> [10.19%]:
+  _83 = __builtin_object_size (x_58(D), 0);
+  __builtin___memmove_chk (x_58(D), z_60(D), 12, _83);
+  _7 = x_58(D)->sign;
+  _8 = y_59(D)->sign;
+  _9 = _7 ^ _8;
+  if (_9 != operation_65(D))
+    goto <bb 4>; [66.00%]
+  else
+    goto <bb 86> (<L63>); [34.00%]
+
+  <bb 4> [6.72%]:
+  z_60(D)->sign = 0;
+  goto <bb 86> (<L63>); [100.00%]
+
+<L68> [10.19%]:
+  _92 = __builtin_object_size (x_58(D), 0);
+  __builtin___memmove_chk (x_58(D), z_60(D), 12, _92);
+  goto <bb 86> (<L63>); [100.00%]
+
+<L69> [10.19%]:
+  _93 = __builtin_object_size (y_59(D), 0);
+  __builtin___memmove_chk (y_59(D), z_60(D), 12, _93);
+  goto <bb 86> (<L63>); [100.00%]
+
+<L70> [10.19%]:
+  _94 = __builtin_object_size (y_59(D), 0);
+  __builtin___memmove_chk (y_59(D), z_60(D), 12, _94);
+  _10 = z_60(D)->sign;
+  _11 = _10 ^ operation_65(D);
+  z_60(D)->sign = _11;
+  goto <bb 86> (<L63>); [100.00%]
+
+<L71> [10.19%]:
+  __builtin_memcpy (&locx, x_58(D), 12);
+  __builtin_memcpy (&locy, y_59(D), 12);
+  _12 = locx.exp;
+  _13 = (int) _12;
+  _14 = locy.exp;
+  _15 = (int) _14;
+  exponent_difference_62 = _13 - _15;
+  if (exponent_difference_62 == 0)
+    goto <bb 9>; [50.00%]
+  else
+    goto <bb 14>; [50.00%]
+
+  <bb 9> [5.09%]:
+  if (_1 == 1)
+    goto <bb 11>; [34.00%]
+  else
+    goto <bb 10>; [66.00%]
+
+  <bb 10> [3.36%]:
+  if (_4 == 1)
+    goto <bb 11>; [34.00%]
+  else
+    goto <bb 12>; [66.00%]
+
+  <bb 11> [2.87%]:
+  z_60(D)->type = 1;
+  goto <bb 13>; [100.00%]
+
+  <bb 12> [2.22%]:
+  z_60(D)->type = 2;
+
+  <bb 13> [5.09%]:
+  _17 = locx.sign;
+  z_60(D)->sign = _17;
+  z_60(D)->exp = _12;
+  goto <bb 43>; [100.00%]
+
+  <bb 14> [5.09%]:
+  if (exponent_difference_62 > 0)
+    goto <bb 15>; [64.00%]
+  else
+    goto <bb 29>; [36.00%]
+
+  <bb 15> [3.26%]:
+  _172 = locy.type;
+  if (_172 != 0)
+    goto <bb 16>; [54.00%]
+  else
+    goto <bb 28>; [46.00%]
+
+  <bb 16> [1.76%]:
+  if (exponent_difference_62 > 63)
+    goto <bb 18>; [50.00%]
+  else
+    goto <bb 27>; [50.00%]
+
+  <bb 17> [2.64%]:
+  _174 = (long unsigned int) i_173;
+  _175 = _174 * 2;
+  _176 = &locy.mantissa + _175;
+  *_176 = 0;
+  i_177 = i_173 + 1;
+
+  <bb 18> [3.52%]:
+  # i_173 = PHI <0(16), i_177(17)>
+  if (i_173 <= 2)
+    goto <bb 17>; [75.00%]
+  else
+    goto <bb 19>; [25.00%]
+
+  <bb 19> [0.88%]:
+  MEM[(short unsigned int *)&locy + 10B] = 1;
+  goto <bb 28>; [100.00%]
+
+  <bb 20> [19.95%]:
+  _179 = (long unsigned int) i_178;
+  _180 = _179 * 2;
+  _181 = &locy.mantissa + _180;
+  accum_182 = *_181;
+  _183 = accum_182 & 1;
+  accum_184 = accum_182 >> 1;
+  if (carry_185 != 0)
+    goto <bb 21>; [50.00%]
+  else
+    goto <bb 22>; [50.00%]
+
+  <bb 21> [9.98%]:
+  accum_186 = accum_184 | 32768;
+
+  <bb 22> [19.95%]:
+  # accum_187 = PHI <accum_184(20), accum_186(21)>
+  *_181 = accum_187;
+  i_188 = i_178 + 1;
+
+  <bb 23> [24.94%]:
+  # i_178 = PHI <i_188(22), 0(27)>
+  # carry_185 = PHI <_183(22), 0(27)>
+  if (i_178 <= 3)
+    goto <bb 20>; [80.00%]
+  else
+    goto <bb 24>; [20.00%]
+
+  <bb 24> [4.99%]:
+  # carry_189 = PHI <carry_185(23)>
+  if (carry_189 != 0)
+    goto <bb 25>; [50.00%]
+  else
+    goto <bb 26>; [50.00%]
+
+  <bb 25> [2.49%]:
+  _190 = MEM[(short unsigned int *)&locy + 10B];
+  _191 = _190 | 1;
+  MEM[(short unsigned int *)&locy + 10B] = _191;
+
+  <bb 26> [4.99%]:
+  i_193 = i_192 + 1;
+
+  <bb 27> [5.87%]:
+  # i_192 = PHI <0(16), i_193(26)>
+  if (exponent_difference_62 > i_192)
+    goto <bb 23>; [85.00%]
+  else
+    goto <bb 28>; [15.00%]
+
+  <bb 28> [3.26%]:
+  _18 = locx.type;
+  z_60(D)->type = _18;
+  _19 = locx.sign;
+  z_60(D)->sign = _19;
+  _20 = locx.exp;
+  z_60(D)->exp = _20;
+  goto <bb 43>; [100.00%]
+
+  <bb 29> [1.83%]:
+  _21 = -exponent_difference_62;
+  _195 = locx.type;
+  if (_195 != 0)
+    goto <bb 30>; [54.00%]
+  else
+    goto <bb 42>; [46.00%]
+
+  <bb 30> [0.99%]:
+  if (_21 > 63)
+    goto <bb 32>; [50.00%]
+  else
+    goto <bb 41>; [50.00%]
+
+  <bb 31> [1.49%]:
+  _197 = (long unsigned int) i_196;
+  _198 = _197 * 2;
+  _199 = &locx.mantissa + _198;
+  *_199 = 0;
+  i_200 = i_196 + 1;
+
+  <bb 32> [1.98%]:
+  # i_196 = PHI <0(30), i_200(31)>
+  if (i_196 <= 2)
+    goto <bb 31>; [75.00%]
+  else
+    goto <bb 33>; [25.00%]
+
+  <bb 33> [0.50%]:
+  MEM[(short unsigned int *)&locx + 10B] = 1;
+  goto <bb 42>; [100.00%]
+
+  <bb 34> [11.22%]:
+  _202 = (long unsigned int) i_201;
+  _203 = _202 * 2;
+  _204 = &locx.mantissa + _203;
+  accum_205 = *_204;
+  _206 = accum_205 & 1;
+  accum_207 = accum_205 >> 1;
+  if (carry_208 != 0)
+    goto <bb 35>; [50.00%]
+  else
+    goto <bb 36>; [50.00%]
+
+  <bb 35> [5.61%]:
+  accum_209 = accum_207 | 32768;
+
+  <bb 36> [11.22%]:
+  # accum_210 = PHI <accum_207(34), accum_209(35)>
+  *_204 = accum_210;
+  i_211 = i_201 + 1;
+
+  <bb 37> [14.03%]:
+  # i_201 = PHI <i_211(36), 0(41)>
+  # carry_208 = PHI <_206(36), 0(41)>
+  if (i_201 <= 3)
+    goto <bb 34>; [80.00%]
+  else
+    goto <bb 38>; [20.00%]
+
+  <bb 38> [2.81%]:
+  # carry_212 = PHI <carry_208(37)>
+  if (carry_212 != 0)
+    goto <bb 39>; [50.00%]
+  else
+    goto <bb 40>; [50.00%]
+
+  <bb 39> [1.40%]:
+  _213 = MEM[(short unsigned int *)&locx + 10B];
+  _214 = _213 | 1;
+  MEM[(short unsigned int *)&locx + 10B] = _214;
+
+  <bb 40> [2.81%]:
+  i_216 = i_215 + 1;
+
+  <bb 41> [3.30%]:
+  # i_215 = PHI <0(30), i_216(40)>
+  if (_21 > i_215)
+    goto <bb 37>; [85.00%]
+  else
+    goto <bb 42>; [15.00%]
+
+  <bb 42> [1.83%]:
+  _22 = locy.type;
+  z_60(D)->type = _22;
+  _23 = locy.sign;
+  _24 = _23 ^ operation_65(D);
+  z_60(D)->sign = _24;
+  _25 = locy.exp;
+  z_60(D)->exp = _25;
+
+  <bb 43> [10.19%]:
+  _26 = locx.sign;
+  _27 = locy.sign;
+  _28 = _26 ^ _27;
+  if (_28 != operation_65(D))
+    goto <bb 45>; [66.00%]
+  else
+    goto <bb 66>; [34.00%]
+
+  <bb 44> [26.89%]:
+  _29 = locy.mantissa[i_47];
+  _30 = locx.mantissa[i_47];
+  accum_95 = (unsigned int) _30;
+  _96 = (unsigned int) _29;
+  accum_97 = accum_95 - _96;
+  _98 = (unsigned int) borrow_165;
+  accum_99 = accum_97 - _98;
+  _100 = accum_99 >> 16;
+  _101 = (short unsigned int) _100;
+  _102 = _101 & 1;
+  _103 = (short unsigned int) accum_99;
+  MEM[(short unsigned int *)z_60(D)].mantissa[i_47] = _103;
+  i_87 = i_47 + -1;
+
+  <bb 45> [33.62%]:
+  # i_47 = PHI <3(43), i_87(44)>
+  # borrow_165 = PHI <0(43), _102(44)>
+  if (i_47 >= 0)
+    goto <bb 44>; [80.00%]
+  else
+    goto <bb 46>; [20.00%]
+
+  <bb 46> [6.72%]:
+  # borrow_155 = PHI <borrow_165(45)>
+  if (borrow_155 != 0)
+    goto <bb 47>; [50.00%]
+  else
+    goto <bb 50>; [50.00%]
+
+  <bb 47> [3.36%]:
+  _31 = _27 ^ operation_65(D);
+  z_60(D)->sign = _31;
+  goto <bb 49>; [100.00%]
+
+  <bb 48> [13.45%]:
+  _32 = z_60(D)->mantissa[i_48];
+  _104 = (unsigned int) _32;
+  accum_105 = -_104;
+  _106 = (unsigned int) borrow_166;
+  accum_107 = accum_105 - _106;
+  _108 = accum_107 >> 16;
+  _109 = (short unsigned int) _108;
+  _110 = _109 & 1;
+  _111 = (short unsigned int) accum_107;
+  MEM[(short unsigned int *)z_60(D)].mantissa[i_48] = _111;
+  i_82 = i_48 + -1;
+
+  <bb 49> [16.81%]:
+  # i_48 = PHI <3(47), i_82(48)>
+  # borrow_166 = PHI <0(47), _110(48)>
+  if (i_48 >= 0)
+    goto <bb 48>; [80.00%]
+  else
+    goto <bb 50>; [20.00%]
+
+  <bb 50> [6.72%]:
+  _33 = &z_60(D)->mantissa;
+  goto <bb 52>; [100.00%]
+
+  <bb 51> [26.89%]:
+  _113 = (long unsigned int) i_112;
+  _114 = _113 * 2;
+  _115 = _33 + _114;
+  _116 = *_115;
+  _117 = (int) _116;
+  n_119 = _117 | n_118;
+  i_120 = i_112 + 1;
+
+  <bb 52> [33.62%]:
+  # i_112 = PHI <0(50), i_120(51)>
+  # n_118 = PHI <0(50), n_119(51)>
+  if (i_112 <= 3)
+    goto <bb 51>; [80.00%]
+  else
+    goto <bb 53>; [20.00%]
+
+  <bb 53> [6.72%]:
+  # n_153 = PHI <n_118(52)>
+  if (n_153 == 0)
+    goto <bb 54>; [50.00%]
+  else
+    goto <bb 55>; [50.00%]
+
+  <bb 54> [3.36%]:
+  z_60(D)->type = 0;
+  z_60(D)->sign = 0;
+  goto <bb 86> (<L63>); [100.00%]
+
+  <bb 55> [3.36%]:
+  _34 = locx.type;
+  if (_34 == 2)
+    goto <bb 63>; [20.24%]
+  else
+    goto <bb 56>; [79.76%]
+
+  <bb 56> [2.68%]:
+  _35 = locy.type;
+  if (_35 == 2)
+    goto <bb 63>; [34.00%]
+  else
+    goto <bb 86> (<L63>); [66.00%]
+
+  <bb 57> [9.02%]:
+  _217 = &z_60(D)->mantissa;
+  goto <bb 61>; [100.00%]
+
+  <bb 58> [36.09%]:
+  _219 = (long unsigned int) i_218;
+  _220 = _219 * 2;
+  _221 = _217 + _220;
+  accum_222 = *_221;
+  _223 = accum_222 & 32768;
+  accum_224 = accum_222 << 1;
+  if (carry_225 != 0)
+    goto <bb 59>; [50.00%]
+  else
+    goto <bb 60>; [50.00%]
+
+  <bb 59> [18.04%]:
+  accum_226 = accum_224 | 1;
+
+  <bb 60> [36.09%]:
+  # accum_227 = PHI <accum_224(58), accum_226(59)>
+  *_221 = accum_227;
+  i_228 = i_218 + -1;
+
+  <bb 61> [45.11%]:
+  # i_218 = PHI <3(57), i_228(60)>
+  # carry_225 = PHI <0(57), _223(60)>
+  if (i_218 >= 0)
+    goto <bb 58>; [80.00%]
+  else
+    goto <bb 62>; [20.00%]
+
+  <bb 62> [9.02%]:
+  _229 = z_60(D)->exp;
+  _230 = (unsigned short) _229;
+  _231 = _230 + 65535;
+  _232 = (short int) _231;
+  z_60(D)->exp = _232;
+  goto <bb 64>; [100.00%]
+
+  <bb 63> [1.59%]:
+
+  <bb 64> [10.61%]:
+  _233 = z_60(D)->mantissa[0];
+  _234 = (signed short) _233;
+  if (_234 >= 0)
+    goto <bb 57>; [85.00%]
+  else
+    goto <bb 86> (<L63>); [15.00%]
+
+  <bb 65> [13.85%]:
+  _36 = locy.mantissa[i_49];
+  _37 = locx.mantissa[i_49];
+  accum_121 = (unsigned int) _37;
+  _122 = (unsigned int) _36;
+  accum_123 = accum_121 + _122;
+  _124 = (unsigned int) carry_167;
+  accum_125 = accum_123 + _124;
+  _126 = accum_125 >> 16;
+  _127 = (short unsigned int) _126;
+  _128 = _127 & 1;
+  _129 = (short unsigned int) accum_125;
+  MEM[(short unsigned int *)z_60(D)].mantissa[i_49] = _129;
+  i_80 = i_49 + -1;
+
+  <bb 66> [17.32%]:
+  # i_49 = PHI <3(43), i_80(65)>
+  # carry_167 = PHI <0(43), _128(65)>
+  if (i_49 >= 0)
+    goto <bb 65>; [80.00%]
+  else
+    goto <bb 67>; [20.00%]
+
+  <bb 67> [3.46%]:
+  # carry_16 = PHI <carry_167(66)>
+  if (carry_16 != 0)
+    goto <bb 68>; [50.00%]
+  else
+    goto <bb 74>; [50.00%]
+
+  <bb 68> [1.73%]:
+  _38 = z_60(D)->exp;
+  _39 = (unsigned short) _38;
+  _40 = _39 + 1;
+  _41 = (short int) _40;
+  z_60(D)->exp = _41;
+  _42 = &z_60(D)->mantissa;
+  goto <bb 72>; [100.00%]
+
+  <bb 69> [6.93%]:
+  _131 = (long unsigned int) i_130;
+  _132 = _131 * 2;
+  _133 = _42 + _132;
+  accum_134 = *_133;
+  _135 = accum_134 & 1;
+  accum_136 = accum_134 >> 1;
+  if (carry_168 != 0)
+    goto <bb 70>; [50.00%]
+  else
+    goto <bb 71>; [50.00%]
+
+  <bb 70> [3.46%]:
+  accum_137 = accum_136 | 32768;
+
+  <bb 71> [6.93%]:
+  # accum_138 = PHI <accum_136(69), accum_137(70)>
+  *_133 = accum_138;
+  i_139 = i_130 + 1;
+
+  <bb 72> [8.66%]:
+  # i_130 = PHI <0(68), i_139(71)>
+  # carry_168 = PHI <0(68), _135(71)>
+  if (i_130 <= 3)
+    goto <bb 69>; [80.00%]
+  else
+    goto <bb 73>; [20.00%]
+
+  <bb 73> [1.73%]:
+  _43 = z_60(D)->mantissa[0];
+  _44 = _43 | 32768;
+  z_60(D)->mantissa[0] = _44;
+  z_60(D)->type = 2;
+  goto <bb 86> (<L63>); [100.00%]
+
+  <bb 74> [1.73%]:
+  _45 = z_60(D)->mantissa[0];
+  _46 = (signed short) _45;
+  if (_46 < 0)
+    goto <bb 75>; [36.00%]
+  else
+    goto <bb 86> (<L63>); [64.00%]
+
+  <bb 75> [0.62%]:
+  z_60(D)->type = 2;
+  goto <bb 86> (<L63>); [100.00%]
+
+<L72> [10.19%]:
+  z_60(D)->type = 4;
+  z_60(D)->exp = 32767;
+  z_60(D)->sign = 1;
+  z_60(D)->mantissa[0] = 16384;
+  goto <bb 78>; [100.00%]
+
+  <bb 77> [30.56%]:
+  z_60(D)->mantissa[i_140] = 0;
+  i_141 = i_140 + 1;
+
+  <bb 78> [40.75%]:
+  # i_140 = PHI <1(76), i_141(77)>
+  if (i_140 <= 3)
+    goto <bb 77>; [75.00%]
+  else
+    goto <bb 86> (<L63>); [25.00%]
+
+  <bb 79> [29.32%]:
+  _236 = x_58(D)->mantissa[i_235];
+  _237 = y_59(D)->mantissa[i_235];
+  if (_236 > _237)
+    goto <bb 80>; [5.00%]
+  else
+    goto <bb 81>; [95.00%]
+
+  <bb 80> [1.47%]:
+  _238 = __builtin_object_size (x_58(D), 0);
+  __builtin___memmove_chk (x_58(D), z_60(D), 12, _238);
+  goto <bb 86> (<L63>); [100.00%]
+
+  <bb 81> [27.85%]:
+  if (_236 < _237)
+    goto <bb 82>; [5.00%]
+  else
+    goto <bb 83>; [95.00%]
+
+  <bb 82> [1.39%]:
+  _243 = __builtin_object_size (y_59(D), 0);
+  __builtin___memmove_chk (y_59(D), z_60(D), 12, _243);
+  goto <bb 86> (<L63>); [100.00%]
+
+  <bb 83> [26.46%]:
+  i_239 = i_235 + 1;
+
+  # i_235 = PHI <0(2), i_239(83)>
+<L74> [36.65%]:
+  if (i_235 <= 3)
+    goto <bb 79>; [80.00%]
+  else
+    goto <bb 85>; [20.00%]
+
+  <bb 85> [7.33%]:
+  _241 = __builtin_object_size (y_59(D), 0);
+  __builtin___memmove_chk (y_59(D), z_60(D), 12, _241);
+
+<L63> [81.50%]:
+  _142 = z_60(D)->type;
+  _143 = _142 + 255;
+  if (_143 <= 1)
+    goto <bb 87>; [24.54%]
+  else
+    goto <bb 112>; [75.46%]
+
+  <bb 87> [20.00%]:
+  _247 = &z_60(D)->mantissa;
+  goto <bb 89>; [100.00%]
+
+  <bb 88> [80.00%]:
+  _249 = (long unsigned int) i_248;
+  _250 = _249 * 2;
+  _251 = _247 + _250;
+  _252 = *_251;
+  _253 = (int) _252;
+  n_255 = _253 | n_254;
+  i_256 = i_248 + 1;
+
+  <bb 89> [100.00%]:
+  # i_248 = PHI <0(87), i_256(88)>
+  # n_254 = PHI <0(87), n_255(88)>
+  if (i_248 <= 3)
+    goto <bb 88>; [80.00%]
+  else
+    goto <bb 90>; [20.00%]
+
+  <bb 90> [20.00%]:
+  # n_257 = PHI <n_254(89)>
+  if (n_257 == 0)
+    goto <bb 91>; [33.00%]
+  else
+    goto <bb 92>; [67.00%]
+
+  <bb 91> [6.60%]:
+  __builtin_puts (&"Error:  zero significand in denormalize"[0]);
+
+  <bb 92> [20.00%]:
+  _258 = z_60(D)->exp;
+  _259 = (int) _258;
+  _260 = _259 + 32767;
+  exponent_difference_261 = (long int) _260;
+  if (exponent_difference_261 < 0)
+    goto <bb 93>; [39.77%]
+  else
+    goto <bb 110>; [60.23%]
+
+  <bb 93> [7.95%]:
+  exponent_difference_262 = -exponent_difference_261;
+  if (exponent_difference_261 < -63)
+    goto <bb 94>; [67.00%]
+  else
+    goto <bb 97>; [33.00%]
+
+  <bb 94> [5.33%]:
+  z_60(D)->type = 0;
+  z_60(D)->exp = -32767;
+  goto <bb 96>; [100.00%]
+
+  <bb 95> [21.32%]:
+  z_60(D)->mantissa[i_263] = 0;
+  i_264 = i_263 + 1;
+
+  <bb 96> [26.65%]:
+  # i_263 = PHI <0(94), i_264(95)>
+  if (i_263 <= 3)
+    goto <bb 95>; [80.00%]
+  else
+    goto <bb 110>; [20.00%]
+
+  <bb 97> [2.62%]:
+  _265 = (unsigned short) _258;
+  _266 = (unsigned short) exponent_difference_262;
+  _267 = _265 + _266;
+  _268 = (short int) _267;
+  z_60(D)->exp = _268;
+  _269 = (int) exponent_difference_262;
+  mantissa_270 = &z_60(D)->mantissa;
+  _271 = z_60(D)->type;
+  if (_271 != 0)
+    goto <bb 98>; [54.00%]
+  else
+    goto <bb 110>; [46.00%]
+
+  <bb 98> [1.42%]:
+  if (_269 > 63)
+    goto <bb 100>; [50.00%]
+  else
+    goto <bb 109>; [50.00%]
+
+  <bb 99> [2.13%]:
+  _273 = (long unsigned int) i_272;
+  _274 = _273 * 2;
+  _275 = mantissa_270 + _274;
+  *_275 = 0;
+  i_276 = i_272 + 1;
+
+  <bb 100> [2.83%]:
+  # i_272 = PHI <0(98), i_276(99)>
+  if (i_272 <= 2)
+    goto <bb 99>; [75.00%]
+  else
+    goto <bb 101>; [25.00%]
+
+  <bb 101> [0.71%]:
+  MEM[(short unsigned int *)z_60(D) + 10B] = 1;
+  goto <bb 110>; [100.00%]
+
+  <bb 102> [16.06%]:
+  _278 = (long unsigned int) i_277;
+  _279 = _278 * 2;
+  _280 = mantissa_270 + _279;
+  accum_281 = *_280;
+  _282 = accum_281 & 1;
+  accum_283 = accum_281 >> 1;
+  if (carry_284 != 0)
+    goto <bb 103>; [50.00%]
+  else
+    goto <bb 104>; [50.00%]
+
+  <bb 103> [8.03%]:
+  accum_285 = accum_283 | 32768;
+
+  <bb 104> [16.06%]:
+  # accum_286 = PHI <accum_283(102), accum_285(103)>
+  *_280 = accum_286;
+  i_287 = i_277 + 1;
+
+  <bb 105> [20.08%]:
+  # i_277 = PHI <i_287(104), 0(109)>
+  # carry_284 = PHI <_282(104), 0(109)>
+  if (i_277 <= 3)
+    goto <bb 102>; [80.00%]
+  else
+    goto <bb 106>; [20.00%]
+
+  <bb 106> [4.02%]:
+  # carry_288 = PHI <carry_284(105)>
+  if (carry_288 != 0)
+    goto <bb 107>; [50.00%]
+  else
+    goto <bb 108>; [50.00%]
+
+  <bb 107> [2.01%]:
+  _289 = MEM[(short unsigned int *)z_60(D) + 10B];
+  _290 = _289 | 1;
+  MEM[(short unsigned int *)z_60(D) + 10B] = _290;
+
+  <bb 108> [4.02%]:
+  i_292 = i_291 + 1;
+
+  <bb 109> [4.72%]:
+  # i_291 = PHI <0(98), i_292(108)>
+  if (_269 > i_291)
+    goto <bb 105>; [85.00%]
+  else
+    goto <bb 110>; [15.00%]
+
+  <bb 110> [20.00%]:
+  _244 = z_60(D)->type;
+  if (_244 != 0)
+    goto <bb 111>; [54.00%]
+  else
+    goto <bb 112>; [46.00%]
+
+  <bb 111> [10.80%]:
+  _245 = z_60(D)->mantissa[3];
+  _246 = _245 & 65528;
+  z_60(D)->mantissa[3] = _246;
+
+  <bb 112> [81.50%]:
+  locx ={v} {CLOBBER};
+  locy ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function SetupCPUEmFloatArrays (SetupCPUEmFloatArrays, funcdef_no=34, decl_uid=2767, cgraph_uid=34, symbol_order=34)
+
+SetupCPUEmFloatArrays (struct InternalFPF * abase, struct InternalFPF * bbase, struct InternalFPF * cbase, long unsigned int arraysize)
+{
+  short unsigned int carry;
+  short unsigned int accum;
+  int i;
+  short unsigned int carry;
+  short unsigned int accum;
+  int i;
+  short unsigned int carry;
+  short unsigned int accum;
+  int i;
+  int i;
+  short unsigned int myword;
+  int32 mylong;
+  int i;
+  short unsigned int myword;
+  int32 mylong;
+  int i;
+  short unsigned int myword;
+  int32 mylong;
+  struct InternalFPF locFPF2;
+  struct InternalFPF locFPF1;
+  long unsigned int i;
+  int _1;
+  int _2;
+  int _3;
+  long unsigned int _4;
+  struct InternalFPF * _5;
+  int _6;
+  int _7;
+  struct InternalFPF * _8;
+  int _31;
+  int _38;
+  int _45;
+  long unsigned int _50;
+  long unsigned int _51;
+  short unsigned int * _52;
+  short unsigned int _54;
+  short int _60;
+  unsigned short _61;
+  unsigned short _62;
+  short int _63;
+  short unsigned int _64;
+  signed short _65;
+  long unsigned int _68;
+  long unsigned int _69;
+  short unsigned int * _70;
+  short unsigned int _72;
+  short int _78;
+  unsigned short _79;
+  unsigned short _80;
+  short int _81;
+  short unsigned int _82;
+  signed short _83;
+  long unsigned int _86;
+  long unsigned int _87;
+  short unsigned int * _88;
+  short unsigned int _90;
+  short int _96;
+  unsigned short _97;
+  unsigned short _98;
+  short int _99;
+  short unsigned int _100;
+  signed short _101;
+
+  <bb 2> [1.70%]:
+  randnum (13);
+  goto <bb 49>; [100.00%]
+
+  <bb 3> [9.63%]:
+  _1 = randwc (50000);
+  if (_1 < 0)
+    goto <bb 4>; [36.00%]
+  else
+    goto <bb 5>; [64.00%]
+
+  <bb 4> [3.47%]:
+  locFPF1.sign = 1;
+  mylong_41 = -_1;
+  goto <bb 6>; [100.00%]
+
+  <bb 5> [6.16%]:
+  locFPF1.sign = 0;
+
+  <bb 6> [9.63%]:
+  # mylong_44 = PHI <mylong_41(4), _1(5)>
+  locFPF1.type = 2;
+  goto <bb 8>; [100.00%]
+
+  <bb 7> [38.53%]:
+  locFPF1.mantissa[i_42] = 0;
+  i_43 = i_42 + 1;
+
+  <bb 8> [48.16%]:
+  # i_42 = PHI <0(6), i_43(7)>
+  if (i_42 <= 3)
+    goto <bb 7>; [80.00%]
+  else
+    goto <bb 9>; [20.00%]
+
+  <bb 9> [9.63%]:
+  if (mylong_44 == 0)
+    goto <bb 10>; [63.36%]
+  else
+    goto <bb 11>; [36.64%]
+
+  <bb 10> [6.10%]:
+  locFPF1.type = 0;
+  locFPF1.exp = 0;
+  goto <bb 18>; [100.00%]
+
+  <bb 11> [3.53%]:
+  locFPF1.exp = 32;
+  _45 = mylong_44 >> 16;
+  myword_46 = (short unsigned int) _45;
+  locFPF1.mantissa[0] = myword_46;
+  myword_47 = (short unsigned int) mylong_44;
+  locFPF1.mantissa[1] = myword_47;
+  goto <bb 17>; [100.00%]
+
+  <bb 12> [80.00%]:
+  _50 = (long unsigned int) i_49;
+  _51 = _50 * 2;
+  _52 = &locFPF1.mantissa + _51;
+  accum_53 = *_52;
+  _54 = accum_53 & 32768;
+  accum_55 = accum_53 << 1;
+  if (carry_56 != 0)
+    goto <bb 13>; [50.00%]
+  else
+    goto <bb 14>; [50.00%]
+
+  <bb 13> [40.00%]:
+  accum_57 = accum_55 | 1;
+
+  <bb 14> [80.00%]:
+  # accum_58 = PHI <accum_55(12), accum_57(13)>
+  *_52 = accum_58;
+  i_59 = i_49 + -1;
+
+  <bb 15> [100.00%]:
+  # i_49 = PHI <3(17), i_59(14)>
+  # carry_56 = PHI <0(17), _54(14)>
+  if (i_49 >= 0)
+    goto <bb 12>; [80.00%]
+  else
+    goto <bb 16>; [20.00%]
+
+  <bb 16> [20.00%]:
+  _60 = locFPF1.exp;
+  _61 = (unsigned short) _60;
+  _62 = _61 + 65535;
+  _63 = (short int) _62;
+  locFPF1.exp = _63;
+
+  <bb 17> [23.53%]:
+  _64 = locFPF1.mantissa[0];
+  _65 = (signed short) _64;
+  if (_65 >= 0)
+    goto <bb 15>; [85.00%]
+  else
+    goto <bb 18>; [15.00%]
+
+  <bb 18> [9.63%]:
+  _2 = randwc (50000);
+  _3 = _2 + 1;
+  if (_3 < 0)
+    goto <bb 19>; [36.00%]
+  else
+    goto <bb 20>; [64.00%]
+
+  <bb 19> [3.47%]:
+  locFPF2.sign = 1;
+  mylong_34 = -_3;
+  goto <bb 21>; [100.00%]
+
+  <bb 20> [6.16%]:
+  locFPF2.sign = 0;
+
+  <bb 21> [9.63%]:
+  # mylong_37 = PHI <mylong_34(19), _3(20)>
+  locFPF2.type = 2;
+  goto <bb 23>; [100.00%]
+
+  <bb 22> [38.53%]:
+  locFPF2.mantissa[i_35] = 0;
+  i_36 = i_35 + 1;
+
+  <bb 23> [48.16%]:
+  # i_35 = PHI <0(21), i_36(22)>
+  if (i_35 <= 3)
+    goto <bb 22>; [80.00%]
+  else
+    goto <bb 24>; [20.00%]
+
+  <bb 24> [9.63%]:
+  if (mylong_37 == 0)
+    goto <bb 25>; [63.36%]
+  else
+    goto <bb 26>; [36.64%]
+
+  <bb 25> [6.10%]:
+  locFPF2.type = 0;
+  locFPF2.exp = 0;
+  goto <bb 33>; [100.00%]
+
+  <bb 26> [3.53%]:
+  locFPF2.exp = 32;
+  _38 = mylong_37 >> 16;
+  myword_39 = (short unsigned int) _38;
+  locFPF2.mantissa[0] = myword_39;
+  myword_40 = (short unsigned int) mylong_37;
+  locFPF2.mantissa[1] = myword_40;
+  goto <bb 32>; [100.00%]
+
+  <bb 27> [80.00%]:
+  _68 = (long unsigned int) i_67;
+  _69 = _68 * 2;
+  _70 = &locFPF2.mantissa + _69;
+  accum_71 = *_70;
+  _72 = accum_71 & 32768;
+  accum_73 = accum_71 << 1;
+  if (carry_74 != 0)
+    goto <bb 28>; [50.00%]
+  else
+    goto <bb 29>; [50.00%]
+
+  <bb 28> [40.00%]:
+  accum_75 = accum_73 | 1;
+
+  <bb 29> [80.00%]:
+  # accum_76 = PHI <accum_73(27), accum_75(28)>
+  *_70 = accum_76;
+  i_77 = i_67 + -1;
+
+  <bb 30> [100.00%]:
+  # i_67 = PHI <3(32), i_77(29)>
+  # carry_74 = PHI <0(32), _72(29)>
+  if (i_67 >= 0)
+    goto <bb 27>; [80.00%]
+  else
+    goto <bb 31>; [20.00%]
+
+  <bb 31> [20.00%]:
+  _78 = locFPF2.exp;
+  _79 = (unsigned short) _78;
+  _80 = _79 + 65535;
+  _81 = (short int) _80;
+  locFPF2.exp = _81;
+
+  <bb 32> [23.53%]:
+  _82 = locFPF2.mantissa[0];
+  _83 = (signed short) _82;
+  if (_83 >= 0)
+    goto <bb 30>; [85.00%]
+  else
+    goto <bb 33>; [15.00%]
+
+  <bb 33> [9.63%]:
+  _4 = i_9 * 12;
+  _5 = abase_20(D) + _4;
+  DivideInternalFPF (&locFPF1, &locFPF2, _5);
+  _6 = randwc (50000);
+  _7 = _6 + 1;
+  if (_7 < 0)
+    goto <bb 34>; [36.00%]
+  else
+    goto <bb 35>; [64.00%]
+
+  <bb 34> [3.47%]:
+  locFPF2.sign = 1;
+  mylong_27 = -_7;
+  goto <bb 36>; [100.00%]
+
+  <bb 35> [6.16%]:
+  locFPF2.sign = 0;
+
+  <bb 36> [9.63%]:
+  # mylong_30 = PHI <mylong_27(34), _7(35)>
+  locFPF2.type = 2;
+  goto <bb 38>; [100.00%]
+
+  <bb 37> [38.53%]:
+  locFPF2.mantissa[i_28] = 0;
+  i_29 = i_28 + 1;
+
+  <bb 38> [48.16%]:
+  # i_28 = PHI <0(36), i_29(37)>
+  if (i_28 <= 3)
+    goto <bb 37>; [80.00%]
+  else
+    goto <bb 39>; [20.00%]
+
+  <bb 39> [9.63%]:
+  if (mylong_30 == 0)
+    goto <bb 40>; [63.36%]
+  else
+    goto <bb 41>; [36.64%]
+
+  <bb 40> [6.10%]:
+  locFPF2.type = 0;
+  locFPF2.exp = 0;
+  goto <bb 48>; [100.00%]
+
+  <bb 41> [3.53%]:
+  locFPF2.exp = 32;
+  _31 = mylong_30 >> 16;
+  myword_32 = (short unsigned int) _31;
+  locFPF2.mantissa[0] = myword_32;
+  myword_33 = (short unsigned int) mylong_30;
+  locFPF2.mantissa[1] = myword_33;
+  goto <bb 47>; [100.00%]
+
+  <bb 42> [80.00%]:
+  _86 = (long unsigned int) i_85;
+  _87 = _86 * 2;
+  _88 = &locFPF2.mantissa + _87;
+  accum_89 = *_88;
+  _90 = accum_89 & 32768;
+  accum_91 = accum_89 << 1;
+  if (carry_92 != 0)
+    goto <bb 43>; [50.00%]
+  else
+    goto <bb 44>; [50.00%]
+
+  <bb 43> [40.00%]:
+  accum_93 = accum_91 | 1;
+
+  <bb 44> [80.00%]:
+  # accum_94 = PHI <accum_91(42), accum_93(43)>
+  *_88 = accum_94;
+  i_95 = i_85 + -1;
+
+  <bb 45> [100.00%]:
+  # i_85 = PHI <3(47), i_95(44)>
+  # carry_92 = PHI <0(47), _90(44)>
+  if (i_85 >= 0)
+    goto <bb 42>; [80.00%]
+  else
+    goto <bb 46>; [20.00%]
+
+  <bb 46> [20.00%]:
+  _96 = locFPF2.exp;
+  _97 = (unsigned short) _96;
+  _98 = _97 + 65535;
+  _99 = (short int) _98;
+  locFPF2.exp = _99;
+
+  <bb 47> [23.53%]:
+  _100 = locFPF2.mantissa[0];
+  _101 = (signed short) _100;
+  if (_101 >= 0)
+    goto <bb 45>; [85.00%]
+  else
+    goto <bb 48>; [15.00%]
+
+  <bb 48> [9.63%]:
+  _8 = bbase_24(D) + _4;
+  DivideInternalFPF (&locFPF1, &locFPF2, _8);
+  i_26 = i_9 + 1;
+
+  <bb 49> [11.33%]:
+  # i_9 = PHI <0(2), i_26(48)>
+  if (i_9 < arraysize_13(D))
+    goto <bb 3>; [85.00%]
+  else
+    goto <bb 50>; [15.00%]
+
+  <bb 50> [1.70%]:
+  locFPF1 ={v} {CLOBBER};
+  locFPF2 ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function DoEmFloatIteration (DoEmFloatIteration, funcdef_no=35, decl_uid=2773, cgraph_uid=35, symbol_order=35)
+
+DoEmFloatIteration (struct InternalFPF * abase, struct InternalFPF * bbase, struct InternalFPF * cbase, long unsigned int arraysize, long unsigned int loops)
+{
+  int i;
+  short unsigned int carry;
+  short unsigned int * mantissa;
+  short unsigned int accum;
+  int i;
+  int i;
+  int i;
+  int n;
+  long int exponent_difference;
+  int i;
+  int i;
+  int j;
+  short unsigned int carry;
+  short unsigned int extra_bits[4];
+  struct InternalFPF locy;
+  int i;
+  int n;
+  int i;
+  int n;
+  int i;
+  int i;
+  short unsigned int accum;
+  int i;
+  unsigned int accum;
+  short unsigned int accum;
+  int i;
+  short unsigned int accum;
+  int i;
+  short unsigned int accum;
+  int i;
+  short unsigned int accum;
+  int i;
+  int n;
+  int i;
+  long unsigned int i;
+  static unsigned char jtable[16] = {0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3};
+  long unsigned int elapsed;
+  long unsigned int _1;
+  unsigned char _2;
+  long unsigned int _3;
+  struct InternalFPF * _4;
+  struct InternalFPF * _5;
+  struct InternalFPF * _6;
+  long unsigned int _7;
+  struct InternalFPF * _8;
+  struct InternalFPF * _9;
+  struct InternalFPF * _10;
+  long unsigned int _11;
+  struct InternalFPF * _12;
+  struct InternalFPF * _13;
+  struct InternalFPF * _14;
+  long unsigned int _15;
+  struct InternalFPF * _16;
+  struct InternalFPF * _17;
+  struct InternalFPF * _18;
+  long unsigned int _30;
+  unsigned char _40;
+  int _41;
+  int _42;
+  unsigned char _43;
+  int _44;
+  int _45;
+  long unsigned int _46;
+  unsigned char _47;
+  unsigned char _48;
+  unsigned char _49;
+  long unsigned int _50;
+  unsigned char _51;
+  unsigned char _52;
+  unsigned char _53;
+  long unsigned int _56;
+  long unsigned int _57;
+  short unsigned int[4] * _58;
+  long unsigned int _60;
+  long unsigned int _61;
+  short unsigned int * _62;
+  short unsigned int _63;
+  int _64;
+  short unsigned int[4] * _69;
+  long unsigned int _71;
+  long unsigned int _72;
+  short unsigned int * _73;
+  short unsigned int _74;
+  int _75;
+  unsigned char _82;
+  unsigned char _83;
+  unsigned char _84;
+  unsigned char _85;
+  unsigned char _86;
+  short int _87;
+  unsigned short _88;
+  short int _89;
+  unsigned short _90;
+  unsigned short _91;
+  short int _92;
+  long unsigned int _96;
+  long unsigned int _97;
+  short unsigned int * _98;
+  short unsigned int _100;
+  short unsigned int _108;
+  short unsigned int _109;
+  unsigned int _111;
+  unsigned int _114;
+  unsigned int _116;
+  short unsigned int _117;
+  short unsigned int _118;
+  short unsigned int _119;
+  short unsigned int[4] * _121;
+  long unsigned int _123;
+  long unsigned int _124;
+  short unsigned int * _125;
+  short unsigned int _127;
+  long unsigned int _134;
+  long unsigned int _135;
+  short unsigned int * _136;
+  short unsigned int _138;
+  long unsigned int _147;
+  long unsigned int _148;
+  short unsigned int * _149;
+  short unsigned int _151;
+  short unsigned int[4] * _157;
+  long unsigned int _159;
+  long unsigned int _160;
+  short unsigned int * _161;
+  short unsigned int _163;
+  short int _169;
+  unsigned short _170;
+  unsigned short _171;
+  short int _172;
+  short unsigned int _173;
+  signed short _174;
+  long unsigned int _176;
+  long unsigned int _177;
+  short unsigned int * _178;
+  short unsigned int _179;
+  int _180;
+  short unsigned int _185;
+  short unsigned int _186;
+  unsigned char _187;
+  unsigned char _188;
+  short unsigned int _192;
+  short unsigned int _193;
+  long unsigned int _194;
+  long unsigned int _196;
+  long unsigned int _199;
+  unsigned char _200;
+  short unsigned int _201;
+  short unsigned int _202;
+  short unsigned int[4] * _203;
+  long unsigned int _205;
+  long unsigned int _206;
+  short unsigned int * _207;
+  short unsigned int _208;
+  int _209;
+  short int _214;
+  int _215;
+  int _216;
+  unsigned short _221;
+  unsigned short _222;
+  unsigned short _223;
+  short int _224;
+  int _225;
+  unsigned char _227;
+  long unsigned int _229;
+  long unsigned int _230;
+  short unsigned int * _231;
+  long unsigned int _234;
+  long unsigned int _235;
+  short unsigned int * _236;
+  short unsigned int _238;
+  short unsigned int _245;
+  short unsigned int _246;
+
+  <bb 2> [0.39%]:
+  elapsed_26 = StartStopwatch ();
+  goto <bb 102>; [100.00%]
+
+  <bb 3> [12.51%]:
+  _1 = i_20 & 15;
+  _2 = jtable[_1];
+  switch (_2) <default: <L6> [20.00%], case 0: <L2> [20.00%], case 1: <L3> [20.00%], case 2: <L4> [20.00%], case 3: <L5> [20.00%]>
+
+<L2> [2.50%]:
+  _3 = i_20 * 12;
+  _4 = cbase_32(D) + _3;
+  _5 = bbase_33(D) + _3;
+  _6 = abase_34(D) + _3;
+  AddSubInternalFPF (0, _6, _5, _4);
+  goto <bb 100> (<L6>); [100.00%]
+
+<L3> [2.50%]:
+  _7 = i_20 * 12;
+  _8 = cbase_32(D) + _7;
+  _9 = bbase_33(D) + _7;
+  _10 = abase_34(D) + _7;
+  AddSubInternalFPF (1, _10, _9, _8);
+  goto <bb 100> (<L6>); [100.00%]
+
+<L4> [2.50%]:
+  _11 = i_20 * 12;
+  _12 = cbase_32(D) + _11;
+  _13 = bbase_33(D) + _11;
+  _14 = abase_34(D) + _11;
+  _40 = _14->type;
+  _41 = (int) _40;
+  _42 = _41 * 5;
+  _43 = _13->type;
+  _44 = (int) _43;
+  _45 = _42 + _44;
+  switch (_45) <default: <L20> [12.50%], case 0 ... 2: <L13> [12.50%], case 3: <L15> [12.50%], case 4: <L17> [12.50%], case 5: <L14> [12.50%], case 6 ... 7: <L18> [12.50%], case 8: <L14> [12.50%], case 9: <L17> [12.50%], case 10: <L14> [12.50%], case 11 ... 12: <L18> [12.50%], case 13: <L14> [12.50%], case 14: <L17> [12.50%], case 15: <L15> [12.50%], case 16 ... 18: <L13> [12.50%], case 19: <L17> [12.50%], case 20 ... 23: <L16> [12.50%], case 24: <L22> [12.50%]>
+
+<L13> [0.31%]:
+  _46 = __builtin_object_size (_14, 0);
+  __builtin___memmove_chk (_14, _12, 12, _46);
+  _47 = _12->sign;
+  _48 = _13->sign;
+  _49 = _47 ^ _48;
+  _12->sign = _49;
+  goto <bb 72> (<L20>); [100.00%]
+
+<L14> [0.31%]:
+  _50 = __builtin_object_size (_13, 0);
+  __builtin___memmove_chk (_13, _12, 12, _50);
+  _51 = _12->sign;
+  _52 = _14->sign;
+  _53 = _51 ^ _52;
+  _12->sign = _53;
+  goto <bb 72> (<L20>); [100.00%]
+
+<L15> [0.31%]:
+  _12->type = 4;
+  _12->exp = 32767;
+  _12->sign = 1;
+  _12->mantissa[0] = 16384;
+  goto <bb 11>; [100.00%]
+
+  <bb 10> [0.94%]:
+  _12->mantissa[i_54] = 0;
+  i_55 = i_54 + 1;
+
+  <bb 11> [1.25%]:
+  # i_54 = PHI <1(9), i_55(10)>
+  if (i_54 <= 3)
+    goto <bb 10>; [75.00%]
+  else
+    goto <bb 72> (<L20>); [25.00%]
+
+<L16> [0.31%]:
+  _56 = __builtin_object_size (_14, 0);
+  __builtin___memmove_chk (_14, _12, 12, _56);
+  goto <bb 72> (<L20>); [100.00%]
+
+<L17> [0.31%]:
+  _57 = __builtin_object_size (_13, 0);
+  __builtin___memmove_chk (_13, _12, 12, _57);
+  goto <bb 72> (<L20>); [100.00%]
+
+<L18> [0.31%]:
+  __builtin_memcpy (&locy, _13, 12);
+  _58 = &_14->mantissa;
+  goto <bb 16>; [100.00%]
+
+  <bb 15> [1.25%]:
+  _60 = (long unsigned int) i_59;
+  _61 = _60 * 2;
+  _62 = _58 + _61;
+  _63 = *_62;
+  _64 = (int) _63;
+  n_66 = _64 | n_65;
+  i_67 = i_59 + 1;
+
+  <bb 16> [1.56%]:
+  # i_59 = PHI <0(14), i_67(15)>
+  # n_65 = PHI <0(14), n_66(15)>
+  if (i_59 <= 3)
+    goto <bb 15>; [80.00%]
+  else
+    goto <bb 17>; [20.00%]
+
+  <bb 17> [0.31%]:
+  # n_68 = PHI <n_65(16)>
+  if (n_68 == 0)
+    goto <bb 22>; [50.00%]
+  else
+    goto <bb 18>; [50.00%]
+
+  <bb 18> [0.16%]:
+  _69 = &_13->mantissa;
+  goto <bb 20>; [100.00%]
+
+  <bb 19> [0.63%]:
+  _71 = (long unsigned int) i_70;
+  _72 = _71 * 2;
+  _73 = _69 + _72;
+  _74 = *_73;
+  _75 = (int) _74;
+  n_77 = _75 | n_76;
+  i_78 = i_70 + 1;
+
+  <bb 20> [0.78%]:
+  # i_70 = PHI <0(18), i_78(19)>
+  # n_76 = PHI <0(18), n_77(19)>
+  if (i_70 <= 3)
+    goto <bb 19>; [80.00%]
+  else
+    goto <bb 21>; [20.00%]
+
+  <bb 21> [0.16%]:
+  # n_79 = PHI <n_76(20)>
+  if (n_79 == 0)
+    goto <bb 22>; [50.00%]
+  else
+    goto <bb 25>; [50.00%]
+
+  <bb 22> [0.23%]:
+  _12->type = 3;
+  _12->sign = 0;
+  _12->exp = -32767;
+  goto <bb 24>; [100.00%]
+
+  <bb 23> [0.94%]:
+  _12->mantissa[i_80] = 0;
+  i_81 = i_80 + 1;
+
+  <bb 24> [1.17%]:
+  # i_80 = PHI <0(22), i_81(23)>
+  if (i_80 <= 3)
+    goto <bb 23>; [80.00%]
+  else
+    goto <bb 25>; [20.00%]
+
+  <bb 25> [0.31%]:
+  _82 = _14->type;
+  if (_82 == 1)
+    goto <bb 27>; [34.00%]
+  else
+    goto <bb 26>; [66.00%]
+
+  <bb 26> [0.21%]:
+  _83 = _13->type;
+  if (_83 == 1)
+    goto <bb 27>; [34.00%]
+  else
+    goto <bb 28>; [66.00%]
+
+  <bb 27> [0.18%]:
+  _12->type = 1;
+  goto <bb 29>; [100.00%]
+
+  <bb 28> [0.14%]:
+  _12->type = 2;
+
+  <bb 29> [0.31%]:
+  _84 = _14->sign;
+  _85 = _13->sign;
+  _86 = _84 ^ _85;
+  _12->sign = _86;
+  _87 = _14->exp;
+  _88 = (unsigned short) _87;
+  _89 = _13->exp;
+  _90 = (unsigned short) _89;
+  _91 = _88 + _90;
+  _92 = (short int) _91;
+  _12->exp = _92;
+  goto <bb 31>; [100.00%]
+
+  <bb 30> [1.25%]:
+  _12->mantissa[i_93] = 0;
+  extra_bits[i_93] = 0;
+  i_94 = i_93 + 1;
+
+  <bb 31> [1.56%]:
+  # i_93 = PHI <0(29), i_94(30)>
+  if (i_93 <= 3)
+    goto <bb 30>; [80.00%]
+  else
+    goto <bb 49>; [20.00%]
+
+  <bb 32> [80.00%]:
+  _96 = (long unsigned int) i_95;
+  _97 = _96 * 2;
+  _98 = &locy.mantissa + _97;
+  accum_99 = *_98;
+  _100 = accum_99 & 1;
+  accum_101 = accum_99 >> 1;
+  if (carry_102 != 0)
+    goto <bb 33>; [50.00%]
+  else
+    goto <bb 34>; [50.00%]
+
+  <bb 33> [40.00%]:
+  accum_103 = accum_101 | 32768;
+
+  <bb 34> [80.00%]:
+  # accum_104 = PHI <accum_101(32), accum_103(33)>
+  *_98 = accum_104;
+  i_105 = i_95 + 1;
+
+  <bb 35> [100.00%]:
+  # i_95 = PHI <i_105(34), 0(49)>
+  # carry_102 = PHI <_100(34), 0(49)>
+  if (i_95 <= 3)
+    goto <bb 32>; [80.00%]
+  else
+    goto <bb 36>; [20.00%]
+
+  <bb 36> [20.00%]:
+  # carry_106 = PHI <carry_102(35)>
+  if (carry_106 != 0)
+    goto <bb 38>; [34.00%]
+  else
+    goto <bb 39>; [66.00%]
+
+  <bb 37> [27.20%]:
+  _108 = _14->mantissa[j_107];
+  _109 = _12->mantissa[j_107];
+  accum_110 = (unsigned int) _109;
+  _111 = (unsigned int) _108;
+  accum_112 = accum_110 + _111;
+  _114 = (unsigned int) carry_113;
+  accum_115 = accum_112 + _114;
+  _116 = accum_115 >> 16;
+  _117 = (short unsigned int) _116;
+  _118 = _117 & 1;
+  _119 = (short unsigned int) accum_115;
+  MEM[(short unsigned int *)_12].mantissa[j_107] = _119;
+  j_120 = j_107 + -1;
+
+  <bb 38> [34.00%]:
+  # j_107 = PHI <3(36), j_120(37)>
+  # carry_113 = PHI <0(36), _118(37)>
+  if (j_107 >= 0)
+    goto <bb 37>; [80.00%]
+  else
+    goto <bb 39>; [20.00%]
+
+  <bb 39> [20.00%]:
+  # carry_189 = PHI <0(36), carry_113(38)>
+  _121 = &_12->mantissa;
+  goto <bb 43>; [100.00%]
+
+  <bb 40> [80.00%]:
+  _123 = (long unsigned int) i_122;
+  _124 = _123 * 2;
+  _125 = _121 + _124;
+  accum_126 = *_125;
+  _127 = accum_126 & 1;
+  accum_128 = accum_126 >> 1;
+  if (carry_129 != 0)
+    goto <bb 41>; [50.00%]
+  else
+    goto <bb 42>; [50.00%]
+
+  <bb 41> [40.00%]:
+  accum_130 = accum_128 | 32768;
+
+  <bb 42> [80.00%]:
+  # accum_131 = PHI <accum_128(40), accum_130(41)>
+  *_125 = accum_131;
+  i_132 = i_122 + 1;
+
+  <bb 43> [100.00%]:
+  # i_122 = PHI <0(39), i_132(42)>
+  # carry_129 = PHI <carry_189(39), _127(42)>
+  if (i_122 <= 3)
+    goto <bb 40>; [80.00%]
+  else
+    goto <bb 47>; [20.00%]
+
+  <bb 44> [80.00%]:
+  _134 = (long unsigned int) i_133;
+  _135 = _134 * 2;
+  _136 = &extra_bits + _135;
+  accum_137 = *_136;
+  _138 = accum_137 & 1;
+  accum_139 = accum_137 >> 1;
+  if (carry_140 != 0)
+    goto <bb 45>; [50.00%]
+  else
+    goto <bb 46>; [50.00%]
+
+  <bb 45> [40.00%]:
+  accum_141 = accum_139 | 32768;
+
+  <bb 46> [80.00%]:
+  # accum_142 = PHI <accum_139(44), accum_141(45)>
+  *_136 = accum_142;
+  i_143 = i_133 + 1;
+
+  <bb 47> [100.00%]:
+  # i_133 = PHI <0(43), i_143(46)>
+  # carry_140 = PHI <carry_129(43), _138(46)>
+  if (i_133 <= 3)
+    goto <bb 44>; [80.00%]
+  else
+    goto <bb 48>; [20.00%]
+
+  <bb 48> [20.00%]:
+  i_145 = i_144 + 1;
+
+  <bb 49> [20.31%]:
+  # i_144 = PHI <0(31), i_145(48)>
+  if (i_144 <= 63)
+    goto <bb 35>; [98.46%]
+  else
+    goto <bb 60>; [1.54%]
+
+  <bb 50> [7.09%]:
+  _147 = (long unsigned int) i_146;
+  _148 = _147 * 2;
+  _149 = &extra_bits + _148;
+  accum_150 = *_149;
+  _151 = accum_150 & 32768;
+  accum_152 = accum_150 << 1;
+  if (carry_153 != 0)
+    goto <bb 51>; [50.00%]
+  else
+    goto <bb 52>; [50.00%]
+
+  <bb 51> [3.55%]:
+  accum_154 = accum_152 | 1;
+
+  <bb 52> [7.09%]:
+  # accum_155 = PHI <accum_152(50), accum_154(51)>
+  *_149 = accum_155;
+  i_156 = i_146 + -1;
+
+  <bb 53> [8.86%]:
+  # i_146 = PHI <i_156(52), 3(60)>
+  # carry_153 = PHI <_151(52), 0(60)>
+  if (i_146 >= 0)
+    goto <bb 50>; [80.00%]
+  else
+    goto <bb 54>; [20.00%]
+
+  <bb 54> [1.77%]:
+  # carry_190 = PHI <carry_153(53)>
+  _157 = &_12->mantissa;
+  goto <bb 58>; [100.00%]
+
+  <bb 55> [7.09%]:
+  _159 = (long unsigned int) i_158;
+  _160 = _159 * 2;
+  _161 = _157 + _160;
+  accum_162 = *_161;
+  _163 = accum_162 & 32768;
+  accum_164 = accum_162 << 1;
+  if (carry_165 != 0)
+    goto <bb 56>; [50.00%]
+  else
+    goto <bb 57>; [50.00%]
+
+  <bb 56> [3.55%]:
+  accum_166 = accum_164 | 1;
+
+  <bb 57> [7.09%]:
+  # accum_167 = PHI <accum_164(55), accum_166(56)>
+  *_161 = accum_167;
+  i_168 = i_158 + -1;
+
+  <bb 58> [8.86%]:
+  # i_158 = PHI <3(54), i_168(57)>
+  # carry_165 = PHI <carry_190(54), _163(57)>
+  if (i_158 >= 0)
+    goto <bb 55>; [80.00%]
+  else
+    goto <bb 59>; [20.00%]
+
+  <bb 59> [1.77%]:
+  _169 = _12->exp;
+  _170 = (unsigned short) _169;
+  _171 = _170 + 65535;
+  _172 = (short int) _171;
+  _12->exp = _172;
+
+  <bb 60> [2.09%]:
+  _173 = _12->mantissa[0];
+  _174 = (signed short) _173;
+  if (_174 >= 0)
+    goto <bb 53>; [85.00%]
+  else
+    goto <bb 62>; [15.00%]
+
+  <bb 61> [1.25%]:
+  _176 = (long unsigned int) i_175;
+  _177 = _176 * 2;
+  _178 = &extra_bits + _177;
+  _179 = *_178;
+  _180 = (int) _179;
+  n_182 = _180 | n_181;
+  i_183 = i_175 + 1;
+
+  <bb 62> [1.56%]:
+  # i_175 = PHI <0(60), i_183(61)>
+  # n_181 = PHI <0(60), n_182(61)>
+  if (i_175 <= 3)
+    goto <bb 61>; [80.00%]
+  else
+    goto <bb 63>; [20.00%]
+
+  <bb 63> [0.31%]:
+  # n_184 = PHI <n_181(62)>
+  if (n_184 == 0)
+    goto <bb 64>; [50.00%]
+  else
+    goto <bb 72> (<L20>); [50.00%]
+
+  <bb 64> [0.16%]:
+  _185 = _12->mantissa[3];
+  _186 = _185 | 1;
+  _12->mantissa[3] = _186;
+  goto <bb 72> (<L20>); [100.00%]
+
+  <bb 65> [0.90%]:
+  _192 = _14->mantissa[i_191];
+  _193 = _13->mantissa[i_191];
+  if (_192 > _193)
+    goto <bb 66>; [5.00%]
+  else
+    goto <bb 67>; [95.00%]
+
+  <bb 66> [0.05%]:
+  _194 = __builtin_object_size (_14, 0);
+  __builtin___memmove_chk (_14, _12, 12, _194);
+  goto <bb 72> (<L20>); [100.00%]
+
+  <bb 67> [0.86%]:
+  if (_192 < _193)
+    goto <bb 68>; [5.00%]
+  else
+    goto <bb 69>; [95.00%]
+
+  <bb 68> [0.04%]:
+  _199 = __builtin_object_size (_13, 0);
+  __builtin___memmove_chk (_13, _12, 12, _199);
+  goto <bb 72> (<L20>); [100.00%]
+
+  <bb 69> [0.81%]:
+  i_195 = i_191 + 1;
+
+  # i_191 = PHI <0(6), i_195(69)>
+<L22> [1.13%]:
+  if (i_191 <= 3)
+    goto <bb 65>; [80.00%]
+  else
+    goto <bb 71>; [20.00%]
+
+  <bb 71> [0.23%]:
+  _196 = __builtin_object_size (_14, 0);
+  __builtin___memmove_chk (_14, _12, 12, _196);
+
+<L20> [2.50%]:
+  _187 = _12->type;
+  _188 = _187 + 255;
+  if (_188 <= 1)
+    goto <bb 73>; [24.54%]
+  else
+    goto <bb 98>; [75.46%]
+
+  <bb 73> [0.61%]:
+  _203 = &_12->mantissa;
+  goto <bb 75>; [100.00%]
+
+  <bb 74> [2.46%]:
+  _205 = (long unsigned int) i_204;
+  _206 = _205 * 2;
+  _207 = _203 + _206;
+  _208 = *_207;
+  _209 = (int) _208;
+  n_211 = _209 | n_210;
+  i_212 = i_204 + 1;
+
+  <bb 75> [3.07%]:
+  # i_204 = PHI <0(73), i_212(74)>
+  # n_210 = PHI <0(73), n_211(74)>
+  if (i_204 <= 3)
+    goto <bb 74>; [80.00%]
+  else
+    goto <bb 76>; [20.00%]
+
+  <bb 76> [0.61%]:
+  # n_213 = PHI <n_210(75)>
+  if (n_213 == 0)
+    goto <bb 77>; [33.00%]
+  else
+    goto <bb 78>; [67.00%]
+
+  <bb 77> [0.20%]:
+  __builtin_puts (&"Error:  zero significand in denormalize"[0]);
+
+  <bb 78> [0.61%]:
+  _214 = _12->exp;
+  _215 = (int) _214;
+  _216 = _215 + 32767;
+  exponent_difference_217 = (long int) _216;
+  if (exponent_difference_217 < 0)
+    goto <bb 79>; [39.77%]
+  else
+    goto <bb 96>; [60.23%]
+
+  <bb 79> [0.24%]:
+  exponent_difference_218 = -exponent_difference_217;
+  if (exponent_difference_217 < -63)
+    goto <bb 80>; [67.00%]
+  else
+    goto <bb 83>; [33.00%]
+
+  <bb 80> [0.16%]:
+  _12->type = 0;
+  _12->exp = -32767;
+  goto <bb 82>; [100.00%]
+
+  <bb 81> [0.65%]:
+  _12->mantissa[i_219] = 0;
+  i_220 = i_219 + 1;
+
+  <bb 82> [0.82%]:
+  # i_219 = PHI <0(80), i_220(81)>
+  if (i_219 <= 3)
+    goto <bb 81>; [80.00%]
+  else
+    goto <bb 96>; [20.00%]
+
+  <bb 83> [0.08%]:
+  _221 = (unsigned short) _214;
+  _222 = (unsigned short) exponent_difference_218;
+  _223 = _221 + _222;
+  _224 = (short int) _223;
+  _12->exp = _224;
+  _225 = (int) exponent_difference_218;
+  mantissa_226 = &_12->mantissa;
+  _227 = _12->type;
+  if (_227 != 0)
+    goto <bb 84>; [54.00%]
+  else
+    goto <bb 96>; [46.00%]
+
+  <bb 84> [0.04%]:
+  if (_225 > 63)
+    goto <bb 86>; [50.00%]
+  else
+    goto <bb 95>; [50.00%]
+
+  <bb 85> [0.07%]:
+  _229 = (long unsigned int) i_228;
+  _230 = _229 * 2;
+  _231 = mantissa_226 + _230;
+  *_231 = 0;
+  i_232 = i_228 + 1;
+
+  <bb 86> [0.09%]:
+  # i_228 = PHI <0(84), i_232(85)>
+  if (i_228 <= 2)
+    goto <bb 85>; [75.00%]
+  else
+    goto <bb 87>; [25.00%]
+
+  <bb 87> [0.02%]:
+  MEM[(short unsigned int *)_12 + 10B] = 1;
+  goto <bb 96>; [100.00%]
+
+  <bb 88> [0.49%]:
+  _234 = (long unsigned int) i_233;
+  _235 = _234 * 2;
+  _236 = mantissa_226 + _235;
+  accum_237 = *_236;
+  _238 = accum_237 & 1;
+  accum_239 = accum_237 >> 1;
+  if (carry_240 != 0)
+    goto <bb 89>; [50.00%]
+  else
+    goto <bb 90>; [50.00%]
+
+  <bb 89> [0.25%]:
+  accum_241 = accum_239 | 32768;
+
+  <bb 90> [0.49%]:
+  # accum_242 = PHI <accum_239(88), accum_241(89)>
+  *_236 = accum_242;
+  i_243 = i_233 + 1;
+
+  <bb 91> [0.62%]:
+  # i_233 = PHI <i_243(90), 0(95)>
+  # carry_240 = PHI <_238(90), 0(95)>
+  if (i_233 <= 3)
+    goto <bb 88>; [80.00%]
+  else
+    goto <bb 92>; [20.00%]
+
+  <bb 92> [0.12%]:
+  # carry_244 = PHI <carry_240(91)>
+  if (carry_244 != 0)
+    goto <bb 93>; [50.00%]
+  else
+    goto <bb 94>; [50.00%]
+
+  <bb 93> [0.06%]:
+  _245 = MEM[(short unsigned int *)_12 + 10B];
+  _246 = _245 | 1;
+  MEM[(short unsigned int *)_12 + 10B] = _246;
+
+  <bb 94> [0.12%]:
+  i_248 = i_247 + 1;
+
+  <bb 95> [0.15%]:
+  # i_247 = PHI <0(84), i_248(94)>
+  if (_225 > i_247)
+    goto <bb 91>; [85.00%]
+  else
+    goto <bb 96>; [15.00%]
+
+  <bb 96> [0.61%]:
+  _200 = _12->type;
+  if (_200 != 0)
+    goto <bb 97>; [54.00%]
+  else
+    goto <bb 98>; [46.00%]
+
+  <bb 97> [0.33%]:
+  _201 = _12->mantissa[3];
+  _202 = _201 & 65528;
+  _12->mantissa[3] = _202;
+
+  <bb 98> [2.50%]:
+  extra_bits ={v} {CLOBBER};
+  locy ={v} {CLOBBER};
+  goto <bb 100> (<L6>); [100.00%]
+
+<L5> [2.50%]:
+  _15 = i_20 * 12;
+  _16 = cbase_32(D) + _15;
+  _17 = bbase_33(D) + _15;
+  _18 = abase_34(D) + _15;
+  DivideInternalFPF (_18, _17, _16);
+
+<L6> [12.51%]:
+  i_39 = i_20 + 1;
+
+  <bb 101> [14.72%]:
+  # i_20 = PHI <0(102), i_39(100)>
+  if (i_20 < arraysize_31(D))
+    goto <bb 3>; [85.00%]
+  else
+    goto <bb 102>; [15.00%]
+
+  <bb 102> [2.60%]:
+  # loops_19 = PHI <loops_27(D)(2), loops_28(101)>
+  loops_28 = loops_19 + 18446744073709551615;
+  if (loops_19 != 0)
+    goto <bb 101>; [85.00%]
+  else
+    goto <bb 103>; [15.00%]
+
+  <bb 103> [0.39%]:
+  _30 = StopStopwatch (elapsed_26);
+  return _30;
+
+}
+
+
+
+;; Function RoundInternalFPF (RoundInternalFPF, funcdef_no=47, decl_uid=2809, cgraph_uid=47, symbol_order=47)
+
+RoundInternalFPF (struct InternalFPF * ptr)
+{
+  int i;
+  short unsigned int carry;
+  short unsigned int * mantissa;
+  short unsigned int accum;
+  int i;
+  int i;
+  int i;
+  int n;
+  long int exponent_difference;
+  unsigned char _1;
+  unsigned char _2;
+  unsigned char _7;
+  short unsigned int _8;
+  short unsigned int _9;
+  short unsigned int[4] * _10;
+  long unsigned int _12;
+  long unsigned int _13;
+  short unsigned int * _14;
+  short unsigned int _15;
+  int _16;
+  short int _21;
+  int _22;
+  int _23;
+  unsigned short _28;
+  unsigned short _29;
+  unsigned short _30;
+  short int _31;
+  int _32;
+  unsigned char _34;
+  long unsigned int _36;
+  long unsigned int _37;
+  short unsigned int * _38;
+  long unsigned int _41;
+  long unsigned int _42;
+  short unsigned int * _43;
+  short unsigned int _45;
+  short unsigned int _52;
+  short unsigned int _53;
+
+  <bb 2> [81.50%]:
+  _1 = ptr_4(D)->type;
+  _2 = _1 + 255;
+  if (_2 <= 1)
+    goto <bb 3>; [24.54%]
+  else
+    goto <bb 29>; [75.46%]
+
+  <bb 3> [20.00%]:
+  _10 = &ptr_4(D)->mantissa;
+  goto <bb 5>; [100.00%]
+
+  <bb 4> [80.00%]:
+  _12 = (long unsigned int) i_11;
+  _13 = _12 * 2;
+  _14 = _10 + _13;
+  _15 = *_14;
+  _16 = (int) _15;
+  n_18 = _16 | n_17;
+  i_19 = i_11 + 1;
+
+  <bb 5> [100.00%]:
+  # i_11 = PHI <0(3), i_19(4)>
+  # n_17 = PHI <0(3), n_18(4)>
+  if (i_11 <= 3)
+    goto <bb 4>; [80.00%]
+  else
+    goto <bb 6>; [20.00%]
+
+  <bb 6> [20.00%]:
+  # n_20 = PHI <n_17(5)>
+  if (n_20 == 0)
+    goto <bb 7>; [33.00%]
+  else
+    goto <bb 8>; [67.00%]
+
+  <bb 7> [6.60%]:
+  __builtin_puts (&"Error:  zero significand in denormalize"[0]);
+
+  <bb 8> [20.00%]:
+  _21 = ptr_4(D)->exp;
+  _22 = (int) _21;
+  _23 = _22 + 32767;
+  exponent_difference_24 = (long int) _23;
+  if (exponent_difference_24 < 0)
+    goto <bb 9>; [39.77%]
+  else
+    goto <bb 27>; [60.23%]
+
+  <bb 9> [7.95%]:
+  exponent_difference_25 = -exponent_difference_24;
+  if (exponent_difference_24 < -63)
+    goto <bb 10>; [67.00%]
+  else
+    goto <bb 13>; [33.00%]
+
+  <bb 10> [5.33%]:
+  ptr_4(D)->type = 0;
+  ptr_4(D)->exp = -32767;
+  goto <bb 12>; [100.00%]
+
+  <bb 11> [21.32%]:
+  ptr_4(D)->mantissa[i_26] = 0;
+  i_27 = i_26 + 1;
+
+  <bb 12> [26.65%]:
+  # i_26 = PHI <0(10), i_27(11)>
+  if (i_26 <= 3)
+    goto <bb 11>; [80.00%]
+  else
+    goto <bb 27>; [20.00%]
+
+  <bb 13> [2.62%]:
+  _28 = (unsigned short) _21;
+  _29 = (unsigned short) exponent_difference_25;
+  _30 = _28 + _29;
+  _31 = (short int) _30;
+  ptr_4(D)->exp = _31;
+  _32 = (int) exponent_difference_25;
+  mantissa_33 = &ptr_4(D)->mantissa;
+  _34 = ptr_4(D)->type;
+  if (_34 != 0)
+    goto <bb 14>; [54.00%]
+  else
+    goto <bb 27>; [46.00%]
+
+  <bb 14> [1.42%]:
+  if (_32 > 63)
+    goto <bb 16>; [50.00%]
+  else
+    goto <bb 25>; [50.00%]
+
+  <bb 15> [2.13%]:
+  _36 = (long unsigned int) i_35;
+  _37 = _36 * 2;
+  _38 = mantissa_33 + _37;
+  *_38 = 0;
+  i_39 = i_35 + 1;
+
+  <bb 16> [2.83%]:
+  # i_35 = PHI <0(14), i_39(15)>
+  if (i_35 <= 2)
+    goto <bb 15>; [75.00%]
+  else
+    goto <bb 17>; [25.00%]
+
+  <bb 17> [0.71%]:
+  MEM[(short unsigned int *)ptr_4(D) + 10B] = 1;
+  goto <bb 27>; [100.00%]
+
+  <bb 18> [16.06%]:
+  _41 = (long unsigned int) i_40;
+  _42 = _41 * 2;
+  _43 = mantissa_33 + _42;
+  accum_44 = *_43;
+  _45 = accum_44 & 1;
+  accum_46 = accum_44 >> 1;
+  if (carry_47 != 0)
+    goto <bb 19>; [50.00%]
+  else
+    goto <bb 20>; [50.00%]
+
+  <bb 19> [8.03%]:
+  accum_48 = accum_46 | 32768;
+
+  <bb 20> [16.06%]:
+  # accum_49 = PHI <accum_46(18), accum_48(19)>
+  *_43 = accum_49;
+  i_50 = i_40 + 1;
+
+  <bb 21> [20.08%]:
+  # i_40 = PHI <i_50(20), 0(26)>
+  # carry_47 = PHI <_45(20), 0(26)>
+  if (i_40 <= 3)
+    goto <bb 18>; [80.00%]
+  else
+    goto <bb 22>; [20.00%]
+
+  <bb 22> [4.02%]:
+  # carry_51 = PHI <carry_47(21)>
+  if (carry_51 != 0)
+    goto <bb 23>; [50.00%]
+  else
+    goto <bb 24>; [50.00%]
+
+  <bb 23> [2.01%]:
+  _52 = MEM[(short unsigned int *)ptr_4(D) + 10B];
+  _53 = _52 | 1;
+  MEM[(short unsigned int *)ptr_4(D) + 10B] = _53;
+
+  <bb 24> [4.02%]:
+  i_55 = i_54 + 1;
+
+  <bb 25> [4.72%]:
+  # i_54 = PHI <0(14), i_55(24)>
+  if (_32 > i_54)
+    goto <bb 26>; [85.00%]
+  else
+    goto <bb 27>; [15.00%]
+
+  <bb 26> [4.02%]:
+  goto <bb 21>; [100.00%]
+
+  <bb 27> [20.00%]:
+  _7 = ptr_4(D)->type;
+  if (_7 != 0)
+    goto <bb 28>; [54.00%]
+  else
+    goto <bb 29>; [46.00%]
+
+  <bb 28> [10.80%]:
+  _8 = ptr_4(D)->mantissa[3];
+  _9 = _8 & 65528;
+  ptr_4(D)->mantissa[3] = _9;
+
+  <bb 29> [81.50%]:
+  return;
+
+}
+
+

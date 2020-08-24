@@ -1,0 +1,41 @@
+digraph "nbench0.c.168t.slp2" {
+overlap=false;
+subgraph "cluster_output_string" {
+	style="dashed";
+	color="black";
+	label="output_string ()";
+	fn_64_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_64_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_64_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:10000 |\<bb\ 2\>:\l\
+|__printf_chk\ (1,\ \"%s\",\ buffer_3(D));\l\
+|write_to_file.30_1\ =\ write_to_file;\l\
+|if\ (write_to_file.30_1\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [36.64%]\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\ [63.36%]\l\
+}"];
+
+	fn_64_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:6336 |\<bb\ 5\>:\l\
+goto\ \<bb\ 4\>;\ [100.00%]\l\
+}"];
+
+	fn_64_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:3664 |\<bb\ 3\>:\l\
+|global_ofile.31_7\ =\ global_ofile;\l\
+|__builtin_fputs\ (buffer_3(D),\ global_ofile.31_7);\l\
+}"];
+
+	fn_64_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:10000 |\<bb\ 4\>:\l\
+|return;\l\
+}"];
+
+	fn_64_basic_block_0:s -> fn_64_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_64_basic_block_2:s -> fn_64_basic_block_3:n [style="solid,bold",color=black,weight=10,constraint=true, label="[36%]"];
+	fn_64_basic_block_2:s -> fn_64_basic_block_5:n [style="solid,bold",color=black,weight=10,constraint=true, label="[63%]"];
+	fn_64_basic_block_5:s -> fn_64_basic_block_4:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_64_basic_block_3:s -> fn_64_basic_block_4:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_64_basic_block_4:s -> fn_64_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true, label="[100%]"];
+	fn_64_basic_block_0:s -> fn_64_basic_block_1:n [style="invis",constraint=true];
+}
+}

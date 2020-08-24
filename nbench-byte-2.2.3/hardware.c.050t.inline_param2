@@ -1,0 +1,1123 @@
+
+;; Function sprintf (sprintf, funcdef_no=10, decl_uid=814, cgraph_uid=10, symbol_order=10)
+
+
+Analyzing function body size: sprintf
+
+Inline summary for sprintf/10 always_inline inlinable
+  self time:       17
+  global time:     0
+  self size:       9
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+    __builtin___sprintf_chk/71 function body not available
+      loop depth: 0 freq:1000 size: 6 time: 15 callee size: 0 stack: 0
+       op1 is compile time invariant
+    __builtin_object_size/60 function body not available
+      loop depth: 0 freq:1000 size: 0 time:  0 callee size: 0 stack: 0
+       op1 is compile time invariant
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__, __leaf__, __nothrow__))
+sprintf (char * restrict __s, const char * restrict __fmt)
+{
+  long unsigned int _1;
+  int _6;
+
+  <bb 2> [100.00%]:
+  _1 = __builtin_object_size (__s_3(D), 1);
+  _6 = __builtin___sprintf_chk (__s_3(D), 1, _1, __fmt_4(D), __builtin_va_arg_pack ());
+  return _6;
+
+}
+
+
+
+;; Function fprintf (fprintf, funcdef_no=14, decl_uid=776, cgraph_uid=14, symbol_order=14)
+
+
+Analyzing function body size: fprintf
+
+Inline summary for fprintf/14 always_inline inlinable
+  self time:       16
+  global time:     0
+  self size:       8
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+    __fprintf_chk/73 function body not available
+      loop depth: 0 freq:1000 size: 5 time: 14 callee size: 0 stack: 0
+       op1 is compile time invariant
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__))
+fprintf (struct FILE * restrict __stream, const char * restrict __fmt)
+{
+  int _5;
+
+  <bb 2> [100.00%]:
+  _5 = __fprintf_chk (__stream_2(D), 1, __fmt_3(D), __builtin_va_arg_pack ());
+  return _5;
+
+}
+
+
+
+;; Function printf (printf, funcdef_no=15, decl_uid=798, cgraph_uid=15, symbol_order=15)
+
+
+Analyzing function body size: printf
+
+Inline summary for printf/15 always_inline inlinable
+  self time:       15
+  global time:     0
+  self size:       7
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+    __printf_chk/72 function body not available
+      loop depth: 0 freq:1000 size: 4 time: 13 callee size: 0 stack: 0
+       op0 is compile time invariant
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__))
+printf (const char * restrict __fmt)
+{
+  int _4;
+
+  <bb 2> [100.00%]:
+  _4 = __printf_chk (1, __fmt_2(D), __builtin_va_arg_pack ());
+  return _4;
+
+}
+
+
+
+;; Function fgets (fgets, funcdef_no=20, decl_uid=2151, cgraph_uid=20, symbol_order=20)
+
+
+Analyzing function body size: fgets
+
+Inline summary for fgets/20 always_inline inlinable
+  self time:       22
+  global time:     0
+  self size:       28
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:2.000000, time:2.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+    size:4.000000, time:2.716000, predicate:(op1 changed)
+    size:2.000000, time:0.758000, predicate:(op1 > 0)
+  calls:
+    __fgets_alias/64 function body not available
+      loop depth: 0 freq: 470 size: 5 time: 14 callee size: 0 stack: 0
+    __fgets_chk_warn/63 function body not available
+      loop depth: 0 freq: 112 size: 6 time: 15 callee size: 0 stack: 0 predicate: (op1 > 0)
+    __fgets_chk/62 function body not available
+      loop depth: 0 freq: 417 size: 6 time: 15 callee size: 0 stack: 0
+    __builtin_constant_p/61 mismatched arguments
+      loop depth: 0 freq: 797 size: 0 time:  0 callee size: 0 stack: 0
+    __builtin_object_size/60 function body not available
+      loop depth: 0 freq:1000 size: 0 time:  0 callee size: 0 stack: 0
+       op1 is compile time invariant
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__))
+fgets (char * restrict __s, int __n, struct FILE * restrict __stream)
+{
+  long unsigned int _1;
+  int _2;
+  long unsigned int _3;
+  char * _4;
+  char * _11;
+  char * _13;
+  char * _15;
+
+  <bb 2> [100.00%]:
+  _1 = __builtin_object_size (__s_7(D), 1);
+  if (_1 != 18446744073709551615)
+    goto <bb 3>; [79.76%]
+  else
+    goto <bb 8>; [20.24%]
+
+  <bb 3> [79.76%]:
+  _2 = __builtin_constant_p (__n_8(D));
+  if (_2 == 0)
+    goto <bb 5>; [29.56%]
+  else
+    goto <bb 4>; [70.44%]
+
+  <bb 4> [56.18%]:
+  if (__n_8(D) <= 0)
+    goto <bb 5>; [32.39%]
+  else
+    goto <bb 6>; [67.61%]
+
+  <bb 5> [41.77%]:
+  _13 = __fgets_chk (__s_7(D), _1, __n_8(D), __stream_9(D));
+  goto <bb 9>; [100.00%]
+
+  <bb 6> [37.99%]:
+  _3 = (long unsigned int) __n_8(D);
+  if (_1 < _3)
+    goto <bb 7>; [29.56%]
+  else
+    goto <bb 8>; [70.44%]
+
+  <bb 7> [11.23%]:
+  _11 = __fgets_chk_warn (__s_7(D), _1, __n_8(D), __stream_9(D));
+  goto <bb 9>; [100.00%]
+
+  <bb 8> [47.00%]:
+  _15 = __fgets_alias (__s_7(D), __n_8(D), __stream_9(D));
+
+  <bb 9> [100.00%]:
+  # _4 = PHI <_13(5), _11(7), _15(8)>
+  return _4;
+
+}
+
+
+
+;; Function strcpy (strcpy, funcdef_no=29, decl_uid=750, cgraph_uid=29, symbol_order=29)
+
+
+Analyzing function body size: strcpy
+
+Inline summary for strcpy/29 always_inline inlinable
+  self time:       16
+  global time:     0
+  self size:       8
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+    __builtin___strcpy_chk/70 function body not available
+      loop depth: 0 freq:1000 size: 5 time: 14 callee size: 0 stack: 0
+    __builtin_object_size/60 function body not available
+      loop depth: 0 freq:1000 size: 0 time:  0 callee size: 0 stack: 0
+       op1 is compile time invariant
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__, __nothrow__, __leaf__))
+strcpy (char * restrict __dest, const char * restrict __src)
+{
+  long unsigned int _1;
+  char * _6;
+
+  <bb 2> [100.00%]:
+  _1 = __builtin_object_size (__dest_3(D), 1);
+  _6 = __builtin___strcpy_chk (__dest_3(D), __src_4(D), _1);
+  return _6;
+
+}
+
+
+
+;; Function atof (atof, funcdef_no=46, decl_uid=2709, cgraph_uid=46, symbol_order=46)
+
+
+Analyzing function body size: atof
+   fp_expression set
+
+Inline summary for atof/46 always_inline inlinable fp_expression
+  self time:       15
+  global time:     0
+  self size:       7
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+    strtod/69 function body not available
+      loop depth: 0 freq:1000 size: 4 time: 13 callee size: 0 stack: 0
+       op1 is compile time invariant
+
+__attribute__((__gnu_inline__, __pure__, __leaf__, __nothrow__))
+atof (const char * __nptr)
+{
+  double _4;
+
+  <bb 2> [100.00%]:
+  _4 = strtod (__nptr_2(D), 0B);
+  return _4;
+
+}
+
+
+
+;; Function output_string (output_string, funcdef_no=52, decl_uid=3332, cgraph_uid=52, symbol_order=52)
+
+
+Analyzing function body size: output_string
+
+Inline summary for output_string/52 inlinable
+  self time:       21
+  global time:     0
+  self size:       12
+  global size:     0
+  min size:       18
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+    size:2.000000, time:2.000000, predicate:(op1 changed)
+  calls:
+    output_string.part.0/74 function not considered for inlining
+      loop depth: 0 freq: 366 size: 3 time: 12 callee size: 3 stack: 0 predicate: (op1 != 0)
+    __printf_chk/72 function body not available
+      loop depth: 0 freq:1000 size: 4 time: 13 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+
+output_string (const char * buffer, const int write_to_file, struct FILE * global_ofile)
+{
+  <bb 2> [100.00%]:
+  __printf_chk (1, "%s", buffer_2(D));
+  if (write_to_file_3(D) != 0)
+    goto <bb 3>; [36.64%]
+  else
+    goto <bb 4>; [63.36%]
+
+  <bb 3> [36.64%]:
+  output_string.part.0 (buffer_2(D), global_ofile_4(D));
+
+  <bb 4> [100.00%]:
+  return;
+
+}
+
+
+
+;; Function removeNewLine (removeNewLine, funcdef_no=53, decl_uid=3335, cgraph_uid=53, symbol_order=53)
+
+
+Analyzing function body size: removeNewLine
+
+Inline summary for removeNewLine/53 inlinable
+  self time:       11
+  global time:     0
+  self size:       8
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+    size:0.500000, time:0.500000, predicate:(op0[ref offset: 0] changed) && (not inlined)
+    size:2.500000, time:2.500000, predicate:(op0[ref offset: 0] changed)
+  calls:
+    removeNewLine.part.1/76 function not considered for inlining
+      loop depth: 0 freq: 540 size: 2 time: 11 callee size: 6 stack: 0 predicate: (op0[ref offset: 0] != 0)
+
+removeNewLine (char * s)
+{
+  char _1;
+
+  <bb 2> [100.00%]:
+  _1 = MEM[(const char *)s_5(D)];
+  if (_1 != 0)
+    goto <bb 3>; [54.00%]
+  else
+    goto <bb 4>; [46.00%]
+
+  <bb 3> [54.00%]:
+  removeNewLine.part.1 (s_5(D));
+
+  <bb 4> [100.00%]:
+  return;
+
+}
+
+
+
+;; Function runCommand (runCommand, funcdef_no=54, decl_uid=3339, cgraph_uid=54, symbol_order=54)
+
+
+Analyzing function body size: runCommand
+
+Inline summary for runCommand/54 inlinable
+  self time:       46
+  global time:     0
+  self size:       35
+  global size:     0
+  min size:       150
+  self stack:      0
+  global stack:    0
+    size:11.500000, time:8.671000, predicate:(true)
+    size:4.500000, time:2.755000, predicate:(not inlined)
+  calls:
+    removeNewLine.part.1/76 function not considered for inlining
+      loop depth: 0 freq: 366 size: 2 time: 11 callee size: 6 stack: 0
+    pclose/59 function body not available
+      loop depth: 0 freq: 700 size: 2 time: 11 callee size: 0 stack: 0
+    __fgets_alias/64 function body not available
+      loop depth: 0 freq: 515 size: 5 time: 14 callee size: 0 stack: 0
+       op1 is compile time invariant
+    __fgets_chk_warn/63 function body not available
+      loop depth: 0 freq: 184 size: 6 time: 15 callee size: 0 stack: 0
+       op2 is compile time invariant
+    __builtin_object_size/60 function body not available
+      loop depth: 0 freq: 700 size: 0 time:  0 callee size: 0 stack: 0
+       op1 is compile time invariant
+    popen/58 function body not available
+      loop depth: 0 freq:1000 size: 4 time: 13 callee size: 0 stack: 0
+       op1 is compile time invariant
+
+runCommand (const char * command, char * result)
+{
+  struct FILE * pipe;
+  long unsigned int _11;
+  char * _12;
+  char * _13;
+  char * _14;
+  char _15;
+
+  <bb 2> [100.00%]:
+  pipe_6 = popen (command_4(D), "r");
+  if (pipe_6 == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 4>; [70.00%]
+
+  <bb 3> [30.00%]:
+  *result_7(D) = 0;
+  goto <bb 11>; [100.00%]
+
+  <bb 4> [70.00%]:
+  _11 = __builtin_object_size (result_7(D), 1);
+  if (_11 != 18446744073709551615)
+    goto <bb 5>; [79.76%]
+  else
+    goto <bb 7>; [20.24%]
+
+  <bb 5> [55.83%]:
+  if (_11 <= 1023)
+    goto <bb 6>; [33.00%]
+  else
+    goto <bb 7>; [67.00%]
+
+  <bb 6> [18.42%]:
+  _12 = __fgets_chk_warn (result_7(D), _11, 1024, pipe_6);
+  goto <bb 8>; [100.00%]
+
+  <bb 7> [51.58%]:
+  _13 = __fgets_alias (result_7(D), 1024, pipe_6);
+
+  <bb 8> [70.00%]:
+  # _14 = PHI <_13(7), _12(6)>
+  if (_14 == 0B)
+    goto <bb 9>; [30.00%]
+  else
+    goto <bb 10>; [70.00%]
+
+  <bb 9> [21.00%]:
+  *result_7(D) = 0;
+
+  <bb 10> [70.00%]:
+  pclose (pipe_6);
+
+  <bb 11> [100.00%]:
+  _15 = MEM[(const char *)result_7(D)];
+  if (_15 != 0)
+    goto <bb 12>; [36.64%]
+  else
+    goto <bb 13>; [63.36%]
+
+  <bb 12> [36.64%]:
+  removeNewLine.part.1 (result_7(D));
+
+  <bb 13> [100.00%]:
+  return;
+
+}
+
+
+
+;; Function readProcCpuInfo (readProcCpuInfo, funcdef_no=55, decl_uid=3344, cgraph_uid=55, symbol_order=55)
+
+
+Analyzing function body size: readProcCpuInfo
+   fp_expression set
+
+Inline summary for readProcCpuInfo/55 inlinable fp_expression
+  self time:       539
+  global time:     0
+  self size:       222
+  global size:     0
+  min size:       770
+  self stack:      4096
+  global stack:    4096
+    size:113.500000, time:206.998000, predicate:(true)
+    size:4.500000, time:3.101000, predicate:(not inlined)
+  calls:
+    fclose/68 function body not available
+      loop depth: 0 freq: 732 size: 2 time: 11 callee size: 0 stack: 0
+    __builtin___strcpy_chk/70 function body not available
+      loop depth: 0 freq: 366 size: 4 time: 13 callee size: 0 stack: 0
+       op1 is compile time invariant
+    __builtin_object_size/60 function body not available
+      loop depth: 0 freq: 366 size: 0 time:  0 callee size: 0 stack: 0
+       op1 is compile time invariant
+    __builtin___sprintf_chk/71 function body not available
+      loop depth: 0 freq: 366 size: 6 time: 15 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    strtod/69 function body not available
+      loop depth: 0 freq: 366 size: 4 time: 13 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+    strlen/65 function body not available
+      loop depth: 0 freq: 366 size: 3 time: 12 callee size: 0 stack: 0
+       op0 is compile time invariant
+    __builtin___strcpy_chk/70 function body not available
+      loop depth: 0 freq: 366 size: 4 time: 13 callee size: 0 stack: 0
+       op1 is compile time invariant
+    __builtin_object_size/60 function body not available
+      loop depth: 0 freq: 366 size: 0 time:  0 callee size: 0 stack: 0
+       op1 is compile time invariant
+    strlen/65 function body not available
+      loop depth: 0 freq: 366 size: 3 time: 12 callee size: 0 stack: 0
+       op0 is compile time invariant
+    __builtin___strcpy_chk/70 function body not available
+      loop depth: 0 freq: 366 size: 4 time: 13 callee size: 0 stack: 0
+       op1 is compile time invariant
+    __builtin_object_size/60 function body not available
+      loop depth: 0 freq: 366 size: 0 time:  0 callee size: 0 stack: 0
+       op1 is compile time invariant
+    strlen/65 function body not available
+      loop depth: 0 freq: 732 size: 3 time: 12 callee size: 0 stack: 0
+    __builtin___sprintf_chk/71 function body not available
+      loop depth: 0 freq: 309 size: 6 time: 15 callee size: 0 stack: 0
+       op1 is compile time invariant
+       op3 is compile time invariant
+    __builtin_object_size/60 function body not available
+      loop depth: 0 freq: 309 size: 0 time:  0 callee size: 0 stack: 0
+       op1 is compile time invariant
+    __builtin___strcpy_chk/70 function body not available
+      loop depth: 0 freq: 159 size: 4 time: 13 callee size: 0 stack: 0
+       op1 is compile time invariant
+    __builtin_object_size/60 function body not available
+      loop depth: 0 freq: 159 size: 0 time:  0 callee size: 0 stack: 0
+       op1 is compile time invariant
+    __fgets_alias/64 function body not available
+      loop depth: 1 freq:4884 size: 5 time: 14 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 change 20.470000% of time
+    removeNewLine.part.1/76 function not considered for inlining
+      loop depth: 1 freq:  66 size: 2 time: 11 callee size: 6 stack: 0
+    __builtin___strcpy_chk/70 function body not available
+      loop depth: 1 freq:  66 size: 4 time: 13 callee size: 0 stack: 0
+    __builtin_object_size/60 function body not available
+      loop depth: 1 freq:  66 size: 0 time:  0 callee size: 0 stack: 0
+       op1 is compile time invariant
+    strncmp/67 function body not available
+      loop depth: 1 freq: 596 size: 5 time: 14 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+    removeNewLine.part.1/76 function not considered for inlining
+      loop depth: 1 freq: 101 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin___strcpy_chk/70 function body not available
+      loop depth: 1 freq: 101 size: 4 time: 13 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op2 is compile time invariant
+    strncmp/67 function body not available
+      loop depth: 1 freq: 904 size: 5 time: 14 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+    removeNewLine.part.1/76 function not considered for inlining
+      loop depth: 1 freq: 153 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin___strcpy_chk/70 function body not available
+      loop depth: 1 freq: 153 size: 4 time: 13 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op2 is compile time invariant
+    strncmp/67 function body not available
+      loop depth: 1 freq:1370 size: 5 time: 14 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+    removeNewLine.part.1/76 function not considered for inlining
+      loop depth: 1 freq: 232 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin___strcpy_chk/70 function body not available
+      loop depth: 1 freq: 232 size: 4 time: 13 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op2 is compile time invariant
+    strncmp/67 function body not available
+      loop depth: 1 freq:2075 size: 5 time: 14 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+    strncmp/67 function body not available
+      loop depth: 1 freq:4151 size: 5 time: 14 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+    strlen/65 function body not available
+      loop depth: 1 freq:4151 size: 3 time: 12 callee size: 0 stack: 0
+       op0 is compile time invariant
+    fopen/66 function body not available
+      loop depth: 0 freq:1000 size: 4 time: 13 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+
+readProcCpuInfo (char * model, char * cache)
+{
+  float f;
+  int i;
+  char cpu_MHz[1024];
+  char model_name[1024];
+  char vendor_id[1024];
+  char buffer[1024];
+  char * buffer_end;
+  int cpus;
+  char * cp;
+  struct FILE * info;
+  long unsigned int _5;
+  int _6;
+  int _7;
+  _Bool _8;
+  _Bool _9;
+  _Bool _10;
+  int _11;
+  _Bool _12;
+  _Bool _13;
+  _Bool _14;
+  int _15;
+  _Bool _16;
+  _Bool _17;
+  _Bool _18;
+  int _20;
+  _Bool _21;
+  _Bool _22;
+  _Bool _23;
+  long unsigned int _25;
+  char _26;
+  long unsigned int _27;
+  char _28;
+  long unsigned int _29;
+  char _30;
+  float _31;
+  char _78;
+  char _80;
+  char _82;
+  char _84;
+  long unsigned int _91;
+  char * _92;
+  long unsigned int _93;
+  long unsigned int _94;
+  long unsigned int _95;
+  long unsigned int _96;
+  long unsigned int _97;
+  double _98;
+  char _99;
+  char _100;
+  char _101;
+  char _102;
+
+  <bb 2> [15.54%]:
+  *cache_56(D) = 0;
+  *model_58(D) = 0;
+  cpu_MHz[0] = 0;
+  model_name[0] = 0;
+  vendor_id[0] = 0;
+  info_64 = fopen ("/proc/cpuinfo", "r");
+  if (info_64 != 0B)
+    goto <bb 61>; [73.26%]
+  else
+    goto <bb 60>; [26.74%]
+
+  <bb 61> [11.39%]:
+  goto <bb 42>; [100.00%]
+
+  <bb 3> [64.52%]:
+  _5 = strlen (&buffer);
+  buffer_end_77 = &buffer + _5;
+  _6 = strncmp (&buffer, "processor", 9);
+  if (_6 == 0)
+    goto <bb 4>; [50.00%]
+  else
+    goto <bb 5>; [50.00%]
+
+  <bb 4> [32.26%]:
+  cpus_86 = cpus_41 + 1;
+  goto <bb 41>; [100.00%]
+
+  <bb 5> [32.26%]:
+  _7 = strncmp (&buffer, "vendor_id", 9);
+  if (_7 == 0)
+    goto <bb 62>; [34.00%]
+  else
+    goto <bb 14>; [66.00%]
+
+  <bb 62> [10.97%]:
+  goto <bb 7>; [100.00%]
+
+  <bb 6> [89.03%]:
+  cp_85 = cp_32 + 1;
+
+  <bb 7> [100.00%]:
+  # cp_32 = PHI <&MEM[(void *)&buffer + 9B](62), cp_85(6)>
+  if (cp_32 < buffer_end_77)
+    goto <bb 8>; [92.50%]
+  else
+    goto <bb 10>; [7.50%]
+
+  <bb 8> [92.50%]:
+  _84 = *cp_32;
+  _8 = _84 == 32;
+  _9 = _84 == 58;
+  _10 = _8 | _9;
+  if (_10 != 0)
+    goto <bb 6>; [50.00%]
+  else
+    goto <bb 9>; [50.00%]
+
+  <bb 9> [46.25%]:
+  if (_84 == 9)
+    goto <bb 6>; [92.50%]
+  else
+    goto <bb 10>; [7.50%]
+
+  <bb 10> [10.97%]:
+  # cp_3 = PHI <cp_32(7), cp_32(9)>
+  if (cp_3 < buffer_end_77)
+    goto <bb 11>; [33.00%]
+  else
+    goto <bb 12>; [67.00%]
+
+  <bb 11> [3.62%]:
+  __builtin___strcpy_chk (&vendor_id, cp_3, 1024);
+
+  <bb 12> [10.97%]:
+  _99 = MEM[(const char *)&vendor_id];
+  if (_99 != 0)
+    goto <bb 13>; [33.00%]
+  else
+    goto <bb 41>; [67.00%]
+
+  <bb 13> [3.62%]:
+  removeNewLine.part.1 (&vendor_id);
+  goto <bb 41>; [100.00%]
+
+  <bb 14> [21.29%]:
+  _11 = strncmp (&buffer, "model name", 10);
+  if (_11 == 0)
+    goto <bb 63>; [34.00%]
+  else
+    goto <bb 23>; [66.00%]
+
+  <bb 63> [7.24%]:
+  goto <bb 16>; [100.00%]
+
+  <bb 15> [58.76%]:
+  cp_83 = cp_33 + 1;
+
+  <bb 16> [66.00%]:
+  # cp_33 = PHI <&MEM[(void *)&buffer + 10B](63), cp_83(15)>
+  if (cp_33 < buffer_end_77)
+    goto <bb 17>; [92.50%]
+  else
+    goto <bb 19>; [7.50%]
+
+  <bb 17> [61.05%]:
+  _82 = *cp_33;
+  _12 = _82 == 32;
+  _13 = _82 == 58;
+  _14 = _12 | _13;
+  if (_14 != 0)
+    goto <bb 15>; [50.00%]
+  else
+    goto <bb 18>; [50.00%]
+
+  <bb 18> [30.52%]:
+  if (_82 == 9)
+    goto <bb 15>; [92.50%]
+  else
+    goto <bb 19>; [7.50%]
+
+  <bb 19> [7.24%]:
+  # cp_4 = PHI <cp_33(16), cp_33(18)>
+  if (cp_4 < buffer_end_77)
+    goto <bb 20>; [33.00%]
+  else
+    goto <bb 21>; [67.00%]
+
+  <bb 20> [2.39%]:
+  __builtin___strcpy_chk (&model_name, cp_4, 1024);
+
+  <bb 21> [7.24%]:
+  _100 = MEM[(const char *)&model_name];
+  if (_100 != 0)
+    goto <bb 22>; [33.00%]
+  else
+    goto <bb 41>; [67.00%]
+
+  <bb 22> [2.39%]:
+  removeNewLine.part.1 (&model_name);
+  goto <bb 41>; [100.00%]
+
+  <bb 23> [14.05%]:
+  _15 = strncmp (&buffer, "cpu MHz", 7);
+  if (_15 == 0)
+    goto <bb 64>; [34.00%]
+  else
+    goto <bb 32>; [66.00%]
+
+  <bb 64> [4.78%]:
+  goto <bb 25>; [100.00%]
+
+  <bb 24> [38.78%]:
+  cp_81 = cp_34 + 1;
+
+  <bb 25> [43.56%]:
+  # cp_34 = PHI <&MEM[(void *)&buffer + 7B](64), cp_81(24)>
+  if (cp_34 < buffer_end_77)
+    goto <bb 26>; [92.50%]
+  else
+    goto <bb 28>; [7.50%]
+
+  <bb 26> [40.29%]:
+  _80 = *cp_34;
+  _16 = _80 == 32;
+  _17 = _80 == 58;
+  _18 = _16 | _17;
+  if (_18 != 0)
+    goto <bb 24>; [50.00%]
+  else
+    goto <bb 27>; [50.00%]
+
+  <bb 27> [20.15%]:
+  if (_80 == 9)
+    goto <bb 24>; [92.50%]
+  else
+    goto <bb 28>; [7.50%]
+
+  <bb 28> [4.78%]:
+  # cp_24 = PHI <cp_34(25), cp_34(27)>
+  if (cp_24 < buffer_end_77)
+    goto <bb 29>; [33.00%]
+  else
+    goto <bb 30>; [67.00%]
+
+  <bb 29> [1.58%]:
+  __builtin___strcpy_chk (&cpu_MHz, cp_24, 1024);
+
+  <bb 30> [4.78%]:
+  _101 = MEM[(const char *)&cpu_MHz];
+  if (_101 != 0)
+    goto <bb 31>; [33.00%]
+  else
+    goto <bb 41>; [67.00%]
+
+  <bb 31> [1.58%]:
+  removeNewLine.part.1 (&cpu_MHz);
+  goto <bb 41>; [100.00%]
+
+  <bb 32> [9.27%]:
+  _20 = strncmp (&buffer, "cache size", 10);
+  if (_20 == 0)
+    goto <bb 65>; [34.00%]
+  else
+    goto <bb 41>; [66.00%]
+
+  <bb 65> [3.15%]:
+  goto <bb 34>; [100.00%]
+
+  <bb 33> [25.60%]:
+  cp_79 = cp_35 + 1;
+
+  <bb 34> [28.75%]:
+  # cp_35 = PHI <&MEM[(void *)&buffer + 10B](65), cp_79(33)>
+  if (cp_35 < buffer_end_77)
+    goto <bb 35>; [92.50%]
+  else
+    goto <bb 37>; [7.50%]
+
+  <bb 35> [26.59%]:
+  _78 = *cp_35;
+  _21 = _78 == 32;
+  _22 = _78 == 58;
+  _23 = _21 | _22;
+  if (_23 != 0)
+    goto <bb 33>; [50.00%]
+  else
+    goto <bb 36>; [50.00%]
+
+  <bb 36> [13.30%]:
+  if (_78 == 9)
+    goto <bb 33>; [92.50%]
+  else
+    goto <bb 37>; [7.50%]
+
+  <bb 37> [3.15%]:
+  # cp_19 = PHI <cp_35(34), cp_35(36)>
+  if (cp_19 < buffer_end_77)
+    goto <bb 38>; [33.00%]
+  else
+    goto <bb 39>; [67.00%]
+
+  <bb 38> [1.04%]:
+  _91 = __builtin_object_size (cache_56(D), 1);
+  __builtin___strcpy_chk (cache_56(D), cp_19, _91);
+
+  <bb 39> [3.15%]:
+  _102 = MEM[(const char *)cache_56(D)];
+  if (_102 != 0)
+    goto <bb 40>; [33.00%]
+  else
+    goto <bb 41>; [67.00%]
+
+  <bb 40> [1.04%]:
+  removeNewLine.part.1 (cache_56(D));
+
+  <bb 41> [64.52%]:
+  # cpus_2 = PHI <cpus_86(4), cpus_41(13), cpus_41(39), cpus_41(30), cpus_41(21), cpus_41(12), cpus_41(40), cpus_41(32), cpus_41(31), cpus_41(22)>
+
+  <bb 42> [75.91%]:
+  # cpus_41 = PHI <cpus_2(41), 0(61)>
+  _92 = __fgets_alias (&buffer, 1024, info_64);
+  if (_92 != 0B)
+    goto <bb 3>; [85.00%]
+  else
+    goto <bb 43>; [15.00%]
+
+  <bb 43> [11.39%]:
+  # cpus_114 = PHI <cpus_41(42)>
+  if (cpus_114 > 1)
+    goto <bb 44>; [64.00%]
+  else
+    goto <bb 47>; [36.00%]
+
+  <bb 44> [7.29%]:
+  if (cpus_114 == 2)
+    goto <bb 45>; [34.00%]
+  else
+    goto <bb 46>; [66.00%]
+
+  <bb 45> [2.48%]:
+  _93 = __builtin_object_size (model_58(D), 1);
+  __builtin___strcpy_chk (model_58(D), "Dual", _93);
+  goto <bb 47>; [100.00%]
+
+  <bb 46> [4.81%]:
+  _94 = __builtin_object_size (model_58(D), 1);
+  __builtin___sprintf_chk (model_58(D), 1, _94, "%d CPU", cpus_114);
+
+  <bb 47> [11.39%]:
+  _25 = strlen (model_58(D));
+  cp_65 = model_58(D) + _25;
+  _26 = vendor_id[0];
+  if (_26 != 0)
+    goto <bb 48>; [50.00%]
+  else
+    goto <bb 51>; [50.00%]
+
+  <bb 48> [5.69%]:
+  if (model_58(D) != cp_65)
+    goto <bb 49>; [70.00%]
+  else
+    goto <bb 50>; [30.00%]
+
+  <bb 49> [3.99%]:
+  cp_66 = cp_65 + 1;
+  *cp_65 = 32;
+
+  <bb 50> [5.69%]:
+  # cp_36 = PHI <cp_65(48), cp_66(49)>
+  _95 = __builtin_object_size (cp_36, 1);
+  __builtin___strcpy_chk (cp_36, &vendor_id, _95);
+  _27 = strlen (&vendor_id);
+  cp_68 = cp_36 + _27;
+
+  <bb 51> [11.39%]:
+  # cp_37 = PHI <cp_65(47), cp_68(50)>
+  _28 = model_name[0];
+  if (_28 != 0)
+    goto <bb 52>; [50.00%]
+  else
+    goto <bb 55>; [50.00%]
+
+  <bb 52> [5.69%]:
+  if (cp_37 != model_58(D))
+    goto <bb 53>; [70.00%]
+  else
+    goto <bb 54>; [30.00%]
+
+  <bb 53> [3.99%]:
+  cp_69 = cp_37 + 1;
+  *cp_37 = 32;
+
+  <bb 54> [5.69%]:
+  # cp_38 = PHI <cp_37(52), cp_69(53)>
+  _96 = __builtin_object_size (cp_38, 1);
+  __builtin___strcpy_chk (cp_38, &model_name, _96);
+  _29 = strlen (&model_name);
+  cp_71 = cp_38 + _29;
+
+  <bb 55> [11.39%]:
+  # cp_39 = PHI <cp_37(51), cp_71(54)>
+  _30 = cpu_MHz[0];
+  if (_30 != 0)
+    goto <bb 56>; [50.00%]
+  else
+    goto <bb 59>; [50.00%]
+
+  <bb 56> [5.69%]:
+  if (cp_39 != model_58(D))
+    goto <bb 57>; [70.00%]
+  else
+    goto <bb 58>; [30.00%]
+
+  <bb 57> [3.99%]:
+  cp_72 = cp_39 + 1;
+  *cp_39 = 32;
+
+  <bb 58> [5.69%]:
+  # cp_40 = PHI <cp_39(56), cp_72(57)>
+  _98 = strtod (&cpu_MHz, 0B);
+  f_74 = (float) _98;
+  _31 = f_74 + 5.0e-1;
+  i_75 = (int) _31;
+  __builtin___sprintf_chk (&cpu_MHz, 1, 1024, "%dMHz", i_75);
+  _97 = __builtin_object_size (cp_40, 1);
+  __builtin___strcpy_chk (cp_40, &cpu_MHz, _97);
+
+  <bb 59> [11.39%]:
+  fclose (info_64);
+
+  <bb 60> [15.54%]:
+  buffer ={v} {CLOBBER};
+  vendor_id ={v} {CLOBBER};
+  model_name ={v} {CLOBBER};
+  cpu_MHz ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function hardware (hardware, funcdef_no=56, decl_uid=3373, cgraph_uid=56, symbol_order=56)
+
+
+Analyzing function body size: hardware
+
+Inline summary for hardware/56 inlinable
+  self time:       121
+  global time:     0
+  self size:       48
+  global size:     0
+  min size:       166
+  self stack:      4108
+  global stack:    4108
+    size:5.000000, time:4.010000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+    output_string/52 function not considered for inlining
+      loop depth: 0 freq:1000 size: 4 time: 13 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin___sprintf_chk/71 function body not available
+      loop depth: 0 freq:1000 size: 6 time: 15 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+       op4 is compile time invariant
+    output_string/52 function not considered for inlining
+      loop depth: 0 freq:1000 size: 4 time: 13 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin___sprintf_chk/71 function body not available
+      loop depth: 0 freq:1000 size: 6 time: 15 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+       op4 is compile time invariant
+    output_string/52 function not considered for inlining
+      loop depth: 0 freq:1000 size: 4 time: 13 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin___sprintf_chk/71 function body not available
+      loop depth: 0 freq:1000 size: 6 time: 15 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+       op4 is compile time invariant
+    readProcCpuInfo/55 function not considered for inlining
+      loop depth: 0 freq: 494 size: 3 time: 12 callee size:111 stack:4096
+       op0 is compile time invariant
+       op1 is compile time invariant
+    strstr/57 function body not available
+      loop depth: 0 freq:1000 size: 4 time: 13 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+    runCommand/54 function not considered for inlining
+      loop depth: 0 freq:1000 size: 3 time: 12 callee size:17 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+
+hardware (const int write_to_file, struct FILE * global_ofile)
+{
+  char os_command[12];
+  char cache[1024];
+  char model[1024];
+  char os[1024];
+  char buffer[1024];
+  char * _1;
+
+  <bb 2> [100.00%]:
+  os_command = "uname -s -r";
+  runCommand (&os_command, &os);
+  _1 = strstr (&os, "Linux");
+  if (_1 != 0B)
+    goto <bb 3>; [49.47%]
+  else
+    goto <bb 4>; [50.53%]
+
+  <bb 3> [49.47%]:
+  readProcCpuInfo (&model, &cache);
+  goto <bb 5>; [100.00%]
+
+  <bb 4> [50.53%]:
+  model[0] = 0;
+  cache[0] = 0;
+
+  <bb 5> [100.00%]:
+  __builtin___sprintf_chk (&buffer, 1, 1024, "CPU                 : %s\n", &model);
+  output_string (&buffer, write_to_file_9(D), global_ofile_10(D));
+  __builtin___sprintf_chk (&buffer, 1, 1024, "L2 Cache            : %s\n", &cache);
+  output_string (&buffer, write_to_file_9(D), global_ofile_10(D));
+  __builtin___sprintf_chk (&buffer, 1, 1024, "OS                  : %s\n", &os);
+  output_string (&buffer, write_to_file_9(D), global_ofile_10(D));
+  buffer ={v} {CLOBBER};
+  os ={v} {CLOBBER};
+  model ={v} {CLOBBER};
+  cache ={v} {CLOBBER};
+  os_command ={v} {CLOBBER};
+  return;
+
+}
+
+

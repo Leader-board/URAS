@@ -1,0 +1,95 @@
+26 ssa "unused VAR_DECLs removed" "fprintf" 1
+26 ssa "unused VAR_DECLs removed" "printf" 1
+26 ssa "unused VAR_DECLs removed" "fgets" 1
+26 ssa "unused VAR_DECLs removed" "strcpy" 1
+26 ssa "unused VAR_DECLs removed" "atof" 1
+26 ssa "unused VAR_DECLs removed" "output_string" 1
+26 ssa "unused VAR_DECLs removed" "hardware" 4
+43 fre "SCC iterations == 2" "fgets" 2
+43 fre "Eliminated" "fgets" 3
+55 release_ssa "SSA names released" "fgets" 3
+55 release_ssa "SSA name holes removed" "fgets" 3
+38 ccp "Statements deleted" "output_string" 2
+43 fre "SCC iterations == 2" "output_string" 1
+54 fnsplit "Symbol to SSA rewrite" "output_string" 1
+55 release_ssa "unused VAR_DECLs removed" "output_string" 2
+55 release_ssa "SSA names released" "output_string" 6
+55 release_ssa "SSA name holes removed" "output_string" 6
+35 einline "unused VAR_DECLs removed" "removeNewLine" 3
+35 einline "Symbol to SSA rewrite" "removeNewLine" 1
+43 fre "SCC iterations == 2" "removeNewLine" 1
+43 fre "Eliminated" "removeNewLine" 3
+54 fnsplit "Symbol to SSA rewrite" "removeNewLine" 1
+54 fnsplit "Symbol to SSA rewrite" "removeNewLine" 1
+55 release_ssa "SSA names released" "removeNewLine" 7
+55 release_ssa "SSA name holes removed" "removeNewLine" 7
+38 ccp "Copies propagated" "runCommand" 1
+38 ccp "Statements folded" "runCommand" 1
+38 ccp "Constants propagated" "runCommand" 2
+38 ccp "Statements deleted" "runCommand" 4
+43 fre "SCC iterations == 2" "runCommand" 5
+54 fnsplit "Symbol to SSA rewrite" "runCommand" 1
+55 release_ssa "unused VAR_DECLs removed" "runCommand" 1
+55 release_ssa "SSA names released" "runCommand" 8
+55 release_ssa "SSA name holes removed" "runCommand" 8
+35 einline "unused VAR_DECLs removed" "readProcCpuInfo" 4
+35 einline "Symbol to SSA rewrite" "readProcCpuInfo" 1
+38 ccp "Copies propagated" "readProcCpuInfo" 8
+38 ccp "Statements folded" "readProcCpuInfo" 3
+38 ccp "Constants propagated" "readProcCpuInfo" 15
+38 ccp "Statements deleted" "readProcCpuInfo" 27
+43 fre "SCC iterations == 2" "readProcCpuInfo" 13
+43 fre "SCC iterations == 3" "readProcCpuInfo" 6
+43 fre "Eliminated" "readProcCpuInfo" 8
+44 evrp "Incremental SSA update" "readProcCpuInfo" 1
+47 cddce "Statements deleted" "readProcCpuInfo" 2
+55 release_ssa "unused VAR_DECLs removed" "readProcCpuInfo" 12
+55 release_ssa "SSA names released" "readProcCpuInfo" 64
+55 release_ssa "SSA name holes removed" "readProcCpuInfo" 64
+35 einline "unused VAR_DECLs removed" "hardware" 28
+35 einline "Symbol to SSA rewrite" "hardware" 1
+38 ccp "Constants propagated" "hardware" 3
+38 ccp "Statements deleted" "hardware" 6
+43 fre "SCC iterations == 2" "hardware" 1
+55 release_ssa "unused VAR_DECLs removed" "hardware" 3
+55 release_ssa "SSA names released" "hardware" 12
+55 release_ssa "SSA name holes removed" "hardware" 12
+97 ccp "Statements folded" "hardware" 2
+97 ccp "Constants propagated" "hardware" 6
+97 ccp "Statements deleted" "hardware" 4
+106 fre "SCC iterations == 2" "hardware" 25
+106 fre "SCC iterations == 3" "hardware" 6
+106 fre "Eliminated" "hardware" 5
+109 vrp "Incremental SSA update" "hardware" 2
+109 vrp "Constants propagated" "hardware" 3
+109 vrp "Jumps threaded" "hardware" 8
+109 vrp "Number of ASSERT_EXPR expressions inserted" "hardware" 58
+111 dce "PHI nodes deleted" "hardware" 8
+111 dce "Statements deleted" "hardware" 3
+115 copyprop "Copies propagated" "hardware" 11
+115 copyprop "Statements deleted" "hardware" 5
+120 ch "Incremental SSA update" "hardware" 1
+124 dom "Constants propagated" "hardware" 8
+124 dom "Jumps threaded" "hardware" 9
+129 dce "Statements deleted" "hardware" 25
+132 ccp "Statements deleted" "hardware" 8
+139 pre "compute_antic iterations == 3" "hardware" 1
+139 pre "Insertions" "hardware" 8
+139 pre "New PHIs" "hardware" 8
+139 pre "Symbol to SSA rewrite" "hardware" 1
+139 pre "SCC iterations == 2" "hardware" 29
+139 pre "SCC iterations == 3" "hardware" 6
+139 pre "insert iterations == 2" "hardware" 1
+139 pre "Eliminated" "hardware" 16
+140 sink "Sunk statements" "hardware" 1
+144 dce "Statements deleted" "hardware" 8
+147 loopinit "Incremental SSA update" "hardware" 1
+183 thread "Jumps threaded" "hardware" 8
+184 dom "Copies propagated" "hardware" 7
+187 vrp "Incremental SSA update" "hardware" 2
+187 vrp "Statements folded" "hardware" 8
+187 vrp "Number of ASSERT_EXPR expressions inserted" "hardware" 39
+187 vrp "Statements deleted" "hardware" 8
+197 dce "Statements deleted" "hardware" 16
+266 combine "three-insn combine" "hardware" 8
+266 combine "two-insn combine" "hardware" 49

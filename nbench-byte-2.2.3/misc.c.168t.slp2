@@ -1,0 +1,132 @@
+
+;; Function randwc (randwc, funcdef_no=23, decl_uid=2514, cgraph_uid=23, symbol_order=23)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+randwc (int32 num)
+{
+  register int32 interm;
+  static int32 randw[2] = {13, 117};
+  int32 _3;
+  int _4;
+  int _5;
+  int _6;
+  int _7;
+  int _8;
+
+  <bb 2> [100.00%]:
+  _4 = randw[0];
+  _5 = _4 * 254754;
+  _6 = randw[1];
+  _7 = _6 * 529562;
+  _8 = _5 + _7;
+  interm_9 = _8 % 999563;
+  randw[1] = _4;
+  randw[0] = interm_9;
+  _3 = interm_9 % num_2(D);
+  return _3;
+
+}
+
+
+
+;; Function abs_randwc (abs_randwc, funcdef_no=24, decl_uid=2516, cgraph_uid=24, symbol_order=24)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+abs_randwc (u32 num)
+{
+  register int32 interm;
+  int32 temp;
+  int num.0_1;
+  u32 _6;
+  int _7;
+  int _8;
+  int _9;
+  int _10;
+  int _11;
+  int _13;
+
+  <bb 2> [100.00%]:
+  num.0_1 = (int) num_3(D);
+  _7 = randw[0];
+  _8 = _7 * 254754;
+  _9 = randw[1];
+  _10 = _9 * 529562;
+  _11 = _8 + _10;
+  interm_12 = _11 % 999563;
+  randw[1] = _7;
+  randw[0] = interm_12;
+  _13 = interm_12 % num.0_1;
+  temp_16 = ABS_EXPR <_13>;
+  _6 = (u32) temp_16;
+  return _6;
+
+}
+
+
+
+;; Function randnum (randnum, funcdef_no=25, decl_uid=2518, cgraph_uid=25, symbol_order=25)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5
+;; 2 succs { 4 3 }
+;; 3 succs { 5 }
+;; 4 succs { 5 }
+;; 5 succs { 1 }
+randnum (int32 lngval)
+{
+  static int32 randw[2] = {13, 117};
+  register int32 interm;
+  int pretmp_19;
+  int prephitmp_20;
+  int _21;
+  int pretmp_23;
+  int _25;
+  int _27;
+  int _29;
+  int prephitmp_30;
+
+  <bb 2> [100.00%]:
+  if (lngval_7(D) != 0)
+    goto <bb 4>; [54.00%]
+  else
+    goto <bb 3>; [46.00%]
+
+  <bb 3> [46.00%]:
+  pretmp_19 = randw[0];
+  _21 = pretmp_19 * 254754;
+  pretmp_23 = randw[1];
+  _25 = pretmp_23 * 529562;
+  _27 = _21 + _25;
+  _29 = _27 % 999563;
+  goto <bb 5>; [100.00%]
+
+  <bb 4> [54.00%]:
+  randw[0] = 13;
+  randw[1] = 117;
+
+  <bb 5> [100.00%]:
+  # prephitmp_20 = PHI <pretmp_19(3), 13(4)>
+  # prephitmp_30 = PHI <_29(3), 298961(4)>
+  randw[1] = prephitmp_20;
+  randw[0] = prephitmp_30;
+  return prephitmp_30;
+
+}
+
+

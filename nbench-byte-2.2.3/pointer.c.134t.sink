@@ -1,0 +1,19 @@
+
+;; Function main (main, funcdef_no=23, decl_uid=2444, cgraph_uid=23, symbol_order=23) (executed once)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+main ()
+{
+  <bb 2> [100.00%]:
+  __printf_chk (1, "%d", 8);
+  return 0;
+
+}
+
+

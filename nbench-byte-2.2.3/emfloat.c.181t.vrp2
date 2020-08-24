@@ -1,0 +1,6821 @@
+
+;; Function DivideInternalFPF (DivideInternalFPF, funcdef_no=51, decl_uid=2827, cgraph_uid=51, symbol_order=51)
+
+;; 27 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82
+;;
+;; Loop 2
+;;  header 45, latch 44
+;;  depth 1, outer 0
+;;  nodes: 45 44 41 42 40 38 39 36 37 33 35 25 28 31 29 26 24 22 23 20 21 18 19 51 17 49 50 47 48 46 34 30 32 27
+;; 2 succs { 63 3 4 6 10 7 11 8 9 52 }
+;; 3 succs { 80 }
+;; 4 succs { 5 6 }
+;; 5 succs { 80 }
+;; 6 succs { 80 }
+;; 7 succs { 5 8 }
+;; 8 succs { 80 }
+;; 9 succs { 63 }
+;; 10 succs { 63 }
+;; 11 succs { 12 14 }
+;; 12 succs { 5 13 }
+;; 13 succs { 80 }
+;; 14 succs { 15 16 }
+;; 15 succs { 80 }
+;; 16 succs { 45 }
+;; 17 succs { 18 }
+;; 18 succs { 19 20 }
+;; 19 succs { 20 }
+;; 20 succs { 21 22 }
+;; 21 succs { 22 }
+;; 22 succs { 23 24 }
+;; 23 succs { 24 }
+;; 24 succs { 25 34 }
+;; 25 succs { 36 26 }
+;; 26 succs { 27 28 }
+;; 27 succs { 35 }
+;; 28 succs { 36 29 }
+;; 29 succs { 30 31 }
+;; 30 succs { 35 }
+;; 31 succs { 36 32 }
+;; 32 succs { 35 33 }
+;; 33 succs { 36 35 }
+;; 34 succs { 35 }
+;; 35 succs { 36 }
+;; 36 succs { 37 38 }
+;; 37 succs { 38 }
+;; 38 succs { 39 40 }
+;; 39 succs { 40 }
+;; 40 succs { 41 42 }
+;; 41 succs { 44 43 }
+;; 42 succs { 44 43 }
+;; 43 succs { 63 }
+;; 44 succs { 45 }
+;; 45 succs { 46 47 }
+;; 46 succs { 47 }
+;; 47 succs { 48 49 }
+;; 48 succs { 49 }
+;; 49 succs { 50 51 }
+;; 50 succs { 51 }
+;; 51 succs { 17 18 }
+;; 52 succs { 59 53 }
+;; 53 succs { 61 54 }
+;; 54 succs { 59 55 }
+;; 55 succs { 61 56 }
+;; 56 succs { 59 57 }
+;; 57 succs { 61 58 }
+;; 58 succs { 59 60 }
+;; 59 succs { 63 }
+;; 60 succs { 61 62 }
+;; 61 succs { 63 }
+;; 62 succs { 59 }
+;; 63 succs { 64 80 }
+;; 64 succs { 65 79 }
+;; 65 succs { 79 }
+;; 66 succs { 68 80 }
+;; 67 succs { 82 }
+;; 68 succs { 69 70 }
+;; 69 succs { 70 }
+;; 70 succs { 71 72 }
+;; 71 succs { 72 }
+;; 72 succs { 73 74 }
+;; 73 succs { 74 }
+;; 74 succs { 67 81 }
+;; 75 succs { 76 80 }
+;; 76 succs { 77 }
+;; 77 succs { 78 }
+;; 78 succs { 1 }
+;; 79 succs { 66 75 }
+;; 80 succs { 78 }
+;; 81 succs { 82 }
+;; 82 succs { 77 }
+
+SSA replacement table
+N_i -> { O_1 ... O_j } means that N_i replaces O_1, ..., O_j
+
+accum_89 -> { accum_705 }
+accum_348 -> { accum_733 }
+accum_678 -> { accum_720 }
+accum_780 -> { accum_746 }
+Incremental SSA update started at block: 45
+Number of blocks in CFG: 83
+Number of blocks to update: 8 ( 10%)
+
+
+Adding assert for _170 from _170 + 255
+Adding assert for accum_561 from accum_561 + 32768
+Adding assert for accum_560 from accum_560 + 32768
+
+SSA replacement table
+N_i -> { O_1 ... O_j } means that N_i replaces O_1, ..., O_j
+
+pretmp_16 -> { pretmp_436 }
+pretmp_19 -> { pretmp_508 }
+_43 -> { _7 }
+_45 -> { _11 }
+accum_94 -> { accum_694 }
+accum_96 -> { accum_668 }
+accum_102 -> { accum_655 }
+_115 -> { _569 }
+z_129 -> { z_52(D) }
+accum_176 -> { accum_681 }
+_177 -> { _568 }
+z_178 -> { z_52(D) }
+z_179 -> { z_52(D) }
+accum_187 -> { accum_655 }
+x_201 -> { x_50(D) }
+x_202 -> { x_50(D) }
+_203 -> { _39 }
+y_233 -> { y_51(D) }
+_246 -> { _532 }
+accum_247 -> { accum_561 }
+accum_273 -> { accum_560 }
+z_295 -> { z_52(D) }
+pretmp_300 -> { pretmp_436 }
+z_311 -> { z_52(D) }
+z_312 -> { z_52(D) }
+pretmp_315 -> { pretmp_508 }
+y_316 -> { y_51(D) }
+pretmp_335 -> { pretmp_508 }
+z_340 -> { z_52(D) }
+y_345 -> { y_51(D) }
+z_346 -> { z_52(D) }
+z_367 -> { z_52(D) }
+pretmp_443 -> { pretmp_34 }
+pretmp_447 -> { pretmp_34 }
+pretmp_451 -> { pretmp_34 }
+pretmp_461 -> { pretmp_702 }
+accum_462 -> { accum_694 }
+accum_465 -> { accum_694 }
+accum_466 -> { accum_694 }
+_473 -> { _584 }
+pretmp_474 -> { pretmp_574 }
+z_476 -> { z_52(D) }
+pretmp_477 -> { pretmp_574 }
+pretmp_478 -> { pretmp_574 }
+z_480 -> { z_52(D) }
+z_493 -> { z_52(D) }
+z_734 -> { z_52(D) }
+z_743 -> { z_52(D) }
+z_747 -> { z_52(D) }
+_771 -> { _170 }
+_775 -> { _238 }
+accum_778 -> { accum_681 }
+accum_779 -> { accum_681 }
+z_782 -> { z_52(D) }
+_784 -> { _239 }
+_785 -> { _249 }
+accum_787 -> { accum_681 }
+accum_788 -> { accum_668 }
+y_790 -> { y_51(D) }
+_793 -> { _336 }
+accum_796 -> { accum_668 }
+accum_797 -> { accum_668 }
+z_799 -> { z_52(D) }
+Incremental SSA update started at block: 2
+Number of blocks in CFG: 91
+Number of blocks to update: 67 ( 74%)
+
+
+
+Value ranges after VRP:
+
+_1: VARYING
+_2: [0, 255]
+_3: [0, 1275]
+_4: VARYING
+_5: [0, 255]
+_6: [0, 1530]
+_7: ~[0B, 0B]
+_8: VARYING
+_9: VARYING
+_10: [0, +INF]
+_11: ~[0B, 0B]
+_12: VARYING
+_13: VARYING
+_14: [0, +INF]
+ivtmp_15: [3, 3]
+pretmp_16: ~[0B, 0B]  EQUIVALENCES: { pretmp_436 } (1 elements)
+_17: VARYING
+_18: VARYING
+pretmp_19: [0, +INF]  EQUIVALENCES: { pretmp_315 pretmp_508 } (2 elements)
+_20: VARYING
+_21: VARYING
+_22: [0, +INF]
+_23: VARYING
+_24: [0, +INF]
+_25: VARYING
+_26: [0, +INF]
+_27: [0, +INF]
+_28: [0, +INF]
+_29: VARYING
+pretmp_34: VARYING
+_35: [0, 0]
+_36: [0, 65535]
+_37: [0, 65535]
+_38: VARYING
+_39: VARYING
+_40: ~[-1, -1]
+_41: VARYING
+_43: ~[0B, 0B]  EQUIVALENCES: { _7 } (1 elements)
+_44: [4, 4]
+_45: ~[0B, 0B]  EQUIVALENCES: { _11 } (1 elements)
+_46: [2, 2]
+extra_bits$0_47: VARYING
+.MEM_48: VARYING
+x_50(D): VARYING
+y_51(D): VARYING
+z_52(D): VARYING
+i_53: [1, 1]
+n_54: [0, 65535]  EQUIVALENCES: { _55 } (1 elements)
+_55: [0, 65535]
+_61: VARYING
+_71: [3, 3]
+_72: [6, 6]
+_73: VARYING
+_74: VARYING
+_75: [0, 65535]
+n_77: [0, 65535]
+i_78: [4, 4]
+_83: ~[0B, 0B]  EQUIVALENCES: { y_51(D) y_316 y_345 } (3 elements)
+_84: [3, 3]
+_85: [6, 6]
+_86: VARYING
+_87: VARYING
+_88: [0, 65535]
+accum_89: [0, +INF]
+n_90: [0, 65535]
+i_91: [4, 4]
+accum_94: [0, +INF]  EQUIVALENCES: { accum_694 } (1 elements)
+accum_96: [0, +INF]  EQUIVALENCES: { accum_668 } (1 elements)
+accum_102: [0, pretmp_702 + 65535]  EQUIVALENCES: { accum_655 } (1 elements)
+_105: ~[0B, 0B]  EQUIVALENCES: { _11 } (1 elements)
+_106: VARYING
+_107: [3, 3]
+_108: [6, 6]
+_109: VARYING
+_110: VARYING
+_111: [0, 65535]
+_112: [0, 0]
+n_113: [0, 65535]
+i_114: [4, 4]
+_115: [0, _246]  EQUIVALENCES: { _569 } (1 elements)
+_117: [0, 0]
+locx__lsm.36_119: VARYING
+_120: [3, 3]
+_121: [6, 6]
+_122: VARYING
+_123: VARYING
+_124: [0, 65535]
+locx__lsm.34_125: VARYING
+n_126: [0, 65535]
+i_127: [4, 4]
+_128: [0, 0]
+z_129: ~[0B, 0B]  EQUIVALENCES: { z_52(D) z_747 } (2 elements)
+_170: VARYING
+_171: [0, +INF]
+accum_176: [0, pretmp_574 + 65535]  EQUIVALENCES: { accum_681 } (1 elements)
+_177: [0, _584]  EQUIVALENCES: { _568 } (1 elements)
+z_178: ~[0B, 0B]  EQUIVALENCES: { z_52(D) z_747 } (2 elements)
+z_179: ~[0B, 0B]  EQUIVALENCES: { z_52(D) } (1 elements)
+.MEM_183: VARYING
+.MEM_186: VARYING
+accum_187: [pretmp_702, +INF]  EQUIVALENCES: { accum_655 } (1 elements)
+_188: [0, 65535]
+x_201: ~[0B, 0B]  EQUIVALENCES: { x_50(D) x_202 } (2 elements)
+x_202: ~[0B, 0B]  EQUIVALENCES: { x_50(D) } (1 elements)
+_203: [0, _336]  EQUIVALENCES: { _39 } (1 elements)
+_204: [1, 1]
+_206: [0, 65535]
+_207: [0, 0]
+i_208: [2, 2]
+_209: [0, 0]
+y_233: ~[0B, 0B]  EQUIVALENCES: { y_51(D) y_345 } (2 elements)
+extra_bits$1_234: VARYING
+_237: [0, 65535]
+_238: VARYING
+_239: VARYING
+ivtmp_240: [1, 1]
+i_241: [4, 4]
+i_242: [3, 3]
+_244: [0, 0]
+_245: ~[0B, 0B]  EQUIVALENCES: { x_50(D) x_201 x_202 } (3 elements)
+_246: [_569, +INF]  EQUIVALENCES: { _532 } (1 elements)
+accum_247: [1, 32767]  EQUIVALENCES: { accum_561 } (1 elements)
+_248: [0, 65528]
+_249: ~[0B, 0B]
+extra_bits$3_250: VARYING
+_251: [3, 3]
+_252: [6, 6]
+_253: VARYING
+_254: VARYING
+_255: [0, 65535]
+extra_bits$2_256: VARYING
+n_257: [0, 65535]
+i_258: [4, 4]
+prephitmp_259: VARYING
+_260: [0, 32767]  EQUIVALENCES: { } (0 elements)
+.MEM_261: VARYING
+_262: ~[0B, 0B]  EQUIVALENCES: { y_51(D) y_345 } (2 elements)
+_263: [0, 65535]
+_264: VARYING
+_267: [32768, 32768]
+_268: VARYING
+_269: [32769, 32769]
+_270: [-32767, -32767]
+_271: [4, 4]
+i_272: [2, 2]
+accum_273: [0, 32767]  EQUIVALENCES: { accum_560 } (1 elements)
+_274: VARYING
+_290: VARYING
+prephitmp_291: VARYING
+_292: [1, +INF]
+extra_bits$2_293: VARYING
+_294: [2, 2]
+z_295: ~[0B, 0B]  EQUIVALENCES: { z_52(D) } (1 elements)
+_297: VARYING
+extra_bits$0_299: VARYING
+pretmp_300: ~[0B, 0B]  EQUIVALENCES: { pretmp_436 } (1 elements)
+_301: VARYING
+_302: [2, 2]
+prephitmp_309: VARYING
+z_311: ~[0B, 0B]  EQUIVALENCES: { z_52(D) } (1 elements)
+z_312: ~[0B, 0B]  EQUIVALENCES: { z_52(D) } (1 elements)
+pretmp_315: [0, +INF]  EQUIVALENCES: { pretmp_508 } (1 elements)
+y_316: ~[0B, 0B]  EQUIVALENCES: { y_51(D) y_345 } (2 elements)
+locx__lsm.38_317: VARYING
+_318: [0, 0]
+i_319: [3, 3]
+ivtmp_320: [1, 1]
+ivtmp_321: [4, 4]
+i_322: [2, 2]
+n_324: [0, 65535]  EQUIVALENCES: { _703 } (1 elements)
+i_325: [1, 1]
+_326: [0, 0]
+extra_bits$3_327: VARYING
+n_328: [0, 65535]
+_329: [0, 65535]
+_330: [0, 65535]
+_331: VARYING
+_332: VARYING
+_333: VARYING
+_334: [2, 2]
+pretmp_335: [0, 65534]  EQUIVALENCES: { pretmp_315 pretmp_508 } (2 elements)
+_336: VARYING
+_337: VARYING
+.MEM_338: VARYING
+_339: [1, 1]
+z_340: ~[0B, 0B]  EQUIVALENCES: { z_52(D) } (1 elements)
+_341: VARYING
+_342: VARYING
+_343: VARYING
+_344: VARYING
+y_345: ~[0B, 0B]  EQUIVALENCES: { y_51(D) } (1 elements)
+z_346: ~[0B, 0B]  EQUIVALENCES: { z_52(D) } (1 elements)
+pretmp_347: VARYING
+accum_348: [0, +INF]
+_351: [2, 2]
+_354: [1, 1]
+accum_355: VARYING
+_356: [0, 1]
+accum_357: [0, 32767]
+_359: VARYING
+_363: VARYING
+_364: VARYING
+z_367: ~[0B, 0B]  EQUIVALENCES: { z_52(D) } (1 elements)
+accum_368: VARYING
+_369: [0, 1]
+accum_370: [0, 32767]
+accum_371: [32768, +INF]
+accum_372: [0, +INF]
+ivtmp_380: [3, 3]
+accum_381: VARYING
+_382: [0, 1]
+accum_383: [0, 32767]
+accum_384: [32768, +INF]
+accum_385: [0, +INF]
+i_393: [1, 1]
+accum_394: VARYING
+_395: [0, 1]
+accum_396: [0, 32767]
+accum_397: [32768, +INF]
+accum_398: [0, +INF]
+n_404: [0, 65535]  EQUIVALENCES: { _416 } (1 elements)
+extra_bits$0_408: [extra_bits$0_47, extra_bits$0_47]  EQUIVALENCES: { } (0 elements)
+extra_bits$1_412: [extra_bits$1_521, extra_bits$1_521]  EQUIVALENCES: { } (0 elements)
+_416: [0, 65535]
+_420: VARYING
+prephitmp_424: [0, +INF]
+extra_bits$2_428: [extra_bits$2_293, extra_bits$2_293]  EQUIVALENCES: { } (0 elements)
+_432: [0, 0]
+pretmp_436: ~[0B, 0B]
+_440: ~[0B, 0B]  EQUIVALENCES: { _7 } (1 elements)
+pretmp_443: [0, 65534]  EQUIVALENCES: { pretmp_34 pretmp_451 } (2 elements)
+i_444: [1, 1]
+pretmp_447: [0, +INF]  EQUIVALENCES: { pretmp_34 pretmp_451 } (2 elements)
+n_448: [0, 65535]  EQUIVALENCES: { _488 } (1 elements)
+pretmp_451: [0, +INF]  EQUIVALENCES: { pretmp_34 } (1 elements)
+_452: [0, 0]
+prephitmp_456: VARYING
+prephitmp_460: VARYING
+pretmp_461: [0, accum_187]  EQUIVALENCES: { pretmp_702 } (1 elements)
+accum_462: [0, pretmp_508 + 65535]  EQUIVALENCES: { accum_694 } (1 elements)
+pretmp_464: VARYING
+accum_465: [0, +INF]  EQUIVALENCES: { accum_94 accum_694 } (2 elements)
+accum_466: [1, +INF]  EQUIVALENCES: { accum_94 accum_694 } (2 elements)
+pretmp_468: VARYING
+_471: [2, 2]
+_472: [0, 0]
+_473: [_177, +INF]  EQUIVALENCES: { _584 } (1 elements)
+pretmp_474: [0, +INF]  EQUIVALENCES: { pretmp_478 pretmp_574 } (2 elements)
+_475: VARYING
+z_476: ~[0B, 0B]  EQUIVALENCES: { z_52(D) } (1 elements)
+pretmp_477: [0, 65534]  EQUIVALENCES: { pretmp_478 pretmp_574 } (2 elements)
+pretmp_478: [0, +INF]  EQUIVALENCES: { pretmp_574 } (1 elements)
+_479: VARYING
+z_480: ~[0B, 0B]  EQUIVALENCES: { z_52(D) } (1 elements)
+prephitmp_484: VARYING
+.MEM_485: VARYING
+_486: [0, +INF]
+_488: [0, 65535]
+prephitmp_489: VARYING
+pretmp_490: VARYING
+_492: VARYING
+z_493: ~[0B, 0B]  EQUIVALENCES: { z_52(D) z_480 } (2 elements)
+ivtmp_494: [1, 1]
+_496: ~[0B, 0B]  EQUIVALENCES: { pretmp_436 } (1 elements)
+_500: [4, 4]
+i_501: [3, 3]
+_502: ~[0B, 0B]  EQUIVALENCES: { x_50(D) x_201 x_202 } (3 elements)
+pretmp_504: VARYING
+_505: [0, 0]
+_506: [0, 0]
+pretmp_508: VARYING
+ivtmp_509: [4, 4]
+n_510: [0, 0]
+_512: [0, 65535]
+locx__lsm.40_518: VARYING
+_519: [0, 65534]
+.MEM_520: VARYING
+extra_bits$1_521: VARYING
+accum_522: [1, +INF]
+accum_523: [0, +INF]
+_531: VARYING
+_532: VARYING
+_533: VARYING
+accum_534: [0, +INF]
+accum_535: [1, +INF]
+accum_536: [0, +INF]
+_544: [4, 4]
+i_545: [2, 2]
+_546: [2, 2]
+accum_547: [0, +INF]
+accum_548: [1, +INF]
+accum_549: [0, +INF]
+pretmp_557: VARYING
+prephitmp_558: VARYING
+locx__lsm.40_559: [0, +INF]
+accum_560: [0, 65534]
+accum_561: [1, +INF]
+accum_562: [0, 65534]
+_568: VARYING
+_569: VARYING
+accum_570: [0, 65535]
+_571: [0, 65535]
+accum_572: ~[65536, 4294901760]
+i_573: [0, 0]
+pretmp_574: VARYING
+_575: [0, 65535]
+_576: [0, +INF]
+_577: [0, 1]
+_578: [0, +INF]
+.MEM_579: VARYING
+prephitmp_580: [0, +INF]
+prephitmp_581: [0, +INF]
+_582: [1, 1]
+locx__lsm.36_583: [0, +INF]
+_584: VARYING
+ivtmp_585: [1, 1]
+accum_586: [0, 65535]
+_587: [0, 65535]
+accum_588: ~[65536, 4294901760]
+_589: [0, 1]
+accum_590: ~[65536, 4294901759]
+_591: [0, 65535]
+_592: [0, +INF]
+_593: [0, 1]
+_594: [0, +INF]
+extra_bits$3_595: [extra_bits$3_250, extra_bits$3_250]
+i_596: [2, 2]
+locx__lsm.38_597: [0, +INF]
+ivtmp.45_598: [0, +INF]
+_599: ~[0B, 0B]  EQUIVALENCES: { y_51(D) y_316 y_345 } (3 elements)
+i_600: [1, 1]
+ivtmp_601: [1, 1]
+accum_602: [0, 65535]
+_603: [0, 65535]
+accum_604: ~[65536, 4294901760]
+_605: [0, 1]
+accum_606: ~[65536, 4294901759]
+_607: [0, 65535]
+_608: [0, +INF]
+_609: [0, 1]
+_610: [0, +INF]
+accum_611: [0, +INF]
+pretmp_612: VARYING
+_613: [0, 0]
+_614: ~[0, 0]
+ivtmp.45_615: [0, +INF]
+_616: ~[0B, 0B]  EQUIVALENCES: { x_50(D) x_202 } (2 elements)
+pretmp_617: VARYING
+accum_618: [0, 65535]
+_619: [0, 65535]
+accum_620: ~[65536, 4294901760]
+_621: [0, 1]
+accum_622: ~[65536, 4294901759]
+_623: [0, 0]
+i_624: [2, 2]
+_625: [0, 0]
+_626: [0, +INF]
+.MEM_627: VARYING
+_628: [0, 65535]
+n_630: [0, 65535]
+_631: [0, 65535]
+_634: [0, 0]
+_635: VARYING
+_638: [0, 0]
+_639: [0, 65535]
+_642: ~[0B, 0B]  EQUIVALENCES: { y_51(D) y_316 y_345 } (3 elements)
+_643: VARYING
+_646: [0, +INF]
+_647: [0, +INF]
+_650: [2, 2]
+i_651: [3, 3]
+_652: [1, 1]
+accum_653: [0, +INF]
+accum_654: [1, +INF]
+accum_655: [0, +INF]
+.MEM_656: VARYING
+_663: [2, 2]
+i_664: [0, 0]
+prephitmp_665: [0, +INF]
+accum_666: [0, +INF]
+accum_667: [1, +INF]
+accum_668: [0, +INF]
+n_669: [0, 65535]
+ivtmp.45_676: [0, +INF]
+_677: [0, 0]
+accum_678: [0, +INF]
+accum_679: [0, +INF]
+accum_680: [1, +INF]
+accum_681: [0, +INF]
+_682: [2, 2]
+i_689: [3, 3]
+_690: ~[0B, 0B]  EQUIVALENCES: { pretmp_436 } (1 elements)
+ivtmp_691: [3, 3]
+accum_692: [0, +INF]
+accum_693: [1, +INF]
+accum_694: [0, +INF]
+n_695: [0, 0]
+_698: [0, 65535]
+pretmp_702: VARYING
+_703: [0, 65535]
+i_704: [1, 1]
+accum_705: [0, +INF]
+_707: VARYING
+n_708: [0, 65535]  EQUIVALENCES: { _715 } (1 elements)
+_711: VARYING
+_712: [0, +INF]
+_715: [0, 65535]
+_716: [0, 0]
+_717: VARYING
+accum_718: [0, +INF]
+accum_719: [1, +INF]
+accum_720: [0, +INF]
+_721: ~[0B, 0B]  EQUIVALENCES: { _249 } (1 elements)
+_728: [0, 0]
+_729: [0, 0]
+_730: [0, 0]
+accum_731: [0, +INF]
+accum_732: [1, +INF]
+accum_733: [0, +INF]
+z_734: ~[0B, 0B]  EQUIVALENCES: { z_52(D) } (1 elements)
+_741: [0, 0]
+_742: VARYING
+z_743: ~[0B, 0B]  EQUIVALENCES: { z_52(D) } (1 elements)
+accum_744: [0, +INF]
+accum_745: [1, +INF]
+accum_746: [0, +INF]
+z_747: ~[0B, 0B]  EQUIVALENCES: { z_52(D) } (1 elements)
+_753: VARYING
+ivtmp_754: [0, 0]
+ivtmp.45_755: [0, +INF]
+ivtmp.45_757: [0, +INF]
+ivtmp_758: [0, 0]
+_759: [0, 0]
+ivtmp_760: [0, 0]
+_762: [0, 65535]
+_763: VARYING
+_764: ~[0B, 0B]  EQUIVALENCES: { x_50(D) x_201 x_202 } (3 elements)
+_765: [0, 65535]
+_767: [0, 65535]
+ivtmp_768: [1, 1]
+_771: [1, 2]  EQUIVALENCES: { _170 } (1 elements)
+_772: VARYING
+_773: VARYING
+_774: VARYING
+_775: [0, _239]  EQUIVALENCES: { _238 } (1 elements)
+ivtmp_776: [0, 0]
+i_777: [0, 0]
+accum_778: [0, +INF]  EQUIVALENCES: { accum_681 accum_787 } (2 elements)
+accum_779: [1, +INF]  EQUIVALENCES: { accum_681 accum_787 } (2 elements)
+accum_780: [0, +INF]
+ivtmp_781: [4, 4]
+z_782: ~[0B, 0B]  EQUIVALENCES: { z_52(D) z_480 } (2 elements)
+_783: VARYING
+_784: [_775, +INF]  EQUIVALENCES: { _239 } (1 elements)
+_785: ~[0B, 0B]  EQUIVALENCES: { _249 } (1 elements)
+_786: VARYING
+accum_787: [0, +INF]  EQUIVALENCES: { accum_681 } (1 elements)
+accum_788: [0, pretmp_34 + 65535]  EQUIVALENCES: { accum_668 } (1 elements)
+ivtmp_789: [0, 0]
+y_790: ~[0B, 0B]  EQUIVALENCES: { y_51(D) y_345 } (2 elements)
+n_791: [0, 65535]
+_792: VARYING
+_793: [_203, +INF]  EQUIVALENCES: { _336 } (1 elements)
+ivtmp_794: [0, 0]
+locx__lsm.34_795: [0, +INF]
+accum_796: [1, +INF]  EQUIVALENCES: { accum_96 accum_668 } (2 elements)
+accum_797: [0, +INF]  EQUIVALENCES: { accum_96 accum_668 } (2 elements)
+i_798: [3, 3]
+z_799: ~[0B, 0B]  EQUIVALENCES: { z_52(D) z_480 } (2 elements)
+_800: [4, 4]
+_801: VARYING
+accum_802: [0, +INF]
+accum_803: [0, +INF]
+accum_804: [0, +INF]
+
+
+Removing basic block 62
+Removing basic block 83
+Removing basic block 84
+Removing basic block 85
+Removing basic block 86
+Removing basic block 87
+Removing basic block 88
+Removing basic block 89
+Removing basic block 90
+
+SSA replacement table
+N_i -> { O_1 ... O_j } means that N_i replaces O_1, ..., O_j
+
+_92 -> { _341 }
+prephitmp_175 -> { prephitmp_309 }
+.MEM_446 -> { .MEM_338 }
+prephitmp_449 -> { prephitmp_309 }
+.MEM_450 -> { .MEM_306 }
+.MEM_457 -> { .MEM_338 }
+.MEM_458 -> { .MEM_306 }
+Incremental SSA update started at block: 2
+Number of blocks in CFG: 84
+Number of blocks to update: 10 ( 12%)
+
+
+DivideInternalFPF (struct InternalFPF * x, struct InternalFPF * y, struct InternalFPF * z)
+{
+  unsigned short ivtmp.45;
+  _Bool locx__lsm.41;
+  short unsigned int locx__lsm.40;
+  _Bool locx__lsm.39;
+  short unsigned int locx__lsm.38;
+  _Bool locx__lsm.37;
+  short unsigned int locx__lsm.36;
+  _Bool locx__lsm.35;
+  short unsigned int locx__lsm.34;
+  _Bool z__exp_lsm.33;
+  short int z__exp_lsm.32;
+  short unsigned int extra_bits$3;
+  short unsigned int extra_bits$2;
+  short unsigned int extra_bits$1;
+  short unsigned int extra_bits$0;
+  int i;
+  short unsigned int carry;
+  short unsigned int * mantissa;
+  short unsigned int accum;
+  int i;
+  int i;
+  int i;
+  int n;
+  long int exponent_difference;
+  int i;
+  int i;
+  short unsigned int accum;
+  unsigned int accum;
+  int i;
+  short unsigned int accum;
+  int i;
+  short unsigned int accum;
+  int i;
+  int i;
+  int n;
+  int i;
+  int i;
+  int i;
+  int n;
+  int i;
+  int n;
+  int i;
+  int i;
+  int i;
+  int n;
+  int i;
+  int i;
+  int i;
+  int n;
+  int i;
+  struct InternalFPF locx;
+  short unsigned int extra_bits[4];
+  short unsigned int carry;
+  int j;
+  int i;
+  unsigned char _1;
+  int _2;
+  int _3;
+  unsigned char _4;
+  int _5;
+  int _6;
+  short unsigned int[4] * _7;
+  unsigned char _8;
+  unsigned char _9;
+  unsigned char _10;
+  short unsigned int[4] * _11;
+  unsigned char _12;
+  unsigned char _13;
+  unsigned char _14;
+  short unsigned int _17;
+  signed short _18;
+  unsigned char _20;
+  unsigned char _21;
+  unsigned char _22;
+  short int _23;
+  unsigned short _24;
+  short int _25;
+  unsigned short _26;
+  unsigned short _27;
+  unsigned short _28;
+  short int _29;
+  short unsigned int pretmp_34;
+  int _36;
+  int _37;
+  short int _38;
+  short unsigned int _39;
+  signed short _40;
+  short unsigned int * _41;
+  int _55;
+  short unsigned int _61;
+  short unsigned int * _73;
+  short unsigned int _74;
+  int _75;
+  struct InternalFPF * _83;
+  short unsigned int * _86;
+  short unsigned int _87;
+  int _88;
+  short int _92;
+  short unsigned int * _105;
+  short unsigned int _106;
+  short unsigned int * _109;
+  short unsigned int _110;
+  int _111;
+  short unsigned int * _122;
+  short unsigned int _123;
+  int _124;
+  unsigned char _170;
+  unsigned char _171;
+  unsigned char prephitmp_175;
+  int _188;
+  int _206;
+  int _237;
+  short unsigned int _238;
+  short unsigned int _239;
+  struct InternalFPF * _245;
+  short unsigned int _248;
+  short unsigned int[4] * _249;
+  short unsigned int * _253;
+  short unsigned int _254;
+  int _255;
+  short unsigned int prephitmp_259;
+  short unsigned int _260;
+  struct InternalFPF * _262;
+  int _263;
+  short unsigned int _264;
+  short unsigned int * _268;
+  signed short _274;
+  signed short _290;
+  short unsigned int prephitmp_291;
+  short unsigned int _292;
+  signed short _297;
+  short unsigned int _301;
+  unsigned char prephitmp_309;
+  int _329;
+  int _330;
+  short unsigned int _331;
+  short unsigned int _332;
+  short unsigned int * _333;
+  short unsigned int _336;
+  short unsigned int * _337;
+  short int _341;
+  signed short _342;
+  signed short _343;
+  short int _344;
+  unsigned char pretmp_347;
+  short unsigned int _356;
+  signed short _359;
+  signed short _363;
+  signed short _364;
+  short unsigned int _369;
+  short unsigned int _382;
+  short unsigned int _395;
+  int _416;
+  short unsigned int _420;
+  short unsigned int prephitmp_424;
+  short unsigned int[4] * pretmp_436;
+  short unsigned int * _440;
+  unsigned char prephitmp_449;
+  short unsigned int prephitmp_456;
+  short unsigned int prephitmp_460;
+  short unsigned int pretmp_464;
+  short unsigned int pretmp_468;
+  short unsigned int * _475;
+  short unsigned int _479;
+  short unsigned int prephitmp_484;
+  short unsigned int _486;
+  int _488;
+  short unsigned int prephitmp_489;
+  short unsigned int pretmp_490;
+  short unsigned int _492;
+  short unsigned int * _496;
+  struct InternalFPF * _502;
+  short unsigned int pretmp_504;
+  short unsigned int pretmp_508;
+  int _512;
+  short unsigned int _519;
+  short unsigned int _531;
+  short unsigned int _532;
+  short unsigned int * _533;
+  short unsigned int pretmp_557;
+  short unsigned int prephitmp_558;
+  short unsigned int _568;
+  short unsigned int _569;
+  unsigned int _571;
+  short unsigned int pretmp_574;
+  unsigned int _575;
+  short unsigned int _576;
+  short unsigned int _577;
+  short unsigned int _578;
+  short unsigned int prephitmp_580;
+  short unsigned int prephitmp_581;
+  short unsigned int _584;
+  unsigned int _587;
+  unsigned int _589;
+  unsigned int _591;
+  short unsigned int _592;
+  short unsigned int _593;
+  short unsigned int _594;
+  struct InternalFPF * _599;
+  unsigned int _603;
+  unsigned int _605;
+  unsigned int _607;
+  short unsigned int _608;
+  short unsigned int _609;
+  short unsigned int _610;
+  short unsigned int pretmp_612;
+  signed short _614;
+  struct InternalFPF * _616;
+  short unsigned int pretmp_617;
+  unsigned int _619;
+  unsigned int _621;
+  short unsigned int _626;
+  int _628;
+  int _631;
+  short unsigned int _635;
+  int _639;
+  struct InternalFPF * _642;
+  short unsigned int * _643;
+  short unsigned int _646;
+  short unsigned int _647;
+  short unsigned int prephitmp_665;
+  short unsigned int * _690;
+  int _698;
+  short unsigned int pretmp_702;
+  int _703;
+  signed short _707;
+  signed short _711;
+  short unsigned int _712;
+  int _715;
+  short unsigned int _717;
+  short unsigned int * _721;
+  short unsigned int * _742;
+  short unsigned int * _753;
+  int _762;
+  short unsigned int _763;
+  struct InternalFPF * _764;
+  int _765;
+  int _767;
+  short unsigned int _772;
+  short int _773;
+  short unsigned int _774;
+  short unsigned int _783;
+  short unsigned int * _786;
+  short unsigned int _792;
+  short unsigned int _801;
+
+  <bb 2> [81.50%]:
+  _1 = x_50(D)->type;
+  _2 = (int) _1;
+  _3 = _2 * 5;
+  _4 = y_51(D)->type;
+  _5 = (int) _4;
+  _6 = _3 + _5;
+  switch (_6) <default: <L54> [10.00%], case 0: <L56> [10.00%], case 1 ... 2: <L2> [10.00%], case 3: <L5> [10.00%], case 4: <L58> [10.00%], case 5: <L9> [10.00%], case 6 ... 7: <L59> [10.00%], case 8: <L5> [10.00%], case 9: <L58> [10.00%], case 10: <L9> [10.00%], case 11 ... 12: <L59> [10.00%], case 13: <L5> [10.00%], case 14: <L58> [10.00%], case 15 ... 17: <L12> [10.00%], case 18: <L56> [10.00%], case 19: <L58> [10.00%], case 20 ... 23: <L57> [10.00%], case 24: <L78> [10.00%]>
+
+<L56> [8.15%]:
+  z_52(D)->type = 4;
+  z_52(D)->exp = 32767;
+  z_52(D)->sign = 1;
+  z_52(D)->mantissa[0] = 16384;
+  z_52(D)->mantissa[1] = 0;
+  z_52(D)->mantissa[2] = 0;
+  z_52(D)->mantissa[3] = 0;
+  goto <bb 79>; [100.00%]
+
+<L2> [8.15%]:
+  _7 = &y_51(D)->mantissa;
+  _440 = _7;
+  _420 = MEM[(short unsigned int *)_7];
+  _416 = (int) _420;
+  n_404 = _416;
+  _333 = _7 + 2;
+  _332 = *_333;
+  _329 = (int) _332;
+  _268 = _7 + 4;
+  _264 = *_268;
+  _263 = (int) _264;
+  _37 = _263 | _329;
+  _73 = _7 + 6;
+  _74 = *_73;
+  _75 = (int) _74;
+  _762 = _37 | _75;
+  n_77 = _416 | _762;
+  if (n_77 == 0)
+    goto <bb 5>; [50.00%]
+  else
+    goto <bb 6> (<L5>); [50.00%]
+
+  <bb 5> [10.20%]:
+  z_52(D)->type = 4;
+  z_52(D)->exp = 32767;
+  z_52(D)->sign = 1;
+  z_52(D)->mantissa[0] = 16384;
+  z_52(D)->mantissa[1] = 0;
+  z_52(D)->mantissa[2] = 0;
+  z_52(D)->mantissa[3] = 0;
+  goto <bb 79>; [100.00%]
+
+<L5> [12.23%]:
+  _8 = x_50(D)->sign;
+  _9 = y_51(D)->sign;
+  _10 = _8 ^ _9;
+  z_52(D)->type = 0;
+  z_52(D)->sign = _10;
+  z_52(D)->exp = -32767;
+  z_52(D)->mantissa[0] = 0;
+  z_52(D)->mantissa[1] = 0;
+  z_52(D)->mantissa[2] = 0;
+  z_52(D)->mantissa[3] = 0;
+  goto <bb 79>; [100.00%]
+
+<L9> [8.15%]:
+  _11 = &x_50(D)->mantissa;
+  _105 = _11;
+  _61 = MEM[(short unsigned int *)_11];
+  _55 = (int) _61;
+  n_54 = _55;
+  _475 = _11 + 2;
+  _479 = *_475;
+  _206 = (int) _479;
+  _786 = _11 + 4;
+  _772 = *_786;
+  _765 = (int) _772;
+  _237 = _765 | _206;
+  _86 = _11 + 6;
+  _87 = *_86;
+  _88 = (int) _87;
+  _36 = _237 | _88;
+  n_90 = _36 | _55;
+  if (n_90 == 0)
+    goto <bb 5>; [50.00%]
+  else
+    goto <bb 8> (<L12>); [50.00%]
+
+<L12> [12.23%]:
+  z_52(D)->type = 3;
+  z_52(D)->sign = 0;
+  z_52(D)->exp = -32767;
+  z_52(D)->mantissa[0] = 0;
+  z_52(D)->mantissa[1] = 0;
+  z_52(D)->mantissa[2] = 0;
+  z_52(D)->mantissa[3] = 0;
+  _12 = x_50(D)->sign;
+  _13 = y_51(D)->sign;
+  _14 = _12 ^ _13;
+  z_52(D)->sign = _14;
+  goto <bb 79>; [100.00%]
+
+<L57> [8.15%]:
+  __builtin_memmove (x_50(D), z_52(D), 12);
+  goto <bb 62> (<L54>); [100.00%]
+
+<L58> [8.15%]:
+  __builtin_memmove (y_51(D), z_52(D), 12);
+  goto <bb 62> (<L54>); [100.00%]
+
+<L59> [8.15%]:
+  __builtin_memcpy (&locx, x_50(D), 12);
+  _774 = MEM[(short unsigned int *)&locx + 4B];
+  _783 = MEM[(short unsigned int *)&locx + 6B];
+  _647 = _783 | _774;
+  _792 = MEM[(short unsigned int *)&locx + 8B];
+  _646 = _647 | _792;
+  _801 = MEM[(short unsigned int *)&locx + 10B];
+  _712 = _646 | _801;
+  pretmp_436 = &y_51(D)->mantissa;
+  if (_712 == 0)
+    goto <bb 12>; [50.00%]
+  else
+    goto <bb 14>; [50.00%]
+
+  <bb 12> [4.08%]:
+  _496 = pretmp_436;
+  _492 = MEM[(short unsigned int *)pretmp_436];
+  _488 = (int) _492;
+  n_448 = _488;
+  _337 = pretmp_436 + 2;
+  _331 = *_337;
+  _330 = (int) _331;
+  n_328 = _330 | _488;
+  _41 = pretmp_436 + 4;
+  _17 = *_41;
+  _698 = (int) _17;
+  n_669 = n_328 | _698;
+  _109 = pretmp_436 + 6;
+  _110 = *_109;
+  _111 = (int) _110;
+  n_113 = n_669 | _111;
+  if (n_113 == 0)
+    goto <bb 5>; [50.00%]
+  else
+    goto <bb 13>; [50.00%]
+
+  <bb 13> [2.04%]:
+  z_52(D)->type = 0;
+  z_52(D)->sign = 0;
+  z_52(D)->exp = -32767;
+  z_52(D)->mantissa[0] = 0;
+  z_52(D)->mantissa[1] = 0;
+  z_52(D)->mantissa[2] = 0;
+  z_52(D)->mantissa[3] = 0;
+  goto <bb 79>; [100.00%]
+
+  <bb 14> [4.08%]:
+  _690 = pretmp_436;
+  _106 = MEM[(short unsigned int *)pretmp_436];
+  _703 = (int) _106;
+  n_324 = _703;
+  _742 = pretmp_436 + 2;
+  _301 = *_742;
+  _767 = (int) _301;
+  n_630 = _703 | _767;
+  _753 = pretmp_436 + 4;
+  _763 = *_753;
+  _628 = (int) _763;
+  n_791 = n_630 | _628;
+  _122 = pretmp_436 + 6;
+  _123 = *_122;
+  _124 = (int) _123;
+  n_126 = n_791 | _124;
+  if (n_126 == 0)
+    goto <bb 15>; [50.00%]
+  else
+    goto <bb 16>; [50.00%]
+
+  <bb 15> [2.04%]:
+  z_52(D)->type = 3;
+  z_52(D)->sign = 0;
+  z_52(D)->exp = -32767;
+  z_52(D)->mantissa[0] = 0;
+  z_52(D)->mantissa[1] = 0;
+  z_52(D)->mantissa[2] = 0;
+  z_52(D)->mantissa[3] = 0;
+  goto <bb 79>; [100.00%]
+
+  <bb 16> [2.04%]:
+  z_52(D)->type = _1;
+  _20 = x_50(D)->sign;
+  _21 = y_51(D)->sign;
+  _22 = _20 ^ _21;
+  z_52(D)->sign = _22;
+  _23 = x_50(D)->exp;
+  _24 = (unsigned short) _23;
+  _25 = y_51(D)->exp;
+  _26 = (unsigned short) _25;
+  _27 = _24 - _26;
+  _28 = _27 + 128;
+  _29 = (short int) _28;
+  z_52(D)->exp = _29;
+  z_52(D)->mantissa[0] = 0;
+  z_52(D)->mantissa[1] = 0;
+  z_52(D)->mantissa[2] = 0;
+  z_52(D)->mantissa[3] = 0;
+  ivtmp.45_757 = _27 + 127;
+  goto <bb 45>; [100.00%]
+
+  <bb 17> [5.77%]:
+  accum_654 = accum_653 | 1;
+
+  <bb 18> [11.55%]:
+  # accum_655 = PHI <accum_653(51), accum_654(17)>
+  accum_666 = extra_bits$2_256 << 1;
+  _364 = (signed short) extra_bits$3_327;
+  if (_364 < 0)
+    goto <bb 19>; [50.00%]
+  else
+    goto <bb 20>; [50.00%]
+
+  <bb 19> [5.77%]:
+  accum_667 = accum_666 | 1;
+
+  <bb 20> [11.55%]:
+  # accum_668 = PHI <accum_666(18), accum_667(19)>
+  accum_679 = extra_bits$1_234 << 1;
+  _363 = (signed short) extra_bits$2_256;
+  if (_363 < 0)
+    goto <bb 21>; [50.00%]
+  else
+    goto <bb 22>; [50.00%]
+
+  <bb 21> [5.77%]:
+  accum_680 = accum_679 | 1;
+
+  <bb 22> [11.55%]:
+  # accum_681 = PHI <accum_679(20), accum_680(21)>
+  accum_692 = extra_bits$0_299 << 1;
+  _359 = (signed short) extra_bits$1_234;
+  if (_359 < 0)
+    goto <bb 23>; [50.00%]
+  else
+    goto <bb 24>; [50.00%]
+
+  <bb 23> [5.77%]:
+  accum_693 = accum_692 | 1;
+
+  <bb 24> [11.55%]:
+  # accum_694 = PHI <accum_692(22), accum_693(23)>
+  _297 = (signed short) extra_bits$0_299;
+  pretmp_508 = y_51(D)->mantissa[0];
+  _486 = prephitmp_484 << 1;
+  if (_297 >= 0)
+    goto <bb 25>; [50.00%]
+  else
+    goto <bb 34>; [50.00%]
+
+  <bb 25> [5.77%]:
+  if (pretmp_508 > accum_694)
+    goto <bb 36>; [5.00%]
+  else
+    goto <bb 26>; [95.00%]
+
+  <bb 26> [5.48%]:
+  pretmp_574 = y_51(D)->mantissa[1];
+  if (pretmp_508 < accum_694)
+    goto <bb 27>; [5.00%]
+  else
+    goto <bb 28>; [95.00%]
+
+  <bb 27> [0.27%]:
+  pretmp_464 = y_51(D)->mantissa[3];
+  pretmp_617 = y_51(D)->mantissa[2];
+  goto <bb 35>; [100.00%]
+
+  <bb 28> [5.34%]:
+  if (pretmp_574 > accum_681)
+    goto <bb 36>; [5.00%]
+  else
+    goto <bb 29>; [95.00%]
+
+  <bb 29> [5.07%]:
+  pretmp_34 = y_51(D)->mantissa[2];
+  if (pretmp_574 < accum_681)
+    goto <bb 30>; [5.00%]
+  else
+    goto <bb 31>; [95.00%]
+
+  <bb 30> [0.25%]:
+  pretmp_504 = y_51(D)->mantissa[3];
+  goto <bb 35>; [100.00%]
+
+  <bb 31> [4.90%]:
+  if (pretmp_34 > accum_668)
+    goto <bb 36>; [5.00%]
+  else
+    goto <bb 32>; [95.00%]
+
+  <bb 32> [4.66%]:
+  pretmp_702 = y_51(D)->mantissa[3];
+  if (pretmp_34 < accum_668)
+    goto <bb 35>; [5.00%]
+  else
+    goto <bb 33>; [95.00%]
+
+  <bb 33> [4.53%]:
+  if (accum_655 < pretmp_702)
+    goto <bb 36>; [5.00%]
+  else
+    goto <bb 35>; [95.00%]
+
+  <bb 34> [5.78%]:
+  pretmp_468 = y_51(D)->mantissa[3];
+  pretmp_557 = y_51(D)->mantissa[2];
+  pretmp_612 = y_51(D)->mantissa[1];
+
+  <bb 35> [10.72%]:
+  # prephitmp_558 = PHI <pretmp_468(34), pretmp_504(30), pretmp_702(32), pretmp_702(33), pretmp_464(27)>
+  # prephitmp_460 = PHI <pretmp_557(34), pretmp_34(30), pretmp_34(32), pretmp_34(33), pretmp_617(27)>
+  # prephitmp_456 = PHI <pretmp_612(34), pretmp_574(30), pretmp_574(32), pretmp_574(33), pretmp_574(27)>
+  accum_570 = (unsigned int) accum_655;
+  _571 = (unsigned int) prephitmp_558;
+  accum_572 = accum_570 - _571;
+  _575 = accum_572 >> 16;
+  _576 = (short unsigned int) _575;
+  _577 = _576 & 1;
+  _578 = accum_655 - prephitmp_558;
+  accum_586 = (unsigned int) accum_668;
+  _587 = (unsigned int) prephitmp_460;
+  accum_588 = accum_586 - _587;
+  _589 = (unsigned int) _577;
+  accum_590 = accum_588 - _589;
+  _591 = accum_590 >> 16;
+  _592 = (short unsigned int) _591;
+  _593 = _592 & 1;
+  _594 = (short unsigned int) accum_590;
+  accum_602 = (unsigned int) accum_681;
+  _603 = (unsigned int) prephitmp_456;
+  accum_604 = accum_602 - _603;
+  _605 = (unsigned int) _593;
+  accum_606 = accum_604 - _605;
+  _607 = accum_606 >> 16;
+  _608 = (short unsigned int) _607;
+  _609 = _608 & 1;
+  _610 = (short unsigned int) accum_606;
+  accum_618 = (unsigned int) accum_694;
+  _619 = (unsigned int) pretmp_508;
+  accum_620 = accum_618 - _619;
+  _621 = (unsigned int) _609;
+  accum_622 = accum_620 - _621;
+  _626 = (short unsigned int) accum_622;
+  accum_522 = _486 | 1;
+
+  <bb 36> [11.55%]:
+  # accum_523 = PHI <_486(33), accum_522(35), _486(25), _486(28), _486(31)>
+  # extra_bits$0_47 = PHI <accum_694(33), _626(35), accum_694(25), accum_694(28), accum_694(31)>
+  # extra_bits$1_521 = PHI <accum_681(33), _610(35), accum_681(25), accum_681(28), accum_681(31)>
+  # extra_bits$2_293 = PHI <accum_668(33), _594(35), accum_668(25), accum_668(28), accum_668(31)>
+  # extra_bits$3_250 = PHI <accum_655(33), _578(35), accum_655(25), accum_655(28), accum_655(31)>
+  MEM[(short unsigned int *)z_52(D) + 10B] = accum_523;
+  accum_534 = prephitmp_259 << 1;
+  _274 = (signed short) prephitmp_484;
+  if (_274 < 0)
+    goto <bb 37>; [50.00%]
+  else
+    goto <bb 38>; [50.00%]
+
+  <bb 37> [5.77%]:
+  accum_535 = accum_534 | 1;
+
+  <bb 38> [11.55%]:
+  # accum_536 = PHI <accum_534(36), accum_535(37)>
+  MEM[(short unsigned int *)z_52(D) + 8B] = accum_536;
+  accum_547 = prephitmp_291 << 1;
+  _343 = (signed short) prephitmp_259;
+  if (_343 < 0)
+    goto <bb 39>; [50.00%]
+  else
+    goto <bb 40>; [50.00%]
+
+  <bb 39> [5.77%]:
+  accum_548 = accum_547 | 1;
+
+  <bb 40> [11.55%]:
+  # accum_549 = PHI <accum_547(38), accum_548(39)>
+  MEM[(short unsigned int *)z_52(D) + 6B] = accum_549;
+  accum_560 = _519 << 1;
+  _342 = (signed short) prephitmp_291;
+  if (_342 < 0)
+    goto <bb 41>; [50.00%]
+  else
+    goto <bb 42>; [50.00%]
+
+  <bb 41> [5.77%]:
+  accum_561 = accum_560 | 1;
+  MEM[(short unsigned int *)z_52(D) + 4B] = accum_561;
+  _773 = (short int) ivtmp.45_755;
+  _614 = (signed short) accum_561;
+  ivtmp.45_615 = ivtmp.45_755 - 1;
+  if (_614 >= 0)
+    goto <bb 44>; [85.00%]
+  else
+    goto <bb 43>; [15.00%]
+
+  <bb 42> [5.78%]:
+  # accum_562 = PHI <accum_560(40)>
+  MEM[(short unsigned int *)z_52(D) + 4B] = accum_560;
+  _38 = (short int) ivtmp.45_755;
+  _40 = (signed short) accum_560;
+  ivtmp.45_598 = ivtmp.45_755 - 1;
+  if (_40 >= 0)
+    goto <bb 44>; [85.00%]
+  else
+    goto <bb 43>; [15.00%]
+
+  <bb 43> [0.00%]:
+  # _344 = PHI <_38(42), _773(41)>
+  # accum_611 = PHI <accum_705(42), accum_705(41)>
+  # accum_804 = PHI <accum_720(42), accum_720(41)>
+  # accum_803 = PHI <accum_733(42), accum_733(41)>
+  # accum_802 = PHI <accum_746(42), accum_746(41)>
+  # accum_89 = PHI <accum_705(42), accum_705(41)>
+  # accum_678 = PHI <accum_720(42), accum_720(41)>
+  # accum_348 = PHI <accum_733(42), accum_733(41)>
+  # accum_780 = PHI <accum_746(42), accum_746(41)>
+  z_52(D)->exp = _344;
+  MEM[(short unsigned int *)&locx + 10B] = accum_89;
+  MEM[(short unsigned int *)&locx + 8B] = accum_678;
+  MEM[(short unsigned int *)&locx + 6B] = accum_348;
+  MEM[(short unsigned int *)&locx + 4B] = accum_780;
+  goto <bb 62> (<L54>); [0.00%]
+
+  <bb 44> [9.81%]:
+  # _260 = PHI <accum_561(41), accum_560(42)>
+  # extra_bits$0_408 = PHI <extra_bits$0_47(41), extra_bits$0_47(42)>
+  # extra_bits$1_412 = PHI <extra_bits$1_521(41), extra_bits$1_521(42)>
+  # extra_bits$2_428 = PHI <extra_bits$2_293(41), extra_bits$2_293(42)>
+  # extra_bits$3_595 = PHI <extra_bits$3_250(41), extra_bits$3_250(42)>
+  # locx__lsm.34_795 = PHI <accum_705(41), accum_705(42)>
+  # locx__lsm.36_583 = PHI <accum_720(41), accum_720(42)>
+  # locx__lsm.38_597 = PHI <accum_733(41), accum_733(42)>
+  # locx__lsm.40_559 = PHI <accum_746(41), accum_746(42)>
+  # prephitmp_580 = PHI <accum_536(41), accum_536(42)>
+  # prephitmp_581 = PHI <accum_549(41), accum_549(42)>
+  # prephitmp_665 = PHI <accum_523(41), accum_523(42)>
+  # ivtmp.45_676 = PHI <ivtmp.45_615(41), ivtmp.45_598(42)>
+
+  <bb 45> [11.55%]:
+  # _519 = PHI <_260(44), 0(16)>
+  # extra_bits$0_299 = PHI <extra_bits$0_47(44), 0(16)>
+  # extra_bits$1_234 = PHI <extra_bits$1_521(44), 0(16)>
+  # extra_bits$2_256 = PHI <extra_bits$2_293(44), 0(16)>
+  # extra_bits$3_327 = PHI <extra_bits$3_250(44), 0(16)>
+  # locx__lsm.34_125 = PHI <accum_705(44), _801(16)>
+  # locx__lsm.36_119 = PHI <accum_720(44), _792(16)>
+  # locx__lsm.38_317 = PHI <accum_733(44), _783(16)>
+  # locx__lsm.40_518 = PHI <accum_746(44), _774(16)>
+  # prephitmp_259 = PHI <accum_536(44), 0(16)>
+  # prephitmp_291 = PHI <accum_549(44), 0(16)>
+  # prephitmp_484 = PHI <accum_523(44), 0(16)>
+  # ivtmp.45_755 = PHI <ivtmp.45_676(44), ivtmp.45_757(16)>
+  accum_705 = locx__lsm.34_125 << 1;
+  accum_718 = locx__lsm.36_119 << 1;
+  _711 = (signed short) locx__lsm.34_125;
+  if (_711 < 0)
+    goto <bb 46>; [50.00%]
+  else
+    goto <bb 47>; [50.00%]
+
+  <bb 46> [5.77%]:
+  accum_719 = accum_718 | 1;
+
+  <bb 47> [11.55%]:
+  # accum_720 = PHI <accum_718(45), accum_719(46)>
+  accum_731 = locx__lsm.38_317 << 1;
+  _707 = (signed short) locx__lsm.36_119;
+  if (_707 < 0)
+    goto <bb 48>; [50.00%]
+  else
+    goto <bb 49>; [50.00%]
+
+  <bb 48> [5.77%]:
+  accum_732 = accum_731 | 1;
+
+  <bb 49> [11.55%]:
+  # accum_733 = PHI <accum_731(47), accum_732(48)>
+  accum_744 = locx__lsm.40_518 << 1;
+  _18 = (signed short) locx__lsm.38_317;
+  if (_18 < 0)
+    goto <bb 50>; [50.00%]
+  else
+    goto <bb 51>; [50.00%]
+
+  <bb 50> [5.77%]:
+  accum_745 = accum_744 | 1;
+
+  <bb 51> [11.55%]:
+  # accum_746 = PHI <accum_744(49), accum_745(50)>
+  accum_653 = extra_bits$3_327 << 1;
+  _290 = (signed short) locx__lsm.40_518;
+  if (_290 < 0)
+    goto <bb 17>; [50.00%]
+  else
+    goto <bb 18>; [50.00%]
+
+<L78> [8.16%]:
+  _616 = x_50(D);
+  _568 = MEM[(struct InternalFPF *)x_50(D) + 4B];
+  _262 = y_51(D);
+  _584 = MEM[(struct InternalFPF *)y_51(D) + 4B];
+  if (_568 > _584)
+    goto <bb 59>; [5.00%]
+  else
+    goto <bb 53>; [95.00%]
+
+  <bb 53> [7.75%]:
+  if (_568 < _584)
+    goto <bb 61>; [5.00%]
+  else
+    goto <bb 54>; [95.00%]
+
+  <bb 54> [7.37%]:
+  _502 = x_50(D);
+  _569 = MEM[(struct InternalFPF *)x_50(D) + 6B];
+  _599 = y_51(D);
+  _532 = MEM[(struct InternalFPF *)y_51(D) + 6B];
+  if (_569 > _532)
+    goto <bb 59>; [5.00%]
+  else
+    goto <bb 55>; [95.00%]
+
+  <bb 55> [7.00%]:
+  if (_569 < _532)
+    goto <bb 61>; [5.00%]
+  else
+    goto <bb 56>; [95.00%]
+
+  <bb 56> [6.65%]:
+  _245 = x_50(D);
+  _39 = MEM[(struct InternalFPF *)x_50(D) + 8B];
+  _642 = y_51(D);
+  _336 = MEM[(struct InternalFPF *)y_51(D) + 8B];
+  if (_39 > _336)
+    goto <bb 59>; [5.00%]
+  else
+    goto <bb 57>; [95.00%]
+
+  <bb 57> [6.31%]:
+  if (_39 < _336)
+    goto <bb 61>; [5.00%]
+  else
+    goto <bb 58>; [95.00%]
+
+  <bb 58> [5.99%]:
+  _764 = x_50(D);
+  _238 = MEM[(struct InternalFPF *)x_50(D) + 10B];
+  _83 = y_51(D);
+  _239 = MEM[(struct InternalFPF *)y_51(D) + 10B];
+  if (_238 > _239)
+    goto <bb 59>; [5.00%]
+  else
+    goto <bb 60>; [95.00%]
+
+  <bb 59> [7.03%]:
+  __builtin_memmove (x_50(D), z_52(D), 12);
+  goto <bb 62> (<L54>); [100.00%]
+
+  <bb 60> [5.68%]:
+  if (_238 < _239)
+    goto <bb 61>; [5.00%]
+  else
+    goto <bb 59>; [95.00%]
+
+  <bb 61> [1.11%]:
+  __builtin_memmove (y_51(D), z_52(D), 12);
+
+<L54> [34.61%]:
+  _170 = z_52(D)->type;
+  _171 = _170 + 255;
+  if (_171 <= 1)
+    goto <bb 63>; [57.79%]
+  else
+    goto <bb 79>; [42.21%]
+
+  <bb 63> [20.00%]:
+  _249 = &z_52(D)->mantissa;
+  _721 = _249;
+  _717 = MEM[(short unsigned int *)_249];
+  _715 = (int) _717;
+  n_708 = _715;
+  _643 = _249 + 2;
+  _635 = *_643;
+  _631 = (int) _635;
+  _533 = _249 + 4;
+  _531 = *_533;
+  _512 = (int) _531;
+  _188 = _512 | _631;
+  _253 = _249 + 6;
+  _254 = *_253;
+  _255 = (int) _254;
+  _639 = _188 | _255;
+  n_257 = _639 | _715;
+  if (n_257 == 0)
+    goto <bb 64>; [33.00%]
+  else
+    goto <bb 83>; [67.00%]
+
+  <bb 64> [6.60%]:
+  __builtin_puts (&"Error:  zero significand in denormalize"[0]);
+  pretmp_347 = z_52(D)->type;
+  goto <bb 78>; [100.00%]
+
+  <bb 65> [1.20%]:
+  z_52(D)->exp = -32767;
+  if (prephitmp_309 != 0)
+    goto <bb 67>; [0.00%]
+  else
+    goto <bb 79>; [100.00%]
+
+  <bb 66> [2.01%]:
+  _292 = accum_398 | 1;
+  MEM[(short unsigned int *)z_52(D) + 10B] = _292;
+  goto <bb 81>; [100.00%]
+
+  <bb 67> [4.02%]:
+  accum_355 = MEM[(short unsigned int *)z_52(D) + 4B];
+  _356 = accum_355 & 1;
+  accum_357 = accum_355 >> 1;
+  MEM[(short unsigned int *)z_52(D) + 4B] = accum_357;
+  accum_368 = MEM[(short unsigned int *)z_52(D) + 6B];
+  _369 = accum_368 & 1;
+  accum_370 = accum_368 >> 1;
+  if (_356 != 0)
+    goto <bb 68>; [50.00%]
+  else
+    goto <bb 69>; [50.00%]
+
+  <bb 68> [2.01%]:
+  accum_371 = accum_370 | 32768;
+
+  <bb 69> [4.02%]:
+  # accum_372 = PHI <accum_370(67), accum_371(68)>
+  MEM[(short unsigned int *)z_52(D) + 6B] = accum_372;
+  accum_381 = MEM[(short unsigned int *)z_52(D) + 8B];
+  _382 = accum_381 & 1;
+  accum_383 = accum_381 >> 1;
+  if (_369 != 0)
+    goto <bb 70>; [50.00%]
+  else
+    goto <bb 71>; [50.00%]
+
+  <bb 70> [2.01%]:
+  accum_384 = accum_383 | 32768;
+
+  <bb 71> [4.02%]:
+  # accum_385 = PHI <accum_383(69), accum_384(70)>
+  MEM[(short unsigned int *)z_52(D) + 8B] = accum_385;
+  accum_394 = MEM[(short unsigned int *)z_52(D) + 10B];
+  _395 = accum_394 & 1;
+  accum_396 = accum_394 >> 1;
+  if (_382 != 0)
+    goto <bb 72>; [50.00%]
+  else
+    goto <bb 73>; [50.00%]
+
+  <bb 72> [2.01%]:
+  accum_397 = accum_396 | 32768;
+
+  <bb 73> [4.02%]:
+  # accum_398 = PHI <accum_396(71), accum_397(72)>
+  if (_395 != 0)
+    goto <bb 66>; [50.00%]
+  else
+    goto <bb 80>; [50.00%]
+
+  <bb 74> [14.77%]:
+  # prephitmp_449 = PHI <prephitmp_309(78), prephitmp_175(83)>
+  if (prephitmp_449 != 0)
+    goto <bb 75>; [45.88%]
+  else
+    goto <bb 79>; [54.12%]
+
+  <bb 75> [6.78%]:
+  pretmp_490 = MEM[(short unsigned int *)z_52(D) + 10B];
+
+  <bb 76> [10.80%]:
+  # prephitmp_489 = PHI <pretmp_490(75), prephitmp_424(81)>
+  _248 = prephitmp_489 & 65528;
+  z_52(D)->mantissa[3] = _248;
+
+  <bb 77> [81.50%]:
+  extra_bits ={v} {CLOBBER};
+  locx ={v} {CLOBBER};
+  return;
+
+  <bb 78> [6.60%]:
+  # prephitmp_309 = PHI <pretmp_347(64)>
+  _341 = z_52(D)->exp;
+  if (_341 == -32768)
+    goto <bb 65>; [18.32%]
+  else
+    goto <bb 74>; [81.68%]
+
+  <bb 79> [70.70%]:
+  goto <bb 77>; [100.00%]
+
+  <bb 80> [2.01%]:
+  MEM[(short unsigned int *)z_52(D) + 10B] = accum_398;
+
+  <bb 81> [4.02%]:
+  # prephitmp_424 = PHI <accum_398(80), _292(66)>
+  goto <bb 76>; [100.00%]
+
+  <bb 82> [1.42%]:
+  z_52(D)->exp = -32767;
+  goto <bb 67>; [100.00%]
+
+  <bb 83> [13.40%]:
+  # prephitmp_175 = PHI <_170(63)>
+  _92 = z_52(D)->exp;
+  if (_92 == -32768)
+    goto <bb 82>; [10.56%]
+  else
+    goto <bb 74>; [89.44%]
+
+}
+
+
+
+;; Function AddSubInternalFPF (AddSubInternalFPF, funcdef_no=49, decl_uid=2819, cgraph_uid=49, symbol_order=49)
+
+;; 24 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 107 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 108 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106
+;;
+;; Loop 21
+;;  header 55, latch 54
+;;  depth 1, outer 0
+;;  nodes: 55 54 61 60 59 57 58 56
+;;
+;; Loop 22
+;;  header 18, latch 107
+;;  depth 1, outer 0
+;;  nodes: 18 107 26 24 25 22 23 20 21 19
+;;
+;; Loop 23
+;;  header 34, latch 108
+;;  depth 1, outer 0
+;;  nodes: 34 108 42 40 41 38 39 36 37 35
+;; 2 succs { 85 3 8 7 6 9 73 74 }
+;; 3 succs { 5 4 }
+;; 4 succs { 85 }
+;; 5 succs { 85 }
+;; 6 succs { 85 }
+;; 7 succs { 85 }
+;; 8 succs { 85 }
+;; 9 succs { 10 13 }
+;; 10 succs { 12 11 }
+;; 11 succs { 12 }
+;; 12 succs { 45 }
+;; 13 succs { 14 29 }
+;; 14 succs { 15 28 }
+;; 15 succs { 17 16 }
+;; 16 succs { 18 }
+;; 17 succs { 28 }
+;; 107 succs { 18 }
+;; 18 succs { 19 20 }
+;; 19 succs { 20 }
+;; 20 succs { 21 22 }
+;; 21 succs { 22 }
+;; 22 succs { 23 24 }
+;; 23 succs { 24 }
+;; 24 succs { 25 26 }
+;; 25 succs { 26 }
+;; 26 succs { 107 27 }
+;; 27 succs { 28 }
+;; 28 succs { 45 }
+;; 29 succs { 30 44 }
+;; 30 succs { 33 31 }
+;; 31 succs { 32 44 }
+;; 32 succs { 34 }
+;; 33 succs { 44 }
+;; 108 succs { 34 }
+;; 34 succs { 35 36 }
+;; 35 succs { 36 }
+;; 36 succs { 37 38 }
+;; 37 succs { 38 }
+;; 38 succs { 39 40 }
+;; 39 succs { 40 }
+;; 40 succs { 41 42 }
+;; 41 succs { 42 }
+;; 42 succs { 108 43 }
+;; 43 succs { 44 }
+;; 44 succs { 45 }
+;; 45 succs { 46 63 }
+;; 46 succs { 47 48 }
+;; 47 succs { 48 }
+;; 48 succs { 49 50 }
+;; 49 succs { 103 }
+;; 50 succs { 52 51 }
+;; 51 succs { 52 4 }
+;; 52 succs { 53 4 }
+;; 53 succs { 55 }
+;; 54 succs { 55 }
+;; 55 succs { 56 57 }
+;; 56 succs { 57 }
+;; 57 succs { 58 59 }
+;; 58 succs { 59 }
+;; 59 succs { 60 61 }
+;; 60 succs { 54 62 }
+;; 61 succs { 54 62 }
+;; 62 succs { 85 }
+;; 63 succs { 64 71 }
+;; 64 succs { 65 66 }
+;; 65 succs { 66 }
+;; 66 succs { 67 68 }
+;; 67 succs { 68 }
+;; 68 succs { 69 70 }
+;; 69 succs { 70 }
+;; 70 succs { 104 }
+;; 71 succs { 72 4 }
+;; 72 succs { 104 }
+;; 73 succs { 103 }
+;; 74 succs { 81 75 }
+;; 75 succs { 83 76 }
+;; 76 succs { 81 77 }
+;; 77 succs { 83 78 }
+;; 78 succs { 81 79 }
+;; 79 succs { 83 80 }
+;; 80 succs { 81 82 }
+;; 81 succs { 85 }
+;; 82 succs { 83 84 }
+;; 83 succs { 85 }
+;; 84 succs { 83 }
+;; 85 succs { 86 103 }
+;; 86 succs { 87 }
+;; 87 succs { 88 102 }
+;; 88 succs { 102 }
+;; 89 succs { 91 103 }
+;; 90 succs { 106 }
+;; 91 succs { 92 93 }
+;; 92 succs { 93 }
+;; 93 succs { 94 95 }
+;; 94 succs { 95 }
+;; 95 succs { 96 97 }
+;; 96 succs { 97 }
+;; 97 succs { 90 105 }
+;; 98 succs { 99 103 }
+;; 99 succs { 100 }
+;; 100 succs { 101 }
+;; 101 succs { 1 }
+;; 102 succs { 89 98 }
+;; 103 succs { 101 }
+;; 104 succs { 87 }
+;; 105 succs { 106 }
+;; 106 succs { 100 }
+
+SSA replacement table
+N_i -> { O_1 ... O_j } means that N_i replaces O_1, ..., O_j
+
+accum_180 -> { accum_347 }
+locx__lsm.67_181 -> { locx__lsm.67_426 }
+accum_218 -> { accum_441 }
+accum_275 -> { accum_445 }
+locy__lsm.59_418 -> { locy__lsm.59_526 }
+accum_428 -> { accum_304 }
+accum_516 -> { accum_455 }
+accum_601 -> { accum_565 }
+accum_612 -> { accum_544 }
+accum_619 -> { accum_167 }
+accum_627 -> { accum_589 }
+Incremental SSA update started at block: 9
+Number of blocks in CFG: 109
+Number of blocks to update: 19 ( 17%)
+
+
+Adding assert for accum_575 from accum_575 + 32768
+Adding assert for accum_575 from accum_575 + 32768
+Adding assert for accum_54 from accum_54 + 32768
+Adding assert for accum_54 from accum_54 + 32768
+Adding assert for _556 from _556 + 32768
+
+SSA replacement table
+N_i -> { O_1 ... O_j } means that N_i replaces O_1, ..., O_j
+
+accum_68 -> { accum_54 }
+z_131 -> { z_60(D) }
+z_132 -> { z_60(D) }
+z_133 -> { z_60(D) }
+z_134 -> { z_60(D) }
+z_135 -> { z_60(D) }
+z_136 -> { z_60(D) }
+z_137 -> { z_60(D) }
+z_166 -> { z_60(D) }
+x_349 -> { x_58(D) }
+z_523 -> { z_60(D) }
+z_524 -> { z_60(D) }
+z_525 -> { z_60(D) }
+y_535 -> { y_59(D) }
+x_617 -> { x_58(D) }
+_629 -> { _33 }
+_631 -> { _42 }
+_632 -> { _53 }
+accum_633 -> { accum_54 }
+z_648 -> { z_60(D) }
+z_649 -> { z_60(D) }
+z_650 -> { z_60(D) }
+z_651 -> { z_60(D) }
+z_652 -> { z_60(D) }
+z_653 -> { z_60(D) }
+z_654 -> { z_60(D) }
+z_655 -> { z_60(D) }
+exponent_difference_656 -> { exponent_difference_62 }
+exponent_difference_657 -> { exponent_difference_62 }
+exponent_difference_658 -> { exponent_difference_62 }
+exponent_difference_659 -> { exponent_difference_62 }
+exponent_difference_660 -> { exponent_difference_62 }
+exponent_difference_661 -> { exponent_difference_62 }
+operation_662 -> { operation_65(D) }
+_663 -> { _179 }
+_664 -> { _236 }
+_665 -> { _237 }
+_666 -> { _244 }
+_667 -> { _338 }
+i_668 -> { i_425 }
+_669 -> { _432 }
+_670 -> { _465 }
+_671 -> { _470 }
+_672 -> { _488 }
+i_673 -> { i_517 }
+prephitmp_674 -> { prephitmp_540 }
+_675 -> { _554 }
+_676 -> { _556 }
+_677 -> { _557 }
+accum_678 -> { accum_575 }
+accum_679 -> { accum_575 }
+_680 -> { _644 }
+_681 -> { _645 }
+Incremental SSA update started at block: 2
+Number of blocks in CFG: 114
+Number of blocks to update: 72 ( 63%)
+
+
+
+Value ranges after VRP:
+
+_1: VARYING
+_2: [0, 255]
+_3: [0, 1275]
+_4: VARYING
+_5: [0, 255]
+_6: [0, 1530]
+_7: VARYING
+_8: VARYING
+_9: [0, +INF]
+_10: VARYING
+_11: [0, +INF]
+_12: VARYING
+_13: [-32768, 32767]
+_14: VARYING
+_15: [-32768, 32767]
+_17: VARYING
+_18: [3, 3]
+_19: VARYING
+_21: [1, 63]
+i_22: [1, 1]
+_23: VARYING
+_24: [0, +INF]
+_26: [0, 1]  EQUIVALENCES: { _491 } (1 elements)
+accum_27: [0, 131071]
+_28: [0, +INF]
+_29: VARYING
+_30: VARYING
+_31: [0, +INF]
+_32: VARYING
+_33: VARYING
+_34: VARYING
+_35: VARYING
+_36: VARYING
+_37: VARYING
+_38: VARYING
+_39: [0, +INF]
+_40: [0, +INF]
+_41: VARYING
+_42: ~[0B, 0B]
+_43: VARYING
+_44: [32768, +INF]
+_45: [0, 1]
+_46: VARYING
+z__lsm.88_47: [1, +INF]
+.MEM_48: VARYING
+accum_49: [0, +INF]
+i_50: [1, 1]
+.MEM_51: VARYING
+accum_52: VARYING
+_53: VARYING
+accum_54: [0, 65534]
+_55: [0, 0]
+.MEM_56: VARYING
+x_58(D): VARYING
+y_59(D): VARYING
+z_60(D): VARYING
+_61: [0, +INF]
+exponent_difference_62: [-65535, 65535]
+_63: [0, 0]
+operation_65(D): [0, 1]
+accum_68: [32768, 65534]  EQUIVALENCES: { accum_54 } (1 elements)
+_72: VARYING
+accum_73: [0, +INF]
+i_80: [-1, -1]
+i_82: [-1, -1]
+_84: [0, 65535]
+i_87: [-1, -1]
+_92: [_138, _138]  EQUIVALENCES: { _138 } (1 elements)
+_93: ~[0, 0]
+_94: [0, 32767]  EQUIVALENCES: { } (0 elements)
+accum_95: [0, 65535]
+_96: [0, 65535]
+accum_97: ~[65536, 4294901760]
+_98: [0, 1]
+accum_99: ~[65536, 4294901759]
+_100: [0, 65535]
+_101: [0, +INF]
+_102: [0, 1]
+_103: [0, +INF]
+_104: [0, 65535]
+_105: VARYING
+_106: [0, 1]
+accum_107: ~[1, 4294901759]
+_108: [0, 65535]
+_109: [0, +INF]
+_110: [0, 1]
+_111: [0, +INF]
+_112: [0, +INF]
+_113: [3, 3]
+_114: [6, 6]
+_115: VARYING
+_116: VARYING
+_117: [0, 65535]
+_118: [0, 65536]
+n_119: [0, 65535]
+i_120: [4, 4]
+accum_121: [0, 65535]
+_122: [0, 65535]
+accum_123: [0, 131070]
+_124: [0, 1]  EQUIVALENCES: { _153 } (1 elements)
+accum_125: [0, 131071]
+_126: [0, 1]
+_127: [0, 1]
+_128: VARYING
+_129: [0, +INF]
+i_130: [2, 2]
+z_131: ~[0B, 0B]  EQUIVALENCES: { z_60(D) } (1 elements)
+z_132: ~[0B, 0B]  EQUIVALENCES: { z_60(D) } (1 elements)
+z_133: ~[0B, 0B]  EQUIVALENCES: { z_60(D) } (1 elements)
+z_134: ~[0B, 0B]  EQUIVALENCES: { z_60(D) } (1 elements)
+z_135: ~[0B, 0B]  EQUIVALENCES: { z_60(D) } (1 elements)
+z_136: ~[0B, 0B]  EQUIVALENCES: { z_60(D) } (1 elements)
+z_137: ~[0B, 0B]  EQUIVALENCES: { z_60(D) } (1 elements)
+_138: VARYING
+i_139: [4, 4]
+accum_140: ~[65536, 4294901759]
+_141: [0, 1]
+_142: VARYING
+_143: [0, +INF]
+i_144: [2, 2]
+accum_145: ~[65536, 4294901760]
+.MEM_146: VARYING
+_151: [0, 65535]
+_153: [0, 1]
+_155: VARYING
+locx__lsm.69_164: VARYING
+.MEM_165: VARYING
+z_166: ~[0B, 0B]  EQUIVALENCES: { z_60(D) } (1 elements)
+accum_167: [0, +INF]
+accum_168: [1, +INF]
+accum_171: [0, 65535]
+_173: [0, 65535]
+_174: VARYING
+_175: VARYING
+pretmp_176: VARYING
+prephitmp_177: ~[0B, 0B]
+pretmp_178: ~[0B, 0B]
+_179: VARYING
+accum_180: [0, +INF]
+locx__lsm.67_181: [0, +INF]
+_182: [3, 3]
+_183: [6, 6]
+_184: ~[0B, 0B]  EQUIVALENCES: { _179 _663 } (2 elements)
+_185: [0, 0]
+i_186: [1, 1]
+_188: [0, +INF]
+_189: [6, 6]
+_190: [0, 65535]
+_191: [0, 65535]  EQUIVALENCES: { _537 } (1 elements)
+z__lsm.87_192: [1, +INF]  EQUIVALENCES: { accum_575 } (1 elements)
+_193: [0, 65535]
+_194: [0, 1]
+ivtmp_195: [3, 3]
+i_196: [3, 3]
+_197: [0, +INF]
+_198: [0, 65535]
+accum_199: ~[65536, 4294901759]
+_200: [0, 1]
+z__lsm.53_201: VARYING
+accum_202: ~[65536, 4294901760]
+_203: [0, 65535]
+pretmp_204: VARYING
+prephitmp_205: VARYING
+pretmp_206: VARYING
+pretmp_207: VARYING
+accum_208: [0, 65535]
+_209: VARYING
+prephitmp_210: VARYING
+_211: VARYING
+_212: [1, 1]
+ivtmp_213: [1, 1]
+_214: VARYING
+.MEM_215: VARYING
+_216: [0, 0]
+accum_217: [0, 131071]
+accum_218: [0, +INF]
+_219: [3, 3]
+_220: [6, 6]
+_221: ~[0B, 0B]  EQUIVALENCES: { _179 _663 } (2 elements)
+_222: [3, 3]
+_223: [0, 0]
+i_224: [2, 2]
+prephitmp_226: [0, +INF]
+_227: [0, +INF]
+_228: [0, 1]
+_229: [0, 1]
+_230: [4, 4]
+_231: VARYING
+_232: VARYING
+i_233: [0, 0]
+_234: [0, 65535]
+.MEM_235: VARYING
+_236: VARYING
+_237: VARYING
+i_239: [4, 4]
+z__lsm.53_240: VARYING
+_242: [2, 2]
+_244: VARYING
+_245: [0, 0]
+_246: [0, 65528]
+z__lsm.87_247: [0, 65534]  EQUIVALENCES: { accum_54 } (1 elements)
+_249: [3, 3]
+_250: [6, 6]
+_251: VARYING
+_252: VARYING
+_253: [0, 65535]
+cstore_254: [1, 2]
+n_255: [0, 65535]
+i_256: [4, 4]
+.MEM_257: VARYING
+accum_258: [0, 131070]  EQUIVALENCES: { accum_259 } (1 elements)
+accum_259: [0, 131070]
+_260: [0, 65535]
+_261: VARYING
+_262: [0, +INF]
+_263: [0, 65535]
+accum_264: ~[65536, 4294901760]  EQUIVALENCES: { accum_269 } (1 elements)
+_265: [32768, 32768]
+_266: [0, 0]
+_267: [32769, 32769]
+_268: [-32767, -32767]
+accum_269: ~[65536, 4294901760]
+_270: VARYING
+i_271: [2, 2]
+_272: [0, +INF]
+accum_273: [0, +INF]
+accum_274: [0, 32767]
+accum_275: [0, +INF]
+_276: [0, 65535]
+_277: [0, 0]
+accum_278: [0, 65535]
+_279: VARYING
+_280: VARYING
+ivtmp_281: [4, 4]
+borrow_282: [0, 0]
+.MEM_283: VARYING
+i_284: [3, 3]
+accum_285: [0, +INF]
+ivtmp_286: [1, 1]
+i_287: [0, 0]
+_288: ~[0B, 0B]  EQUIVALENCES: { y_59(D) y_535 } (2 elements)
+_289: [2, 2]
+_290: [1, +INF]
+_291: VARYING
+_293: ~[0B, 0B]  EQUIVALENCES: { _338 _667 } (2 elements)
+_294: [0, +INF]
+accum_295: [0, +INF]
+z__lsm.53_296: [0, +INF]
+.MEM_297: VARYING
+_298: [0, +INF]
+_299: [0, 1]
+locy__lsm.59_300: [0, +INF]
+accum_301: [1, +INF]
+.MEM_302: VARYING
+_303: [0, +INF]
+accum_304: [0, +INF]
+_305: VARYING
+_306: [0, 65535]
+_307: [2, 2]
+accum_308: ~[1, 4294901759]
+.MEM_309: VARYING
+locx__lsm.73_310: VARYING
+i_311: [3, 3]
+_312: [0, 1]
+_315: [0, 65536]
+_316: [0, 1]
+_318: [0, 65535]
+_319: VARYING
+_320: [4, 4]
+pretmp_322: ~[0B, 0B]
+_323: ~[0B, 0B]  EQUIVALENCES: { _338 _667 } (2 elements)
+pretmp_324: VARYING
+_328: [2, 2]
+_330: [4, 4]
+z__lsm.51_331: VARYING
+_332: [0, 0]
+_333: ~[0B, 0B]  EQUIVALENCES: { x_58(D) x_617 } (2 elements)
+i_335: [1, 1]
+z__lsm.55_337: VARYING
+_338: VARYING
+_339: [0, +INF]
+_340: [0, 1]
+_341: [0, 0]
+_342: [0, 0]
+ivtmp_343: [0, 0]
+locx__lsm.71_346: VARYING
+accum_347: [0, +INF]
+i_348: [2, 2]
+x_349: ~[0B, 0B]  EQUIVALENCES: { x_58(D) x_617 } (2 elements)
+_350: [0, 65535]
+_351: [2, 2]
+accum_352: [0, 32767]
+_353: [0, 1]
+_354: [0, 0]
+_356: [0, +INF]
+_357: [3, 3]
+_358: [6, 6]
+z__lsm.55_359: [0, +INF]
+_360: [0, +INF]
+n_363: [0, 65535]  EQUIVALENCES: { _625 } (1 elements)
+accum_364: [0, +INF]
+accum_365: [32768, +INF]
+_366: [0, +INF]
+_367: [0, +INF]
+_368: [0, 65535]
+ivtmp_369: [0, 0]
+accum_370: VARYING
+_371: [0, 1]
+accum_372: [0, 32767]
+accum_373: ~[1, 4294901759]
+accum_374: ~[1, 4294901760]
+_376: [0, 65536]
+_377: [0, 1]
+z__lsm.88_378: [1, +INF]
+_379: [4, 4]
+_380: [0, 65535]
+_381: VARYING
+accum_383: VARYING
+_384: [0, 1]
+accum_385: [0, 32767]
+accum_386: [32768, +INF]
+accum_387: [0, +INF]
+_389: ~[0B, 0B]  EQUIVALENCES: { _338 _667 } (2 elements)
+_390: [2, 2]
+_391: [4, 4]
+_392: ~[0B, 0B]  EQUIVALENCES: { _338 _667 } (2 elements)
+ivtmp_393: [3, 3]
+i_394: [2, 2]
+locy__lsm.61_395: VARYING
+accum_396: VARYING
+_397: [0, 1]
+accum_398: [0, 32767]
+accum_399: [32768, +INF]
+accum_400: [0, +INF]
+accum_402: [0, 32767]
+_403: [0, 1]
+_405: [0, +INF]
+_406: [0, 1]
+_407: [0, +INF]
+accum_408: [0, +INF]
+accum_409: VARYING
+_410: [0, 1]
+accum_411: [0, 32767]
+accum_412: [32768, +INF]
+accum_413: [0, +INF]
+accum_415: VARYING
+z__exp_lsm.57_416: VARYING
+ivtmp_417: [0, 0]
+locy__lsm.59_418: [0, +INF]
+locx__lsm.67_419: [0, +INF]
+z__exp_lsm.57_420: VARYING
+locy__lsm.63_421: VARYING
+_422: [0, 65535]
+i_423: [3, 3]
+_424: [3, 3]
+i_425: [1, 64]
+locx__lsm.67_426: [0, +INF]
+_427: [1, +INF]
+accum_428: [0, +INF]
+accum_429: [0, +INF]
+accum_430: [32768, +INF]
+accum_431: [0, 32767]
+_432: VARYING
+_433: [2, 2]
+locy__lsm.65_434: VARYING
+accum_435: [0, 65535]
+.MEM_436: VARYING
+_437: ~[0B, 0B]  EQUIVALENCES: { _465 _670 } (2 elements)
+_438: [2, 2]
+_439: VARYING
+_440: [0, 1]
+accum_441: [0, +INF]
+accum_442: [32768, +INF]
+accum_443: [0, 32767]
+_444: [0, 1]
+accum_445: [0, +INF]
+accum_446: [32768, +INF]
+locy__lsm.59_447: VARYING
+_448: [0, 1]  EQUIVALENCES: { _484 } (1 elements)
+carry_449: [0, 0]
+_450: VARYING
+_451: ~[0B, 0B]  EQUIVALENCES: { x_58(D) x_349 x_617 } (3 elements)
+i_452: [2, 2]
+accum_453: [0, 32767]
+_454: [0, 1]
+accum_455: [0, 32767]
+_456: [0, 1]
+locx__lsm.73_457: VARYING
+locx__lsm.71_458: VARYING
+locx__lsm.69_459: VARYING
+_460: VARYING
+_461: ~[0B, 0B]  EQUIVALENCES: { y_59(D) y_535 } (2 elements)
+locx__lsm.67_462: VARYING
+_463: [0, 0]
+_464: [3, 3]
+_465: VARYING
+_466: [2, 2]
+_467: [1, 1]
+z__exp_lsm.57_468: VARYING
+z__lsm.51_469: [0, +INF]
+_470: VARYING
+i_471: [1, 1]
+accum_472: [0, 131070]
+accum_474: [0, 65535]
+_475: [4, 4]
+_476: ~[0B, 0B]  EQUIVALENCES: { y_59(D) y_535 } (2 elements)
+_477: [0, 65535]
+_478: VARYING
+_479: [0, 0]
+ivtmp_481: [1, 1]
+_482: [6, 6]
+_483: ~[0B, 0B]  EQUIVALENCES: { _465 _670 } (2 elements)
+_484: [0, 1]
+_485: [0, 1]
+accum_486: VARYING
+_488: VARYING
+_489: [3, 3]
+ivtmp_490: [3, 3]
+_491: [0, 1]
+ivtmp_492: [0, 0]
+ivtmp_493: [0, 0]
+ivtmp_495: [4, 4]
+_496: [4, 4]
+_497: VARYING
+.MEM_498: VARYING
+_499: [3, 3]
+i_500: [0, 63]
+z__lsm.87_502: [32768, +INF]  EQUIVALENCES: { } (0 elements)
+_503: [0, 65535]
+_504: [2, 2]
+_505: ~[0B, 0B]  EQUIVALENCES: { _179 _663 } (2 elements)
+_506: VARYING
+accum_508: [0, 65535]
+_509: VARYING
+_510: [0, 65535]
+_511: [0, 0]
+i_512: [3, 3]
+_513: [0, 0]
+_514: [0, 0]
+accum_515: [0, +INF]
+accum_516: [0, 32767]
+i_517: [1, 63]
+prephitmp_518: VARYING
+pretmp_519: VARYING
+_520: [0, +INF]
+_521: [0, 0]
+ivtmp_522: [1, 1]
+z_523: ~[0B, 0B]  EQUIVALENCES: { z_60(D) } (1 elements)
+z_524: ~[0B, 0B]  EQUIVALENCES: { z_60(D) } (1 elements)
+z_525: ~[0B, 0B]  EQUIVALENCES: { z_60(D) } (1 elements)
+locy__lsm.59_526: [0, +INF]
+i_527: [1, 1]
+accum_528: [0, +INF]
+_529: [1, +INF]
+accum_530: [0, +INF]
+_531: ~[0B, 0B]  EQUIVALENCES: { _465 _670 } (2 elements)
+accum_532: [0, 32767]
+accum_533: [0, 131070]
+_534: [0, 1]
+y_535: ~[0B, 0B]  EQUIVALENCES: { y_59(D) } (1 elements)
+_536: VARYING
+_537: [0, 65535]
+_538: [0, 0]
+accum_539: [32768, +INF]
+prephitmp_540: ~[0B, 0B]
+accum_541: [0, 32767]
+accum_542: [32768, +INF]
+_543: [0, 1]
+accum_544: [0, +INF]
+accum_545: [32768, +INF]
+accum_547: [32768, +INF]
+_548: [0, +INF]
+ivtmp_549: [1, 1]
+accum_550: [0, 32767]
+z__lsm.88_551: [1, +INF]
+_552: ~[0B, 0B]  EQUIVALENCES: { x_58(D) x_349 x_617 } (3 elements)
+_554: VARYING
+_555: [0, +INF]
+_556: VARYING
+_557: VARYING
+_558: VARYING
+_559: [0, 0]
+i_561: [0, 0]
+accum_562: [0, 32767]
+_563: [0, 1]
+accum_564: [0, 32767]
+accum_565: [0, +INF]
+_567: [6, 6]
+_568: [4, 4]
+_569: [0, 0]
+_570: [0, 0]
+accum_571: [32768, +INF]
+_572: ~[0B, 0B]  EQUIVALENCES: { x_58(D) x_349 x_617 } (3 elements)
+accum_573: [0, 32767]
+accum_574: [0, +INF]
+accum_575: [1, +INF]
+_576: [6, 6]
+_577: [0, 65535]
+z__lsm.55_578: VARYING
+ivtmp_579: [0, 0]
+_580: ~[0B, 0B]  EQUIVALENCES: { y_59(D) y_535 } (2 elements)
+_581: [0, 1]
+_582: [_33, _33]  EQUIVALENCES: { _33 } (1 elements)
+_583: VARYING
+_584: [0, 65535]
+n_585: [0, 65535]  EQUIVALENCES: { _584 } (1 elements)
+_586: [0, 1]
+accum_587: [0, +INF]
+_588: [0, +INF]
+accum_589: [0, 32767]
+_590: [0, 1]
+locy__lsm.65_591: VARYING
+locy__lsm.63_592: VARYING
+ivtmp_593: [4, 4]
+accum_594: [0, +INF]
+i_595: [1, 1]
+ivtmp_596: [3, 3]
+_597: ~[0B, 0B]  EQUIVALENCES: { _338 _667 } (2 elements)
+_598: [4, 4]
+locy__lsm.61_599: VARYING
+locy__lsm.59_600: VARYING
+accum_601: [0, +INF]
+.MEM_602: VARYING
+i_603: [0, 62]
+pretmp_604: VARYING
+_605: [6, 6]
+_606: [0, 0]
+.MEM_607: VARYING
+_608: [2, 2]
+_609: [1, 1]
+_610: [2, 2]
+_611: VARYING
+accum_612: [0, +INF]
+_613: VARYING
+_614: ~[-1, -1]
+_615: [_643, _643]  EQUIVALENCES: { _643 } (1 elements)
+x_617: ~[0B, 0B]  EQUIVALENCES: { x_58(D) } (1 elements)
+z__lsm.87_618: VARYING
+accum_619: [0, +INF]
+_621: [6, 6]
+_622: [0, 65535]
+accum_623: [0, 65534]
+_625: [0, 65535]
+ivtmp_626: [0, 0]
+accum_627: [0, 32767]
+_628: ~[0B, 0B]  EQUIVALENCES: { prephitmp_540 } (1 elements)
+_629: ~[0B, 0B]  EQUIVALENCES: { _33 } (1 elements)
+_630: [0, 32767]  EQUIVALENCES: { } (0 elements)
+_631: ~[0B, 0B]  EQUIVALENCES: { _42 } (1 elements)
+_632: ~[0B, 0B]  EQUIVALENCES: { _53 } (1 elements)
+accum_633: [0, 32767]  EQUIVALENCES: { accum_54 } (1 elements)
+.MEM_634: VARYING
+ivtmp_635: [1, 1]
+z__lsm.51_636: VARYING
+i_637: [0, 0]
+_639: [0, +INF]
+.MEM_640: VARYING
+.MEM_641: VARYING
+z__lsm.88_642: [0, 0]
+_643: VARYING
+_644: VARYING
+_645: VARYING
+i_646: [3, 3]
+ivtmp_647: [1, 1]
+z_648: ~[0B, 0B]  EQUIVALENCES: { z_60(D) z_137 } (2 elements)
+z_649: ~[0B, 0B]  EQUIVALENCES: { z_60(D) } (1 elements)
+z_650: ~[0B, 0B]  EQUIVALENCES: { z_60(D) } (1 elements)
+z_651: ~[0B, 0B]  EQUIVALENCES: { z_60(D) } (1 elements)
+z_652: ~[0B, 0B]  EQUIVALENCES: { z_60(D) } (1 elements)
+z_653: ~[0B, 0B]  EQUIVALENCES: { z_60(D) z_654 } (2 elements)
+z_654: ~[0B, 0B]  EQUIVALENCES: { z_60(D) } (1 elements)
+z_655: ~[0B, 0B]  EQUIVALENCES: { z_60(D) z_654 } (2 elements)
+exponent_difference_656: [-65535, 65535]  EQUIVALENCES: { exponent_difference_62 } (1 elements)
+exponent_difference_657: [1, 65535]  EQUIVALENCES: { exponent_difference_62 exponent_difference_656 } (2 elements)
+exponent_difference_658: [1, 63]  EQUIVALENCES: { exponent_difference_62 exponent_difference_656 exponent_difference_657 } (3 elements)
+exponent_difference_659: [-65535, 0]  EQUIVALENCES: { exponent_difference_62 exponent_difference_656 } (2 elements)
+exponent_difference_660: [-63, 0]  EQUIVALENCES: { exponent_difference_62 exponent_difference_656 exponent_difference_659 } (3 elements)
+exponent_difference_661: [-63, -1]  EQUIVALENCES: { exponent_difference_62 exponent_difference_656 exponent_difference_659 exponent_difference_660 } (4 elements)
+operation_662: ~[_28, _28]  EQUIVALENCES: { operation_65(D) } (1 elements)
+_663: ~[0B, 0B]  EQUIVALENCES: { _179 } (1 elements)
+_664: [0, _237]  EQUIVALENCES: { _236 } (1 elements)
+_665: [_664, +INF]  EQUIVALENCES: { _237 } (1 elements)
+_666: [_488, +INF]  EQUIVALENCES: { _244 } (1 elements)
+_667: ~[0B, 0B]  EQUIVALENCES: { _338 } (1 elements)
+i_668: [1, 62]  EQUIVALENCES: { i_425 } (1 elements)
+_669: ~[0B, 0B]  EQUIVALENCES: { _432 } (1 elements)
+_670: ~[0B, 0B]  EQUIVALENCES: { _465 } (1 elements)
+_671: [0, _554]  EQUIVALENCES: { _470 } (1 elements)
+_672: [0, _666]  EQUIVALENCES: { _488 } (1 elements)
+i_673: ~[exponent_difference_658, exponent_difference_658]  EQUIVALENCES: { i_517 } (1 elements)
+prephitmp_674: ~[0B, 0B]  EQUIVALENCES: { prephitmp_540 } (1 elements)
+_675: [_671, +INF]  EQUIVALENCES: { _554 } (1 elements)
+_676: [0, 32767]  EQUIVALENCES: { _556 } (1 elements)
+_677: ~[0B, 0B]  EQUIVALENCES: { _557 } (1 elements)
+accum_678: [1, 32767]  EQUIVALENCES: { accum_575 } (1 elements)
+accum_679: [32768, +INF]  EQUIVALENCES: { accum_575 } (1 elements)
+_680: [0, _645]  EQUIVALENCES: { _644 } (1 elements)
+_681: [_680, +INF]  EQUIVALENCES: { _645 } (1 elements)
+
+
+Simplified relational if (exponent_difference_660 < 0)
+ into if (exponent_difference_660 != 0)
+
+Removing basic block 84
+Removing basic block 107
+Removing basic block 108
+Removing basic block 109
+Removing basic block 110
+Removing basic block 111
+Removing basic block 112
+Removing basic block 113
+Removing basic block 82
+AddSubInternalFPF (unsigned char operation, struct InternalFPF * x, struct InternalFPF * y, struct InternalFPF * z)
+{
+  _Bool z__lsm.88;
+  short unsigned int z__lsm.87;
+  _Bool locx__lsm.74;
+  short unsigned int locx__lsm.73;
+  _Bool locx__lsm.72;
+  short unsigned int locx__lsm.71;
+  _Bool locx__lsm.70;
+  short unsigned int locx__lsm.69;
+  _Bool locx__lsm.68;
+  short unsigned int locx__lsm.67;
+  _Bool locy__lsm.66;
+  short unsigned int locy__lsm.65;
+  _Bool locy__lsm.64;
+  short unsigned int locy__lsm.63;
+  _Bool locy__lsm.62;
+  short unsigned int locy__lsm.61;
+  _Bool locy__lsm.60;
+  short unsigned int locy__lsm.59;
+  _Bool z__exp_lsm.58;
+  short int z__exp_lsm.57;
+  _Bool z__lsm.56;
+  short unsigned int z__lsm.55;
+  _Bool z__lsm.54;
+  short unsigned int z__lsm.53;
+  _Bool z__lsm.52;
+  short unsigned int z__lsm.51;
+  int i;
+  short unsigned int carry;
+  short unsigned int * mantissa;
+  short unsigned int accum;
+  int i;
+  int i;
+  int i;
+  int n;
+  long int exponent_difference;
+  int i;
+  short unsigned int carry;
+  short unsigned int accum;
+  int i;
+  int i;
+  short unsigned int carry;
+  short unsigned int * mantissa;
+  short unsigned int accum;
+  int i;
+  int i;
+  short unsigned int carry;
+  short unsigned int * mantissa;
+  short unsigned int accum;
+  int i;
+  int i;
+  int i;
+  short unsigned int accum;
+  unsigned int accum;
+  int i;
+  int n;
+  unsigned int accum;
+  unsigned int accum;
+  struct InternalFPF locy;
+  struct InternalFPF locx;
+  int i;
+  short unsigned int carry;
+  short unsigned int borrow;
+  int exponent_difference;
+  unsigned char _1;
+  int _2;
+  int _3;
+  unsigned char _4;
+  int _5;
+  int _6;
+  unsigned char _7;
+  unsigned char _8;
+  unsigned char _9;
+  unsigned char _10;
+  unsigned char _11;
+  short int _12;
+  int _13;
+  short int _14;
+  int _15;
+  unsigned char _17;
+  unsigned char _19;
+  int _21;
+  unsigned char _23;
+  unsigned char _24;
+  unsigned int _26;
+  unsigned char _28;
+  short unsigned int _29;
+  short unsigned int _30;
+  unsigned char _31;
+  short unsigned int _32;
+  short unsigned int[4] * _33;
+  unsigned char _34;
+  unsigned char _35;
+  short unsigned int _36;
+  short unsigned int _37;
+  short int _38;
+  unsigned short _39;
+  unsigned short _40;
+  short int _41;
+  short unsigned int[4] * _42;
+  short unsigned int _43;
+  short unsigned int _44;
+  short unsigned int _45;
+  signed short _46;
+  short unsigned int * _53;
+  short unsigned int _61;
+  signed short _72;
+  unsigned int _84;
+  short int _92;
+  signed short _93;
+  short unsigned int _94;
+  unsigned int _96;
+  unsigned int _98;
+  unsigned int _100;
+  short unsigned int _101;
+  short unsigned int _102;
+  short unsigned int _103;
+  unsigned int _104;
+  signed short _105;
+  unsigned int _106;
+  unsigned int _108;
+  short unsigned int _109;
+  short unsigned int _110;
+  short unsigned int _111;
+  short unsigned int _112;
+  short unsigned int * _115;
+  short unsigned int _116;
+  int _117;
+  unsigned int _118;
+  unsigned int _122;
+  unsigned int _124;
+  unsigned int _126;
+  short unsigned int _127;
+  signed short _128;
+  short unsigned int _129;
+  short int _138;
+  unsigned int _141;
+  unsigned char _142;
+  unsigned char _143;
+  unsigned int _151;
+  unsigned int _153;
+  short unsigned int _155;
+  int _173;
+  short unsigned int _174;
+  short unsigned int _175;
+  short unsigned int pretmp_176;
+  short unsigned int[4] * prephitmp_177;
+  short unsigned int[4] * pretmp_178;
+  short unsigned int * _179;
+  short unsigned int * _184;
+  short unsigned int _188;
+  unsigned int _190;
+  unsigned int _191;
+  unsigned int _193;
+  short unsigned int _194;
+  short unsigned int _197;
+  unsigned int _198;
+  unsigned int _200;
+  unsigned int _203;
+  unsigned char pretmp_204;
+  unsigned char prephitmp_205;
+  unsigned char pretmp_206;
+  unsigned char pretmp_207;
+  short unsigned int _209;
+  unsigned char prephitmp_210;
+  short unsigned int _211;
+  short unsigned int _214;
+  short unsigned int * _221;
+  short unsigned int prephitmp_226;
+  short unsigned int _227;
+  short unsigned int _228;
+  short unsigned int _229;
+  short unsigned int * _231;
+  short unsigned int _232;
+  int _234;
+  short unsigned int _236;
+  short unsigned int _237;
+  short unsigned int _244;
+  short unsigned int _246;
+  short unsigned int * _251;
+  short unsigned int _252;
+  int _253;
+  unsigned char cstore_254;
+  unsigned int _260;
+  short unsigned int _261;
+  short unsigned int _262;
+  unsigned int _263;
+  short int _270;
+  unsigned short _272;
+  unsigned int _276;
+  short unsigned int _279;
+  short unsigned int _280;
+  struct InternalFPF * _288;
+  short unsigned int _290;
+  short unsigned int _291;
+  struct InternalFPF * _293;
+  short unsigned int _294;
+  _Bool _298;
+  short unsigned int _299;
+  short unsigned int _303;
+  short unsigned int _305;
+  unsigned int _306;
+  short unsigned int _312;
+  unsigned int _315;
+  unsigned int _316;
+  unsigned int _318;
+  short unsigned int _319;
+  short unsigned int[4] * pretmp_322;
+  short unsigned int * _323;
+  unsigned char pretmp_324;
+  struct InternalFPF * _333;
+  struct InternalFPF * _338;
+  short unsigned int _339;
+  short unsigned int _340;
+  int _350;
+  short unsigned int _353;
+  unsigned short _356;
+  unsigned short _360;
+  short unsigned int _366;
+  short unsigned int _367;
+  unsigned int _368;
+  short unsigned int _371;
+  unsigned int _376;
+  unsigned int _377;
+  unsigned int _380;
+  short unsigned int _381;
+  short unsigned int _384;
+  struct InternalFPF * _389;
+  short unsigned int * _392;
+  short unsigned int _397;
+  short unsigned int _403;
+  short unsigned int _405;
+  short unsigned int _406;
+  short unsigned int _407;
+  short unsigned int _410;
+  int _422;
+  short unsigned int _427;
+  short unsigned int * _432;
+  short unsigned int * _437;
+  short unsigned int * _439;
+  short unsigned int _440;
+  short unsigned int _444;
+  unsigned int _448;
+  short unsigned int _450;
+  struct InternalFPF * _451;
+  short unsigned int _454;
+  short unsigned int _456;
+  short unsigned int _460;
+  struct InternalFPF * _461;
+  short unsigned int * _465;
+  short unsigned int _470;
+  struct InternalFPF * _476;
+  unsigned int _477;
+  short unsigned int _478;
+  short unsigned int * _483;
+  unsigned int _484;
+  short unsigned int _485;
+  short unsigned int _488;
+  unsigned int _491;
+  short unsigned int * _497;
+  int _503;
+  short unsigned int * _505;
+  short int _506;
+  short unsigned int _509;
+  int _510;
+  short unsigned int prephitmp_518;
+  short unsigned int pretmp_519;
+  short unsigned int _520;
+  short unsigned int _529;
+  short unsigned int * _531;
+  short unsigned int _534;
+  short unsigned int _536;
+  unsigned int _537;
+  short unsigned int[4] * prephitmp_540;
+  short unsigned int _543;
+  _Bool _548;
+  struct InternalFPF * _552;
+  short unsigned int _554;
+  _Bool _555;
+  short unsigned int _556;
+  short unsigned int * _557;
+  short unsigned int _558;
+  short unsigned int _563;
+  struct InternalFPF * _572;
+  int _577;
+  struct InternalFPF * _580;
+  short unsigned int _581;
+  short unsigned int * _582;
+  short unsigned int _583;
+  int _584;
+  short unsigned int _586;
+  unsigned short _588;
+  short unsigned int _590;
+  short unsigned int * _597;
+  short unsigned int pretmp_604;
+  short unsigned int * _611;
+  signed short _613;
+  signed short _614;
+  short int _615;
+  int _622;
+  int _625;
+  short unsigned int * _628;
+  short unsigned int _630;
+  short unsigned int _639;
+  short int _643;
+  short unsigned int _644;
+  short unsigned int _645;
+
+  <bb 2> [81.50%]:
+  _1 = x_58(D)->type;
+  _2 = (int) _1;
+  _3 = _2 * 5;
+  _4 = y_59(D)->type;
+  _5 = (int) _4;
+  _6 = _3 + _5;
+  switch (_6) <default: <L63> [12.50%], case 0: <L67> [12.50%], case 1 ... 3: <L70> [12.50%], case 4: <L69> [12.50%], case 5: <L68> [12.50%], case 6 ... 7: <L71> [12.50%], case 8: <L70> [12.50%], case 9: <L69> [12.50%], case 10: <L68> [12.50%], case 11 ... 12: <L71> [12.50%], case 13: <L70> [12.50%], case 14: <L69> [12.50%], case 15 ... 17: <L68> [12.50%], case 18: <L72> [12.50%], case 19: <L69> [12.50%], case 20 ... 23: <L68> [12.50%], case 24: <L86> [12.50%]>
+
+<L67> [10.19%]:
+  __builtin_memmove (x_58(D), z_60(D), 12);
+  _7 = x_58(D)->sign;
+  _8 = y_59(D)->sign;
+  _9 = _7 ^ _8;
+  if (_9 != operation_65(D))
+    goto <bb 5>; [66.00%]
+  else
+    goto <bb 4>; [34.00%]
+
+  <bb 4> [6.58%]:
+  goto <bb 83> (<L63>); [100.00%]
+
+  <bb 5> [6.72%]:
+  z_60(D)->sign = 0;
+  goto <bb 83> (<L63>); [100.00%]
+
+<L68> [10.19%]:
+  __builtin_memmove (x_58(D), z_60(D), 12);
+  goto <bb 83> (<L63>); [100.00%]
+
+<L69> [10.19%]:
+  __builtin_memmove (y_59(D), z_60(D), 12);
+  goto <bb 83> (<L63>); [100.00%]
+
+<L70> [10.19%]:
+  __builtin_memmove (y_59(D), z_60(D), 12);
+  _10 = z_60(D)->sign;
+  _11 = _10 ^ operation_65(D);
+  z_60(D)->sign = _11;
+  goto <bb 83> (<L63>); [100.00%]
+
+<L71> [10.19%]:
+  __builtin_memcpy (&locx, x_58(D), 12);
+  __builtin_memcpy (&locy, y_59(D), 12);
+  _12 = locx.exp;
+  _13 = (int) _12;
+  _14 = locy.exp;
+  _15 = (int) _14;
+  exponent_difference_62 = _13 - _15;
+  if (exponent_difference_62 == 0)
+    goto <bb 10>; [50.00%]
+  else
+    goto <bb 13>; [50.00%]
+
+  <bb 10> [5.09%]:
+  _548 = _4 == 1;
+  _555 = _1 == 1;
+  _298 = _555 | _548;
+  if (_298 != 0)
+    goto <bb 12>; [56.44%]
+  else
+    goto <bb 11>; [43.56%]
+
+  <bb 11> [2.22%]:
+
+  <bb 12> [5.09%]:
+  # cstore_254 = PHI <1(10), 2(11)>
+  z_60(D)->type = cstore_254;
+  _17 = locx.sign;
+  z_60(D)->sign = _17;
+  z_60(D)->exp = _12;
+  pretmp_206 = locy.sign;
+  goto <bb 45>; [100.00%]
+
+  <bb 13> [5.09%]:
+  if (exponent_difference_62 > 0)
+    goto <bb 14>; [64.00%]
+  else
+    goto <bb 29>; [36.00%]
+
+  <bb 14> [3.26%]:
+  if (_4 != 0)
+    goto <bb 15>; [54.00%]
+  else
+    goto <bb 28>; [46.00%]
+
+  <bb 15> [1.76%]:
+  if (exponent_difference_62 > 63)
+    goto <bb 17>; [50.00%]
+  else
+    goto <bb 16>; [50.00%]
+
+  <bb 16> [0.88%]:
+  locy__lsm.61_395 = MEM[(short unsigned int *)&locy + 4B];
+  locy__lsm.63_421 = MEM[(short unsigned int *)&locy + 6B];
+  locy__lsm.65_434 = MEM[(short unsigned int *)&locy + 8B];
+  locy__lsm.59_447 = MEM[(short unsigned int *)&locy + 10B];
+  goto <bb 18>; [100.00%]
+
+  <bb 17> [0.88%]:
+  MEM[(short unsigned int *)&locy + 4B] = 0;
+  MEM[(short unsigned int *)&locy + 6B] = 0;
+  MEM[(short unsigned int *)&locy + 8B] = 0;
+  MEM[(short unsigned int *)&locy + 10B] = 1;
+  goto <bb 28>; [100.00%]
+
+  <bb 18> [4.99%]:
+  # i_603 = PHI <0(16), i_517(26)>
+  # locy__lsm.59_600 = PHI <locy__lsm.59_447(16), locy__lsm.59_526(26)>
+  # locy__lsm.61_599 = PHI <locy__lsm.61_395(16), accum_589(26)>
+  # locy__lsm.63_592 = PHI <locy__lsm.63_421(16), accum_565(26)>
+  # locy__lsm.65_591 = PHI <locy__lsm.65_434(16), accum_544(26)>
+  _590 = locy__lsm.61_599 & 1;
+  accum_589 = locy__lsm.61_599 >> 1;
+  _586 = locy__lsm.63_592 & 1;
+  accum_573 = locy__lsm.63_592 >> 1;
+  if (_590 != 0)
+    goto <bb 19>; [50.00%]
+  else
+    goto <bb 20>; [50.00%]
+
+  <bb 19> [2.50%]:
+  accum_571 = accum_573 | 32768;
+
+  <bb 20> [4.99%]:
+  # accum_565 = PHI <accum_573(18), accum_571(19)>
+  _563 = locy__lsm.65_591 & 1;
+  accum_562 = locy__lsm.65_591 >> 1;
+  if (_586 != 0)
+    goto <bb 21>; [50.00%]
+  else
+    goto <bb 22>; [50.00%]
+
+  <bb 21> [2.50%]:
+  accum_545 = accum_562 | 32768;
+
+  <bb 22> [4.99%]:
+  # accum_544 = PHI <accum_562(20), accum_545(21)>
+  _543 = locy__lsm.59_600 & 1;
+  accum_541 = locy__lsm.59_600 >> 1;
+  if (_563 != 0)
+    goto <bb 23>; [50.00%]
+  else
+    goto <bb 24>; [50.00%]
+
+  <bb 23> [2.50%]:
+  accum_539 = accum_541 | 32768;
+
+  <bb 24> [4.99%]:
+  # accum_530 = PHI <accum_541(22), accum_539(23)>
+  if (_543 != 0)
+    goto <bb 25>; [50.00%]
+  else
+    goto <bb 26>; [50.00%]
+
+  <bb 25> [2.49%]:
+  _529 = accum_530 | 1;
+
+  <bb 26> [4.99%]:
+  # locy__lsm.59_526 = PHI <accum_530(24), _529(25)>
+  i_517 = i_603 + 1;
+  if (i_517 != exponent_difference_62)
+    goto <bb 18>; [82.35%]
+  else
+    goto <bb 27>; [17.65%]
+
+  <bb 27> [0.00%]:
+  # locy__lsm.59_300 = PHI <locy__lsm.59_526(26)>
+  # accum_532 = PHI <accum_589(26)>
+  # accum_285 = PHI <accum_565(26)>
+  # accum_273 = PHI <accum_544(26)>
+  # locy__lsm.59_418 = PHI <locy__lsm.59_526(26)>
+  # accum_612 = PHI <accum_544(26)>
+  # accum_601 = PHI <accum_565(26)>
+  # accum_627 = PHI <accum_589(26)>
+  MEM[(short unsigned int *)&locy + 10B] = locy__lsm.59_418;
+  MEM[(short unsigned int *)&locy + 4B] = accum_627;
+  MEM[(short unsigned int *)&locy + 6B] = accum_601;
+  MEM[(short unsigned int *)&locy + 8B] = accum_612;
+
+  <bb 28> [3.26%]:
+  z_60(D)->type = _1;
+  _19 = locx.sign;
+  z_60(D)->sign = _19;
+  z_60(D)->exp = _12;
+  pretmp_207 = locy.sign;
+  goto <bb 45>; [100.00%]
+
+  <bb 29> [1.83%]:
+  if (_1 != 0)
+    goto <bb 30>; [54.00%]
+  else
+    goto <bb 44>; [46.00%]
+
+  <bb 30> [0.99%]:
+  if (exponent_difference_62 < -63)
+    goto <bb 33>; [50.00%]
+  else
+    goto <bb 31>; [50.00%]
+
+  <bb 31> [0.50%]:
+  pretmp_604 = MEM[(short unsigned int *)&locx + 10B];
+  if (exponent_difference_62 != 0)
+    goto <bb 32>; [85.00%]
+  else
+    goto <bb 44>; [15.00%]
+
+  <bb 32> [0.43%]:
+  _21 = -exponent_difference_62;
+  locx__lsm.69_164 = MEM[(short unsigned int *)&locx + 4B];
+  locx__lsm.71_346 = MEM[(short unsigned int *)&locx + 6B];
+  locx__lsm.73_310 = MEM[(short unsigned int *)&locx + 8B];
+  goto <bb 34>; [100.00%]
+
+  <bb 33> [0.50%]:
+  MEM[(short unsigned int *)&locx + 4B] = 0;
+  MEM[(short unsigned int *)&locx + 6B] = 0;
+  MEM[(short unsigned int *)&locx + 8B] = 0;
+  MEM[(short unsigned int *)&locx + 10B] = 1;
+  goto <bb 44>; [100.00%]
+
+  <bb 34> [2.81%]:
+  # i_500 = PHI <0(32), i_425(42)>
+  # locx__lsm.67_462 = PHI <pretmp_604(32), locx__lsm.67_426(42)>
+  # locx__lsm.69_459 = PHI <locx__lsm.69_164(32), accum_455(42)>
+  # locx__lsm.71_458 = PHI <locx__lsm.71_346(32), accum_445(42)>
+  # locx__lsm.73_457 = PHI <locx__lsm.73_310(32), accum_441(42)>
+  _456 = locx__lsm.69_459 & 1;
+  accum_455 = locx__lsm.69_459 >> 1;
+  _454 = locx__lsm.71_458 & 1;
+  accum_453 = locx__lsm.71_458 >> 1;
+  if (_456 != 0)
+    goto <bb 35>; [50.00%]
+  else
+    goto <bb 36>; [50.00%]
+
+  <bb 35> [1.40%]:
+  accum_446 = accum_453 | 32768;
+
+  <bb 36> [2.81%]:
+  # accum_445 = PHI <accum_453(34), accum_446(35)>
+  _444 = locx__lsm.73_457 & 1;
+  accum_443 = locx__lsm.73_457 >> 1;
+  if (_454 != 0)
+    goto <bb 37>; [50.00%]
+  else
+    goto <bb 38>; [50.00%]
+
+  <bb 37> [1.40%]:
+  accum_442 = accum_443 | 32768;
+
+  <bb 38> [2.81%]:
+  # accum_441 = PHI <accum_443(36), accum_442(37)>
+  _440 = locx__lsm.67_462 & 1;
+  accum_431 = locx__lsm.67_462 >> 1;
+  if (_444 != 0)
+    goto <bb 39>; [50.00%]
+  else
+    goto <bb 40>; [50.00%]
+
+  <bb 39> [1.40%]:
+  accum_430 = accum_431 | 32768;
+
+  <bb 40> [2.81%]:
+  # accum_429 = PHI <accum_431(38), accum_430(39)>
+  if (_440 != 0)
+    goto <bb 41>; [50.00%]
+  else
+    goto <bb 42>; [50.00%]
+
+  <bb 41> [1.40%]:
+  _427 = accum_429 | 1;
+
+  <bb 42> [2.81%]:
+  # locx__lsm.67_426 = PHI <accum_429(40), _427(41)>
+  i_425 = i_500 + 1;
+  if (_21 > i_425)
+    goto <bb 34>; [85.00%]
+  else
+    goto <bb 43>; [15.00%]
+
+  <bb 43> [0.00%]:
+  # locx__lsm.67_419 = PHI <locx__lsm.67_426(42)>
+  # accum_274 = PHI <accum_455(42)>
+  # accum_528 = PHI <accum_445(42)>
+  # accum_515 = PHI <accum_441(42)>
+  # locx__lsm.67_181 = PHI <locx__lsm.67_426(42)>
+  # accum_218 = PHI <accum_441(42)>
+  # accum_275 = PHI <accum_445(42)>
+  # accum_516 = PHI <accum_455(42)>
+  MEM[(short unsigned int *)&locx + 10B] = locx__lsm.67_181;
+  MEM[(short unsigned int *)&locx + 4B] = accum_516;
+  MEM[(short unsigned int *)&locx + 6B] = accum_275;
+  MEM[(short unsigned int *)&locx + 8B] = accum_218;
+
+  <bb 44> [1.83%]:
+  z_60(D)->type = _4;
+  _23 = locy.sign;
+  _24 = operation_65(D) ^ _23;
+  z_60(D)->sign = _24;
+  z_60(D)->exp = _14;
+  pretmp_204 = locx.sign;
+
+  <bb 45> [10.19%]:
+  # prephitmp_205 = PHI <_17(12), _19(28), pretmp_204(44)>
+  # prephitmp_210 = PHI <pretmp_206(12), pretmp_207(28), _23(44)>
+  _28 = prephitmp_210 ^ prephitmp_205;
+  if (_28 != operation_65(D))
+    goto <bb 46>; [66.00%]
+  else
+    goto <bb 63>; [34.00%]
+
+  <bb 46> [6.72%]:
+  _280 = locy.mantissa[3];
+  _279 = locx.mantissa[3];
+  accum_278 = (unsigned int) _279;
+  _276 = (unsigned int) _280;
+  accum_269 = accum_278 - _276;
+  accum_264 = accum_269;
+  _263 = accum_269 >> 16;
+  _262 = (short unsigned int) _263;
+  _228 = _262 & 1;
+  _227 = (short unsigned int) accum_269;
+  _465 = z_60(D) + 6;
+  MEM[(short unsigned int *)_465 + 4B] = _227;
+  _211 = locy.mantissa[2];
+  _209 = locx.mantissa[2];
+  accum_208 = (unsigned int) _209;
+  _203 = (unsigned int) _211;
+  accum_202 = accum_208 - _203;
+  _200 = (unsigned int) _228;
+  accum_199 = accum_202 - _200;
+  _198 = accum_199 >> 16;
+  _197 = (short unsigned int) _198;
+  _194 = _197 & 1;
+  _188 = (short unsigned int) accum_199;
+  _437 = _465;
+  MEM[(short unsigned int *)_465 + 2B] = _188;
+  _175 = locy.mantissa[1];
+  _174 = locx.mantissa[1];
+  accum_171 = (unsigned int) _174;
+  _151 = (unsigned int) _175;
+  accum_145 = accum_171 - _151;
+  _141 = (unsigned int) _194;
+  accum_140 = accum_145 - _141;
+  _84 = accum_140 >> 16;
+  _61 = (short unsigned int) _84;
+  _312 = _61 & 1;
+  _639 = (short unsigned int) accum_140;
+  _531 = _465;
+  *_465 = _639;
+  _29 = locy.mantissa[0];
+  _30 = locx.mantissa[0];
+  accum_95 = (unsigned int) _30;
+  _96 = (unsigned int) _29;
+  accum_97 = accum_95 - _96;
+  _98 = (unsigned int) _312;
+  accum_99 = accum_97 - _98;
+  _100 = accum_99 >> 16;
+  _101 = (short unsigned int) _100;
+  _102 = _101 & 1;
+  _103 = (short unsigned int) accum_99;
+  _483 = _465;
+  MEM[(short unsigned int *)_465 + -2B] = _103;
+  if (_102 != 0)
+    goto <bb 47>; [50.00%]
+  else
+    goto <bb 48>; [50.00%]
+
+  <bb 47> [3.36%]:
+  _31 = prephitmp_210 ^ operation_65(D);
+  z_60(D)->sign = _31;
+  _536 = z_60(D)->mantissa[3];
+  _537 = (unsigned int) _536;
+  _191 = _537;
+  accum_374 = -_537;
+  _193 = accum_374 >> 16;
+  _407 = (short unsigned int) _193;
+  _406 = _407 & 1;
+  _405 = (short unsigned int) accum_374;
+  MEM[(short unsigned int *)z_60(D)].mantissa[3] = _405;
+  _338 = z_60(D) + 4;
+  _381 = MEM[(struct InternalFPF *)_338 + 4B];
+  _380 = (unsigned int) _381;
+  _377 = (unsigned int) _406;
+  _376 = _377 + _380;
+  accum_373 = -_376;
+  _368 = accum_373 >> 16;
+  _367 = (short unsigned int) _368;
+  _340 = _367 & 1;
+  _339 = (short unsigned int) accum_373;
+  _597 = _338;
+  MEM[(short unsigned int *)_338 + 4B] = _339;
+  _293 = _338;
+  _319 = MEM[(struct InternalFPF *)_338 + 2B];
+  _318 = (unsigned int) _319;
+  _316 = (unsigned int) _340;
+  _315 = _316 + _318;
+  accum_308 = -_315;
+  _306 = accum_308 >> 16;
+  _303 = (short unsigned int) _306;
+  _299 = _303 & 1;
+  _294 = (short unsigned int) accum_308;
+  _323 = _338;
+  MEM[(short unsigned int *)_338 + 2B] = _294;
+  _389 = _338;
+  _32 = MEM[(struct InternalFPF *)_338];
+  _104 = (unsigned int) _32;
+  _106 = (unsigned int) _299;
+  _118 = _106 + _104;
+  accum_107 = -_118;
+  _108 = accum_107 >> 16;
+  _109 = (short unsigned int) _108;
+  _110 = _109 & 1;
+  _111 = (short unsigned int) accum_107;
+  _392 = _338;
+  MEM[(short unsigned int *)_338] = _111;
+
+  <bb 48> [6.73%]:
+  _33 = &z_60(D)->mantissa;
+  _582 = _33;
+  _583 = MEM[(short unsigned int *)_33];
+  _584 = (int) _583;
+  n_585 = _584;
+  _611 = _33 + 2;
+  _214 = *_611;
+  _350 = (int) _214;
+  _497 = _33 + 4;
+  _509 = *_497;
+  _510 = (int) _509;
+  _503 = _510 | _350;
+  _115 = _33 + 6;
+  _116 = *_115;
+  _117 = (int) _116;
+  _422 = _503 | _117;
+  n_119 = _422 | _584;
+  if (n_119 == 0)
+    goto <bb 49>; [50.00%]
+  else
+    goto <bb 50>; [50.00%]
+
+  <bb 49> [3.36%]:
+  z_60(D)->type = 0;
+  z_60(D)->sign = 0;
+  goto <bb 101>; [100.00%]
+
+  <bb 50> [3.36%]:
+  _34 = locx.type;
+  if (_34 == 2)
+    goto <bb 52>; [20.24%]
+  else
+    goto <bb 51>; [79.76%]
+
+  <bb 51> [2.68%]:
+  _35 = locy.type;
+  if (_35 == 2)
+    goto <bb 52>; [34.00%]
+  else
+    goto <bb 4>; [66.00%]
+
+  <bb 52> [1.59%]:
+  _556 = z_60(D)->mantissa[0];
+  _128 = (signed short) _556;
+  if (_128 >= 0)
+    goto <bb 53>; [85.00%]
+  else
+    goto <bb 4>; [15.00%]
+
+  <bb 53> [1.35%]:
+  z__lsm.51_331 = MEM[(short unsigned int *)z_60(D) + 10B];
+  z__lsm.53_240 = MEM[(short unsigned int *)z_60(D) + 8B];
+  z__lsm.55_337 = MEM[(short unsigned int *)z_60(D) + 6B];
+  z__exp_lsm.57_468 = z_60(D)->exp;
+  z__lsm.87_618 = MEM[(short unsigned int *)z_60(D) + 4B];
+  goto <bb 55>; [100.00%]
+
+  <bb 54> [7.66%]:
+  # _94 = PHI <accum_54(61), accum_575(60)>
+  # z__lsm.51_469 = PHI <accum_167(61), accum_167(60)>
+  # z__lsm.53_296 = PHI <accum_347(61), accum_347(60)>
+  # z__lsm.55_359 = PHI <accum_304(61), accum_304(60)>
+  # z__exp_lsm.57_420 = PHI <_643(61), _138(60)>
+
+  <bb 55> [9.02%]:
+  # _630 = PHI <_94(54), _556(53)>
+  # z__lsm.51_636 = PHI <accum_167(54), z__lsm.51_331(53)>
+  # z__lsm.53_201 = PHI <accum_347(54), z__lsm.53_240(53)>
+  # z__lsm.55_578 = PHI <accum_304(54), z__lsm.55_337(53)>
+  # z__exp_lsm.57_416 = PHI <z__exp_lsm.57_420(54), z__exp_lsm.57_468(53)>
+  accum_167 = z__lsm.51_636 << 1;
+  accum_49 = z__lsm.53_201 << 1;
+  _105 = (signed short) z__lsm.51_636;
+  if (_105 < 0)
+    goto <bb 56>; [50.00%]
+  else
+    goto <bb 57>; [50.00%]
+
+  <bb 56> [4.51%]:
+  accum_168 = accum_49 | 1;
+
+  <bb 57> [9.02%]:
+  # accum_347 = PHI <accum_49(55), accum_168(56)>
+  accum_73 = z__lsm.55_578 << 1;
+  _72 = (signed short) z__lsm.53_201;
+  if (_72 < 0)
+    goto <bb 58>; [50.00%]
+  else
+    goto <bb 59>; [50.00%]
+
+  <bb 58> [4.51%]:
+  accum_301 = accum_73 | 1;
+
+  <bb 59> [9.02%]:
+  # accum_304 = PHI <accum_73(57), accum_301(58)>
+  accum_54 = _630 << 1;
+  _613 = (signed short) z__lsm.55_578;
+  if (_613 < 0)
+    goto <bb 60>; [50.00%]
+  else
+    goto <bb 61>; [50.00%]
+
+  <bb 60> [4.51%]:
+  accum_575 = accum_54 | 1;
+  z__lsm.87_192 = accum_575;
+  _356 = (unsigned short) z__exp_lsm.57_416;
+  _360 = _356 + 65535;
+  _138 = (short int) _360;
+  _92 = _138;
+  _93 = (signed short) accum_575;
+  if (_93 >= 0)
+    goto <bb 54>; [85.00%]
+  else
+    goto <bb 62>; [15.00%]
+
+  <bb 61> [4.51%]:
+  # accum_623 = PHI <accum_54(59)>
+  z__lsm.87_247 = accum_54;
+  _588 = (unsigned short) z__exp_lsm.57_416;
+  _272 = _588 + 65535;
+  _643 = (short int) _272;
+  _615 = _643;
+  _614 = (signed short) accum_54;
+  if (_614 >= 0)
+    goto <bb 54>; [85.00%]
+  else
+    goto <bb 62>; [15.00%]
+
+  <bb 62> [0.00%]:
+  # _506 = PHI <_643(61), _138(60)>
+  # accum_574 = PHI <accum_167(61), accum_167(60)>
+  # accum_587 = PHI <accum_347(61), accum_347(60)>
+  # accum_295 = PHI <accum_304(61), accum_304(60)>
+  # z__lsm.87_502 = PHI <accum_54(61), accum_575(60)>
+  # accum_619 = PHI <accum_167(61), accum_167(60)>
+  # accum_428 = PHI <accum_304(61), accum_304(60)>
+  # accum_180 = PHI <accum_347(61), accum_347(60)>
+  MEM[(short unsigned int *)z_60(D) + 4B] = z__lsm.87_502;
+  MEM[(short unsigned int *)z_60(D) + 10B] = accum_619;
+  MEM[(short unsigned int *)z_60(D) + 8B] = accum_180;
+  MEM[(short unsigned int *)z_60(D) + 6B] = accum_428;
+  z_60(D)->exp = _506;
+  goto <bb 83> (<L63>); [0.00%]
+
+  <bb 63> [3.47%]:
+  _305 = locy.mantissa[3];
+  _261 = locx.mantissa[3];
+  accum_508 = (unsigned int) _261;
+  _260 = (unsigned int) _305;
+  accum_259 = accum_508 + _260;
+  accum_258 = accum_259;
+  _491 = accum_259 >> 16;
+  _534 = (short unsigned int) _491;
+  _366 = (short unsigned int) accum_259;
+  _179 = z_60(D) + 6;
+  MEM[(short unsigned int *)_179 + 4B] = _366;
+  _558 = locy.mantissa[2];
+  _478 = locx.mantissa[2];
+  accum_474 = (unsigned int) _478;
+  _477 = (unsigned int) _558;
+  accum_472 = _477 + accum_474;
+  _26 = _491;
+  accum_27 = accum_472 + _26;
+  _484 = accum_27 >> 16;
+  _45 = (short unsigned int) _484;
+  _112 = (short unsigned int) accum_27;
+  _184 = _179;
+  MEM[(short unsigned int *)_179 + 2B] = _112;
+  _155 = locy.mantissa[1];
+  _460 = locx.mantissa[1];
+  accum_435 = (unsigned int) _460;
+  _190 = (unsigned int) _155;
+  accum_533 = _190 + accum_435;
+  _448 = _484;
+  accum_217 = accum_533 + _448;
+  _153 = accum_217 >> 16;
+  _229 = (short unsigned int) _153;
+  _520 = (short unsigned int) accum_217;
+  _221 = _179;
+  *_179 = _520;
+  _36 = locy.mantissa[0];
+  _37 = locx.mantissa[0];
+  accum_121 = (unsigned int) _37;
+  _122 = (unsigned int) _36;
+  accum_123 = _122 + accum_121;
+  _124 = _153;
+  accum_125 = accum_123 + _124;
+  _126 = accum_125 >> 16;
+  _127 = (short unsigned int) _126;
+  _129 = (short unsigned int) accum_125;
+  _505 = _179;
+  MEM[(short unsigned int *)_179 + -2B] = _129;
+  pretmp_176 = z_60(D)->mantissa[0];
+  if (_126 != 0)
+    goto <bb 64>; [50.00%]
+  else
+    goto <bb 71>; [50.00%]
+
+  <bb 64> [1.73%]:
+  _38 = z_60(D)->exp;
+  _39 = (unsigned short) _38;
+  _40 = _39 + 1;
+  _41 = (short int) _40;
+  z_60(D)->exp = _41;
+  _42 = &z_60(D)->mantissa;
+  _353 = pretmp_176 & 1;
+  accum_352 = pretmp_176 >> 1;
+  MEM[(short unsigned int *)_42] = accum_352;
+  _432 = _42 + 2;
+  accum_415 = *_432;
+  _403 = accum_415 & 1;
+  accum_402 = accum_415 >> 1;
+  if (_353 != 0)
+    goto <bb 65>; [66.63%]
+  else
+    goto <bb 66>; [33.37%]
+
+  <bb 65> [1.15%]:
+  accum_365 = accum_402 | 32768;
+
+  <bb 66> [1.73%]:
+  # accum_364 = PHI <accum_402(64), accum_365(65)>
+  *_432 = accum_364;
+  _53 = _42 + 4;
+  accum_52 = *_53;
+  _581 = accum_52 & 1;
+  accum_564 = accum_52 >> 1;
+  if (_403 != 0)
+    goto <bb 67>; [66.63%]
+  else
+    goto <bb 68>; [33.37%]
+
+  <bb 67> [1.15%]:
+  accum_542 = accum_564 | 32768;
+
+  <bb 68> [1.73%]:
+  # accum_594 = PHI <accum_564(66), accum_542(67)>
+  *_53 = accum_594;
+  _557 = _42 + 6;
+  accum_486 = *_557;
+  _485 = accum_486 & 1;
+  accum_550 = accum_486 >> 1;
+  if (_581 != 0)
+    goto <bb 69>; [66.63%]
+  else
+    goto <bb 70>; [33.37%]
+
+  <bb 69> [1.15%]:
+  accum_547 = accum_550 | 32768;
+
+  <bb 70> [1.73%]:
+  # accum_408 = PHI <accum_550(68), accum_547(69)>
+  *_557 = accum_408;
+  _43 = z_60(D)->mantissa[0];
+  _44 = _43 | 32768;
+  z_60(D)->mantissa[0] = _44;
+  z_60(D)->type = 2;
+  goto <bb 102>; [100.00%]
+
+  <bb 71> [1.73%]:
+  _46 = (signed short) pretmp_176;
+  if (_46 < 0)
+    goto <bb 72>; [36.00%]
+  else
+    goto <bb 4>; [64.00%]
+
+  <bb 72> [0.62%]:
+  z_60(D)->type = 2;
+  pretmp_322 = &z_60(D)->mantissa;
+  goto <bb 102>; [100.00%]
+
+<L72> [10.19%]:
+  z_60(D)->type = 4;
+  z_60(D)->exp = 32767;
+  z_60(D)->sign = 1;
+  z_60(D)->mantissa[0] = 16384;
+  z_60(D)->mantissa[1] = 0;
+  z_60(D)->mantissa[2] = 0;
+  z_60(D)->mantissa[3] = 0;
+  goto <bb 101>; [100.00%]
+
+<L86> [10.20%]:
+  _333 = x_58(D);
+  _470 = MEM[(struct InternalFPF *)x_58(D) + 4B];
+  _461 = y_59(D);
+  _554 = MEM[(struct InternalFPF *)y_59(D) + 4B];
+  if (_470 > _554)
+    goto <bb 81>; [5.00%]
+  else
+    goto <bb 75>; [95.00%]
+
+  <bb 75> [9.69%]:
+  if (_470 < _554)
+    goto <bb 82>; [5.00%]
+  else
+    goto <bb 76>; [95.00%]
+
+  <bb 76> [9.21%]:
+  _572 = x_58(D);
+  _488 = MEM[(struct InternalFPF *)x_58(D) + 6B];
+  _580 = y_59(D);
+  _244 = MEM[(struct InternalFPF *)y_59(D) + 6B];
+  if (_488 > _244)
+    goto <bb 81>; [5.00%]
+  else
+    goto <bb 77>; [95.00%]
+
+  <bb 77> [8.74%]:
+  if (_488 < _244)
+    goto <bb 82>; [5.00%]
+  else
+    goto <bb 78>; [95.00%]
+
+  <bb 78> [8.31%]:
+  _552 = x_58(D);
+  _644 = MEM[(struct InternalFPF *)x_58(D) + 8B];
+  _476 = y_59(D);
+  _645 = MEM[(struct InternalFPF *)y_59(D) + 8B];
+  if (_644 > _645)
+    goto <bb 81>; [5.00%]
+  else
+    goto <bb 79>; [95.00%]
+
+  <bb 79> [7.88%]:
+  if (_644 < _645)
+    goto <bb 82>; [5.00%]
+  else
+    goto <bb 80>; [95.00%]
+
+  <bb 80> [7.51%]:
+  _451 = x_58(D);
+  _236 = MEM[(struct InternalFPF *)x_58(D) + 10B];
+  _288 = y_59(D);
+  _237 = MEM[(struct InternalFPF *)y_59(D) + 10B];
+  if (_236 > _237)
+    goto <bb 81>; [5.00%]
+  else
+    goto <bb 82>; [95.00%]
+
+  <bb 81> [1.47%]:
+  __builtin_memmove (x_58(D), z_60(D), 12);
+  goto <bb 83> (<L63>); [100.00%]
+
+  <bb 82> [8.72%]:
+  __builtin_memmove (y_59(D), z_60(D), 12);
+
+<L63> [65.60%]:
+  _142 = z_60(D)->type;
+  _143 = _142 + 255;
+  if (_143 <= 1)
+    goto <bb 84>; [26.91%]
+  else
+    goto <bb 101>; [73.09%]
+
+  <bb 84> [17.65%]:
+  pretmp_178 = &z_60(D)->mantissa;
+
+  <bb 85> [20.00%]:
+  # prephitmp_540 = PHI <pretmp_178(84), prephitmp_177(102)>
+  _628 = prephitmp_540;
+  _291 = MEM[(short unsigned int *)prephitmp_540];
+  _625 = (int) _291;
+  n_363 = _625;
+  _439 = prephitmp_540 + 2;
+  _450 = *_439;
+  _577 = (int) _450;
+  _231 = prephitmp_540 + 4;
+  _232 = *_231;
+  _234 = (int) _232;
+  _622 = _234 | _577;
+  _251 = prephitmp_540 + 6;
+  _252 = *_251;
+  _253 = (int) _252;
+  _173 = _622 | _253;
+  n_255 = _173 | _625;
+  if (n_255 == 0)
+    goto <bb 86>; [33.00%]
+  else
+    goto <bb 100>; [67.00%]
+
+  <bb 86> [6.60%]:
+  __builtin_puts (&"Error:  zero significand in denormalize"[0]);
+  goto <bb 100>; [100.00%]
+
+  <bb 87> [2.62%]:
+  z_60(D)->exp = -32767;
+  if (pretmp_324 != 0)
+    goto <bb 89>; [54.00%]
+  else
+    goto <bb 101>; [46.00%]
+
+  <bb 88> [2.01%]:
+  _290 = accum_413 | 1;
+  MEM[(short unsigned int *)z_60(D) + 10B] = _290;
+  goto <bb 104>; [100.00%]
+
+  <bb 89> [4.02%]:
+  accum_370 = MEM[(short unsigned int *)z_60(D) + 4B];
+  _371 = accum_370 & 1;
+  accum_372 = accum_370 >> 1;
+  MEM[(short unsigned int *)z_60(D) + 4B] = accum_372;
+  accum_383 = MEM[(short unsigned int *)z_60(D) + 6B];
+  _384 = accum_383 & 1;
+  accum_385 = accum_383 >> 1;
+  if (_371 != 0)
+    goto <bb 90>; [50.00%]
+  else
+    goto <bb 91>; [50.00%]
+
+  <bb 90> [2.01%]:
+  accum_386 = accum_385 | 32768;
+
+  <bb 91> [4.02%]:
+  # accum_387 = PHI <accum_385(89), accum_386(90)>
+  MEM[(short unsigned int *)z_60(D) + 6B] = accum_387;
+  accum_396 = MEM[(short unsigned int *)z_60(D) + 8B];
+  _397 = accum_396 & 1;
+  accum_398 = accum_396 >> 1;
+  if (_384 != 0)
+    goto <bb 92>; [50.00%]
+  else
+    goto <bb 93>; [50.00%]
+
+  <bb 92> [2.01%]:
+  accum_399 = accum_398 | 32768;
+
+  <bb 93> [4.02%]:
+  # accum_400 = PHI <accum_398(91), accum_399(92)>
+  MEM[(short unsigned int *)z_60(D) + 8B] = accum_400;
+  accum_409 = MEM[(short unsigned int *)z_60(D) + 10B];
+  _410 = accum_409 & 1;
+  accum_411 = accum_409 >> 1;
+  if (_397 != 0)
+    goto <bb 94>; [50.00%]
+  else
+    goto <bb 95>; [50.00%]
+
+  <bb 94> [2.01%]:
+  accum_412 = accum_411 | 32768;
+
+  <bb 95> [4.02%]:
+  # accum_413 = PHI <accum_411(93), accum_412(94)>
+  if (_410 != 0)
+    goto <bb 88>; [50.00%]
+  else
+    goto <bb 103>; [50.00%]
+
+  <bb 96> [14.77%]:
+  if (pretmp_324 != 0)
+    goto <bb 97>; [45.89%]
+  else
+    goto <bb 101>; [54.11%]
+
+  <bb 97> [6.78%]:
+  pretmp_519 = MEM[(short unsigned int *)z_60(D) + 10B];
+
+  <bb 98> [10.80%]:
+  # prephitmp_518 = PHI <pretmp_519(97), prephitmp_226(104)>
+  _246 = prephitmp_518 & 65528;
+  z_60(D)->mantissa[3] = _246;
+
+  <bb 99> [81.50%]:
+  locx ={v} {CLOBBER};
+  locy ={v} {CLOBBER};
+  return;
+
+  <bb 100> [20.00%]:
+  _270 = z_60(D)->exp;
+  pretmp_324 = z_60(D)->type;
+  if (_270 == -32768)
+    goto <bb 87>; [13.12%]
+  else
+    goto <bb 96>; [86.88%]
+
+  <bb 101> [70.70%]:
+  goto <bb 99>; [100.00%]
+
+  <bb 102> [2.35%]:
+  # prephitmp_177 = PHI <pretmp_322(72), _42(70)>
+  goto <bb 85>; [100.00%]
+
+  <bb 103> [2.01%]:
+  MEM[(short unsigned int *)z_60(D) + 10B] = accum_413;
+
+  <bb 104> [4.02%]:
+  # prephitmp_226 = PHI <accum_413(103), _290(88)>
+  goto <bb 98>; [100.00%]
+
+}
+
+
+
+;; Function SetupCPUEmFloatArrays (SetupCPUEmFloatArrays, funcdef_no=34, decl_uid=2767, cgraph_uid=34, symbol_order=34)
+
+;; 12 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8 46 9 10 11 12 13 14 15 16 17 18 19 20 21 22 45 23 24 25 26 27 28 29 30 31 32 33 34 44 35 36 37 38 39 40 41 42 47 43
+;;
+;; Loop 1
+;;  header 4, latch 47
+;;  depth 1, outer 0
+;;  nodes: 4 47 42 41 33 34 32 31 30 29 21 22 20 19 18 17 7 8 6 5 16 15 14 12 13 10 11 9 46 28 27 26 24 25 23 45 40 39 38 36 37 35 44
+;;
+;; Loop 9
+;;  header 36, latch 35
+;;  depth 2, outer 1
+;;  nodes: 36 35 40 39 38 37
+;;
+;; Loop 7
+;;  header 24, latch 23
+;;  depth 2, outer 1
+;;  nodes: 24 23 28 27 26 25
+;;
+;; Loop 11
+;;  header 10, latch 9
+;;  depth 2, outer 1
+;;  nodes: 10 9 16 15 14 12 13 11
+;; 2 succs { 3 43 }
+;; 3 succs { 4 }
+;; 4 succs { 5 6 }
+;; 5 succs { 8 }
+;; 6 succs { 7 8 }
+;; 7 succs { 18 }
+;; 8 succs { 46 18 }
+;; 46 succs { 10 }
+;; 9 succs { 10 }
+;; 10 succs { 11 12 }
+;; 11 succs { 12 }
+;; 12 succs { 13 14 }
+;; 13 succs { 14 }
+;; 14 succs { 15 16 }
+;; 15 succs { 9 17 }
+;; 16 succs { 9 17 }
+;; 17 succs { 18 }
+;; 18 succs { 19 20 }
+;; 19 succs { 20 }
+;; 20 succs { 21 22 }
+;; 21 succs { 30 }
+;; 22 succs { 45 30 }
+;; 45 succs { 24 }
+;; 23 succs { 24 }
+;; 24 succs { 25 26 }
+;; 25 succs { 26 }
+;; 26 succs { 27 28 }
+;; 27 succs { 23 29 }
+;; 28 succs { 23 29 }
+;; 29 succs { 30 }
+;; 30 succs { 31 32 }
+;; 31 succs { 32 }
+;; 32 succs { 33 34 }
+;; 33 succs { 42 }
+;; 34 succs { 44 42 }
+;; 44 succs { 36 }
+;; 35 succs { 36 }
+;; 36 succs { 37 38 }
+;; 37 succs { 38 }
+;; 38 succs { 39 40 }
+;; 39 succs { 35 41 }
+;; 40 succs { 35 41 }
+;; 41 succs { 42 }
+;; 42 succs { 47 43 }
+;; 47 succs { 4 }
+;; 43 succs { 1 }
+
+SSA replacement table
+N_i -> { O_1 ... O_j } means that N_i replaces O_1, ..., O_j
+
+accum_175 -> { accum_234 }
+accum_232 -> { accum_167 }
+accum_262 -> { accum_180 }
+accum_340 -> { accum_310 }
+accum_343 -> { accum_291 }
+accum_344 -> { accum_248 }
+accum_347 -> { accum_235 }
+Incremental SSA update started at block: 4
+Number of blocks in CFG: 48
+Number of blocks to update: 19 ( 40%)
+
+
+Adding assert for accum_192 from accum_192 + 32768
+Adding assert for accum_192 from accum_192 + 32768
+Adding assert for accum_191 from accum_191 + 32768
+Adding assert for accum_191 from accum_191 + 32768
+Adding assert for accum_260 from accum_260 + 32768
+Adding assert for accum_260 from accum_260 + 32768
+Adding assert for accum_259 from accum_259 + 32768
+Adding assert for accum_259 from accum_259 + 32768
+Adding assert for accum_276 from accum_276 + 32768
+Adding assert for accum_276 from accum_276 + 32768
+Adding assert for accum_283 from accum_283 + 32768
+Adding assert for accum_283 from accum_283 + 32768
+
+SSA replacement table
+N_i -> { O_1 ... O_j } means that N_i replaces O_1, ..., O_j
+
+accum_42 -> { accum_276 }
+accum_56 -> { accum_276 }
+accum_143 -> { accum_260 }
+accum_181 -> { accum_260 }
+accum_194 -> { accum_259 }
+accum_223 -> { accum_259 }
+accum_264 -> { accum_192 }
+accum_267 -> { accum_192 }
+accum_268 -> { accum_191 }
+accum_271 -> { accum_191 }
+mylong_280 -> { mylong_37 }
+mylong_281 -> { mylong_30 }
+arraysize_284 -> { arraysize_13(D) }
+_292 -> { _7 }
+_293 -> { _7 }
+_297 -> { _3 }
+ivtmp.149_308 -> { ivtmp.149_288 }
+_318 -> { _3 }
+_319 -> { _1 }
+accum_320 -> { accum_283 }
+accum_321 -> { accum_283 }
+_322 -> { _1 }
+_323 -> { _1 }
+Incremental SSA update started at block: 2
+Number of blocks in CFG: 63
+Number of blocks to update: 46 ( 73%)
+
+
+
+Value ranges after VRP:
+
+_1: VARYING
+_2: VARYING
+_3: VARYING
+_4: ~[0, 0]
+_5: VARYING
+_6: VARYING
+_7: VARYING
+_8: VARYING
+accum_10: [0, 0]
+arraysize_13(D): VARYING
+abase_20(D): VARYING
+bbase_24(D): VARYING
+_26: VARYING
+mylong_27: VARYING
+mylong_30: VARYING
+_31: [-32768, 32767]
+myword_32: [0, +INF]
+myword_33: [0, +INF]
+mylong_34: VARYING
+mylong_37: VARYING
+_38: [-32768, 32767]
+myword_39: [0, +INF]
+myword_40: [0, +INF]
+mylong_41: [1, +INF(OVF)]
+accum_42: [1, 32767]  EQUIVALENCES: { accum_276 } (1 elements)
+cstore_44: [0, 1]
+_45: VARYING
+myword_46: [0, +INF]
+myword_47: [0, +INF]
+locFPF1_exp_lsm.118_49: VARYING
+accum_56: [32768, +INF]  EQUIVALENCES: { accum_276 } (1 elements)
+accum_61: [0, 32767]  EQUIVALENCES: { } (0 elements)
+ivtmp.135_62: [0, +INF]
+_63: [0, 32767]  EQUIVALENCES: { } (0 elements)
+_64: VARYING
+.MEM_65: VARYING
+_79: ~[0, 0]
+ivtmp.135_80: [0, +INF]
+_81: VARYING
+accum_82: [0, 0]
+_83: ~[-1, -1]
+_97: [0, +INF]
+_98: [0, +INF]
+_99: VARYING
+accum_100: [32768, +INF]  EQUIVALENCES: { } (0 elements)
+_101: ~[-1, -1]
+ivtmp.125_102: [0, +INF]
+accum_103: [0, 0]
+ivtmp.135_104: VARYING
+.MEM_106: VARYING
+_107: VARYING
+.MEM_111: VARYING
+locFPF2__lsm.104_112: [0, +INF]
+.MEM_116: VARYING
+locFPF1__lsm.114_123: [0, +INF]
+_127: VARYING
+locFPF1__lsm.110_128: [0, 0]
+locFPF1__lsm.112_133: [0, 0]
+accum_138: [0, +INF]
+accum_143: [32768, +INF]  EQUIVALENCES: { accum_260 } (1 elements)
+locFPF1__lsm.114_151: [0, +INF]
+_154: VARYING
+locFPF1__lsm.110_155: [0, 0]
+_158: [0, 0]
+ivtmp.149_164: VARYING
+accum_165: [0, 0]
+locFPF1_exp_lsm.118_166: VARYING
+accum_167: [0, 0]
+ivtmp.125_168: VARYING
+accum_175: [0, 0]
+accum_177: [0, +INF]
+accum_178: [0, +INF]
+accum_180: [0, +INF]
+accum_181: [1, 32767]  EQUIVALENCES: { accum_260 } (1 elements)
+cstore_188: [0, 1]
+_190: [0, +INF]
+accum_191: [0, 65534]
+accum_192: [1, +INF]
+accum_193: [0, 65534]
+accum_194: [32768, 65534]  EQUIVALENCES: { accum_259 } (1 elements)
+accum_205: [0, 0]
+accum_209: [0, +INF]
+_214: [-INF, +INF]
+accum_217: [32768, +INF]  EQUIVALENCES: { } (0 elements)
+_219: VARYING
+_222: VARYING
+accum_223: [0, 32767]  EQUIVALENCES: { accum_259 } (1 elements)
+_226: [0, 0]
+.MEM_230: VARYING
+accum_232: [0, 0]
+accum_233: [0, 0]
+accum_234: [0, 0]
+accum_235: [0, 0]
+_236: ~[-1, -1]
+_243: VARYING
+.MEM_245: VARYING
+accum_246: [0, +INF]
+accum_248: [0, +INF]
+_249: [_243, _243]  EQUIVALENCES: { _243 } (1 elements)
+_258: [0, +INF]
+accum_259: [0, 65534]
+accum_260: [1, +INF]
+accum_261: [0, 65534]
+accum_262: [0, +INF]
+accum_264: [32768, +INF]  EQUIVALENCES: { accum_192 } (1 elements)
+accum_267: [1, 32767]  EQUIVALENCES: { accum_192 } (1 elements)
+accum_268: [32768, 65534]  EQUIVALENCES: { accum_191 } (1 elements)
+.MEM_269: VARYING
+accum_271: [0, 32767]  EQUIVALENCES: { accum_191 } (1 elements)
+ivtmp.125_272: [0, +INF]
+.MEM_273: VARYING
+accum_275: [0, 65534]
+accum_276: [1, +INF]
+mylong_277: [1, +INF(OVF)]  EQUIVALENCES: { } (0 elements)
+_279: VARYING
+mylong_280: ~[0, 0]  EQUIVALENCES: { mylong_37 } (1 elements)
+mylong_281: ~[0, 0]  EQUIVALENCES: { mylong_30 } (1 elements)
+accum_283: [0, 65534]
+arraysize_284: ~[0, 0]  EQUIVALENCES: { arraysize_13(D) } (1 elements)
+locFPF1__lsm.112_285: [0, 0]
+_287: [-INF, +INF]
+ivtmp.149_288: [0, +INF]
+_290: ~[0, 0]
+accum_291: [0, +INF]
+_292: [0, +INF]  EQUIVALENCES: { _7 } (1 elements)
+_293: [-INF, -1]  EQUIVALENCES: { _7 } (1 elements)
+_294: [0, +INF]  EQUIVALENCES: { ivtmp.149_301 } (1 elements)
+ivtmp.150_295: [0, +INF]
+_297: [0, +INF]  EQUIVALENCES: { _3 } (1 elements)
+accum_298: [32768, +INF]  EQUIVALENCES: { } (0 elements)
+accum_300: [0, 0]
+ivtmp.149_301: [0, +INF]
+ivtmp.150_302: [0, +INF]
+ivtmp.150_303: [0, +INF]
+_304: [0, 0]
+.MEM_305: VARYING
+_306: [0, +INF]
+ivtmp.149_308: ~[_315, _315]  EQUIVALENCES: { ivtmp.149_288 } (1 elements)
+accum_309: [0, +INF]
+accum_310: [0, 0]
+_313: VARYING
+_314: [0, +INF]
+_315: [0, +INF]
+_316: VARYING
+_318: [-INF, -1]  EQUIVALENCES: { _3 } (1 elements)
+_319: [1, +INF]  EQUIVALENCES: { _1 _322 } (2 elements)
+accum_320: [32768, 65534]  EQUIVALENCES: { accum_283 } (1 elements)
+accum_321: [0, 32767]  EQUIVALENCES: { accum_283 } (1 elements)
+_322: [0, +INF]  EQUIVALENCES: { _1 } (1 elements)
+_323: [-INF, -1]  EQUIVALENCES: { _1 } (1 elements)
+locFPF2__lsm.94_325: [0, +INF]
+accum_326: [0, 0]
+_327: [_316, _316]  EQUIVALENCES: { _316 } (1 elements)
+ivtmp.125_328: [0, +INF]
+accum_329: [0, 32767]  EQUIVALENCES: { } (0 elements)
+_330: [0, 0]
+accum_331: [0, 0]
+ivtmp.135_337: [0, +INF]
+.MEM_339: VARYING
+accum_340: [0, 0]
+_341: [0, +INF]
+accum_343: [0, +INF]
+accum_344: [0, +INF]
+_345: [0, +INF]
+accum_347: [0, 0]
+
+
+Removing basic block 13
+Removing basic block 12
+Removing basic block 11
+Removing basic block 25
+Removing basic block 37
+Merging blocks 10 and 63
+Merging blocks 24 and 26
+Merging blocks 36 and 38
+Removing basic block 44
+Removing basic block 45
+Removing basic block 46
+Removing basic block 47
+Removing basic block 48
+Removing basic block 49
+Removing basic block 50
+Removing basic block 51
+Removing basic block 52
+Removing basic block 53
+Removing basic block 54
+Removing basic block 55
+Removing basic block 56
+Removing basic block 57
+Removing basic block 58
+Removing basic block 59
+Removing basic block 60
+Removing basic block 61
+Removing basic block 62
+Merging blocks 65 and 14
+
+SSA replacement table
+N_i -> { O_1 ... O_j } means that N_i replaces O_1, ..., O_j
+
+.MEM_74 -> { .MEM_305 }
+_109 -> { _306 }
+_114 -> { _306 }
+.MEM_239 -> { .MEM_305 }
+locFPF1__lsm.114_240 -> { locFPF1__lsm.114_151 }
+locFPF1_exp_lsm.118_252 -> { locFPF1_exp_lsm.118_166 }
+locFPF1__lsm.114_253 -> { locFPF1__lsm.114_151 }
+locFPF1_exp_lsm.118_286 -> { locFPF1_exp_lsm.118_166 }
+accum_307 -> { accum_309 }
+
+SSA names to release after updating the SSA web
+
+accum_309 
+Incremental SSA update started at block: 37
+Number of blocks in CFG: 38
+Number of blocks to update: 7 ( 18%)
+
+
+SetupCPUEmFloatArrays (struct InternalFPF * abase, struct InternalFPF * bbase, struct InternalFPF * cbase, long unsigned int arraysize)
+{
+  unsigned long ivtmp.150;
+  unsigned long ivtmp.149;
+  unsigned short ivtmp.135;
+  unsigned short ivtmp.125;
+  _Bool locFPF1_exp_lsm.119;
+  short int locFPF1_exp_lsm.118;
+  _Bool locFPF1__lsm.117;
+  short unsigned int locFPF1__lsm.116;
+  _Bool locFPF1__lsm.115;
+  short unsigned int locFPF1__lsm.114;
+  _Bool locFPF1__lsm.113;
+  short unsigned int locFPF1__lsm.112;
+  _Bool locFPF1__lsm.111;
+  short unsigned int locFPF1__lsm.110;
+  _Bool locFPF2_exp_lsm.109;
+  short int locFPF2_exp_lsm.108;
+  _Bool locFPF2__lsm.107;
+  short unsigned int locFPF2__lsm.106;
+  _Bool locFPF2__lsm.105;
+  short unsigned int locFPF2__lsm.104;
+  _Bool locFPF2__lsm.103;
+  short unsigned int locFPF2__lsm.102;
+  _Bool locFPF2__lsm.101;
+  short unsigned int locFPF2__lsm.100;
+  _Bool locFPF2_exp_lsm.99;
+  short int locFPF2_exp_lsm.98;
+  _Bool locFPF2__lsm.97;
+  short unsigned int locFPF2__lsm.96;
+  _Bool locFPF2__lsm.95;
+  short unsigned int locFPF2__lsm.94;
+  _Bool locFPF2__lsm.93;
+  short unsigned int locFPF2__lsm.92;
+  _Bool locFPF2__lsm.91;
+  short unsigned int locFPF2__lsm.90;
+  short unsigned int carry;
+  short unsigned int accum;
+  int i;
+  short unsigned int carry;
+  short unsigned int accum;
+  int i;
+  short unsigned int carry;
+  short unsigned int accum;
+  int i;
+  int i;
+  short unsigned int myword;
+  int32 mylong;
+  int i;
+  short unsigned int myword;
+  int32 mylong;
+  int i;
+  short unsigned int myword;
+  int32 mylong;
+  struct InternalFPF locFPF2;
+  struct InternalFPF locFPF1;
+  long unsigned int i;
+  int _1;
+  int _2;
+  int _3;
+  signed short _4;
+  struct InternalFPF * _5;
+  int _6;
+  int _7;
+  struct InternalFPF * _8;
+  short int _26;
+  int _31;
+  int _38;
+  unsigned char cstore_44;
+  int _45;
+  short unsigned int _63;
+  short int _64;
+  signed short _79;
+  short int _81;
+  signed short _83;
+  unsigned short _97;
+  unsigned short _98;
+  short int _99;
+  signed short _101;
+  short int _107;
+  short unsigned int _109;
+  short unsigned int _114;
+  short int _127;
+  signed short _154;
+  unsigned char cstore_188;
+  short unsigned int _190;
+  signed short _214;
+  signed short _219;
+  signed short _222;
+  signed short _236;
+  short int _243;
+  short int _249;
+  short unsigned int _258;
+  signed short _279;
+  signed short _287;
+  signed short _290;
+  unsigned long _294;
+  short unsigned int _306;
+  short int _313;
+  unsigned long _314;
+  unsigned long _315;
+  short int _316;
+  short int _327;
+  unsigned short _341;
+  unsigned short _345;
+
+  <bb 2> [1.70%]:
+  randnum (13);
+  if (arraysize_13(D) != 0)
+    goto <bb 3>; [85.00%]
+  else
+    goto <bb 35>; [15.00%]
+
+  <bb 3> [1.45%]:
+  ivtmp.149_301 = (unsigned long) bbase_24(D);
+  ivtmp.150_303 = (unsigned long) abase_20(D);
+  _314 = arraysize_13(D) * 12;
+  _294 = ivtmp.149_301;
+  _315 = ivtmp.149_301 + _314;
+
+  <bb 4> [9.63%]:
+  # ivtmp.149_164 = PHI <ivtmp.149_288(34), ivtmp.149_301(3)>
+  # ivtmp.150_295 = PHI <ivtmp.150_302(34), ivtmp.150_303(3)>
+  _1 = randwc (50000);
+  if (_1 < 0)
+    goto <bb 5>; [36.00%]
+  else
+    goto <bb 6>; [64.00%]
+
+  <bb 5> [3.47%]:
+  locFPF1.sign = 1;
+  mylong_41 = -_1;
+  locFPF1.type = 2;
+  locFPF1.mantissa[2] = 0;
+  locFPF1.mantissa[3] = 0;
+  goto <bb 8>; [100.00%]
+
+  <bb 6> [6.16%]:
+  locFPF1.sign = 0;
+  locFPF1.type = 2;
+  locFPF1.mantissa[0] = 0;
+  locFPF1.mantissa[1] = 0;
+  locFPF1.mantissa[2] = 0;
+  locFPF1.mantissa[3] = 0;
+  if (_1 == 0)
+    goto <bb 7>; [99.05%]
+  else
+    goto <bb 8>; [0.95%]
+
+  <bb 7> [6.10%]:
+  locFPF1.type = 0;
+  locFPF1.exp = 0;
+  goto <bb 14>; [100.00%]
+
+  <bb 8> [3.53%]:
+  # mylong_277 = PHI <_1(6), mylong_41(5)>
+  locFPF1.exp = 32;
+  _45 = mylong_277 >> 16;
+  myword_46 = (short unsigned int) _45;
+  locFPF1.mantissa[0] = myword_46;
+  myword_47 = (short unsigned int) mylong_277;
+  locFPF1.mantissa[1] = myword_47;
+  _219 = (signed short) _45;
+  if (_219 >= 0)
+    goto <bb 37>; [85.00%]
+  else
+    goto <bb 14>; [15.00%]
+
+  <bb 9> [17.00%]:
+  # _63 = PHI <accum_283(12), accum_276(11)>
+  # locFPF1__lsm.114_123 = PHI <accum_307(12), accum_307(11)>
+  # locFPF1_exp_lsm.118_49 = PHI <_243(12), _316(11)>
+
+  <bb 10> [17.00%]:
+  # _306 = PHI <_63(9)>
+  # locFPF1__lsm.114_151 = PHI <accum_307(9)>
+  # locFPF1_exp_lsm.118_166 = PHI <locFPF1_exp_lsm.118_49(9)>
+  goto <bb 36>; [100.00%]
+
+  <bb 11> [10.00%]:
+  accum_276 = accum_283 | 1;
+  _97 = (unsigned short) locFPF1_exp_lsm.118_286;
+  _98 = _97 + 65535;
+  _316 = (short int) _98;
+  _327 = _316;
+  _290 = (signed short) accum_276;
+  if (_290 >= 0)
+    goto <bb 9>; [85.00%]
+  else
+    goto <bb 13>; [15.00%]
+
+  <bb 12> [10.00%]:
+  # accum_275 = PHI <accum_283(36)>
+  _341 = (unsigned short) locFPF1_exp_lsm.118_286;
+  _345 = _341 + 65535;
+  _243 = (short int) _345;
+  _249 = _243;
+  _236 = (signed short) accum_283;
+  if (_236 >= 0)
+    goto <bb 9>; [85.00%]
+  else
+    goto <bb 13>; [15.00%]
+
+  <bb 13> [0.00%]:
+  # _313 = PHI <_243(12), _316(11)>
+  # accum_138 = PHI <accum_307(12), accum_307(11)>
+  # accum_298 = PHI <accum_283(12), accum_276(11)>
+  # accum_343 = PHI <accum_307(12), accum_307(11)>
+  MEM[(short unsigned int *)&locFPF1 + 10B] = 0;
+  MEM[(short unsigned int *)&locFPF1 + 8B] = 0;
+  MEM[(short unsigned int *)&locFPF1 + 6B] = accum_343;
+  MEM[(short unsigned int *)&locFPF1 + 4B] = accum_298;
+  locFPF1.exp = _313;
+
+  <bb 14> [9.63%]:
+  _2 = randwc (50000);
+  _3 = _2 + 1;
+  if (_3 < 0)
+    goto <bb 15>; [36.00%]
+  else
+    goto <bb 16>; [64.00%]
+
+  <bb 15> [3.47%]:
+  mylong_34 = ~_2;
+
+  <bb 16> [9.63%]:
+  # mylong_37 = PHI <mylong_34(15), _3(14)>
+  # cstore_188 = PHI <1(15), 0(14)>
+  locFPF2.sign = cstore_188;
+  locFPF2.type = 2;
+  locFPF2.mantissa[0] = 0;
+  locFPF2.mantissa[1] = 0;
+  locFPF2.mantissa[2] = 0;
+  locFPF2.mantissa[3] = 0;
+  if (mylong_37 == 0)
+    goto <bb 17>; [63.36%]
+  else
+    goto <bb 18>; [36.64%]
+
+  <bb 17> [6.10%]:
+  locFPF2.type = 0;
+  locFPF2.exp = 0;
+  goto <bb 24>; [100.00%]
+
+  <bb 18> [3.53%]:
+  locFPF2.exp = 32;
+  _38 = mylong_37 >> 16;
+  myword_39 = (short unsigned int) _38;
+  locFPF2.mantissa[0] = myword_39;
+  myword_40 = (short unsigned int) mylong_37;
+  locFPF2.mantissa[1] = myword_40;
+  _287 = (signed short) _38;
+  if (_38 >= 0)
+    goto <bb 20>; [85.00%]
+  else
+    goto <bb 24>; [15.00%]
+
+  <bb 19> [17.00%]:
+  # accum_61 = PHI <accum_259(22), accum_260(21)>
+  # ivtmp.135_62 = PHI <ivtmp.135_337(22), ivtmp.135_80(21)>
+
+  <bb 20> [20.00%]:
+  # _190 = PHI <accum_61(19), myword_39(18)>
+  # locFPF2__lsm.104_112 = PHI <accum_246(19), myword_40(18)>
+  # ivtmp.135_104 = PHI <ivtmp.135_62(19), 31(18)>
+  accum_246 = locFPF2__lsm.104_112 << 1;
+  accum_259 = _190 << 1;
+  _222 = (signed short) locFPF2__lsm.104_112;
+  if (_222 < 0)
+    goto <bb 21>; [50.00%]
+  else
+    goto <bb 22>; [50.00%]
+
+  <bb 21> [10.00%]:
+  accum_260 = accum_259 | 1;
+  _107 = (short int) ivtmp.135_104;
+  _79 = (signed short) accum_260;
+  ivtmp.135_80 = ivtmp.135_104 - 1;
+  if (_79 >= 0)
+    goto <bb 19>; [85.00%]
+  else
+    goto <bb 23>; [15.00%]
+
+  <bb 22> [10.00%]:
+  # accum_261 = PHI <accum_259(20)>
+  _81 = (short int) ivtmp.135_104;
+  _83 = (signed short) accum_259;
+  ivtmp.135_337 = ivtmp.135_104 - 1;
+  if (_83 >= 0)
+    goto <bb 19>; [85.00%]
+  else
+    goto <bb 23>; [15.00%]
+
+  <bb 23> [0.00%]:
+  # _127 = PHI <_81(22), _107(21)>
+  # accum_209 = PHI <accum_246(22), accum_246(21)>
+  # accum_100 = PHI <accum_259(22), accum_260(21)>
+  # accum_344 = PHI <accum_246(22), accum_246(21)>
+  MEM[(short unsigned int *)&locFPF2 + 8B] = 0;
+  MEM[(short unsigned int *)&locFPF2 + 6B] = accum_344;
+  MEM[(short unsigned int *)&locFPF2 + 4B] = accum_100;
+  locFPF2.exp = _127;
+
+  <bb 24> [9.63%]:
+  _5 = (struct InternalFPF *) ivtmp.150_295;
+  DivideInternalFPF (&locFPF1, &locFPF2, _5);
+  _6 = randwc (50000);
+  _7 = _6 + 1;
+  if (_7 < 0)
+    goto <bb 25>; [36.00%]
+  else
+    goto <bb 26>; [64.00%]
+
+  <bb 25> [3.47%]:
+  mylong_27 = ~_6;
+
+  <bb 26> [9.63%]:
+  # mylong_30 = PHI <mylong_27(25), _7(24)>
+  # cstore_44 = PHI <1(25), 0(24)>
+  locFPF2.sign = cstore_44;
+  locFPF2.type = 2;
+  locFPF2.mantissa[0] = 0;
+  locFPF2.mantissa[1] = 0;
+  locFPF2.mantissa[2] = 0;
+  locFPF2.mantissa[3] = 0;
+  if (mylong_30 == 0)
+    goto <bb 27>; [63.36%]
+  else
+    goto <bb 28>; [36.64%]
+
+  <bb 27> [6.10%]:
+  locFPF2.type = 0;
+  locFPF2.exp = 0;
+  goto <bb 34>; [100.00%]
+
+  <bb 28> [3.53%]:
+  locFPF2.exp = 32;
+  _31 = mylong_30 >> 16;
+  myword_32 = (short unsigned int) _31;
+  locFPF2.mantissa[0] = myword_32;
+  myword_33 = (short unsigned int) mylong_30;
+  locFPF2.mantissa[1] = myword_33;
+  _214 = (signed short) _31;
+  if (_31 >= 0)
+    goto <bb 30>; [85.00%]
+  else
+    goto <bb 34>; [15.00%]
+
+  <bb 29> [17.00%]:
+  # ivtmp.125_328 = PHI <ivtmp.125_102(32), ivtmp.125_272(31)>
+  # accum_329 = PHI <accum_191(32), accum_192(31)>
+
+  <bb 30> [20.00%]:
+  # _258 = PHI <accum_329(29), myword_32(28)>
+  # locFPF2__lsm.94_325 = PHI <accum_178(29), myword_33(28)>
+  # ivtmp.125_168 = PHI <ivtmp.125_328(29), 31(28)>
+  accum_178 = locFPF2__lsm.94_325 << 1;
+  accum_191 = _258 << 1;
+  _154 = (signed short) locFPF2__lsm.94_325;
+  if (_154 < 0)
+    goto <bb 31>; [50.00%]
+  else
+    goto <bb 32>; [50.00%]
+
+  <bb 31> [10.00%]:
+  accum_192 = accum_191 | 1;
+  _26 = (short int) ivtmp.125_168;
+  _4 = (signed short) accum_192;
+  ivtmp.125_272 = ivtmp.125_168 - 1;
+  if (_4 >= 0)
+    goto <bb 29>; [85.00%]
+  else
+    goto <bb 33>; [15.00%]
+
+  <bb 32> [10.00%]:
+  # accum_193 = PHI <accum_191(30)>
+  _99 = (short int) ivtmp.125_168;
+  _101 = (signed short) accum_191;
+  ivtmp.125_102 = ivtmp.125_168 - 1;
+  if (_101 >= 0)
+    goto <bb 29>; [85.00%]
+  else
+    goto <bb 33>; [15.00%]
+
+  <bb 33> [0.00%]:
+  # _64 = PHI <_99(32), _26(31)>
+  # accum_177 = PHI <accum_178(32), accum_178(31)>
+  # accum_217 = PHI <accum_191(32), accum_192(31)>
+  # accum_262 = PHI <accum_178(32), accum_178(31)>
+  MEM[(short unsigned int *)&locFPF2 + 8B] = 0;
+  MEM[(short unsigned int *)&locFPF2 + 6B] = accum_262;
+  MEM[(short unsigned int *)&locFPF2 + 4B] = accum_217;
+  locFPF2.exp = _64;
+
+  <bb 34> [9.63%]:
+  _8 = (struct InternalFPF *) ivtmp.149_164;
+  DivideInternalFPF (&locFPF1, &locFPF2, _8);
+  ivtmp.149_288 = ivtmp.149_164 + 12;
+  ivtmp.150_302 = ivtmp.150_295 + 12;
+  if (ivtmp.149_288 != _315)
+    goto <bb 4>; [85.00%]
+  else
+    goto <bb 35>; [15.00%]
+
+  <bb 35> [1.70%]:
+  locFPF1 ={v} {CLOBBER};
+  locFPF2 ={v} {CLOBBER};
+  return;
+
+  <bb 36> [20.00%]:
+  # locFPF1__lsm.114_240 = PHI <locFPF1__lsm.114_151(10), locFPF1__lsm.114_253(37)>
+  # locFPF1_exp_lsm.118_286 = PHI <locFPF1_exp_lsm.118_166(10), locFPF1_exp_lsm.118_252(37)>
+  # _114 = PHI <_306(10), _109(37)>
+  accum_307 = locFPF1__lsm.114_240 << 1;
+  accum_283 = _114 << 1;
+  _279 = (signed short) locFPF1__lsm.114_240;
+  if (_279 < 0)
+    goto <bb 11>; [50.00%]
+  else
+    goto <bb 12>; [50.00%]
+
+  <bb 37> [3.00%]:
+  # _109 = PHI <myword_46(8)>
+  # locFPF1__lsm.114_253 = PHI <myword_47(8)>
+  # locFPF1_exp_lsm.118_252 = PHI <32(8)>
+  goto <bb 36>; [100.00%]
+
+}
+
+
+
+;; Function DoEmFloatIteration (DoEmFloatIteration, funcdef_no=35, decl_uid=2773, cgraph_uid=35, symbol_order=35)
+
+;; 24 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 105 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104
+;;
+;; Loop 1
+;;  header 98, latch 97
+;;  depth 1, outer 0
+;;  nodes: 98 97 95 99 3 4 5 93 94 78 92 18 6 91 104 103 82 89 87 88 85 86 83 84 81 102 80 79 77 7 16 17 76 19 20 72 73 75 74 10 8 14 12 11 13 9 15 71 45 44 42 43 40 41 38 39 36 37 34 35 32 33 30 31 28 29 54 53 51 52 49 50 47 48 105 27 25 26 24 22 23 21 70 69 68 66 67 64 65 62 63 60 61 58 59 56 57 55 46 90 96 100
+;;
+;; Loop 2
+;;  header 3, latch 96
+;;  depth 2, outer 1
+;;  nodes: 3 96 95 4 5 93 94 78 92 18 6 91 104 103 82 89 87 88 85 86 83 84 81 102 80 79 77 7 16 17 76 19 20 72 73 75 74 10 8 14 12 11 13 9 15 71 45 44 42 43 40 41 38 39 36 37 34 35 32 33 30 31 28 29 54 53 51 52 49 50 47 48 105 27 25 26 24 22 23 21 70 69 68 66 67 64 65 62 63 60 61 58 59 56 57 55 46 90
+;;
+;; Loop 23
+;;  header 56, latch 55
+;;  depth 3, outer 2
+;;  nodes: 56 55 70 69 68 66 67 64 65 62 63 60 61 58 59 57
+;;
+;; Loop 8
+;;  header 47, latch 105
+;;  depth 3, outer 2
+;;  nodes: 47 105 44 42 43 40 41 38 39 36 37 34 35 32 33 30 31 28 29 54 53 51 52 49 50 48
+;; 2 succs { 98 }
+;; 3 succs { 95 4 5 6 94 }
+;; 4 succs { 95 }
+;; 5 succs { 95 }
+;; 6 succs { 7 16 18 20 17 21 19 8 }
+;; 7 succs { 77 }
+;; 8 succs { 74 9 }
+;; 9 succs { 75 10 }
+;; 10 succs { 74 11 }
+;; 11 succs { 75 12 }
+;; 12 succs { 74 13 }
+;; 13 succs { 75 14 }
+;; 14 succs { 74 15 }
+;; 15 succs { 75 76 }
+;; 16 succs { 77 }
+;; 17 succs { 77 }
+;; 18 succs { 93 }
+;; 19 succs { 77 }
+;; 20 succs { 77 }
+;; 21 succs { 23 22 }
+;; 22 succs { 23 24 }
+;; 23 succs { 24 }
+;; 24 succs { 27 25 }
+;; 25 succs { 27 26 }
+;; 26 succs { 27 }
+;; 27 succs { 47 }
+;; 28 succs { 29 30 }
+;; 29 succs { 30 }
+;; 30 succs { 31 32 }
+;; 31 succs { 32 }
+;; 32 succs { 33 34 }
+;; 33 succs { 34 }
+;; 34 succs { 35 36 }
+;; 35 succs { 36 }
+;; 36 succs { 37 38 }
+;; 37 succs { 38 }
+;; 38 succs { 39 40 }
+;; 39 succs { 40 }
+;; 40 succs { 41 42 }
+;; 41 succs { 42 }
+;; 42 succs { 43 44 }
+;; 43 succs { 44 }
+;; 44 succs { 105 45 }
+;; 45 succs { 46 72 }
+;; 46 succs { 56 }
+;; 105 succs { 47 }
+;; 47 succs { 48 49 }
+;; 48 succs { 49 }
+;; 49 succs { 50 51 }
+;; 50 succs { 51 }
+;; 51 succs { 52 53 }
+;; 52 succs { 53 }
+;; 53 succs { 28 54 }
+;; 54 succs { 30 }
+;; 55 succs { 56 }
+;; 56 succs { 57 58 }
+;; 57 succs { 58 }
+;; 58 succs { 59 60 }
+;; 59 succs { 60 }
+;; 60 succs { 61 62 }
+;; 61 succs { 62 }
+;; 62 succs { 63 64 }
+;; 63 succs { 64 }
+;; 64 succs { 65 66 }
+;; 65 succs { 66 }
+;; 66 succs { 67 68 }
+;; 67 succs { 68 }
+;; 68 succs { 69 70 }
+;; 69 succs { 55 71 }
+;; 70 succs { 55 71 }
+;; 71 succs { 72 }
+;; 72 succs { 73 77 }
+;; 73 succs { 77 }
+;; 74 succs { 77 }
+;; 75 succs { 77 }
+;; 76 succs { 77 }
+;; 77 succs { 79 78 }
+;; 78 succs { 93 }
+;; 79 succs { 80 102 }
+;; 80 succs { 102 }
+;; 81 succs { 83 78 }
+;; 82 succs { 104 }
+;; 83 succs { 84 85 }
+;; 84 succs { 85 }
+;; 85 succs { 86 87 }
+;; 86 succs { 87 }
+;; 87 succs { 88 89 }
+;; 88 succs { 89 }
+;; 89 succs { 82 103 }
+;; 90 succs { 91 78 }
+;; 91 succs { 92 }
+;; 92 succs { 93 }
+;; 93 succs { 95 }
+;; 94 succs { 95 }
+;; 95 succs { 96 97 }
+;; 96 succs { 3 }
+;; 97 succs { 98 }
+;; 98 succs { 99 101 }
+;; 99 succs { 100 97 }
+;; 100 succs { 3 }
+;; 101 succs { 1 }
+;; 102 succs { 81 90 }
+;; 103 succs { 104 }
+;; 104 succs { 92 }
+
+SSA replacement table
+N_i -> { O_1 ... O_j } means that N_i replaces O_1, ..., O_j
+
+accum_169 -> { accum_692 }
+accum_173 -> { accum_782 }
+accum_353 -> { accum_448 }
+accum_395 -> { accum_787 }
+accum_436 -> { accum_601 }
+accum_437 -> { accum_614 }
+accum_458 -> { accum_795 }
+accum_493 -> { accum_533 }
+accum_506 -> { accum_627 }
+accum_519 -> { accum_653 }
+accum_661 -> { accum_808 }
+accum_734 -> { accum_482 }
+accum_814 -> { accum_511 }
+accum_853 -> { accum_635 }
+accum_862 -> { accum_640 }
+accum_863 -> { accum_666 }
+accum_871 -> { accum_679 }
+accum_872 -> { accum_767 }
+accum_880 -> { accum_770 }
+Incremental SSA update started at block: 47
+Number of blocks in CFG: 106
+Number of blocks to update: 27 ( 25%)
+
+
+Adding assert for accum_431 from accum_431 + 32768
+Adding assert for accum_431 from accum_431 + 32768
+Adding assert for accum_444 from accum_444 + 32768
+Adding assert for accum_444 from accum_444 + 32768
+Adding assert for accum_519 from accum_519 + 32768
+
+SSA replacement table
+N_i -> { O_1 ... O_j } means that N_i replaces O_1, ..., O_j
+
+loops_121 -> { loops_28 }
+_153 -> { _214 }
+abase_157 -> { abase_34(D) }
+accum_165 -> { accum_444 }
+i_187 -> { i_39 }
+_188 -> { _174 }
+_200 -> { _174 }
+_201 -> { _214 }
+_227 -> { _174 }
+_240 -> { _928 }
+_260 -> { _214 }
+accum_261 -> { accum_431 }
+_267 -> { _925 }
+_379 -> { _933 }
+_391 -> { _932 }
+_392 -> { _929 }
+_461 -> { _924 }
+bbase_485 -> { bbase_33(D) }
+abase_492 -> { abase_34(D) }
+abase_494 -> { abase_34(D) }
+_501 -> { _921 }
+_502 -> { _920 }
+ivtmp_514 -> { ivtmp_869 }
+_515 -> { _522 }
+accum_527 -> { accum_519 }
+accum_528 -> { accum_444 }
+accum_566 -> { accum_431 }
+_567 -> { _324 }
+bbase_572 -> { bbase_33(D) }
+_579 -> { _312 }
+_580 -> { _309 }
+bbase_585 -> { bbase_33(D) }
+_605 -> { _214 }
+bbase_637 -> { bbase_33(D) }
+arraysize_674 -> { arraysize_31(D) }
+Incremental SSA update started at block: 98
+Number of blocks in CFG: 110
+Number of blocks to update: 59 ( 54%)
+
+
+
+Value ranges after VRP:
+
+_1: VARYING
+_2: ~[0B, 0B]  EQUIVALENCES: { _201 _214 } (2 elements)
+_4: [_562, _562]  EQUIVALENCES: { _562 } (1 elements)
+_5: [_560, _560]  EQUIVALENCES: { _560 } (1 elements)
+_6: [_265, _265]  EQUIVALENCES: { _265 } (1 elements)
+D__lsm.204_7: [1, +INF]
+_8: [_495, _495]  EQUIVALENCES: { _495 } (1 elements)
+_9: [_712, _712]  EQUIVALENCES: { _712 } (1 elements)
+_10: [_574, _574]  EQUIVALENCES: { _574 } (1 elements)
+D__lsm.203_11: [0, 65534]  EQUIVALENCES: { accum_444 } (1 elements)
+_12: [_196, _196]  EQUIVALENCES: { _196 } (1 elements)
+_13: [_559, _559]  EQUIVALENCES: { _559 } (1 elements)
+_14: [_662, _662]  EQUIVALENCES: { _662 } (1 elements)
+D__lsm.204_15: [0, 0]
+_16: [_489, _489]  EQUIVALENCES: { _489 } (1 elements)
+_17: [_509, _509]  EQUIVALENCES: { _509 } (1 elements)
+_18: [_497, _497]  EQUIVALENCES: { _497 } (1 elements)
+loops_19: VARYING
+_20: [0, +INF]  EQUIVALENCES: { } (0 elements)
+.MEM_21: VARYING
+extra_bits$0_22: VARYING
+.MEM_23: VARYING
+elapsed_26: VARYING
+loops_27(D): VARYING
+loops_28: [0, +INF]
+_30: VARYING
+arraysize_31(D): VARYING
+cbase_32(D): VARYING
+bbase_33(D): VARYING
+abase_34(D): VARYING
+_36: ~[0B, 0B]  EQUIVALENCES: { _515 _522 } (2 elements)
+i_39: [1, +INF]
+_40: VARYING
+_41: [0, 255]
+_42: [0, 1275]
+_43: VARYING
+_44: [0, 255]
+_45: [0, 1530]
+locy__lsm.167_46: VARYING
+_47: VARYING
+_48: VARYING
+_49: [0, +INF]
+ivtmp.176_50: [0, +INF]
+_51: VARYING
+_52: VARYING
+_53: [0, +INF]
+ivtmp.194_56: [0, +INF]
+accum_57: [0, +INF]
+_58: [0, 15]
+_65: ~[0B, 0B]  EQUIVALENCES: { _201 _214 } (2 elements)
+_68: ~[0B, 0B]  EQUIVALENCES: { _515 _522 } (2 elements)
+_69: ~[0B, 0B]  EQUIVALENCES: { _174 _188 } (2 elements)
+prephitmp_76: [0, +INF]
+_79: ~[0B, 0B]  EQUIVALENCES: { _174 _188 } (2 elements)
+_82: ~[0B, 0B]  EQUIVALENCES: { _201 _214 } (2 elements)
+_83: VARYING
+_84: VARYING
+_85: VARYING
+_86: [0, +INF]
+_87: VARYING
+_88: [0, +INF]
+_89: VARYING
+_90: [0, +INF]
+_91: [0, +INF]
+_92: VARYING
+_102: ~[0B, 0B]  EQUIVALENCES: { _174 _188 } (2 elements)
+_106: [0, +INF]
+_113: [0, +INF]
+loops_121: [0, 18446744073709551614]  EQUIVALENCES: { loops_28 } (1 elements)
+_129: ~[0B, 0B]  EQUIVALENCES: { _174 _188 _200 } (3 elements)
+_140: [0, +INF]
+ivtmp.176_145: [0, +INF]
+_153: ~[0B, 0B]  EQUIVALENCES: { _201 _214 } (2 elements)
+abase_157: ~[0B, 0B]  EQUIVALENCES: { abase_34(D) } (1 elements)
+accum_165: [0, 32767]  EQUIVALENCES: { accum_444 } (1 elements)
+accum_169: [0, +INF]
+_170: VARYING
+_171: VARYING
+_172: VARYING
+accum_173: [0, +INF]
+_174: VARYING
+pretmp_181: VARYING
+pretmp_184: VARYING
+_185: VARYING
+_186: [1, +INF]
+i_187: ~[arraysize_674, arraysize_674]  EQUIVALENCES: { i_39 } (1 elements)
+_188: ~[0B, 0B]  EQUIVALENCES: { _174 } (1 elements)
+_189: ~[0B, 0B]  EQUIVALENCES: { _174 _188 } (2 elements)
+_190: [0, +INF]
+_196: VARYING
+_200: ~[0B, 0B]  EQUIVALENCES: { _174 _188 } (2 elements)
+_201: ~[0B, 0B]  EQUIVALENCES: { _214 } (1 elements)
+_202: [0, 65528]
+prephitmp_203: VARYING
+.MEM_213: VARYING
+_214: VARYING
+_215: ~[0B, 0B]  EQUIVALENCES: { _201 _214 } (2 elements)
+_216: ~[0B, 0B]  EQUIVALENCES: { _201 _214 } (2 elements)
+_217: ~[0B, 0B]  EQUIVALENCES: { _515 _522 } (2 elements)
+_218: ~[0B, 0B]  EQUIVALENCES: { _324 _567 } (2 elements)
+_221: [32768, 32768]
+pretmp_222: VARYING
+_223: [32769, 32769]
+_224: [-32767, -32767]
+prephitmp_225: VARYING
+_227: ~[0B, 0B]  EQUIVALENCES: { _174 _188 } (2 elements)
+_240: [0, _929]  EQUIVALENCES: { _928 } (1 elements)
+pretmp_244: VARYING
+_245: ~[0B, 0B]  EQUIVALENCES: { _174 _188 } (2 elements)
+_246: [1, +INF]
+cstore_247: [1, 2]
+_248: ~[0B, 0B]  EQUIVALENCES: { _174 _188 _227 } (3 elements)
+_249: ~[0B, 0B]  EQUIVALENCES: { _201 _214 } (2 elements)
+prephitmp_250: [0, +INF]
+.MEM_251: VARYING
+_253: ~[0B, 0B]  EQUIVALENCES: { _201 _214 } (2 elements)
+prephitmp_254: [0, +INF]
+_255: [0, +INF]
+_256: ~[0B, 0B]  EQUIVALENCES: { _515 _522 } (2 elements)
+_257: ~[0B, 0B]  EQUIVALENCES: { _324 _567 } (2 elements)
+_258: [0, +INF]
+extra_bits$2_259: VARYING
+_260: ~[0B, 0B]  EQUIVALENCES: { _201 _214 } (2 elements)
+accum_261: [32768, +INF]  EQUIVALENCES: { accum_431 } (1 elements)
+extra_bits$0_262: [0, +INF]
+.MEM_263: VARYING
+_264: ~[0B, 0B]  EQUIVALENCES: { _174 _188 } (2 elements)
+_265: VARYING
+accum_266: [0, +INF]
+_267: [_461, +INF]  EQUIVALENCES: { _925 } (1 elements)
+D__lsm.157_268: [0, +INF]
+extra_bits$1_269: VARYING
+extra_bits$2_270: [0, +INF]
+.MEM_271: VARYING
+i_281: [0, 18446744073709551614]
+.MEM_282: VARYING
+_286: ~[0B, 0B]  EQUIVALENCES: { _309 _580 } (2 elements)
+_309: VARYING
+_311: ~[0B, 0B]  EQUIVALENCES: { _312 _579 } (2 elements)
+_312: VARYING
+D__lsm.203_319: [0, 32767]  EQUIVALENCES: { accum_519 accum_527 } (2 elements)
+_320: ~[0B, 0B]  EQUIVALENCES: { _515 _522 } (2 elements)
+_323: [0, +INF]
+_324: VARYING
+accum_327: [0, +INF]
+_334: ~[0B, 0B]  EQUIVALENCES: { _174 _188 _200 } (3 elements)
+.MEM_338: VARYING
+accum_345: [0, +INF]
+accum_353: [0, +INF]
+_356: ~[-1, -1]
+accum_357: VARYING
+_358: [0, 1]
+accum_359: [0, 32767]
+accum_361: [0, +INF]
+_365: VARYING
+.MEM_366: VARYING
+_369: [0, +INF]  EQUIVALENCES: { ivtmp.194_597 } (1 elements)
+accum_370: VARYING
+_371: [0, 1]
+accum_372: [0, 32767]
+accum_373: [32768, +INF]
+accum_374: [0, +INF]
+_379: [_391, +INF]  EQUIVALENCES: { _933 } (1 elements)
+_382: [0, +INF]
+accum_383: VARYING
+_384: [0, 1]
+accum_385: [0, 32767]
+accum_386: [32768, +INF]
+accum_387: [0, +INF]
+_391: [0, _933]  EQUIVALENCES: { _932 } (1 elements)
+_392: [_240, +INF]  EQUIVALENCES: { _929 } (1 elements)
+accum_395: [0, +INF]
+accum_396: VARYING
+_397: [0, 1]
+accum_398: [0, 32767]
+accum_399: [32768, +INF]
+accum_400: [0, +INF]
+pretmp_407: VARYING
+_408: VARYING
+locy__lsm.171_409: VARYING
+_410: VARYING
+D__lsm.203_413: [1, +INF]  EQUIVALENCES: { accum_431 } (1 elements)
+D__lsm.203_416: [32768, +INF]  EQUIVALENCES: { } (0 elements)
+_417: VARYING
+_418: ~[0B, 0B]  EQUIVALENCES: { _174 _188 _227 } (3 elements)
+_419: ~[0B, 0B]  EQUIVALENCES: { _174 _188 _200 } (3 elements)
+_422: [0, 65536]
+accum_425: [0, 65534]
+_426: VARYING
+_427: ~[0B, 0B]  EQUIVALENCES: { _201 _214 } (2 elements)
+_428: ~[0B, 0B]  EQUIVALENCES: { _201 _214 } (2 elements)
+accum_431: [1, +INF]
+_434: VARYING
+_435: VARYING
+accum_436: [0, +INF]
+accum_437: [0, +INF]
+accum_444: [0, 65534]
+accum_448: [0, +INF]
+accum_455: [1, +INF]
+_456: ~[0B, 0B]  EQUIVALENCES: { _174 _188 } (2 elements)
+D__lsm.204_457: [1, +INF]
+accum_458: [0, +INF]
+_461: [0, _925]  EQUIVALENCES: { _924 } (1 elements)
+_464: VARYING
+locy__lsm.169_465: VARYING
+_466: VARYING
+_467: ~[0, 0]
+pretmp_470: VARYING
+accum_473: [0, +INF]
+_474: ~[0B, 0B]  EQUIVALENCES: { _174 _188 } (2 elements)
+ivtmp.176_475: [0, +INF]
+_476: [0, 32767]  EQUIVALENCES: { } (0 elements)
+pretmp_479: VARYING
+accum_482: [0, +INF]
+locy__lsm.171_483: VARYING
+.MEM_484: VARYING
+bbase_485: ~[0B, 0B]  EQUIVALENCES: { bbase_33(D) bbase_637 } (2 elements)
+_488: ~[0B, 0B]  EQUIVALENCES: { _312 _579 } (2 elements)
+_489: VARYING
+abase_492: ~[0B, 0B]  EQUIVALENCES: { abase_34(D) abase_157 } (2 elements)
+accum_493: [0, +INF]
+abase_494: ~[0B, 0B]  EQUIVALENCES: { abase_34(D) abase_157 } (2 elements)
+_495: VARYING
+_496: [0, +INF]
+_497: VARYING
+accum_498: [1, +INF]
+_501: [_502, +INF]  EQUIVALENCES: { _921 } (1 elements)
+_502: [0, _921]  EQUIVALENCES: { _920 } (1 elements)
+_505: VARYING
+accum_506: [0, +INF]
+accum_507: [0, +INF]
+_508: [0, +INF]
+_509: VARYING
+_510: [0, +INF]  EQUIVALENCES: { ivtmp.194_597 } (1 elements)
+accum_511: [0, +INF]
+ivtmp_514: [1, 63]  EQUIVALENCES: { ivtmp_869 } (1 elements)
+_515: ~[0B, 0B]  EQUIVALENCES: { _522 } (1 elements)
+accum_518: [1, +INF]
+accum_519: [0, +INF]
+_520: VARYING
+_521: [0, +INF]
+_522: VARYING
+_523: ~[0B, 0B]  EQUIVALENCES: { _201 _214 } (2 elements)
+accum_524: [0, +INF]
+accum_527: [0, 32767]  EQUIVALENCES: { accum_519 } (1 elements)
+accum_528: [32768, 65534]  EQUIVALENCES: { accum_444 } (1 elements)
+_531: [0, 1]
+pretmp_532: VARYING
+accum_533: [0, +INF]
+_534: VARYING
+_535: ~[0B, 0B]  EQUIVALENCES: { _309 _580 } (2 elements)
+_536: VARYING
+_537: VARYING
+_541: [0, +INF]
+_544: ~[0B, 0B]  EQUIVALENCES: { _174 _188 } (2 elements)
+locy__lsm.165_545: VARYING
+_546: [0, +INF]
+_547: [0, +INF]  EQUIVALENCES: { } (0 elements)
+pretmp_549: VARYING
+.MEM_550: VARYING
+_553: [0, +INF]
+_554: [0, +INF]
+_557: [0, 1]
+locy__lsm.167_558: VARYING
+_559: VARYING
+_560: VARYING
+_561: [0, +INF]  EQUIVALENCES: { } (0 elements)
+_562: VARYING
+accum_563: [0, +INF]
+accum_566: [1, 32767]  EQUIVALENCES: { accum_431 } (1 elements)
+_567: ~[0B, 0B]  EQUIVALENCES: { _324 } (1 elements)
+accum_570: [0, 32767]
+_571: ~[0B, 0B]  EQUIVALENCES: { _174 _188 } (2 elements)
+bbase_572: ~[0B, 0B]  EQUIVALENCES: { bbase_33(D) bbase_637 } (2 elements)
+_573: [0, +INF]
+_574: VARYING
+_575: [0, +INF]
+accum_576: [0, +INF]
+_579: ~[0B, 0B]  EQUIVALENCES: { _312 } (1 elements)
+_580: ~[0B, 0B]  EQUIVALENCES: { _309 } (1 elements)
+.MEM_583: VARYING
+_584: ~[0B, 0B]  EQUIVALENCES: { _201 _214 } (2 elements)
+bbase_585: ~[0B, 0B]  EQUIVALENCES: { bbase_33(D) bbase_637 } (2 elements)
+_586: [0, +INF]
+_587: [0, +INF]  EQUIVALENCES: { ivtmp.194_597 } (1 elements)
+_588: [0, +INF]
+_592: [0, +INF]
+_593: [0, +INF]
+accum_596: [1, +INF]
+ivtmp.194_597: [0, +INF]
+_598: [0, 1]
+accum_599: [0, 32767]
+accum_600: [32768, +INF]
+accum_601: [0, +INF]
+.MEM_602: VARYING
+_605: ~[0B, 0B]  EQUIVALENCES: { _201 _214 } (2 elements)
+.MEM_606: VARYING
+_609: VARYING
+ivtmp.194_610: [0, +INF]
+_611: [0, 1]
+accum_612: [0, 32767]
+accum_613: [32768, +INF]
+accum_614: [0, +INF]
+accum_615: [0, +INF]
+.MEM_618: VARYING
+prephitmp_619: VARYING
+accum_622: [0, +INF]
+locy__lsm.165_623: VARYING
+_624: [0, 1]
+accum_625: [0, 32767]
+accum_626: [32768, +INF]
+accum_627: [0, +INF]
+extra_bits$1_628: [0, +INF]
+pretmp_631: VARYING
+prephitmp_632: [0, +INF]
+accum_635: [0, +INF]
+locy__lsm.169_636: VARYING
+bbase_637: ~[0B, 0B]  EQUIVALENCES: { bbase_33(D) } (1 elements)
+accum_638: [0, 32767]
+accum_639: [32768, +INF]
+accum_640: [0, +INF]
+accum_641: [0, +INF]
+accum_648: [1, +INF]
+_649: [0, +INF]
+_650: [0, 1]
+accum_651: [0, 32767]
+accum_652: [32768, +INF]
+accum_653: [0, +INF]
+_657: [0, +INF]
+_658: [0, +INF]
+accum_661: [0, +INF]
+_662: VARYING
+_663: [0, 1]
+accum_664: [0, 32767]
+accum_665: [32768, +INF]
+accum_666: [0, +INF]
+_670: [0, +INF]
+_671: [0, +INF]
+arraysize_674: ~[0, 0]  EQUIVALENCES: { arraysize_31(D) } (1 elements)
+accum_675: VARYING
+_676: [0, 1]
+accum_677: [0, 32767]
+accum_678: [32768, +INF]
+accum_679: [0, +INF]
+_683: [0, +INF]
+_684: [0, +INF]
+_687: [0, +INF]
+accum_688: VARYING
+_689: [0, 1]
+accum_690: [0, 32767]
+accum_691: [32768, +INF]
+accum_692: [0, +INF]
+ivtmp.196_697: [0, +INF]
+_698: VARYING
+_699: VARYING
+accum_700: [0, 65535]
+_701: [0, 65535]
+accum_702: [0, 131070]
+_704: VARYING
+_705: [0, 1]
+accum_706: [0, +INF]
+extra_bits$3_707: [0, +INF]
+_708: [0, +INF]
+_712: VARYING
+_713: [0, +INF]
+_714: VARYING
+_715: VARYING
+accum_716: [0, 65535]
+_717: [0, 65535]
+accum_718: [0, 131070]
+_719: ~[0B, 0B]  EQUIVALENCES: { _174 _188 } (2 elements)
+accum_720: [0, 131071]
+_721: [0, 1]
+accum_722: [0, +INF]
+_724: [0, +INF]
+_728: [0, +INF]  EQUIVALENCES: { ivtmp.194_597 } (1 elements)
+_729: [0, +INF]
+_730: VARYING
+_731: ~[0B, 0B]  EQUIVALENCES: { _174 _188 } (2 elements)
+accum_732: [0, 65535]
+_733: [0, 65535]
+accum_734: [0, +INF]
+_735: ~[0B, 0B]  EQUIVALENCES: { _174 _188 _200 } (3 elements)
+accum_736: [0, 131071]  EQUIVALENCES: { } (0 elements)
+_737: [0, 1]
+accum_738: [0, +INF]
+extra_bits$0_739: [0, +INF]
+_740: [0, +INF]
+_744: [0, +INF]
+_745: [0, +INF]
+_746: VARYING
+_747: ~[0B, 0B]  EQUIVALENCES: { _174 _188 } (2 elements)
+accum_748: [0, 65535]
+_749: [0, 65535]
+accum_750: [0, 131070]  EQUIVALENCES: { } (0 elements)
+_751: [0, +INF]
+accum_752: [0, 131071]
+_753: [0, 1]
+_754: [0, 1]
+_755: VARYING
+_756: [0, +INF]
+accum_761: [0, +INF]
+pretmp_764: VARYING
+_765: ~[0B, 0B]  EQUIVALENCES: { _174 _188 _200 } (3 elements)
+_766: [0, 1]
+accum_767: [0, 32767]
+_769: [0, +INF]
+accum_770: [0, +INF]
+_773: [0, +INF]
+_774: [0, +INF]
+accum_777: [1, +INF]
+_778: ~[0B, 0B]  EQUIVALENCES: { _515 _522 } (2 elements)
+_779: [0, 1]
+accum_780: [0, 32767]
+accum_781: [32768, +INF]
+accum_782: [0, +INF]
+_783: VARYING
+accum_786: [0, +INF]
+accum_787: [0, +INF]
+D__lsm.204_790: [1, +INF]
+_791: ~[0B, 0B]  EQUIVALENCES: { _201 _214 } (2 elements)
+_792: [0, 1]
+accum_793: [0, 32767]
+accum_794: [32768, +INF]
+accum_795: [0, +INF]
+D__lsm.161_796: [0, +INF]
+D__lsm.159_799: [0, +INF]
+D__lsm.157_800: [0, +INF]
+extra_bits$3_803: [0, +INF]
+_804: ~[0B, 0B]  EQUIVALENCES: { _174 _188 } (2 elements)
+_805: [0, 1]
+accum_806: [0, 32767]
+accum_807: [32768, +INF]
+accum_808: [0, +INF]
+extra_bits$2_809: [0, +INF]
+accum_814: [0, +INF]
+extra_bits$1_817: [0, +INF]
+ivtmp.176_819: [0, +INF]
+extra_bits$0_822: [0, +INF]
+D__lsm.161_824: [0, +INF]
+.MEM_827: VARYING
+D__lsm.159_829: [0, +INF]
+_833: ~[0B, 0B]  EQUIVALENCES: { _201 _214 } (2 elements)
+prephitmp_836: [0, 1]
+_837: ~[0B, 0B]  EQUIVALENCES: { _201 _214 } (2 elements)
+prephitmp_840: VARYING
+_841: ~[0B, 0B]  EQUIVALENCES: { _174 _188 } (2 elements)
+pretmp_844: VARYING
+_845: ~[0B, 0B]  EQUIVALENCES: { _174 _188 _227 } (3 elements)
+_851: [0, 32767]  EQUIVALENCES: { } (0 elements)
+_852: VARYING
+accum_853: [0, +INF]
+extra_bits$1_854: [0, +INF]
+_857: ~[0B, 0B]  EQUIVALENCES: { _174 _188 } (2 elements)
+ivtmp.176_860: [0, +INF]
+_861: VARYING
+accum_862: [0, +INF]
+accum_863: [0, +INF]
+_866: ~[0B, 0B]  EQUIVALENCES: { _174 _188 _227 } (3 elements)
+ivtmp_869: [0, 63]
+_870: VARYING
+accum_871: [0, +INF]
+accum_872: [0, 32767]
+_875: ~[0B, 0B]  EQUIVALENCES: { _201 _214 } (2 elements)
+ivtmp_878: [1, 64]
+_879: VARYING
+accum_880: [0, +INF]
+accum_887: [0, +INF]
+_888: VARYING
+extra_bits$2_889: [0, +INF]
+accum_890: [0, +INF]
+prephitmp_893: [0, +INF]
+accum_896: [0, +INF]
+_897: VARYING
+extra_bits$3_898: VARYING
+ivtmp.196_899: VARYING
+_902: ~[0B, 0B]  EQUIVALENCES: { _201 _214 } (2 elements)
+accum_905: [0, 32767]
+_906: VARYING
+extra_bits$3_907: [0, +INF]
+accum_908: [0, +INF]
+_911: ~[0B, 0B]  EQUIVALENCES: { _201 _214 } (2 elements)
+prephitmp_914: VARYING
+_915: VARYING
+accum_916: [0, +INF]
+accum_917: [0, +INF]
+_920: VARYING
+_921: VARYING
+_924: VARYING
+_925: VARYING
+_928: VARYING
+_929: VARYING
+_932: VARYING
+_933: VARYING
+
+
+Removing basic block 105
+Removing basic block 106
+Removing basic block 107
+Removing basic block 108
+Removing basic block 109
+
+SSA replacement table
+N_i -> { O_1 ... O_j } means that N_i replaces O_1, ..., O_j
+
+prephitmp_197 -> { prephitmp_914 }
+.MEM_378 -> { .MEM_263 }
+.MEM_644 -> { .MEM_263 }
+prephitmp_645 -> { prephitmp_632 }
+prephitmp_812 -> { prephitmp_914 }
+Incremental SSA update started at block: 6
+Number of blocks in CFG: 106
+Number of blocks to update: 11 ( 10%)
+
+
+DoEmFloatIteration (struct InternalFPF * abase, struct InternalFPF * bbase, struct InternalFPF * cbase, long unsigned int arraysize, long unsigned int loops)
+{
+  _Bool D__lsm.204;
+  short unsigned int D__lsm.203;
+  sizetype ivtmp.196;
+  unsigned long ivtmp.194;
+  unsigned short ivtmp.176;
+  _Bool locy__lsm.172;
+  short unsigned int locy__lsm.171;
+  _Bool locy__lsm.170;
+  short unsigned int locy__lsm.169;
+  _Bool locy__lsm.168;
+  short unsigned int locy__lsm.167;
+  _Bool locy__lsm.166;
+  short unsigned int locy__lsm.165;
+  _Bool D__exp_lsm.164;
+  short int D__exp_lsm.163;
+  _Bool D__lsm.162;
+  short unsigned int D__lsm.161;
+  _Bool D__lsm.160;
+  short unsigned int D__lsm.159;
+  _Bool D__lsm.158;
+  short unsigned int D__lsm.157;
+  short unsigned int extra_bits$3;
+  short unsigned int extra_bits$2;
+  short unsigned int extra_bits$1;
+  short unsigned int extra_bits$0;
+  int i;
+  short unsigned int carry;
+  short unsigned int * mantissa;
+  short unsigned int accum;
+  int i;
+  int i;
+  int i;
+  int n;
+  long int exponent_difference;
+  int i;
+  int i;
+  int j;
+  short unsigned int carry;
+  short unsigned int extra_bits[4];
+  struct InternalFPF locy;
+  int i;
+  int n;
+  int i;
+  int n;
+  int i;
+  int i;
+  short unsigned int accum;
+  int i;
+  unsigned int accum;
+  short unsigned int accum;
+  int i;
+  short unsigned int accum;
+  int i;
+  short unsigned int accum;
+  int i;
+  short unsigned int accum;
+  int i;
+  int n;
+  int i;
+  long unsigned int i;
+  static unsigned char jtable[16] = {0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3};
+  long unsigned int elapsed;
+  short int _1;
+  void * _2;
+  struct InternalFPF * _4;
+  struct InternalFPF * _5;
+  struct InternalFPF * _6;
+  struct InternalFPF * _8;
+  struct InternalFPF * _9;
+  struct InternalFPF * _10;
+  struct InternalFPF * _12;
+  struct InternalFPF * _13;
+  struct InternalFPF * _14;
+  struct InternalFPF * _16;
+  struct InternalFPF * _17;
+  struct InternalFPF * _18;
+  unsigned long _20;
+  long unsigned int _30;
+  void * _36;
+  unsigned char _40;
+  int _41;
+  int _42;
+  unsigned char _43;
+  int _44;
+  int _45;
+  unsigned char _47;
+  unsigned char _48;
+  unsigned char _49;
+  unsigned char _51;
+  unsigned char _52;
+  unsigned char _53;
+  long unsigned int _58;
+  void * _65;
+  void * _68;
+  void * _69;
+  short unsigned int prephitmp_76;
+  void * _79;
+  void * _82;
+  unsigned char _83;
+  unsigned char _84;
+  unsigned char _85;
+  unsigned char _86;
+  short int _87;
+  unsigned short _88;
+  short int _89;
+  unsigned short _90;
+  unsigned short _91;
+  short int _92;
+  void * _102;
+  short unsigned int _106;
+  short unsigned int _113;
+  void * _129;
+  unsigned char _140;
+  void * _170;
+  void * _171;
+  void * _172;
+  void * _174;
+  unsigned char pretmp_181;
+  unsigned char pretmp_184;
+  short unsigned int _185;
+  short unsigned int _186;
+  void * _189;
+  short unsigned int _190;
+  struct InternalFPF * _196;
+  unsigned char prephitmp_197;
+  short unsigned int _202;
+  unsigned char prephitmp_203;
+  void * _214;
+  void * _215;
+  void * _216;
+  void * _217;
+  void * _218;
+  unsigned char pretmp_222;
+  unsigned char prephitmp_225;
+  unsigned char pretmp_244;
+  void * _245;
+  short unsigned int _246;
+  unsigned char cstore_247;
+  void * _248;
+  void * _249;
+  short unsigned int prephitmp_250;
+  void * _253;
+  short unsigned int prephitmp_254;
+  short unsigned int _255;
+  void * _256;
+  void * _257;
+  unsigned char _258;
+  void * _264;
+  struct InternalFPF * _265;
+  void * _286;
+  void * _309;
+  void * _311;
+  void * _312;
+  void * _320;
+  unsigned long _323;
+  void * _324;
+  _Bool _328;
+  _Bool _331;
+  void * _334;
+  _Bool _335;
+  _Bool _341;
+  _Bool _342;
+  _Bool _348;
+  _Bool _349;
+  signed short _356;
+  short unsigned int _358;
+  short int _365;
+  unsigned long _369;
+  short unsigned int _371;
+  unsigned long _382;
+  short unsigned int _384;
+  short unsigned int _397;
+  unsigned char pretmp_407;
+  short unsigned int _408;
+  short int _410;
+  short unsigned int _417;
+  void * _418;
+  void * _419;
+  unsigned int _422;
+  short unsigned int _426;
+  void * _427;
+  void * _428;
+  signed short _434;
+  short unsigned int _435;
+  void * _456;
+  signed short _464;
+  short int _466;
+  signed short _467;
+  unsigned char pretmp_470;
+  void * _474;
+  short unsigned int _476;
+  unsigned char pretmp_479;
+  void * _488;
+  struct InternalFPF * _489;
+  struct InternalFPF * _495;
+  unsigned long _496;
+  struct InternalFPF * _497;
+  signed short _505;
+  unsigned long _508;
+  struct InternalFPF * _509;
+  unsigned long _510;
+  signed short _520;
+  unsigned long _521;
+  void * _522;
+  void * _523;
+  short unsigned int _531;
+  unsigned char pretmp_532;
+  void * _534;
+  void * _535;
+  void * _536;
+  void * _537;
+  unsigned long _541;
+  void * _544;
+  unsigned long _546;
+  unsigned long _547;
+  unsigned char pretmp_549;
+  short unsigned int _553;
+  short unsigned int _554;
+  short unsigned int _557;
+  struct InternalFPF * _559;
+  struct InternalFPF * _560;
+  unsigned long _561;
+  struct InternalFPF * _562;
+  void * _571;
+  unsigned long _573;
+  struct InternalFPF * _574;
+  unsigned long _575;
+  void * _584;
+  unsigned long _586;
+  unsigned long _587;
+  unsigned long _588;
+  unsigned long _592;
+  unsigned long _593;
+  short unsigned int _598;
+  signed short _609;
+  short unsigned int _611;
+  short unsigned int prephitmp_619;
+  short unsigned int _624;
+  short unsigned int pretmp_631;
+  unsigned char prephitmp_632;
+  unsigned char prephitmp_645;
+  unsigned long _649;
+  short unsigned int _650;
+  unsigned char _657;
+  unsigned char _658;
+  struct InternalFPF * _662;
+  short unsigned int _663;
+  unsigned char _670;
+  unsigned char _671;
+  short unsigned int _676;
+  unsigned char _683;
+  unsigned char _684;
+  unsigned long _687;
+  short unsigned int _689;
+  short unsigned int _698;
+  short unsigned int _699;
+  unsigned int _701;
+  signed short _704;
+  unsigned int _705;
+  short unsigned int _708;
+  struct InternalFPF * _712;
+  unsigned long _713;
+  short unsigned int _714;
+  short unsigned int _715;
+  unsigned int _717;
+  void * _719;
+  unsigned int _721;
+  short unsigned int _724;
+  unsigned long _728;
+  short unsigned int _729;
+  short unsigned int _730;
+  void * _731;
+  unsigned int _733;
+  void * _735;
+  unsigned int _737;
+  short unsigned int _740;
+  short unsigned int _744;
+  short unsigned int _745;
+  short unsigned int _746;
+  void * _747;
+  unsigned int _749;
+  unsigned long _751;
+  unsigned int _753;
+  short unsigned int _754;
+  signed short _755;
+  short unsigned int _756;
+  unsigned char pretmp_764;
+  void * _765;
+  short unsigned int _766;
+  short unsigned int _769;
+  short unsigned int _773;
+  short unsigned int _774;
+  void * _778;
+  short unsigned int _779;
+  signed short _783;
+  void * _791;
+  short unsigned int _792;
+  void * _804;
+  short unsigned int _805;
+  unsigned char prephitmp_812;
+  void * _833;
+  unsigned char prephitmp_836;
+  void * _837;
+  unsigned char prephitmp_840;
+  void * _841;
+  unsigned char pretmp_844;
+  void * _845;
+  short unsigned int _851;
+  short unsigned int _852;
+  void * _857;
+  short unsigned int _861;
+  void * _866;
+  unsigned int ivtmp_869;
+  short unsigned int _870;
+  void * _875;
+  unsigned int ivtmp_878;
+  short unsigned int _879;
+  short unsigned int _888;
+  short unsigned int prephitmp_893;
+  short unsigned int _897;
+  void * _902;
+  short unsigned int _906;
+  void * _911;
+  unsigned char prephitmp_914;
+  short unsigned int _915;
+  short unsigned int _920;
+  short unsigned int _921;
+  short unsigned int _924;
+  short unsigned int _925;
+  short unsigned int _928;
+  short unsigned int _929;
+  short unsigned int _932;
+  short unsigned int _933;
+
+  <bb 2> [0.39%]:
+  elapsed_26 = StartStopwatch ();
+  goto <bb 98>; [100.00%]
+
+  <bb 3> [12.51%]:
+  # i_281 = PHI <i_39(96), 0(100)>
+  # prephitmp_203 = PHI <pretmp_407(96), 0(100)>
+  # ivtmp.194_610 = PHI <ivtmp.194_56(96), ivtmp.194_597(100)>
+  # ivtmp.196_899 = PHI <ivtmp.196_697(96), 0(100)>
+  switch (prephitmp_203) <default: <L6> [20.00%], case 0: <L2> [20.00%], case 1: <L3> [20.00%], case 2: <L4> [20.00%], case 3: <L5> [20.00%]>
+
+<L2> [2.50%]:
+  _728 = ivtmp.194_597;
+  _561 = ivtmp.194_597 + ivtmp.196_899;
+  _562 = (struct InternalFPF *) _561;
+  _4 = _562;
+  _323 = (unsigned long) bbase_33(D);
+  _547 = ivtmp.196_899 + _323;
+  _560 = (struct InternalFPF *) _547;
+  _5 = _560;
+  _541 = (unsigned long) abase_34(D);
+  _20 = ivtmp.196_899 + _541;
+  _265 = (struct InternalFPF *) _20;
+  _6 = _265;
+  AddSubInternalFPF (0, _265, _560, _562);
+  goto <bb 95> (<L6>); [100.00%]
+
+<L3> [2.50%]:
+  _587 = ivtmp.194_597;
+  _588 = ivtmp.194_597 + ivtmp.196_899;
+  _495 = (struct InternalFPF *) _588;
+  _8 = _495;
+  _575 = (unsigned long) bbase_33(D);
+  _586 = ivtmp.196_899 + _575;
+  _712 = (struct InternalFPF *) _586;
+  _9 = _712;
+  _573 = (unsigned long) abase_34(D);
+  _713 = ivtmp.196_899 + _573;
+  _574 = (struct InternalFPF *) _713;
+  _10 = _574;
+  AddSubInternalFPF (1, _574, _712, _495);
+  goto <bb 95> (<L6>); [100.00%]
+
+<L4> [2.50%]:
+  _369 = ivtmp.194_597;
+  _382 = ivtmp.194_597 + ivtmp.196_899;
+  _196 = (struct InternalFPF *) _382;
+  _12 = _196;
+  _687 = (unsigned long) bbase_33(D);
+  _546 = ivtmp.196_899 + _687;
+  _559 = (struct InternalFPF *) _546;
+  _13 = _559;
+  _751 = (unsigned long) abase_34(D);
+  _649 = ivtmp.196_899 + _751;
+  _662 = (struct InternalFPF *) _649;
+  _14 = _662;
+  _40 = MEM[base: abase_34(D), index: ivtmp.196_899, offset: 0B];
+  _41 = (int) _40;
+  _42 = _41 * 5;
+  _43 = MEM[base: bbase_33(D), index: ivtmp.196_899, offset: 0B];
+  _44 = (int) _43;
+  _45 = _42 + _44;
+  switch (_45) <default: <L27> [12.50%], case 0 ... 2: <L13> [12.50%], case 3: <L15> [12.50%], case 4: <L17> [12.50%], case 5: <L14> [12.50%], case 6 ... 7: <L18> [12.50%], case 8: <L14> [12.50%], case 9: <L17> [12.50%], case 10: <L14> [12.50%], case 11 ... 12: <L18> [12.50%], case 13: <L14> [12.50%], case 14: <L17> [12.50%], case 15: <L15> [12.50%], case 16 ... 18: <L13> [12.50%], case 19: <L17> [12.50%], case 20 ... 23: <L16> [12.50%], case 24: <L25> [12.50%]>
+
+<L27> [0.31%]:
+  _534 = (void *) ivtmp.194_610;
+  pretmp_764 = MEM[base: _534, offset: 0B];
+  _684 = pretmp_764 + 255;
+  goto <bb 77> (<L20>); [100.00%]
+
+<L25> [0.31%]:
+  _920 = MEM[base: abase_34(D), index: ivtmp.196_899, offset: 4B];
+  _921 = MEM[base: bbase_33(D), index: ivtmp.196_899, offset: 4B];
+  if (_920 > _921)
+    goto <bb 74>; [5.00%]
+  else
+    goto <bb 9>; [95.00%]
+
+  <bb 9> [0.30%]:
+  if (_920 < _921)
+    goto <bb 75>; [5.00%]
+  else
+    goto <bb 10>; [95.00%]
+
+  <bb 10> [0.29%]:
+  _924 = MEM[base: abase_34(D), index: ivtmp.196_899, offset: 6B];
+  _925 = MEM[base: bbase_33(D), index: ivtmp.196_899, offset: 6B];
+  if (_924 > _925)
+    goto <bb 74>; [5.00%]
+  else
+    goto <bb 11>; [95.00%]
+
+  <bb 11> [0.27%]:
+  if (_924 < _925)
+    goto <bb 75>; [5.00%]
+  else
+    goto <bb 12>; [95.00%]
+
+  <bb 12> [0.26%]:
+  _928 = MEM[base: abase_34(D), index: ivtmp.196_899, offset: 8B];
+  _929 = MEM[base: bbase_33(D), index: ivtmp.196_899, offset: 8B];
+  if (_928 > _929)
+    goto <bb 74>; [5.00%]
+  else
+    goto <bb 13>; [95.00%]
+
+  <bb 13> [0.25%]:
+  if (_928 < _929)
+    goto <bb 75>; [5.00%]
+  else
+    goto <bb 14>; [95.00%]
+
+  <bb 14> [0.24%]:
+  _932 = MEM[base: abase_34(D), index: ivtmp.196_899, offset: 10B];
+  _933 = MEM[base: bbase_33(D), index: ivtmp.196_899, offset: 10B];
+  if (_932 > _933)
+    goto <bb 74>; [5.00%]
+  else
+    goto <bb 15>; [95.00%]
+
+  <bb 15> [0.23%]:
+  if (_932 < _933)
+    goto <bb 75>; [5.00%]
+  else
+    goto <bb 76>; [95.00%]
+
+<L13> [0.31%]:
+  __builtin_memmove (_662, _196, 12);
+  _312 = (void *) ivtmp.194_610;
+  _47 = MEM[base: _312, offset: 1B];
+  _48 = MEM[base: bbase_33(D), index: ivtmp.196_899, offset: 1B];
+  _49 = _47 ^ _48;
+  _311 = _312;
+  MEM[base: _312, offset: 1B] = _49;
+  _488 = _312;
+  pretmp_532 = MEM[base: _312, offset: 0B];
+  _683 = pretmp_532 + 255;
+  goto <bb 77> (<L20>); [100.00%]
+
+<L14> [0.31%]:
+  __builtin_memmove (_559, _196, 12);
+  _309 = (void *) ivtmp.194_610;
+  _51 = MEM[base: _309, offset: 1B];
+  _52 = MEM[base: abase_34(D), index: ivtmp.196_899, offset: 1B];
+  _53 = _51 ^ _52;
+  _286 = _309;
+  MEM[base: _309, offset: 1B] = _53;
+  _535 = _309;
+  pretmp_244 = MEM[base: _309, offset: 0B];
+  _671 = pretmp_244 + 255;
+  goto <bb 77> (<L20>); [100.00%]
+
+<L15> [0.31%]:
+  _522 = (void *) ivtmp.194_610;
+  MEM[base: _522, offset: 0B] = 4;
+  _256 = _522;
+  MEM[base: _522, offset: 2B] = 32767;
+  _320 = _522;
+  MEM[base: _522, offset: 1B] = 1;
+  _217 = _522;
+  MEM[base: _522, offset: 4B] = 16384;
+  _36 = _522;
+  MEM[base: _522, offset: 6B] = 0;
+  _68 = _522;
+  MEM[base: _522, offset: 8B] = 0;
+  _778 = _522;
+  MEM[base: _522, offset: 10B] = 0;
+  goto <bb 93>; [100.00%]
+
+<L16> [0.31%]:
+  __builtin_memmove (_662, _196, 12);
+  _537 = (void *) ivtmp.194_610;
+  pretmp_479 = MEM[base: _537, offset: 0B];
+  _658 = pretmp_479 + 255;
+  goto <bb 77> (<L20>); [100.00%]
+
+<L17> [0.31%]:
+  __builtin_memmove (_559, _196, 12);
+  _170 = (void *) ivtmp.194_610;
+  pretmp_181 = MEM[base: _170, offset: 0B];
+  _657 = pretmp_181 + 255;
+  goto <bb 77> (<L20>); [100.00%]
+
+<L18> [0.31%]:
+  __builtin_memcpy (&locy, _559, 12);
+  _888 = MEM[base: abase_34(D), index: ivtmp.196_899, offset: 4B];
+  _897 = MEM[base: abase_34(D), index: ivtmp.196_899, offset: 6B];
+  _106 = _897 | _888;
+  _906 = MEM[base: abase_34(D), index: ivtmp.196_899, offset: 8B];
+  _774 = _106 | _906;
+  _915 = MEM[base: abase_34(D), index: ivtmp.196_899, offset: 10B];
+  _773 = _774 | _915;
+  if (_773 == 0)
+    goto <bb 23>; [50.00%]
+  else
+    goto <bb 22>; [50.00%]
+
+  <bb 22> [0.16%]:
+  _852 = MEM[base: bbase_33(D), index: ivtmp.196_899, offset: 4B];
+  _861 = MEM[base: bbase_33(D), index: ivtmp.196_899, offset: 6B];
+  _769 = _861 | _852;
+  _870 = MEM[base: bbase_33(D), index: ivtmp.196_899, offset: 8B];
+  _255 = _769 | _870;
+  _879 = MEM[base: bbase_33(D), index: ivtmp.196_899, offset: 10B];
+  _113 = _255 | _879;
+  if (_113 == 0)
+    goto <bb 23>; [50.00%]
+  else
+    goto <bb 24>; [50.00%]
+
+  <bb 23> [0.23%]:
+  _324 = (void *) ivtmp.194_610;
+  MEM[base: _324, offset: 0B] = 3;
+  _257 = _324;
+  MEM[base: _324, offset: 1B] = 0;
+  _218 = _324;
+  MEM[base: _324, offset: 2B] = -32767;
+  pretmp_844 = MEM[base: abase_34(D), index: ivtmp.196_899, offset: 0B];
+
+  <bb 24> [0.31%]:
+  # prephitmp_840 = PHI <_40(22), pretmp_844(23)>
+  if (prephitmp_840 == 1)
+    goto <bb 27>; [34.00%]
+  else
+    goto <bb 25>; [66.00%]
+
+  <bb 25> [0.21%]:
+  _83 = MEM[base: bbase_33(D), index: ivtmp.196_899, offset: 0B];
+  if (_83 == 1)
+    goto <bb 27>; [34.00%]
+  else
+    goto <bb 26>; [66.00%]
+
+  <bb 26> [0.14%]:
+
+  <bb 27> [0.31%]:
+  # cstore_247 = PHI <1(25), 2(26), 1(24)>
+  # prephitmp_836 = PHI <0(25), 1(26), 0(24)>
+  _174 = (void *) ivtmp.194_610;
+  MEM[base: _174, offset: 0B] = cstore_247;
+  _84 = MEM[base: abase_34(D), index: ivtmp.196_899, offset: 1B];
+  _85 = MEM[base: bbase_33(D), index: ivtmp.196_899, offset: 1B];
+  _86 = _85 ^ _84;
+  _264 = _174;
+  MEM[base: _174, offset: 1B] = _86;
+  _87 = MEM[base: abase_34(D), index: ivtmp.196_899, offset: 2B];
+  _88 = (unsigned short) _87;
+  _89 = MEM[base: bbase_33(D), index: ivtmp.196_899, offset: 2B];
+  _90 = (unsigned short) _89;
+  _91 = _90 + _88;
+  _92 = (short int) _91;
+  _245 = _174;
+  MEM[base: _174, offset: 2B] = _92;
+  _102 = _174;
+  MEM[base: _174, offset: 4B] = 0;
+  _79 = _174;
+  MEM[base: _174, offset: 6B] = 0;
+  _571 = _174;
+  MEM[base: _174, offset: 8B] = 0;
+  _747 = _174;
+  MEM[base: _174, offset: 10B] = 0;
+  locy__lsm.165_545 = MEM[(short unsigned int *)&locy + 4B];
+  locy__lsm.167_558 = MEM[(short unsigned int *)&locy + 6B];
+  locy__lsm.169_465 = MEM[(short unsigned int *)&locy + 8B];
+  locy__lsm.171_483 = MEM[(short unsigned int *)&locy + 10B];
+  goto <bb 47>; [100.00%]
+
+  <bb 28> [6.80%]:
+  _698 = MEM[base: abase_34(D), index: ivtmp.196_899, offset: 10B];
+  _731 = _174;
+  _699 = MEM[base: _174, offset: 10B];
+  accum_700 = (unsigned int) _699;
+  _701 = (unsigned int) _698;
+  accum_702 = accum_700 + _701;
+  _705 = accum_702 >> 16;
+  _708 = _699 + _698;
+  _735 = _174;
+  MEM[base: _174, offset: 10B] = _708;
+  _714 = MEM[base: abase_34(D), index: ivtmp.196_899, offset: 8B];
+  _419 = _174;
+  _715 = MEM[base: _174, offset: 8B];
+  accum_716 = (unsigned int) _715;
+  _717 = (unsigned int) _714;
+  accum_718 = accum_716 + _717;
+  accum_720 = accum_718 + _705;
+  _721 = accum_720 >> 16;
+  _724 = (short unsigned int) accum_720;
+  _765 = _174;
+  MEM[base: _174, offset: 8B] = _724;
+  _730 = MEM[base: abase_34(D), index: ivtmp.196_899, offset: 6B];
+  accum_732 = (unsigned int) prephitmp_893;
+  _733 = (unsigned int) _730;
+  _422 = _721 + _733;
+  accum_736 = _422 + accum_732;
+  _737 = accum_736 >> 16;
+  _740 = (short unsigned int) accum_736;
+  _334 = _174;
+  MEM[base: _174, offset: 6B] = _740;
+  _746 = MEM[base: abase_34(D), index: ivtmp.196_899, offset: 4B];
+  accum_748 = (unsigned int) prephitmp_76;
+  _749 = (unsigned int) _746;
+  accum_750 = accum_748 + _749;
+  accum_752 = accum_750 + _737;
+  _753 = accum_752 >> 16;
+  _754 = (short unsigned int) _753;
+  _756 = (short unsigned int) accum_752;
+  _129 = _174;
+  MEM[base: _174, offset: 4B] = _756;
+  _650 = _756 & 1;
+  accum_651 = _756 >> 1;
+  if (_753 != 0)
+    goto <bb 29>; [80.00%]
+  else
+    goto <bb 30>; [20.00%]
+
+  <bb 29> [10.00%]:
+  accum_652 = accum_651 | 32768;
+
+  <bb 30> [20.00%]:
+  # accum_653 = PHI <accum_651(28), accum_652(29), accum_570(54)>
+  # _531 = PHI <_650(28), _650(29), _557(54)>
+  # prephitmp_254 = PHI <_740(28), _740(29), prephitmp_893(54)>
+  _189 = _174;
+  MEM[base: _174, offset: 4B] = accum_653;
+  _663 = prephitmp_254 & 1;
+  accum_664 = prephitmp_254 >> 1;
+  if (_531 != 0)
+    goto <bb 31>; [50.00%]
+  else
+    goto <bb 32>; [50.00%]
+
+  <bb 31> [10.00%]:
+  accum_665 = accum_664 | 32768;
+
+  <bb 32> [20.00%]:
+  # accum_666 = PHI <accum_664(30), accum_665(31)>
+  _857 = _174;
+  MEM[base: _174, offset: 6B] = accum_666;
+  _474 = _174;
+  accum_675 = MEM[base: _174, offset: 8B];
+  _676 = accum_675 & 1;
+  accum_677 = accum_675 >> 1;
+  if (_663 != 0)
+    goto <bb 33>; [50.00%]
+  else
+    goto <bb 34>; [50.00%]
+
+  <bb 33> [10.00%]:
+  accum_678 = accum_677 | 32768;
+
+  <bb 34> [20.00%]:
+  # accum_679 = PHI <accum_677(32), accum_678(33)>
+  _456 = _174;
+  MEM[base: _174, offset: 8B] = accum_679;
+  _719 = _174;
+  accum_688 = MEM[base: _174, offset: 10B];
+  _689 = accum_688 & 1;
+  accum_690 = accum_688 >> 1;
+  if (_676 != 0)
+    goto <bb 35>; [50.00%]
+  else
+    goto <bb 36>; [50.00%]
+
+  <bb 35> [10.00%]:
+  accum_691 = accum_690 | 32768;
+
+  <bb 36> [20.00%]:
+  # accum_692 = PHI <accum_690(34), accum_691(35)>
+  _544 = _174;
+  MEM[base: _174, offset: 10B] = accum_692;
+  _598 = extra_bits$0_22 & 1;
+  accum_599 = extra_bits$0_22 >> 1;
+  if (_689 != 0)
+    goto <bb 37>; [50.00%]
+  else
+    goto <bb 38>; [50.00%]
+
+  <bb 37> [10.00%]:
+  accum_600 = accum_599 | 32768;
+
+  <bb 38> [20.00%]:
+  # accum_601 = PHI <accum_599(36), accum_600(37)>
+  _611 = extra_bits$1_269 & 1;
+  accum_612 = extra_bits$1_269 >> 1;
+  if (_598 != 0)
+    goto <bb 39>; [50.00%]
+  else
+    goto <bb 40>; [50.00%]
+
+  <bb 39> [10.00%]:
+  accum_613 = accum_612 | 32768;
+
+  <bb 40> [20.00%]:
+  # accum_614 = PHI <accum_612(38), accum_613(39)>
+  _624 = extra_bits$2_259 & 1;
+  accum_625 = extra_bits$2_259 >> 1;
+  if (_611 != 0)
+    goto <bb 41>; [50.00%]
+  else
+    goto <bb 42>; [50.00%]
+
+  <bb 41> [10.00%]:
+  accum_626 = accum_625 | 32768;
+
+  <bb 42> [20.00%]:
+  # accum_627 = PHI <accum_625(40), accum_626(41)>
+  accum_638 = extra_bits$3_898 >> 1;
+  if (_624 != 0)
+    goto <bb 43>; [50.00%]
+  else
+    goto <bb 44>; [50.00%]
+
+  <bb 43> [10.00%]:
+  accum_639 = accum_638 | 32768;
+
+  <bb 44> [20.00%]:
+  # accum_640 = PHI <accum_638(42), accum_639(43)>
+  ivtmp_869 = ivtmp_878 - 1;
+  if (ivtmp_869 != 0)
+    goto <bb 47>; [98.44%]
+  else
+    goto <bb 45>; [1.56%]
+
+  <bb 45> [0.31%]:
+  # accum_641 = PHI <accum_601(44)>
+  # accum_615 = PHI <accum_614(44)>
+  # accum_57 = PHI <accum_627(44)>
+  # accum_576 = PHI <accum_640(44)>
+  # accum_916 = PHI <accum_653(44)>
+  # accum_908 = PHI <accum_666(44)>
+  # accum_563 = PHI <accum_679(44)>
+  # accum_327 = PHI <accum_692(44)>
+  # accum_905 = PHI <accum_767(44)>
+  # accum_896 = PHI <accum_782(44)>
+  # accum_890 = PHI <accum_795(44)>
+  # accum_887 = PHI <accum_808(44)>
+  # accum_436 = PHI <accum_601(44)>
+  # accum_437 = PHI <accum_614(44)>
+  # accum_506 = PHI <accum_627(44)>
+  # accum_862 = PHI <accum_640(44)>
+  # accum_519 = PHI <accum_653(44)>
+  # accum_863 = PHI <accum_666(44)>
+  # accum_871 = PHI <accum_679(44)>
+  # accum_169 = PHI <accum_692(44)>
+  # accum_872 = PHI <accum_767(44)>
+  # accum_173 = PHI <accum_782(44)>
+  # accum_458 = PHI <accum_795(44)>
+  # accum_661 = PHI <accum_808(44)>
+  MEM[(short unsigned int *)&locy + 4B] = accum_872;
+  MEM[(short unsigned int *)&locy + 6B] = accum_173;
+  MEM[(short unsigned int *)&locy + 8B] = accum_458;
+  MEM[(short unsigned int *)&locy + 10B] = accum_661;
+  _755 = (signed short) accum_519;
+  if (_755 >= 0)
+    goto <bb 46>; [85.00%]
+  else
+    goto <bb 72>; [15.00%]
+
+  <bb 46> [0.26%]:
+  ivtmp.176_50 = _91 + 65535;
+  _69 = _174;
+  D__lsm.203_319 = accum_519;
+  goto <bb 56>; [100.00%]
+
+  <bb 47> [20.00%]:
+  # extra_bits$0_22 = PHI <accum_601(44), 0(27)>
+  # extra_bits$1_269 = PHI <accum_614(44), 0(27)>
+  # extra_bits$2_259 = PHI <accum_627(44), 0(27)>
+  # extra_bits$3_898 = PHI <accum_640(44), 0(27)>
+  # locy__lsm.165_623 = PHI <accum_767(44), locy__lsm.165_545(27)>
+  # locy__lsm.167_46 = PHI <accum_782(44), locy__lsm.167_558(27)>
+  # locy__lsm.169_636 = PHI <accum_795(44), locy__lsm.169_465(27)>
+  # locy__lsm.171_409 = PHI <accum_808(44), locy__lsm.171_483(27)>
+  # prephitmp_76 = PHI <accum_653(44), 0(27)>
+  # prephitmp_893 = PHI <accum_666(44), 0(27)>
+  # ivtmp_878 = PHI <ivtmp_869(44), 64(27)>
+  _766 = locy__lsm.165_623 & 1;
+  accum_767 = locy__lsm.165_623 >> 1;
+  _779 = locy__lsm.167_46 & 1;
+  accum_780 = locy__lsm.167_46 >> 1;
+  if (_766 != 0)
+    goto <bb 48>; [50.00%]
+  else
+    goto <bb 49>; [50.00%]
+
+  <bb 48> [10.00%]:
+  accum_781 = accum_780 | 32768;
+
+  <bb 49> [20.00%]:
+  # accum_782 = PHI <accum_780(47), accum_781(48)>
+  _792 = locy__lsm.169_636 & 1;
+  accum_793 = locy__lsm.169_636 >> 1;
+  if (_779 != 0)
+    goto <bb 50>; [50.00%]
+  else
+    goto <bb 51>; [50.00%]
+
+  <bb 50> [10.00%]:
+  accum_794 = accum_793 | 32768;
+
+  <bb 51> [20.00%]:
+  # accum_795 = PHI <accum_793(49), accum_794(50)>
+  _805 = locy__lsm.171_409 & 1;
+  accum_806 = locy__lsm.171_409 >> 1;
+  if (_792 != 0)
+    goto <bb 52>; [50.00%]
+  else
+    goto <bb 53>; [50.00%]
+
+  <bb 52> [10.00%]:
+  accum_807 = accum_806 | 32768;
+
+  <bb 53> [20.00%]:
+  # accum_808 = PHI <accum_806(51), accum_807(52)>
+  if (_805 != 0)
+    goto <bb 28>; [34.00%]
+  else
+    goto <bb 54>; [66.00%]
+
+  <bb 54> [13.20%]:
+  _557 = prephitmp_76 & 1;
+  accum_570 = prephitmp_76 >> 1;
+  goto <bb 30>; [100.00%]
+
+  <bb 55> [1.52%]:
+  # _476 = PHI <accum_444(70), accum_431(69)>
+  # extra_bits$0_739 = PHI <accum_533(70), accum_533(69)>
+  # extra_bits$1_628 = PHI <accum_635(70), accum_635(69)>
+  # extra_bits$2_270 = PHI <accum_770(70), accum_770(69)>
+  # extra_bits$3_707 = PHI <accum_787(70), accum_787(69)>
+  # D__lsm.157_268 = PHI <accum_511(70), accum_511(69)>
+  # D__lsm.159_829 = PHI <accum_482(70), accum_482(69)>
+  # D__lsm.161_824 = PHI <accum_448(70), accum_448(69)>
+  # ivtmp.176_819 = PHI <ivtmp.176_860(70), ivtmp.176_475(69)>
+
+  <bb 56> [1.78%]:
+  # _851 = PHI <_476(55), accum_519(46)>
+  # extra_bits$0_822 = PHI <accum_533(55), accum_436(46)>
+  # extra_bits$1_817 = PHI <accum_635(55), accum_437(46)>
+  # extra_bits$2_809 = PHI <accum_770(55), accum_506(46)>
+  # extra_bits$3_803 = PHI <accum_787(55), accum_862(46)>
+  # D__lsm.157_800 = PHI <accum_511(55), accum_169(46)>
+  # D__lsm.159_799 = PHI <accum_482(55), accum_871(46)>
+  # D__lsm.161_796 = PHI <accum_448(55), accum_863(46)>
+  # ivtmp.176_145 = PHI <ivtmp.176_819(55), ivtmp.176_50(46)>
+  accum_787 = extra_bits$3_803 << 1;
+  accum_786 = extra_bits$2_809 << 1;
+  _783 = (signed short) extra_bits$3_803;
+  if (_783 < 0)
+    goto <bb 57>; [50.00%]
+  else
+    goto <bb 58>; [50.00%]
+
+  <bb 57> [0.89%]:
+  accum_777 = accum_786 | 1;
+
+  <bb 58> [1.78%]:
+  # accum_770 = PHI <accum_786(56), accum_777(57)>
+  accum_761 = extra_bits$1_817 << 1;
+  _704 = (signed short) extra_bits$2_809;
+  if (_704 < 0)
+    goto <bb 59>; [50.00%]
+  else
+    goto <bb 60>; [50.00%]
+
+  <bb 59> [0.89%]:
+  accum_648 = accum_761 | 1;
+
+  <bb 60> [1.78%]:
+  # accum_635 = PHI <accum_761(58), accum_648(59)>
+  accum_622 = extra_bits$0_822 << 1;
+  _609 = (signed short) extra_bits$1_817;
+  if (_609 < 0)
+    goto <bb 61>; [50.00%]
+  else
+    goto <bb 62>; [50.00%]
+
+  <bb 61> [0.89%]:
+  accum_596 = accum_622 | 1;
+
+  <bb 62> [1.78%]:
+  # accum_533 = PHI <accum_622(60), accum_596(61)>
+  accum_524 = D__lsm.157_800 << 1;
+  _520 = (signed short) extra_bits$0_822;
+  if (_520 < 0)
+    goto <bb 63>; [50.00%]
+  else
+    goto <bb 64>; [50.00%]
+
+  <bb 63> [0.89%]:
+  accum_518 = accum_524 | 1;
+
+  <bb 64> [1.77%]:
+  # accum_511 = PHI <accum_524(62), accum_518(63)>
+  accum_507 = D__lsm.159_799 << 1;
+  _505 = (signed short) D__lsm.157_800;
+  if (_505 < 0)
+    goto <bb 65>; [50.00%]
+  else
+    goto <bb 66>; [50.00%]
+
+  <bb 65> [0.89%]:
+  accum_498 = accum_507 | 1;
+
+  <bb 66> [1.77%]:
+  # accum_482 = PHI <accum_507(64), accum_498(65)>
+  accum_473 = D__lsm.161_796 << 1;
+  _464 = (signed short) D__lsm.159_799;
+  if (_464 < 0)
+    goto <bb 67>; [50.00%]
+  else
+    goto <bb 68>; [50.00%]
+
+  <bb 67> [0.89%]:
+  accum_455 = accum_473 | 1;
+
+  <bb 68> [1.77%]:
+  # accum_448 = PHI <accum_473(66), accum_455(67)>
+  accum_444 = _851 << 1;
+  _434 = (signed short) D__lsm.161_796;
+  if (_434 < 0)
+    goto <bb 69>; [50.00%]
+  else
+    goto <bb 70>; [50.00%]
+
+  <bb 69> [0.89%]:
+  accum_431 = accum_444 | 1;
+  D__lsm.203_413 = accum_431;
+  _466 = (short int) ivtmp.176_145;
+  _467 = (signed short) accum_431;
+  ivtmp.176_475 = ivtmp.176_145 - 1;
+  if (_467 >= 0)
+    goto <bb 55>; [85.00%]
+  else
+    goto <bb 71>; [15.00%]
+
+  <bb 70> [0.89%]:
+  # accum_425 = PHI <accum_444(68)>
+  D__lsm.203_11 = accum_444;
+  _410 = (short int) ivtmp.176_145;
+  _356 = (signed short) accum_444;
+  ivtmp.176_860 = ivtmp.176_145 - 1;
+  if (_356 >= 0)
+    goto <bb 55>; [85.00%]
+  else
+    goto <bb 71>; [15.00%]
+
+  <bb 71> [0.27%]:
+  # _1 = PHI <_410(70), _466(69)>
+  # accum_361 = PHI <accum_511(70), accum_511(69)>
+  # accum_266 = PHI <accum_482(70), accum_482(69)>
+  # accum_345 = PHI <accum_448(70), accum_448(69)>
+  # accum_706 = PHI <accum_787(70), accum_787(69)>
+  # accum_722 = PHI <accum_770(70), accum_770(69)>
+  # accum_738 = PHI <accum_635(70), accum_635(69)>
+  # accum_917 = PHI <accum_533(70), accum_533(69)>
+  # D__lsm.203_416 = PHI <accum_444(70), accum_431(69)>
+  # accum_353 = PHI <accum_448(70), accum_448(69)>
+  # accum_734 = PHI <accum_482(70), accum_482(69)>
+  # accum_814 = PHI <accum_511(70), accum_511(69)>
+  # accum_493 = PHI <accum_533(70), accum_533(69)>
+  # accum_853 = PHI <accum_635(70), accum_635(69)>
+  # accum_880 = PHI <accum_770(70), accum_770(69)>
+  # accum_395 = PHI <accum_787(70), accum_787(69)>
+  MEM[base: _174, offset: 4B] = D__lsm.203_416;
+  _845 = _174;
+  MEM[base: _174, offset: 10B] = accum_814;
+  _418 = _174;
+  MEM[base: _174, offset: 8B] = accum_734;
+  _866 = _174;
+  MEM[base: _174, offset: 6B] = accum_353;
+  _248 = _174;
+  MEM[base: _174, offset: 2B] = _1;
+
+  <bb 72> [0.31%]:
+  # extra_bits$0_262 = PHI <accum_493(71), accum_436(45)>
+  # extra_bits$1_854 = PHI <accum_853(71), accum_437(45)>
+  # extra_bits$2_889 = PHI <accum_880(71), accum_506(45)>
+  # extra_bits$3_907 = PHI <accum_395(71), accum_862(45)>
+  _745 = extra_bits$1_854 | extra_bits$0_262;
+  _744 = _745 | extra_bits$2_889;
+  _729 = _744 | extra_bits$3_907;
+  if (_729 == 0)
+    goto <bb 73>; [50.00%]
+  else
+    goto <bb 105>; [50.00%]
+
+  <bb 73> [0.16%]:
+  _804 = _174;
+  _185 = MEM[base: _174, offset: 10B];
+  _186 = _185 | 1;
+  _841 = _174;
+  MEM[base: _174, offset: 10B] = _186;
+  goto <bb 105>; [100.00%]
+
+  <bb 74> [0.05%]:
+  __builtin_memmove (_662, _196, 12);
+  _172 = (void *) ivtmp.194_610;
+  pretmp_549 = MEM[base: _172, offset: 0B];
+  _140 = pretmp_549 + 255;
+  goto <bb 77> (<L20>); [100.00%]
+
+  <bb 75> [0.04%]:
+  __builtin_memmove (_559, _196, 12);
+  _171 = (void *) ivtmp.194_610;
+  pretmp_184 = MEM[base: _171, offset: 0B];
+  _258 = pretmp_184 + 255;
+  goto <bb 77> (<L20>); [100.00%]
+
+  <bb 76> [0.23%]:
+  __builtin_memmove (_662, _196, 12);
+  _536 = (void *) ivtmp.194_610;
+  pretmp_470 = MEM[base: _536, offset: 0B];
+  _670 = pretmp_470 + 255;
+
+  # prephitmp_914 = PHI <pretmp_764(7), pretmp_532(16), pretmp_244(17), pretmp_470(76), pretmp_479(19), pretmp_181(20), pretmp_184(75), pretmp_549(74)>
+  # prephitmp_632 = PHI <_684(7), _683(16), _671(17), _670(76), _658(19), _657(20), _258(75), _140(74)>
+<L20> [1.87%]:
+  if (prephitmp_632 <= 1)
+    goto <bb 79>; [15.92%]
+  else
+    goto <bb 78>; [84.08%]
+
+  <bb 78> [1.86%]:
+  goto <bb 93>; [100.00%]
+
+  <bb 79> [0.61%]:
+  # prephitmp_812 = PHI <prephitmp_914(77), prephitmp_197(105)>
+  _214 = (void *) ivtmp.194_610;
+  _408 = MEM[base: _214, offset: 4B];
+  _875 = _214;
+  _417 = MEM[base: _214, offset: 6B];
+  _190 = _417 | _408;
+  _82 = _214;
+  _426 = MEM[base: _214, offset: 8B];
+  _554 = _190 | _426;
+  _837 = _214;
+  _435 = MEM[base: _214, offset: 10B];
+  _553 = _554 | _435;
+  if (_553 == 0)
+    goto <bb 80>; [33.00%]
+  else
+    goto <bb 102>; [67.00%]
+
+  <bb 80> [0.20%]:
+  __builtin_puts (&"Error:  zero significand in denormalize"[0]);
+  _523 = _214;
+  pretmp_222 = MEM[base: _214, offset: 0B];
+  goto <bb 102>; [100.00%]
+
+  <bb 81> [0.08%]:
+  _253 = _214;
+  MEM[base: _214, offset: 2B] = -32767;
+  if (prephitmp_225 != 0)
+    goto <bb 83>; [54.00%]
+  else
+    goto <bb 78>; [46.00%]
+
+  <bb 82> [0.06%]:
+  _246 = accum_400 | 1;
+  _791 = _214;
+  MEM[base: _214, offset: 10B] = _246;
+  goto <bb 104>; [100.00%]
+
+  <bb 83> [0.13%]:
+  _216 = _214;
+  accum_357 = MEM[base: _214, offset: 4B];
+  _358 = accum_357 & 1;
+  accum_359 = accum_357 >> 1;
+  _215 = _214;
+  MEM[base: _214, offset: 4B] = accum_359;
+  _902 = _214;
+  accum_370 = MEM[base: _214, offset: 6B];
+  _371 = accum_370 & 1;
+  accum_372 = accum_370 >> 1;
+  if (_358 != 0)
+    goto <bb 84>; [50.00%]
+  else
+    goto <bb 85>; [50.00%]
+
+  <bb 84> [0.06%]:
+  accum_373 = accum_372 | 32768;
+
+  <bb 85> [0.13%]:
+  # accum_374 = PHI <accum_372(83), accum_373(84)>
+  _911 = _214;
+  MEM[base: _214, offset: 6B] = accum_374;
+  _2 = _214;
+  accum_383 = MEM[base: _214, offset: 8B];
+  _384 = accum_383 & 1;
+  accum_385 = accum_383 >> 1;
+  if (_371 != 0)
+    goto <bb 86>; [50.00%]
+  else
+    goto <bb 87>; [50.00%]
+
+  <bb 86> [0.06%]:
+  accum_386 = accum_385 | 32768;
+
+  <bb 87> [0.12%]:
+  # accum_387 = PHI <accum_385(85), accum_386(86)>
+  _65 = _214;
+  MEM[base: _214, offset: 8B] = accum_387;
+  _833 = _214;
+  accum_396 = MEM[base: _214, offset: 10B];
+  _397 = accum_396 & 1;
+  accum_398 = accum_396 >> 1;
+  if (_384 != 0)
+    goto <bb 88>; [50.00%]
+  else
+    goto <bb 89>; [50.00%]
+
+  <bb 88> [0.06%]:
+  accum_399 = accum_398 | 32768;
+
+  <bb 89> [0.13%]:
+  # accum_400 = PHI <accum_398(87), accum_399(88)>
+  if (_397 != 0)
+    goto <bb 82>; [50.00%]
+  else
+    goto <bb 103>; [50.00%]
+
+  <bb 90> [0.44%]:
+  if (prephitmp_225 != 0)
+    goto <bb 91>; [45.52%]
+  else
+    goto <bb 78>; [54.48%]
+
+  <bb 91> [0.20%]:
+  _584 = _214;
+  pretmp_631 = MEM[base: _214, offset: 10B];
+
+  <bb 92> [0.33%]:
+  # prephitmp_619 = PHI <pretmp_631(91), prephitmp_250(104)>
+  _202 = prephitmp_619 & 65528;
+  _427 = _214;
+  MEM[base: _214, offset: 10B] = _202;
+
+  <bb 93> [2.50%]:
+  extra_bits ={v} {CLOBBER};
+  locy ={v} {CLOBBER};
+  goto <bb 95> (<L6>); [100.00%]
+
+<L5> [2.50%]:
+  _510 = ivtmp.194_597;
+  _521 = ivtmp.194_597 + ivtmp.196_899;
+  _489 = (struct InternalFPF *) _521;
+  _16 = _489;
+  _508 = (unsigned long) bbase_33(D);
+  _592 = ivtmp.196_899 + _508;
+  _509 = (struct InternalFPF *) _592;
+  _17 = _509;
+  _593 = (unsigned long) abase_34(D);
+  _496 = ivtmp.196_899 + _593;
+  _497 = (struct InternalFPF *) _496;
+  _18 = _497;
+  DivideInternalFPF (_497, _509, _489);
+
+<L6> [12.51%]:
+  i_39 = i_281 + 1;
+  ivtmp.194_56 = ivtmp.194_610 + 12;
+  ivtmp.196_697 = ivtmp.196_899 + 12;
+  if (i_39 != arraysize_31(D))
+    goto <bb 96>; [85.00%]
+  else
+    goto <bb 97>; [15.00%]
+
+  <bb 96> [10.63%]:
+  _58 = i_39 & 15;
+  pretmp_407 = jtable[_58];
+  goto <bb 3>; [100.00%]
+
+  <bb 97> [2.21%]:
+
+  <bb 98> [2.60%]:
+  # loops_19 = PHI <loops_27(D)(2), loops_28(97)>
+  loops_28 = loops_19 + 18446744073709551615;
+  if (loops_28 != 18446744073709551615)
+    goto <bb 99>; [85.00%]
+  else
+    goto <bb 101>; [15.00%]
+
+  <bb 99> [2.21%]:
+  if (arraysize_31(D) != 0)
+    goto <bb 100>; [85.00%]
+  else
+    goto <bb 97>; [15.00%]
+
+  <bb 100> [1.88%]:
+  ivtmp.194_597 = (unsigned long) cbase_32(D);
+  goto <bb 3>; [100.00%]
+
+  <bb 101> [0.39%]:
+  _30 = StopStopwatch (elapsed_26);
+  return _30;
+
+  <bb 102> [0.61%]:
+  # prephitmp_225 = PHI <pretmp_222(80), prephitmp_812(79)>
+  _249 = _214;
+  _365 = MEM[base: _214, offset: 2B];
+  if (_365 == -32768)
+    goto <bb 81>; [13.01%]
+  else
+    goto <bb 90>; [86.99%]
+
+  <bb 103> [0.07%]:
+  _428 = _214;
+  MEM[base: _214, offset: 10B] = accum_400;
+
+  <bb 104> [0.13%]:
+  # prephitmp_250 = PHI <accum_400(103), _246(82)>
+  goto <bb 92>; [100.00%]
+
+  <bb 105> [0.32%]:
+  # prephitmp_197 = PHI <cstore_247(73), cstore_247(72)>
+  # prephitmp_645 = PHI <prephitmp_836(73), prephitmp_836(72)>
+  goto <bb 79>; [100.00%]
+
+}
+
+
+
+;; Function RoundInternalFPF (RoundInternalFPF, funcdef_no=47, decl_uid=2809, cgraph_uid=47, symbol_order=47)
+
+;; 6 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21
+;; 2 succs { 4 3 }
+;; 3 succs { 18 }
+;; 4 succs { 5 19 }
+;; 5 succs { 19 }
+;; 6 succs { 8 3 }
+;; 7 succs { 21 }
+;; 8 succs { 9 10 }
+;; 9 succs { 10 }
+;; 10 succs { 11 12 }
+;; 11 succs { 12 }
+;; 12 succs { 13 14 }
+;; 13 succs { 14 }
+;; 14 succs { 7 20 }
+;; 15 succs { 16 3 }
+;; 16 succs { 17 }
+;; 17 succs { 18 }
+;; 18 succs { 1 }
+;; 19 succs { 6 15 }
+;; 20 succs { 21 }
+;; 21 succs { 17 }
+Adding assert for _1 from _1 + 255
+
+SSA replacement table
+N_i -> { O_1 ... O_j } means that N_i replaces O_1, ..., O_j
+
+ptr_51 -> { ptr_4(D) }
+_56 -> { _10 }
+ptr_69 -> { ptr_4(D) }
+_74 -> { _1 }
+ptr_105 -> { ptr_4(D) }
+ptr_124 -> { ptr_4(D) }
+Incremental SSA update started at block: 2
+Number of blocks in CFG: 22
+Number of blocks to update: 12 ( 55%)
+
+
+
+Value ranges after VRP:
+
+_1: VARYING
+_2: [0, +INF]
+ptr_4(D): VARYING
+.MEM_5: VARYING
+ivtmp_7: [1, 1]
+_9: [0, 65528]
+_10: ~[0B, 0B]
+.MEM_11: VARYING
+_12: [3, 3]
+_13: [6, 6]
+_14: VARYING
+_15: VARYING
+_16: [0, 65535]
+_17: VARYING
+n_18: [0, 65535]
+i_19: [4, 4]
+_20: [4, 4]
+i_21: [3, 3]
+n_22: [0, 65535]
+_23: [0, 65535]
+_24: VARYING
+_28: [32768, 32768]
+_30: [32769, 32769]
+_31: [-32767, -32767]
+ptr_51: ~[0B, 0B]  EQUIVALENCES: { ptr_4(D) ptr_69 } (2 elements)
+prephitmp_52: VARYING
+_53: [1, +INF]
+_54: [2, 2]
+_56: ~[0B, 0B]  EQUIVALENCES: { _10 } (1 elements)
+.MEM_60: VARYING
+prephitmp_67: VARYING
+ptr_69: ~[0B, 0B]  EQUIVALENCES: { ptr_4(D) } (1 elements)
+i_70: [2, 2]
+_74: [1, 2]  EQUIVALENCES: { _1 } (1 elements)
+_75: [0, 65535]
+_78: VARYING
+_79: VARYING
+_82: [2, 2]
+_83: [1, 1]
+ivtmp_89: [3, 3]
+prephitmp_90: [0, +INF]
+i_93: [1, 1]
+pretmp_94: VARYING
+n_97: [0, 65535]  EQUIVALENCES: { _99 } (1 elements)
+.MEM_98: VARYING
+_99: [0, 65535]
+_100: VARYING
+_101: VARYING
+_104: [0, 65535]
+ptr_105: ~[0B, 0B]  EQUIVALENCES: { ptr_4(D) ptr_69 } (2 elements)
+_106: ~[0B, 0B]  EQUIVALENCES: { _10 } (1 elements)
+pretmp_107: VARYING
+ivtmp_108: [0, 0]
+_111: [0, 0]
+.MEM_114: VARYING
+accum_115: VARYING
+_116: [0, 1]
+accum_117: [0, 32767]
+_123: [0, 0]
+ptr_124: ~[0B, 0B]  EQUIVALENCES: { ptr_4(D) ptr_69 } (2 elements)
+accum_128: VARYING
+_129: [0, 1]
+accum_130: [0, 32767]
+accum_131: [32768, +INF]
+accum_132: [0, +INF]
+accum_141: VARYING
+_142: [0, 1]
+accum_143: [0, 32767]
+accum_144: [32768, +INF]
+accum_145: [0, +INF]
+accum_154: VARYING
+_155: [0, 1]
+accum_156: [0, 32767]
+accum_157: [32768, +INF]
+accum_158: [0, +INF]
+
+
+
+SSA replacement table
+N_i -> { O_1 ... O_j } means that N_i replaces O_1, ..., O_j
+
+.MEM_61 -> { .MEM_64 }
+.MEM_62 -> { .MEM_98 }
+prephitmp_86 -> { prephitmp_67 }
+_87 -> { _101 }
+.MEM_88 -> { .MEM_64 }
+prephitmp_127 -> { prephitmp_67 }
+.MEM_140 -> { .MEM_98 }
+Incremental SSA update started at block: 2
+Number of blocks in CFG: 24
+Number of blocks to update: 10 ( 42%)
+
+
+RoundInternalFPF (struct InternalFPF * ptr)
+{
+  int i;
+  short unsigned int carry;
+  short unsigned int * mantissa;
+  short unsigned int accum;
+  int i;
+  int i;
+  int i;
+  int n;
+  long int exponent_difference;
+  unsigned char _1;
+  unsigned char _2;
+  short unsigned int _9;
+  short unsigned int[4] * _10;
+  short unsigned int * _14;
+  short unsigned int _15;
+  int _16;
+  short unsigned int * _17;
+  int _23;
+  short unsigned int _24;
+  short unsigned int prephitmp_52;
+  short unsigned int _53;
+  unsigned char prephitmp_67;
+  int _75;
+  short unsigned int _78;
+  short unsigned int * _79;
+  unsigned char prephitmp_86;
+  short int _87;
+  short unsigned int prephitmp_90;
+  short unsigned int pretmp_94;
+  int _99;
+  short unsigned int _100;
+  short int _101;
+  int _104;
+  short unsigned int * _106;
+  unsigned char pretmp_107;
+  short unsigned int _116;
+  unsigned char prephitmp_127;
+  short unsigned int _129;
+  short unsigned int _142;
+  short unsigned int _155;
+
+  <bb 2> [81.50%]:
+  _1 = ptr_4(D)->type;
+  _2 = _1 + 255;
+  if (_2 <= 1)
+    goto <bb 4>; [24.54%]
+  else
+    goto <bb 3>; [75.46%]
+
+  <bb 3> [70.70%]:
+  goto <bb 18>; [100.00%]
+
+  <bb 4> [20.00%]:
+  _10 = &ptr_4(D)->mantissa;
+  _106 = _10;
+  _100 = MEM[(short unsigned int *)_10];
+  _99 = (int) _100;
+  n_97 = _99;
+  _79 = _10 + 2;
+  _78 = *_79;
+  _75 = (int) _78;
+  _17 = _10 + 4;
+  _24 = *_17;
+  _23 = (int) _24;
+  _104 = _23 | _75;
+  n_22 = _99 | _104;
+  _14 = _10 + 6;
+  _15 = *_14;
+  _16 = (int) _15;
+  n_18 = n_22 | _16;
+  if (n_18 == 0)
+    goto <bb 5>; [33.00%]
+  else
+    goto <bb 23>; [67.00%]
+
+  <bb 5> [6.60%]:
+  __builtin_puts (&"Error:  zero significand in denormalize"[0]);
+  pretmp_107 = ptr_4(D)->type;
+  goto <bb 19>; [100.00%]
+
+  <bb 6> [1.20%]:
+  ptr_4(D)->exp = -32767;
+  if (prephitmp_67 != 0)
+    goto <bb 8>; [0.00%]
+  else
+    goto <bb 3>; [100.00%]
+
+  <bb 7> [2.01%]:
+  _53 = accum_158 | 1;
+  MEM[(short unsigned int *)ptr_4(D) + 10B] = _53;
+  goto <bb 21>; [100.00%]
+
+  <bb 8> [4.02%]:
+  accum_115 = MEM[(short unsigned int *)ptr_4(D) + 4B];
+  _116 = accum_115 & 1;
+  accum_117 = accum_115 >> 1;
+  MEM[(short unsigned int *)ptr_4(D) + 4B] = accum_117;
+  accum_128 = MEM[(short unsigned int *)ptr_4(D) + 6B];
+  _129 = accum_128 & 1;
+  accum_130 = accum_128 >> 1;
+  if (_116 != 0)
+    goto <bb 9>; [50.00%]
+  else
+    goto <bb 10>; [50.00%]
+
+  <bb 9> [2.01%]:
+  accum_131 = accum_130 | 32768;
+
+  <bb 10> [4.02%]:
+  # accum_132 = PHI <accum_130(8), accum_131(9)>
+  MEM[(short unsigned int *)ptr_4(D) + 6B] = accum_132;
+  accum_141 = MEM[(short unsigned int *)ptr_4(D) + 8B];
+  _142 = accum_141 & 1;
+  accum_143 = accum_141 >> 1;
+  if (_129 != 0)
+    goto <bb 11>; [50.00%]
+  else
+    goto <bb 12>; [50.00%]
+
+  <bb 11> [2.01%]:
+  accum_144 = accum_143 | 32768;
+
+  <bb 12> [4.02%]:
+  # accum_145 = PHI <accum_143(10), accum_144(11)>
+  MEM[(short unsigned int *)ptr_4(D) + 8B] = accum_145;
+  accum_154 = MEM[(short unsigned int *)ptr_4(D) + 10B];
+  _155 = accum_154 & 1;
+  accum_156 = accum_154 >> 1;
+  if (_142 != 0)
+    goto <bb 13>; [50.00%]
+  else
+    goto <bb 14>; [50.00%]
+
+  <bb 13> [2.01%]:
+  accum_157 = accum_156 | 32768;
+
+  <bb 14> [4.02%]:
+  # accum_158 = PHI <accum_156(12), accum_157(13)>
+  if (_155 != 0)
+    goto <bb 7>; [50.00%]
+  else
+    goto <bb 20>; [50.00%]
+
+  <bb 15> [14.77%]:
+  # prephitmp_127 = PHI <prephitmp_67(19), prephitmp_86(23)>
+  if (prephitmp_127 != 0)
+    goto <bb 16>; [45.88%]
+  else
+    goto <bb 3>; [54.12%]
+
+  <bb 16> [6.78%]:
+  pretmp_94 = MEM[(short unsigned int *)ptr_4(D) + 10B];
+
+  <bb 17> [10.80%]:
+  # prephitmp_52 = PHI <pretmp_94(16), prephitmp_90(21)>
+  _9 = prephitmp_52 & 65528;
+  ptr_4(D)->mantissa[3] = _9;
+
+  <bb 18> [81.50%]:
+  return;
+
+  <bb 19> [6.60%]:
+  # prephitmp_67 = PHI <pretmp_107(5)>
+  _101 = ptr_4(D)->exp;
+  if (_101 == -32768)
+    goto <bb 6>; [18.32%]
+  else
+    goto <bb 15>; [81.68%]
+
+  <bb 20> [2.01%]:
+  MEM[(short unsigned int *)ptr_4(D) + 10B] = accum_158;
+
+  <bb 21> [4.02%]:
+  # prephitmp_90 = PHI <accum_158(20), _53(7)>
+  goto <bb 17>; [100.00%]
+
+  <bb 22> [1.42%]:
+  ptr_4(D)->exp = -32767;
+  goto <bb 8>; [100.00%]
+
+  <bb 23> [13.40%]:
+  # prephitmp_86 = PHI <_1(4)>
+  _87 = ptr_4(D)->exp;
+  if (_87 == -32768)
+    goto <bb 22>; [10.56%]
+  else
+    goto <bb 15>; [89.44%]
+
+}
+
+

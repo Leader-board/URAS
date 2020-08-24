@@ -1,0 +1,24 @@
+main ()
+{
+  int D.2447;
+
+  {
+    printf ("hello.\n");
+    D.2447 = 0;
+    return D.2447;
+  }
+  D.2447 = 0;
+  return D.2447;
+}
+
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__))
+printf (const char * restrict __fmt)
+{
+  int D.2449;
+
+  D.2449 = __printf_chk (1, __fmt, __builtin_va_arg_pack ());
+  return D.2449;
+}
+
+

@@ -1,0 +1,29 @@
+
+;; Function output_string (output_string, funcdef_no=64, decl_uid=4727, cgraph_uid=64, symbol_order=96)
+
+output_string (char * buffer)
+{
+  int write_to_file.30_1;
+  struct FILE * global_ofile.31_7;
+
+  <bb 2> [100.00%]:
+  __printf_chk (1, "%s", buffer_3(D));
+  write_to_file.30_1 = write_to_file;
+  if (write_to_file.30_1 != 0)
+    goto <bb 3>; [36.64%]
+  else
+    goto <bb 5>; [63.36%]
+
+  <bb 5> [63.36%]:
+  goto <bb 4>; [100.00%]
+
+  <bb 3> [36.64%]:
+  global_ofile.31_7 = global_ofile;
+  __builtin_fputs (buffer_3(D), global_ofile.31_7);
+
+  <bb 4> [100.00%]:
+  return;
+
+}
+
+

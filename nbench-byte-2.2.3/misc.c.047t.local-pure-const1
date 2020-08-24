@@ -1,0 +1,170 @@
+
+;; Function randnum (randnum, funcdef_no=25, decl_uid=2518, cgraph_uid=25, symbol_order=25)
+
+
+
+ local analysis of randnum
+   scanning: if (lngval_8(D) != 0)
+  scanning: randw[0] = 13;
+    static/global memory write is not const/pure
+  scanning: randw[1] = 117;
+    static/global memory write is not const/pure
+  scanning: _1 = randw[0];
+    static memory read is not const
+  scanning: _2 = _1 * 254754;
+  scanning: _3 = randw[1];
+    static memory read is not const
+  scanning: _4 = _3 * 529562;
+  scanning: _5 = _2 + _4;
+  scanning: interm_12 = _5 % 999563;
+  scanning: randw[1] = _1;
+    static/global memory write is not const/pure
+  scanning: randw[0] = interm_12;
+    static/global memory write is not const/pure
+  scanning: return interm_12;
+randnum (int32 lngval)
+{
+  static int32 randw[2] = {13, 117};
+  register int32 interm;
+  int _1;
+  int _2;
+  int _3;
+  int _4;
+  int _5;
+
+  <bb 2> [100.00%]:
+  if (lngval_8(D) != 0)
+    goto <bb 3>; [54.00%]
+  else
+    goto <bb 4>; [46.00%]
+
+  <bb 3> [54.00%]:
+  randw[0] = 13;
+  randw[1] = 117;
+
+  <bb 4> [100.00%]:
+  _1 = randw[0];
+  _2 = _1 * 254754;
+  _3 = randw[1];
+  _4 = _3 * 529562;
+  _5 = _2 + _4;
+  interm_12 = _5 % 999563;
+  randw[1] = _1;
+  randw[0] = interm_12;
+  return interm_12;
+
+}
+
+
+
+;; Function randwc (randwc, funcdef_no=23, decl_uid=2514, cgraph_uid=23, symbol_order=23)
+
+
+
+ local analysis of randwc
+   scanning: _6 = randw[0];
+    static memory read is not const
+  scanning: _7 = _6 * 254754;
+  scanning: _8 = randw[1];
+    static memory read is not const
+  scanning: _9 = _8 * 529562;
+  scanning: _10 = _7 + _9;
+  scanning: interm_11 = _10 % 999563;
+  scanning: randw[1] = _6;
+    static/global memory write is not const/pure
+  scanning: randw[0] = interm_11;
+    static/global memory write is not const/pure
+  scanning: _5 = interm_11 % num_4(D);
+  scanning: return _5;
+randwc (int32 num)
+{
+  register int32 interm;
+  int32 D.2548;
+  static int32 randw[2] = {13, 117};
+  int32 _5;
+  int _6;
+  int _7;
+  int _8;
+  int _9;
+  int _10;
+
+  <bb 2> [100.00%]:
+  _6 = randw[0];
+  _7 = _6 * 254754;
+  _8 = randw[1];
+  _9 = _8 * 529562;
+  _10 = _7 + _9;
+  interm_11 = _10 % 999563;
+  randw[1] = _6;
+  randw[0] = interm_11;
+  _5 = interm_11 % num_4(D);
+  return _5;
+
+}
+
+
+
+;; Function abs_randwc (abs_randwc, funcdef_no=24, decl_uid=2516, cgraph_uid=24, symbol_order=24)
+
+
+
+ local analysis of abs_randwc
+   scanning: num.0_1 = (int) num_3(D);
+  scanning: _9 = randw[0];
+    static memory read is not const
+  scanning: _10 = _9 * 254754;
+  scanning: _11 = randw[1];
+    static memory read is not const
+  scanning: _12 = _11 * 529562;
+  scanning: _13 = _10 + _12;
+  scanning: interm_14 = _13 % 999563;
+  scanning: randw[1] = _9;
+    static/global memory write is not const/pure
+  scanning: randw[0] = interm_14;
+    static/global memory write is not const/pure
+  scanning: _15 = interm_14 % num.0_1;
+  scanning: if (_15 < 0)
+  scanning: temp_7 = -_15;
+  scanning: _8 = (u32) temp_2;
+  scanning: return _8;
+abs_randwc (u32 num)
+{
+  register int32 interm;
+  int32 D.2552;
+  int32 temp;
+  int num.0_1;
+  u32 _8;
+  int _9;
+  int _10;
+  int _11;
+  int _12;
+  int _13;
+  int _15;
+
+  <bb 2> [100.00%]:
+  num.0_1 = (int) num_3(D);
+  _9 = randw[0];
+  _10 = _9 * 254754;
+  _11 = randw[1];
+  _12 = _11 * 529562;
+  _13 = _10 + _12;
+  interm_14 = _13 % 999563;
+  randw[1] = _9;
+  randw[0] = interm_14;
+  _15 = interm_14 % num.0_1;
+  if (_15 < 0)
+    goto <bb 3>; [39.77%]
+  else
+    goto <bb 4>; [60.23%]
+
+  <bb 3> [39.77%]:
+  temp_7 = -_15;
+
+  <bb 4> [100.00%]:
+  # temp_2 = PHI <_15(2), temp_7(3)>
+  _8 = (u32) temp_2;
+  return _8;
+
+}
+
+

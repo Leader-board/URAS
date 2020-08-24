@@ -1,0 +1,1280 @@
+
+;; Function getchar (null)
+;; enabled by -tree-original
+
+
+{
+  return _IO_getc ((struct _IO_FILE *) stdin);
+}
+
+
+;; Function fgetc_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (__fp->_IO_read_ptr >= __fp->_IO_read_end, 0) != 0 ? __uflow ((struct _IO_FILE *) __fp) : (int) *(unsigned char *) __fp->_IO_read_ptr++ ;
+}
+
+
+;; Function getc_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (__fp->_IO_read_ptr >= __fp->_IO_read_end, 0) != 0 ? __uflow ((struct _IO_FILE *) __fp) : (int) *(unsigned char *) __fp->_IO_read_ptr++ ;
+}
+
+
+;; Function getchar_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (stdin->_IO_read_ptr >= stdin->_IO_read_end, 0) != 0 ? __uflow ((struct _IO_FILE *) stdin) : (int) *(unsigned char *) stdin->_IO_read_ptr++ ;
+}
+
+
+;; Function putchar (null)
+;; enabled by -tree-original
+
+
+{
+  return _IO_putc (__c, (struct _IO_FILE *) stdout);
+}
+
+
+;; Function fputc_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (__stream->_IO_write_ptr >= __stream->_IO_write_end, 0) != 0 ? __overflow ((struct _IO_FILE *) __stream, (int) (unsigned char) __c) : (int) (unsigned char) (*__stream->_IO_write_ptr++  = (char) __c);
+}
+
+
+;; Function putc_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (__stream->_IO_write_ptr >= __stream->_IO_write_end, 0) != 0 ? __overflow ((struct _IO_FILE *) __stream, (int) (unsigned char) __c) : (int) (unsigned char) (*__stream->_IO_write_ptr++  = (char) __c);
+}
+
+
+;; Function putchar_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (stdout->_IO_write_ptr >= stdout->_IO_write_end, 0) != 0 ? __overflow ((struct _IO_FILE *) stdout, (int) (unsigned char) __c) : (int) (unsigned char) (*stdout->_IO_write_ptr++  = (char) __c);
+}
+
+
+;; Function feof_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return (__stream->_flags & 16) != 0;
+}
+
+
+;; Function ferror_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return (__stream->_flags & 32) != 0;
+}
+
+
+;; Function sprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___sprintf_chk (__s, 1, __builtin_object_size ((const void *) __s, 1), __fmt, __builtin_va_arg_pack ());
+}
+
+
+;; Function vsprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___vsprintf_chk (__s, 1, __builtin_object_size ((const void *) __s, 1), __fmt, __ap);
+}
+
+
+;; Function snprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___snprintf_chk (__s, __n, 1, __builtin_object_size ((const void *) __s, 1), __fmt, __builtin_va_arg_pack ());
+}
+
+
+;; Function vsnprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___vsnprintf_chk (__s, __n, 1, __builtin_object_size ((const void *) __s, 1), __fmt, __ap);
+}
+
+
+;; Function fprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __fprintf_chk (__stream, 1, __fmt, __builtin_va_arg_pack ());
+}
+
+
+;; Function printf (null)
+;; enabled by -tree-original
+
+
+{
+  return __printf_chk (1, __fmt, __builtin_va_arg_pack ());
+}
+
+
+;; Function vprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __vfprintf_chk ((struct FILE * restrict) stdout, 1, __fmt, __ap);
+}
+
+
+;; Function vfprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __vfprintf_chk (__stream, 1, __fmt, __ap);
+}
+
+
+;; Function dprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __dprintf_chk (__fd, 1, __fmt, __builtin_va_arg_pack ());
+}
+
+
+;; Function vdprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __vdprintf_chk (__fd, 1, __fmt, __ap);
+}
+
+
+;; Function fgets (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __s, 1) != 18446744073709551615)
+    {
+      if (__builtin_constant_p (__n) == 0 || __n <= 0)
+        {
+          return __fgets_chk (__s, __builtin_object_size ((const void *) __s, 1), __n, __stream);
+        }
+      if ((long unsigned int) __n > __builtin_object_size ((const void *) __s, 1))
+        {
+          return __fgets_chk_warn (__s, __builtin_object_size ((const void *) __s, 1), __n, __stream);
+        }
+    }
+  return __fgets_alias (__s, __n, __stream);
+}
+
+
+;; Function fread (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __ptr, 0) != 18446744073709551615)
+    {
+      if ((__builtin_constant_p (__size) == 0 || __builtin_constant_p (__n) == 0) || (__size | __n) > 4294967295)
+        {
+          return __fread_chk (__ptr, __builtin_object_size ((const void *) __ptr, 0), __size, __n, __stream);
+        }
+      if ((long unsigned int) (__size * __n) > __builtin_object_size ((const void *) __ptr, 0))
+        {
+          return __fread_chk_warn (__ptr, __builtin_object_size ((const void *) __ptr, 0), __size, __n, __stream);
+        }
+    }
+  return __fread_alias (__ptr, __size, __n, __stream);
+}
+
+
+;; Function fread_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __ptr, 0) != 18446744073709551615)
+    {
+      if ((__builtin_constant_p (__size) == 0 || __builtin_constant_p (__n) == 0) || (__size | __n) > 4294967295)
+        {
+          return __fread_unlocked_chk (__ptr, __builtin_object_size ((const void *) __ptr, 0), __size, __n, __stream);
+        }
+      if ((long unsigned int) (__size * __n) > __builtin_object_size ((const void *) __ptr, 0))
+        {
+          return __fread_unlocked_chk_warn (__ptr, __builtin_object_size ((const void *) __ptr, 0), __size, __n, __stream);
+        }
+    }
+  if (((__builtin_constant_p (__size) != 0 && __builtin_constant_p (__n) != 0) && (__size | __n) <= 4294967295) && __size * __n <= 8)
+    {
+      {
+        size_t __cnt = __size * __n;
+        char * __cptr = (char *) __ptr;
+
+                size_t __cnt = __size * __n;
+                char * __cptr = (char *) __ptr;
+        if (__cnt == 0)
+          {
+            return 0;
+          }
+        goto <D.2443>;
+        <D.2442>:;
+        {
+          int __c = __builtin_expect (__stream->_IO_read_ptr >= __stream->_IO_read_end, 0) != 0 ? __uflow ((struct _IO_FILE *) __stream) : (int) *(unsigned char *) __stream->_IO_read_ptr++ ;
+
+                    int __c = __builtin_expect (__stream->_IO_read_ptr >= __stream->_IO_read_end, 0) != 0 ? __uflow ((struct _IO_FILE *) __stream) : (int) *(unsigned char *) __stream->_IO_read_ptr++ ;
+          if (__c == -1)
+            {
+              goto <D.2441>;
+            }
+          *__cptr++  = (char) __c;
+        }
+         --__cnt;
+        <D.2443>:;
+        if (__cnt != 0) goto <D.2442>; else goto <D.2441>;
+        <D.2441>:;
+        return (size_t) ((long unsigned int) ((long int) __cptr - (long int) __ptr) / (long unsigned int) __size);
+      }
+    }
+  return __fread_unlocked_alias (__ptr, __size, __n, __stream);
+}
+
+
+;; Function bcopy (null)
+;; enabled by -tree-original
+
+
+{
+  (void) __builtin___memmove_chk (__dest, __src, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function bzero (null)
+;; enabled by -tree-original
+
+
+{
+  (void) __builtin___memset_chk (__dest, 0, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function memcpy (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___memcpy_chk (__dest, __src, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function memmove (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___memmove_chk (__dest, __src, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function memset (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___memset_chk (__dest, __ch, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function explicit_bzero (null)
+;; enabled by -tree-original
+
+
+{
+  __explicit_bzero_chk (__dest, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function strcpy (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___strcpy_chk (__dest, __src, __builtin_object_size ((const void *) __dest, 1));
+}
+
+
+;; Function strncpy (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___strncpy_chk (__dest, __src, __len, __builtin_object_size ((const void *) __dest, 1));
+}
+
+
+;; Function stpncpy (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __dest, 1) != 18446744073709551615 && (__builtin_constant_p (__n) == 0 || __builtin_object_size ((const void *) __dest, 1) < (long unsigned int) __n))
+    {
+      return __stpncpy_chk (__dest, __src, __n, __builtin_object_size ((const void *) __dest, 1));
+    }
+  return __stpncpy_alias (__dest, __src, __n);
+}
+
+
+;; Function strcat (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___strcat_chk (__dest, __src, __builtin_object_size ((const void *) __dest, 1));
+}
+
+
+;; Function strncat (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___strncat_chk (__dest, __src, __len, __builtin_object_size ((const void *) __dest, 1));
+}
+
+
+;; Function SetupCPUEmFloatArrays (null)
+;; enabled by -tree-original
+
+
+{
+  long unsigned int i;
+  struct InternalFPF locFPF1;
+  struct InternalFPF locFPF2;
+  extern int32 randnum (int32);
+
+    long unsigned int i;
+    struct InternalFPF locFPF1;
+    struct InternalFPF locFPF2;
+  randnum (13);
+  i = 0;
+  goto <D.2848>;
+  <D.2847>:;
+  Int32ToInternalFPF (randwc (50000), &locFPF1);
+  Int32ToInternalFPF ((int) randwc (50000) + 1, &locFPF2);
+  DivideInternalFPF (&locFPF1, &locFPF2, abase + (sizetype) (i * 12));
+  Int32ToInternalFPF ((int) randwc (50000) + 1, &locFPF2);
+  DivideInternalFPF (&locFPF1, &locFPF2, bbase + (sizetype) (i * 12));
+  i++ ;
+  <D.2848>:;
+  if (i < arraysize) goto <D.2847>; else goto <D.2849>;
+  <D.2849>:;
+  return;
+}
+
+
+;; Function DoEmFloatIteration (null)
+;; enabled by -tree-original
+
+
+{
+  long unsigned int elapsed;
+  static unsigned char jtable[16] = {0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3};
+  long unsigned int i;
+
+    long unsigned int elapsed;
+    static unsigned char jtable[16] = {0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3};
+    long unsigned int i;
+  elapsed = StartStopwatch ();
+  goto <D.2870>;
+  <D.2869>:;
+  i = 0;
+  goto <D.2867>;
+  <D.2866>:;
+  switch ((int) jtable[i & 15])
+    {
+      case 0:;
+      AddSubInternalFPF (0, abase + (sizetype) (i * 12), bbase + (sizetype) (i * 12), cbase + (sizetype) (i * 12));
+      goto <D.2862>;
+      case 1:;
+      AddSubInternalFPF (1, abase + (sizetype) (i * 12), bbase + (sizetype) (i * 12), cbase + (sizetype) (i * 12));
+      goto <D.2862>;
+      case 2:;
+      MultiplyInternalFPF (abase + (sizetype) (i * 12), bbase + (sizetype) (i * 12), cbase + (sizetype) (i * 12));
+      goto <D.2862>;
+      case 3:;
+      DivideInternalFPF (abase + (sizetype) (i * 12), bbase + (sizetype) (i * 12), cbase + (sizetype) (i * 12));
+      goto <D.2862>;
+    }
+  <D.2862>:;
+  i++ ;
+  <D.2867>:;
+  if (i < arraysize) goto <D.2866>; else goto <D.2868>;
+  <D.2868>:;
+  <D.2870>:;
+  if (loops--  != 0) goto <D.2869>; else goto <D.2871>;
+  <D.2871>:;
+  return StopStopwatch (elapsed);
+}
+
+
+;; Function SetInternalFPFZero (null)
+;; enabled by -tree-original
+
+
+{
+  int i;
+
+    int i;
+  dest->type = 0;
+  dest->sign = sign;
+  dest->exp = -32767;
+  i = 0;
+  goto <D.2878>;
+  <D.2877>:;
+  dest->mantissa[i] = 0;
+  i++ ;
+  <D.2878>:;
+  if (i <= 3) goto <D.2877>; else goto <D.2879>;
+  <D.2879>:;
+  return;
+}
+
+
+;; Function SetInternalFPFInfinity (null)
+;; enabled by -tree-original
+
+
+{
+  int i;
+
+    int i;
+  dest->type = 3;
+  dest->sign = sign;
+  dest->exp = -32767;
+  i = 0;
+  goto <D.2886>;
+  <D.2885>:;
+  dest->mantissa[i] = 0;
+  i++ ;
+  <D.2886>:;
+  if (i <= 3) goto <D.2885>; else goto <D.2887>;
+  <D.2887>:;
+  return;
+}
+
+
+;; Function SetInternalFPFNaN (null)
+;; enabled by -tree-original
+
+
+{
+  int i;
+
+    int i;
+  dest->type = 4;
+  dest->exp = 32767;
+  dest->sign = 1;
+  dest->mantissa[0] = 16384;
+  i = 1;
+  goto <D.2893>;
+  <D.2892>:;
+  dest->mantissa[i] = 0;
+  i++ ;
+  <D.2893>:;
+  if (i <= 3) goto <D.2892>; else goto <D.2894>;
+  <D.2894>:;
+  return;
+}
+
+
+;; Function IsMantissaZero (null)
+;; enabled by -tree-original
+
+
+{
+  int i;
+  int n;
+
+    int i;
+    int n;
+  n = 0;
+  i = 0;
+  goto <D.2901>;
+  <D.2900>:;
+  n = (int) *(mant + (sizetype) ((long unsigned int) i * 2)) | n;
+  i++ ;
+  <D.2901>:;
+  if (i <= 3) goto <D.2900>; else goto <D.2902>;
+  <D.2902>:;
+  return n == 0;
+}
+
+
+;; Function Add16Bits (null)
+;; enabled by -tree-original
+
+
+{
+  unsigned int accum;
+
+    unsigned int accum;
+  accum = (unsigned int) b;
+  accum = (unsigned int) c + accum;
+  accum = (unsigned int) *carry + accum;
+  *carry = (short unsigned int) (accum >> 16) & 1;
+  *a = (short unsigned int) accum;
+  return;
+}
+
+
+;; Function Sub16Bits (null)
+;; enabled by -tree-original
+
+
+{
+  unsigned int accum;
+
+    unsigned int accum;
+  accum = (unsigned int) b;
+  accum = accum - (unsigned int) c;
+  accum = accum - (unsigned int) *borrow;
+  *borrow = (short unsigned int) (accum >> 16) & 1;
+  *a = (short unsigned int) accum;
+  return;
+}
+
+
+;; Function ShiftMantLeft1 (null)
+;; enabled by -tree-original
+
+
+{
+  int i;
+  int new_carry;
+  short unsigned int accum;
+
+    int i;
+    int new_carry;
+    short unsigned int accum;
+  i = 3;
+  goto <D.2925>;
+  <D.2924>:;
+  accum = *(mantissa + (sizetype) ((long unsigned int) i * 2));
+  new_carry = (int) accum & 32768;
+  accum = accum << 1;
+  if (*carry != 0)
+    {
+      accum = accum | 1;
+    }
+  *carry = (short unsigned int) new_carry;
+  *(mantissa + (sizetype) ((long unsigned int) i * 2)) = accum;
+  i-- ;
+  <D.2925>:;
+  if (i >= 0) goto <D.2924>; else goto <D.2926>;
+  <D.2926>:;
+  return;
+}
+
+
+;; Function ShiftMantRight1 (null)
+;; enabled by -tree-original
+
+
+{
+  int i;
+  int new_carry;
+  short unsigned int accum;
+
+    int i;
+    int new_carry;
+    short unsigned int accum;
+  i = 0;
+  goto <D.2935>;
+  <D.2934>:;
+  accum = *(mantissa + (sizetype) ((long unsigned int) i * 2));
+  new_carry = (int) accum & 1;
+  accum = accum >> 1;
+  if (*carry != 0)
+    {
+      accum = accum | 32768;
+    }
+  *carry = (short unsigned int) new_carry;
+  *(mantissa + (sizetype) ((long unsigned int) i * 2)) = accum;
+  i++ ;
+  <D.2935>:;
+  if (i <= 3) goto <D.2934>; else goto <D.2936>;
+  <D.2936>:;
+  return;
+}
+
+
+;; Function StickyShiftRightMant (null)
+;; enabled by -tree-original
+
+
+{
+  int i;
+  short unsigned int carry;
+  short unsigned int * mantissa;
+
+    int i;
+    short unsigned int carry;
+    short unsigned int * mantissa;
+  mantissa = (short unsigned int *) &ptr->mantissa;
+  if (ptr->type != 0)
+    {
+      if (amount > 63)
+        {
+          i = 0;
+          goto <D.2945>;
+          <D.2944>:;
+          *(mantissa + (sizetype) ((long unsigned int) i * 2)) = 0;
+          i++ ;
+          <D.2945>:;
+          if (i <= 2) goto <D.2944>; else goto <D.2946>;
+          <D.2946>:;
+          *(mantissa + 6) = 1;
+        }
+      else
+        {
+          i = 0;
+          goto <D.2948>;
+          <D.2947>:;
+          carry = 0;
+          ShiftMantRight1 (&carry, mantissa);
+          if (carry != 0)
+            {
+              *(mantissa + 6) = *(mantissa + 6) | 1;
+            }
+          i++ ;
+          <D.2948>:;
+          if (i < amount) goto <D.2947>; else goto <D.2949>;
+          <D.2949>:;
+        }
+    }
+  return;
+}
+
+
+;; Function normalize (null)
+;; enabled by -tree-original
+
+
+{
+  short unsigned int carry;
+
+    short unsigned int carry;
+  goto <D.2955>;
+  <D.2954>:;
+  carry = 0;
+  ShiftMantLeft1 (&carry, (short unsigned int *) &ptr->mantissa);
+  ptr->exp-- ;
+  <D.2955>:;
+  if ((signed short) ptr->mantissa[0] >= 0) goto <D.2954>; else goto <D.2956>;
+  <D.2956>:;
+  return;
+}
+
+
+;; Function denormalize (null)
+;; enabled by -tree-original
+
+
+{
+  long int exponent_difference;
+
+    long int exponent_difference;
+  if (IsMantissaZero ((short unsigned int *) &ptr->mantissa) != 0)
+    {
+      printf ((const char * restrict) "Error:  zero significand in denormalize\n");
+    }
+  exponent_difference = (long int) ((int) ptr->exp - minimum_exponent);
+  if (exponent_difference < 0)
+    {
+      exponent_difference = -exponent_difference;
+      if (exponent_difference > 63)
+        {
+          SetInternalFPFZero (ptr, (int) ptr->sign);
+        }
+      else
+        {
+          ptr->exp = (short int) ((unsigned short) ptr->exp + (unsigned short) exponent_difference);
+          StickyShiftRightMant (ptr, (int) exponent_difference);
+        }
+    }
+  return;
+}
+
+
+;; Function RoundInternalFPF (null)
+;; enabled by -tree-original
+
+
+{
+  if (ptr->type + 255 <= 1)
+    {
+      denormalize (ptr, -32767);
+      if (ptr->type != 0)
+        {
+          ptr->mantissa[3] = ptr->mantissa[3] & 65528(OVF);
+        }
+    }
+  return;
+}
+
+
+;; Function choose_nan (null)
+;; enabled by -tree-original
+
+
+{
+  int i;
+
+    int i;
+  i = 0;
+  goto <D.2973>;
+  <D.2972>:;
+  if (x->mantissa[i] > y->mantissa[i])
+    {
+      memmove ((void *) x, (const void *) z, 12);
+      return;
+    }
+  if (x->mantissa[i] < y->mantissa[i])
+    {
+      memmove ((void *) y, (const void *) z, 12);
+      return;
+    }
+  i++ ;
+  <D.2973>:;
+  if (i <= 3) goto <D.2972>; else goto <D.2974>;
+  <D.2974>:;
+  if (intel_flag == 0)
+    {
+      memmove ((void *) x, (const void *) z, 12);
+    }
+  else
+    {
+      memmove ((void *) y, (const void *) z, 12);
+    }
+  return;
+}
+
+
+;; Function AddSubInternalFPF (null)
+;; enabled by -tree-original
+
+
+{
+  int exponent_difference;
+  short unsigned int borrow;
+  short unsigned int carry;
+  int i;
+  struct InternalFPF locx;
+  struct InternalFPF locy;
+
+    int exponent_difference;
+    short unsigned int borrow;
+    short unsigned int carry;
+    int i;
+    struct InternalFPF locx;
+    struct InternalFPF locy;
+  switch ((int) x->type * 5 + (int) y->type)
+    {
+      case 0:;
+      memmove ((void *) x, (const void *) z, 12);
+      if ((x->sign ^ y->sign) != operation)
+        {
+          z->sign = 0;
+        }
+      goto <D.2988>;
+      case 20:;
+      case 21:;
+      case 22:;
+      case 23:;
+      case 5:;
+      case 10:;
+      case 15:;
+      case 16:;
+      case 17:;
+      memmove ((void *) x, (const void *) z, 12);
+      goto <D.2988>;
+      case 4:;
+      case 9:;
+      case 14:;
+      case 19:;
+      memmove ((void *) y, (const void *) z, 12);
+      goto <D.2988>;
+      case 1:;
+      case 2:;
+      case 3:;
+      case 8:;
+      case 13:;
+      memmove ((void *) y, (const void *) z, 12);
+      z->sign = z->sign ^ operation;
+      goto <D.2988>;
+      case 6:;
+      case 7:;
+      case 11:;
+      case 12:;
+      memmove ((void *) &locx, (const void *) x, 12);
+      memmove ((void *) &locy, (const void *) y, 12);
+      exponent_difference = (int) locx.exp - (int) locy.exp;
+      if (exponent_difference == 0)
+        {
+          if (locx.type == 1 || locy.type == 1)
+            {
+              z->type = 1;
+            }
+          else
+            {
+              z->type = 2;
+            }
+          z->sign = locx.sign;
+          z->exp = locx.exp;
+        }
+      else
+        {
+          if (exponent_difference > 0)
+            {
+              StickyShiftRightMant (&locy, exponent_difference);
+              z->type = locx.type;
+              z->sign = locx.sign;
+              z->exp = locx.exp;
+            }
+          else
+            {
+              StickyShiftRightMant (&locx, -exponent_difference);
+              z->type = locy.type;
+              z->sign = locy.sign ^ operation;
+              z->exp = locy.exp;
+            }
+        }
+      if ((locx.sign ^ locy.sign) != operation)
+        {
+          borrow = 0;
+          i = 3;
+          goto <D.3012>;
+          <D.3011>:;
+          Sub16Bits (&borrow, &z->mantissa[i], (int) locx.mantissa[i], (int) locy.mantissa[i]);
+          i-- ;
+          <D.3012>:;
+          if (i >= 0) goto <D.3011>; else goto <D.3013>;
+          <D.3013>:;
+          if (borrow != 0)
+            {
+              z->sign = locy.sign ^ operation;
+              borrow = 0;
+              i = 3;
+              goto <D.3015>;
+              <D.3014>:;
+              Sub16Bits (&borrow, &z->mantissa[i], 0, (int) z->mantissa[i]);
+              i-- ;
+              <D.3015>:;
+              if (i >= 0) goto <D.3014>; else goto <D.3016>;
+              <D.3016>:;
+            }
+          else
+            {
+              
+            }
+          if (IsMantissaZero ((short unsigned int *) &z->mantissa) != 0)
+            {
+              z->type = 0;
+              z->sign = 0;
+            }
+          else
+            {
+              if (locx.type == 2 || locy.type == 2)
+                {
+                  normalize (z);
+                }
+            }
+        }
+      else
+        {
+          carry = 0;
+          i = 3;
+          goto <D.3018>;
+          <D.3017>:;
+          Add16Bits (&carry, &z->mantissa[i], (int) locx.mantissa[i], (int) locy.mantissa[i]);
+          i-- ;
+          <D.3018>:;
+          if (i >= 0) goto <D.3017>; else goto <D.3019>;
+          <D.3019>:;
+          if (carry != 0)
+            {
+              z->exp++ ;
+              carry = 0;
+              ShiftMantRight1 (&carry, (short unsigned int *) &z->mantissa);
+              z->mantissa[0] = z->mantissa[0] | 32768;
+              z->type = 2;
+            }
+          else
+            {
+              if ((signed short) z->mantissa[0] < 0)
+                {
+                  z->type = 2;
+                }
+            }
+        }
+      goto <D.2988>;
+      case 18:;
+      SetInternalFPFNaN (z);
+      goto <D.2988>;
+      case 24:;
+      choose_nan (x, y, z, 1);
+      goto <D.2988>;
+    }
+  <D.2988>:;
+  RoundInternalFPF (z);
+  return;
+}
+
+
+;; Function MultiplyInternalFPF (null)
+;; enabled by -tree-original
+
+
+{
+  int i;
+  int j;
+  short unsigned int carry;
+  short unsigned int extra_bits[4];
+  struct InternalFPF locy;
+
+    int i;
+    int j;
+    short unsigned int carry;
+    short unsigned int extra_bits[4];
+    struct InternalFPF locy;
+  switch ((int) x->type * 5 + (int) y->type)
+    {
+      case 16:;
+      case 17:;
+      case 18:;
+      case 0:;
+      case 1:;
+      case 2:;
+      memmove ((void *) x, (const void *) z, 12);
+      z->sign = z->sign ^ y->sign;
+      goto <D.3038>;
+      case 8:;
+      case 13:;
+      case 5:;
+      case 10:;
+      memmove ((void *) y, (const void *) z, 12);
+      z->sign = z->sign ^ x->sign;
+      goto <D.3038>;
+      case 3:;
+      case 15:;
+      SetInternalFPFNaN (z);
+      goto <D.3038>;
+      case 20:;
+      case 21:;
+      case 22:;
+      case 23:;
+      memmove ((void *) x, (const void *) z, 12);
+      goto <D.3038>;
+      case 4:;
+      case 9:;
+      case 14:;
+      case 19:;
+      memmove ((void *) y, (const void *) z, 12);
+      goto <D.3038>;
+      case 6:;
+      case 7:;
+      case 11:;
+      case 12:;
+      memmove ((void *) &locy, (const void *) y, 12);
+      if (IsMantissaZero ((short unsigned int *) &x->mantissa) != 0 || IsMantissaZero ((short unsigned int *) &y->mantissa) != 0)
+        {
+          SetInternalFPFInfinity (z, 0);
+        }
+      if (x->type == 1 || y->type == 1)
+        {
+          z->type = 1;
+        }
+      else
+        {
+          z->type = 2;
+        }
+      z->sign = x->sign ^ y->sign;
+      z->exp = (short int) ((unsigned short) x->exp + (unsigned short) y->exp);
+      i = 0;
+      goto <D.3058>;
+      <D.3057>:;
+      z->mantissa[i] = 0;
+      extra_bits[i] = 0;
+      i++ ;
+      <D.3058>:;
+      if (i <= 3) goto <D.3057>; else goto <D.3059>;
+      <D.3059>:;
+      i = 0;
+      goto <D.3064>;
+      <D.3063>:;
+      carry = 0;
+      ShiftMantRight1 (&carry, (short unsigned int *) &locy.mantissa);
+      if (carry != 0)
+        {
+          carry = 0;
+          j = 3;
+          goto <D.3061>;
+          <D.3060>:;
+          Add16Bits (&carry, &z->mantissa[j], (int) z->mantissa[j], (int) x->mantissa[j]);
+          j-- ;
+          <D.3061>:;
+          if (j >= 0) goto <D.3060>; else goto <D.3062>;
+          <D.3062>:;
+        }
+      else
+        {
+          carry = 0;
+        }
+      ShiftMantRight1 (&carry, (short unsigned int *) &z->mantissa);
+      ShiftMantRight1 (&carry, (short unsigned int *) &extra_bits);
+      i++ ;
+      <D.3064>:;
+      if (i <= 63) goto <D.3063>; else goto <D.3065>;
+      <D.3065>:;
+      goto <D.3067>;
+      <D.3066>:;
+      carry = 0;
+      ShiftMantLeft1 (&carry, (short unsigned int *) &extra_bits);
+      ShiftMantLeft1 (&carry, (short unsigned int *) &z->mantissa);
+      z->exp-- ;
+      <D.3067>:;
+      if ((signed short) z->mantissa[0] >= 0) goto <D.3066>; else goto <D.3068>;
+      <D.3068>:;
+      if (IsMantissaZero ((short unsigned int *) &extra_bits) != 0)
+        {
+          z->mantissa[3] = z->mantissa[3] | 1;
+        }
+      goto <D.3038>;
+      case 24:;
+      choose_nan (x, y, z, 0);
+      goto <D.3038>;
+    }
+  <D.3038>:;
+  RoundInternalFPF (z);
+  return;
+}
+
+
+;; Function DivideInternalFPF (null)
+;; enabled by -tree-original
+
+
+{
+  int i;
+  int j;
+  short unsigned int carry;
+  short unsigned int extra_bits[4];
+  struct InternalFPF locx;
+  void no_subtract = <<< error >>>;
+
+    int i;
+    int j;
+    short unsigned int carry;
+    short unsigned int extra_bits[4];
+    struct InternalFPF locx;
+  switch ((int) x->type * 5 + (int) y->type)
+    {
+      case 0:;
+      case 18:;
+      SetInternalFPFNaN (z);
+      goto <D.3082>;
+      case 1:;
+      case 2:;
+      if (IsMantissaZero ((short unsigned int *) &y->mantissa) != 0)
+        {
+          SetInternalFPFNaN (z);
+          goto <D.3082>;
+        }
+      case 3:;
+      case 8:;
+      case 13:;
+      SetInternalFPFZero (z, (int) (x->sign ^ y->sign));
+      goto <D.3082>;
+      case 5:;
+      case 10:;
+      if (IsMantissaZero ((short unsigned int *) &x->mantissa) != 0)
+        {
+          SetInternalFPFNaN (z);
+          goto <D.3082>;
+        }
+      case 15:;
+      case 16:;
+      case 17:;
+      SetInternalFPFInfinity (z, 0);
+      z->sign = x->sign ^ y->sign;
+      goto <D.3082>;
+      case 20:;
+      case 21:;
+      case 22:;
+      case 23:;
+      memmove ((void *) x, (const void *) z, 12);
+      goto <D.3082>;
+      case 4:;
+      case 9:;
+      case 14:;
+      case 19:;
+      memmove ((void *) y, (const void *) z, 12);
+      goto <D.3082>;
+      case 6:;
+      case 11:;
+      case 7:;
+      case 12:;
+      memmove ((void *) &locx, (const void *) x, 12);
+      if (IsMantissaZero ((short unsigned int *) &locx.mantissa) != 0)
+        {
+          if (IsMantissaZero ((short unsigned int *) &y->mantissa) != 0)
+            {
+              SetInternalFPFNaN (z);
+            }
+          else
+            {
+              SetInternalFPFZero (z, 0);
+            }
+          goto <D.3082>;
+        }
+      if (IsMantissaZero ((short unsigned int *) &y->mantissa) != 0)
+        {
+          SetInternalFPFInfinity (z, 0);
+          goto <D.3082>;
+        }
+      z->type = x->type;
+      z->sign = x->sign ^ y->sign;
+      z->exp = (short int) (((unsigned short) x->exp - (unsigned short) y->exp) + 128);
+      i = 0;
+      goto <D.3106>;
+      <D.3105>:;
+      z->mantissa[i] = 0;
+      extra_bits[i] = 0;
+      i++ ;
+      <D.3106>:;
+      if (i <= 3) goto <D.3105>; else goto <D.3107>;
+      <D.3107>:;
+      goto <D.3116>;
+      <D.3115>:;
+      carry = 0;
+      ShiftMantLeft1 (&carry, (short unsigned int *) &locx.mantissa);
+      ShiftMantLeft1 (&carry, (short unsigned int *) &extra_bits);
+      if (carry == 0)
+        {
+          j = 0;
+          goto <D.3111>;
+          <D.3110>:;
+          if (y->mantissa[j] > extra_bits[j])
+            {
+              carry = 0;
+              goto no_subtract;
+            }
+          if (y->mantissa[j] < extra_bits[j])
+            {
+              goto <D.3109>;
+            }
+          j++ ;
+          <D.3111>:;
+          if (j <= 3) goto <D.3110>; else goto <D.3109>;
+          <D.3109>:;
+        }
+      carry = 0;
+      j = 3;
+      goto <D.3113>;
+      <D.3112>:;
+      Sub16Bits (&carry, &extra_bits[j], (int) extra_bits[j], (int) y->mantissa[j]);
+      j-- ;
+      <D.3113>:;
+      if (j >= 0) goto <D.3112>; else goto <D.3114>;
+      <D.3114>:;
+      carry = 1;
+      no_subtract:;
+      ShiftMantLeft1 (&carry, (short unsigned int *) &z->mantissa);
+      z->exp-- ;
+      <D.3116>:;
+      if ((signed short) z->mantissa[0] >= 0) goto <D.3115>; else goto <D.3117>;
+      <D.3117>:;
+      goto <D.3082>;
+      case 24:;
+      choose_nan (x, y, z, 0);
+      goto <D.3082>;
+    }
+  <D.3082>:;
+  RoundInternalFPF (z);
+}
+
+
+;; Function Int32ToInternalFPF (null)
+;; enabled by -tree-original
+
+
+{
+  int i;
+  short unsigned int myword;
+
+    int i;
+    short unsigned int myword;
+  if (mylong < 0)
+    {
+      dest->sign = 1;
+      mylong = -mylong;
+    }
+  else
+    {
+      dest->sign = 0;
+    }
+  dest->type = 2;
+  i = 0;
+  goto <D.3126>;
+  <D.3125>:;
+  dest->mantissa[i] = 0;
+  i++ ;
+  <D.3126>:;
+  if (i <= 3) goto <D.3125>; else goto <D.3127>;
+  <D.3127>:;
+  if (mylong == 0)
+    {
+      dest->type = 0;
+      dest->exp = 0;
+      return;
+    }
+  dest->exp = 32;
+  myword = (short unsigned int) (mylong >> 16);
+  dest->mantissa[0] = myword;
+  myword = (short unsigned int) mylong;
+  dest->mantissa[1] = myword;
+  normalize (dest);
+  return;
+}
+

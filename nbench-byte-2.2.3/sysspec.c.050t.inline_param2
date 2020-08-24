@@ -1,0 +1,1098 @@
+
+;; Function printf (printf, funcdef_no=33, decl_uid=798, cgraph_uid=33, symbol_order=33)
+
+
+Analyzing function body size: printf
+
+Inline summary for printf/33 always_inline inlinable
+  self time:       15
+  global time:     0
+  self size:       7
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+    __printf_chk/84 function body not available
+      loop depth: 0 freq:1000 size: 4 time: 13 callee size: 0 stack: 0
+       op0 is compile time invariant
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__))
+printf (const char * restrict __fmt)
+{
+  int _4;
+
+  <bb 2> [100.00%]:
+  _4 = __printf_chk (1, __fmt_2(D), __builtin_va_arg_pack ());
+  return _4;
+
+}
+
+
+
+;; Function fread (fread, funcdef_no=39, decl_uid=2819, cgraph_uid=39, symbol_order=39)
+
+
+Analyzing function body size: fread
+
+Inline summary for fread/39 always_inline inlinable
+  self time:       24
+  global time:     0
+  self size:       35
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:4.000000, time:2.326000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+    size:2.000000, time:1.594000, predicate:(op1 changed)
+    size:2.000000, time:1.122000, predicate:(op2 changed)
+    size:4.000000, time:1.072000, predicate:(op1 changed || op2 changed)
+  calls:
+    __fread_alias/82 function body not available
+      loop depth: 0 freq: 317 size: 6 time: 15 callee size: 0 stack: 0
+    __fread_chk_warn/81 function body not available
+      loop depth: 0 freq:  48 size: 7 time: 16 callee size: 0 stack: 0
+    __fread_chk/80 function body not available
+      loop depth: 0 freq: 633 size: 7 time: 16 callee size: 0 stack: 0
+    __builtin_constant_p/79 mismatched arguments
+      loop depth: 0 freq: 561 size: 0 time:  0 callee size: 0 stack: 0
+    __builtin_constant_p/79 mismatched arguments
+      loop depth: 0 freq: 797 size: 0 time:  0 callee size: 0 stack: 0
+    __builtin_object_size/72 function body not available
+      loop depth: 0 freq:1000 size: 0 time:  0 callee size: 0 stack: 0
+       op1 is compile time invariant
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__))
+fread (void * restrict __ptr, size_t __size, size_t __n, struct FILE * restrict __stream)
+{
+  long unsigned int _1;
+  int _2;
+  int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  size_t _6;
+  size_t _14;
+  size_t _16;
+  size_t _18;
+
+  <bb 2> [100.00%]:
+  _1 = __builtin_object_size (__ptr_9(D), 0);
+  if (_1 != 18446744073709551615)
+    goto <bb 3>; [79.76%]
+  else
+    goto <bb 9>; [20.24%]
+
+  <bb 3> [79.76%]:
+  _2 = __builtin_constant_p (__size_10(D));
+  if (_2 == 0)
+    goto <bb 6>; [29.56%]
+  else
+    goto <bb 4>; [70.44%]
+
+  <bb 4> [56.18%]:
+  _3 = __builtin_constant_p (__n_11(D));
+  if (_3 == 0)
+    goto <bb 6>; [46.00%]
+  else
+    goto <bb 5>; [54.00%]
+
+  <bb 5> [30.34%]:
+  _4 = __size_10(D) | __n_11(D);
+  if (_4 > 4294967295)
+    goto <bb 6>; [46.00%]
+  else
+    goto <bb 7>; [54.00%]
+
+  <bb 6> [63.38%]:
+  _16 = __fread_chk (__ptr_9(D), _1, __size_10(D), __n_11(D), __stream_12(D));
+  goto <bb 10>; [100.00%]
+
+  <bb 7> [16.38%]:
+  _5 = __size_10(D) * __n_11(D);
+  if (_1 < _5)
+    goto <bb 8>; [29.56%]
+  else
+    goto <bb 9>; [70.44%]
+
+  <bb 8> [4.84%]:
+  _14 = __fread_chk_warn (__ptr_9(D), _1, __size_10(D), __n_11(D), __stream_12(D));
+  goto <bb 10>; [100.00%]
+
+  <bb 9> [31.78%]:
+  _18 = __fread_alias (__ptr_9(D), __size_10(D), __n_11(D), __stream_12(D));
+
+  <bb 10> [100.00%]:
+  # _6 = PHI <_16(6), _14(8), _18(9)>
+  return _6;
+
+}
+
+
+
+;; Function memmove (memmove, funcdef_no=44, decl_uid=730, cgraph_uid=44, symbol_order=44)
+
+
+Analyzing function body size: memmove
+
+Inline summary for memmove/44 always_inline inlinable
+  self time:       17
+  global time:     0
+  self size:       9
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+    __builtin___memmove_chk/73 function body not available
+      loop depth: 0 freq:1000 size: 6 time: 15 callee size: 0 stack: 0
+    __builtin_object_size/72 function body not available
+      loop depth: 0 freq:1000 size: 0 time:  0 callee size: 0 stack: 0
+       op1 is compile time invariant
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__, __nothrow__, __leaf__))
+memmove (void * __dest, const void * __src, size_t __len)
+{
+  long unsigned int _1;
+  void * _7;
+
+  <bb 2> [100.00%]:
+  _1 = __builtin_object_size (__dest_3(D), 0);
+  _7 = __builtin___memmove_chk (__dest_3(D), __src_4(D), __len_5(D), _1);
+  return _7;
+
+}
+
+
+
+;; Function MoveMemory (MoveMemory, funcdef_no=54, decl_uid=3594, cgraph_uid=54, symbol_order=54)
+
+
+Analyzing function body size: MoveMemory
+
+Inline summary for MoveMemory/54 inlinable
+  self time:       16
+  global time:     0
+  self size:       8
+  global size:     0
+  min size:       24
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+    __builtin___memmove_chk/73 function body not available
+      loop depth: 0 freq:1000 size: 5 time: 14 callee size: 0 stack: 0
+    __builtin_object_size/72 function body not available
+      loop depth: 0 freq:1000 size: 0 time:  0 callee size: 0 stack: 0
+       op1 is compile time invariant
+
+MoveMemory (farvoid * destination, farvoid * source, long unsigned int nbytes)
+{
+  long unsigned int _5;
+
+  <bb 2> [100.00%]:
+  _5 = __builtin_object_size (destination_2(D), 0);
+  __builtin___memmove_chk (destination_2(D), source_3(D), nbytes_4(D), _5);
+  return;
+
+}
+
+
+
+;; Function InitMemArray (InitMemArray, funcdef_no=55, decl_uid=3596, cgraph_uid=55, symbol_order=55)
+
+
+Analyzing function body size: InitMemArray
+
+Inline summary for InitMemArray/55 inlinable
+  self time:       3
+  global time:     0
+  self size:       4
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:1.000000, time:1.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+
+InitMemArray ()
+{
+  <bb 2> [100.00%]:
+  mem_array_ents = 0;
+  return;
+
+}
+
+
+
+;; Function AddMemArray (AddMemArray, funcdef_no=56, decl_uid=3599, cgraph_uid=56, symbol_order=56)
+
+
+Analyzing function body size: AddMemArray
+
+Inline summary for AddMemArray/56 inlinable
+  self time:       9
+  global time:     0
+  self size:       10
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:7.000000, time:6.920000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+
+AddMemArray (long unsigned int true_addr, long unsigned int adj_addr)
+{
+  int mem_array_ents.7_1;
+  int _2;
+  int _3;
+
+  <bb 2> [100.00%]:
+  mem_array_ents.7_1 = mem_array_ents;
+  if (mem_array_ents.7_1 > 19)
+    goto <bb 4>; [2.00%]
+  else
+    goto <bb 3>; [98.00%]
+
+  <bb 3> [98.00%]:
+  mem_array[0][mem_array_ents.7_1] = true_addr_6(D);
+  mem_array[1][mem_array_ents.7_1] = adj_addr_8(D);
+  _2 = mem_array_ents.7_1 + 1;
+  mem_array_ents = _2;
+
+  <bb 4> [100.00%]:
+  # _3 = PHI <-1(2), 0(3)>
+  return _3;
+
+}
+
+
+
+;; Function AllocateMemory (AllocateMemory, funcdef_no=52, decl_uid=3587, cgraph_uid=52, symbol_order=52)
+
+
+Analyzing function body size: AllocateMemory
+
+Inline summary for AllocateMemory/52 inlinable
+  self time:       62
+  global time:     0
+  self size:       44
+  global size:     0
+  min size:       6
+  self stack:      0
+  global stack:    0
+    size:36.000000, time:47.566000, predicate:(true)
+    size:5.000000, time:2.759000, predicate:(not inlined)
+  calls:
+    malloc/70 function body not available
+      loop depth: 0 freq:1000 size: 3 time: 12 callee size: 0 stack: 0
+
+AllocateMemory (long unsigned int nbytes, int * errorcode)
+{
+  long unsigned int adj_addr;
+  long unsigned int true_addr;
+  farvoid * returnval;
+  int global_align.0_1;
+  long int _2;
+  long int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  int global_align.1_6;
+  long unsigned int _7;
+  long unsigned int _8;
+  int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  farvoid * _14;
+  long unsigned int _30;
+  int mem_array_ents.7_33;
+  int _34;
+  int mem_array_ents.7_35;
+  int _36;
+
+  <bb 2> [45.45%]:
+  global_align.0_1 = global_align;
+  _2 = (long int) global_align.0_1;
+  _3 = _2 * 2;
+  _4 = (long unsigned int) _3;
+  _5 = _4 + nbytes_18(D);
+  returnval_20 = malloc (_5);
+  if (returnval_20 == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 4>; [70.00%]
+
+  <bb 3> [13.64%]:
+  *errorcode_21(D) = 1;
+  goto <bb 5>; [100.00%]
+
+  <bb 4> [31.82%]:
+  *errorcode_21(D) = 0;
+
+  <bb 5> [45.45%]:
+  true_addr_24 = (long unsigned int) returnval_20;
+  global_align.1_6 = global_align;
+  if (global_align.1_6 == 0)
+    goto <bb 6>; [50.00%]
+  else
+    goto <bb 9>; [50.00%]
+
+  <bb 6> [22.73%]:
+  mem_array_ents.7_33 = mem_array_ents;
+  if (mem_array_ents.7_33 > 19)
+    goto <bb 7>; [50.00%]
+  else
+    goto <bb 8>; [50.00%]
+
+  <bb 7> [11.36%]:
+  *errorcode_21(D) = 2;
+  goto <bb 18>; [100.00%]
+
+  <bb 8> [11.36%]:
+  mem_array[0][mem_array_ents.7_33] = true_addr_24;
+  mem_array[1][mem_array_ents.7_33] = true_addr_24;
+  _34 = mem_array_ents.7_33 + 1;
+  mem_array_ents = _34;
+  goto <bb 18>; [100.00%]
+
+  <bb 9> [22.73%]:
+  if (global_align.1_6 == 1)
+    goto <bb 10>; [34.00%]
+  else
+    goto <bb 19>; [66.00%]
+
+  <bb 19> [15.00%]:
+  goto <bb 12>; [100.00%]
+
+  <bb 10> [7.73%]:
+  adj_addr_27 = true_addr_24 + 1;
+  goto <bb 15>; [100.00%]
+
+  <bb 11> [85.00%]:
+  adj_addr_26 = adj_addr_12 + 1;
+
+  <bb 12> [100.00%]:
+  # adj_addr_12 = PHI <true_addr_24(19), adj_addr_26(11)>
+  _7 = (long unsigned int) global_align.1_6;
+  _8 = adj_addr_12 % _7;
+  if (_8 != 0)
+    goto <bb 11>; [85.00%]
+  else
+    goto <bb 13>; [15.00%]
+
+  <bb 13> [15.00%]:
+  # _30 = PHI <_7(12)>
+  # adj_addr_31 = PHI <adj_addr_12(12)>
+  _9 = global_align.1_6 * 2;
+  _10 = (long unsigned int) _9;
+  _11 = adj_addr_31 % _10;
+  if (_11 == 0)
+    goto <bb 14>; [50.00%]
+  else
+    goto <bb 15>; [50.00%]
+
+  <bb 14> [7.50%]:
+  adj_addr_25 = _30 + adj_addr_31;
+
+  <bb 15> [22.73%]:
+  # adj_addr_13 = PHI <adj_addr_27(10), adj_addr_31(13), adj_addr_25(14)>
+  returnval_28 = (farvoid *) adj_addr_13;
+  mem_array_ents.7_35 = mem_array_ents;
+  if (mem_array_ents.7_35 > 19)
+    goto <bb 17>; [54.00%]
+  else
+    goto <bb 16>; [46.00%]
+
+  <bb 16> [10.45%]:
+  mem_array[0][mem_array_ents.7_35] = true_addr_24;
+  mem_array[1][mem_array_ents.7_35] = adj_addr_13;
+  _36 = mem_array_ents.7_35 + 1;
+  mem_array_ents = _36;
+  goto <bb 18>; [100.00%]
+
+  <bb 17> [12.27%]:
+  *errorcode_21(D) = 2;
+
+  <bb 18> [45.45%]:
+  # _14 = PHI <returnval_20(7), returnval_28(17), returnval_28(16), returnval_20(8)>
+  return _14;
+
+}
+
+
+
+;; Function RemoveMemArray (RemoveMemArray, funcdef_no=57, decl_uid=3602, cgraph_uid=57, symbol_order=57)
+
+
+Analyzing function body size: RemoveMemArray
+
+Inline summary for RemoveMemArray/57 inlinable
+  self time:       70
+  global time:     0
+  self size:       21
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:17.500000, time:68.089000, predicate:(true)
+    size:3.500000, time:2.240000, predicate:(not inlined)
+  calls:
+
+RemoveMemArray (long unsigned int adj_addr, long unsigned int * true_addr)
+{
+  int j;
+  int i;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  int _5;
+  int _7;
+  int mem_array_ents.13_8;
+  int _11;
+  int mem_array_ents.13_19;
+
+  <bb 2> [14.44%]:
+  goto <bb 9>; [100.00%]
+
+  <bb 3> [92.50%]:
+  _1 = mem_array[1][i_9];
+  if (_1 == adj_addr_15(D))
+    goto <bb 4>; [7.50%]
+  else
+    goto <bb 8>; [92.50%]
+
+  <bb 4> [6.94%]:
+  # mem_array_ents.13_19 = PHI <mem_array_ents.13_8(3)>
+  # i_6 = PHI <i_9(3)>
+  _2 = mem_array[0][i_6];
+  *true_addr_17(D) = _2;
+  goto <bb 6>; [100.00%]
+
+  <bb 5> [39.31%]:
+  _3 = mem_array[0][_5];
+  mem_array[0][j_10] = _3;
+  _4 = mem_array[1][_5];
+  mem_array[1][j_10] = _4;
+
+  <bb 6> [46.25%]:
+  # j_10 = PHI <i_6(4), _5(5)>
+  _5 = j_10 + 1;
+  if (_5 < mem_array_ents.13_19)
+    goto <bb 5>; [85.00%]
+  else
+    goto <bb 7>; [15.00%]
+
+  <bb 7> [6.94%]:
+  _7 = mem_array_ents.13_19 + -1;
+  mem_array_ents = _7;
+  goto <bb 10>; [100.00%]
+
+  <bb 8> [85.56%]:
+  i_16 = i_9 + 1;
+
+  <bb 9> [100.00%]:
+  # i_9 = PHI <0(2), i_16(8)>
+  mem_array_ents.13_8 = mem_array_ents;
+  if (mem_array_ents.13_8 > i_9)
+    goto <bb 3>; [92.50%]
+  else
+    goto <bb 10>; [7.50%]
+
+  <bb 10> [14.44%]:
+  # _11 = PHI <0(7), -1(9)>
+  return _11;
+
+}
+
+
+
+;; Function FreeMemory (FreeMemory, funcdef_no=53, decl_uid=3590, cgraph_uid=53, symbol_order=53)
+
+
+Analyzing function body size: FreeMemory
+
+Inline summary for FreeMemory/53 inlinable
+  self time:       76
+  global time:     0
+  self size:       24
+  global size:     0
+  min size:       4
+  self stack:      0
+  global stack:    0
+    size:18.000000, time:68.348500, predicate:(true)
+    size:4.000000, time:2.499500, predicate:(not inlined)
+  calls:
+    free/71 function body not available
+      loop depth: 0 freq: 480 size: 2 time: 11 callee size: 0 stack: 0
+
+FreeMemory (farvoid * mempointer, int * errorcode)
+{
+  int i;
+  int j;
+  long unsigned int adj_addr;
+  int mem_array_ents.13_1;
+  long unsigned int _13;
+  long unsigned int _14;
+  int _15;
+  long unsigned int _16;
+  long unsigned int _18;
+  int _19;
+  int mem_array_ents.13_21;
+
+  <bb 2> [14.44%]:
+  adj_addr_5 = (long unsigned int) mempointer_4(D);
+  goto <bb 9>; [100.00%]
+
+  <bb 3> [92.50%]:
+  _13 = mem_array[1][i_12];
+  if (adj_addr_5 == _13)
+    goto <bb 4>; [7.50%]
+  else
+    goto <bb 8>; [92.50%]
+
+  <bb 4> [6.94%]:
+  # i_2 = PHI <i_12(3)>
+  # mem_array_ents.13_1 = PHI <mem_array_ents.13_21(3)>
+  _14 = mem_array[0][i_2];
+  goto <bb 6>; [100.00%]
+
+  <bb 5> [39.31%]:
+  _16 = mem_array[0][_15];
+  mem_array[0][j_17] = _16;
+  _18 = mem_array[1][_15];
+  mem_array[1][j_17] = _18;
+
+  <bb 6> [46.25%]:
+  # j_17 = PHI <i_2(4), _15(5)>
+  _15 = j_17 + 1;
+  if (mem_array_ents.13_1 > _15)
+    goto <bb 5>; [85.00%]
+  else
+    goto <bb 7>; [15.00%]
+
+  <bb 7> [6.94%]:
+  _19 = mem_array_ents.13_1 + -1;
+  mem_array_ents = _19;
+  mempointer_7 = (farvoid *) _14;
+  free (mempointer_7);
+  *errorcode_9(D) = 0;
+  goto <bb 11>; [100.00%]
+
+  <bb 8> [85.56%]:
+  i_20 = i_12 + 1;
+
+  <bb 9> [100.00%]:
+  # i_12 = PHI <0(2), i_20(8)>
+  mem_array_ents.13_21 = mem_array_ents;
+  if (i_12 < mem_array_ents.13_21)
+    goto <bb 3>; [92.50%]
+  else
+    goto <bb 10>; [7.50%]
+
+  <bb 10> [7.50%]:
+  *errorcode_9(D) = 3;
+
+  <bb 11> [14.44%]:
+  return;
+
+}
+
+
+
+;; Function CreateFile (CreateFile, funcdef_no=58, decl_uid=3609, cgraph_uid=58, symbol_order=58)
+
+
+Analyzing function body size: CreateFile
+
+Inline summary for CreateFile/58 inlinable
+  self time:       29
+  global time:     0
+  self size:       13
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:3.000000, time:2.499500, predicate:(true)
+    size:4.000000, time:2.499500, predicate:(not inlined)
+  calls:
+    fclose/77 function body not available
+      loop depth: 0 freq:1000 size: 2 time: 11 callee size: 0 stack: 0
+    fopen/76 function body not available
+      loop depth: 0 freq:1000 size: 4 time: 13 callee size: 0 stack: 0
+       op1 is compile time invariant
+
+CreateFile (char * filename, int * errorcode)
+{
+  struct FILE * fhandle;
+
+  <bb 2> [100.00%]:
+  fhandle_5 = fopen (filename_3(D), "w");
+  if (fhandle_5 == 0B)
+    goto <bb 3>; [26.74%]
+  else
+    goto <bb 4>; [73.26%]
+
+  <bb 3> [26.74%]:
+  *errorcode_6(D) = 10;
+  goto <bb 5>; [100.00%]
+
+  <bb 4> [73.26%]:
+  *errorcode_6(D) = 0;
+
+  <bb 5> [100.00%]:
+  fclose (fhandle_5);
+  return;
+
+}
+
+
+
+;; Function bmOpenFile (bmOpenFile, funcdef_no=59, decl_uid=3612, cgraph_uid=59, symbol_order=59)
+
+
+Analyzing function body size: bmOpenFile
+
+Inline summary for bmOpenFile/59 inlinable
+  self time:       18
+  global time:     0
+  self size:       11
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:3.000000, time:2.499500, predicate:(true)
+    size:4.000000, time:2.499500, predicate:(not inlined)
+  calls:
+    fopen/76 function body not available
+      loop depth: 0 freq:1000 size: 4 time: 13 callee size: 0 stack: 0
+       op1 is compile time invariant
+
+bmOpenFile (char * fname, int * errorcode)
+{
+  struct FILE * fhandle;
+
+  <bb 2> [100.00%]:
+  fhandle_5 = fopen (fname_3(D), "w+");
+  if (fhandle_5 == 0B)
+    goto <bb 3>; [26.74%]
+  else
+    goto <bb 4>; [73.26%]
+
+  <bb 3> [26.74%]:
+  *errorcode_6(D) = 13;
+  goto <bb 5>; [100.00%]
+
+  <bb 4> [73.26%]:
+  *errorcode_6(D) = 0;
+
+  <bb 5> [100.00%]:
+  return fhandle_5;
+
+}
+
+
+
+;; Function CloseFile (CloseFile, funcdef_no=60, decl_uid=3615, cgraph_uid=60, symbol_order=60)
+
+
+Analyzing function body size: CloseFile
+
+Inline summary for CloseFile/60 inlinable
+  self time:       14
+  global time:     0
+  self size:       6
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.500000, time:0.500000, predicate:(true)
+    size:3.500000, time:2.500000, predicate:(not inlined)
+  calls:
+    fclose/77 function body not available
+      loop depth: 0 freq:1000 size: 2 time: 11 callee size: 0 stack: 0
+
+CloseFile (struct FILE * fhandle, int * errorcode)
+{
+  <bb 2> [100.00%]:
+  fclose (fhandle_2(D));
+  *errorcode_4(D) = 0;
+  return;
+
+}
+
+
+
+;; Function readfile (readfile, funcdef_no=61, decl_uid=3621, cgraph_uid=61, symbol_order=61)
+
+
+Analyzing function body size: readfile
+
+Inline summary for readfile/61 inlinable
+  self time:       36
+  global time:     0
+  self size:       42
+  global size:     0
+  min size:       100
+  self stack:      0
+  global stack:    0
+    size:9.500000, time:6.416000, predicate:(true)
+    size:4.500000, time:2.894000, predicate:(not inlined)
+    size:3.000000, time:1.803000, predicate:(op2 changed)
+  calls:
+    __fread_alias/82 function body not available
+      loop depth: 0 freq: 389 size: 6 time: 15 callee size: 0 stack: 0
+       op1 is compile time invariant
+    __fread_chk_warn/81 function body not available
+      loop depth: 0 freq: 122 size: 7 time: 16 callee size: 0 stack: 0
+       op2 is compile time invariant
+    __fread_chk/80 function body not available
+      loop depth: 0 freq: 182 size: 7 time: 16 callee size: 0 stack: 0
+       op2 is compile time invariant
+    __builtin_constant_p/79 mismatched arguments
+      loop depth: 0 freq: 554 size: 0 time:  0 callee size: 0 stack: 0
+    __builtin_object_size/72 function body not available
+      loop depth: 0 freq: 695 size: 0 time:  0 callee size: 0 stack: 0
+       op1 is compile time invariant
+    fseek/78 function body not available
+      loop depth: 0 freq:1000 size: 5 time: 14 callee size: 0 stack: 0
+       op2 is compile time invariant
+
+readfile (struct FILE * fhandle, long unsigned int offset, long unsigned int nbytes, void * buffer, int * errorcode)
+{
+  size_t nelems;
+  long int offset.14_1;
+  int _2;
+  long unsigned int _15;
+  int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+
+  <bb 2> [100.00%]:
+  *errorcode_5(D) = 0;
+  offset.14_1 = (long int) offset_7(D);
+  _2 = fseek (fhandle_8(D), offset.14_1, 0);
+  if (_2 == -1)
+    goto <bb 3>; [30.50%]
+  else
+    goto <bb 4>; [69.50%]
+
+  <bb 3> [30.50%]:
+  *errorcode_5(D) = 14;
+  goto <bb 12>; [100.00%]
+
+  <bb 4> [69.50%]:
+  nelems_11 = nbytes_10(D) & 65535;
+  _15 = __builtin_object_size (buffer_12(D), 0);
+  if (_15 != 18446744073709551615)
+    goto <bb 5>; [79.76%]
+  else
+    goto <bb 9>; [20.24%]
+
+  <bb 5> [55.43%]:
+  _16 = __builtin_constant_p (nelems_11);
+  if (_16 == 0)
+    goto <bb 7>; [33.00%]
+  else
+    goto <bb 6>; [67.00%]
+
+  <bb 6> [37.14%]:
+  if (nelems_11 > _15)
+    goto <bb 8>; [33.00%]
+  else
+    goto <bb 9>; [67.00%]
+
+  <bb 7> [18.29%]:
+  _17 = __fread_chk (buffer_12(D), _15, 1, nelems_11, fhandle_8(D));
+  goto <bb 10>; [100.00%]
+
+  <bb 8> [12.26%]:
+  _18 = __fread_chk_warn (buffer_12(D), _15, 1, nelems_11, fhandle_8(D));
+  goto <bb 10>; [100.00%]
+
+  <bb 9> [38.95%]:
+  _19 = __fread_alias (buffer_12(D), 1, nelems_11, fhandle_8(D));
+
+  <bb 10> [69.50%]:
+  # _20 = PHI <_17(7), _18(8), _19(9)>
+  if (nelems_11 != _20)
+    goto <bb 11>; [69.50%]
+  else
+    goto <bb 12>; [30.50%]
+
+  <bb 11> [48.30%]:
+  *errorcode_5(D) = 11;
+
+  <bb 12> [100.00%]:
+  return;
+
+}
+
+
+
+;; Function writefile (writefile, funcdef_no=62, decl_uid=3627, cgraph_uid=62, symbol_order=62)
+
+
+Analyzing function body size: writefile
+
+Inline summary for writefile/62 inlinable
+  self time:       29
+  global time:     0
+  self size:       22
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:5.500000, time:3.891000, predicate:(true)
+    size:4.500000, time:2.835000, predicate:(not inlined)
+    size:1.000000, time:0.528000, predicate:(op2 changed)
+  calls:
+    fwrite/83 function body not available
+      loop depth: 0 freq: 528 size: 6 time: 15 callee size: 0 stack: 0
+       op1 is compile time invariant
+    fseek/78 function body not available
+      loop depth: 0 freq:1000 size: 5 time: 14 callee size: 0 stack: 0
+       op2 is compile time invariant
+
+writefile (struct FILE * fhandle, long unsigned int offset, long unsigned int nbytes, void * buffer, int * errorcode)
+{
+  size_t writecode;
+  size_t nelems;
+  long int offset.15_1;
+  int _2;
+
+  <bb 2> [100.00%]:
+  *errorcode_5(D) = 0;
+  offset.15_1 = (long int) offset_7(D);
+  _2 = fseek (fhandle_8(D), offset.15_1, 0);
+  if (_2 == -1)
+    goto <bb 3>; [47.12%]
+  else
+    goto <bb 4>; [52.88%]
+
+  <bb 3> [47.12%]:
+  *errorcode_5(D) = 14;
+  goto <bb 6>; [100.00%]
+
+  <bb 4> [52.88%]:
+  nelems_11 = nbytes_10(D) & 65535;
+  writecode_14 = fwrite (buffer_12(D), 1, nelems_11, fhandle_8(D));
+  if (nelems_11 == writecode_14)
+    goto <bb 5>; [37.68%]
+  else
+    goto <bb 6>; [62.32%]
+
+  <bb 5> [19.93%]:
+  *errorcode_5(D) = 12;
+
+  <bb 6> [100.00%]:
+  return;
+
+}
+
+
+
+;; Function ReportError (ReportError, funcdef_no=63, decl_uid=3605, cgraph_uid=63, symbol_order=63)
+
+
+Analyzing function body size: ReportError
+
+Inline summary for ReportError/63 inlinable
+  self time:       28
+  global time:     0
+  self size:       11
+  global size:     0
+  min size:       36
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+    __printf_chk/84 function body not available
+      loop depth: 0 freq:1000 size: 4 time: 13 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+    __printf_chk/84 function body not available
+      loop depth: 0 freq:1000 size: 4 time: 13 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+
+ReportError (char * errorcontext, int errorcode)
+{
+  <bb 2> [100.00%]:
+  __printf_chk (1, "ERROR CONDITION\nContext: %s\n", errorcontext_2(D));
+  __printf_chk (1, "Code: %d", errorcode_3(D));
+  return;
+
+}
+
+
+
+;; Function ErrorExit (ErrorExit, funcdef_no=64, decl_uid=3606, cgraph_uid=64, symbol_order=64) (executed once)
+
+
+Analyzing function body size: ErrorExit
+
+Inline summary for ErrorExit/64 inlinable
+  self time:       11
+  global time:     0
+  self size:       4
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000, predicate:(true)
+    size:2.000000, time:0.000000, predicate:(not inlined)
+  calls:
+    exit/85 function body not available
+      loop depth: 0 freq:1000 size: 2 time: 11 callee size: 0 stack: 0
+       op0 is compile time invariant
+
+ErrorExit ()
+{
+  <bb 2> [100.00%]:
+  exit (1);
+
+}
+
+
+
+;; Function StartStopwatch (StartStopwatch, funcdef_no=65, decl_uid=3628, cgraph_uid=65, symbol_order=65)
+
+
+Analyzing function body size: StartStopwatch
+
+Inline summary for StartStopwatch/65 inlinable
+  self time:       13
+  global time:     0
+  self size:       5
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+    clock/86 function body not available
+      loop depth: 0 freq:1000 size: 2 time: 11 callee size: 0 stack: 0
+
+StartStopwatch ()
+{
+  long int _1;
+  long unsigned int _4;
+
+  <bb 2> [100.00%]:
+  _1 = clock ();
+  _4 = (long unsigned int) _1;
+  return _4;
+
+}
+
+
+
+;; Function StopStopwatch (StopStopwatch, funcdef_no=66, decl_uid=3630, cgraph_uid=66, symbol_order=66)
+
+
+Analyzing function body size: StopStopwatch
+
+Inline summary for StopStopwatch/66 inlinable
+  self time:       14
+  global time:     0
+  self size:       6
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:1.000000, time:1.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+    clock/86 function body not available
+      loop depth: 0 freq:1000 size: 2 time: 11 callee size: 0 stack: 0
+
+StopStopwatch (long unsigned int startticks)
+{
+  long int _1;
+  long unsigned int _2;
+  long unsigned int _6;
+
+  <bb 2> [100.00%]:
+  _1 = clock ();
+  _2 = (long unsigned int) _1;
+  _6 = _2 - startticks_5(D);
+  return _6;
+
+}
+
+
+
+;; Function TicksToSecs (TicksToSecs, funcdef_no=67, decl_uid=3632, cgraph_uid=67, symbol_order=67)
+
+
+Analyzing function body size: TicksToSecs
+
+Inline summary for TicksToSecs/67 inlinable
+  self time:       3
+  global time:     0
+  self size:       4
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+    size:1.000000, time:1.000000, predicate:(op0 changed)
+  calls:
+
+TicksToSecs (long unsigned int tickamount)
+{
+  long unsigned int _2;
+
+  <bb 2> [100.00%]:
+  _2 = tickamount_1(D) / 1000000;
+  return _2;
+
+}
+
+
+
+;; Function TicksToFracSecs (TicksToFracSecs, funcdef_no=68, decl_uid=3634, cgraph_uid=68, symbol_order=68)
+
+
+Analyzing function body size: TicksToFracSecs
+   fp_expression set
+
+Inline summary for TicksToFracSecs/68 inlinable fp_expression
+  self time:       13
+  global time:     0
+  self size:       5
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+    size:2.000000, time:11.000000, predicate:(op0 changed)
+  calls:
+
+TicksToFracSecs (long unsigned int tickamount)
+{
+  double _1;
+  double _3;
+
+  <bb 2> [100.00%]:
+  _1 = (double) tickamount_2(D);
+  _3 = _1 / 1.0e+6;
+  return _3;
+
+}
+
+

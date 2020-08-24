@@ -1,0 +1,237 @@
+26 ssa "unused VAR_DECLs removed" "fread" 1
+26 ssa "unused VAR_DECLs removed" "memmove" 1
+26 ssa "unused VAR_DECLs removed" "MoveMemory" 1
+26 ssa "unused VAR_DECLs removed" "AllocateMemory" 1
+26 ssa "unused VAR_DECLs removed" "RemoveMemArray" 1
+26 ssa "unused VAR_DECLs removed" "FreeMemory" 1
+26 ssa "unused VAR_DECLs removed" "CloseFile" 1
+26 ssa "unused VAR_DECLs removed" "StopStopwatch" 1
+26 ssa "unused VAR_DECLs removed" "TicksToSecs" 1
+26 ssa "unused VAR_DECLs removed" "TicksToFracSecs" 1
+43 fre "SCC iterations == 2" "fread" 2
+43 fre "Eliminated" "fread" 3
+55 release_ssa "SSA names released" "fread" 3
+55 release_ssa "SSA name holes removed" "fread" 3
+38 ccp "Statements deleted" "MoveMemory" 1
+55 release_ssa "unused VAR_DECLs removed" "MoveMemory" 1
+55 release_ssa "SSA names released" "MoveMemory" 3
+55 release_ssa "SSA name holes removed" "MoveMemory" 3
+35 einline "unused VAR_DECLs removed" "InitMemArray" 3
+35 einline "Symbol to SSA rewrite" "InitMemArray" 1
+38 ccp "Constants propagated" "AddMemArray" 2
+38 ccp "Statements deleted" "AddMemArray" 2
+43 fre "SCC iterations == 2" "AddMemArray" 2
+43 fre "Eliminated" "AddMemArray" 3
+55 release_ssa "SSA names released" "AddMemArray" 5
+55 release_ssa "SSA name holes removed" "AddMemArray" 5
+38 ccp "Copies propagated" "AllocateMemory" 3
+38 ccp "Statements folded" "AllocateMemory" 1
+38 ccp "Constants propagated" "AllocateMemory" 1
+38 ccp "Statements deleted" "AllocateMemory" 6
+40 ethread "Jumps threaded" "AllocateMemory" 4
+43 fre "SCC iterations == 2" "AllocateMemory" 14
+43 fre "SCC iterations == 3" "AllocateMemory" 1
+43 fre "Eliminated" "AllocateMemory" 9
+44 evrp "Incremental SSA update" "AllocateMemory" 1
+47 cddce "PHI nodes deleted" "AllocateMemory" 2
+55 release_ssa "unused VAR_DECLs removed" "AllocateMemory" 2
+55 release_ssa "SSA names released" "AllocateMemory" 19
+55 release_ssa "SSA name holes removed" "AllocateMemory" 19
+35 einline "unused VAR_DECLs removed" "RemoveMemArray" 4
+35 einline "Symbol to SSA rewrite" "RemoveMemArray" 1
+38 ccp "Constants propagated" "RemoveMemArray" 3
+38 ccp "Statements deleted" "RemoveMemArray" 3
+40 ethread "Incremental SSA update" "RemoveMemArray" 1
+43 fre "SCC iterations == 2" "RemoveMemArray" 2
+43 fre "SCC iterations == 3" "RemoveMemArray" 3
+43 fre "Eliminated" "RemoveMemArray" 5
+44 evrp "Incremental SSA update" "RemoveMemArray" 1
+55 release_ssa "SSA names released" "RemoveMemArray" 7
+55 release_ssa "SSA name holes removed" "RemoveMemArray" 7
+38 ccp "Copies propagated" "FreeMemory" 5
+38 ccp "Statements deleted" "FreeMemory" 5
+40 ethread "Jumps threaded" "FreeMemory" 1
+43 fre "SCC iterations == 2" "FreeMemory" 10
+43 fre "SCC iterations == 3" "FreeMemory" 3
+43 fre "Eliminated" "FreeMemory" 5
+44 evrp "Incremental SSA update" "FreeMemory" 1
+47 cddce "PHI nodes deleted" "FreeMemory" 1
+55 release_ssa "unused VAR_DECLs removed" "FreeMemory" 2
+55 release_ssa "SSA names released" "FreeMemory" 11
+55 release_ssa "SSA name holes removed" "FreeMemory" 11
+35 einline "unused VAR_DECLs removed" "CreateFile" 2
+35 einline "Symbol to SSA rewrite" "CreateFile" 2
+40 ethread "Incremental SSA update" "CreateFile" 1
+43 fre "SCC iterations == 2" "CreateFile" 1
+38 ccp "Copies propagated" "bmOpenFile" 1
+38 ccp "Statements deleted" "bmOpenFile" 1
+43 fre "SCC iterations == 2" "bmOpenFile" 1
+55 release_ssa "SSA names released" "bmOpenFile" 1
+55 release_ssa "SSA name holes removed" "bmOpenFile" 1
+38 ccp "Copies propagated" "readfile" 1
+38 ccp "Statements folded" "readfile" 2
+38 ccp "Constants propagated" "readfile" 1
+38 ccp "Statements deleted" "readfile" 3
+43 fre "SCC iterations == 2" "readfile" 3
+47 cddce "Statements deleted" "readfile" 2
+55 release_ssa "unused VAR_DECLs removed" "readfile" 3
+55 release_ssa "SSA names released" "readfile" 7
+55 release_ssa "SSA name holes removed" "readfile" 7
+35 einline "unused VAR_DECLs removed" "writefile" 4
+35 einline "Symbol to SSA rewrite" "writefile" 1
+43 fre "SCC iterations == 2" "writefile" 1
+47 cddce "Statements deleted" "writefile" 1
+55 release_ssa "unused VAR_DECLs removed" "writefile" 1
+55 release_ssa "SSA names released" "writefile" 1
+55 release_ssa "SSA name holes removed" "writefile" 1
+38 ccp "Statements deleted" "ReportError" 2
+55 release_ssa "unused VAR_DECLs removed" "ReportError" 2
+55 release_ssa "SSA names released" "ReportError" 6
+55 release_ssa "SSA name holes removed" "ReportError" 6
+35 einline "unused VAR_DECLs removed" "ErrorExit" 2
+35 einline "Symbol to SSA rewrite" "ErrorExit" 1
+97 ccp "Copies propagated" "AllocateMemory" 1
+97 ccp "Statements deleted" "AllocateMemory" 1
+106 fre "SCC iterations == 2" "AllocateMemory" 5
+106 fre "SCC iterations == 3" "AllocateMemory" 1
+106 fre "Eliminated" "AllocateMemory" 1
+109 vrp "Incremental SSA update" "AllocateMemory" 2
+109 vrp "Number of ASSERT_EXPR expressions inserted" "AllocateMemory" 8
+115 copyprop "Copies propagated" "AllocateMemory" 4
+115 copyprop "Statements deleted" "AllocateMemory" 2
+120 ch "Incremental SSA update" "AllocateMemory" 1
+124 dom "Copies propagated" "AllocateMemory" 3
+124 dom "Redundant expressions eliminated" "AllocateMemory" 1
+129 dce "Statements deleted" "AllocateMemory" 1
+139 pre "compute_antic iterations == 3" "AllocateMemory" 1
+139 pre "SCC iterations == 2" "AllocateMemory" 4
+139 pre "SCC iterations == 3" "AllocateMemory" 1
+139 pre "insert iterations == 1" "AllocateMemory" 1
+147 loopinit "Incremental SSA update" "AllocateMemory" 1
+187 vrp "Incremental SSA update" "AllocateMemory" 2
+187 vrp "Number of ASSERT_EXPR expressions inserted" "AllocateMemory" 5
+266 combine "two-insn combine" "AllocateMemory" 5
+97 ccp "Copies propagated" "FreeMemory" 2
+97 ccp "Statements deleted" "FreeMemory" 1
+106 fre "SCC iterations == 2" "FreeMemory" 2
+106 fre "SCC iterations == 3" "FreeMemory" 3
+106 fre "Eliminated" "FreeMemory" 1
+109 vrp "Incremental SSA update" "FreeMemory" 2
+109 vrp "Number of ASSERT_EXPR expressions inserted" "FreeMemory" 4
+114 cselim "Symbol to SSA rewrite" "FreeMemory" 1
+115 copyprop "Copies propagated" "FreeMemory" 4
+115 copyprop "Statements deleted" "FreeMemory" 2
+120 ch "Incremental SSA update" "FreeMemory" 1
+124 dom "Copies propagated" "FreeMemory" 4
+124 dom "Redundant expressions eliminated" "FreeMemory" 1
+129 dce "Statements deleted" "FreeMemory" 1
+139 pre "compute_antic iterations == 2" "FreeMemory" 1
+139 pre "HOIST inserted" "FreeMemory" 1
+139 pre "Insertions" "FreeMemory" 2
+139 pre "New PHIs" "FreeMemory" 1
+139 pre "Symbol to SSA rewrite" "FreeMemory" 1
+139 pre "SCC iterations == 2" "FreeMemory" 4
+139 pre "SCC iterations == 3" "FreeMemory" 3
+139 pre "insert iterations == 2" "FreeMemory" 1
+139 pre "Eliminated" "FreeMemory" 2
+140 sink "Sunk statements" "FreeMemory" 1
+147 loopinit "Incremental SSA update" "FreeMemory" 1
+184 dom "Copies propagated" "FreeMemory" 3
+184 dom "Redundant expressions eliminated" "FreeMemory" 1
+187 vrp "Incremental SSA update" "FreeMemory" 2
+187 vrp "Number of ASSERT_EXPR expressions inserted" "FreeMemory" 7
+190 cddce "Statements deleted" "FreeMemory" 3
+266 combine "two-insn combine" "FreeMemory" 2
+111 dce "Statements deleted" "MoveMemory" 1
+139 pre "compute_antic iterations == 2" "MoveMemory" 1
+139 pre "insert iterations == 1" "MoveMemory" 1
+139 pre "compute_antic iterations == 2" "InitMemArray" 1
+139 pre "insert iterations == 1" "InitMemArray" 1
+106 fre "SCC iterations == 2" "AddMemArray" 2
+109 vrp "Incremental SSA update" "AddMemArray" 1
+109 vrp "Number of ASSERT_EXPR expressions inserted" "AddMemArray" 1
+139 pre "compute_antic iterations == 2" "AddMemArray" 1
+139 pre "SCC iterations == 2" "AddMemArray" 2
+139 pre "insert iterations == 1" "AddMemArray" 1
+187 vrp "Incremental SSA update" "AddMemArray" 1
+187 vrp "Number of ASSERT_EXPR expressions inserted" "AddMemArray" 1
+266 combine "two-insn combine" "AddMemArray" 1
+97 ccp "Copies propagated" "RemoveMemArray" 2
+97 ccp "Statements deleted" "RemoveMemArray" 1
+106 fre "SCC iterations == 2" "RemoveMemArray" 3
+106 fre "SCC iterations == 3" "RemoveMemArray" 3
+106 fre "Eliminated" "RemoveMemArray" 1
+109 vrp "Incremental SSA update" "RemoveMemArray" 2
+109 vrp "Number of ASSERT_EXPR expressions inserted" "RemoveMemArray" 4
+115 copyprop "Copies propagated" "RemoveMemArray" 4
+115 copyprop "Statements deleted" "RemoveMemArray" 2
+120 ch "Incremental SSA update" "RemoveMemArray" 1
+124 dom "Copies propagated" "RemoveMemArray" 4
+124 dom "Redundant expressions eliminated" "RemoveMemArray" 1
+129 dce "Statements deleted" "RemoveMemArray" 1
+139 pre "compute_antic iterations == 3" "RemoveMemArray" 1
+139 pre "HOIST inserted" "RemoveMemArray" 1
+139 pre "Insertions" "RemoveMemArray" 2
+139 pre "New PHIs" "RemoveMemArray" 1
+139 pre "Symbol to SSA rewrite" "RemoveMemArray" 1
+139 pre "SCC iterations == 2" "RemoveMemArray" 5
+139 pre "SCC iterations == 3" "RemoveMemArray" 3
+139 pre "insert iterations == 2" "RemoveMemArray" 1
+139 pre "Eliminated" "RemoveMemArray" 2
+140 sink "Sunk statements" "RemoveMemArray" 1
+147 loopinit "Incremental SSA update" "RemoveMemArray" 1
+184 dom "Copies propagated" "RemoveMemArray" 3
+184 dom "Redundant expressions eliminated" "RemoveMemArray" 1
+187 vrp "Incremental SSA update" "RemoveMemArray" 2
+187 vrp "Number of ASSERT_EXPR expressions inserted" "RemoveMemArray" 7
+190 cddce "Statements deleted" "RemoveMemArray" 3
+266 combine "two-insn combine" "RemoveMemArray" 2
+106 fre "SCC iterations == 2" "CreateFile" 1
+109 vrp "Incremental SSA update" "CreateFile" 1
+109 vrp "Number of ASSERT_EXPR expressions inserted" "CreateFile" 2
+139 pre "compute_antic iterations == 2" "CreateFile" 1
+139 pre "SCC iterations == 2" "CreateFile" 1
+139 pre "insert iterations == 1" "CreateFile" 1
+187 vrp "Incremental SSA update" "CreateFile" 1
+187 vrp "Number of ASSERT_EXPR expressions inserted" "CreateFile" 2
+106 fre "SCC iterations == 2" "bmOpenFile" 1
+109 vrp "Incremental SSA update" "bmOpenFile" 1
+109 vrp "Number of ASSERT_EXPR expressions inserted" "bmOpenFile" 2
+114 cselim "Symbol to SSA rewrite" "bmOpenFile" 1
+139 pre "compute_antic iterations == 2" "bmOpenFile" 1
+139 pre "SCC iterations == 2" "bmOpenFile" 1
+139 pre "insert iterations == 1" "bmOpenFile" 1
+187 vrp "Incremental SSA update" "bmOpenFile" 1
+187 vrp "Number of ASSERT_EXPR expressions inserted" "bmOpenFile" 2
+114 cselim "Symbol to SSA rewrite" "CloseFile" 1
+139 pre "compute_antic iterations == 2" "CloseFile" 1
+139 pre "insert iterations == 1" "CloseFile" 1
+106 fre "SCC iterations == 2" "readfile" 3
+109 vrp "Incremental SSA update" "readfile" 1
+109 vrp "Number of ASSERT_EXPR expressions inserted" "readfile" 1
+111 dce "Statements deleted" "readfile" 1
+139 pre "compute_antic iterations == 2" "readfile" 1
+139 pre "SCC iterations == 2" "readfile" 1
+139 pre "insert iterations == 1" "readfile" 1
+187 vrp "Incremental SSA update" "readfile" 1
+187 vrp "Number of ASSERT_EXPR expressions inserted" "readfile" 1
+106 fre "SCC iterations == 2" "writefile" 1
+109 vrp "Incremental SSA update" "writefile" 1
+109 vrp "Number of ASSERT_EXPR expressions inserted" "writefile" 1
+139 pre "compute_antic iterations == 2" "writefile" 1
+139 pre "SCC iterations == 2" "writefile" 1
+139 pre "insert iterations == 1" "writefile" 1
+187 vrp "Incremental SSA update" "writefile" 1
+187 vrp "Number of ASSERT_EXPR expressions inserted" "writefile" 1
+139 pre "compute_antic iterations == 2" "ReportError" 1
+139 pre "insert iterations == 1" "ReportError" 1
+139 pre "compute_antic iterations == 2" "ErrorExit" 1
+139 pre "insert iterations == 1" "ErrorExit" 1
+139 pre "compute_antic iterations == 2" "StartStopwatch" 1
+139 pre "insert iterations == 1" "StartStopwatch" 1
+139 pre "compute_antic iterations == 2" "StopStopwatch" 1
+139 pre "insert iterations == 1" "StopStopwatch" 1
+139 pre "compute_antic iterations == 2" "TicksToSecs" 1
+139 pre "insert iterations == 1" "TicksToSecs" 1
+139 pre "compute_antic iterations == 2" "TicksToFracSecs" 1
+139 pre "insert iterations == 1" "TicksToFracSecs" 1

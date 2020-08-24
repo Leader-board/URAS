@@ -1,0 +1,20 @@
+
+;; Function main (main, funcdef_no=23, decl_uid=2444, cgraph_uid=23, symbol_order=23) (executed once)
+
+
+
+ local analysis of main
+   scanning: __builtin_puts (&"hello."[0]);
+Introduced new external node (__builtin_puts/25).
+  scanning: return 0;
+Function is locally looping.
+Function can locally free.
+main ()
+{
+  <bb 2> [100.00%]:
+  __builtin_puts (&"hello."[0]);
+  return 0;
+
+}
+
+

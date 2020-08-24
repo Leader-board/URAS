@@ -1,0 +1,417 @@
+
+;; Function MoveMemory (MoveMemory, funcdef_no=54, decl_uid=3594, cgraph_uid=54, symbol_order=54)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+MoveMemory (farvoid * destination, farvoid * source, long unsigned int nbytes)
+{
+  <bb 2> [100.00%]:
+  __builtin_memmove (destination_2(D), source_3(D), nbytes_4(D));
+  return;
+
+}
+
+
+
+;; Function InitMemArray (InitMemArray, funcdef_no=55, decl_uid=3596, cgraph_uid=55, symbol_order=55)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+InitMemArray ()
+{
+  <bb 2> [100.00%]:
+  mem_array_ents = 0;
+  return;
+
+}
+
+
+
+;; Function AddMemArray (AddMemArray, funcdef_no=56, decl_uid=3599, cgraph_uid=56, symbol_order=56)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 5 3 4
+;; 2 succs { 5 3 }
+;; 5 succs { 4 }
+;; 3 succs { 4 }
+;; 4 succs { 1 }
+AddMemArray (long unsigned int true_addr, long unsigned int adj_addr)
+{
+  int mem_array_ents.7_1;
+  int _2;
+  int _3;
+
+  <bb 2> [100.00%]:
+  mem_array_ents.7_1 = mem_array_ents;
+  if (mem_array_ents.7_1 > 19)
+    goto <bb 5>; [2.00%]
+  else
+    goto <bb 3>; [98.00%]
+
+  <bb 5> [2.00%]:
+  goto <bb 4>; [100.00%]
+
+  <bb 3> [98.00%]:
+  mem_array[0][mem_array_ents.7_1] = true_addr_6(D);
+  mem_array[1][mem_array_ents.7_1] = adj_addr_8(D);
+  _2 = mem_array_ents.7_1 + 1;
+  mem_array_ents = _2;
+
+  <bb 4> [100.00%]:
+  # _3 = PHI <-1(5), 0(3)>
+  return _3;
+
+}
+
+
+
+;; Function CreateFile (CreateFile, funcdef_no=58, decl_uid=3609, cgraph_uid=58, symbol_order=58)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 5 3 4
+;; 2 succs { 5 3 }
+;; 5 succs { 4 }
+;; 3 succs { 4 }
+;; 4 succs { 1 }
+CreateFile (char * filename, int * errorcode)
+{
+  struct FILE * fhandle;
+  int cstore_11;
+
+  <bb 2> [100.00%]:
+  fhandle_5 = fopen (filename_3(D), "w");
+  if (fhandle_5 == 0B)
+    goto <bb 5>; [26.74%]
+  else
+    goto <bb 3>; [73.26%]
+
+  <bb 5> [26.74%]:
+  goto <bb 4>; [100.00%]
+
+  <bb 3> [73.26%]:
+
+  <bb 4> [100.00%]:
+  # cstore_11 = PHI <10(5), 0(3)>
+  *errorcode_6(D) = cstore_11;
+  fclose (fhandle_5);
+  return;
+
+}
+
+
+
+;; Function bmOpenFile (bmOpenFile, funcdef_no=59, decl_uid=3612, cgraph_uid=59, symbol_order=59)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 5 3 4
+;; 2 succs { 5 3 }
+;; 5 succs { 4 }
+;; 3 succs { 4 }
+;; 4 succs { 1 }
+bmOpenFile (char * fname, int * errorcode)
+{
+  struct FILE * fhandle;
+  int cstore_10;
+
+  <bb 2> [100.00%]:
+  fhandle_5 = fopen (fname_3(D), "w+");
+  if (fhandle_5 == 0B)
+    goto <bb 5>; [26.74%]
+  else
+    goto <bb 3>; [73.26%]
+
+  <bb 5> [26.74%]:
+  goto <bb 4>; [100.00%]
+
+  <bb 3> [73.26%]:
+
+  <bb 4> [100.00%]:
+  # cstore_10 = PHI <13(5), 0(3)>
+  *errorcode_6(D) = cstore_10;
+  return fhandle_5;
+
+}
+
+
+
+;; Function CloseFile (CloseFile, funcdef_no=60, decl_uid=3615, cgraph_uid=60, symbol_order=60)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+CloseFile (struct FILE * fhandle, int * errorcode)
+{
+  <bb 2> [100.00%]:
+  fclose (fhandle_2(D));
+  *errorcode_4(D) = 0;
+  return;
+
+}
+
+
+
+;; Function readfile (readfile, funcdef_no=61, decl_uid=3621, cgraph_uid=61, symbol_order=61)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 7 5 6
+;; 2 succs { 3 4 }
+;; 3 succs { 6 }
+;; 4 succs { 5 7 }
+;; 7 succs { 6 }
+;; 5 succs { 6 }
+;; 6 succs { 1 }
+readfile (struct FILE * fhandle, long unsigned int offset, long unsigned int nbytes, void * buffer, int * errorcode)
+{
+  size_t nelems;
+  long int offset.14_1;
+  int _2;
+  long unsigned int _19;
+
+  <bb 2> [100.00%]:
+  *errorcode_5(D) = 0;
+  offset.14_1 = (long int) offset_7(D);
+  _2 = fseek (fhandle_8(D), offset.14_1, 0);
+  if (_2 == -1)
+    goto <bb 3>; [30.50%]
+  else
+    goto <bb 4>; [69.50%]
+
+  <bb 3> [30.50%]:
+  *errorcode_5(D) = 14;
+  goto <bb 6>; [100.00%]
+
+  <bb 4> [69.50%]:
+  nelems_11 = nbytes_10(D) & 65535;
+  _19 = __fread_alias (buffer_12(D), 1, nelems_11, fhandle_8(D));
+  if (nelems_11 != _19)
+    goto <bb 5>; [69.50%]
+  else
+    goto <bb 7>; [30.50%]
+
+  <bb 7> [21.20%]:
+  goto <bb 6>; [100.00%]
+
+  <bb 5> [48.30%]:
+  *errorcode_5(D) = 11;
+
+  <bb 6> [100.00%]:
+  return;
+
+}
+
+
+
+;; Function writefile (writefile, funcdef_no=62, decl_uid=3627, cgraph_uid=62, symbol_order=62)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 7 5 6
+;; 2 succs { 3 4 }
+;; 3 succs { 6 }
+;; 4 succs { 5 7 }
+;; 7 succs { 6 }
+;; 5 succs { 6 }
+;; 6 succs { 1 }
+writefile (struct FILE * fhandle, long unsigned int offset, long unsigned int nbytes, void * buffer, int * errorcode)
+{
+  size_t writecode;
+  size_t nelems;
+  long int offset.15_1;
+  int _2;
+
+  <bb 2> [100.00%]:
+  *errorcode_5(D) = 0;
+  offset.15_1 = (long int) offset_7(D);
+  _2 = fseek (fhandle_8(D), offset.15_1, 0);
+  if (_2 == -1)
+    goto <bb 3>; [47.12%]
+  else
+    goto <bb 4>; [52.88%]
+
+  <bb 3> [47.12%]:
+  *errorcode_5(D) = 14;
+  goto <bb 6>; [100.00%]
+
+  <bb 4> [52.88%]:
+  nelems_11 = nbytes_10(D) & 65535;
+  writecode_14 = fwrite (buffer_12(D), 1, nelems_11, fhandle_8(D));
+  if (nelems_11 == writecode_14)
+    goto <bb 5>; [37.68%]
+  else
+    goto <bb 7>; [62.32%]
+
+  <bb 7> [32.95%]:
+  goto <bb 6>; [100.00%]
+
+  <bb 5> [19.93%]:
+  *errorcode_5(D) = 12;
+
+  <bb 6> [100.00%]:
+  return;
+
+}
+
+
+
+;; Function ReportError (ReportError, funcdef_no=63, decl_uid=3605, cgraph_uid=63, symbol_order=63)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+ReportError (char * errorcontext, int errorcode)
+{
+  <bb 2> [100.00%]:
+  __printf_chk (1, "ERROR CONDITION\nContext: %s\n", errorcontext_2(D));
+  __printf_chk (1, "Code: %d", errorcode_3(D));
+  return;
+
+}
+
+
+
+;; Function ErrorExit (ErrorExit, funcdef_no=64, decl_uid=3606, cgraph_uid=64, symbol_order=64) (executed once)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { }
+ErrorExit ()
+{
+  <bb 2> [100.00%]:
+  exit (1);
+
+}
+
+
+
+;; Function StartStopwatch (StartStopwatch, funcdef_no=65, decl_uid=3628, cgraph_uid=65, symbol_order=65)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+StartStopwatch ()
+{
+  long int _1;
+  long unsigned int _4;
+
+  <bb 2> [100.00%]:
+  _1 = clock ();
+  _4 = (long unsigned int) _1;
+  return _4;
+
+}
+
+
+
+;; Function StopStopwatch (StopStopwatch, funcdef_no=66, decl_uid=3630, cgraph_uid=66, symbol_order=66)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+StopStopwatch (long unsigned int startticks)
+{
+  long int _1;
+  long unsigned int _2;
+  long unsigned int _6;
+
+  <bb 2> [100.00%]:
+  _1 = clock ();
+  _2 = (long unsigned int) _1;
+  _6 = _2 - startticks_5(D);
+  return _6;
+
+}
+
+
+
+;; Function TicksToSecs (TicksToSecs, funcdef_no=67, decl_uid=3632, cgraph_uid=67, symbol_order=67)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+TicksToSecs (long unsigned int tickamount)
+{
+  long unsigned int _2;
+
+  <bb 2> [100.00%]:
+  _2 = tickamount_1(D) / 1000000;
+  return _2;
+
+}
+
+
+
+;; Function TicksToFracSecs (TicksToFracSecs, funcdef_no=68, decl_uid=3634, cgraph_uid=68, symbol_order=68)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+TicksToFracSecs (long unsigned int tickamount)
+{
+  double _1;
+  double _3;
+
+  <bb 2> [100.00%]:
+  _1 = (double) tickamount_2(D);
+  _3 = _1 / 1.0e+6;
+  return _3;
+
+}
+
+

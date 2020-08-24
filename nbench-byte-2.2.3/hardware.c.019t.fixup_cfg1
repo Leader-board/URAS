@@ -1,0 +1,635 @@
+
+;; Function sprintf (sprintf, funcdef_no=10, decl_uid=814, cgraph_uid=10, symbol_order=10)
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__, __leaf__, __nothrow__))
+sprintf (char * restrict __s, const char * restrict __fmt)
+{
+  int D.3459;
+
+  <bb 2> [0.00%]:
+  _1 = __builtin_object_size (__s, 1);
+  D.3459 = __builtin___sprintf_chk (__s, 1, _1, __fmt, __builtin_va_arg_pack ());
+  return D.3459;
+
+}
+
+
+
+;; Function fprintf (fprintf, funcdef_no=14, decl_uid=776, cgraph_uid=14, symbol_order=14)
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__))
+fprintf (struct FILE * restrict __stream, const char * restrict __fmt)
+{
+  int D.3466;
+
+  <bb 2> [0.00%]:
+  D.3466 = __fprintf_chk (__stream, 1, __fmt, __builtin_va_arg_pack ());
+  return D.3466;
+
+}
+
+
+
+;; Function printf (printf, funcdef_no=15, decl_uid=798, cgraph_uid=15, symbol_order=15)
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__))
+printf (const char * restrict __fmt)
+{
+  int D.3464;
+
+  <bb 2> [0.00%]:
+  D.3464 = __printf_chk (1, __fmt, __builtin_va_arg_pack ());
+  return D.3464;
+
+}
+
+
+
+;; Function fgets (fgets, funcdef_no=20, decl_uid=2151, cgraph_uid=20, symbol_order=20)
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__))
+fgets (char * restrict __s, int __n, struct FILE * restrict __stream)
+{
+  char * D.3394;
+
+  <bb 2> [0.00%]:
+  _1 = __builtin_object_size (__s, 1);
+  if (_1 != 18446744073709551615)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _2 = __builtin_constant_p (__n);
+  if (_2 == 0)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 4> [0.00%]:
+  if (__n <= 0)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  _3 = __builtin_object_size (__s, 1);
+  D.3394 = __fgets_chk (__s, _3, __n, __stream);
+  goto <bb 9>; [0.00%]
+
+  <bb 6> [0.00%]:
+  _4 = (long unsigned int) __n;
+  _5 = __builtin_object_size (__s, 1);
+  if (_4 > _5)
+    goto <bb 7>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 7> [0.00%]:
+  _6 = __builtin_object_size (__s, 1);
+  D.3394 = __fgets_chk_warn (__s, _6, __n, __stream);
+  goto <bb 9>; [0.00%]
+
+  <bb 8> [0.00%]:
+  D.3394 = __fgets_alias (__s, __n, __stream);
+
+  <bb 9> [0.00%]:
+  return D.3394;
+
+}
+
+
+
+;; Function strcpy (strcpy, funcdef_no=29, decl_uid=750, cgraph_uid=29, symbol_order=29)
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__, __nothrow__, __leaf__))
+strcpy (char * restrict __dest, const char * restrict __src)
+{
+  char * D.3457;
+
+  <bb 2> [0.00%]:
+  _1 = __builtin_object_size (__dest, 1);
+  D.3457 = __builtin___strcpy_chk (__dest, __src, _1);
+  return D.3457;
+
+}
+
+
+
+;; Function atof (atof, funcdef_no=46, decl_uid=2709, cgraph_uid=46, symbol_order=46)
+
+__attribute__((__gnu_inline__, __pure__, __leaf__, __nothrow__))
+atof (const char * __nptr)
+{
+  double D.3455;
+
+  <bb 2> [0.00%]:
+  D.3455 = strtod (__nptr, 0B);
+  return D.3455;
+
+}
+
+
+
+;; Function output_string (output_string, funcdef_no=52, decl_uid=3332, cgraph_uid=52, symbol_order=52)
+
+output_string (const char * buffer, const int write_to_file, struct FILE * global_ofile)
+{
+  <bb 2> [0.00%]:
+  printf ("%s", buffer);
+  if (write_to_file != 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  fprintf (global_ofile, "%s", buffer);
+
+  <bb 4> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function removeNewLine (removeNewLine, funcdef_no=53, decl_uid=3335, cgraph_uid=53, symbol_order=53)
+
+removeNewLine (char * s)
+{
+  <bb 2> [0.00%]:
+  _1 = MEM[(const char *)s];
+  if (_1 != 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _2 = strlen (s);
+  _3 = _2 + 18446744073709551615;
+  _4 = s + _3;
+  _5 = *_4;
+  if (_5 == 10)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _6 = strlen (s);
+  _7 = _6 + 18446744073709551615;
+  _8 = s + _7;
+  *_8 = 0;
+
+  <bb 5> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function runCommand (runCommand, funcdef_no=54, decl_uid=3339, cgraph_uid=54, symbol_order=54)
+
+runCommand (const char * command, char * result)
+{
+  struct FILE * pipe;
+
+  <bb 2> [0.00%]:
+  pipe = popen (command, "r");
+  if (pipe == 0B)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  *result = 0;
+  goto <bb 7>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _1 = fgets (result, 1024, pipe);
+  if (_1 == 0B)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  *result = 0;
+
+  <bb 6> [0.00%]:
+  pclose (pipe);
+
+  <bb 7> [0.00%]:
+  removeNewLine (result);
+  return;
+
+}
+
+
+
+;; Function readProcCpuInfo (readProcCpuInfo, funcdef_no=55, decl_uid=3344, cgraph_uid=55, symbol_order=55)
+
+readProcCpuInfo (char * model, char * cache)
+{
+  float f;
+  int i;
+  char cpu_MHz[1024];
+  char model_name[1024];
+  char vendor_id[1024];
+  char buffer[1024];
+  char * buffer_end;
+  int cpus;
+  char * cp;
+  struct FILE * info;
+  char D.3434;
+  char D.3426;
+  char D.3418;
+  char D.3410;
+
+  <bb 2> [0.00%]:
+  cpus = 0;
+  *cache = 0;
+  _1 = *cache;
+  *model = _1;
+  _2 = *model;
+  cpu_MHz[0] = _2;
+  _3 = cpu_MHz[0];
+  model_name[0] = _3;
+  _4 = model_name[0];
+  vendor_id[0] = _4;
+  info = fopen ("/proc/cpuinfo", "r");
+  if (info != 0B)
+    goto <bb 41>; [0.00%]
+  else
+    goto <bb 59>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _5 = strlen (&buffer);
+  buffer_end = &buffer + _5;
+  cp = &buffer;
+  _6 = strncmp (&buffer, "processor", 9);
+  if (_6 == 0)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  cpus = cpus + 1;
+  goto <bb 41>; [0.00%]
+
+  <bb 5> [0.00%]:
+  _7 = strncmp (&buffer, "vendor_id", 9);
+  if (_7 == 0)
+    goto <bb 6>; [0.00%]
+  else
+    goto <bb 14>; [0.00%]
+
+  <bb 6> [0.00%]:
+  cp = cp + 9;
+  goto <bb 8>; [0.00%]
+
+  <bb 7> [0.00%]:
+  cp = cp + 1;
+
+  <bb 8> [0.00%]:
+  if (cp < buffer_end)
+    goto <bb 9>; [0.00%]
+  else
+    goto <bb 11>; [0.00%]
+
+  <bb 9> [0.00%]:
+  D.3410 = *cp;
+  _8 = D.3410 == 32;
+  _9 = D.3410 == 58;
+  _10 = _8 | _9;
+  if (_10 != 0)
+    goto <bb 7>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 10> [0.00%]:
+  _11 = *cp;
+  if (_11 == 9)
+    goto <bb 7>; [0.00%]
+  else
+    goto <bb 11>; [0.00%]
+
+  <bb 11> [0.00%]:
+  if (cp < buffer_end)
+    goto <bb 12>; [0.00%]
+  else
+    goto <bb 13>; [0.00%]
+
+  <bb 12> [0.00%]:
+  strcpy (&vendor_id, cp);
+
+  <bb 13> [0.00%]:
+  removeNewLine (&vendor_id);
+  goto <bb 41>; [0.00%]
+
+  <bb 14> [0.00%]:
+  _12 = strncmp (&buffer, "model name", 10);
+  if (_12 == 0)
+    goto <bb 15>; [0.00%]
+  else
+    goto <bb 23>; [0.00%]
+
+  <bb 15> [0.00%]:
+  cp = cp + 10;
+  goto <bb 17>; [0.00%]
+
+  <bb 16> [0.00%]:
+  cp = cp + 1;
+
+  <bb 17> [0.00%]:
+  if (cp < buffer_end)
+    goto <bb 18>; [0.00%]
+  else
+    goto <bb 20>; [0.00%]
+
+  <bb 18> [0.00%]:
+  D.3418 = *cp;
+  _13 = D.3418 == 32;
+  _14 = D.3418 == 58;
+  _15 = _13 | _14;
+  if (_15 != 0)
+    goto <bb 16>; [0.00%]
+  else
+    goto <bb 19>; [0.00%]
+
+  <bb 19> [0.00%]:
+  _16 = *cp;
+  if (_16 == 9)
+    goto <bb 16>; [0.00%]
+  else
+    goto <bb 20>; [0.00%]
+
+  <bb 20> [0.00%]:
+  if (cp < buffer_end)
+    goto <bb 21>; [0.00%]
+  else
+    goto <bb 22>; [0.00%]
+
+  <bb 21> [0.00%]:
+  strcpy (&model_name, cp);
+
+  <bb 22> [0.00%]:
+  removeNewLine (&model_name);
+  goto <bb 41>; [0.00%]
+
+  <bb 23> [0.00%]:
+  _17 = strncmp (&buffer, "cpu MHz", 7);
+  if (_17 == 0)
+    goto <bb 24>; [0.00%]
+  else
+    goto <bb 32>; [0.00%]
+
+  <bb 24> [0.00%]:
+  cp = cp + 7;
+  goto <bb 26>; [0.00%]
+
+  <bb 25> [0.00%]:
+  cp = cp + 1;
+
+  <bb 26> [0.00%]:
+  if (cp < buffer_end)
+    goto <bb 27>; [0.00%]
+  else
+    goto <bb 29>; [0.00%]
+
+  <bb 27> [0.00%]:
+  D.3426 = *cp;
+  _18 = D.3426 == 32;
+  _19 = D.3426 == 58;
+  _20 = _18 | _19;
+  if (_20 != 0)
+    goto <bb 25>; [0.00%]
+  else
+    goto <bb 28>; [0.00%]
+
+  <bb 28> [0.00%]:
+  _21 = *cp;
+  if (_21 == 9)
+    goto <bb 25>; [0.00%]
+  else
+    goto <bb 29>; [0.00%]
+
+  <bb 29> [0.00%]:
+  if (cp < buffer_end)
+    goto <bb 30>; [0.00%]
+  else
+    goto <bb 31>; [0.00%]
+
+  <bb 30> [0.00%]:
+  strcpy (&cpu_MHz, cp);
+
+  <bb 31> [0.00%]:
+  removeNewLine (&cpu_MHz);
+  goto <bb 41>; [0.00%]
+
+  <bb 32> [0.00%]:
+  _22 = strncmp (&buffer, "cache size", 10);
+  if (_22 == 0)
+    goto <bb 33>; [0.00%]
+  else
+    goto <bb 41>; [0.00%]
+
+  <bb 33> [0.00%]:
+  cp = cp + 10;
+  goto <bb 35>; [0.00%]
+
+  <bb 34> [0.00%]:
+  cp = cp + 1;
+
+  <bb 35> [0.00%]:
+  if (cp < buffer_end)
+    goto <bb 36>; [0.00%]
+  else
+    goto <bb 38>; [0.00%]
+
+  <bb 36> [0.00%]:
+  D.3434 = *cp;
+  _23 = D.3434 == 32;
+  _24 = D.3434 == 58;
+  _25 = _23 | _24;
+  if (_25 != 0)
+    goto <bb 34>; [0.00%]
+  else
+    goto <bb 37>; [0.00%]
+
+  <bb 37> [0.00%]:
+  _26 = *cp;
+  if (_26 == 9)
+    goto <bb 34>; [0.00%]
+  else
+    goto <bb 38>; [0.00%]
+
+  <bb 38> [0.00%]:
+  if (cp < buffer_end)
+    goto <bb 39>; [0.00%]
+  else
+    goto <bb 40>; [0.00%]
+
+  <bb 39> [0.00%]:
+  strcpy (cache, cp);
+
+  <bb 40> [0.00%]:
+  removeNewLine (cache);
+
+  <bb 41> [0.00%]:
+  _27 = fgets (&buffer, 1024, info);
+  if (_27 != 0B)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 42>; [0.00%]
+
+  <bb 42> [0.00%]:
+  if (cpus > 1)
+    goto <bb 43>; [0.00%]
+  else
+    goto <bb 46>; [0.00%]
+
+  <bb 43> [0.00%]:
+  if (cpus == 2)
+    goto <bb 44>; [0.00%]
+  else
+    goto <bb 45>; [0.00%]
+
+  <bb 44> [0.00%]:
+  strcpy (model, "Dual");
+  goto <bb 46>; [0.00%]
+
+  <bb 45> [0.00%]:
+  sprintf (model, "%d CPU", cpus);
+
+  <bb 46> [0.00%]:
+  _28 = strlen (model);
+  cp = model + _28;
+  _29 = vendor_id[0];
+  if (_29 != 0)
+    goto <bb 47>; [0.00%]
+  else
+    goto <bb 50>; [0.00%]
+
+  <bb 47> [0.00%]:
+  if (cp != model)
+    goto <bb 48>; [0.00%]
+  else
+    goto <bb 49>; [0.00%]
+
+  <bb 48> [0.00%]:
+  cp.0_30 = cp;
+  cp = cp.0_30 + 1;
+  *cp.0_30 = 32;
+
+  <bb 49> [0.00%]:
+  strcpy (cp, &vendor_id);
+  _31 = strlen (&vendor_id);
+  cp = cp + _31;
+
+  <bb 50> [0.00%]:
+  _32 = model_name[0];
+  if (_32 != 0)
+    goto <bb 51>; [0.00%]
+  else
+    goto <bb 54>; [0.00%]
+
+  <bb 51> [0.00%]:
+  if (cp != model)
+    goto <bb 52>; [0.00%]
+  else
+    goto <bb 53>; [0.00%]
+
+  <bb 52> [0.00%]:
+  cp.1_33 = cp;
+  cp = cp.1_33 + 1;
+  *cp.1_33 = 32;
+
+  <bb 53> [0.00%]:
+  strcpy (cp, &model_name);
+  _34 = strlen (&model_name);
+  cp = cp + _34;
+
+  <bb 54> [0.00%]:
+  _35 = cpu_MHz[0];
+  if (_35 != 0)
+    goto <bb 55>; [0.00%]
+  else
+    goto <bb 58>; [0.00%]
+
+  <bb 55> [0.00%]:
+  if (cp != model)
+    goto <bb 56>; [0.00%]
+  else
+    goto <bb 57>; [0.00%]
+
+  <bb 56> [0.00%]:
+  cp.2_36 = cp;
+  cp = cp.2_36 + 1;
+  *cp.2_36 = 32;
+
+  <bb 57> [0.00%]:
+  _37 = atof (&cpu_MHz);
+  f = (float) _37;
+  _38 = f + 5.0e-1;
+  i = (int) _38;
+  sprintf (&cpu_MHz, "%dMHz", i);
+  strcpy (cp, &cpu_MHz);
+  _39 = strlen (&cpu_MHz);
+  cp = cp + _39;
+
+  <bb 58> [0.00%]:
+  fclose (info);
+
+  <bb 59> [0.00%]:
+  buffer = {CLOBBER};
+  vendor_id = {CLOBBER};
+  model_name = {CLOBBER};
+  cpu_MHz = {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function hardware (hardware, funcdef_no=56, decl_uid=3373, cgraph_uid=56, symbol_order=56)
+
+hardware (const int write_to_file, struct FILE * global_ofile)
+{
+  char os_command[12];
+  char cache[1024];
+  char model[1024];
+  char os[1024];
+  char buffer[1024];
+
+  <bb 2> [0.00%]:
+  os_command = "uname -s -r";
+  runCommand (&os_command, &os);
+  _1 = strstr (&os, "Linux");
+  if (_1 != 0B)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  readProcCpuInfo (&model, &cache);
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  model[0] = 0;
+  cache[0] = 0;
+
+  <bb 5> [0.00%]:
+  sprintf (&buffer, "CPU                 : %s\n", &model);
+  output_string (&buffer, write_to_file, global_ofile);
+  sprintf (&buffer, "L2 Cache            : %s\n", &cache);
+  output_string (&buffer, write_to_file, global_ofile);
+  sprintf (&buffer, "OS                  : %s\n", &os);
+  output_string (&buffer, write_to_file, global_ofile);
+  buffer = {CLOBBER};
+  os = {CLOBBER};
+  model = {CLOBBER};
+  cache = {CLOBBER};
+  os_command = {CLOBBER};
+  return;
+
+}
+
+

@@ -1,0 +1,907 @@
+digraph "hardware.c.158t.vect" {
+overlap=false;
+subgraph "cluster_hardware" {
+	style="dashed";
+	color="black";
+	label="hardware ()";
+	subgraph cluster_56_1 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey88";
+	label="loop 1";
+	labeljust=l;
+	penwidth=2;
+	subgraph cluster_56_2 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey77";
+	label="loop 2";
+	labeljust=l;
+	penwidth=2;
+	fn_56_basic_block_20 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:8903 |\<bb\ 20\>:\l\
+|#\ cp_216\ =\ PHI\ \<cp_40(24),\ &MEM[(void\ *)&buffer\ +\ 9B](19)\>\l\
+|cp_40\ =\ cp_216\ +\ 1;\l\
+|if\ (buffer_end_34\ \>\ cp_40)\l\
+\ \ goto\ \<bb\ 21\>;\ [92.50%]\l\
+else\l\
+\ \ goto\ \<bb\ 25\>;\ [7.50%]\l\
+}"];
+
+	fn_56_basic_block_21 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:8233 |\<bb\ 21\>:\l\
+|_41\ =\ *cp_40;\l\
+|_255\ =\ (unsigned\ char)\ _41;\l\
+|if\ (_255\ \>\ 58)\l\
+\ \ goto\ \<bb\ 23\>;\ [50.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 22\>;\ [50.00%]\l\
+}"];
+
+	fn_56_basic_block_22 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:8233 |\<bb\ 22\>:\l\
+|_258\ =\ (int)\ _255;\l\
+|_259\ =\ 288230380446679552\ \>\>\ _258;\l\
+|_260\ =\ _259\ &\ 1;\l\
+|_261\ =\ _260\ ==\ 0;\l\
+}"];
+
+	fn_56_basic_block_23 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:8233 |\<bb\ 23\>:\l\
+|#\ _262\ =\ PHI\ \<_261(22),\ 1(21)\>\l\
+|if\ (_262\ !=\ 0)\l\
+\ \ goto\ \<bb\ 95\>;\ [3.75%]\l\
+else\l\
+\ \ goto\ \<bb\ 24\>;\ [96.25%]\l\
+}"];
+
+	fn_56_basic_block_24 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:7924 |\<bb\ 24\>:\l\
+goto\ \<bb\ 20\>;\ [100.00%]\l\
+}"];
+
+	}
+	subgraph cluster_56_3 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey77";
+	label="loop 3";
+	labeljust=l;
+	penwidth=2;
+	fn_56_basic_block_34 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:5876 |\<bb\ 34\>:\l\
+|#\ cp_215\ =\ PHI\ \<cp_49(38),\ &MEM[(void\ *)&buffer\ +\ 10B](33)\>\l\
+|cp_49\ =\ cp_215\ +\ 1;\l\
+|if\ (buffer_end_34\ \>\ cp_49)\l\
+\ \ goto\ \<bb\ 35\>;\ [92.50%]\l\
+else\l\
+\ \ goto\ \<bb\ 39\>;\ [7.50%]\l\
+}"];
+
+	fn_56_basic_block_35 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:5433 |\<bb\ 35\>:\l\
+|_50\ =\ *cp_49;\l\
+|_190\ =\ (unsigned\ char)\ _50;\l\
+|if\ (_190\ \>\ 58)\l\
+\ \ goto\ \<bb\ 37\>;\ [50.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 36\>;\ [50.00%]\l\
+}"];
+
+	fn_56_basic_block_36 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:5433 |\<bb\ 36\>:\l\
+|_189\ =\ (int)\ _190;\l\
+|_13\ =\ 288230380446679552\ \>\>\ _189;\l\
+|_11\ =\ _13\ &\ 1;\l\
+|_73\ =\ _11\ ==\ 0;\l\
+}"];
+
+	fn_56_basic_block_37 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:5433 |\<bb\ 37\>:\l\
+|#\ _77\ =\ PHI\ \<_73(36),\ 1(35)\>\l\
+|if\ (_77\ !=\ 0)\l\
+\ \ goto\ \<bb\ 96\>;\ [3.75%]\l\
+else\l\
+\ \ goto\ \<bb\ 38\>;\ [96.25%]\l\
+}"];
+
+	fn_56_basic_block_38 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:5229 |\<bb\ 38\>:\l\
+goto\ \<bb\ 34\>;\ [100.00%]\l\
+}"];
+
+	}
+	subgraph cluster_56_4 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey77";
+	label="loop 4";
+	labeljust=l;
+	penwidth=2;
+	fn_56_basic_block_48 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:3878 |\<bb\ 48\>:\l\
+|#\ cp_212\ =\ PHI\ \<cp_58(52),\ &MEM[(void\ *)&buffer\ +\ 7B](47)\>\l\
+|cp_58\ =\ cp_212\ +\ 1;\l\
+|if\ (buffer_end_34\ \>\ cp_58)\l\
+\ \ goto\ \<bb\ 49\>;\ [92.50%]\l\
+else\l\
+\ \ goto\ \<bb\ 53\>;\ [7.50%]\l\
+}"];
+
+	fn_56_basic_block_49 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:3586 |\<bb\ 49\>:\l\
+|_59\ =\ *cp_58;\l\
+|_202\ =\ (unsigned\ char)\ _59;\l\
+|if\ (_202\ \>\ 58)\l\
+\ \ goto\ \<bb\ 51\>;\ [50.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 50\>;\ [50.00%]\l\
+}"];
+
+	fn_56_basic_block_50 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:3586 |\<bb\ 50\>:\l\
+|_201\ =\ (int)\ _202;\l\
+|_185\ =\ 288230380446679552\ \>\>\ _201;\l\
+|_226\ =\ _185\ &\ 1;\l\
+|_205\ =\ _226\ ==\ 0;\l\
+}"];
+
+	fn_56_basic_block_51 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:3586 |\<bb\ 51\>:\l\
+|#\ _198\ =\ PHI\ \<_205(50),\ 1(49)\>\l\
+|if\ (_198\ !=\ 0)\l\
+\ \ goto\ \<bb\ 97\>;\ [3.75%]\l\
+else\l\
+\ \ goto\ \<bb\ 52\>;\ [96.25%]\l\
+}"];
+
+	fn_56_basic_block_52 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:3452 |\<bb\ 52\>:\l\
+goto\ \<bb\ 48\>;\ [100.00%]\l\
+}"];
+
+	}
+	subgraph cluster_56_5 {
+	style="filled";
+	color="darkgreen";
+	fillcolor="grey77";
+	label="loop 5";
+	labeljust=l;
+	penwidth=2;
+	fn_56_basic_block_62 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:2560 |\<bb\ 62\>:\l\
+|#\ cp_193\ =\ PHI\ \<cp_67(66),\ &MEM[(void\ *)&buffer\ +\ 10B](61)\>\l\
+|cp_67\ =\ cp_193\ +\ 1;\l\
+|if\ (buffer_end_34\ \>\ cp_67)\l\
+\ \ goto\ \<bb\ 63\>;\ [92.50%]\l\
+else\l\
+\ \ goto\ \<bb\ 67\>;\ [7.50%]\l\
+}"];
+
+	fn_56_basic_block_63 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:2367 |\<bb\ 63\>:\l\
+|_68\ =\ *cp_67;\l\
+|_66\ =\ (unsigned\ char)\ _68;\l\
+|if\ (_66\ \>\ 58)\l\
+\ \ goto\ \<bb\ 65\>;\ [50.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 64\>;\ [50.00%]\l\
+}"];
+
+	fn_56_basic_block_64 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:2367 |\<bb\ 64\>:\l\
+|_102\ =\ (int)\ _66;\l\
+|_78\ =\ 288230380446679552\ \>\>\ _102;\l\
+|_222\ =\ _78\ &\ 1;\l\
+|_228\ =\ _222\ ==\ 0;\l\
+}"];
+
+	fn_56_basic_block_65 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:2367 |\<bb\ 65\>:\l\
+|#\ _214\ =\ PHI\ \<_228(64),\ 1(63)\>\l\
+|if\ (_214\ !=\ 0)\l\
+\ \ goto\ \<bb\ 98\>;\ [3.75%]\l\
+else\l\
+\ \ goto\ \<bb\ 66\>;\ [96.25%]\l\
+}"];
+
+	fn_56_basic_block_66 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:2278 |\<bb\ 66\>:\l\
+goto\ \<bb\ 62\>;\ [100.00%]\l\
+}"];
+
+	}
+	fn_56_basic_block_71 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:7591 |\<bb\ 71\>:\l\
+|#\ cpus_36\ =\ PHI\ \<cpus_103(70),\ 0(11)\>\l\
+|_75\ =\ __fgets_alias\ (&buffer,\ 1024,\ info_32);\l\
+|if\ (_75\ !=\ 0B)\l\
+\ \ goto\ \<bb\ 12\>;\ [85.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 72\>;\ [15.00%]\l\
+}"];
+
+	fn_56_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:6452 |\<bb\ 12\>:\l\
+|_33\ =\ strlen\ (&buffer);\l\
+|_35\ =\ strncmp\ (&buffer,\ \"processor\",\ 9);\l\
+|if\ (_35\ ==\ 0)\l\
+\ \ goto\ \<bb\ 13\>;\ [50.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 14\>;\ [50.00%]\l\
+}"];
+
+	fn_56_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:3226 |\<bb\ 13\>:\l\
+|cpus_37\ =\ cpus_36\ +\ 1;\l\
+goto\ \<bb\ 70\>;\ [100.00%]\l\
+}"];
+
+	fn_56_basic_block_14 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:3226 |\<bb\ 14\>:\l\
+|buffer_end_34\ =\ &buffer\ +\ _33;\l\
+|_38\ =\ strncmp\ (&buffer,\ \"vendor_id\",\ 9);\l\
+|if\ (_38\ ==\ 0)\l\
+\ \ goto\ \<bb\ 15\>;\ [34.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 28\>;\ [66.00%]\l\
+}"];
+
+	fn_56_basic_block_70 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:6451 |\<bb\ 70\>:\l\
+|#\ cpus_103\ =\ PHI\ \<cpus_36(25),\ cpus_37(13),\ cpus_36(27),\ cpus_36(39),\ cpus_36(41),\ cpus_36(53),\ cpus_36(55),\ cpus_36(56),\ cpus_36(67),\ cpus_36(69),\ cpus_36(26),\ cpus_36(40),\ cpus_36(54),\ cpus_36(68)\>\l\
+}"];
+
+	fn_56_basic_block_15 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:1100 |\<bb\ 15\>:\l\
+|if\ (&MEM[(void\ *)&buffer\ +\ 9B]\ \<\ buffer_end_34)\l\
+\ \ goto\ \<bb\ 16\>;\ [92.50%]\l\
+else\l\
+\ \ goto\ \<bb\ 25\>;\ [7.50%]\l\
+}"];
+
+	fn_56_basic_block_28 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:2129 |\<bb\ 28\>:\l\
+|_47\ =\ strncmp\ (&buffer,\ \"model\ name\",\ 10);\l\
+|if\ (_47\ ==\ 0)\l\
+\ \ goto\ \<bb\ 29\>;\ [34.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 42\>;\ [66.00%]\l\
+}"];
+
+	fn_56_basic_block_16 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:1018 |\<bb\ 16\>:\l\
+|_232\ =\ MEM[(char\ *)&buffer\ +\ 9B];\l\
+|_264\ =\ (unsigned\ char)\ _232;\l\
+|if\ (_264\ \>\ 58)\l\
+\ \ goto\ \<bb\ 18\>;\ [50.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 17\>;\ [50.00%]\l\
+}"];
+
+	fn_56_basic_block_25 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:1097 |\<bb\ 25\>:\l\
+|_46\ =\ MEM[(const\ char\ *)&vendor_id];\l\
+|if\ (_46\ !=\ 0)\l\
+\ \ goto\ \<bb\ 26\>;\ [33.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 70\>;\ [67.00%]\l\
+}"];
+
+	fn_56_basic_block_29 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:726 |\<bb\ 29\>:\l\
+|if\ (&MEM[(void\ *)&buffer\ +\ 10B]\ \<\ buffer_end_34)\l\
+\ \ goto\ \<bb\ 30\>;\ [92.50%]\l\
+else\l\
+\ \ goto\ \<bb\ 39\>;\ [7.50%]\l\
+}"];
+
+	fn_56_basic_block_42 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:1405 |\<bb\ 42\>:\l\
+|_56\ =\ strncmp\ (&buffer,\ \"cpu\ MHz\",\ 7);\l\
+|if\ (_56\ ==\ 0)\l\
+\ \ goto\ \<bb\ 43\>;\ [34.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 56\>;\ [66.00%]\l\
+}"];
+
+	fn_56_basic_block_17 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:1018 |\<bb\ 17\>:\l\
+|_267\ =\ (int)\ _264;\l\
+|_268\ =\ 288230380446679552\ \>\>\ _267;\l\
+|_269\ =\ _268\ &\ 1;\l\
+|_270\ =\ _269\ ==\ 0;\l\
+}"];
+
+	fn_56_basic_block_18 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:1018 |\<bb\ 18\>:\l\
+|#\ _271\ =\ PHI\ \<_270(17),\ 1(16)\>\l\
+|if\ (_271\ !=\ 0)\l\
+\ \ goto\ \<bb\ 95\>;\ [3.75%]\l\
+else\l\
+\ \ goto\ \<bb\ 19\>;\ [96.25%]\l\
+}"];
+
+	fn_56_basic_block_26 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:362 |\<bb\ 26\>:\l\
+|_104\ =\ strlen\ (&vendor_id);\l\
+|_105\ =\ _104\ +\ 18446744073709551615;\l\
+|_106\ =\ &vendor_id\ +\ _105;\l\
+|_107\ =\ *_106;\l\
+|if\ (_107\ ==\ 10)\l\
+\ \ goto\ \<bb\ 27\>;\ [37.68%]\l\
+else\l\
+\ \ goto\ \<bb\ 70\>;\ [62.32%]\l\
+}"];
+
+	fn_56_basic_block_30 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:672 |\<bb\ 30\>:\l\
+|_182\ =\ MEM[(char\ *)&buffer\ +\ 10B];\l\
+|_246\ =\ (unsigned\ char)\ _182;\l\
+|if\ (_246\ \>\ 58)\l\
+\ \ goto\ \<bb\ 32\>;\ [50.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 31\>;\ [50.00%]\l\
+}"];
+
+	fn_56_basic_block_39 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:724 |\<bb\ 39\>:\l\
+|_55\ =\ MEM[(const\ char\ *)&model_name];\l\
+|if\ (_55\ !=\ 0)\l\
+\ \ goto\ \<bb\ 40\>;\ [33.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 70\>;\ [67.00%]\l\
+}"];
+
+	fn_56_basic_block_43 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:479 |\<bb\ 43\>:\l\
+|if\ (&MEM[(void\ *)&buffer\ +\ 7B]\ \<\ buffer_end_34)\l\
+\ \ goto\ \<bb\ 44\>;\ [92.50%]\l\
+else\l\
+\ \ goto\ \<bb\ 53\>;\ [7.50%]\l\
+}"];
+
+	fn_56_basic_block_56 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:927 |\<bb\ 56\>:\l\
+|_65\ =\ strncmp\ (&buffer,\ \"cache\ size\",\ 10);\l\
+|if\ (_65\ ==\ 0)\l\
+\ \ goto\ \<bb\ 57\>;\ [34.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 70\>;\ [66.00%]\l\
+}"];
+
+	fn_56_basic_block_19 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:980 |\<bb\ 19\>:\l\
+}"];
+
+	fn_56_basic_block_95 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:362 |\<bb\ 95\>:\l\
+|#\ cp_48\ =\ PHI\ \<&MEM[(void\ *)&buffer\ +\ 9B](18),\ cp_40(23)\>\l\
+|__builtin___strcpy_chk\ (&vendor_id,\ cp_48,\ 1024);\l\
+goto\ \<bb\ 25\>;\ [100.00%]\l\
+}"];
+
+	fn_56_basic_block_27 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:136 |\<bb\ 27\>:\l\
+|*_106\ =\ 0;\l\
+goto\ \<bb\ 70\>;\ [100.00%]\l\
+}"];
+
+	fn_56_basic_block_31 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:672 |\<bb\ 31\>:\l\
+|_249\ =\ (int)\ _246;\l\
+|_250\ =\ 288230380446679552\ \>\>\ _249;\l\
+|_251\ =\ _250\ &\ 1;\l\
+|_252\ =\ _251\ ==\ 0;\l\
+}"];
+
+	fn_56_basic_block_32 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:672 |\<bb\ 32\>:\l\
+|#\ _253\ =\ PHI\ \<_252(31),\ 1(30)\>\l\
+|if\ (_253\ !=\ 0)\l\
+\ \ goto\ \<bb\ 96\>;\ [3.75%]\l\
+else\l\
+\ \ goto\ \<bb\ 33\>;\ [96.25%]\l\
+}"];
+
+	fn_56_basic_block_40 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:239 |\<bb\ 40\>:\l\
+|_108\ =\ strlen\ (&model_name);\l\
+|_109\ =\ _108\ +\ 18446744073709551615;\l\
+|_110\ =\ &model_name\ +\ _109;\l\
+|_111\ =\ *_110;\l\
+|if\ (_111\ ==\ 10)\l\
+\ \ goto\ \<bb\ 41\>;\ [37.68%]\l\
+else\l\
+\ \ goto\ \<bb\ 70\>;\ [62.32%]\l\
+}"];
+
+	fn_56_basic_block_44 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:443 |\<bb\ 44\>:\l\
+|_24\ =\ MEM[(char\ *)&buffer\ +\ 7B];\l\
+|_196\ =\ (unsigned\ char)\ _24;\l\
+|if\ (_196\ \>\ 58)\l\
+\ \ goto\ \<bb\ 46\>;\ [50.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 45\>;\ [50.00%]\l\
+}"];
+
+	fn_56_basic_block_53 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:478 |\<bb\ 53\>:\l\
+|_64\ =\ MEM[(const\ char\ *)&cpu_MHz];\l\
+|if\ (_64\ !=\ 0)\l\
+\ \ goto\ \<bb\ 54\>;\ [33.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 70\>;\ [67.00%]\l\
+}"];
+
+	fn_56_basic_block_57 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:316 |\<bb\ 57\>:\l\
+|if\ (&MEM[(void\ *)&buffer\ +\ 10B]\ \<\ buffer_end_34)\l\
+\ \ goto\ \<bb\ 58\>;\ [92.50%]\l\
+else\l\
+\ \ goto\ \<bb\ 67\>;\ [7.50%]\l\
+}"];
+
+	fn_56_basic_block_33 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:647 |\<bb\ 33\>:\l\
+}"];
+
+	fn_56_basic_block_96 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:239 |\<bb\ 96\>:\l\
+|#\ cp_39\ =\ PHI\ \<&MEM[(void\ *)&buffer\ +\ 10B](32),\ cp_49(37)\>\l\
+|__builtin___strcpy_chk\ (&model_name,\ cp_39,\ 1024);\l\
+goto\ \<bb\ 39\>;\ [100.00%]\l\
+}"];
+
+	fn_56_basic_block_41 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:90 |\<bb\ 41\>:\l\
+|*_110\ =\ 0;\l\
+goto\ \<bb\ 70\>;\ [100.00%]\l\
+}"];
+
+	fn_56_basic_block_45 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:443 |\<bb\ 45\>:\l\
+|_195\ =\ (int)\ _196;\l\
+|_5\ =\ 288230380446679552\ \>\>\ _195;\l\
+|_225\ =\ _5\ &\ 1;\l\
+|_211\ =\ _225\ ==\ 0;\l\
+}"];
+
+	fn_56_basic_block_46 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:443 |\<bb\ 46\>:\l\
+|#\ _192\ =\ PHI\ \<_211(45),\ 1(44)\>\l\
+|if\ (_192\ !=\ 0)\l\
+\ \ goto\ \<bb\ 97\>;\ [3.75%]\l\
+else\l\
+\ \ goto\ \<bb\ 47\>;\ [96.25%]\l\
+}"];
+
+	fn_56_basic_block_54 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:158 |\<bb\ 54\>:\l\
+|_112\ =\ strlen\ (&cpu_MHz);\l\
+|_113\ =\ _112\ +\ 18446744073709551615;\l\
+|_114\ =\ &cpu_MHz\ +\ _113;\l\
+|_115\ =\ *_114;\l\
+|if\ (_115\ ==\ 10)\l\
+\ \ goto\ \<bb\ 55\>;\ [37.68%]\l\
+else\l\
+\ \ goto\ \<bb\ 70\>;\ [62.32%]\l\
+}"];
+
+	fn_56_basic_block_58 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:292 |\<bb\ 58\>:\l\
+|_223\ =\ MEM[(char\ *)&buffer\ +\ 10B];\l\
+|_210\ =\ (unsigned\ char)\ _223;\l\
+|if\ (_210\ \>\ 58)\l\
+\ \ goto\ \<bb\ 60\>;\ [50.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 59\>;\ [50.00%]\l\
+}"];
+
+	fn_56_basic_block_67 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:315 |\<bb\ 67\>:\l\
+|_74\ =\ MEM[(const\ char\ *)&cache];\l\
+|if\ (_74\ !=\ 0)\l\
+\ \ goto\ \<bb\ 68\>;\ [33.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 70\>;\ [67.00%]\l\
+}"];
+
+	fn_56_basic_block_47 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:426 |\<bb\ 47\>:\l\
+}"];
+
+	fn_56_basic_block_97 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:158 |\<bb\ 97\>:\l\
+|#\ cp_209\ =\ PHI\ \<&MEM[(void\ *)&buffer\ +\ 7B](46),\ cp_58(51)\>\l\
+|__builtin___strcpy_chk\ (&cpu_MHz,\ cp_209,\ 1024);\l\
+goto\ \<bb\ 53\>;\ [100.00%]\l\
+}"];
+
+	fn_56_basic_block_55 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:59 |\<bb\ 55\>:\l\
+|*_114\ =\ 0;\l\
+goto\ \<bb\ 70\>;\ [100.00%]\l\
+}"];
+
+	fn_56_basic_block_59 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:292 |\<bb\ 59\>:\l\
+|_207\ =\ (int)\ _210;\l\
+|_187\ =\ 288230380446679552\ \>\>\ _207;\l\
+|_227\ =\ _187\ &\ 1;\l\
+|_199\ =\ _227\ ==\ 0;\l\
+}"];
+
+	fn_56_basic_block_60 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:292 |\<bb\ 60\>:\l\
+|#\ _204\ =\ PHI\ \<_199(59),\ 1(58)\>\l\
+|if\ (_204\ !=\ 0)\l\
+\ \ goto\ \<bb\ 98\>;\ [3.75%]\l\
+else\l\
+\ \ goto\ \<bb\ 61\>;\ [96.25%]\l\
+}"];
+
+	fn_56_basic_block_68 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:104 |\<bb\ 68\>:\l\
+|_116\ =\ strlen\ (&cache);\l\
+|_117\ =\ _116\ +\ 18446744073709551615;\l\
+|_118\ =\ &cache\ +\ _117;\l\
+|_119\ =\ *_118;\l\
+|if\ (_119\ ==\ 10)\l\
+\ \ goto\ \<bb\ 69\>;\ [37.68%]\l\
+else\l\
+\ \ goto\ \<bb\ 70\>;\ [62.32%]\l\
+}"];
+
+	fn_56_basic_block_61 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:281 |\<bb\ 61\>:\l\
+}"];
+
+	fn_56_basic_block_98 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:104 |\<bb\ 98\>:\l\
+|#\ cp_208\ =\ PHI\ \<&MEM[(void\ *)&buffer\ +\ 10B](60),\ cp_67(65)\>\l\
+|__builtin___strcpy_chk\ (&cache,\ cp_208,\ 1024);\l\
+goto\ \<bb\ 67\>;\ [100.00%]\l\
+}"];
+
+	fn_56_basic_block_69 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:39 |\<bb\ 69\>:\l\
+|*_118\ =\ 0;\l\
+}"];
+
+	}
+	fn_56_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_56_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_56_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:3142 |\<bb\ 2\>:\l\
+|os_command\ =\ \"uname\ -s\ -r\";\l\
+|pipe_22\ =\ popen\ (&os_command,\ \"r\");\l\
+|if\ (pipe_22\ ==\ 0B)\l\
+\ \ goto\ \<bb\ 3\>;\ [30.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [70.00%]\l\
+}"];
+
+	fn_56_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:943 |\<bb\ 3\>:\l\
+|MEM[(char\ *)&os]\ =\ 0;\l\
+goto\ \<bb\ 9\>;\ [100.00%]\l\
+}"];
+
+	fn_56_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:2199 |\<bb\ 4\>:\l\
+|_25\ =\ __fgets_alias\ (&os,\ 1024,\ pipe_22);\l\
+|if\ (_25\ ==\ 0B)\l\
+\ \ goto\ \<bb\ 5\>;\ [30.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\ [70.00%]\l\
+}"];
+
+	fn_56_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:660 |\<bb\ 5\>:\l\
+|MEM[(char\ *)&os]\ =\ 0;\l\
+}"];
+
+	fn_56_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:2199 |\<bb\ 6\>:\l\
+|pclose\ (pipe_22);\l\
+|_27\ =\ MEM[(const\ char\ *)&os];\l\
+|if\ (_27\ !=\ 0)\l\
+\ \ goto\ \<bb\ 7\>;\ [52.35%]\l\
+else\l\
+\ \ goto\ \<bb\ 9\>;\ [47.65%]\l\
+}"];
+
+	fn_56_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:1151 |\<bb\ 7\>:\l\
+|_28\ =\ strlen\ (&os);\l\
+|_29\ =\ _28\ +\ 18446744073709551615;\l\
+|_30\ =\ &os\ +\ _29;\l\
+|_31\ =\ *_30;\l\
+|if\ (_31\ ==\ 10)\l\
+\ \ goto\ \<bb\ 8\>;\ [37.68%]\l\
+else\l\
+\ \ goto\ \<bb\ 9\>;\ [62.32%]\l\
+}"];
+
+	fn_56_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:434 |\<bb\ 8\>:\l\
+|*_30\ =\ 0;\l\
+}"];
+
+	fn_56_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:3142 |\<bb\ 9\>:\l\
+|_1\ =\ strstr\ (&os,\ \"Linux\");\l\
+|if\ (_1\ !=\ 0B)\l\
+\ \ goto\ \<bb\ 10\>;\ [49.47%]\l\
+else\l\
+\ \ goto\ \<bb\ 90\>;\ [50.53%]\l\
+}"];
+
+	fn_56_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:1554 |\<bb\ 10\>:\l\
+|MEM[(char\ *)&cache]\ =\ 0;\l\
+|MEM[(char\ *)&model]\ =\ 0;\l\
+|cpu_MHz[0]\ =\ 0;\l\
+|model_name[0]\ =\ 0;\l\
+|vendor_id[0]\ =\ 0;\l\
+|info_32\ =\ fopen\ (\"/proc/cpuinfo\",\ \"r\");\l\
+|if\ (info_32\ !=\ 0B)\l\
+\ \ goto\ \<bb\ 11\>;\ [73.26%]\l\
+else\l\
+\ \ goto\ \<bb\ 89\>;\ [26.74%]\l\
+}"];
+
+	fn_56_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:1138 |\<bb\ 11\>:\l\
+goto\ \<bb\ 71\>;\ [100.00%]\l\
+}"];
+
+	fn_56_basic_block_72 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:1139 |\<bb\ 72\>:\l\
+|#\ cpus_61\ =\ PHI\ \<cpus_36(71)\>\l\
+|if\ (cpus_61\ \>\ 1)\l\
+\ \ goto\ \<bb\ 73\>;\ [64.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 76\>;\ [36.00%]\l\
+}"];
+
+	fn_56_basic_block_73 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:729 |\<bb\ 73\>:\l\
+|if\ (cpus_61\ ==\ 2)\l\
+\ \ goto\ \<bb\ 74\>;\ [34.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 75\>;\ [66.00%]\l\
+}"];
+
+	fn_56_basic_block_74 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:248 |\<bb\ 74\>:\l\
+|__builtin_memcpy\ (&model,\ \"Dual\",\ 5);\l\
+goto\ \<bb\ 76\>;\ [100.00%]\l\
+}"];
+
+	fn_56_basic_block_75 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:481 |\<bb\ 75\>:\l\
+|__builtin___sprintf_chk\ (&model,\ 1,\ 1024,\ \"%d\ CPU\",\ cpus_61);\l\
+}"];
+
+	fn_56_basic_block_76 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:1139 |\<bb\ 76\>:\l\
+|_79\ =\ strlen\ (&model);\l\
+|cp_80\ =\ &model\ +\ _79;\l\
+|_81\ =\ vendor_id[0];\l\
+|if\ (_81\ !=\ 0)\l\
+\ \ goto\ \<bb\ 77\>;\ [50.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 80\>;\ [50.00%]\l\
+}"];
+
+	fn_56_basic_block_77 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:569 |\<bb\ 77\>:\l\
+|if\ (&model\ !=\ cp_80)\l\
+\ \ goto\ \<bb\ 78\>;\ [70.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 79\>;\ [30.00%]\l\
+}"];
+
+	fn_56_basic_block_78 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:399 |\<bb\ 78\>:\l\
+|cp_82\ =\ cp_80\ +\ 1;\l\
+|*cp_80\ =\ 32;\l\
+}"];
+
+	fn_56_basic_block_79 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:569 |\<bb\ 79\>:\l\
+|#\ cp_83\ =\ PHI\ \<&model(77),\ cp_82(78)\>\l\
+|__builtin_strcpy\ (cp_83,\ &vendor_id);\l\
+|_85\ =\ strlen\ (&vendor_id);\l\
+|cp_86\ =\ cp_83\ +\ _85;\l\
+}"];
+
+	fn_56_basic_block_80 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:1139 |\<bb\ 80\>:\l\
+|#\ cp_88\ =\ PHI\ \<cp_80(76),\ cp_86(79)\>\l\
+|_87\ =\ model_name[0];\l\
+|if\ (_87\ !=\ 0)\l\
+\ \ goto\ \<bb\ 81\>;\ [50.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 84\>;\ [50.00%]\l\
+}"];
+
+	fn_56_basic_block_81 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:569 |\<bb\ 81\>:\l\
+|if\ (&model\ !=\ cp_88)\l\
+\ \ goto\ \<bb\ 82\>;\ [70.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 83\>;\ [30.00%]\l\
+}"];
+
+	fn_56_basic_block_82 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:399 |\<bb\ 82\>:\l\
+|cp_89\ =\ cp_88\ +\ 1;\l\
+|*cp_88\ =\ 32;\l\
+}"];
+
+	fn_56_basic_block_83 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:569 |\<bb\ 83\>:\l\
+|#\ cp_90\ =\ PHI\ \<&model(81),\ cp_89(82)\>\l\
+|__builtin_strcpy\ (cp_90,\ &model_name);\l\
+|_92\ =\ strlen\ (&model_name);\l\
+|cp_93\ =\ cp_90\ +\ _92;\l\
+}"];
+
+	fn_56_basic_block_84 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:1139 |\<bb\ 84\>:\l\
+|#\ cp_95\ =\ PHI\ \<cp_88(80),\ cp_93(83)\>\l\
+|_94\ =\ cpu_MHz[0];\l\
+|if\ (_94\ !=\ 0)\l\
+\ \ goto\ \<bb\ 85\>;\ [50.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 88\>;\ [50.00%]\l\
+}"];
+
+	fn_56_basic_block_85 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:569 |\<bb\ 85\>:\l\
+|if\ (&model\ !=\ cp_95)\l\
+\ \ goto\ \<bb\ 86\>;\ [70.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 87\>;\ [30.00%]\l\
+}"];
+
+	fn_56_basic_block_86 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:399 |\<bb\ 86\>:\l\
+|cp_96\ =\ cp_95\ +\ 1;\l\
+|*cp_95\ =\ 32;\l\
+}"];
+
+	fn_56_basic_block_87 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:569 |\<bb\ 87\>:\l\
+|#\ cp_101\ =\ PHI\ \<&model(85),\ cp_96(86)\>\l\
+|_97\ =\ strtod\ (&cpu_MHz,\ 0B);\l\
+|f_98\ =\ (float)\ _97;\l\
+|_99\ =\ f_98\ +\ 5.0e-1;\l\
+|i_100\ =\ (int)\ _99;\l\
+|__builtin___sprintf_chk\ (&cpu_MHz,\ 1,\ 1024,\ \"%dMHz\",\ i_100);\l\
+|__builtin_strcpy\ (cp_101,\ &cpu_MHz);\l\
+}"];
+
+	fn_56_basic_block_88 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:1139 |\<bb\ 88\>:\l\
+|fclose\ (info_32);\l\
+}"];
+
+	fn_56_basic_block_89 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:1554 |\<bb\ 89\>:\l\
+|buffer\ =\{v\}\ \{CLOBBER\};\l\
+|vendor_id\ =\{v\}\ \{CLOBBER\};\l\
+|model_name\ =\{v\}\ \{CLOBBER\};\l\
+|cpu_MHz\ =\{v\}\ \{CLOBBER\};\l\
+goto\ \<bb\ 91\>;\ [100.00%]\l\
+}"];
+
+	fn_56_basic_block_90 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:1588 |\<bb\ 90\>:\l\
+|model[0]\ =\ 0;\l\
+|cache[0]\ =\ 0;\l\
+}"];
+
+	fn_56_basic_block_91 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:3142 |\<bb\ 91\>:\l\
+|__builtin___sprintf_chk\ (&buffer,\ 1,\ 1024,\ \"CPU\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ %s\\n\",\ &model);\l\
+|__printf_chk\ (1,\ \"%s\",\ &buffer);\l\
+|if\ (write_to_file_9(D)\ !=\ 0)\l\
+\ \ goto\ \<bb\ 92\>;\ [36.64%]\l\
+else\l\
+\ \ goto\ \<bb\ 94\>;\ [63.36%]\l\
+}"];
+
+	fn_56_basic_block_92 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:1151 |\<bb\ 92\>:\l\
+|__builtin_fputs\ (&buffer,\ global_ofile_10(D));\l\
+|__builtin___sprintf_chk\ (&buffer,\ 1,\ 1024,\ \"L2\ Cache\ \ \ \ \ \ \ \ \ \ \ \ :\ %s\\n\",\ &cache);\l\
+|__printf_chk\ (1,\ \"%s\",\ &buffer);\l\
+|__builtin_fputs\ (&buffer,\ global_ofile_10(D));\l\
+|__builtin___sprintf_chk\ (&buffer,\ 1,\ 1024,\ \"OS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ %s\\n\",\ &os);\l\
+|__printf_chk\ (1,\ \"%s\",\ &buffer);\l\
+|__builtin_fputs\ (&buffer,\ global_ofile_10(D));\l\
+}"];
+
+	fn_56_basic_block_93 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:3142 |\<bb\ 93\>:\l\
+|buffer\ =\{v\}\ \{CLOBBER\};\l\
+|os\ =\{v\}\ \{CLOBBER\};\l\
+|model\ =\{v\}\ \{CLOBBER\};\l\
+|cache\ =\{v\}\ \{CLOBBER\};\l\
+|os_command\ =\{v\}\ \{CLOBBER\};\l\
+|return;\l\
+}"];
+
+	fn_56_basic_block_94 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:1991 |\<bb\ 94\>:\l\
+|__builtin___sprintf_chk\ (&buffer,\ 1,\ 1024,\ \"L2\ Cache\ \ \ \ \ \ \ \ \ \ \ \ :\ %s\\n\",\ &cache);\l\
+|__printf_chk\ (1,\ \"%s\",\ &buffer);\l\
+|__builtin___sprintf_chk\ (&buffer,\ 1,\ 1024,\ \"OS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ %s\\n\",\ &os);\l\
+|__printf_chk\ (1,\ \"%s\",\ &buffer);\l\
+goto\ \<bb\ 93\>;\ [100.00%]\l\
+}"];
+
+	fn_56_basic_block_0:s -> fn_56_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_2:s -> fn_56_basic_block_3:n [style="solid,bold",color=black,weight=10,constraint=true, label="[30%]"];
+	fn_56_basic_block_2:s -> fn_56_basic_block_4:n [style="solid,bold",color=black,weight=10,constraint=true, label="[70%]"];
+	fn_56_basic_block_3:s -> fn_56_basic_block_9:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_4:s -> fn_56_basic_block_5:n [style="solid,bold",color=black,weight=10,constraint=true, label="[30%]"];
+	fn_56_basic_block_4:s -> fn_56_basic_block_6:n [style="solid,bold",color=black,weight=10,constraint=true, label="[70%]"];
+	fn_56_basic_block_5:s -> fn_56_basic_block_6:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_6:s -> fn_56_basic_block_7:n [style="solid,bold",color=black,weight=10,constraint=true, label="[52%]"];
+	fn_56_basic_block_6:s -> fn_56_basic_block_9:n [style="solid,bold",color=black,weight=10,constraint=true, label="[47%]"];
+	fn_56_basic_block_7:s -> fn_56_basic_block_8:n [style="solid,bold",color=black,weight=10,constraint=true, label="[37%]"];
+	fn_56_basic_block_7:s -> fn_56_basic_block_9:n [style="solid,bold",color=black,weight=10,constraint=true, label="[62%]"];
+	fn_56_basic_block_8:s -> fn_56_basic_block_9:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_9:s -> fn_56_basic_block_10:n [style="solid,bold",color=black,weight=10,constraint=true, label="[49%]"];
+	fn_56_basic_block_9:s -> fn_56_basic_block_90:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_10:s -> fn_56_basic_block_11:n [style="solid,bold",color=black,weight=10,constraint=true, label="[73%]"];
+	fn_56_basic_block_10:s -> fn_56_basic_block_89:n [style="solid,bold",color=black,weight=10,constraint=true, label="[26%]"];
+	fn_56_basic_block_11:s -> fn_56_basic_block_71:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_12:s -> fn_56_basic_block_13:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_12:s -> fn_56_basic_block_14:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_13:s -> fn_56_basic_block_70:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_14:s -> fn_56_basic_block_15:n [style="solid,bold",color=black,weight=10,constraint=true, label="[34%]"];
+	fn_56_basic_block_14:s -> fn_56_basic_block_28:n [style="solid,bold",color=black,weight=10,constraint=true, label="[66%]"];
+	fn_56_basic_block_15:s -> fn_56_basic_block_16:n [style="solid,bold",color=black,weight=10,constraint=true, label="[92%]"];
+	fn_56_basic_block_15:s -> fn_56_basic_block_25:n [style="solid,bold",color=black,weight=10,constraint=true, label="[7%]"];
+	fn_56_basic_block_16:s -> fn_56_basic_block_17:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_16:s -> fn_56_basic_block_18:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_17:s -> fn_56_basic_block_18:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_18:s -> fn_56_basic_block_19:n [style="solid,bold",color=black,weight=10,constraint=true, label="[96%]"];
+	fn_56_basic_block_18:s -> fn_56_basic_block_95:n [style="solid,bold",color=black,weight=10,constraint=true, label="[3%]"];
+	fn_56_basic_block_19:s -> fn_56_basic_block_20:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_20:s -> fn_56_basic_block_21:n [style="solid,bold",color=black,weight=10,constraint=true, label="[92%]"];
+	fn_56_basic_block_20:s -> fn_56_basic_block_25:n [style="solid,bold",color=black,weight=10,constraint=true, label="[7%]"];
+	fn_56_basic_block_21:s -> fn_56_basic_block_22:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_21:s -> fn_56_basic_block_23:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_22:s -> fn_56_basic_block_23:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_23:s -> fn_56_basic_block_24:n [style="solid,bold",color=black,weight=10,constraint=true, label="[96%]"];
+	fn_56_basic_block_23:s -> fn_56_basic_block_95:n [style="solid,bold",color=black,weight=10,constraint=true, label="[3%]"];
+	fn_56_basic_block_24:s -> fn_56_basic_block_20:n [style="dotted,bold",color=blue,weight=10,constraint=false, label="[100%]"];
+	fn_56_basic_block_25:s -> fn_56_basic_block_26:n [style="solid,bold",color=black,weight=10,constraint=true, label="[33%]"];
+	fn_56_basic_block_25:s -> fn_56_basic_block_70:n [style="solid,bold",color=black,weight=10,constraint=true, label="[67%]"];
+	fn_56_basic_block_26:s -> fn_56_basic_block_27:n [style="solid,bold",color=black,weight=10,constraint=true, label="[37%]"];
+	fn_56_basic_block_26:s -> fn_56_basic_block_70:n [style="solid,bold",color=black,weight=10,constraint=true, label="[62%]"];
+	fn_56_basic_block_27:s -> fn_56_basic_block_70:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_28:s -> fn_56_basic_block_29:n [style="solid,bold",color=black,weight=10,constraint=true, label="[34%]"];
+	fn_56_basic_block_28:s -> fn_56_basic_block_42:n [style="solid,bold",color=black,weight=10,constraint=true, label="[66%]"];
+	fn_56_basic_block_29:s -> fn_56_basic_block_30:n [style="solid,bold",color=black,weight=10,constraint=true, label="[92%]"];
+	fn_56_basic_block_29:s -> fn_56_basic_block_39:n [style="solid,bold",color=black,weight=10,constraint=true, label="[7%]"];
+	fn_56_basic_block_30:s -> fn_56_basic_block_31:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_30:s -> fn_56_basic_block_32:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_31:s -> fn_56_basic_block_32:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_32:s -> fn_56_basic_block_33:n [style="solid,bold",color=black,weight=10,constraint=true, label="[96%]"];
+	fn_56_basic_block_32:s -> fn_56_basic_block_96:n [style="solid,bold",color=black,weight=10,constraint=true, label="[3%]"];
+	fn_56_basic_block_33:s -> fn_56_basic_block_34:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_34:s -> fn_56_basic_block_35:n [style="solid,bold",color=black,weight=10,constraint=true, label="[92%]"];
+	fn_56_basic_block_34:s -> fn_56_basic_block_39:n [style="solid,bold",color=black,weight=10,constraint=true, label="[7%]"];
+	fn_56_basic_block_35:s -> fn_56_basic_block_36:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_35:s -> fn_56_basic_block_37:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_36:s -> fn_56_basic_block_37:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_37:s -> fn_56_basic_block_38:n [style="solid,bold",color=black,weight=10,constraint=true, label="[96%]"];
+	fn_56_basic_block_37:s -> fn_56_basic_block_96:n [style="solid,bold",color=black,weight=10,constraint=true, label="[3%]"];
+	fn_56_basic_block_38:s -> fn_56_basic_block_34:n [style="dotted,bold",color=blue,weight=10,constraint=false, label="[100%]"];
+	fn_56_basic_block_39:s -> fn_56_basic_block_40:n [style="solid,bold",color=black,weight=10,constraint=true, label="[33%]"];
+	fn_56_basic_block_39:s -> fn_56_basic_block_70:n [style="solid,bold",color=black,weight=10,constraint=true, label="[67%]"];
+	fn_56_basic_block_40:s -> fn_56_basic_block_41:n [style="solid,bold",color=black,weight=10,constraint=true, label="[37%]"];
+	fn_56_basic_block_40:s -> fn_56_basic_block_70:n [style="solid,bold",color=black,weight=10,constraint=true, label="[62%]"];
+	fn_56_basic_block_41:s -> fn_56_basic_block_70:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_42:s -> fn_56_basic_block_43:n [style="solid,bold",color=black,weight=10,constraint=true, label="[34%]"];
+	fn_56_basic_block_42:s -> fn_56_basic_block_56:n [style="solid,bold",color=black,weight=10,constraint=true, label="[66%]"];
+	fn_56_basic_block_43:s -> fn_56_basic_block_44:n [style="solid,bold",color=black,weight=10,constraint=true, label="[92%]"];
+	fn_56_basic_block_43:s -> fn_56_basic_block_53:n [style="solid,bold",color=black,weight=10,constraint=true, label="[7%]"];
+	fn_56_basic_block_44:s -> fn_56_basic_block_45:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_44:s -> fn_56_basic_block_46:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_45:s -> fn_56_basic_block_46:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_46:s -> fn_56_basic_block_47:n [style="solid,bold",color=black,weight=10,constraint=true, label="[96%]"];
+	fn_56_basic_block_46:s -> fn_56_basic_block_97:n [style="solid,bold",color=black,weight=10,constraint=true, label="[3%]"];
+	fn_56_basic_block_47:s -> fn_56_basic_block_48:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_48:s -> fn_56_basic_block_49:n [style="solid,bold",color=black,weight=10,constraint=true, label="[92%]"];
+	fn_56_basic_block_48:s -> fn_56_basic_block_53:n [style="solid,bold",color=black,weight=10,constraint=true, label="[7%]"];
+	fn_56_basic_block_49:s -> fn_56_basic_block_50:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_49:s -> fn_56_basic_block_51:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_50:s -> fn_56_basic_block_51:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_51:s -> fn_56_basic_block_52:n [style="solid,bold",color=black,weight=10,constraint=true, label="[96%]"];
+	fn_56_basic_block_51:s -> fn_56_basic_block_97:n [style="solid,bold",color=black,weight=10,constraint=true, label="[3%]"];
+	fn_56_basic_block_52:s -> fn_56_basic_block_48:n [style="dotted,bold",color=blue,weight=10,constraint=false, label="[100%]"];
+	fn_56_basic_block_53:s -> fn_56_basic_block_54:n [style="solid,bold",color=black,weight=10,constraint=true, label="[33%]"];
+	fn_56_basic_block_53:s -> fn_56_basic_block_70:n [style="solid,bold",color=black,weight=10,constraint=true, label="[67%]"];
+	fn_56_basic_block_54:s -> fn_56_basic_block_55:n [style="solid,bold",color=black,weight=10,constraint=true, label="[37%]"];
+	fn_56_basic_block_54:s -> fn_56_basic_block_70:n [style="solid,bold",color=black,weight=10,constraint=true, label="[62%]"];
+	fn_56_basic_block_55:s -> fn_56_basic_block_70:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_56:s -> fn_56_basic_block_57:n [style="solid,bold",color=black,weight=10,constraint=true, label="[34%]"];
+	fn_56_basic_block_56:s -> fn_56_basic_block_70:n [style="solid,bold",color=black,weight=10,constraint=true, label="[66%]"];
+	fn_56_basic_block_57:s -> fn_56_basic_block_58:n [style="solid,bold",color=black,weight=10,constraint=true, label="[92%]"];
+	fn_56_basic_block_57:s -> fn_56_basic_block_67:n [style="solid,bold",color=black,weight=10,constraint=true, label="[7%]"];
+	fn_56_basic_block_58:s -> fn_56_basic_block_59:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_58:s -> fn_56_basic_block_60:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_59:s -> fn_56_basic_block_60:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_60:s -> fn_56_basic_block_61:n [style="solid,bold",color=black,weight=10,constraint=true, label="[96%]"];
+	fn_56_basic_block_60:s -> fn_56_basic_block_98:n [style="solid,bold",color=black,weight=10,constraint=true, label="[3%]"];
+	fn_56_basic_block_61:s -> fn_56_basic_block_62:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_62:s -> fn_56_basic_block_63:n [style="solid,bold",color=black,weight=10,constraint=true, label="[92%]"];
+	fn_56_basic_block_62:s -> fn_56_basic_block_67:n [style="solid,bold",color=black,weight=10,constraint=true, label="[7%]"];
+	fn_56_basic_block_63:s -> fn_56_basic_block_64:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_63:s -> fn_56_basic_block_65:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_64:s -> fn_56_basic_block_65:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_65:s -> fn_56_basic_block_66:n [style="solid,bold",color=black,weight=10,constraint=true, label="[96%]"];
+	fn_56_basic_block_65:s -> fn_56_basic_block_98:n [style="solid,bold",color=black,weight=10,constraint=true, label="[3%]"];
+	fn_56_basic_block_66:s -> fn_56_basic_block_62:n [style="dotted,bold",color=blue,weight=10,constraint=false, label="[100%]"];
+	fn_56_basic_block_67:s -> fn_56_basic_block_68:n [style="solid,bold",color=black,weight=10,constraint=true, label="[33%]"];
+	fn_56_basic_block_67:s -> fn_56_basic_block_70:n [style="solid,bold",color=black,weight=10,constraint=true, label="[67%]"];
+	fn_56_basic_block_68:s -> fn_56_basic_block_69:n [style="solid,bold",color=black,weight=10,constraint=true, label="[37%]"];
+	fn_56_basic_block_68:s -> fn_56_basic_block_70:n [style="solid,bold",color=black,weight=10,constraint=true, label="[62%]"];
+	fn_56_basic_block_69:s -> fn_56_basic_block_70:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_70:s -> fn_56_basic_block_71:n [style="dotted,bold",color=blue,weight=10,constraint=false, label="[100%]"];
+	fn_56_basic_block_71:s -> fn_56_basic_block_12:n [style="solid,bold",color=black,weight=10,constraint=true, label="[85%]"];
+	fn_56_basic_block_71:s -> fn_56_basic_block_72:n [style="solid,bold",color=black,weight=10,constraint=true, label="[15%]"];
+	fn_56_basic_block_72:s -> fn_56_basic_block_73:n [style="solid,bold",color=black,weight=10,constraint=true, label="[64%]"];
+	fn_56_basic_block_72:s -> fn_56_basic_block_76:n [style="solid,bold",color=black,weight=10,constraint=true, label="[36%]"];
+	fn_56_basic_block_73:s -> fn_56_basic_block_74:n [style="solid,bold",color=black,weight=10,constraint=true, label="[34%]"];
+	fn_56_basic_block_73:s -> fn_56_basic_block_75:n [style="solid,bold",color=black,weight=10,constraint=true, label="[66%]"];
+	fn_56_basic_block_74:s -> fn_56_basic_block_76:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_75:s -> fn_56_basic_block_76:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_76:s -> fn_56_basic_block_77:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_76:s -> fn_56_basic_block_80:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_77:s -> fn_56_basic_block_78:n [style="solid,bold",color=black,weight=10,constraint=true, label="[70%]"];
+	fn_56_basic_block_77:s -> fn_56_basic_block_79:n [style="solid,bold",color=black,weight=10,constraint=true, label="[30%]"];
+	fn_56_basic_block_78:s -> fn_56_basic_block_79:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_79:s -> fn_56_basic_block_80:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_80:s -> fn_56_basic_block_81:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_80:s -> fn_56_basic_block_84:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_81:s -> fn_56_basic_block_82:n [style="solid,bold",color=black,weight=10,constraint=true, label="[70%]"];
+	fn_56_basic_block_81:s -> fn_56_basic_block_83:n [style="solid,bold",color=black,weight=10,constraint=true, label="[30%]"];
+	fn_56_basic_block_82:s -> fn_56_basic_block_83:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_83:s -> fn_56_basic_block_84:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_84:s -> fn_56_basic_block_85:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_84:s -> fn_56_basic_block_88:n [style="solid,bold",color=black,weight=10,constraint=true, label="[50%]"];
+	fn_56_basic_block_85:s -> fn_56_basic_block_86:n [style="solid,bold",color=black,weight=10,constraint=true, label="[70%]"];
+	fn_56_basic_block_85:s -> fn_56_basic_block_87:n [style="solid,bold",color=black,weight=10,constraint=true, label="[30%]"];
+	fn_56_basic_block_86:s -> fn_56_basic_block_87:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_87:s -> fn_56_basic_block_88:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_88:s -> fn_56_basic_block_89:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_89:s -> fn_56_basic_block_91:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_90:s -> fn_56_basic_block_91:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_91:s -> fn_56_basic_block_92:n [style="solid,bold",color=black,weight=10,constraint=true, label="[36%]"];
+	fn_56_basic_block_91:s -> fn_56_basic_block_94:n [style="solid,bold",color=black,weight=10,constraint=true, label="[63%]"];
+	fn_56_basic_block_92:s -> fn_56_basic_block_93:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_93:s -> fn_56_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true, label="[100%]"];
+	fn_56_basic_block_94:s -> fn_56_basic_block_93:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_95:s -> fn_56_basic_block_25:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_96:s -> fn_56_basic_block_39:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_97:s -> fn_56_basic_block_53:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_98:s -> fn_56_basic_block_67:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_56_basic_block_0:s -> fn_56_basic_block_1:n [style="invis",constraint=true];
+}
+}

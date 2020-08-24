@@ -1,0 +1,1244 @@
+
+;; Function SetupCPUEmFloatArrays (SetupCPUEmFloatArrays, funcdef_no=34, decl_uid=2767, cgraph_uid=34, symbol_order=34)
+
+SetupCPUEmFloatArrays (struct InternalFPF * abase, struct InternalFPF * bbase, struct InternalFPF * cbase, long unsigned int arraysize)
+{
+  struct InternalFPF locFPF2;
+  struct InternalFPF locFPF1;
+  long unsigned int i;
+
+  try
+    {
+      randnum (13);
+      i = 0;
+      goto <D.2848>;
+      <D.2847>:
+      _1 = randwc (50000);
+      Int32ToInternalFPF (_1, &locFPF1);
+      _2 = randwc (50000);
+      _3 = _2 + 1;
+      Int32ToInternalFPF (_3, &locFPF2);
+      _4 = i * 12;
+      _5 = abase + _4;
+      DivideInternalFPF (&locFPF1, &locFPF2, _5);
+      _6 = randwc (50000);
+      _7 = _6 + 1;
+      Int32ToInternalFPF (_7, &locFPF2);
+      _8 = i * 12;
+      _9 = bbase + _8;
+      DivideInternalFPF (&locFPF1, &locFPF2, _9);
+      i = i + 1;
+      <D.2848>:
+      if (i < arraysize) goto <D.2847>; else goto <D.2849>;
+      <D.2849>:
+      goto <D.3129>;
+    }
+  finally
+    {
+      locFPF1 = {CLOBBER};
+      locFPF2 = {CLOBBER};
+    }
+  <D.3129>:
+  return;
+}
+
+
+
+;; Function Int32ToInternalFPF (Int32ToInternalFPF, funcdef_no=52, decl_uid=2830, cgraph_uid=52, symbol_order=52)
+
+Int32ToInternalFPF (int32 mylong, struct InternalFPF * dest)
+{
+  short unsigned int myword;
+  int i;
+
+  if (mylong < 0) goto <D.3131>; else goto <D.3132>;
+  <D.3131>:
+  dest->sign = 1;
+  mylong = -mylong;
+  goto <D.3133>;
+  <D.3132>:
+  dest->sign = 0;
+  <D.3133>:
+  dest->type = 2;
+  i = 0;
+  goto <D.3126>;
+  <D.3125>:
+  dest->mantissa[i] = 0;
+  i = i + 1;
+  <D.3126>:
+  if (i <= 3) goto <D.3125>; else goto <D.3127>;
+  <D.3127>:
+  if (mylong == 0) goto <D.3134>; else goto <D.3135>;
+  <D.3134>:
+  dest->type = 0;
+  dest->exp = 0;
+  goto <D.3136>;
+  <D.3135>:
+  dest->exp = 32;
+  _1 = mylong >> 16;
+  myword = (short unsigned int) _1;
+  dest->mantissa[0] = myword;
+  myword = (short unsigned int) mylong;
+  dest->mantissa[1] = myword;
+  normalize (dest);
+  goto <D.3136>;
+  <D.3136>:
+  return;
+}
+
+
+
+;; Function normalize (normalize, funcdef_no=45, decl_uid=2804, cgraph_uid=45, symbol_order=45)
+
+normalize (struct InternalFPF * ptr)
+{
+  short unsigned int carry;
+
+  try
+    {
+      goto <D.2955>;
+      <D.2954>:
+      carry = 0;
+      _1 = &ptr->mantissa;
+      ShiftMantLeft1 (&carry, _1);
+      _2 = ptr->exp;
+      _3 = _2;
+      _4 = (unsigned short) _3;
+      _5 = _4 + 65535;
+      _6 = (short int) _5;
+      ptr->exp = _6;
+      <D.2955>:
+      _7 = ptr->mantissa[0];
+      _8 = (signed short) _7;
+      if (_8 >= 0) goto <D.2954>; else goto <D.2956>;
+      <D.2956>:
+      goto <D.3137>;
+    }
+  finally
+    {
+      carry = {CLOBBER};
+    }
+  <D.3137>:
+  return;
+}
+
+
+
+;; Function ShiftMantLeft1 (ShiftMantLeft1, funcdef_no=42, decl_uid=2796, cgraph_uid=42, symbol_order=42)
+
+ShiftMantLeft1 (short unsigned int * carry, short unsigned int * mantissa)
+{
+  short unsigned int accum;
+  int new_carry;
+  int i;
+
+  i = 3;
+  goto <D.2925>;
+  <D.2924>:
+  _1 = (long unsigned int) i;
+  _2 = _1 * 2;
+  _3 = mantissa + _2;
+  accum = *_3;
+  _4 = (int) accum;
+  new_carry = _4 & 32768;
+  accum = accum << 1;
+  _5 = *carry;
+  if (_5 != 0) goto <D.3139>; else goto <D.3140>;
+  <D.3139>:
+  accum = accum | 1;
+  <D.3140>:
+  _6 = (short unsigned int) new_carry;
+  *carry = _6;
+  _7 = (long unsigned int) i;
+  _8 = _7 * 2;
+  _9 = mantissa + _8;
+  *_9 = accum;
+  i = i + -1;
+  <D.2925>:
+  if (i >= 0) goto <D.2924>; else goto <D.2926>;
+  <D.2926>:
+  goto <D.3141>;
+  <D.3141>:
+  return;
+}
+
+
+
+;; Function DivideInternalFPF (DivideInternalFPF, funcdef_no=51, decl_uid=2827, cgraph_uid=51, symbol_order=51)
+
+DivideInternalFPF (struct InternalFPF * x, struct InternalFPF * y, struct InternalFPF * z)
+{
+  struct InternalFPF locx;
+  short unsigned int extra_bits[4];
+  short unsigned int carry;
+  int j;
+  int i;
+
+  try
+    {
+      _1 = x->type;
+      _2 = (int) _1;
+      _3 = _2 * 5;
+      _4 = y->type;
+      _5 = (int) _4;
+      _6 = _3 + _5;
+      switch (_6) <default: <D.3158>, case 0: <D.3080>, case 1: <D.3083>, case 2: <D.3084>, case 3: <D.3085>, case 4: <D.3097>, case 5: <D.3088>, case 6: <D.3101>, case 7: <D.3103>, case 8: <D.3086>, case 9: <D.3098>, case 10: <D.3089>, case 11: <D.3102>, case 12: <D.3104>, case 13: <D.3087>, case 14: <D.3099>, case 15: <D.3090>, case 16: <D.3091>, case 17: <D.3092>, case 18: <D.3081>, case 19: <D.3100>, case 20: <D.3093>, case 21: <D.3094>, case 22: <D.3095>, case 23: <D.3096>, case 24: <D.3118>>
+      <D.3080>:
+      <D.3081>:
+      SetInternalFPFNaN (z);
+      goto <D.3082>;
+      <D.3083>:
+      <D.3084>:
+      _7 = &y->mantissa;
+      _8 = IsMantissaZero (_7);
+      if (_8 != 0) goto <D.3142>; else goto <D.3143>;
+      <D.3142>:
+      SetInternalFPFNaN (z);
+      goto <D.3082>;
+      <D.3143>:
+      <D.3085>:
+      <D.3086>:
+      <D.3087>:
+      _9 = x->sign;
+      _10 = y->sign;
+      _11 = _9 ^ _10;
+      _12 = (int) _11;
+      SetInternalFPFZero (z, _12);
+      goto <D.3082>;
+      <D.3088>:
+      <D.3089>:
+      _13 = &x->mantissa;
+      _14 = IsMantissaZero (_13);
+      if (_14 != 0) goto <D.3144>; else goto <D.3145>;
+      <D.3144>:
+      SetInternalFPFNaN (z);
+      goto <D.3082>;
+      <D.3145>:
+      <D.3090>:
+      <D.3091>:
+      <D.3092>:
+      SetInternalFPFInfinity (z, 0);
+      _15 = x->sign;
+      _16 = y->sign;
+      _17 = _15 ^ _16;
+      z->sign = _17;
+      goto <D.3082>;
+      <D.3093>:
+      <D.3094>:
+      <D.3095>:
+      <D.3096>:
+      memmove (x, z, 12);
+      goto <D.3082>;
+      <D.3097>:
+      <D.3098>:
+      <D.3099>:
+      <D.3100>:
+      memmove (y, z, 12);
+      goto <D.3082>;
+      <D.3101>:
+      <D.3102>:
+      <D.3103>:
+      <D.3104>:
+      memmove (&locx, x, 12);
+      _18 = IsMantissaZero (&locx.mantissa);
+      if (_18 != 0) goto <D.3146>; else goto <D.3147>;
+      <D.3146>:
+      _19 = &y->mantissa;
+      _20 = IsMantissaZero (_19);
+      if (_20 != 0) goto <D.3148>; else goto <D.3149>;
+      <D.3148>:
+      SetInternalFPFNaN (z);
+      goto <D.3150>;
+      <D.3149>:
+      SetInternalFPFZero (z, 0);
+      <D.3150>:
+      goto <D.3082>;
+      <D.3147>:
+      _21 = &y->mantissa;
+      _22 = IsMantissaZero (_21);
+      if (_22 != 0) goto <D.3151>; else goto <D.3152>;
+      <D.3151>:
+      SetInternalFPFInfinity (z, 0);
+      goto <D.3082>;
+      <D.3152>:
+      _23 = x->type;
+      z->type = _23;
+      _24 = x->sign;
+      _25 = y->sign;
+      _26 = _24 ^ _25;
+      z->sign = _26;
+      _27 = x->exp;
+      _28 = (unsigned short) _27;
+      _29 = y->exp;
+      _30 = (unsigned short) _29;
+      _31 = _28 - _30;
+      _32 = _31 + 128;
+      _33 = (short int) _32;
+      z->exp = _33;
+      i = 0;
+      goto <D.3106>;
+      <D.3105>:
+      z->mantissa[i] = 0;
+      extra_bits[i] = 0;
+      i = i + 1;
+      <D.3106>:
+      if (i <= 3) goto <D.3105>; else goto <D.3107>;
+      <D.3107>:
+      goto <D.3116>;
+      <D.3115>:
+      carry = 0;
+      ShiftMantLeft1 (&carry, &locx.mantissa);
+      ShiftMantLeft1 (&carry, &extra_bits);
+      carry.0_34 = carry;
+      if (carry.0_34 == 0) goto <D.3153>; else goto <D.3154>;
+      <D.3153>:
+      j = 0;
+      goto <D.3111>;
+      <D.3110>:
+      _35 = y->mantissa[j];
+      _36 = extra_bits[j];
+      if (_35 > _36) goto <D.3155>; else goto <D.3156>;
+      <D.3155>:
+      carry = 0;
+      goto no_subtract;
+      <D.3156>:
+      _37 = y->mantissa[j];
+      _38 = extra_bits[j];
+      if (_37 < _38) goto <D.3109>; else goto <D.3157>;
+      <D.3157>:
+      j = j + 1;
+      <D.3111>:
+      if (j <= 3) goto <D.3110>; else goto <D.3109>;
+      <D.3109>:
+      <D.3154>:
+      carry = 0;
+      j = 3;
+      goto <D.3113>;
+      <D.3112>:
+      _39 = y->mantissa[j];
+      _40 = (int) _39;
+      _41 = extra_bits[j];
+      _42 = (int) _41;
+      _43 = &extra_bits[j];
+      Sub16Bits (&carry, _43, _42, _40);
+      j = j + -1;
+      <D.3113>:
+      if (j >= 0) goto <D.3112>; else goto <D.3114>;
+      <D.3114>:
+      carry = 1;
+      no_subtract:
+      _44 = &z->mantissa;
+      ShiftMantLeft1 (&carry, _44);
+      _45 = z->exp;
+      _46 = _45;
+      _47 = (unsigned short) _46;
+      _48 = _47 + 65535;
+      _49 = (short int) _48;
+      z->exp = _49;
+      <D.3116>:
+      _50 = z->mantissa[0];
+      _51 = (signed short) _50;
+      if (_51 >= 0) goto <D.3115>; else goto <D.3117>;
+      <D.3117>:
+      goto <D.3082>;
+      <D.3118>:
+      choose_nan (x, y, z, 0);
+      goto <D.3082>;
+      <D.3158>:
+      <D.3082>:
+      RoundInternalFPF (z);
+    }
+  finally
+    {
+      carry = {CLOBBER};
+      extra_bits = {CLOBBER};
+      locx = {CLOBBER};
+    }
+  return;
+}
+
+
+
+;; Function memmove (<unset-asm-name>, funcdef_no=26, decl_uid=730, cgraph_uid=26, symbol_order=26)
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__, __nothrow__, __leaf__))
+memmove (void * __dest, const void * __src, size_t __len)
+{
+  void * D.3159;
+
+  _1 = __builtin_object_size (__dest, 0);
+  D.3159 = __builtin___memmove_chk (__dest, __src, __len, _1);
+  goto <D.3160>;
+  <D.3160>:
+  return D.3159;
+}
+
+
+
+;; Function SetInternalFPFNaN (SetInternalFPFNaN, funcdef_no=38, decl_uid=2781, cgraph_uid=38, symbol_order=38)
+
+SetInternalFPFNaN (struct InternalFPF * dest)
+{
+  int i;
+
+  dest->type = 4;
+  dest->exp = 32767;
+  dest->sign = 1;
+  dest->mantissa[0] = 16384;
+  i = 1;
+  goto <D.2893>;
+  <D.2892>:
+  dest->mantissa[i] = 0;
+  i = i + 1;
+  <D.2893>:
+  if (i <= 3) goto <D.2892>; else goto <D.2894>;
+  <D.2894>:
+  goto <D.3161>;
+  <D.3161>:
+  return;
+}
+
+
+
+;; Function SetInternalFPFZero (SetInternalFPFZero, funcdef_no=36, decl_uid=2776, cgraph_uid=36, symbol_order=36)
+
+SetInternalFPFZero (struct InternalFPF * dest, unsigned char sign)
+{
+  int i;
+
+  dest->type = 0;
+  dest->sign = sign;
+  dest->exp = -32767;
+  i = 0;
+  goto <D.2878>;
+  <D.2877>:
+  dest->mantissa[i] = 0;
+  i = i + 1;
+  <D.2878>:
+  if (i <= 3) goto <D.2877>; else goto <D.2879>;
+  <D.2879>:
+  goto <D.3162>;
+  <D.3162>:
+  return;
+}
+
+
+
+;; Function IsMantissaZero (IsMantissaZero, funcdef_no=39, decl_uid=2783, cgraph_uid=39, symbol_order=39)
+
+IsMantissaZero (short unsigned int * mant)
+{
+  int n;
+  int i;
+  int D.3163;
+
+  n = 0;
+  i = 0;
+  goto <D.2901>;
+  <D.2900>:
+  _1 = (long unsigned int) i;
+  _2 = _1 * 2;
+  _3 = mant + _2;
+  _4 = *_3;
+  _5 = (int) _4;
+  n = n | _5;
+  i = i + 1;
+  <D.2901>:
+  if (i <= 3) goto <D.2900>; else goto <D.2902>;
+  <D.2902>:
+  _6 = n == 0;
+  D.3163 = (int) _6;
+  goto <D.3164>;
+  <D.3164>:
+  return D.3163;
+}
+
+
+
+;; Function SetInternalFPFInfinity (SetInternalFPFInfinity, funcdef_no=37, decl_uid=2779, cgraph_uid=37, symbol_order=37)
+
+SetInternalFPFInfinity (struct InternalFPF * dest, unsigned char sign)
+{
+  int i;
+
+  dest->type = 3;
+  dest->sign = sign;
+  dest->exp = -32767;
+  i = 0;
+  goto <D.2886>;
+  <D.2885>:
+  dest->mantissa[i] = 0;
+  i = i + 1;
+  <D.2886>:
+  if (i <= 3) goto <D.2885>; else goto <D.2887>;
+  <D.2887>:
+  goto <D.3165>;
+  <D.3165>:
+  return;
+}
+
+
+
+;; Function Sub16Bits (Sub16Bits, funcdef_no=41, decl_uid=2793, cgraph_uid=41, symbol_order=41)
+
+Sub16Bits (short unsigned int * borrow, short unsigned int * a, short unsigned int b, short unsigned int c)
+{
+  unsigned int accum;
+
+  accum = (unsigned int) b;
+  _1 = (unsigned int) c;
+  accum = accum - _1;
+  _2 = *borrow;
+  _3 = (unsigned int) _2;
+  accum = accum - _3;
+  _4 = accum >> 16;
+  _5 = (short unsigned int) _4;
+  _6 = _5 & 1;
+  *borrow = _6;
+  _7 = (short unsigned int) accum;
+  *a = _7;
+  goto <D.3166>;
+  <D.3166>:
+  return;
+}
+
+
+
+;; Function choose_nan (choose_nan, funcdef_no=48, decl_uid=2814, cgraph_uid=48, symbol_order=48)
+
+choose_nan (struct InternalFPF * x, struct InternalFPF * y, struct InternalFPF * z, int intel_flag)
+{
+  int i;
+
+  i = 0;
+  goto <D.2973>;
+  <D.2972>:
+  _1 = x->mantissa[i];
+  _2 = y->mantissa[i];
+  if (_1 > _2) goto <D.3167>; else goto <D.3168>;
+  <D.3167>:
+  memmove (x, z, 12);
+  goto <D.3174>;
+  <D.3168>:
+  _3 = x->mantissa[i];
+  _4 = y->mantissa[i];
+  if (_3 < _4) goto <D.3169>; else goto <D.3170>;
+  <D.3169>:
+  memmove (y, z, 12);
+  goto <D.3174>;
+  <D.3170>:
+  i = i + 1;
+  <D.2973>:
+  if (i <= 3) goto <D.2972>; else goto <D.2974>;
+  <D.2974>:
+  if (intel_flag == 0) goto <D.3171>; else goto <D.3172>;
+  <D.3171>:
+  memmove (x, z, 12);
+  goto <D.3173>;
+  <D.3172>:
+  memmove (y, z, 12);
+  <D.3173>:
+  goto <D.3174>;
+  <D.3174>:
+  return;
+}
+
+
+
+;; Function DoEmFloatIteration (DoEmFloatIteration, funcdef_no=35, decl_uid=2773, cgraph_uid=35, symbol_order=35)
+
+DoEmFloatIteration (struct InternalFPF * abase, struct InternalFPF * bbase, struct InternalFPF * cbase, long unsigned int arraysize, long unsigned int loops)
+{
+  long unsigned int i;
+  static unsigned char jtable[16] = {0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3};
+  long unsigned int elapsed;
+  long unsigned int D.3176;
+
+  elapsed = StartStopwatch ();
+  goto <D.2870>;
+  <D.2869>:
+  i = 0;
+  goto <D.2867>;
+  <D.2866>:
+  _1 = i & 15;
+  _2 = jtable[_1];
+  _3 = (int) _2;
+  switch (_3) <default: <D.3175>, case 0: <D.2861>, case 1: <D.2863>, case 2: <D.2864>, case 3: <D.2865>>
+  <D.2861>:
+  _4 = i * 12;
+  _5 = cbase + _4;
+  _6 = i * 12;
+  _7 = bbase + _6;
+  _8 = i * 12;
+  _9 = abase + _8;
+  AddSubInternalFPF (0, _9, _7, _5);
+  goto <D.2862>;
+  <D.2863>:
+  _10 = i * 12;
+  _11 = cbase + _10;
+  _12 = i * 12;
+  _13 = bbase + _12;
+  _14 = i * 12;
+  _15 = abase + _14;
+  AddSubInternalFPF (1, _15, _13, _11);
+  goto <D.2862>;
+  <D.2864>:
+  _16 = i * 12;
+  _17 = cbase + _16;
+  _18 = i * 12;
+  _19 = bbase + _18;
+  _20 = i * 12;
+  _21 = abase + _20;
+  MultiplyInternalFPF (_21, _19, _17);
+  goto <D.2862>;
+  <D.2865>:
+  _22 = i * 12;
+  _23 = cbase + _22;
+  _24 = i * 12;
+  _25 = bbase + _24;
+  _26 = i * 12;
+  _27 = abase + _26;
+  DivideInternalFPF (_27, _25, _23);
+  goto <D.2862>;
+  <D.3175>:
+  <D.2862>:
+  i = i + 1;
+  <D.2867>:
+  if (i < arraysize) goto <D.2866>; else goto <D.2868>;
+  <D.2868>:
+  <D.2870>:
+  loops.1_28 = loops;
+  loops = loops.1_28 + 18446744073709551615;
+  if (loops.1_28 != 0) goto <D.2869>; else goto <D.2871>;
+  <D.2871>:
+  D.3176 = StopStopwatch (elapsed);
+  goto <D.3177>;
+  <D.3177>:
+  return D.3176;
+}
+
+
+
+;; Function AddSubInternalFPF (AddSubInternalFPF, funcdef_no=49, decl_uid=2819, cgraph_uid=49, symbol_order=49)
+
+AddSubInternalFPF (unsigned char operation, struct InternalFPF * x, struct InternalFPF * y, struct InternalFPF * z)
+{
+  struct InternalFPF locy;
+  struct InternalFPF locx;
+  int i;
+  short unsigned int carry;
+  short unsigned int borrow;
+  int exponent_difference;
+
+  try
+    {
+      _1 = x->type;
+      _2 = (int) _1;
+      _3 = _2 * 5;
+      _4 = y->type;
+      _5 = (int) _4;
+      _6 = _3 + _5;
+      switch (_6) <default: <D.3207>, case 0: <D.2987>, case 1: <D.3002>, case 2: <D.3003>, case 3: <D.3004>, case 4: <D.2998>, case 5: <D.2993>, case 6: <D.3007>, case 7: <D.3008>, case 8: <D.3005>, case 9: <D.2999>, case 10: <D.2994>, case 11: <D.3009>, case 12: <D.3010>, case 13: <D.3006>, case 14: <D.3000>, case 15: <D.2995>, case 16: <D.2996>, case 17: <D.2997>, case 18: <D.3020>, case 19: <D.3001>, case 20: <D.2989>, case 21: <D.2990>, case 22: <D.2991>, case 23: <D.2992>, case 24: <D.3021>>
+      <D.2987>:
+      memmove (x, z, 12);
+      _7 = x->sign;
+      _8 = y->sign;
+      _9 = _7 ^ _8;
+      if (operation != _9) goto <D.3178>; else goto <D.3179>;
+      <D.3178>:
+      z->sign = 0;
+      <D.3179>:
+      goto <D.2988>;
+      <D.2989>:
+      <D.2990>:
+      <D.2991>:
+      <D.2992>:
+      <D.2993>:
+      <D.2994>:
+      <D.2995>:
+      <D.2996>:
+      <D.2997>:
+      memmove (x, z, 12);
+      goto <D.2988>;
+      <D.2998>:
+      <D.2999>:
+      <D.3000>:
+      <D.3001>:
+      memmove (y, z, 12);
+      goto <D.2988>;
+      <D.3002>:
+      <D.3003>:
+      <D.3004>:
+      <D.3005>:
+      <D.3006>:
+      memmove (y, z, 12);
+      _10 = z->sign;
+      _11 = operation ^ _10;
+      z->sign = _11;
+      goto <D.2988>;
+      <D.3007>:
+      <D.3008>:
+      <D.3009>:
+      <D.3010>:
+      memmove (&locx, x, 12);
+      memmove (&locy, y, 12);
+      _12 = locx.exp;
+      _13 = (int) _12;
+      _14 = locy.exp;
+      _15 = (int) _14;
+      exponent_difference = _13 - _15;
+      if (exponent_difference == 0) goto <D.3180>; else goto <D.3181>;
+      <D.3180>:
+      _16 = locx.type;
+      if (_16 == 1) goto <D.3182>; else goto <D.3185>;
+      <D.3185>:
+      _17 = locy.type;
+      if (_17 == 1) goto <D.3182>; else goto <D.3183>;
+      <D.3182>:
+      z->type = 1;
+      goto <D.3184>;
+      <D.3183>:
+      z->type = 2;
+      <D.3184>:
+      _18 = locx.sign;
+      z->sign = _18;
+      _19 = locx.exp;
+      z->exp = _19;
+      goto <D.3186>;
+      <D.3181>:
+      if (exponent_difference > 0) goto <D.3187>; else goto <D.3188>;
+      <D.3187>:
+      StickyShiftRightMant (&locy, exponent_difference);
+      _20 = locx.type;
+      z->type = _20;
+      _21 = locx.sign;
+      z->sign = _21;
+      _22 = locx.exp;
+      z->exp = _22;
+      goto <D.3189>;
+      <D.3188>:
+      _23 = -exponent_difference;
+      StickyShiftRightMant (&locx, _23);
+      _24 = locy.type;
+      z->type = _24;
+      _25 = locy.sign;
+      _26 = operation ^ _25;
+      z->sign = _26;
+      _27 = locy.exp;
+      z->exp = _27;
+      <D.3189>:
+      <D.3186>:
+      _28 = locx.sign;
+      _29 = locy.sign;
+      _30 = _28 ^ _29;
+      if (operation != _30) goto <D.3190>; else goto <D.3191>;
+      <D.3190>:
+      borrow = 0;
+      i = 3;
+      goto <D.3012>;
+      <D.3011>:
+      _31 = locy.mantissa[i];
+      _32 = (int) _31;
+      _33 = locx.mantissa[i];
+      _34 = (int) _33;
+      _35 = &z->mantissa[i];
+      Sub16Bits (&borrow, _35, _34, _32);
+      i = i + -1;
+      <D.3012>:
+      if (i >= 0) goto <D.3011>; else goto <D.3013>;
+      <D.3013>:
+      borrow.2_36 = borrow;
+      if (borrow.2_36 != 0) goto <D.3192>; else goto <D.3193>;
+      <D.3192>:
+      _37 = locy.sign;
+      _38 = operation ^ _37;
+      z->sign = _38;
+      borrow = 0;
+      i = 3;
+      goto <D.3015>;
+      <D.3014>:
+      _39 = z->mantissa[i];
+      _40 = (int) _39;
+      _41 = &z->mantissa[i];
+      Sub16Bits (&borrow, _41, 0, _40);
+      i = i + -1;
+      <D.3015>:
+      if (i >= 0) goto <D.3014>; else goto <D.3016>;
+      <D.3016>:
+      goto <D.3194>;
+      <D.3193>:
+      <D.3194>:
+      _42 = &z->mantissa;
+      _43 = IsMantissaZero (_42);
+      if (_43 != 0) goto <D.3195>; else goto <D.3196>;
+      <D.3195>:
+      z->type = 0;
+      z->sign = 0;
+      goto <D.3197>;
+      <D.3196>:
+      _44 = locx.type;
+      if (_44 == 2) goto <D.3198>; else goto <D.3200>;
+      <D.3200>:
+      _45 = locy.type;
+      if (_45 == 2) goto <D.3198>; else goto <D.3199>;
+      <D.3198>:
+      normalize (z);
+      <D.3199>:
+      <D.3197>:
+      goto <D.3201>;
+      <D.3191>:
+      carry = 0;
+      i = 3;
+      goto <D.3018>;
+      <D.3017>:
+      _46 = locy.mantissa[i];
+      _47 = (int) _46;
+      _48 = locx.mantissa[i];
+      _49 = (int) _48;
+      _50 = &z->mantissa[i];
+      Add16Bits (&carry, _50, _49, _47);
+      i = i + -1;
+      <D.3018>:
+      if (i >= 0) goto <D.3017>; else goto <D.3019>;
+      <D.3019>:
+      carry.3_51 = carry;
+      if (carry.3_51 != 0) goto <D.3202>; else goto <D.3203>;
+      <D.3202>:
+      _52 = z->exp;
+      _53 = _52;
+      _54 = (unsigned short) _53;
+      _55 = _54 + 1;
+      _56 = (short int) _55;
+      z->exp = _56;
+      carry = 0;
+      _57 = &z->mantissa;
+      ShiftMantRight1 (&carry, _57);
+      _58 = z->mantissa[0];
+      _59 = _58 | 32768;
+      z->mantissa[0] = _59;
+      z->type = 2;
+      goto <D.3204>;
+      <D.3203>:
+      _60 = z->mantissa[0];
+      _61 = (signed short) _60;
+      if (_61 < 0) goto <D.3205>; else goto <D.3206>;
+      <D.3205>:
+      z->type = 2;
+      <D.3206>:
+      <D.3204>:
+      <D.3201>:
+      goto <D.2988>;
+      <D.3020>:
+      SetInternalFPFNaN (z);
+      goto <D.2988>;
+      <D.3021>:
+      choose_nan (x, y, z, 1);
+      goto <D.2988>;
+      <D.3207>:
+      <D.2988>:
+      RoundInternalFPF (z);
+      goto <D.3208>;
+    }
+  finally
+    {
+      borrow = {CLOBBER};
+      carry = {CLOBBER};
+      locx = {CLOBBER};
+      locy = {CLOBBER};
+    }
+  <D.3208>:
+  return;
+}
+
+
+
+;; Function StickyShiftRightMant (StickyShiftRightMant, funcdef_no=44, decl_uid=2802, cgraph_uid=44, symbol_order=44)
+
+StickyShiftRightMant (struct InternalFPF * ptr, int amount)
+{
+  short unsigned int * mantissa;
+  short unsigned int carry;
+  int i;
+
+  try
+    {
+      mantissa = &ptr->mantissa;
+      _1 = ptr->type;
+      if (_1 != 0) goto <D.3210>; else goto <D.3211>;
+      <D.3210>:
+      if (amount > 63) goto <D.3212>; else goto <D.3213>;
+      <D.3212>:
+      i = 0;
+      goto <D.2945>;
+      <D.2944>:
+      _2 = (long unsigned int) i;
+      _3 = _2 * 2;
+      _4 = mantissa + _3;
+      *_4 = 0;
+      i = i + 1;
+      <D.2945>:
+      if (i <= 2) goto <D.2944>; else goto <D.2946>;
+      <D.2946>:
+      _5 = mantissa + 6;
+      *_5 = 1;
+      goto <D.3214>;
+      <D.3213>:
+      i = 0;
+      goto <D.2948>;
+      <D.2947>:
+      carry = 0;
+      ShiftMantRight1 (&carry, mantissa);
+      carry.4_6 = carry;
+      if (carry.4_6 != 0) goto <D.3215>; else goto <D.3216>;
+      <D.3215>:
+      _7 = mantissa + 6;
+      _8 = *_7;
+      _9 = mantissa + 6;
+      _10 = _8 | 1;
+      *_9 = _10;
+      <D.3216>:
+      i = i + 1;
+      <D.2948>:
+      if (i < amount) goto <D.2947>; else goto <D.2949>;
+      <D.2949>:
+      <D.3214>:
+      <D.3211>:
+      goto <D.3217>;
+    }
+  finally
+    {
+      carry = {CLOBBER};
+    }
+  <D.3217>:
+  return;
+}
+
+
+
+;; Function Add16Bits (Add16Bits, funcdef_no=40, decl_uid=2788, cgraph_uid=40, symbol_order=40)
+
+Add16Bits (short unsigned int * carry, short unsigned int * a, short unsigned int b, short unsigned int c)
+{
+  unsigned int accum;
+
+  accum = (unsigned int) b;
+  _1 = (unsigned int) c;
+  accum = accum + _1;
+  _2 = *carry;
+  _3 = (unsigned int) _2;
+  accum = accum + _3;
+  _4 = accum >> 16;
+  _5 = (short unsigned int) _4;
+  _6 = _5 & 1;
+  *carry = _6;
+  _7 = (short unsigned int) accum;
+  *a = _7;
+  goto <D.3219>;
+  <D.3219>:
+  return;
+}
+
+
+
+;; Function ShiftMantRight1 (ShiftMantRight1, funcdef_no=43, decl_uid=2799, cgraph_uid=43, symbol_order=43)
+
+ShiftMantRight1 (short unsigned int * carry, short unsigned int * mantissa)
+{
+  short unsigned int accum;
+  int new_carry;
+  int i;
+
+  i = 0;
+  goto <D.2935>;
+  <D.2934>:
+  _1 = (long unsigned int) i;
+  _2 = _1 * 2;
+  _3 = mantissa + _2;
+  accum = *_3;
+  _4 = (int) accum;
+  new_carry = _4 & 1;
+  accum = accum >> 1;
+  _5 = *carry;
+  if (_5 != 0) goto <D.3220>; else goto <D.3221>;
+  <D.3220>:
+  accum = accum | 32768;
+  <D.3221>:
+  _6 = (short unsigned int) new_carry;
+  *carry = _6;
+  _7 = (long unsigned int) i;
+  _8 = _7 * 2;
+  _9 = mantissa + _8;
+  *_9 = accum;
+  i = i + 1;
+  <D.2935>:
+  if (i <= 3) goto <D.2934>; else goto <D.2936>;
+  <D.2936>:
+  goto <D.3222>;
+  <D.3222>:
+  return;
+}
+
+
+
+;; Function MultiplyInternalFPF (MultiplyInternalFPF, funcdef_no=50, decl_uid=2823, cgraph_uid=50, symbol_order=50)
+
+MultiplyInternalFPF (struct InternalFPF * x, struct InternalFPF * y, struct InternalFPF * z)
+{
+  struct InternalFPF locy;
+  short unsigned int extra_bits[4];
+  short unsigned int carry;
+  int j;
+  int i;
+
+  try
+    {
+      _1 = x->type;
+      _2 = (int) _1;
+      _3 = _2 * 5;
+      _4 = y->type;
+      _5 = (int) _4;
+      _6 = _3 + _5;
+      switch (_6) <default: <D.3235>, case 0: <D.3035>, case 1: <D.3036>, case 2: <D.3037>, case 3: <D.3043>, case 4: <D.3049>, case 5: <D.3041>, case 6: <D.3053>, case 7: <D.3054>, case 8: <D.3039>, case 9: <D.3050>, case 10: <D.3042>, case 11: <D.3055>, case 12: <D.3056>, case 13: <D.3040>, case 14: <D.3051>, case 15: <D.3044>, case 16: <D.3032>, case 17: <D.3033>, case 18: <D.3034>, case 19: <D.3052>, case 20: <D.3045>, case 21: <D.3046>, case 22: <D.3047>, case 23: <D.3048>, case 24: <D.3069>>
+      <D.3032>:
+      <D.3033>:
+      <D.3034>:
+      <D.3035>:
+      <D.3036>:
+      <D.3037>:
+      memmove (x, z, 12);
+      _7 = z->sign;
+      _8 = y->sign;
+      _9 = _7 ^ _8;
+      z->sign = _9;
+      goto <D.3038>;
+      <D.3039>:
+      <D.3040>:
+      <D.3041>:
+      <D.3042>:
+      memmove (y, z, 12);
+      _10 = z->sign;
+      _11 = x->sign;
+      _12 = _10 ^ _11;
+      z->sign = _12;
+      goto <D.3038>;
+      <D.3043>:
+      <D.3044>:
+      SetInternalFPFNaN (z);
+      goto <D.3038>;
+      <D.3045>:
+      <D.3046>:
+      <D.3047>:
+      <D.3048>:
+      memmove (x, z, 12);
+      goto <D.3038>;
+      <D.3049>:
+      <D.3050>:
+      <D.3051>:
+      <D.3052>:
+      memmove (y, z, 12);
+      goto <D.3038>;
+      <D.3053>:
+      <D.3054>:
+      <D.3055>:
+      <D.3056>:
+      memmove (&locy, y, 12);
+      _13 = &x->mantissa;
+      _14 = IsMantissaZero (_13);
+      if (_14 != 0) goto <D.3223>; else goto <D.3225>;
+      <D.3225>:
+      _15 = &y->mantissa;
+      _16 = IsMantissaZero (_15);
+      if (_16 != 0) goto <D.3223>; else goto <D.3224>;
+      <D.3223>:
+      SetInternalFPFInfinity (z, 0);
+      <D.3224>:
+      _17 = x->type;
+      if (_17 == 1) goto <D.3226>; else goto <D.3229>;
+      <D.3229>:
+      _18 = y->type;
+      if (_18 == 1) goto <D.3226>; else goto <D.3227>;
+      <D.3226>:
+      z->type = 1;
+      goto <D.3228>;
+      <D.3227>:
+      z->type = 2;
+      <D.3228>:
+      _19 = x->sign;
+      _20 = y->sign;
+      _21 = _19 ^ _20;
+      z->sign = _21;
+      _22 = x->exp;
+      _23 = (unsigned short) _22;
+      _24 = y->exp;
+      _25 = (unsigned short) _24;
+      _26 = _23 + _25;
+      _27 = (short int) _26;
+      z->exp = _27;
+      i = 0;
+      goto <D.3058>;
+      <D.3057>:
+      z->mantissa[i] = 0;
+      extra_bits[i] = 0;
+      i = i + 1;
+      <D.3058>:
+      if (i <= 3) goto <D.3057>; else goto <D.3059>;
+      <D.3059>:
+      i = 0;
+      goto <D.3064>;
+      <D.3063>:
+      carry = 0;
+      ShiftMantRight1 (&carry, &locy.mantissa);
+      carry.5_28 = carry;
+      if (carry.5_28 != 0) goto <D.3230>; else goto <D.3231>;
+      <D.3230>:
+      carry = 0;
+      j = 3;
+      goto <D.3061>;
+      <D.3060>:
+      _29 = x->mantissa[j];
+      _30 = (int) _29;
+      _31 = z->mantissa[j];
+      _32 = (int) _31;
+      _33 = &z->mantissa[j];
+      Add16Bits (&carry, _33, _32, _30);
+      j = j + -1;
+      <D.3061>:
+      if (j >= 0) goto <D.3060>; else goto <D.3062>;
+      <D.3062>:
+      goto <D.3232>;
+      <D.3231>:
+      carry = 0;
+      <D.3232>:
+      _34 = &z->mantissa;
+      ShiftMantRight1 (&carry, _34);
+      ShiftMantRight1 (&carry, &extra_bits);
+      i = i + 1;
+      <D.3064>:
+      if (i <= 63) goto <D.3063>; else goto <D.3065>;
+      <D.3065>:
+      goto <D.3067>;
+      <D.3066>:
+      carry = 0;
+      ShiftMantLeft1 (&carry, &extra_bits);
+      _35 = &z->mantissa;
+      ShiftMantLeft1 (&carry, _35);
+      _36 = z->exp;
+      _37 = _36;
+      _38 = (unsigned short) _37;
+      _39 = _38 + 65535;
+      _40 = (short int) _39;
+      z->exp = _40;
+      <D.3067>:
+      _41 = z->mantissa[0];
+      _42 = (signed short) _41;
+      if (_42 >= 0) goto <D.3066>; else goto <D.3068>;
+      <D.3068>:
+      _43 = IsMantissaZero (&extra_bits);
+      if (_43 != 0) goto <D.3233>; else goto <D.3234>;
+      <D.3233>:
+      _44 = z->mantissa[3];
+      _45 = _44 | 1;
+      z->mantissa[3] = _45;
+      <D.3234>:
+      goto <D.3038>;
+      <D.3069>:
+      choose_nan (x, y, z, 0);
+      goto <D.3038>;
+      <D.3235>:
+      <D.3038>:
+      RoundInternalFPF (z);
+      goto <D.3236>;
+    }
+  finally
+    {
+      carry = {CLOBBER};
+      extra_bits = {CLOBBER};
+      locy = {CLOBBER};
+    }
+  <D.3236>:
+  return;
+}
+
+
+
+;; Function RoundInternalFPF (RoundInternalFPF, funcdef_no=47, decl_uid=2809, cgraph_uid=47, symbol_order=47)
+
+RoundInternalFPF (struct InternalFPF * ptr)
+{
+  _1 = ptr->type;
+  _2 = _1 + 255;
+  if (_2 <= 1) goto <D.3238>; else goto <D.3239>;
+  <D.3238>:
+  denormalize (ptr, -32767);
+  _3 = ptr->type;
+  if (_3 != 0) goto <D.3240>; else goto <D.3241>;
+  <D.3240>:
+  _4 = ptr->mantissa[3];
+  _5 = _4 & 65528;
+  ptr->mantissa[3] = _5;
+  <D.3241>:
+  <D.3239>:
+  goto <D.3242>;
+  <D.3242>:
+  return;
+}
+
+
+
+;; Function denormalize (denormalize, funcdef_no=46, decl_uid=2807, cgraph_uid=46, symbol_order=46)
+
+denormalize (struct InternalFPF * ptr, int minimum_exponent)
+{
+  long int exponent_difference;
+
+  _1 = &ptr->mantissa;
+  _2 = IsMantissaZero (_1);
+  if (_2 != 0) goto <D.3243>; else goto <D.3244>;
+  <D.3243>:
+  printf ("Error:  zero significand in denormalize\n");
+  <D.3244>:
+  _3 = ptr->exp;
+  _4 = (int) _3;
+  _5 = _4 - minimum_exponent;
+  exponent_difference = (long int) _5;
+  if (exponent_difference < 0) goto <D.3245>; else goto <D.3246>;
+  <D.3245>:
+  exponent_difference = -exponent_difference;
+  if (exponent_difference > 63) goto <D.3247>; else goto <D.3248>;
+  <D.3247>:
+  _6 = ptr->sign;
+  _7 = (int) _6;
+  SetInternalFPFZero (ptr, _7);
+  goto <D.3249>;
+  <D.3248>:
+  _8 = ptr->exp;
+  _9 = (unsigned short) _8;
+  _10 = (unsigned short) exponent_difference;
+  _11 = _9 + _10;
+  _12 = (short int) _11;
+  ptr->exp = _12;
+  _13 = (int) exponent_difference;
+  StickyShiftRightMant (ptr, _13);
+  <D.3249>:
+  <D.3246>:
+  goto <D.3250>;
+  <D.3250>:
+  return;
+}
+
+
+
+;; Function printf (<unset-asm-name>, funcdef_no=15, decl_uid=798, cgraph_uid=15, symbol_order=15)
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__))
+printf (const char * restrict __fmt)
+{
+  int D.3251;
+
+  D.3251 = __printf_chk (1, __fmt, __builtin_va_arg_pack ());
+  goto <D.3252>;
+  <D.3252>:
+  return D.3251;
+}
+
+

@@ -1,0 +1,32 @@
+
+;; Function printf (printf, funcdef_no=15, decl_uid=798, cgraph_uid=15, symbol_order=15)
+
+Function found to be nothrow: printf
+__attribute__((__artificial__, __gnu_inline__, __always_inline__))
+printf (const char * restrict __fmt)
+{
+  int _4;
+
+  <bb 2> [0.00%]:
+  _4 = __printf_chk (1, __fmt_2(D), __builtin_va_arg_pack ());
+  return _4;
+
+}
+
+
+
+;; Function main (main, funcdef_no=23, decl_uid=2444, cgraph_uid=23, symbol_order=23)
+
+Function found to be nothrow: main
+main ()
+{
+  int _3;
+
+  <bb 2> [0.00%]:
+  printf ("hello.\n");
+  _3 = 0;
+  return _3;
+
+}
+
+

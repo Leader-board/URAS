@@ -1,0 +1,876 @@
+
+;; Function getchar (null)
+;; enabled by -tree-original
+
+
+{
+  return _IO_getc ((struct _IO_FILE *) stdin);
+}
+
+
+;; Function fgetc_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (__fp->_IO_read_ptr >= __fp->_IO_read_end, 0) != 0 ? __uflow ((struct _IO_FILE *) __fp) : (int) *(unsigned char *) __fp->_IO_read_ptr++ ;
+}
+
+
+;; Function getc_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (__fp->_IO_read_ptr >= __fp->_IO_read_end, 0) != 0 ? __uflow ((struct _IO_FILE *) __fp) : (int) *(unsigned char *) __fp->_IO_read_ptr++ ;
+}
+
+
+;; Function getchar_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (stdin->_IO_read_ptr >= stdin->_IO_read_end, 0) != 0 ? __uflow ((struct _IO_FILE *) stdin) : (int) *(unsigned char *) stdin->_IO_read_ptr++ ;
+}
+
+
+;; Function putchar (null)
+;; enabled by -tree-original
+
+
+{
+  return _IO_putc (__c, (struct _IO_FILE *) stdout);
+}
+
+
+;; Function fputc_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (__stream->_IO_write_ptr >= __stream->_IO_write_end, 0) != 0 ? __overflow ((struct _IO_FILE *) __stream, (int) (unsigned char) __c) : (int) (unsigned char) (*__stream->_IO_write_ptr++  = (char) __c);
+}
+
+
+;; Function putc_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (__stream->_IO_write_ptr >= __stream->_IO_write_end, 0) != 0 ? __overflow ((struct _IO_FILE *) __stream, (int) (unsigned char) __c) : (int) (unsigned char) (*__stream->_IO_write_ptr++  = (char) __c);
+}
+
+
+;; Function putchar_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (stdout->_IO_write_ptr >= stdout->_IO_write_end, 0) != 0 ? __overflow ((struct _IO_FILE *) stdout, (int) (unsigned char) __c) : (int) (unsigned char) (*stdout->_IO_write_ptr++  = (char) __c);
+}
+
+
+;; Function feof_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return (__stream->_flags & 16) != 0;
+}
+
+
+;; Function ferror_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return (__stream->_flags & 32) != 0;
+}
+
+
+;; Function sprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___sprintf_chk (__s, 1, __builtin_object_size ((const void *) __s, 1), __fmt, __builtin_va_arg_pack ());
+}
+
+
+;; Function vsprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___vsprintf_chk (__s, 1, __builtin_object_size ((const void *) __s, 1), __fmt, __ap);
+}
+
+
+;; Function snprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___snprintf_chk (__s, __n, 1, __builtin_object_size ((const void *) __s, 1), __fmt, __builtin_va_arg_pack ());
+}
+
+
+;; Function vsnprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___vsnprintf_chk (__s, __n, 1, __builtin_object_size ((const void *) __s, 1), __fmt, __ap);
+}
+
+
+;; Function fprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __fprintf_chk (__stream, 1, __fmt, __builtin_va_arg_pack ());
+}
+
+
+;; Function printf (null)
+;; enabled by -tree-original
+
+
+{
+  return __printf_chk (1, __fmt, __builtin_va_arg_pack ());
+}
+
+
+;; Function vprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __vfprintf_chk ((struct FILE * restrict) stdout, 1, __fmt, __ap);
+}
+
+
+;; Function vfprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __vfprintf_chk (__stream, 1, __fmt, __ap);
+}
+
+
+;; Function dprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __dprintf_chk (__fd, 1, __fmt, __builtin_va_arg_pack ());
+}
+
+
+;; Function vdprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __vdprintf_chk (__fd, 1, __fmt, __ap);
+}
+
+
+;; Function fgets (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __s, 1) != 18446744073709551615)
+    {
+      if (__builtin_constant_p (__n) == 0 || __n <= 0)
+        {
+          return __fgets_chk (__s, __builtin_object_size ((const void *) __s, 1), __n, __stream);
+        }
+      if ((long unsigned int) __n > __builtin_object_size ((const void *) __s, 1))
+        {
+          return __fgets_chk_warn (__s, __builtin_object_size ((const void *) __s, 1), __n, __stream);
+        }
+    }
+  return __fgets_alias (__s, __n, __stream);
+}
+
+
+;; Function fread (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __ptr, 0) != 18446744073709551615)
+    {
+      if ((__builtin_constant_p (__size) == 0 || __builtin_constant_p (__n) == 0) || (__size | __n) > 4294967295)
+        {
+          return __fread_chk (__ptr, __builtin_object_size ((const void *) __ptr, 0), __size, __n, __stream);
+        }
+      if ((long unsigned int) (__size * __n) > __builtin_object_size ((const void *) __ptr, 0))
+        {
+          return __fread_chk_warn (__ptr, __builtin_object_size ((const void *) __ptr, 0), __size, __n, __stream);
+        }
+    }
+  return __fread_alias (__ptr, __size, __n, __stream);
+}
+
+
+;; Function fread_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __ptr, 0) != 18446744073709551615)
+    {
+      if ((__builtin_constant_p (__size) == 0 || __builtin_constant_p (__n) == 0) || (__size | __n) > 4294967295)
+        {
+          return __fread_unlocked_chk (__ptr, __builtin_object_size ((const void *) __ptr, 0), __size, __n, __stream);
+        }
+      if ((long unsigned int) (__size * __n) > __builtin_object_size ((const void *) __ptr, 0))
+        {
+          return __fread_unlocked_chk_warn (__ptr, __builtin_object_size ((const void *) __ptr, 0), __size, __n, __stream);
+        }
+    }
+  if (((__builtin_constant_p (__size) != 0 && __builtin_constant_p (__n) != 0) && (__size | __n) <= 4294967295) && __size * __n <= 8)
+    {
+      {
+        size_t __cnt = __size * __n;
+        char * __cptr = (char *) __ptr;
+
+                size_t __cnt = __size * __n;
+                char * __cptr = (char *) __ptr;
+        if (__cnt == 0)
+          {
+            return 0;
+          }
+        goto <D.2443>;
+        <D.2442>:;
+        {
+          int __c = __builtin_expect (__stream->_IO_read_ptr >= __stream->_IO_read_end, 0) != 0 ? __uflow ((struct _IO_FILE *) __stream) : (int) *(unsigned char *) __stream->_IO_read_ptr++ ;
+
+                    int __c = __builtin_expect (__stream->_IO_read_ptr >= __stream->_IO_read_end, 0) != 0 ? __uflow ((struct _IO_FILE *) __stream) : (int) *(unsigned char *) __stream->_IO_read_ptr++ ;
+          if (__c == -1)
+            {
+              goto <D.2441>;
+            }
+          *__cptr++  = (char) __c;
+        }
+         --__cnt;
+        <D.2443>:;
+        if (__cnt != 0) goto <D.2442>; else goto <D.2441>;
+        <D.2441>:;
+        return (size_t) ((long unsigned int) ((long int) __cptr - (long int) __ptr) / (long unsigned int) __size);
+      }
+    }
+  return __fread_unlocked_alias (__ptr, __size, __n, __stream);
+}
+
+
+;; Function bcopy (null)
+;; enabled by -tree-original
+
+
+{
+  (void) __builtin___memmove_chk (__dest, __src, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function bzero (null)
+;; enabled by -tree-original
+
+
+{
+  (void) __builtin___memset_chk (__dest, 0, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function memcpy (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___memcpy_chk (__dest, __src, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function memmove (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___memmove_chk (__dest, __src, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function memset (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___memset_chk (__dest, __ch, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function explicit_bzero (null)
+;; enabled by -tree-original
+
+
+{
+  __explicit_bzero_chk (__dest, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function strcpy (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___strcpy_chk (__dest, __src, __builtin_object_size ((const void *) __dest, 1));
+}
+
+
+;; Function strncpy (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___strncpy_chk (__dest, __src, __len, __builtin_object_size ((const void *) __dest, 1));
+}
+
+
+;; Function stpncpy (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __dest, 1) != 18446744073709551615 && (__builtin_constant_p (__n) == 0 || __builtin_object_size ((const void *) __dest, 1) < (long unsigned int) __n))
+    {
+      return __stpncpy_chk (__dest, __src, __n, __builtin_object_size ((const void *) __dest, 1));
+    }
+  return __stpncpy_alias (__dest, __src, __n);
+}
+
+
+;; Function strcat (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___strcat_chk (__dest, __src, __builtin_object_size ((const void *) __dest, 1));
+}
+
+
+;; Function strncat (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___strncat_chk (__dest, __src, __len, __builtin_object_size ((const void *) __dest, 1));
+}
+
+
+;; Function atoi (null)
+;; enabled by -tree-original
+
+
+{
+  return (int) strtol (__nptr, 0B, 10);
+}
+
+
+;; Function atol (null)
+;; enabled by -tree-original
+
+
+{
+  return strtol (__nptr, 0B, 10);
+}
+
+
+;; Function atoll (null)
+;; enabled by -tree-original
+
+
+{
+  return strtoll (__nptr, 0B, 10);
+}
+
+
+;; Function __bswap_32 (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_bswap32 (__bsx);
+}
+
+
+;; Function __bswap_64 (null)
+;; enabled by -tree-original
+
+
+{
+  return (__uint64_t) __builtin_bswap64 (__bsx);
+}
+
+
+;; Function __uint16_identity (null)
+;; enabled by -tree-original
+
+
+{
+  return __x;
+}
+
+
+;; Function __uint32_identity (null)
+;; enabled by -tree-original
+
+
+{
+  return __x;
+}
+
+
+;; Function __uint64_identity (null)
+;; enabled by -tree-original
+
+
+{
+  return __x;
+}
+
+
+;; Function gnu_dev_major (null)
+;; enabled by -tree-original
+
+
+{
+  unsigned int __major;
+
+    unsigned int __major;
+  __major = (unsigned int) ((long unsigned int) __dev >> 8) & 4095;
+  __major = (unsigned int) ((long unsigned int) __dev >> 32) & 4294963200 | __major;
+  return __major;
+}
+
+
+;; Function gnu_dev_minor (null)
+;; enabled by -tree-original
+
+
+{
+  unsigned int __minor;
+
+    unsigned int __minor;
+  __minor = (unsigned int) __dev & 255;
+  __minor = (unsigned int) ((long unsigned int) __dev >> 12) & 4294967040 | __minor;
+  return __minor;
+}
+
+
+;; Function gnu_dev_makedev (null)
+;; enabled by -tree-original
+
+
+{
+  __dev_t __dev;
+
+    __dev_t __dev;
+  __dev = (long unsigned int) __major << 8 & 1048320;
+  __dev = (long unsigned int) __major << 32 & 18446726481523507200 | (long unsigned int) __dev;
+  __dev = (long unsigned int) __minor & 255 | (long unsigned int) __dev;
+  __dev = (long unsigned int) __minor << 12 & 17592184995840 | (long unsigned int) __dev;
+  return __dev;
+}
+
+
+;; Function bsearch (null)
+;; enabled by -tree-original
+
+
+{
+  size_t __l;
+  size_t __u;
+  size_t __idx;
+  const void * __p;
+  int __comparison;
+
+    size_t __l;
+    size_t __u;
+    size_t __idx;
+    const void * __p;
+    int __comparison;
+  __l = 0;
+  __u = __nmemb;
+  goto <D.3138>;
+  <D.3137>:;
+  __idx = (__l + __u) / 2;
+  __p = __base + (sizetype) (__idx * __size);
+  __comparison = __compar (__key, __p);
+  if (__comparison < 0)
+    {
+      __u = __idx;
+    }
+  else
+    {
+      if (__comparison > 0)
+        {
+          __l = __idx + 1;
+        }
+      else
+        {
+          return (void *) __p;
+        }
+    }
+  <D.3138>:;
+  if (__l < __u) goto <D.3137>; else goto <D.3139>;
+  <D.3139>:;
+  return 0B;
+}
+
+
+;; Function atof (null)
+;; enabled by -tree-original
+
+
+{
+  return strtod (__nptr, 0B);
+}
+
+
+;; Function realpath (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __resolved, 1) != 18446744073709551615)
+    {
+      return __realpath_chk (__name, __resolved, __builtin_object_size ((const void *) __resolved, 1));
+    }
+  return __realpath_alias (__name, __resolved);
+}
+
+
+;; Function ptsname_r (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __buf, 1) != 18446744073709551615)
+    {
+      if (__builtin_constant_p (__buflen) == 0)
+        {
+          return __ptsname_r_chk (__fd, __buf, __buflen, __builtin_object_size ((const void *) __buf, 1));
+        }
+      if (__builtin_object_size ((const void *) __buf, 1) < (long unsigned int) __buflen)
+        {
+          return __ptsname_r_chk_warn (__fd, __buf, __buflen, __builtin_object_size ((const void *) __buf, 1));
+        }
+    }
+  return __ptsname_r_alias (__fd, __buf, __buflen);
+}
+
+
+;; Function wctomb (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __s, 1) != 18446744073709551615 && __builtin_object_size ((const void *) __s, 1) <= 15)
+    {
+      return __wctomb_chk (__s, __wchar, __builtin_object_size ((const void *) __s, 1));
+    }
+  return __wctomb_alias (__s, __wchar);
+}
+
+
+;; Function mbstowcs (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __dst, 1) != 18446744073709551615)
+    {
+      if (__builtin_constant_p (__len) == 0)
+        {
+          return __mbstowcs_chk (__dst, __src, __len, __builtin_object_size ((const void *) __dst, 1) / 4);
+        }
+      if (__builtin_object_size ((const void *) __dst, 1) / 4 < (long unsigned int) __len)
+        {
+          return __mbstowcs_chk_warn (__dst, __src, __len, __builtin_object_size ((const void *) __dst, 1) / 4);
+        }
+    }
+  return __mbstowcs_alias (__dst, __src, __len);
+}
+
+
+;; Function wcstombs (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __dst, 1) != 18446744073709551615)
+    {
+      if (__builtin_constant_p (__len) == 0)
+        {
+          return __wcstombs_chk (__dst, __src, __len, __builtin_object_size ((const void *) __dst, 1));
+        }
+      if (__builtin_object_size ((const void *) __dst, 1) < (long unsigned int) __len)
+        {
+          return __wcstombs_chk_warn (__dst, __src, __len, __builtin_object_size ((const void *) __dst, 1));
+        }
+    }
+  return __wcstombs_alias (__dst, __src, __len);
+}
+
+
+;; Function output_string (null)
+;; enabled by -tree-original
+
+
+{
+  printf ((const char * restrict) "%s", buffer);
+  if (write_to_file != 0)
+    {
+      fprintf (global_ofile, (const char * restrict) "%s", buffer);
+    }
+  return;
+}
+
+
+;; Function removeNewLine (null)
+;; enabled by -tree-original
+
+
+{
+  if (*(const char *) s != 0 && *(s + ((sizetype) strlen ((const char *) s) + 18446744073709551615)) == 10)
+    {
+      *(s + ((sizetype) strlen ((const char *) s) + 18446744073709551615)) = 0;
+    }
+}
+
+
+;; Function runCommand (null)
+;; enabled by -tree-original
+
+
+{
+  struct FILE * pipe;
+
+    struct FILE * pipe;
+  pipe = popen (command, (const char *) "r");
+  if (pipe == 0B)
+    {
+      *result = 0;
+    }
+  else
+    {
+      if (fgets (result, 1024, pipe) == 0B)
+        {
+          *result = 0;
+        }
+      pclose (pipe);
+    }
+  removeNewLine (result);
+}
+
+
+;; Function readProcCpuInfo (null)
+;; enabled by -tree-original
+
+
+{
+  struct FILE * info;
+  char * cp;
+  int cpus = 0;
+  char * buffer_end;
+  char buffer[1024];
+  char vendor_id[1024];
+  char model_name[1024];
+  char cpu_MHz[1024];
+  int i;
+  float f;
+
+    struct FILE * info;
+    char * cp;
+    int cpus = 0;
+    char * buffer_end;
+    char buffer[1024];
+    char vendor_id[1024];
+    char model_name[1024];
+    char cpu_MHz[1024];
+    int i;
+    float f;
+  vendor_id[0] = model_name[0] = cpu_MHz[0] = *model = *cache = 0;
+  info = fopen ((const char * restrict) "/proc/cpuinfo", (const char * restrict) "r");
+  if (info != 0B)
+    {
+      goto <D.3369>;
+      <D.3368>:;
+      buffer_end = (char *) &buffer + (sizetype) strlen ((const char *) &buffer);
+      cp = (char *) &buffer;
+      if (strncmp ((const char *) &buffer, (const char *) "processor", 9) == 0)
+        {
+          cpus++ ;
+        }
+      else
+        {
+          if (strncmp ((const char *) &buffer, (const char *) "vendor_id", 9) == 0)
+            {
+              cp = cp + 9;
+              goto <D.3357>;
+              <D.3356>:;
+              cp++ ;
+              <D.3357>:;
+              if (cp < buffer_end && ((SAVE_EXPR <*cp> == 32 || SAVE_EXPR <*cp> == 58) || *cp == 9)) goto <D.3356>; else goto <D.3358>;
+              <D.3358>:;
+              if (cp < buffer_end)
+                {
+                  strcpy ((char *) &vendor_id, (const char * restrict) cp);
+                }
+              removeNewLine ((char *) &vendor_id);
+            }
+          else
+            {
+              if (strncmp ((const char *) &buffer, (const char *) "model name", 10) == 0)
+                {
+                  cp = cp + 10;
+                  goto <D.3360>;
+                  <D.3359>:;
+                  cp++ ;
+                  <D.3360>:;
+                  if (cp < buffer_end && ((SAVE_EXPR <*cp> == 32 || SAVE_EXPR <*cp> == 58) || *cp == 9)) goto <D.3359>; else goto <D.3361>;
+                  <D.3361>:;
+                  if (cp < buffer_end)
+                    {
+                      strcpy ((char *) &model_name, (const char * restrict) cp);
+                    }
+                  removeNewLine ((char *) &model_name);
+                }
+              else
+                {
+                  if (strncmp ((const char *) &buffer, (const char *) "cpu MHz", 7) == 0)
+                    {
+                      cp = cp + 7;
+                      goto <D.3363>;
+                      <D.3362>:;
+                      cp++ ;
+                      <D.3363>:;
+                      if (cp < buffer_end && ((SAVE_EXPR <*cp> == 32 || SAVE_EXPR <*cp> == 58) || *cp == 9)) goto <D.3362>; else goto <D.3364>;
+                      <D.3364>:;
+                      if (cp < buffer_end)
+                        {
+                          strcpy ((char *) &cpu_MHz, (const char * restrict) cp);
+                        }
+                      removeNewLine ((char *) &cpu_MHz);
+                    }
+                  else
+                    {
+                      if (strncmp ((const char *) &buffer, (const char *) "cache size", 10) == 0)
+                        {
+                          cp = cp + 10;
+                          goto <D.3366>;
+                          <D.3365>:;
+                          cp++ ;
+                          <D.3366>:;
+                          if (cp < buffer_end && ((SAVE_EXPR <*cp> == 32 || SAVE_EXPR <*cp> == 58) || *cp == 9)) goto <D.3365>; else goto <D.3367>;
+                          <D.3367>:;
+                          if (cp < buffer_end)
+                            {
+                              strcpy (cache, (const char * restrict) cp);
+                            }
+                          removeNewLine (cache);
+                        }
+                    }
+                }
+            }
+        }
+      <D.3369>:;
+      if (fgets ((char *) &buffer, 1024, info) != 0B) goto <D.3368>; else goto <D.3370>;
+      <D.3370>:;
+      if (cpus > 1)
+        {
+          if (cpus == 2)
+            {
+              strcpy (model, (const char * restrict) "Dual");
+            }
+          else
+            {
+              sprintf (model, (const char * restrict) "%d CPU", cpus);
+            }
+        }
+      cp = model + (sizetype) strlen ((const char *) model);
+      if (vendor_id[0] != 0)
+        {
+          if (cp != model)
+            {
+              *cp++  = 32;
+            }
+          strcpy (cp, (const char * restrict) &vendor_id);
+          cp = cp + (sizetype) strlen ((const char *) &vendor_id);
+        }
+      if (model_name[0] != 0)
+        {
+          if (cp != model)
+            {
+              *cp++  = 32;
+            }
+          strcpy (cp, (const char * restrict) &model_name);
+          cp = cp + (sizetype) strlen ((const char *) &model_name);
+        }
+      if (cpu_MHz[0] != 0)
+        {
+          if (cp != model)
+            {
+              *cp++  = 32;
+            }
+          f = (float) atof ((const char *) &cpu_MHz);
+          i = (int) (f + 5.0e-1);
+          sprintf ((char *) &cpu_MHz, (const char * restrict) "%dMHz", i);
+          strcpy (cp, (const char * restrict) &cpu_MHz);
+          cp = cp + (sizetype) strlen ((const char *) &cpu_MHz);
+        }
+      fclose (info);
+    }
+}
+
+
+;; Function hardware (null)
+;; enabled by -tree-original
+
+
+{
+  char buffer[1024];
+  char os[1024];
+  char model[1024];
+  char cache[1024];
+  char os_command[12] = "uname -s -r";
+
+    char buffer[1024];
+    char os[1024];
+    char model[1024];
+    char cache[1024];
+    char os_command[12] = "uname -s -r";
+  runCommand ((const char *) &os_command, (char *) &os);
+  if (strstr ((const char *) &os, (const char *) "Linux") != 0B)
+    {
+      readProcCpuInfo ((char *) &model, (char *) &cache);
+    }
+  else
+    {
+      model[0] = 0;
+      cache[0] = 0;
+    }
+  sprintf ((char *) &buffer, (const char * restrict) "CPU                 : %s\n", (char *) &model);
+  output_string ((const char *) &buffer, write_to_file, global_ofile);
+  sprintf ((char *) &buffer, (const char * restrict) "L2 Cache            : %s\n", (char *) &cache);
+  output_string ((const char *) &buffer, write_to_file, global_ofile);
+  sprintf ((char *) &buffer, (const char * restrict) "OS                  : %s\n", (char *) &os);
+  output_string ((const char *) &buffer, write_to_file, global_ofile);
+}
+

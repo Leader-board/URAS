@@ -1,0 +1,4240 @@
+
+;; Function getchar (null)
+;; enabled by -tree-original
+
+
+{
+  return _IO_getc ((struct _IO_FILE *) stdin);
+}
+
+
+;; Function fgetc_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (__fp->_IO_read_ptr >= __fp->_IO_read_end, 0) != 0 ? __uflow ((struct _IO_FILE *) __fp) : (int) *(unsigned char *) __fp->_IO_read_ptr++ ;
+}
+
+
+;; Function getc_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (__fp->_IO_read_ptr >= __fp->_IO_read_end, 0) != 0 ? __uflow ((struct _IO_FILE *) __fp) : (int) *(unsigned char *) __fp->_IO_read_ptr++ ;
+}
+
+
+;; Function getchar_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (stdin->_IO_read_ptr >= stdin->_IO_read_end, 0) != 0 ? __uflow ((struct _IO_FILE *) stdin) : (int) *(unsigned char *) stdin->_IO_read_ptr++ ;
+}
+
+
+;; Function putchar (null)
+;; enabled by -tree-original
+
+
+{
+  return _IO_putc (__c, (struct _IO_FILE *) stdout);
+}
+
+
+;; Function fputc_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (__stream->_IO_write_ptr >= __stream->_IO_write_end, 0) != 0 ? __overflow ((struct _IO_FILE *) __stream, (int) (unsigned char) __c) : (int) (unsigned char) (*__stream->_IO_write_ptr++  = (char) __c);
+}
+
+
+;; Function putc_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (__stream->_IO_write_ptr >= __stream->_IO_write_end, 0) != 0 ? __overflow ((struct _IO_FILE *) __stream, (int) (unsigned char) __c) : (int) (unsigned char) (*__stream->_IO_write_ptr++  = (char) __c);
+}
+
+
+;; Function putchar_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (stdout->_IO_write_ptr >= stdout->_IO_write_end, 0) != 0 ? __overflow ((struct _IO_FILE *) stdout, (int) (unsigned char) __c) : (int) (unsigned char) (*stdout->_IO_write_ptr++  = (char) __c);
+}
+
+
+;; Function feof_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return (__stream->_flags & 16) != 0;
+}
+
+
+;; Function ferror_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return (__stream->_flags & 32) != 0;
+}
+
+
+;; Function sprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___sprintf_chk (__s, 1, __builtin_object_size ((const void *) __s, 1), __fmt, __builtin_va_arg_pack ());
+}
+
+
+;; Function vsprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___vsprintf_chk (__s, 1, __builtin_object_size ((const void *) __s, 1), __fmt, __ap);
+}
+
+
+;; Function snprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___snprintf_chk (__s, __n, 1, __builtin_object_size ((const void *) __s, 1), __fmt, __builtin_va_arg_pack ());
+}
+
+
+;; Function vsnprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___vsnprintf_chk (__s, __n, 1, __builtin_object_size ((const void *) __s, 1), __fmt, __ap);
+}
+
+
+;; Function fprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __fprintf_chk (__stream, 1, __fmt, __builtin_va_arg_pack ());
+}
+
+
+;; Function printf (null)
+;; enabled by -tree-original
+
+
+{
+  return __printf_chk (1, __fmt, __builtin_va_arg_pack ());
+}
+
+
+;; Function vprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __vfprintf_chk ((struct FILE * restrict) stdout, 1, __fmt, __ap);
+}
+
+
+;; Function vfprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __vfprintf_chk (__stream, 1, __fmt, __ap);
+}
+
+
+;; Function dprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __dprintf_chk (__fd, 1, __fmt, __builtin_va_arg_pack ());
+}
+
+
+;; Function vdprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __vdprintf_chk (__fd, 1, __fmt, __ap);
+}
+
+
+;; Function fgets (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __s, 1) != 18446744073709551615)
+    {
+      if (__builtin_constant_p (__n) == 0 || __n <= 0)
+        {
+          return __fgets_chk (__s, __builtin_object_size ((const void *) __s, 1), __n, __stream);
+        }
+      if ((long unsigned int) __n > __builtin_object_size ((const void *) __s, 1))
+        {
+          return __fgets_chk_warn (__s, __builtin_object_size ((const void *) __s, 1), __n, __stream);
+        }
+    }
+  return __fgets_alias (__s, __n, __stream);
+}
+
+
+;; Function fread (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __ptr, 0) != 18446744073709551615)
+    {
+      if ((__builtin_constant_p (__size) == 0 || __builtin_constant_p (__n) == 0) || (__size | __n) > 4294967295)
+        {
+          return __fread_chk (__ptr, __builtin_object_size ((const void *) __ptr, 0), __size, __n, __stream);
+        }
+      if ((long unsigned int) (__size * __n) > __builtin_object_size ((const void *) __ptr, 0))
+        {
+          return __fread_chk_warn (__ptr, __builtin_object_size ((const void *) __ptr, 0), __size, __n, __stream);
+        }
+    }
+  return __fread_alias (__ptr, __size, __n, __stream);
+}
+
+
+;; Function fread_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __ptr, 0) != 18446744073709551615)
+    {
+      if ((__builtin_constant_p (__size) == 0 || __builtin_constant_p (__n) == 0) || (__size | __n) > 4294967295)
+        {
+          return __fread_unlocked_chk (__ptr, __builtin_object_size ((const void *) __ptr, 0), __size, __n, __stream);
+        }
+      if ((long unsigned int) (__size * __n) > __builtin_object_size ((const void *) __ptr, 0))
+        {
+          return __fread_unlocked_chk_warn (__ptr, __builtin_object_size ((const void *) __ptr, 0), __size, __n, __stream);
+        }
+    }
+  if (((__builtin_constant_p (__size) != 0 && __builtin_constant_p (__n) != 0) && (__size | __n) <= 4294967295) && __size * __n <= 8)
+    {
+      {
+        size_t __cnt = __size * __n;
+        char * __cptr = (char *) __ptr;
+
+                size_t __cnt = __size * __n;
+                char * __cptr = (char *) __ptr;
+        if (__cnt == 0)
+          {
+            return 0;
+          }
+        goto <D.2443>;
+        <D.2442>:;
+        {
+          int __c = __builtin_expect (__stream->_IO_read_ptr >= __stream->_IO_read_end, 0) != 0 ? __uflow ((struct _IO_FILE *) __stream) : (int) *(unsigned char *) __stream->_IO_read_ptr++ ;
+
+                    int __c = __builtin_expect (__stream->_IO_read_ptr >= __stream->_IO_read_end, 0) != 0 ? __uflow ((struct _IO_FILE *) __stream) : (int) *(unsigned char *) __stream->_IO_read_ptr++ ;
+          if (__c == -1)
+            {
+              goto <D.2441>;
+            }
+          *__cptr++  = (char) __c;
+        }
+         --__cnt;
+        <D.2443>:;
+        if (__cnt != 0) goto <D.2442>; else goto <D.2441>;
+        <D.2441>:;
+        return (size_t) ((long unsigned int) ((long int) __cptr - (long int) __ptr) / (long unsigned int) __size);
+      }
+    }
+  return __fread_unlocked_alias (__ptr, __size, __n, __stream);
+}
+
+
+;; Function atoi (null)
+;; enabled by -tree-original
+
+
+{
+  return (int) strtol (__nptr, 0B, 10);
+}
+
+
+;; Function atol (null)
+;; enabled by -tree-original
+
+
+{
+  return strtol (__nptr, 0B, 10);
+}
+
+
+;; Function atoll (null)
+;; enabled by -tree-original
+
+
+{
+  return strtoll (__nptr, 0B, 10);
+}
+
+
+;; Function __bswap_32 (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_bswap32 (__bsx);
+}
+
+
+;; Function __bswap_64 (null)
+;; enabled by -tree-original
+
+
+{
+  return (__uint64_t) __builtin_bswap64 (__bsx);
+}
+
+
+;; Function __uint16_identity (null)
+;; enabled by -tree-original
+
+
+{
+  return __x;
+}
+
+
+;; Function __uint32_identity (null)
+;; enabled by -tree-original
+
+
+{
+  return __x;
+}
+
+
+;; Function __uint64_identity (null)
+;; enabled by -tree-original
+
+
+{
+  return __x;
+}
+
+
+;; Function gnu_dev_major (null)
+;; enabled by -tree-original
+
+
+{
+  unsigned int __major;
+
+    unsigned int __major;
+  __major = (unsigned int) ((long unsigned int) __dev >> 8) & 4095;
+  __major = (unsigned int) ((long unsigned int) __dev >> 32) & 4294963200 | __major;
+  return __major;
+}
+
+
+;; Function gnu_dev_minor (null)
+;; enabled by -tree-original
+
+
+{
+  unsigned int __minor;
+
+    unsigned int __minor;
+  __minor = (unsigned int) __dev & 255;
+  __minor = (unsigned int) ((long unsigned int) __dev >> 12) & 4294967040 | __minor;
+  return __minor;
+}
+
+
+;; Function gnu_dev_makedev (null)
+;; enabled by -tree-original
+
+
+{
+  __dev_t __dev;
+
+    __dev_t __dev;
+  __dev = (long unsigned int) __major << 8 & 1048320;
+  __dev = (long unsigned int) __major << 32 & 18446726481523507200 | (long unsigned int) __dev;
+  __dev = (long unsigned int) __minor & 255 | (long unsigned int) __dev;
+  __dev = (long unsigned int) __minor << 12 & 17592184995840 | (long unsigned int) __dev;
+  return __dev;
+}
+
+
+;; Function bsearch (null)
+;; enabled by -tree-original
+
+
+{
+  size_t __l;
+  size_t __u;
+  size_t __idx;
+  const void * __p;
+  int __comparison;
+
+    size_t __l;
+    size_t __u;
+    size_t __idx;
+    const void * __p;
+    int __comparison;
+  __l = 0;
+  __u = __nmemb;
+  goto <D.2894>;
+  <D.2893>:;
+  __idx = (__l + __u) / 2;
+  __p = __base + (sizetype) (__idx * __size);
+  __comparison = __compar (__key, __p);
+  if (__comparison < 0)
+    {
+      __u = __idx;
+    }
+  else
+    {
+      if (__comparison > 0)
+        {
+          __l = __idx + 1;
+        }
+      else
+        {
+          return (void *) __p;
+        }
+    }
+  <D.2894>:;
+  if (__l < __u) goto <D.2893>; else goto <D.2895>;
+  <D.2895>:;
+  return 0B;
+}
+
+
+;; Function atof (null)
+;; enabled by -tree-original
+
+
+{
+  return strtod (__nptr, 0B);
+}
+
+
+;; Function realpath (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __resolved, 1) != 18446744073709551615)
+    {
+      return __realpath_chk (__name, __resolved, __builtin_object_size ((const void *) __resolved, 1));
+    }
+  return __realpath_alias (__name, __resolved);
+}
+
+
+;; Function ptsname_r (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __buf, 1) != 18446744073709551615)
+    {
+      if (__builtin_constant_p (__buflen) == 0)
+        {
+          return __ptsname_r_chk (__fd, __buf, __buflen, __builtin_object_size ((const void *) __buf, 1));
+        }
+      if (__builtin_object_size ((const void *) __buf, 1) < (long unsigned int) __buflen)
+        {
+          return __ptsname_r_chk_warn (__fd, __buf, __buflen, __builtin_object_size ((const void *) __buf, 1));
+        }
+    }
+  return __ptsname_r_alias (__fd, __buf, __buflen);
+}
+
+
+;; Function wctomb (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __s, 1) != 18446744073709551615 && __builtin_object_size ((const void *) __s, 1) <= 15)
+    {
+      return __wctomb_chk (__s, __wchar, __builtin_object_size ((const void *) __s, 1));
+    }
+  return __wctomb_alias (__s, __wchar);
+}
+
+
+;; Function mbstowcs (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __dst, 1) != 18446744073709551615)
+    {
+      if (__builtin_constant_p (__len) == 0)
+        {
+          return __mbstowcs_chk (__dst, __src, __len, __builtin_object_size ((const void *) __dst, 1) / 4);
+        }
+      if (__builtin_object_size ((const void *) __dst, 1) / 4 < (long unsigned int) __len)
+        {
+          return __mbstowcs_chk_warn (__dst, __src, __len, __builtin_object_size ((const void *) __dst, 1) / 4);
+        }
+    }
+  return __mbstowcs_alias (__dst, __src, __len);
+}
+
+
+;; Function wcstombs (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __dst, 1) != 18446744073709551615)
+    {
+      if (__builtin_constant_p (__len) == 0)
+        {
+          return __wcstombs_chk (__dst, __src, __len, __builtin_object_size ((const void *) __dst, 1));
+        }
+      if (__builtin_object_size ((const void *) __dst, 1) < (long unsigned int) __len)
+        {
+          return __wcstombs_chk_warn (__dst, __src, __len, __builtin_object_size ((const void *) __dst, 1));
+        }
+    }
+  return __wcstombs_alias (__dst, __src, __len);
+}
+
+
+;; Function bcopy (null)
+;; enabled by -tree-original
+
+
+{
+  (void) __builtin___memmove_chk (__dest, __src, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function bzero (null)
+;; enabled by -tree-original
+
+
+{
+  (void) __builtin___memset_chk (__dest, 0, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function memcpy (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___memcpy_chk (__dest, __src, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function memmove (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___memmove_chk (__dest, __src, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function memset (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___memset_chk (__dest, __ch, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function explicit_bzero (null)
+;; enabled by -tree-original
+
+
+{
+  __explicit_bzero_chk (__dest, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function strcpy (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___strcpy_chk (__dest, __src, __builtin_object_size ((const void *) __dest, 1));
+}
+
+
+;; Function strncpy (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___strncpy_chk (__dest, __src, __len, __builtin_object_size ((const void *) __dest, 1));
+}
+
+
+;; Function stpncpy (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __dest, 1) != 18446744073709551615 && (__builtin_constant_p (__n) == 0 || __builtin_object_size ((const void *) __dest, 1) < (long unsigned int) __n))
+    {
+      return __stpncpy_chk (__dest, __src, __n, __builtin_object_size ((const void *) __dest, 1));
+    }
+  return __stpncpy_alias (__dest, __src, __n);
+}
+
+
+;; Function strcat (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___strcat_chk (__dest, __src, __builtin_object_size ((const void *) __dest, 1));
+}
+
+
+;; Function strncat (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___strncat_chk (__dest, __src, __len, __builtin_object_size ((const void *) __dest, 1));
+}
+
+
+;; Function DoNumSort (null)
+;; enabled by -tree-original
+
+
+{
+  struct SortStruct * numsortstruct;
+  farlong * arraybase;
+  long int accumtime;
+  double iterations;
+  char * errorcontext;
+  int systemerror;
+
+    struct SortStruct * numsortstruct;
+    farlong * arraybase;
+    long int accumtime;
+    double iterations;
+    char * errorcontext;
+    int systemerror;
+  numsortstruct = &global_numsortstruct;
+  errorcontext = (char *) "CPU:Numeric Sort";
+  if (numsortstruct->adjust == 0)
+    {
+      numsortstruct->numarrays = 1;
+      <D.4773>:;
+      arraybase = (farlong *) AllocateMemory (((long unsigned int) numsortstruct->numarrays * numsortstruct->arraysize) * 8, &systemerror);
+      if (systemerror != 0)
+        {
+          ReportError (errorcontext, systemerror);
+          FreeMemory ((farvoid *) arraybase, &systemerror);
+          ErrorExit ();
+        }
+      if (DoNumSortIteration (arraybase, numsortstruct->arraysize, (unsigned int) numsortstruct->numarrays) > global_min_ticks)
+        {
+          goto <D.4772>;
+        }
+      FreeMemory ((farvoid *) arraybase, &systemerror);
+      if (numsortstruct->numarrays++  > 10000)
+        {
+          printf ((const char * restrict) "CPU:NSORT -- NUMNUMARRAYS hit.\n");
+          ErrorExit ();
+        }
+      goto <D.4773>;
+      <D.4772>:;
+    }
+  else
+    {
+      arraybase = (farlong *) AllocateMemory (((long unsigned int) numsortstruct->numarrays * numsortstruct->arraysize) * 8, &systemerror);
+      if (systemerror != 0)
+        {
+          ReportError (errorcontext, systemerror);
+          FreeMemory ((farvoid *) arraybase, &systemerror);
+          ErrorExit ();
+        }
+    }
+  accumtime = 0;
+  iterations = 0.0;
+  <D.4774>:;
+  SAVE_EXPR <DoNumSortIteration (arraybase, numsortstruct->arraysize, (unsigned int) numsortstruct->numarrays)>;, accumtime = (long int) (SAVE_EXPR <DoNumSortIteration (arraybase, numsortstruct->arraysize, (unsigned int) numsortstruct->numarrays)> + (long unsigned int) accumtime);;
+  iterations = iterations + 1.0e+0;
+  if (TicksToSecs ((long unsigned int) accumtime) < numsortstruct->request_secs) goto <D.4774>; else goto <D.4775>;
+  <D.4775>:;
+  FreeMemory ((farvoid *) arraybase, &systemerror);
+  numsortstruct->sortspersec = ((double) numsortstruct->numarrays * iterations) / TicksToFracSecs ((long unsigned int) accumtime);
+  if (numsortstruct->adjust == 0)
+    {
+      numsortstruct->adjust = 1;
+    }
+  return;
+}
+
+
+;; Function DoNumSortIteration (null)
+;; enabled by -tree-original
+
+
+{
+  long unsigned int elapsed;
+  long unsigned int i;
+
+    long unsigned int elapsed;
+    long unsigned int i;
+  LoadNumArrayWithRand (arraybase, arraysize, numarrays);
+  elapsed = StartStopwatch ();
+  i = 0;
+  goto <D.4784>;
+  <D.4783>:;
+  NumHeapSort (arraybase + (sizetype) ((i * arraysize) * 8), 0, arraysize + 18446744073709551615);
+  i++ ;
+  <D.4784>:;
+  if ((long unsigned int) numarrays > i) goto <D.4783>; else goto <D.4785>;
+  <D.4785>:;
+  elapsed = StopStopwatch (elapsed);
+  return elapsed;
+}
+
+
+;; Function LoadNumArrayWithRand (null)
+;; enabled by -tree-original
+
+
+{
+  long int i;
+  farlong * darray;
+
+    long int i;
+    farlong * darray;
+  randnum (13);
+  i = 0;
+  goto <D.4794>;
+  <D.4793>:;
+  *(array + (sizetype) ((long unsigned int) i * 8)) = (farlong) randnum (0);
+  i++ ;
+  <D.4794>:;
+  if ((long unsigned int) i < arraysize) goto <D.4793>; else goto <D.4795>;
+  <D.4795>:;
+  darray = array;
+  goto <D.4800>;
+  <D.4799>:;
+  darray = darray + (sizetype) (arraysize * 8);
+  i = 0;
+  goto <D.4797>;
+  <D.4796>:;
+  *(darray + (sizetype) ((long unsigned int) i * 8)) = *(array + (sizetype) ((long unsigned int) i * 8));
+  i++ ;
+  <D.4797>:;
+  if ((long unsigned int) i < arraysize) goto <D.4796>; else goto <D.4798>;
+  <D.4798>:;
+  <D.4800>:;
+  if ( --numarrays != 0) goto <D.4799>; else goto <D.4801>;
+  <D.4801>:;
+  return;
+}
+
+
+;; Function NumHeapSort (null)
+;; enabled by -tree-original
+
+
+{
+  long unsigned int temp;
+  long unsigned int i;
+
+    long unsigned int temp;
+    long unsigned int i;
+  i = top / 2;
+  goto <D.4810>;
+  <D.4809>:;
+  NumSift (array, i, top);
+   --i;
+  <D.4810>:;
+  if (i != 0) goto <D.4809>; else goto <D.4811>;
+  <D.4811>:;
+  i = top;
+  goto <D.4813>;
+  <D.4812>:;
+  NumSift (array, bottom, i);
+  temp = (long unsigned int) *array;
+  *array = *(array + (sizetype) (i * 8));
+  *(array + (sizetype) (i * 8)) = (farlong) temp;
+   --i;
+  <D.4813>:;
+  if (i != 0) goto <D.4812>; else goto <D.4814>;
+  <D.4814>:;
+  return;
+}
+
+
+;; Function NumSift (null)
+;; enabled by -tree-original
+
+
+{
+  long unsigned int k;
+  long int temp;
+
+    long unsigned int k;
+    long int temp;
+  goto <D.4823>;
+  <D.4822>:;
+  k = i * 2;
+  if (k < j)
+    {
+      if (*(array + (sizetype) (k * 8)) < *(array + ((sizetype) k + 1) * 8))
+        {
+           ++k;
+        }
+    }
+  if (*(array + (sizetype) (i * 8)) < *(array + (sizetype) (k * 8)))
+    {
+      temp = *(array + (sizetype) (k * 8));
+      *(array + (sizetype) (k * 8)) = *(array + (sizetype) (i * 8));
+      *(array + (sizetype) (i * 8)) = temp;
+      i = k;
+    }
+  else
+    {
+      i = j + 1;
+    }
+  <D.4823>:;
+  if (i * 2 <= j) goto <D.4822>; else goto <D.4824>;
+  <D.4824>:;
+  return;
+}
+
+
+;; Function DoStringSort (null)
+;; enabled by -tree-original
+
+
+{
+  struct SortStruct * strsortstruct;
+  faruchar * arraybase;
+  long int accumtime;
+  double iterations;
+  char * errorcontext;
+  int systemerror;
+
+    struct SortStruct * strsortstruct;
+    faruchar * arraybase;
+    long int accumtime;
+    double iterations;
+    char * errorcontext;
+    int systemerror;
+  strsortstruct = &global_strsortstruct;
+  errorcontext = (char *) "CPU:String Sort";
+  if (strsortstruct->adjust == 0)
+    {
+      strsortstruct->numarrays = 1;
+      <D.4835>:;
+      arraybase = (faruchar *) AllocateMemory ((strsortstruct->arraysize + 100) * (long unsigned int) strsortstruct->numarrays, &systemerror);
+      if (systemerror != 0)
+        {
+          ReportError (errorcontext, systemerror);
+          ErrorExit ();
+        }
+      if (DoStringSortIteration (arraybase, (unsigned int) strsortstruct->numarrays, strsortstruct->arraysize) > global_min_ticks)
+        {
+          goto <D.4834>;
+        }
+      FreeMemory ((farvoid *) arraybase, &systemerror);
+      strsortstruct->numarrays = strsortstruct->numarrays + 1;
+      goto <D.4835>;
+      <D.4834>:;
+    }
+  else
+    {
+      arraybase = (faruchar *) AllocateMemory ((strsortstruct->arraysize + 100) * (long unsigned int) strsortstruct->numarrays, &systemerror);
+      if (systemerror != 0)
+        {
+          ReportError (errorcontext, systemerror);
+          ErrorExit ();
+        }
+    }
+  accumtime = 0;
+  iterations = 0.0;
+  <D.4836>:;
+  SAVE_EXPR <DoStringSortIteration (arraybase, (unsigned int) strsortstruct->numarrays, strsortstruct->arraysize)>;, accumtime = (long int) (SAVE_EXPR <DoStringSortIteration (arraybase, (unsigned int) strsortstruct->numarrays, strsortstruct->arraysize)> + (long unsigned int) accumtime);;
+  iterations = (double) strsortstruct->numarrays + iterations;
+  if (TicksToSecs ((long unsigned int) accumtime) < strsortstruct->request_secs) goto <D.4836>; else goto <D.4837>;
+  <D.4837>:;
+  FreeMemory ((farvoid *) arraybase, &systemerror);
+  strsortstruct->sortspersec = iterations / TicksToFracSecs ((long unsigned int) accumtime);
+  if (strsortstruct->adjust == 0)
+    {
+      strsortstruct->adjust = 1;
+    }
+  return;
+}
+
+
+;; Function DoStringSortIteration (null)
+;; enabled by -tree-original
+
+
+{
+  farulong * optrarray;
+  long unsigned int elapsed;
+  long unsigned int nstrings;
+  int syserror;
+  unsigned int i;
+  farulong * tempobase;
+  faruchar * tempsbase;
+
+    farulong * optrarray;
+    long unsigned int elapsed;
+    long unsigned int nstrings;
+    int syserror;
+    unsigned int i;
+    farulong * tempobase;
+    faruchar * tempsbase;
+  optrarray = LoadStringArray (arraybase, numarrays, &nstrings, arraysize);
+  tempobase = optrarray;
+  tempsbase = arraybase;
+  elapsed = StartStopwatch ();
+  i = 0;
+  goto <D.4851>;
+  <D.4850>:;
+  StrHeapSort (tempobase, tempsbase, nstrings, 0, nstrings + 18446744073709551615);
+  tempobase = tempobase + (sizetype) (nstrings * 8);
+  tempsbase = tempsbase + ((sizetype) arraysize + 100);
+  i++ ;
+  <D.4851>:;
+  if (i < numarrays) goto <D.4850>; else goto <D.4852>;
+  <D.4852>:;
+  elapsed = StopStopwatch (elapsed);
+  FreeMemory ((farvoid *) optrarray, &syserror);
+  return elapsed;
+}
+
+
+;; Function LoadStringArray (null)
+;; enabled by -tree-original
+
+
+{
+  faruchar * tempsbase;
+  farulong * optrarray;
+  farulong * tempobase;
+  long unsigned int curroffset;
+  int fullflag;
+  unsigned char stringlength;
+  unsigned char i;
+  long unsigned int j;
+  unsigned int k;
+  unsigned int l;
+  int systemerror;
+
+    faruchar * tempsbase;
+    farulong * optrarray;
+    farulong * tempobase;
+    long unsigned int curroffset;
+    int fullflag;
+    unsigned char stringlength;
+    unsigned char i;
+    long unsigned int j;
+    unsigned int k;
+    unsigned int l;
+    int systemerror;
+  randnum (13);
+  *nstrings = 0;
+  curroffset = 0;
+  fullflag = 0;
+  <D.4873>:;
+  stringlength = (unsigned char) ((unsigned char) abs_randwc (76) + 1);
+  if (((long unsigned int) stringlength + curroffset) + 1 >= arraysize)
+    {
+      stringlength = ((unsigned char) arraysize - (unsigned char) curroffset) + 255;
+      fullflag = 1;
+    }
+  *(strarray + (sizetype) curroffset) = stringlength;
+  curroffset++ ;
+  i = 0;
+  goto <D.4871>;
+  <D.4870>:;
+  *(strarray + (sizetype) curroffset) = (unsigned char) abs_randwc (254);
+  curroffset++ ;
+  i++ ;
+  <D.4871>:;
+  if (i < stringlength) goto <D.4870>; else goto <D.4872>;
+  <D.4872>:;
+  *nstrings = *nstrings + 1;
+  if (fullflag == 0) goto <D.4873>; else goto <D.4874>;
+  <D.4874>:;
+  k = 1;
+  tempsbase = strarray;
+  goto <D.4879>;
+  <D.4878>:;
+  tempsbase = tempsbase + ((sizetype) arraysize + 100);
+  l = 0;
+  goto <D.4876>;
+  <D.4875>:;
+  *(tempsbase + (sizetype) l) = *(strarray + (sizetype) l);
+  l++ ;
+  <D.4876>:;
+  if ((long unsigned int) l < arraysize) goto <D.4875>; else goto <D.4877>;
+  <D.4877>:;
+  k++ ;
+  <D.4879>:;
+  if (k < numarrays) goto <D.4878>; else goto <D.4880>;
+  <D.4880>:;
+  optrarray = (farulong *) AllocateMemory ((*nstrings * (long unsigned int) numarrays) * 8, &systemerror);
+  if (systemerror != 0)
+    {
+      ReportError ((char *) "CPU:Stringsort", systemerror);
+      FreeMemory ((farvoid *) strarray, &systemerror);
+      ErrorExit ();
+    }
+  curroffset = 0;
+  j = 0;
+  goto <D.4882>;
+  <D.4881>:;
+  *(optrarray + (sizetype) (j * 8)) = curroffset;
+  curroffset = ((long unsigned int) *(strarray + (sizetype) curroffset) + curroffset) + 1;
+  j++ ;
+  <D.4882>:;
+  if (*nstrings > j) goto <D.4881>; else goto <D.4883>;
+  <D.4883>:;
+  k = 1;
+  tempobase = optrarray;
+  goto <D.4888>;
+  <D.4887>:;
+  tempobase = tempobase + (sizetype) (*nstrings * 8);
+  l = 0;
+  goto <D.4885>;
+  <D.4884>:;
+  *(tempobase + (sizetype) ((long unsigned int) l * 8)) = *(optrarray + (sizetype) ((long unsigned int) l * 8));
+  l++ ;
+  <D.4885>:;
+  if ((long unsigned int) l < *nstrings) goto <D.4884>; else goto <D.4886>;
+  <D.4886>:;
+  k++ ;
+  <D.4888>:;
+  if (k < numarrays) goto <D.4887>; else goto <D.4889>;
+  <D.4889>:;
+  return optrarray;
+}
+
+
+;; Function stradjust (null)
+;; enabled by -tree-original
+
+
+{
+  long unsigned int nbytes;
+  long unsigned int j;
+  int direction;
+  unsigned char adjamount;
+
+    long unsigned int nbytes;
+    long unsigned int j;
+    int direction;
+    unsigned char adjamount;
+  direction = (int) l - (int) *(strarray + (sizetype) *(optrarray + (sizetype) (i * 8)));
+  adjamount = (unsigned char) ABS_EXPR <direction>;
+  if (nstrings + 18446744073709551615 == i)
+    {
+      *(strarray + (sizetype) *(optrarray + (sizetype) (i * 8))) = l;
+      return;
+    }
+  nbytes = (((long unsigned int) *(optrarray + ((sizetype) (nstrings * 8) + 18446744073709551608)) + (long unsigned int) *(strarray + (sizetype) *(optrarray + ((sizetype) (nstrings * 8) + 18446744073709551608)))) + (long unsigned int) -*(optrarray + ((sizetype) i + 1) * 8)) + 1;
+  MoveMemory ((farvoid *) (strarray + (((sizetype) *(optrarray + (sizetype) (i * 8)) + (sizetype) l) + 1)), (farvoid *) (strarray + (sizetype) *(optrarray + ((sizetype) i + 1) * 8)), nbytes);
+  j = i + 1;
+  goto <D.4902>;
+  <D.4901>:;
+  if (direction < 0)
+    {
+      *(optrarray + (sizetype) (j * 8)) = *(optrarray + (sizetype) (j * 8)) - (farulong) adjamount;
+    }
+  else
+    {
+      *(optrarray + (sizetype) (j * 8)) = *(optrarray + (sizetype) (j * 8)) + (farulong) adjamount;
+    }
+  j++ ;
+  <D.4902>:;
+  if (j < nstrings) goto <D.4901>; else goto <D.4903>;
+  <D.4903>:;
+  *(strarray + (sizetype) *(optrarray + (sizetype) (i * 8))) = l;
+  return;
+}
+
+
+;; Function StrHeapSort (null)
+;; enabled by -tree-original
+
+
+{
+  unsigned char temp[80];
+  unsigned char tlen;
+  long unsigned int i;
+
+    unsigned char temp[80];
+    unsigned char tlen;
+    long unsigned int i;
+  i = top / 2;
+  goto <D.4915>;
+  <D.4914>:;
+  strsift (optrarray, strarray, numstrings, i, top);
+   --i;
+  <D.4915>:;
+  if (i != 0) goto <D.4914>; else goto <D.4916>;
+  <D.4916>:;
+  i = top;
+  goto <D.4918>;
+  <D.4917>:;
+  strsift (optrarray, strarray, numstrings, 0, i);
+  tlen = *strarray;
+  MoveMemory ((farvoid *) &temp[0], (farvoid *) strarray, (long unsigned int) ((int) tlen + 1));
+  tlen = *(strarray + (sizetype) *(optrarray + (sizetype) (i * 8)));
+  stradjust (optrarray, strarray, numstrings, 0, (int) tlen);
+  MoveMemory ((farvoid *) strarray, (farvoid *) (strarray + (sizetype) *(optrarray + (sizetype) (i * 8))), (long unsigned int) ((int) tlen + 1));
+  tlen = temp[0];
+  stradjust (optrarray, strarray, numstrings, i, (int) tlen);
+  MoveMemory ((farvoid *) (strarray + (sizetype) *(optrarray + (sizetype) (i * 8))), (farvoid *) &temp[0], (long unsigned int) ((int) tlen + 1));
+   --i;
+  <D.4918>:;
+  if (i != 0) goto <D.4917>; else goto <D.4919>;
+  <D.4919>:;
+  return;
+}
+
+
+;; Function str_is_less (null)
+;; enabled by -tree-original
+
+
+{
+  int slen;
+
+    int slen;
+  slen = (int) *(strarray + (sizetype) *(optrarray + (sizetype) (a * 8)));
+  if ((int) *(strarray + (sizetype) *(optrarray + (sizetype) (b * 8))) < slen)
+    {
+      slen = (int) *(strarray + (sizetype) *(optrarray + (sizetype) (b * 8)));
+    }
+  slen = strncmp ((const char *) (strarray + (sizetype) *(optrarray + (sizetype) (a * 8))), (const char *) (strarray + (sizetype) *(optrarray + (sizetype) (b * 8))), (size_t) slen);
+  if (slen == 0)
+    {
+      if (*(strarray + (sizetype) *(optrarray + (sizetype) (a * 8))) > *(strarray + (sizetype) *(optrarray + (sizetype) (b * 8))))
+        {
+          return 1;
+        }
+      return 0;
+    }
+  if (slen < 0)
+    {
+      return 1;
+    }
+  return 0;
+}
+
+
+;; Function strsift (null)
+;; enabled by -tree-original
+
+
+{
+  long unsigned int k;
+  unsigned char temp[80];
+  unsigned char tlen;
+
+    long unsigned int k;
+    unsigned char temp[80];
+    unsigned char tlen;
+  goto <D.4939>;
+  <D.4938>:;
+  k = i * 2;
+  if (k < j)
+    {
+      if (str_is_less (optrarray, strarray, numstrings, k, k + 1) != 0)
+        {
+           ++k;
+        }
+    }
+  if (str_is_less (optrarray, strarray, numstrings, i, k) != 0)
+    {
+      tlen = *(strarray + (sizetype) *(optrarray + (sizetype) (k * 8)));
+      MoveMemory ((farvoid *) &temp[0], (farvoid *) (strarray + (sizetype) *(optrarray + (sizetype) (k * 8))), (long unsigned int) ((int) tlen + 1));
+      tlen = *(strarray + (sizetype) *(optrarray + (sizetype) (i * 8)));
+      stradjust (optrarray, strarray, numstrings, k, (int) tlen);
+      MoveMemory ((farvoid *) (strarray + (sizetype) *(optrarray + (sizetype) (k * 8))), (farvoid *) (strarray + (sizetype) *(optrarray + (sizetype) (i * 8))), (long unsigned int) ((int) tlen + 1));
+      tlen = temp[0];
+      stradjust (optrarray, strarray, numstrings, i, (int) tlen);
+      MoveMemory ((farvoid *) (strarray + (sizetype) *(optrarray + (sizetype) (i * 8))), (farvoid *) &temp[0], (long unsigned int) ((int) tlen + 1));
+      i = k;
+    }
+  else
+    {
+      i = j + 1;
+    }
+  <D.4939>:;
+  if (i * 2 <= j) goto <D.4938>; else goto <D.4940>;
+  <D.4940>:;
+  return;
+}
+
+
+;; Function DoBitops (null)
+;; enabled by -tree-original
+
+
+{
+  struct BitOpStruct * locbitopstruct;
+  farulong * bitarraybase;
+  farulong * bitoparraybase;
+  long unsigned int nbitops;
+  long unsigned int accumtime;
+  double iterations;
+  char * errorcontext;
+  int systemerror;
+  int ticks;
+
+    struct BitOpStruct * locbitopstruct;
+    farulong * bitarraybase;
+    farulong * bitoparraybase;
+    long unsigned int nbitops;
+    long unsigned int accumtime;
+    double iterations;
+    char * errorcontext;
+    int systemerror;
+    int ticks;
+  locbitopstruct = &global_bitopstruct;
+  errorcontext = (char *) "CPU:Bitfields";
+  if (locbitopstruct->adjust == 0)
+    {
+      bitarraybase = (farulong *) AllocateMemory (locbitopstruct->bitfieldarraysize * 8, &systemerror);
+      if (systemerror != 0)
+        {
+          ReportError (errorcontext, systemerror);
+          ErrorExit ();
+        }
+      locbitopstruct->bitoparraysize = 30;
+      <D.4954>:;
+      bitoparraybase = (farulong *) AllocateMemory (locbitopstruct->bitoparraysize * 16, &systemerror);
+      if (systemerror != 0)
+        {
+          ReportError (errorcontext, systemerror);
+          FreeMemory ((farvoid *) bitarraybase, &systemerror);
+          ErrorExit ();
+        }
+      ticks = (int) DoBitfieldIteration (bitarraybase, bitoparraybase, (long int) locbitopstruct->bitoparraysize, &nbitops);
+      if ((long unsigned int) ticks > global_min_ticks)
+        {
+          goto <D.4953>;
+        }
+      FreeMemory ((farvoid *) bitoparraybase, &systemerror);
+      locbitopstruct->bitoparraysize = locbitopstruct->bitoparraysize + 100;
+      goto <D.4954>;
+      <D.4953>:;
+    }
+  else
+    {
+      bitarraybase = (farulong *) AllocateMemory (locbitopstruct->bitfieldarraysize * 8, &systemerror);
+      if (systemerror != 0)
+        {
+          ReportError (errorcontext, systemerror);
+          ErrorExit ();
+        }
+      bitoparraybase = (farulong *) AllocateMemory (locbitopstruct->bitoparraysize * 16, &systemerror);
+      if (systemerror != 0)
+        {
+          ReportError (errorcontext, systemerror);
+          FreeMemory ((farvoid *) bitarraybase, &systemerror);
+          ErrorExit ();
+        }
+    }
+  accumtime = 0;
+  iterations = 0.0;
+  <D.4955>:;
+  SAVE_EXPR <DoBitfieldIteration (bitarraybase, bitoparraybase, (long int) locbitopstruct->bitoparraysize, &nbitops)>;, accumtime = SAVE_EXPR <DoBitfieldIteration (bitarraybase, bitoparraybase, (long int) locbitopstruct->bitoparraysize, &nbitops)> + accumtime;;
+  iterations = (double) nbitops + iterations;
+  if (TicksToSecs (accumtime) < locbitopstruct->request_secs) goto <D.4955>; else goto <D.4956>;
+  <D.4956>:;
+  FreeMemory ((farvoid *) bitarraybase, &systemerror);
+  FreeMemory ((farvoid *) bitoparraybase, &systemerror);
+  locbitopstruct->bitopspersec = iterations / TicksToFracSecs (accumtime);
+  if (locbitopstruct->adjust == 0)
+    {
+      locbitopstruct->adjust = 1;
+    }
+  return;
+}
+
+
+;; Function DoBitfieldIteration (null)
+;; enabled by -tree-original
+
+
+{
+  long int i;
+  long unsigned int bitoffset;
+  long unsigned int elapsed;
+
+    long int i;
+    long unsigned int bitoffset;
+    long unsigned int elapsed;
+  *nbitops = 0;
+  randnum (13);
+  i = 0;
+  goto <D.4967>;
+  <D.4966>:;
+  *(bitarraybase + (sizetype) ((long unsigned int) i * 8)) = 6148914691236517205;
+  i++ ;
+  <D.4967>:;
+  if (global_bitopstruct.bitfieldarraysize > (long unsigned int) i) goto <D.4966>; else goto <D.4968>;
+  <D.4968>:;
+  randnum (13);
+  i = 0;
+  goto <D.4970>;
+  <D.4969>:;
+  *(bitoparraybase + (sizetype) ((long unsigned int) i * 16)) = bitoffset = (long unsigned int) abs_randwc (262140);
+  SAVE_EXPR <*(bitoparraybase + ((sizetype) ((long unsigned int) i * 16) + 8)) = (farulong) abs_randwc (262140 - (u32) bitoffset)>;, *nbitops = *nbitops + (long unsigned int) (SAVE_EXPR <*(bitoparraybase + ((sizetype) ((long unsigned int) i * 16) + 8)) = (farulong) abs_randwc (262140 - (u32) bitoffset)>);;
+  i++ ;
+  <D.4970>:;
+  if (i < bitoparraysize) goto <D.4969>; else goto <D.4971>;
+  <D.4971>:;
+  elapsed = StartStopwatch ();
+  i = 0;
+  goto <D.4977>;
+  <D.4976>:;
+  switch (i % 3)
+    {
+      case 0:;
+      ToggleBitRun (bitarraybase, *(bitoparraybase + (sizetype) ((long unsigned int) i * 16)), *(bitoparraybase + ((sizetype) ((long unsigned int) i * 16) + 8)), 1);
+      goto <D.4973>;
+      case 1:;
+      ToggleBitRun (bitarraybase, *(bitoparraybase + (sizetype) ((long unsigned int) i * 16)), *(bitoparraybase + ((sizetype) ((long unsigned int) i * 16) + 8)), 0);
+      goto <D.4973>;
+      case 2:;
+      FlipBitRun (bitarraybase, *(bitoparraybase + (sizetype) ((long unsigned int) i * 16)), *(bitoparraybase + ((sizetype) ((long unsigned int) i * 16) + 8)));
+      goto <D.4973>;
+    }
+  <D.4973>:;
+  i++ ;
+  <D.4977>:;
+  if (i < bitoparraysize) goto <D.4976>; else goto <D.4978>;
+  <D.4978>:;
+  return StopStopwatch (elapsed);
+}
+
+
+;; Function ToggleBitRun (null)
+;; enabled by -tree-original
+
+
+{
+  long unsigned int bindex;
+  long unsigned int bitnumb;
+
+    long unsigned int bindex;
+    long unsigned int bitnumb;
+  goto <D.4988>;
+  <D.4987>:;
+  bindex = bit_addr >> 6;
+  bitnumb = bit_addr & 63;
+  if (val != 0)
+    {
+      *(bitmap + (sizetype) (bindex * 8)) = (long unsigned int) *(bitmap + (sizetype) (bindex * 8)) | (long unsigned int) (1 << bitnumb);
+    }
+  else
+    {
+      *(bitmap + (sizetype) (bindex * 8)) = (long unsigned int) *(bitmap + (sizetype) (bindex * 8)) & (long unsigned int) ~(1 << bitnumb);
+    }
+  bit_addr++ ;
+  <D.4988>:;
+  if (nbits--  != 0) goto <D.4987>; else goto <D.4989>;
+  <D.4989>:;
+  return;
+}
+
+
+;; Function FlipBitRun (null)
+;; enabled by -tree-original
+
+
+{
+  long unsigned int bindex;
+  long unsigned int bitnumb;
+
+    long unsigned int bindex;
+    long unsigned int bitnumb;
+  goto <D.4998>;
+  <D.4997>:;
+  bindex = bit_addr >> 6;
+  bitnumb = bit_addr & 63;
+  *(bitmap + (sizetype) (bindex * 8)) = (long unsigned int) *(bitmap + (sizetype) (bindex * 8)) ^ (long unsigned int) (1 << bitnumb);
+  bit_addr++ ;
+  <D.4998>:;
+  if (nbits--  != 0) goto <D.4997>; else goto <D.4999>;
+  <D.4999>:;
+  return;
+}
+
+
+;; Function DoEmFloat (null)
+;; enabled by -tree-original
+
+
+{
+  struct EmFloatStruct * locemfloatstruct;
+  struct InternalFPF * abase;
+  struct InternalFPF * bbase;
+  struct InternalFPF * cbase;
+  long unsigned int accumtime;
+  double iterations;
+  long unsigned int tickcount;
+  char * errorcontext;
+  int systemerror;
+  long unsigned int loops;
+
+    struct EmFloatStruct * locemfloatstruct;
+    struct InternalFPF * abase;
+    struct InternalFPF * bbase;
+    struct InternalFPF * cbase;
+    long unsigned int accumtime;
+    double iterations;
+    long unsigned int tickcount;
+    char * errorcontext;
+    int systemerror;
+    long unsigned int loops;
+  locemfloatstruct = &global_emfloatstruct;
+  errorcontext = (char *) "CPU:Floating Emulation";
+  abase = (struct InternalFPF *) AllocateMemory (locemfloatstruct->arraysize * 12, &systemerror);
+  if (systemerror != 0)
+    {
+      ReportError (errorcontext, systemerror);
+      ErrorExit ();
+    }
+  bbase = (struct InternalFPF *) AllocateMemory (locemfloatstruct->arraysize * 12, &systemerror);
+  if (systemerror != 0)
+    {
+      ReportError (errorcontext, systemerror);
+      FreeMemory ((farvoid *) abase, &systemerror);
+      ErrorExit ();
+    }
+  cbase = (struct InternalFPF *) AllocateMemory (locemfloatstruct->arraysize * 12, &systemerror);
+  if (systemerror != 0)
+    {
+      ReportError (errorcontext, systemerror);
+      FreeMemory ((farvoid *) abase, &systemerror);
+      FreeMemory ((farvoid *) bbase, &systemerror);
+      ErrorExit ();
+    }
+  SetupCPUEmFloatArrays (abase, bbase, cbase, locemfloatstruct->arraysize);
+  if (locemfloatstruct->adjust == 0)
+    {
+      locemfloatstruct->loops = 0;
+      loops = 1;
+      goto <D.5015>;
+      <D.5014>:;
+      tickcount = DoEmFloatIteration (abase, bbase, cbase, locemfloatstruct->arraysize, loops);
+      if (tickcount > global_min_ticks)
+        {
+          locemfloatstruct->loops = loops;
+          goto <D.5013>;
+        }
+      loops = loops * 2;
+      <D.5015>:;
+      if (loops <= 499999) goto <D.5014>; else goto <D.5013>;
+      <D.5013>:;
+    }
+  if (locemfloatstruct->loops == 0)
+    {
+      printf ((const char * restrict) "CPU:EMFPU -- CMPUEMFLOATLOOPMAX limit hit\n");
+      FreeMemory ((farvoid *) abase, &systemerror);
+      FreeMemory ((farvoid *) bbase, &systemerror);
+      FreeMemory ((farvoid *) cbase, &systemerror);
+      ErrorExit ();
+    }
+  accumtime = 0;
+  iterations = 0.0;
+  <D.5016>:;
+  SAVE_EXPR <DoEmFloatIteration (abase, bbase, cbase, locemfloatstruct->arraysize, locemfloatstruct->loops)>;, accumtime = SAVE_EXPR <DoEmFloatIteration (abase, bbase, cbase, locemfloatstruct->arraysize, locemfloatstruct->loops)> + accumtime;;
+  iterations = iterations + 1.0e+0;
+  if (TicksToSecs (accumtime) < locemfloatstruct->request_secs) goto <D.5016>; else goto <D.5017>;
+  <D.5017>:;
+  FreeMemory ((farvoid *) abase, &systemerror);
+  FreeMemory ((farvoid *) bbase, &systemerror);
+  FreeMemory ((farvoid *) cbase, &systemerror);
+  locemfloatstruct->emflops = ((double) locemfloatstruct->loops * iterations) / TicksToFracSecs (accumtime);
+  if (locemfloatstruct->adjust == 0)
+    {
+      locemfloatstruct->adjust = 1;
+    }
+  return;
+}
+
+
+;; Function DoFourier (null)
+;; enabled by -tree-original
+
+
+{
+  struct FourierStruct * locfourierstruct;
+  fardouble * abase;
+  fardouble * bbase;
+  long unsigned int accumtime;
+  double iterations;
+  char * errorcontext;
+  int systemerror;
+
+    struct FourierStruct * locfourierstruct;
+    fardouble * abase;
+    fardouble * bbase;
+    long unsigned int accumtime;
+    double iterations;
+    char * errorcontext;
+    int systemerror;
+  locfourierstruct = &global_fourierstruct;
+  errorcontext = (char *) "FPU:Transcendental";
+  if (locfourierstruct->adjust == 0)
+    {
+      locfourierstruct->arraysize = 100;
+      <D.5029>:;
+      abase = (fardouble *) AllocateMemory (locfourierstruct->arraysize * 8, &systemerror);
+      if (systemerror != 0)
+        {
+          ReportError (errorcontext, systemerror);
+          ErrorExit ();
+        }
+      bbase = (fardouble *) AllocateMemory (locfourierstruct->arraysize * 8, &systemerror);
+      if (systemerror != 0)
+        {
+          ReportError (errorcontext, systemerror);
+          FreeMemory ((farvoid *) abase, &systemerror);
+          ErrorExit ();
+        }
+      if (DoFPUTransIteration (abase, bbase, locfourierstruct->arraysize) > global_min_ticks)
+        {
+          goto <D.5028>;
+        }
+      FreeMemory ((farvoid *) abase, &systemerror);
+      FreeMemory ((farvoid *) bbase, &systemerror);
+      locfourierstruct->arraysize = locfourierstruct->arraysize + 50;
+      goto <D.5029>;
+      <D.5028>:;
+    }
+  else
+    {
+      abase = (fardouble *) AllocateMemory (locfourierstruct->arraysize * 8, &systemerror);
+      if (systemerror != 0)
+        {
+          ReportError (errorcontext, systemerror);
+          ErrorExit ();
+        }
+      bbase = (fardouble *) AllocateMemory (locfourierstruct->arraysize * 8, &systemerror);
+      if (systemerror != 0)
+        {
+          ReportError (errorcontext, systemerror);
+          FreeMemory ((farvoid *) abase, &systemerror);
+          ErrorExit ();
+        }
+    }
+  accumtime = 0;
+  iterations = 0.0;
+  <D.5030>:;
+  SAVE_EXPR <DoFPUTransIteration (abase, bbase, locfourierstruct->arraysize)>;, accumtime = SAVE_EXPR <DoFPUTransIteration (abase, bbase, locfourierstruct->arraysize)> + accumtime;;
+  iterations = ((double) locfourierstruct->arraysize * 2.0e+0 - 1.0e+0) + iterations;
+  if (TicksToSecs (accumtime) < locfourierstruct->request_secs) goto <D.5030>; else goto <D.5031>;
+  <D.5031>:;
+  FreeMemory ((farvoid *) abase, &systemerror);
+  FreeMemory ((farvoid *) bbase, &systemerror);
+  locfourierstruct->fflops = iterations / TicksToFracSecs (accumtime);
+  if (locfourierstruct->adjust == 0)
+    {
+      locfourierstruct->adjust = 1;
+    }
+  return;
+}
+
+
+;; Function DoFPUTransIteration (null)
+;; enabled by -tree-original
+
+
+{
+  double omega;
+  long unsigned int i;
+  long unsigned int elapsed;
+
+    double omega;
+    long unsigned int i;
+    long unsigned int elapsed;
+  elapsed = StartStopwatch ();
+  *abase = TrapezoidIntegrate (0.0, 2.0e+0, 200, 0.0, 0) * 5.0e-1;
+  omega = 3.141592653589793115997963468544185161590576171875e+0;
+  i = 1;
+  goto <D.5041>;
+  <D.5040>:;
+  *(abase + (sizetype) (i * 8)) = TrapezoidIntegrate (0.0, 2.0e+0, 200, (double) i * omega, 1);
+  *(bbase + (sizetype) (i * 8)) = TrapezoidIntegrate (0.0, 2.0e+0, 200, (double) i * omega, 2);
+  i++ ;
+  <D.5041>:;
+  if (i < arraysize) goto <D.5040>; else goto <D.5042>;
+  <D.5042>:;
+  return StopStopwatch (elapsed);
+}
+
+
+;; Function TrapezoidIntegrate (null)
+;; enabled by -tree-original
+
+
+{
+  double x;
+  double dx;
+  double rvalue;
+
+    double x;
+    double dx;
+    double rvalue;
+  x = x0;
+  dx = (x1 - x0) / (double) nsteps;
+  rvalue = thefunction (x0, omegan, select) * 5.0e-1;
+  if (nsteps != 1)
+    {
+       --nsteps;
+      goto <D.5054>;
+      <D.5053>:;
+      x = x + dx;
+      SAVE_EXPR <thefunction (x, omegan, select)>;, rvalue = SAVE_EXPR <thefunction (x, omegan, select)> + rvalue;;
+      <D.5054>:;
+      if ( --nsteps != 0) goto <D.5053>; else goto <D.5055>;
+      <D.5055>:;
+    }
+  rvalue = (thefunction (x1, omegan, select) * 5.0e-1 + rvalue) * dx;
+  return rvalue;
+}
+
+
+;; Function thefunction (null)
+;; enabled by -tree-original
+
+
+{
+  switch (select)
+    {
+      case 0:;
+      return pow (x + 1.0e+0, x);
+      case 1:;
+      return pow (x + 1.0e+0, x) * cos (omegan * x);
+      case 2:;
+      return pow (x + 1.0e+0, x) * sin (omegan * x);
+    }
+  return 0.0;
+}
+
+
+;; Function DoAssign (null)
+;; enabled by -tree-original
+
+
+{
+  struct AssignStruct * locassignstruct;
+  farlong * arraybase;
+  char * errorcontext;
+  int systemerror;
+  long unsigned int accumtime;
+  double iterations;
+
+    struct AssignStruct * locassignstruct;
+    farlong * arraybase;
+    char * errorcontext;
+    int systemerror;
+    long unsigned int accumtime;
+    double iterations;
+  locassignstruct = &global_assignstruct;
+  errorcontext = (char *) "CPU:Assignment";
+  if (locassignstruct->adjust == 0)
+    {
+      locassignstruct->numarrays = 1;
+      <D.5074>:;
+      arraybase = (farlong *) AllocateMemory (locassignstruct->numarrays * 81608, &systemerror);
+      if (systemerror != 0)
+        {
+          ReportError (errorcontext, systemerror);
+          FreeMemory ((farvoid *) arraybase, &systemerror);
+          ErrorExit ();
+        }
+      if (DoAssignIteration (arraybase, locassignstruct->numarrays) > global_min_ticks)
+        {
+          goto <D.5073>;
+        }
+      FreeMemory ((farvoid *) arraybase, &systemerror);
+      locassignstruct->numarrays++ ;
+      goto <D.5074>;
+      <D.5073>:;
+    }
+  else
+    {
+      arraybase = (farlong *) AllocateMemory (locassignstruct->numarrays * 81608, &systemerror);
+      if (systemerror != 0)
+        {
+          ReportError (errorcontext, systemerror);
+          FreeMemory ((farvoid *) arraybase, &systemerror);
+          ErrorExit ();
+        }
+    }
+  accumtime = 0;
+  iterations = 0.0;
+  <D.5075>:;
+  SAVE_EXPR <DoAssignIteration (arraybase, locassignstruct->numarrays)>;, accumtime = SAVE_EXPR <DoAssignIteration (arraybase, locassignstruct->numarrays)> + accumtime;;
+  iterations = iterations + 1.0e+0;
+  if (TicksToSecs (accumtime) < locassignstruct->request_secs) goto <D.5075>; else goto <D.5076>;
+  <D.5076>:;
+  FreeMemory ((farvoid *) arraybase, &systemerror);
+  locassignstruct->iterspersec = ((double) locassignstruct->numarrays * iterations) / TicksToFracSecs (accumtime);
+  if (locassignstruct->adjust == 0)
+    {
+      locassignstruct->adjust = 1;
+    }
+  return;
+}
+
+
+;; Function DoAssignIteration (null)
+;; enabled by -tree-original
+
+
+{
+  struct longptr abase;
+  long unsigned int elapsed;
+  long unsigned int i;
+
+    struct longptr abase;
+    long unsigned int elapsed;
+    long unsigned int i;
+  abase.ptrs.p = (long int *) arraybase;
+  LoadAssignArrayWithRand (arraybase, numarrays);
+  elapsed = StartStopwatch ();
+  i = 0;
+  goto <D.5085>;
+  <D.5084>:;
+  Assignment ((farlong[101] *) abase.ptrs.ap);
+  abase.ptrs.p = abase.ptrs.p + 81608;
+  i++ ;
+  <D.5085>:;
+  if (i < numarrays) goto <D.5084>; else goto <D.5086>;
+  <D.5086>:;
+  return StopStopwatch (elapsed);
+}
+
+
+;; Function LoadAssignArrayWithRand (null)
+;; enabled by -tree-original
+
+
+{
+  struct longptr abase;
+  struct longptr abase1;
+  long unsigned int i;
+
+    struct longptr abase;
+    struct longptr abase1;
+    long unsigned int i;
+  abase.ptrs.p = (long int *) arraybase;
+  abase1.ptrs.p = (long int *) arraybase;
+  LoadAssign ((farlong[101] *) abase.ptrs.ap);
+  if (numarrays > 1)
+    {
+      i = 1;
+      goto <D.5095>;
+      <D.5094>:;
+      abase1.ptrs.p = abase1.ptrs.p + 81608;
+      CopyToAssign ((farlong[101] *) abase.ptrs.ap, (long int[101] *) abase1.ptrs.ap);
+      i++ ;
+      <D.5095>:;
+      if (i < numarrays) goto <D.5094>; else goto <D.5096>;
+      <D.5096>:;
+    }
+  return;
+}
+
+
+;; Function LoadAssign (null)
+;; enabled by -tree-original
+
+
+{
+  short unsigned int i;
+  short unsigned int j;
+
+    short unsigned int i;
+    short unsigned int j;
+  randnum (13);
+  i = 0;
+  goto <D.5106>;
+  <D.5105>:;
+  j = 0;
+  goto <D.5103>;
+  <D.5102>:;
+  (*(arraybase + (sizetype) ((long unsigned int) i * 808)))[(int) j] = (farlong) abs_randwc (5000000);
+  j++ ;
+  <D.5103>:;
+  if (j <= 100) goto <D.5102>; else goto <D.5104>;
+  <D.5104>:;
+  i++ ;
+  <D.5106>:;
+  if (i <= 100) goto <D.5105>; else goto <D.5107>;
+  <D.5107>:;
+  return;
+}
+
+
+;; Function CopyToAssign (null)
+;; enabled by -tree-original
+
+
+{
+  short unsigned int i;
+  short unsigned int j;
+
+    short unsigned int i;
+    short unsigned int j;
+  i = 0;
+  goto <D.5118>;
+  <D.5117>:;
+  j = 0;
+  goto <D.5115>;
+  <D.5114>:;
+  (*(arrayto + (sizetype) ((long unsigned int) i * 808)))[(int) j] = (*(arrayfrom + (sizetype) ((long unsigned int) i * 808)))[(int) j];
+  j++ ;
+  <D.5115>:;
+  if (j <= 100) goto <D.5114>; else goto <D.5116>;
+  <D.5116>:;
+  i++ ;
+  <D.5118>:;
+  if (i <= 100) goto <D.5117>; else goto <D.5119>;
+  <D.5119>:;
+  return;
+}
+
+
+;; Function Assignment (null)
+;; enabled by -tree-original
+
+
+{
+  short int assignedtableau[101][101];
+
+    short int assignedtableau[101][101];
+  calc_minimum_costs ((long int[101] *) arraybase);
+  goto <D.5125>;
+  <D.5124>:;
+  second_assignments ((long int[101] *) arraybase, (short int[101] *) &assignedtableau);
+  <D.5125>:;
+  if (first_assignments ((long int[101] *) arraybase, (short int[101] *) &assignedtableau) != 101) goto <D.5124>; else goto <D.5126>;
+  <D.5126>:;
+  return;
+}
+
+
+;; Function calc_minimum_costs (null)
+;; enabled by -tree-original
+
+
+{
+  short unsigned int i;
+  short unsigned int j;
+  long int currentmin;
+
+    short unsigned int i;
+    short unsigned int j;
+    long int currentmin;
+  i = 0;
+  goto <D.5140>;
+  <D.5139>:;
+  currentmin = 9223372036854775807;
+  j = 0;
+  goto <D.5134>;
+  <D.5133>:;
+  if ((*(tableau + (sizetype) ((long unsigned int) i * 808)))[(int) j] < currentmin)
+    {
+      currentmin = (*(tableau + (sizetype) ((long unsigned int) i * 808)))[(int) j];
+    }
+  j++ ;
+  <D.5134>:;
+  if (j <= 100) goto <D.5133>; else goto <D.5135>;
+  <D.5135>:;
+  j = 0;
+  goto <D.5137>;
+  <D.5136>:;
+  (*(tableau + (sizetype) ((long unsigned int) i * 808)))[(int) j] = (*(tableau + (sizetype) ((long unsigned int) i * 808)))[(int) j] - currentmin;
+  j++ ;
+  <D.5137>:;
+  if (j <= 100) goto <D.5136>; else goto <D.5138>;
+  <D.5138>:;
+  i++ ;
+  <D.5140>:;
+  if (i <= 100) goto <D.5139>; else goto <D.5141>;
+  <D.5141>:;
+  j = 0;
+  goto <D.5149>;
+  <D.5148>:;
+  currentmin = 9223372036854775807;
+  i = 0;
+  goto <D.5143>;
+  <D.5142>:;
+  if ((*(tableau + (sizetype) ((long unsigned int) i * 808)))[(int) j] < currentmin)
+    {
+      currentmin = (*(tableau + (sizetype) ((long unsigned int) i * 808)))[(int) j];
+    }
+  i++ ;
+  <D.5143>:;
+  if (i <= 100) goto <D.5142>; else goto <D.5144>;
+  <D.5144>:;
+  if (currentmin != 0)
+    {
+      i = 0;
+      goto <D.5146>;
+      <D.5145>:;
+      (*(tableau + (sizetype) ((long unsigned int) i * 808)))[(int) j] = (*(tableau + (sizetype) ((long unsigned int) i * 808)))[(int) j] - currentmin;
+      i++ ;
+      <D.5146>:;
+      if (i <= 100) goto <D.5145>; else goto <D.5147>;
+      <D.5147>:;
+    }
+  j++ ;
+  <D.5149>:;
+  if (j <= 100) goto <D.5148>; else goto <D.5150>;
+  <D.5150>:;
+  return;
+}
+
+
+;; Function first_assignments (null)
+;; enabled by -tree-original
+
+
+{
+  short unsigned int i;
+  short unsigned int j;
+  short unsigned int k;
+  short unsigned int numassigns;
+  short unsigned int totnumassigns;
+  short unsigned int numzeros;
+  int selected = 0;
+
+    short unsigned int i;
+    short unsigned int j;
+    short unsigned int k;
+    short unsigned int numassigns;
+    short unsigned int totnumassigns;
+    short unsigned int numzeros;
+    int selected = 0;
+  i = 0;
+  goto <D.5166>;
+  <D.5165>:;
+  j = 0;
+  goto <D.5163>;
+  <D.5162>:;
+  (*(assignedtableau + (sizetype) ((long unsigned int) i * 202)))[(int) j] = 0;
+  j++ ;
+  <D.5163>:;
+  if (j <= 100) goto <D.5162>; else goto <D.5164>;
+  <D.5164>:;
+  i++ ;
+  <D.5166>:;
+  if (i <= 100) goto <D.5165>; else goto <D.5167>;
+  <D.5167>:;
+  totnumassigns = 0;
+  <D.5186>:;
+  numassigns = 0;
+  i = 0;
+  goto <D.5175>;
+  <D.5174>:;
+  numzeros = 0;
+  j = 0;
+  goto <D.5169>;
+  <D.5168>:;
+  if ((*(tableau + (sizetype) ((long unsigned int) i * 808)))[(int) j] == 0)
+    {
+      if ((*(assignedtableau + (sizetype) ((long unsigned int) i * 202)))[(int) j] == 0)
+        {
+          numzeros++ ;
+          selected = (int) j;
+        }
+    }
+  j++ ;
+  <D.5169>:;
+  if (j <= 100) goto <D.5168>; else goto <D.5170>;
+  <D.5170>:;
+  if (numzeros == 1)
+    {
+      numassigns++ ;
+      totnumassigns++ ;
+      (*(assignedtableau + (sizetype) ((long unsigned int) i * 202)))[selected] = 1;
+      k = 0;
+      goto <D.5172>;
+      <D.5171>:;
+      if (k != i && (*(tableau + (sizetype) ((long unsigned int) k * 808)))[selected] == 0)
+        {
+          (*(assignedtableau + (sizetype) ((long unsigned int) k * 202)))[selected] = 2;
+        }
+      k++ ;
+      <D.5172>:;
+      if (k <= 100) goto <D.5171>; else goto <D.5173>;
+      <D.5173>:;
+    }
+  i++ ;
+  <D.5175>:;
+  if (i <= 100) goto <D.5174>; else goto <D.5176>;
+  <D.5176>:;
+  j = 0;
+  goto <D.5184>;
+  <D.5183>:;
+  numzeros = 0;
+  i = 0;
+  goto <D.5178>;
+  <D.5177>:;
+  if ((*(tableau + (sizetype) ((long unsigned int) i * 808)))[(int) j] == 0)
+    {
+      if ((*(assignedtableau + (sizetype) ((long unsigned int) i * 202)))[(int) j] == 0)
+        {
+          numzeros++ ;
+          selected = (int) i;
+        }
+    }
+  i++ ;
+  <D.5178>:;
+  if (i <= 100) goto <D.5177>; else goto <D.5179>;
+  <D.5179>:;
+  if (numzeros == 1)
+    {
+      numassigns++ ;
+      totnumassigns++ ;
+      (*(assignedtableau + (sizetype) ((long unsigned int) selected * 202)))[(int) j] = 1;
+      k = 0;
+      goto <D.5181>;
+      <D.5180>:;
+      if (k != j && (*(tableau + (sizetype) ((long unsigned int) selected * 808)))[(int) k] == 0)
+        {
+          (*(assignedtableau + (sizetype) ((long unsigned int) selected * 202)))[(int) k] = 2;
+        }
+      k++ ;
+      <D.5181>:;
+      if (k <= 100) goto <D.5180>; else goto <D.5182>;
+      <D.5182>:;
+    }
+  j++ ;
+  <D.5184>:;
+  if (j <= 100) goto <D.5183>; else goto <D.5185>;
+  <D.5185>:;
+  if (numassigns != 0) goto <D.5186>; else goto <D.5187>;
+  <D.5187>:;
+  if (totnumassigns == 101)
+    {
+      return (int) totnumassigns;
+    }
+  i = 0;
+  goto <D.5198>;
+  <D.5197>:;
+  selected = -1;
+  j = 0;
+  goto <D.5190>;
+  <D.5189>:;
+  if ((*(tableau + (sizetype) ((long unsigned int) i * 808)))[(int) j] == 0 && (*(assignedtableau + (sizetype) ((long unsigned int) i * 202)))[(int) j] == 0)
+    {
+      selected = (int) j;
+      goto <D.5188>;
+    }
+  j++ ;
+  <D.5190>:;
+  if (j <= 100) goto <D.5189>; else goto <D.5188>;
+  <D.5188>:;
+  if (selected != -1)
+    {
+      (*(assignedtableau + (sizetype) ((long unsigned int) i * 202)))[selected] = 1;
+      totnumassigns++ ;
+      k = 0;
+      goto <D.5192>;
+      <D.5191>:;
+      if ((int) k != selected && (*(tableau + (sizetype) ((long unsigned int) i * 808)))[(int) k] == 0)
+        {
+          (*(assignedtableau + (sizetype) ((long unsigned int) i * 202)))[(int) k] = 2;
+        }
+      k++ ;
+      <D.5192>:;
+      if (k <= 100) goto <D.5191>; else goto <D.5193>;
+      <D.5193>:;
+      k = 0;
+      goto <D.5195>;
+      <D.5194>:;
+      if (k != i && (*(tableau + (sizetype) ((long unsigned int) k * 808)))[selected] == 0)
+        {
+          (*(assignedtableau + (sizetype) ((long unsigned int) k * 202)))[selected] = 2;
+        }
+      k++ ;
+      <D.5195>:;
+      if (k <= 100) goto <D.5194>; else goto <D.5196>;
+      <D.5196>:;
+    }
+  i++ ;
+  <D.5198>:;
+  if (i <= 100) goto <D.5197>; else goto <D.5199>;
+  <D.5199>:;
+  return (int) totnumassigns;
+}
+
+
+;; Function second_assignments (null)
+;; enabled by -tree-original
+
+
+{
+  int i;
+  int j;
+  short int linesrow[101];
+  short int linescol[101];
+  long int smallest;
+  short unsigned int numassigns;
+  short unsigned int newrows;
+
+    int i;
+    int j;
+    short int linesrow[101];
+    short int linescol[101];
+    long int smallest;
+    short unsigned int numassigns;
+    short unsigned int newrows;
+  i = 0;
+  goto <D.5212>;
+  <D.5211>:;
+  linesrow[i] = 0;
+  i++ ;
+  <D.5212>:;
+  if (i <= 100) goto <D.5211>; else goto <D.5213>;
+  <D.5213>:;
+  i = 0;
+  goto <D.5215>;
+  <D.5214>:;
+  linescol[i] = 0;
+  i++ ;
+  <D.5215>:;
+  if (i <= 100) goto <D.5214>; else goto <D.5216>;
+  <D.5216>:;
+  i = 0;
+  goto <D.5221>;
+  <D.5220>:;
+  numassigns = 0;
+  j = 0;
+  goto <D.5219>;
+  <D.5218>:;
+  if ((*(assignedtableau + (sizetype) ((long unsigned int) i * 202)))[j] == 1)
+    {
+      numassigns++ ;
+      goto <D.5217>;
+    }
+  j++ ;
+  <D.5219>:;
+  if (j <= 100) goto <D.5218>; else goto <D.5217>;
+  <D.5217>:;
+  if (numassigns == 0)
+    {
+      linesrow[i] = 1;
+    }
+  i++ ;
+  <D.5221>:;
+  if (i <= 100) goto <D.5220>; else goto <D.5222>;
+  <D.5222>:;
+  <D.5235>:;
+  newrows = 0;
+  i = 0;
+  goto <D.5227>;
+  <D.5226>:;
+  if (linesrow[i] == 1)
+    {
+      j = 0;
+      goto <D.5224>;
+      <D.5223>:;
+      if ((*(tableau + (sizetype) ((long unsigned int) i * 808)))[j] == 0)
+        {
+          linescol[j] = 1;
+        }
+      j++ ;
+      <D.5224>:;
+      if (j <= 100) goto <D.5223>; else goto <D.5225>;
+      <D.5225>:;
+    }
+  i++ ;
+  <D.5227>:;
+  if (i <= 100) goto <D.5226>; else goto <D.5228>;
+  <D.5228>:;
+  j = 0;
+  goto <D.5233>;
+  <D.5232>:;
+  if (linescol[j] == 1)
+    {
+      i = 0;
+      goto <D.5230>;
+      <D.5229>:;
+      if ((*(assignedtableau + (sizetype) ((long unsigned int) i * 202)))[j] == 1 && linesrow[i] != 1)
+        {
+          linesrow[i] = 1;
+          newrows++ ;
+        }
+      i++ ;
+      <D.5230>:;
+      if (i <= 100) goto <D.5229>; else goto <D.5231>;
+      <D.5231>:;
+    }
+  j++ ;
+  <D.5233>:;
+  if (j <= 100) goto <D.5232>; else goto <D.5234>;
+  <D.5234>:;
+  if (newrows != 0) goto <D.5235>; else goto <D.5236>;
+  <D.5236>:;
+  smallest = 9223372036854775807;
+  i = 0;
+  goto <D.5241>;
+  <D.5240>:;
+  if (linesrow[i] != 0)
+    {
+      j = 0;
+      goto <D.5238>;
+      <D.5237>:;
+      if (linescol[j] != 1)
+        {
+          if ((*(tableau + (sizetype) ((long unsigned int) i * 808)))[j] < smallest)
+            {
+              smallest = (*(tableau + (sizetype) ((long unsigned int) i * 808)))[j];
+            }
+        }
+      j++ ;
+      <D.5238>:;
+      if (j <= 100) goto <D.5237>; else goto <D.5239>;
+      <D.5239>:;
+    }
+  i++ ;
+  <D.5241>:;
+  if (i <= 100) goto <D.5240>; else goto <D.5242>;
+  <D.5242>:;
+  i = 0;
+  goto <D.5247>;
+  <D.5246>:;
+  if (linesrow[i] != 0)
+    {
+      j = 0;
+      goto <D.5244>;
+      <D.5243>:;
+      if (linescol[j] != 1)
+        {
+          (*(tableau + (sizetype) ((long unsigned int) i * 808)))[j] = (*(tableau + (sizetype) ((long unsigned int) i * 808)))[j] - smallest;
+        }
+      j++ ;
+      <D.5244>:;
+      if (j <= 100) goto <D.5243>; else goto <D.5245>;
+      <D.5245>:;
+    }
+  i++ ;
+  <D.5247>:;
+  if (i <= 100) goto <D.5246>; else goto <D.5248>;
+  <D.5248>:;
+  i = 0;
+  goto <D.5253>;
+  <D.5252>:;
+  if (linesrow[i] == 0)
+    {
+      j = 0;
+      goto <D.5250>;
+      <D.5249>:;
+      if (linescol[j] == 1)
+        {
+          (*(tableau + (sizetype) ((long unsigned int) i * 808)))[j] = (*(tableau + (sizetype) ((long unsigned int) i * 808)))[j] + smallest;
+        }
+      j++ ;
+      <D.5250>:;
+      if (j <= 100) goto <D.5249>; else goto <D.5251>;
+      <D.5251>:;
+    }
+  i++ ;
+  <D.5253>:;
+  if (i <= 100) goto <D.5252>; else goto <D.5254>;
+  <D.5254>:;
+  return;
+}
+
+
+;; Function DoIDEA (null)
+;; enabled by -tree-original
+
+
+{
+  struct IDEAStruct * locideastruct;
+  int i;
+  u16 Z[52];
+  u16 DK[52];
+  u16 userkey[8];
+  long unsigned int accumtime;
+  double iterations;
+  char * errorcontext;
+  int systemerror;
+  faruchar * plain1;
+  faruchar * crypt1;
+  faruchar * plain2;
+
+    struct IDEAStruct * locideastruct;
+    int i;
+    u16 Z[52];
+    u16 DK[52];
+    u16 userkey[8];
+    long unsigned int accumtime;
+    double iterations;
+    char * errorcontext;
+    int systemerror;
+    faruchar * plain1;
+    faruchar * crypt1;
+    faruchar * plain2;
+  locideastruct = &global_ideastruct;
+  errorcontext = (char *) "CPU:IDEA";
+  randnum (3);
+  i = 0;
+  goto <D.5271>;
+  <D.5270>:;
+  userkey[i] = (short unsigned int) abs_randwc (60000);
+  i++ ;
+  <D.5271>:;
+  if (i <= 7) goto <D.5270>; else goto <D.5272>;
+  <D.5272>:;
+  i = 0;
+  goto <D.5274>;
+  <D.5273>:;
+  Z[i] = 0;
+  i++ ;
+  <D.5274>:;
+  if (i <= 51) goto <D.5273>; else goto <D.5275>;
+  <D.5275>:;
+  en_key_idea ((u16 *) &userkey, (u16 *) &Z);
+  de_key_idea ((u16 *) &Z, (u16 *) &DK);
+  plain1 = (faruchar *) AllocateMemory (locideastruct->arraysize, &systemerror);
+  if (systemerror != 0)
+    {
+      ReportError (errorcontext, systemerror);
+      ErrorExit ();
+    }
+  crypt1 = (faruchar *) AllocateMemory (locideastruct->arraysize, &systemerror);
+  if (systemerror != 0)
+    {
+      ReportError (errorcontext, systemerror);
+      FreeMemory ((farvoid *) plain1, &systemerror);
+      ErrorExit ();
+    }
+  plain2 = (faruchar *) AllocateMemory (locideastruct->arraysize, &systemerror);
+  if (systemerror != 0)
+    {
+      ReportError (errorcontext, systemerror);
+      FreeMemory ((farvoid *) plain1, &systemerror);
+      FreeMemory ((farvoid *) crypt1, &systemerror);
+      ErrorExit ();
+    }
+  i = 0;
+  goto <D.5277>;
+  <D.5276>:;
+  *(plain1 + (sizetype) i) = (unsigned char) abs_randwc (255);
+  i++ ;
+  <D.5277>:;
+  if ((long unsigned int) i < locideastruct->arraysize) goto <D.5276>; else goto <D.5278>;
+  <D.5278>:;
+  if (locideastruct->adjust == 0)
+    {
+      locideastruct->loops = 100;
+      goto <D.5281>;
+      <D.5280>:;
+      if (DoIDEAIteration (plain1, crypt1, plain2, locideastruct->arraysize, locideastruct->loops, (u16 *) &Z, (u16 *) &DK) > global_min_ticks)
+        {
+          goto <D.5279>;
+        }
+      locideastruct->loops = locideastruct->loops + 10;
+      <D.5281>:;
+      if (locideastruct->loops <= 499999) goto <D.5280>; else goto <D.5279>;
+      <D.5279>:;
+    }
+  accumtime = 0;
+  iterations = 0.0;
+  <D.5282>:;
+  SAVE_EXPR <DoIDEAIteration (plain1, crypt1, plain2, locideastruct->arraysize, locideastruct->loops, (u16 *) &Z, (u16 *) &DK)>;, accumtime = SAVE_EXPR <DoIDEAIteration (plain1, crypt1, plain2, locideastruct->arraysize, locideastruct->loops, (u16 *) &Z, (u16 *) &DK)> + accumtime;;
+  iterations = (double) locideastruct->loops + iterations;
+  if (TicksToSecs (accumtime) < locideastruct->request_secs) goto <D.5282>; else goto <D.5283>;
+  <D.5283>:;
+  FreeMemory ((farvoid *) plain1, &systemerror);
+  FreeMemory ((farvoid *) crypt1, &systemerror);
+  FreeMemory ((farvoid *) plain2, &systemerror);
+  locideastruct->iterspersec = iterations / TicksToFracSecs (accumtime);
+  if (locideastruct->adjust == 0)
+    {
+      locideastruct->adjust = 1;
+    }
+  return;
+}
+
+
+;; Function DoIDEAIteration (null)
+;; enabled by -tree-original
+
+
+{
+  register long unsigned int i;
+  register long unsigned int j;
+  long unsigned int elapsed;
+
+    register long unsigned int i;
+    register long unsigned int j;
+    long unsigned int elapsed;
+  elapsed = StartStopwatch ();
+  i = 0;
+  goto <D.5303>;
+  <D.5302>:;
+  j = 0;
+  goto <D.5297>;
+  <D.5296>:;
+  cipher_idea ((u16 *) (plain1 + (sizetype) j), (u16 *) (crypt1 + (sizetype) j), Z);
+  j = j + 8;
+  <D.5297>:;
+  if (j < arraysize) goto <D.5296>; else goto <D.5298>;
+  <D.5298>:;
+  j = 0;
+  goto <D.5300>;
+  <D.5299>:;
+  cipher_idea ((u16 *) (crypt1 + (sizetype) j), (u16 *) (plain2 + (sizetype) j), DK);
+  j = j + 8;
+  <D.5300>:;
+  if (j < arraysize) goto <D.5299>; else goto <D.5301>;
+  <D.5301>:;
+  i++ ;
+  <D.5303>:;
+  if (i < nloops) goto <D.5302>; else goto <D.5304>;
+  <D.5304>:;
+  return StopStopwatch (elapsed);
+}
+
+
+;; Function mul (null)
+;; enabled by -tree-original
+
+
+{
+  register u32 p;
+
+    register u32 p;
+  if (a != 0)
+    {
+      if (b != 0)
+        {
+          p = (unsigned int) ((int) a * (int) b);
+          b = (u16) p;
+          a = (short unsigned int) (p >> 16);
+          return (b - a) + (b < a);
+        }
+      else
+        {
+          return 1 - a;
+        }
+    }
+  else
+    {
+      return 1 - b;
+    }
+}
+
+
+;; Function inv (null)
+;; enabled by -tree-original
+
+
+{
+  u16 t0;
+  u16 t1;
+  u16 q;
+  u16 y;
+
+    u16 t0;
+    u16 t1;
+    u16 q;
+    u16 y;
+  if (x <= 1)
+    {
+      return x;
+    }
+  t1 = (u16) (65537 / (int) x);
+  y = (u16) (65537 % (int) x);
+  if (y == 1)
+    {
+      return (u16) (1 - (unsigned short) t1);
+    }
+  t0 = 1;
+  <D.5317>:;
+  q = (u16) ((short unsigned int) x / (short unsigned int) y);
+  x = (u16) ((short unsigned int) x % (short unsigned int) y);
+  t0 = q * t1 + t0;
+  if (x == 1)
+    {
+      return t0;
+    }
+  q = (u16) ((short unsigned int) y / (short unsigned int) x);
+  y = (u16) ((short unsigned int) y % (short unsigned int) x);
+  t1 = q * t0 + t1;
+  if (y != 1) goto <D.5317>; else goto <D.5318>;
+  <D.5318>:;
+  return (u16) (1 - (unsigned short) t1);
+}
+
+
+;; Function en_key_idea (null)
+;; enabled by -tree-original
+
+
+{
+  int i;
+  int j;
+
+    int i;
+    int j;
+  j = 0;
+  goto <D.5326>;
+  <D.5325>:;
+  *(Z + (sizetype) ((long unsigned int) j * 2)) = *userkey++ ;
+  j++ ;
+  <D.5326>:;
+  if (j <= 7) goto <D.5325>; else goto <D.5327>;
+  <D.5327>:;
+  i = 0;
+  goto <D.5329>;
+  <D.5328>:;
+  i++ ;
+  *(Z + ((sizetype) i + 7) * 2) = (u16) ((signed short) ((int) *(Z + (sizetype) (((long unsigned int) i & 7) * 2)) << 9) | (signed short) ((short unsigned int) *(Z + (sizetype) (((long unsigned int) (i + 1) & 7) * 2)) >> 7));
+  Z = Z + (sizetype) (((long unsigned int) i & 8) * 2);
+  i = i & 7;
+  j++ ;
+  <D.5329>:;
+  if (j <= 51) goto <D.5328>; else goto <D.5330>;
+  <D.5330>:;
+  return;
+}
+
+
+;; Function de_key_idea (null)
+;; enabled by -tree-original
+
+
+{
+  u16 TT[52];
+  int j;
+  u16 t1;
+  u16 t2;
+  u16 t3;
+  u16 * p;
+
+    u16 TT[52];
+    int j;
+    u16 t1;
+    u16 t2;
+    u16 t3;
+    u16 * p;
+  p = (u16 *) &TT + 104;
+  t1 = inv ((int) *Z++ );
+  t2 = -*Z++ ;
+  t3 = -*Z++ ;
+  * --p = inv ((int) *Z++ );
+  * --p = t3;
+  * --p = t2;
+  * --p = t1;
+  j = 1;
+  goto <D.5342>;
+  <D.5341>:;
+  t1 = *Z++ ;
+  * --p = *Z++ ;
+  * --p = t1;
+  t1 = inv ((int) *Z++ );
+  t2 = -*Z++ ;
+  t3 = -*Z++ ;
+  * --p = inv ((int) *Z++ );
+  * --p = t2;
+  * --p = t3;
+  * --p = t1;
+  j++ ;
+  <D.5342>:;
+  if (j <= 7) goto <D.5341>; else goto <D.5343>;
+  <D.5343>:;
+  t1 = *Z++ ;
+  * --p = *Z++ ;
+  * --p = t1;
+  t1 = inv ((int) *Z++ );
+  t2 = -*Z++ ;
+  t3 = -*Z++ ;
+  * --p = inv ((int) *Z++ );
+  * --p = t3;
+  * --p = t2;
+  * --p = t1;
+  j = 0;, p = (u16 *) &TT;;
+  goto <D.5345>;
+  <D.5344>:;
+  *DK++  = *p;
+  *p++  = 0;
+  j++ ;
+  <D.5345>:;
+  if (j <= 51) goto <D.5344>; else goto <D.5346>;
+  <D.5346>:;
+  return;
+}
+
+
+;; Function cipher_idea (null)
+;; enabled by -tree-original
+
+
+{
+  register u16 x1;
+  register u16 x2;
+  register u16 x3;
+  register u16 x4;
+  register u16 t1;
+  register u16 t2;
+  int r = 8;
+
+    register u16 x1;
+    register u16 x2;
+    register u16 x3;
+    register u16 x4;
+    register u16 t1;
+    register u16 t2;
+    int r = 8;
+  x1 = *in++ ;
+  x2 = *in++ ;
+  x3 = *in++ ;
+  x4 = *in;
+  <D.5359>:;
+  x1 = mul ((int) x1, (int) *Z++ );
+  SAVE_EXPR <*Z++ >;, x2 = SAVE_EXPR <*Z++ > + x2;;
+  SAVE_EXPR <*Z++ >;, x3 = SAVE_EXPR <*Z++ > + x3;;
+  x4 = mul ((int) x4, (int) *Z++ );
+  t2 = (u16) ((short unsigned int) x1 ^ (short unsigned int) x3);
+  t2 = mul ((int) t2, (int) *Z++ );
+  t1 = (u16) ((short unsigned int) x2 ^ (short unsigned int) x4) + t2;
+  t1 = mul ((int) t1, (int) *Z++ );
+  t2 = t1 + t2;
+  x1 = (u16) ((short unsigned int) x1 ^ (short unsigned int) t1);
+  x4 = (u16) ((short unsigned int) x4 ^ (short unsigned int) t2);
+  t2 = (u16) ((short unsigned int) t2 ^ (short unsigned int) x2);
+  x2 = (u16) ((short unsigned int) x3 ^ (short unsigned int) t1);
+  x3 = t2;
+  if ( --r != 0) goto <D.5359>; else goto <D.5360>;
+  <D.5360>:;
+  x1 = mul ((int) x1, (int) *Z++ );
+  *out++  = x1;
+  *out++  = *Z++  + x3;
+  *out++  = *Z++  + x2;
+  x4 = mul ((int) x4, (int) *Z);
+  *out = x4;
+  return;
+}
+
+
+;; Function DoHuffman (null)
+;; enabled by -tree-original
+
+
+{
+  struct HuffStruct * lochuffstruct;
+  char * errorcontext;
+  int systemerror;
+  long unsigned int accumtime;
+  double iterations;
+  farchar * comparray;
+  farchar * decomparray;
+  farchar * plaintext;
+
+    struct HuffStruct * lochuffstruct;
+    char * errorcontext;
+    int systemerror;
+    long unsigned int accumtime;
+    double iterations;
+    farchar * comparray;
+    farchar * decomparray;
+    farchar * plaintext;
+  lochuffstruct = &global_huffstruct;
+  errorcontext = (char *) "CPU:Huffman";
+  plaintext = (farchar *) AllocateMemory (lochuffstruct->arraysize, &systemerror);
+  if (systemerror != 0)
+    {
+      ReportError (errorcontext, systemerror);
+      ErrorExit ();
+    }
+  comparray = (farchar *) AllocateMemory (lochuffstruct->arraysize, &systemerror);
+  if (systemerror != 0)
+    {
+      ReportError (errorcontext, systemerror);
+      FreeMemory ((farvoid *) plaintext, &systemerror);
+      ErrorExit ();
+    }
+  decomparray = (farchar *) AllocateMemory (lochuffstruct->arraysize, &systemerror);
+  if (systemerror != 0)
+    {
+      ReportError (errorcontext, systemerror);
+      FreeMemory ((farvoid *) plaintext, &systemerror);
+      FreeMemory ((farvoid *) comparray, &systemerror);
+      ErrorExit ();
+    }
+  hufftree = (struct huff_node *) AllocateMemory (10240, &systemerror);
+  if (systemerror != 0)
+    {
+      ReportError (errorcontext, systemerror);
+      FreeMemory ((farvoid *) plaintext, &systemerror);
+      FreeMemory ((farvoid *) comparray, &systemerror);
+      FreeMemory ((farvoid *) decomparray, &systemerror);
+      ErrorExit ();
+    }
+  randnum (13);
+  create_text_block (plaintext, lochuffstruct->arraysize + 18446744073709551615, 500);
+  *(plaintext + ((sizetype) lochuffstruct->arraysize + 18446744073709551615)) = 0;
+  plaintextlen = (long int) lochuffstruct->arraysize;
+  if (lochuffstruct->adjust == 0)
+    {
+      lochuffstruct->loops = 100;
+      goto <D.5374>;
+      <D.5373>:;
+      if (DoHuffIteration (plaintext, comparray, decomparray, lochuffstruct->arraysize, lochuffstruct->loops, hufftree) > global_min_ticks)
+        {
+          goto <D.5372>;
+        }
+      lochuffstruct->loops = lochuffstruct->loops + 10;
+      <D.5374>:;
+      if (lochuffstruct->loops <= 499999) goto <D.5373>; else goto <D.5372>;
+      <D.5372>:;
+    }
+  accumtime = 0;
+  iterations = 0.0;
+  <D.5375>:;
+  SAVE_EXPR <DoHuffIteration (plaintext, comparray, decomparray, lochuffstruct->arraysize, lochuffstruct->loops, hufftree)>;, accumtime = SAVE_EXPR <DoHuffIteration (plaintext, comparray, decomparray, lochuffstruct->arraysize, lochuffstruct->loops, hufftree)> + accumtime;;
+  iterations = (double) lochuffstruct->loops + iterations;
+  if (TicksToSecs (accumtime) < lochuffstruct->request_secs) goto <D.5375>; else goto <D.5376>;
+  <D.5376>:;
+  FreeMemory ((farvoid *) plaintext, &systemerror);
+  FreeMemory ((farvoid *) comparray, &systemerror);
+  FreeMemory ((farvoid *) decomparray, &systemerror);
+  FreeMemory ((farvoid *) hufftree, &systemerror);
+  lochuffstruct->iterspersec = iterations / TicksToFracSecs (accumtime);
+  if (lochuffstruct->adjust == 0)
+    {
+      lochuffstruct->adjust = 1;
+    }
+}
+
+
+;; Function create_text_line (null)
+;; enabled by -tree-original
+
+
+{
+  long int charssofar;
+  long int tomove;
+  char myword[40];
+  farchar * wordptr;
+
+    long int charssofar;
+    long int tomove;
+    char myword[40];
+    farchar * wordptr;
+  charssofar = 0;
+  <D.5385>:;
+  wordptr = (farchar *) wordcatarray[abs_randwc (50)];
+  MoveMemory ((farvoid *) &myword, (farvoid *) wordptr, (long unsigned int) strlen ((const char *) wordptr) + 1);
+  tomove = (long int) (strlen ((const char *) &myword) + 1);
+  myword[tomove + -1] = 32;
+  if (tomove + charssofar > nchars)
+    {
+      tomove = nchars - charssofar;
+    }
+  MoveMemory ((farvoid *) dt, (farvoid *) &myword, (long unsigned int) tomove);
+  charssofar = charssofar + tomove;
+  dt = dt + (sizetype) tomove;
+  if (charssofar < nchars) goto <D.5385>; else goto <D.5386>;
+  <D.5386>:;
+  return;
+}
+
+
+;; Function create_text_block (null)
+;; enabled by -tree-original
+
+
+{
+  long unsigned int bytessofar;
+  long unsigned int linelen;
+
+    long unsigned int bytessofar;
+    long unsigned int linelen;
+  bytessofar = 0;
+  <D.5394>:;
+  linelen = (long unsigned int) (abs_randwc ((u32) ((int) maxlinlen + -6)) + 6);
+  if (linelen + bytessofar > tblen)
+    {
+      linelen = tblen - bytessofar;
+    }
+  if (linelen > 1)
+    {
+      create_text_line (tb, (long int) linelen);
+    }
+  tb = tb + ((sizetype) linelen + 18446744073709551615);
+  *tb++  = 10;
+  bytessofar = bytessofar + linelen;
+  if (bytessofar < tblen) goto <D.5394>; else goto <D.5395>;
+  <D.5395>:;
+}
+
+
+;; Function DoHuffIteration (null)
+;; enabled by -tree-original
+
+
+{
+  int i;
+  long int j;
+  int root;
+  float lowfreq1;
+  float lowfreq2;
+  int lowidx1;
+  int lowidx2;
+  long int bitoffset;
+  long int textoffset;
+  long int maxbitoffset;
+  long int bitstringlen;
+  int c;
+  char bitstring[30];
+  long unsigned int elapsed;
+
+    int i;
+    long int j;
+    int root;
+    float lowfreq1;
+    float lowfreq2;
+    int lowidx1;
+    int lowidx2;
+    long int bitoffset;
+    long int textoffset;
+    long int maxbitoffset;
+    long int bitstringlen;
+    int c;
+    char bitstring[30];
+    long unsigned int elapsed;
+  elapsed = StartStopwatch ();
+  goto <D.5453>;
+  <D.5452>:;
+  i = 0;
+  goto <D.5419>;
+  <D.5418>:;
+  (hufftree + (sizetype) ((long unsigned int) i * 20))->freq = 0.0;
+  (hufftree + (sizetype) ((long unsigned int) i * 20))->c = (unsigned char) i;
+  i++ ;
+  <D.5419>:;
+  if (i <= 255) goto <D.5418>; else goto <D.5420>;
+  <D.5420>:;
+  j = 0;
+  goto <D.5422>;
+  <D.5421>:;
+  (hufftree + (sizetype) ((long unsigned int) *(plaintext + (sizetype) j) * 20))->freq = (hufftree + (sizetype) ((long unsigned int) *(plaintext + (sizetype) j) * 20))->freq + 1.0e+0;
+  j++ ;
+  <D.5422>:;
+  if ((long unsigned int) j < arraysize) goto <D.5421>; else goto <D.5423>;
+  <D.5423>:;
+  i = 0;
+  goto <D.5425>;
+  <D.5424>:;
+  if ((hufftree + (sizetype) ((long unsigned int) i * 20))->freq != 0.0)
+    {
+      (hufftree + (sizetype) ((long unsigned int) i * 20))->freq = (hufftree + (sizetype) ((long unsigned int) i * 20))->freq / (float) arraysize;
+    }
+  i++ ;
+  <D.5425>:;
+  if (i <= 255) goto <D.5424>; else goto <D.5426>;
+  <D.5426>:;
+  bzero ((void *) (hufftree + 5120), 5120);
+  i = 0;
+  goto <D.5428>;
+  <D.5427>:;
+  if ((hufftree + (sizetype) ((long unsigned int) i * 20))->freq == 0.0)
+    {
+      (hufftree + (sizetype) ((long unsigned int) i * 20))->parent = 32000;
+    }
+  else
+    {
+      (hufftree + (sizetype) ((long unsigned int) i * 20))->parent = (hufftree + (sizetype) ((long unsigned int) i * 20))->left = (hufftree + (sizetype) ((long unsigned int) i * 20))->right = -1;
+    }
+  i++ ;
+  <D.5428>:;
+  if (i <= 511) goto <D.5427>; else goto <D.5429>;
+  <D.5429>:;
+  root = 255;
+  <D.5437>:;
+  lowfreq1 = 2.0e+0;
+  lowfreq2 = 2.0e+0;
+  lowidx1 = -1;
+  lowidx2 = -1;
+  i = 0;
+  goto <D.5431>;
+  <D.5430>:;
+  if ((hufftree + (sizetype) ((long unsigned int) i * 20))->parent < 0)
+    {
+      if ((hufftree + (sizetype) ((long unsigned int) i * 20))->freq < lowfreq1)
+        {
+          lowfreq1 = (hufftree + (sizetype) ((long unsigned int) i * 20))->freq;
+          lowidx1 = i;
+        }
+    }
+  i++ ;
+  <D.5431>:;
+  if (i <= root) goto <D.5430>; else goto <D.5432>;
+  <D.5432>:;
+  if (lowidx1 == -1)
+    {
+      goto <D.5433>;
+    }
+  i = 0;
+  goto <D.5435>;
+  <D.5434>:;
+  if ((hufftree + (sizetype) ((long unsigned int) i * 20))->parent < 0 && i != lowidx1)
+    {
+      if ((hufftree + (sizetype) ((long unsigned int) i * 20))->freq < lowfreq2)
+        {
+          lowfreq2 = (hufftree + (sizetype) ((long unsigned int) i * 20))->freq;
+          lowidx2 = i;
+        }
+    }
+  i++ ;
+  <D.5435>:;
+  if (i <= root) goto <D.5434>; else goto <D.5436>;
+  <D.5436>:;
+  if (lowidx2 == -1)
+    {
+      goto <D.5433>;
+    }
+  root++ ;
+  (hufftree + (sizetype) ((long unsigned int) lowidx1 * 20))->parent = root;
+  (hufftree + (sizetype) ((long unsigned int) lowidx2 * 20))->parent = root;
+  (hufftree + (sizetype) ((long unsigned int) root * 20))->freq = lowfreq1 + lowfreq2;
+  (hufftree + (sizetype) ((long unsigned int) root * 20))->left = lowidx1;
+  (hufftree + (sizetype) ((long unsigned int) root * 20))->right = lowidx2;
+  (hufftree + (sizetype) ((long unsigned int) root * 20))->parent = -2;
+  goto <D.5437>;
+  <D.5433>:;
+  bitoffset = 0;
+  i = 0;
+  goto <D.5445>;
+  <D.5444>:;
+  c = (int) *(plaintext + (sizetype) i);
+  bitstringlen = 0;
+  goto <D.5439>;
+  <D.5438>:;
+  if ((hufftree + (sizetype) ((long unsigned int) (hufftree + (sizetype) ((long unsigned int) c * 20))->parent * 20))->left == c)
+    {
+      bitstring[bitstringlen] = 48;
+    }
+  else
+    {
+      bitstring[bitstringlen] = 49;
+    }
+  c = (hufftree + (sizetype) ((long unsigned int) c * 20))->parent;
+  bitstringlen++ ;
+  <D.5439>:;
+  if ((hufftree + (sizetype) ((long unsigned int) c * 20))->parent != -2) goto <D.5438>; else goto <D.5440>;
+  <D.5440>:;
+  goto <D.5442>;
+  <D.5441>:;
+  SetCompBit ((u8 *) comparray, (unsigned int) bitoffset, (int) bitstring[bitstringlen]);
+  bitoffset++ ;
+  <D.5442>:;
+  if (bitstringlen--  != 0) goto <D.5441>; else goto <D.5443>;
+  <D.5443>:;
+  i++ ;
+  <D.5445>:;
+  if ((long unsigned int) i < arraysize) goto <D.5444>; else goto <D.5446>;
+  <D.5446>:;
+  maxbitoffset = bitoffset;
+  bitoffset = 0;
+  textoffset = 0;
+  <D.5450>:;
+  i = root;
+  goto <D.5448>;
+  <D.5447>:;
+  if (GetCompBit ((u8 *) comparray, (unsigned int) bitoffset) == 0)
+    {
+      i = (hufftree + (sizetype) ((long unsigned int) i * 20))->left;
+    }
+  else
+    {
+      i = (hufftree + (sizetype) ((long unsigned int) i * 20))->right;
+    }
+  bitoffset++ ;
+  <D.5448>:;
+  if ((hufftree + (sizetype) ((long unsigned int) i * 20))->left != -1) goto <D.5447>; else goto <D.5449>;
+  <D.5449>:;
+  *(decomparray + (sizetype) textoffset) = (farchar) (hufftree + (sizetype) ((long unsigned int) i * 20))->c;
+  textoffset++ ;
+  if (bitoffset < maxbitoffset) goto <D.5450>; else goto <D.5451>;
+  <D.5451>:;
+  <D.5453>:;
+  if (nloops--  != 0) goto <D.5452>; else goto <D.5454>;
+  <D.5454>:;
+  return StopStopwatch (elapsed);
+}
+
+
+;; Function SetCompBit (null)
+;; enabled by -tree-original
+
+
+{
+  u32 byteoffset;
+  int bitnumb;
+
+    u32 byteoffset;
+    int bitnumb;
+  byteoffset = bitoffset >> 3;
+  bitnumb = (int) bitoffset & 7;
+  if (bitchar == 49)
+    {
+      *(comparray + (sizetype) byteoffset) = (u8) ((signed char) *(comparray + (sizetype) byteoffset) | (signed char) (1 << bitnumb));
+    }
+  else
+    {
+      *(comparray + (sizetype) byteoffset) = (u8) ((signed char) *(comparray + (sizetype) byteoffset) & ~(signed char) (1 << bitnumb));
+    }
+  return;
+}
+
+
+;; Function GetCompBit (null)
+;; enabled by -tree-original
+
+
+{
+  u32 byteoffset;
+  int bitnumb;
+
+    u32 byteoffset;
+    int bitnumb;
+  byteoffset = bitoffset >> 3;
+  bitnumb = (int) bitoffset & 7;
+  return 1 << bitnumb & (int) *(comparray + (sizetype) byteoffset);
+}
+
+
+;; Function DoNNET (null)
+;; enabled by -tree-original
+
+
+{
+  struct NNetStruct * locnnetstruct;
+  char * errorcontext;
+  long unsigned int accumtime;
+  double iterations;
+
+    struct NNetStruct * locnnetstruct;
+    char * errorcontext;
+    long unsigned int accumtime;
+    double iterations;
+  locnnetstruct = &global_nnetstruct;
+  errorcontext = (char *) "CPU:NNET";
+  randnum (3);
+  if (read_data_file () != 0)
+    {
+      ErrorExit ();
+    }
+  if (locnnetstruct->adjust == 0)
+    {
+      locnnetstruct->loops = 1;
+      goto <D.5477>;
+      <D.5476>:;
+      randnum (3);
+      if (DoNNetIteration (locnnetstruct->loops) > global_min_ticks)
+        {
+          goto <D.5475>;
+        }
+      locnnetstruct->loops++ ;
+      <D.5477>:;
+      if (locnnetstruct->loops <= 499999) goto <D.5476>; else goto <D.5475>;
+      <D.5475>:;
+    }
+  accumtime = 0;
+  iterations = 0.0;
+  <D.5478>:;
+  randnum (3);
+  SAVE_EXPR <DoNNetIteration (locnnetstruct->loops)>;, accumtime = SAVE_EXPR <DoNNetIteration (locnnetstruct->loops)> + accumtime;;
+  iterations = (double) locnnetstruct->loops + iterations;
+  if (TicksToSecs (accumtime) < locnnetstruct->request_secs) goto <D.5478>; else goto <D.5479>;
+  <D.5479>:;
+  locnnetstruct->iterspersec = iterations / TicksToFracSecs (accumtime);
+  if (locnnetstruct->adjust == 0)
+    {
+      locnnetstruct->adjust = 1;
+    }
+  return;
+}
+
+
+;; Function DoNNetIteration (null)
+;; enabled by -tree-original
+
+
+{
+  long unsigned int elapsed;
+  int patt;
+
+    long unsigned int elapsed;
+    int patt;
+  elapsed = StartStopwatch ();
+  goto <D.5492>;
+  <D.5491>:;
+  randomize_wts ();
+  zero_changes ();
+  iteration_count = 1;
+  learned = 0;
+  numpasses = 0;
+  goto <D.5489>;
+  <D.5488>:;
+  patt = 0;
+  goto <D.5486>;
+  <D.5485>:;
+  worst_error = 0.0;
+  move_wt_changes ();
+  do_forward_pass (patt);
+  do_back_pass (patt);
+  iteration_count++ ;
+  patt++ ;
+  <D.5486>:;
+  if (patt < numpats) goto <D.5485>; else goto <D.5487>;
+  <D.5487>:;
+  numpasses++ ;
+  learned = check_out_error ();
+  <D.5489>:;
+  if (learned == 0) goto <D.5488>; else goto <D.5490>;
+  <D.5490>:;
+  <D.5492>:;
+  if (nloops--  != 0) goto <D.5491>; else goto <D.5493>;
+  <D.5493>:;
+  return StopStopwatch (elapsed);
+}
+
+
+;; Function do_mid_forward (null)
+;; enabled by -tree-original
+
+
+{
+  double sum;
+  int neurode;
+  int i;
+
+    double sum;
+    int neurode;
+    int i;
+  neurode = 0;
+  goto <D.5504>;
+  <D.5503>:;
+  sum = 0.0;
+  i = 0;
+  goto <D.5501>;
+  <D.5500>:;
+  sum = mid_wts[neurode][i] * in_pats[patt][i] + sum;
+  i++ ;
+  <D.5501>:;
+  if (i <= 34) goto <D.5500>; else goto <D.5502>;
+  <D.5502>:;
+  sum = 1.0e+0 / (exp (-sum) + 1.0e+0);
+  mid_out[neurode] = sum;
+  neurode++ ;
+  <D.5504>:;
+  if (neurode <= 7) goto <D.5503>; else goto <D.5505>;
+  <D.5505>:;
+  return;
+}
+
+
+;; Function do_out_forward (null)
+;; enabled by -tree-original
+
+
+{
+  double sum;
+  int neurode;
+  int i;
+
+    double sum;
+    int neurode;
+    int i;
+  neurode = 0;
+  goto <D.5515>;
+  <D.5514>:;
+  sum = 0.0;
+  i = 0;
+  goto <D.5512>;
+  <D.5511>:;
+  sum = out_wts[neurode][i] * mid_out[i] + sum;
+  i++ ;
+  <D.5512>:;
+  if (i <= 7) goto <D.5511>; else goto <D.5513>;
+  <D.5513>:;
+  sum = 1.0e+0 / (exp (-sum) + 1.0e+0);
+  out_out[neurode] = sum;
+  neurode++ ;
+  <D.5515>:;
+  if (neurode <= 7) goto <D.5514>; else goto <D.5516>;
+  <D.5516>:;
+  return;
+}
+
+
+;; Function do_forward_pass (null)
+;; enabled by -tree-original
+
+
+{
+  do_mid_forward (patt);
+  do_out_forward ();
+  return;
+}
+
+
+;; Function do_out_error (null)
+;; enabled by -tree-original
+
+
+{
+  int neurode;
+  double error;
+  double tot_error;
+  double sum;
+
+    int neurode;
+    double error;
+    double tot_error;
+    double sum;
+  tot_error = 0.0;
+  sum = 0.0;
+  neurode = 0;
+  goto <D.5528>;
+  <D.5527>:;
+  out_error[neurode] = out_pats[patt][neurode] - out_out[neurode];
+  error = out_error[neurode];
+  if (error < 0.0)
+    {
+      sum = sum - error;
+      if (-error > tot_error)
+        {
+          tot_error = -error;
+        }
+    }
+  else
+    {
+      sum = sum + error;
+      if (error > tot_error)
+        {
+          tot_error = error;
+        }
+    }
+  neurode++ ;
+  <D.5528>:;
+  if (neurode <= 7) goto <D.5527>; else goto <D.5529>;
+  <D.5529>:;
+  avg_out_error[patt] = sum * 1.25e-1;
+  tot_out_error[patt] = tot_error;
+  return;
+}
+
+
+;; Function worst_pass_error (null)
+;; enabled by -tree-original
+
+
+{
+  double error;
+  double sum;
+  int i;
+
+    double error;
+    double sum;
+    int i;
+  error = 0.0;
+  sum = 0.0;
+  i = 0;
+  goto <D.5536>;
+  <D.5535>:;
+  if (tot_out_error[i] > error)
+    {
+      error = tot_out_error[i];
+    }
+  sum = avg_out_error[i] + sum;
+  i++ ;
+  <D.5536>:;
+  if (i < numpats) goto <D.5535>; else goto <D.5537>;
+  <D.5537>:;
+  worst_error = error;
+  average_error = sum / (double) numpats;
+  return;
+}
+
+
+;; Function do_mid_error (null)
+;; enabled by -tree-original
+
+
+{
+  double sum;
+  int neurode;
+  int i;
+
+    double sum;
+    int neurode;
+    int i;
+  neurode = 0;
+  goto <D.5547>;
+  <D.5546>:;
+  sum = 0.0;
+  i = 0;
+  goto <D.5544>;
+  <D.5543>:;
+  sum = out_wts[i][neurode] * out_error[i] + sum;
+  i++ ;
+  <D.5544>:;
+  if (i <= 7) goto <D.5543>; else goto <D.5545>;
+  <D.5545>:;
+  mid_error[neurode] = (mid_out[neurode] * (1.0e+0 - mid_out[neurode])) * sum;
+  neurode++ ;
+  <D.5547>:;
+  if (neurode <= 7) goto <D.5546>; else goto <D.5548>;
+  <D.5548>:;
+  return;
+}
+
+
+;; Function adjust_out_wts (null)
+;; enabled by -tree-original
+
+
+{
+  int weight;
+  int neurode;
+  double learn;
+  double delta;
+  double alph;
+
+    int weight;
+    int neurode;
+    double learn;
+    double delta;
+    double alph;
+  learn = 8.99999999999999966693309261245303787291049957275390625e-2;
+  alph = 8.99999999999999966693309261245303787291049957275390625e-2;
+  neurode = 0;
+  goto <D.5560>;
+  <D.5559>:;
+  weight = 0;
+  goto <D.5557>;
+  <D.5556>:;
+  delta = (out_error[neurode] * learn) * mid_out[weight];
+  delta = out_wt_change[neurode][weight] * alph + delta;
+  out_wts[neurode][weight] = out_wts[neurode][weight] + delta;
+  out_wt_cum_change[neurode][weight] = out_wt_cum_change[neurode][weight] + delta;
+  weight++ ;
+  <D.5557>:;
+  if (weight <= 7) goto <D.5556>; else goto <D.5558>;
+  <D.5558>:;
+  neurode++ ;
+  <D.5560>:;
+  if (neurode <= 7) goto <D.5559>; else goto <D.5561>;
+  <D.5561>:;
+  return;
+}
+
+
+;; Function adjust_mid_wts (null)
+;; enabled by -tree-original
+
+
+{
+  int weight;
+  int neurode;
+  double learn;
+  double alph;
+  double delta;
+
+    int weight;
+    int neurode;
+    double learn;
+    double alph;
+    double delta;
+  learn = 8.99999999999999966693309261245303787291049957275390625e-2;
+  alph = 8.99999999999999966693309261245303787291049957275390625e-2;
+  neurode = 0;
+  goto <D.5574>;
+  <D.5573>:;
+  weight = 0;
+  goto <D.5571>;
+  <D.5570>:;
+  delta = (mid_error[neurode] * learn) * in_pats[patt][weight];
+  delta = mid_wt_change[neurode][weight] * alph + delta;
+  mid_wts[neurode][weight] = mid_wts[neurode][weight] + delta;
+  mid_wt_cum_change[neurode][weight] = mid_wt_cum_change[neurode][weight] + delta;
+  weight++ ;
+  <D.5571>:;
+  if (weight <= 34) goto <D.5570>; else goto <D.5572>;
+  <D.5572>:;
+  neurode++ ;
+  <D.5574>:;
+  if (neurode <= 7) goto <D.5573>; else goto <D.5575>;
+  <D.5575>:;
+  return;
+}
+
+
+;; Function do_back_pass (null)
+;; enabled by -tree-original
+
+
+{
+  do_out_error (patt);
+  do_mid_error ();
+  adjust_out_wts ();
+  adjust_mid_wts (patt);
+  return;
+}
+
+
+;; Function move_wt_changes (null)
+;; enabled by -tree-original
+
+
+{
+  int i;
+  int j;
+
+    int i;
+    int j;
+  i = 0;
+  goto <D.5587>;
+  <D.5586>:;
+  j = 0;
+  goto <D.5584>;
+  <D.5583>:;
+  mid_wt_change[i][j] = mid_wt_cum_change[i][j];
+  mid_wt_cum_change[i][j] = 0.0;
+  j++ ;
+  <D.5584>:;
+  if (j <= 34) goto <D.5583>; else goto <D.5585>;
+  <D.5585>:;
+  i++ ;
+  <D.5587>:;
+  if (i <= 7) goto <D.5586>; else goto <D.5588>;
+  <D.5588>:;
+  i = 0;
+  goto <D.5593>;
+  <D.5592>:;
+  j = 0;
+  goto <D.5590>;
+  <D.5589>:;
+  out_wt_change[i][j] = out_wt_cum_change[i][j];
+  out_wt_cum_change[i][j] = 0.0;
+  j++ ;
+  <D.5590>:;
+  if (j <= 7) goto <D.5589>; else goto <D.5591>;
+  <D.5591>:;
+  i++ ;
+  <D.5593>:;
+  if (i <= 7) goto <D.5592>; else goto <D.5594>;
+  <D.5594>:;
+  return;
+}
+
+
+;; Function check_out_error (null)
+;; enabled by -tree-original
+
+
+{
+  int result;
+  int i;
+  int error;
+
+    int result;
+    int i;
+    int error;
+  result = 1;
+  error = 0;
+  worst_pass_error ();
+  i = 0;
+  goto <D.5601>;
+  <D.5600>:;
+  if (worst_error >= 1.000000000000000055511151231257827021181583404541015625e-1)
+    {
+      result = 0;
+    }
+  if (tot_out_error[i] >= 1.6e+1)
+    {
+      error = 1;
+    }
+  i++ ;
+  <D.5601>:;
+  if (i < numpats) goto <D.5600>; else goto <D.5602>;
+  <D.5602>:;
+  if (error == 1)
+    {
+      result = -1;
+    }
+  return result;
+}
+
+
+;; Function zero_changes (null)
+;; enabled by -tree-original
+
+
+{
+  int i;
+  int j;
+
+    int i;
+    int j;
+  i = 0;
+  goto <D.5611>;
+  <D.5610>:;
+  j = 0;
+  goto <D.5608>;
+  <D.5607>:;
+  mid_wt_change[i][j] = 0.0;
+  mid_wt_cum_change[i][j] = 0.0;
+  j++ ;
+  <D.5608>:;
+  if (j <= 34) goto <D.5607>; else goto <D.5609>;
+  <D.5609>:;
+  i++ ;
+  <D.5611>:;
+  if (i <= 7) goto <D.5610>; else goto <D.5612>;
+  <D.5612>:;
+  i = 0;
+  goto <D.5617>;
+  <D.5616>:;
+  j = 0;
+  goto <D.5614>;
+  <D.5613>:;
+  out_wt_change[i][j] = 0.0;
+  out_wt_cum_change[i][j] = 0.0;
+  j++ ;
+  <D.5614>:;
+  if (j <= 7) goto <D.5613>; else goto <D.5615>;
+  <D.5615>:;
+  i++ ;
+  <D.5617>:;
+  if (i <= 7) goto <D.5616>; else goto <D.5618>;
+  <D.5618>:;
+  return;
+}
+
+
+;; Function randomize_wts (null)
+;; enabled by -tree-original
+
+
+{
+  int neurode;
+  int i;
+  double value;
+
+    int neurode;
+    int i;
+    double value;
+  neurode = 0;
+  goto <D.5628>;
+  <D.5627>:;
+  i = 0;
+  goto <D.5625>;
+  <D.5624>:;
+  value = (double) abs_randwc (100000);
+  value = value / 1.0e+5 - 5.0e-1;
+  mid_wts[neurode][i] = value * 5.0e-1;
+  i++ ;
+  <D.5625>:;
+  if (i <= 34) goto <D.5624>; else goto <D.5626>;
+  <D.5626>:;
+  neurode++ ;
+  <D.5628>:;
+  if (neurode <= 7) goto <D.5627>; else goto <D.5629>;
+  <D.5629>:;
+  neurode = 0;
+  goto <D.5634>;
+  <D.5633>:;
+  i = 0;
+  goto <D.5631>;
+  <D.5630>:;
+  value = (double) abs_randwc (100000);
+  value = value / 1.0e+4 - 5.0e-1;
+  out_wts[neurode][i] = value * 5.0e-1;
+  i++ ;
+  <D.5631>:;
+  if (i <= 7) goto <D.5630>; else goto <D.5632>;
+  <D.5632>:;
+  neurode++ ;
+  <D.5634>:;
+  if (neurode <= 7) goto <D.5633>; else goto <D.5635>;
+  <D.5635>:;
+  return;
+}
+
+
+;; Function read_data_file (null)
+;; enabled by -tree-original
+
+
+{
+  struct FILE * infile;
+  int xinsize;
+  int yinsize;
+  int youtsize;
+  int patt;
+  int element;
+  int i;
+  int row;
+  int vals_read;
+  int val1;
+  int val2;
+  int val3;
+  int val4;
+  int val5;
+  int val6;
+  int val7;
+  int val8;
+
+    struct FILE * infile;
+    int xinsize;
+    int yinsize;
+    int youtsize;
+    int patt;
+    int element;
+    int i;
+    int row;
+    int vals_read;
+    int val1;
+    int val2;
+    int val3;
+    int val4;
+    int val5;
+    int val6;
+    int val7;
+    int val8;
+  infile = fopen ((const char * restrict) inpath, (const char * restrict) "r");
+  if (infile == 0B)
+    {
+      printf ((const char * restrict) "\n CPU:NNET--error in opening file!");
+      return -1;
+    }
+  vals_read = fscanf (infile, (const char * restrict) "%d  %d  %d", &xinsize, &yinsize, &youtsize);
+  if (vals_read != 3)
+    {
+      printf ((const char * restrict) "\n CPU:NNET -- Should read 3 items in line one; did read %d", vals_read);
+      return -1;
+    }
+  vals_read = fscanf (infile, (const char * restrict) "%d", &numpats);
+  if (vals_read != 1)
+    {
+      printf ((const char * restrict) "\n CPU:NNET -- Should read 1 item in line 2; did read %d", vals_read);
+      return -1;
+    }
+  if (numpats > 10)
+    {
+      numpats = 10;
+    }
+  patt = 0;
+  goto <D.5662>;
+  <D.5661>:;
+  element = 0;
+  row = 0;
+  goto <D.5656>;
+  <D.5655>:;
+  vals_read = fscanf (infile, (const char * restrict) "%d  %d  %d  %d  %d", &val1, &val2, &val3, &val4, &val5);
+  if (vals_read != 5)
+    {
+      printf ((const char * restrict) "\n CPU:NNET -- failure in reading input!");
+      return -1;
+    }
+  element = row * xinsize;
+  in_pats[patt][element] = (double) val1;
+  element++ ;
+  in_pats[patt][element] = (double) val2;
+  element++ ;
+  in_pats[patt][element] = (double) val3;
+  element++ ;
+  in_pats[patt][element] = (double) val4;
+  element++ ;
+  in_pats[patt][element] = (double) val5;
+  element++ ;
+  row++ ;
+  <D.5656>:;
+  if (row < yinsize) goto <D.5655>; else goto <D.5657>;
+  <D.5657>:;
+  i = 0;
+  goto <D.5659>;
+  <D.5658>:;
+  if (in_pats[patt][i] >= 9.0000000000000002220446049250313080847263336181640625e-1)
+    {
+      in_pats[patt][i] = 9.0000000000000002220446049250313080847263336181640625e-1;
+    }
+  if (in_pats[patt][i] <= 1.000000000000000055511151231257827021181583404541015625e-1)
+    {
+      in_pats[patt][i] = 1.000000000000000055511151231257827021181583404541015625e-1;
+    }
+  i++ ;
+  <D.5659>:;
+  if (i <= 34) goto <D.5658>; else goto <D.5660>;
+  <D.5660>:;
+  element = 0;
+  vals_read = fscanf (infile, (const char * restrict) "%d  %d  %d  %d  %d  %d  %d  %d", &val1, &val2, &val3, &val4, &val5, &val6, &val7, &val8);
+  out_pats[patt][element] = (double) val1;
+  element++ ;
+  out_pats[patt][element] = (double) val2;
+  element++ ;
+  out_pats[patt][element] = (double) val3;
+  element++ ;
+  out_pats[patt][element] = (double) val4;
+  element++ ;
+  out_pats[patt][element] = (double) val5;
+  element++ ;
+  out_pats[patt][element] = (double) val6;
+  element++ ;
+  out_pats[patt][element] = (double) val7;
+  element++ ;
+  out_pats[patt][element] = (double) val8;
+  element++ ;
+  patt++ ;
+  <D.5662>:;
+  if (patt < numpats) goto <D.5661>; else goto <D.5663>;
+  <D.5663>:;
+  fclose (infile);
+  return 0;
+}
+
+
+;; Function DoLU (null)
+;; enabled by -tree-original
+
+
+{
+  struct LUStruct * loclustruct;
+  char * errorcontext;
+  int systemerror;
+  fardouble * a;
+  fardouble * b;
+  fardouble * abase;
+  fardouble * bbase;
+  struct LUdblptr ptra;
+  int n;
+  int i;
+  long unsigned int accumtime;
+  double iterations;
+
+    struct LUStruct * loclustruct;
+    char * errorcontext;
+    int systemerror;
+    fardouble * a;
+    fardouble * b;
+    fardouble * abase;
+    fardouble * bbase;
+    struct LUdblptr ptra;
+    int n;
+    int i;
+    long unsigned int accumtime;
+    double iterations;
+  loclustruct = &global_lustruct;
+  errorcontext = (char *) "FPU:LU";
+  a = (fardouble *) AllocateMemory (81608, &systemerror);
+  b = (fardouble *) AllocateMemory (808, &systemerror);
+  n = 101;
+  LUtempvv = (fardouble *) AllocateMemory (808, &systemerror);
+  ptra.ptrs.p = a;
+  build_problem ((double[101] *) ptra.ptrs.ap, n, (double *) b);
+  if (loclustruct->adjust == 0)
+    {
+      loclustruct->numarrays = 0;
+      i = 1;
+      goto <D.5681>;
+      <D.5680>:;
+      abase = (fardouble *) AllocateMemory ((long unsigned int) (i + 1) * 81608, &systemerror);
+      if (systemerror != 0)
+        {
+          ReportError (errorcontext, systemerror);
+          LUFreeMem (a, b, 0B, 0B);
+          ErrorExit ();
+        }
+      bbase = (fardouble *) AllocateMemory ((long unsigned int) (i + 1) * 808, &systemerror);
+      if (systemerror != 0)
+        {
+          ReportError (errorcontext, systemerror);
+          LUFreeMem (a, b, abase, 0B);
+          ErrorExit ();
+        }
+      if (DoLUIteration (a, b, abase, bbase, (long unsigned int) i) > global_min_ticks)
+        {
+          loclustruct->numarrays = (long unsigned int) i;
+          goto <D.5679>;
+        }
+      FreeMemory ((farvoid *) abase, &systemerror);
+      FreeMemory ((farvoid *) bbase, &systemerror);
+      i++ ;
+      <D.5681>:;
+      if (i <= 10000) goto <D.5680>; else goto <D.5679>;
+      <D.5679>:;
+      if (loclustruct->numarrays == 0)
+        {
+          printf ((const char * restrict) "FPU:LU -- Array limit reached\n");
+          LUFreeMem (a, b, abase, bbase);
+          ErrorExit ();
+        }
+    }
+  else
+    {
+      abase = (fardouble *) AllocateMemory (loclustruct->numarrays * 81608, &systemerror);
+      if (systemerror != 0)
+        {
+          ReportError (errorcontext, systemerror);
+          LUFreeMem (a, b, 0B, 0B);
+          ErrorExit ();
+        }
+      bbase = (fardouble *) AllocateMemory (loclustruct->numarrays * 808, &systemerror);
+      if (systemerror != 0)
+        {
+          ReportError (errorcontext, systemerror);
+          LUFreeMem (a, b, abase, 0B);
+          ErrorExit ();
+        }
+    }
+  accumtime = 0;
+  iterations = 0.0;
+  <D.5682>:;
+  SAVE_EXPR <DoLUIteration (a, b, abase, bbase, loclustruct->numarrays)>;, accumtime = SAVE_EXPR <DoLUIteration (a, b, abase, bbase, loclustruct->numarrays)> + accumtime;;
+  iterations = (double) loclustruct->numarrays + iterations;
+  if (TicksToSecs (accumtime) < loclustruct->request_secs) goto <D.5682>; else goto <D.5683>;
+  <D.5683>:;
+  loclustruct->iterspersec = iterations / TicksToFracSecs (accumtime);
+  if (loclustruct->adjust == 0)
+    {
+      loclustruct->adjust = 1;
+    }
+  LUFreeMem (a, b, abase, bbase);
+  return;
+}
+
+
+;; Function LUFreeMem (null)
+;; enabled by -tree-original
+
+
+{
+  int systemerror;
+
+    int systemerror;
+  FreeMemory ((farvoid *) a, &systemerror);
+  FreeMemory ((farvoid *) b, &systemerror);
+  FreeMemory ((farvoid *) LUtempvv, &systemerror);
+  if (abase != 0B)
+    {
+      FreeMemory ((farvoid *) abase, &systemerror);
+    }
+  if (bbase != 0B)
+    {
+      FreeMemory ((farvoid *) bbase, &systemerror);
+    }
+  return;
+}
+
+
+;; Function DoLUIteration (null)
+;; enabled by -tree-original
+
+
+{
+  fardouble * locabase;
+  fardouble * locbbase;
+  struct LUdblptr ptra;
+  long unsigned int elapsed;
+  long unsigned int j;
+  long unsigned int i;
+
+    fardouble * locabase;
+    fardouble * locbbase;
+    struct LUdblptr ptra;
+    long unsigned int elapsed;
+    long unsigned int j;
+    long unsigned int i;
+  j = 0;
+  goto <D.5711>;
+  <D.5710>:;
+  locabase = abase + (sizetype) (j * 81608);
+  locbbase = bbase + (sizetype) (j * 808);
+  i = 0;
+  goto <D.5705>;
+  <D.5704>:;
+  *(locabase + (sizetype) (i * 8)) = *(a + (sizetype) (i * 8));
+  i++ ;
+  <D.5705>:;
+  if (i <= 10200) goto <D.5704>; else goto <D.5706>;
+  <D.5706>:;
+  i = 0;
+  goto <D.5708>;
+  <D.5707>:;
+  *(locbbase + (sizetype) (i * 8)) = *(b + (sizetype) (i * 8));
+  i++ ;
+  <D.5708>:;
+  if (i <= 100) goto <D.5707>; else goto <D.5709>;
+  <D.5709>:;
+  j++ ;
+  <D.5711>:;
+  if (j < numarrays) goto <D.5710>; else goto <D.5712>;
+  <D.5712>:;
+  elapsed = StartStopwatch ();
+  i = 0;
+  goto <D.5714>;
+  <D.5713>:;
+  locabase = abase + (sizetype) (i * 81608);
+  locbbase = bbase + (sizetype) (i * 808);
+  ptra.ptrs.p = locabase;
+  lusolve ((double[101] *) ptra.ptrs.ap, 101, (double *) locbbase);
+  i++ ;
+  <D.5714>:;
+  if (i < numarrays) goto <D.5713>; else goto <D.5715>;
+  <D.5715>:;
+  return StopStopwatch (elapsed);
+}
+
+
+;; Function build_problem (null)
+;; enabled by -tree-original
+
+
+{
+  long int i;
+  long int j;
+  long int k;
+  long int k1;
+  double rcon;
+
+    long int i;
+    long int j;
+    long int k;
+    long int k1;
+    double rcon;
+  randnum (13);
+  i = 0;
+  goto <D.5730>;
+  <D.5729>:;
+  *(b + (sizetype) ((long unsigned int) i * 8)) = (double) (abs_randwc (100) + 1);
+  j = 0;
+  goto <D.5727>;
+  <D.5726>:;
+  if (i == j)
+    {
+      (*(a + (sizetype) ((long unsigned int) i * 808)))[j] = (double) (abs_randwc (1000) + 1);
+    }
+  else
+    {
+      (*(a + (sizetype) ((long unsigned int) i * 808)))[j] = 0.0;
+    }
+  j++ ;
+  <D.5727>:;
+  if ((long int) n > j) goto <D.5726>; else goto <D.5728>;
+  <D.5728>:;
+  i++ ;
+  <D.5730>:;
+  if ((long int) n > i) goto <D.5729>; else goto <D.5731>;
+  <D.5731>:;
+  i = 0;
+  goto <D.5736>;
+  <D.5735>:;
+  k = (long int) abs_randwc ((u32) n);
+  k1 = (long int) abs_randwc ((u32) n);
+  if (k != k1)
+    {
+      if (k < k1)
+        {
+          rcon = 1.0e+0;
+        }
+      else
+        {
+          rcon = -1.0e+0;
+        }
+      j = 0;
+      goto <D.5733>;
+      <D.5732>:;
+      (*(a + (sizetype) ((long unsigned int) k * 808)))[j] = (*(a + (sizetype) ((long unsigned int) k * 808)))[j] + (*(a + (sizetype) ((long unsigned int) k1 * 808)))[j] * rcon;
+      j++ ;
+      <D.5733>:;
+      if ((long int) n > j) goto <D.5732>; else goto <D.5734>;
+      <D.5734>:;
+      *(b + (sizetype) ((long unsigned int) k * 8)) = *(b + (sizetype) ((long unsigned int) k * 8)) + *(b + (sizetype) ((long unsigned int) k1 * 8)) * rcon;
+    }
+  i++ ;
+  <D.5736>:;
+  if ((long int) (n * 8) > i) goto <D.5735>; else goto <D.5737>;
+  <D.5737>:;
+  return;
+}
+
+
+;; Function ludcmp (null)
+;; enabled by -tree-original
+
+
+{
+  double big;
+  double sum;
+  double dum;
+  int i;
+  int j;
+  int k;
+  int imax = 0;
+  double tiny;
+
+    double big;
+    double sum;
+    double dum;
+    int i;
+    int j;
+    int k;
+    int imax = 0;
+    double tiny;
+  tiny = 9.99999999999999945153271454209571651729503702787392447108e-21;
+  *d = 1;
+  i = 0;
+  goto <D.5756>;
+  <D.5755>:;
+  big = 0.0;
+  j = 0;
+  goto <D.5753>;
+  <D.5752>:;
+  if (ABS_EXPR <(*(a + (sizetype) ((long unsigned int) i * 808)))[j]> > big)
+    {
+      big = ABS_EXPR <(*(a + (sizetype) ((long unsigned int) i * 808)))[j]>;
+    }
+  j++ ;
+  <D.5753>:;
+  if (j < n) goto <D.5752>; else goto <D.5754>;
+  <D.5754>:;
+  if (big == 0.0)
+    {
+      return 0;
+    }
+  *(LUtempvv + (sizetype) ((long unsigned int) i * 8)) = 1.0e+0 / big;
+  i++ ;
+  <D.5756>:;
+  if (i < n) goto <D.5755>; else goto <D.5757>;
+  <D.5757>:;
+  j = 0;
+  goto <D.5777>;
+  <D.5776>:;
+  if (j != 0)
+    {
+      i = 0;
+      goto <D.5762>;
+      <D.5761>:;
+      sum = (*(a + (sizetype) ((long unsigned int) i * 808)))[j];
+      if (i != 0)
+        {
+          k = 0;
+          goto <D.5759>;
+          <D.5758>:;
+          sum = sum - (*(a + (sizetype) ((long unsigned int) i * 808)))[k] * (*(a + (sizetype) ((long unsigned int) k * 808)))[j];
+          k++ ;
+          <D.5759>:;
+          if (k < i) goto <D.5758>; else goto <D.5760>;
+          <D.5760>:;
+        }
+      (*(a + (sizetype) ((long unsigned int) i * 808)))[j] = sum;
+      i++ ;
+      <D.5762>:;
+      if (i < j) goto <D.5761>; else goto <D.5763>;
+      <D.5763>:;
+    }
+  big = 0.0;
+  i = j;
+  goto <D.5768>;
+  <D.5767>:;
+  sum = (*(a + (sizetype) ((long unsigned int) i * 808)))[j];
+  if (j != 0)
+    {
+      k = 0;
+      goto <D.5765>;
+      <D.5764>:;
+      sum = sum - (*(a + (sizetype) ((long unsigned int) i * 808)))[k] * (*(a + (sizetype) ((long unsigned int) k * 808)))[j];
+      k++ ;
+      <D.5765>:;
+      if (k < j) goto <D.5764>; else goto <D.5766>;
+      <D.5766>:;
+    }
+  (*(a + (sizetype) ((long unsigned int) i * 808)))[j] = sum;
+  dum = (double) *(LUtempvv + (sizetype) ((long unsigned int) i * 8)) * ABS_EXPR <sum>;
+  if (dum >= big)
+    {
+      big = dum;
+      imax = i;
+    }
+  i++ ;
+  <D.5768>:;
+  if (i < n) goto <D.5767>; else goto <D.5769>;
+  <D.5769>:;
+  if (j != imax)
+    {
+      k = 0;
+      goto <D.5771>;
+      <D.5770>:;
+      dum = (*(a + (sizetype) ((long unsigned int) imax * 808)))[k];
+      (*(a + (sizetype) ((long unsigned int) imax * 808)))[k] = (*(a + (sizetype) ((long unsigned int) j * 808)))[k];
+      (*(a + (sizetype) ((long unsigned int) j * 808)))[k] = dum;
+      k++ ;
+      <D.5771>:;
+      if (k < n) goto <D.5770>; else goto <D.5772>;
+      <D.5772>:;
+      *d = -*d;
+      dum = *(LUtempvv + (sizetype) ((long unsigned int) imax * 8));
+      *(LUtempvv + (sizetype) ((long unsigned int) imax * 8)) = *(LUtempvv + (sizetype) ((long unsigned int) j * 8));
+      *(LUtempvv + (sizetype) ((long unsigned int) j * 8)) = dum;
+    }
+  *(indx + (sizetype) ((long unsigned int) j * 4)) = imax;
+  if ((*(a + (sizetype) ((long unsigned int) j * 808)))[j] == 0.0)
+    {
+      (*(a + (sizetype) ((long unsigned int) j * 808)))[j] = tiny;
+    }
+  if (n + -1 != j)
+    {
+      dum = 1.0e+0 / (*(a + (sizetype) ((long unsigned int) j * 808)))[j];
+      i = j + 1;
+      goto <D.5774>;
+      <D.5773>:;
+      (*(a + (sizetype) ((long unsigned int) i * 808)))[j] = (*(a + (sizetype) ((long unsigned int) i * 808)))[j] * dum;
+      i++ ;
+      <D.5774>:;
+      if (i < n) goto <D.5773>; else goto <D.5775>;
+      <D.5775>:;
+    }
+  j++ ;
+  <D.5777>:;
+  if (j < n) goto <D.5776>; else goto <D.5778>;
+  <D.5778>:;
+  return 1;
+}
+
+
+;; Function lubksb (null)
+;; enabled by -tree-original
+
+
+{
+  int i;
+  int j;
+  int ip;
+  int ii;
+  double sum;
+
+    int i;
+    int j;
+    int ip;
+    int ii;
+    double sum;
+  ii = -1;
+  i = 0;
+  goto <D.5794>;
+  <D.5793>:;
+  ip = *(indx + (sizetype) ((long unsigned int) i * 4));
+  sum = *(b + (sizetype) ((long unsigned int) ip * 8));
+  *(b + (sizetype) ((long unsigned int) ip * 8)) = *(b + (sizetype) ((long unsigned int) i * 8));
+  if (ii != -1)
+    {
+      j = ii;
+      goto <D.5791>;
+      <D.5790>:;
+      sum = sum - (*(a + (sizetype) ((long unsigned int) i * 808)))[j] * *(b + (sizetype) ((long unsigned int) j * 8));
+      j++ ;
+      <D.5791>:;
+      if (j < i) goto <D.5790>; else goto <D.5792>;
+      <D.5792>:;
+    }
+  else
+    {
+      if (sum != 0.0)
+        {
+          ii = i;
+        }
+    }
+  *(b + (sizetype) ((long unsigned int) i * 8)) = sum;
+  i++ ;
+  <D.5794>:;
+  if (i < n) goto <D.5793>; else goto <D.5795>;
+  <D.5795>:;
+  i = n + -1;
+  goto <D.5800>;
+  <D.5799>:;
+  sum = *(b + (sizetype) ((long unsigned int) i * 8));
+  if (n + -1 != i)
+    {
+      j = i + 1;
+      goto <D.5797>;
+      <D.5796>:;
+      sum = sum - (*(a + (sizetype) ((long unsigned int) i * 808)))[j] * *(b + (sizetype) ((long unsigned int) j * 8));
+      j++ ;
+      <D.5797>:;
+      if (j < n) goto <D.5796>; else goto <D.5798>;
+      <D.5798>:;
+    }
+  *(b + (sizetype) ((long unsigned int) i * 8)) = sum / (*(a + (sizetype) ((long unsigned int) i * 808)))[i];
+  i-- ;
+  <D.5800>:;
+  if (i >= 0) goto <D.5799>; else goto <D.5801>;
+  <D.5801>:;
+  return;
+}
+
+
+;; Function lusolve (null)
+;; enabled by -tree-original
+
+
+{
+  int indx[101];
+  int d;
+
+    int indx[101];
+    int d;
+  if (ludcmp (a, n, (int *) &indx, &d) == 0)
+    {
+      return 0;
+    }
+  lubksb (a, n, (int *) &indx, b);
+  return 1;
+}
+

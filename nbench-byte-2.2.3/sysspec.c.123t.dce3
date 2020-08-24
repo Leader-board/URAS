@@ -1,0 +1,585 @@
+
+;; Function AllocateMemory (AllocateMemory, funcdef_no=52, decl_uid=3587, cgraph_uid=52, symbol_order=52)
+
+AllocateMemory (long unsigned int nbytes, int * errorcode)
+{
+  long unsigned int adj_addr;
+  long unsigned int true_addr;
+  farvoid * returnval;
+  int global_align.0_1;
+  long int _2;
+  long int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  int global_align.1_6;
+  long unsigned int _8;
+  int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  farvoid * _14;
+  long unsigned int _15;
+  long unsigned int _22;
+  int _30;
+  _Bool _31;
+  int mem_array_ents.7_33;
+  int _34;
+  int mem_array_ents.7_35;
+  int _36;
+
+  <bb 2> [45.45%]:
+  global_align.0_1 = global_align;
+  _2 = (long int) global_align.0_1;
+  _3 = _2 * 2;
+  _4 = (long unsigned int) _3;
+  _5 = nbytes_18(D) + _4;
+  returnval_20 = malloc (_5);
+  _31 = returnval_20 == 0B;
+  _30 = (int) _31;
+  *errorcode_21(D) = _30;
+  true_addr_24 = (long unsigned int) returnval_20;
+  global_align.1_6 = global_align;
+  if (global_align.1_6 == 0)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 3> [22.73%]:
+  mem_array_ents.7_33 = mem_array_ents;
+  if (mem_array_ents.7_33 > 19)
+    goto <bb 4>; [50.00%]
+  else
+    goto <bb 5>; [50.00%]
+
+  <bb 4> [11.36%]:
+  *errorcode_21(D) = 2;
+  goto <bb 15>; [100.00%]
+
+  <bb 5> [11.36%]:
+  mem_array[0][mem_array_ents.7_33] = true_addr_24;
+  mem_array[1][mem_array_ents.7_33] = true_addr_24;
+  _34 = mem_array_ents.7_33 + 1;
+  mem_array_ents = _34;
+  goto <bb 15>; [100.00%]
+
+  <bb 6> [22.73%]:
+  if (global_align.1_6 == 1)
+    goto <bb 8>; [34.00%]
+  else
+    goto <bb 7>; [66.00%]
+
+  <bb 7> [15.00%]:
+  _15 = (long unsigned int) global_align.1_6;
+  _22 = true_addr_24 % _15;
+  if (_22 != 0)
+    goto <bb 9>; [85.00%]
+  else
+    goto <bb 10>; [15.00%]
+
+  <bb 8> [7.73%]:
+  adj_addr_27 = true_addr_24 + 1;
+  goto <bb 12>; [100.00%]
+
+  <bb 9> [85.00%]:
+  # adj_addr_43 = PHI <adj_addr_26(9), true_addr_24(7)>
+  adj_addr_26 = adj_addr_43 + 1;
+  _8 = adj_addr_26 % _15;
+  if (_8 != 0)
+    goto <bb 9>; [85.00%]
+  else
+    goto <bb 10>; [15.00%]
+
+  <bb 10> [15.00%]:
+  # adj_addr_49 = PHI <adj_addr_26(9), true_addr_24(7)>
+  _9 = global_align.1_6 * 2;
+  _10 = (long unsigned int) _9;
+  _11 = adj_addr_49 % _10;
+  if (_11 == 0)
+    goto <bb 11>; [50.00%]
+  else
+    goto <bb 12>; [50.00%]
+
+  <bb 11> [7.50%]:
+  adj_addr_25 = adj_addr_49 + _15;
+
+  <bb 12> [22.73%]:
+  # adj_addr_13 = PHI <adj_addr_27(8), adj_addr_49(10), adj_addr_25(11)>
+  returnval_28 = (farvoid *) adj_addr_13;
+  mem_array_ents.7_35 = mem_array_ents;
+  if (mem_array_ents.7_35 > 19)
+    goto <bb 14>; [54.00%]
+  else
+    goto <bb 13>; [46.00%]
+
+  <bb 13> [10.45%]:
+  mem_array[0][mem_array_ents.7_35] = true_addr_24;
+  mem_array[1][mem_array_ents.7_35] = adj_addr_13;
+  _36 = mem_array_ents.7_35 + 1;
+  mem_array_ents = _36;
+  goto <bb 15>; [100.00%]
+
+  <bb 14> [12.27%]:
+  *errorcode_21(D) = 2;
+
+  <bb 15> [45.45%]:
+  # _14 = PHI <returnval_20(4), returnval_28(14), returnval_28(13), returnval_20(5)>
+  return _14;
+
+}
+
+
+
+;; Function FreeMemory (FreeMemory, funcdef_no=53, decl_uid=3590, cgraph_uid=53, symbol_order=53)
+
+FreeMemory (farvoid * mempointer, int * errorcode)
+{
+  int i;
+  int j;
+  long unsigned int adj_addr;
+  long unsigned int _13;
+  long unsigned int _14;
+  int _15;
+  long unsigned int _16;
+  long unsigned int _18;
+  int _19;
+  int _26;
+  long unsigned int _27;
+  int mem_array_ents.13_29;
+  int _32;
+
+  <bb 2> [14.44%]:
+  adj_addr_5 = (long unsigned int) mempointer_4(D);
+  mem_array_ents.13_29 = mem_array_ents;
+  if (mem_array_ents.13_29 > 0)
+    goto <bb 3>; [92.50%]
+  else
+    goto <bb 9>; [7.50%]
+
+  <bb 3> [13.32%]:
+  _27 = mem_array[1][0];
+  if (adj_addr_5 == _27)
+    goto <bb 5>; [7.50%]
+  else
+    goto <bb 8>; [92.50%]
+
+  <bb 4> [79.18%]:
+  _13 = mem_array[1][i_20];
+  if (adj_addr_5 == _13)
+    goto <bb 5>; [7.50%]
+  else
+    goto <bb 8>; [92.50%]
+
+  <bb 5> [6.94%]:
+  # i_30 = PHI <i_20(4), 0(3)>
+  _14 = mem_array[0][i_30];
+  _26 = i_30 + 1;
+  if (_26 < mem_array_ents.13_29)
+    goto <bb 6>; [85.00%]
+  else
+    goto <bb 7>; [15.00%]
+
+  <bb 6> [39.31%]:
+  # _32 = PHI <_15(6), _26(5)>
+  # j_33 = PHI <_32(6), i_30(5)>
+  _16 = mem_array[0][_32];
+  mem_array[0][j_33] = _16;
+  _18 = mem_array[1][_32];
+  mem_array[1][j_33] = _18;
+  _15 = _32 + 1;
+  if (_15 < mem_array_ents.13_29)
+    goto <bb 6>; [85.00%]
+  else
+    goto <bb 7>; [15.00%]
+
+  <bb 7> [6.94%]:
+  _19 = mem_array_ents.13_29 + -1;
+  mem_array_ents = _19;
+  mempointer_7 = (farvoid *) _14;
+  free (mempointer_7);
+  *errorcode_9(D) = 0;
+  goto <bb 10>; [100.00%]
+
+  <bb 8> [85.60%]:
+  # i_31 = PHI <i_20(4), 0(3)>
+  i_20 = i_31 + 1;
+  if (i_20 < mem_array_ents.13_29)
+    goto <bb 4>; [92.50%]
+  else
+    goto <bb 9>; [7.50%]
+
+  <bb 9> [7.50%]:
+  *errorcode_9(D) = 3;
+
+  <bb 10> [14.44%]:
+  return;
+
+}
+
+
+
+;; Function MoveMemory (MoveMemory, funcdef_no=54, decl_uid=3594, cgraph_uid=54, symbol_order=54)
+
+MoveMemory (farvoid * destination, farvoid * source, long unsigned int nbytes)
+{
+  <bb 2> [100.00%]:
+  __builtin_memmove (destination_2(D), source_3(D), nbytes_4(D));
+  return;
+
+}
+
+
+
+;; Function InitMemArray (InitMemArray, funcdef_no=55, decl_uid=3596, cgraph_uid=55, symbol_order=55)
+
+InitMemArray ()
+{
+  <bb 2> [100.00%]:
+  mem_array_ents = 0;
+  return;
+
+}
+
+
+
+;; Function AddMemArray (AddMemArray, funcdef_no=56, decl_uid=3599, cgraph_uid=56, symbol_order=56)
+
+AddMemArray (long unsigned int true_addr, long unsigned int adj_addr)
+{
+  int mem_array_ents.7_1;
+  int _2;
+  int _3;
+
+  <bb 2> [100.00%]:
+  mem_array_ents.7_1 = mem_array_ents;
+  if (mem_array_ents.7_1 > 19)
+    goto <bb 4>; [2.00%]
+  else
+    goto <bb 3>; [98.00%]
+
+  <bb 3> [98.00%]:
+  mem_array[0][mem_array_ents.7_1] = true_addr_6(D);
+  mem_array[1][mem_array_ents.7_1] = adj_addr_8(D);
+  _2 = mem_array_ents.7_1 + 1;
+  mem_array_ents = _2;
+
+  <bb 4> [100.00%]:
+  # _3 = PHI <-1(2), 0(3)>
+  return _3;
+
+}
+
+
+
+;; Function RemoveMemArray (RemoveMemArray, funcdef_no=57, decl_uid=3602, cgraph_uid=57, symbol_order=57)
+
+RemoveMemArray (long unsigned int adj_addr, long unsigned int * true_addr)
+{
+  int j;
+  int i;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  int _5;
+  int _7;
+  int _11;
+  int _24;
+  long unsigned int _25;
+  int mem_array_ents.13_26;
+  int _27;
+
+  <bb 2> [14.44%]:
+  mem_array_ents.13_26 = mem_array_ents;
+  if (mem_array_ents.13_26 > 0)
+    goto <bb 3>; [92.50%]
+  else
+    goto <bb 9>; [7.50%]
+
+  <bb 3> [13.32%]:
+  _25 = mem_array[1][0];
+  if (_25 == adj_addr_15(D))
+    goto <bb 5>; [7.50%]
+  else
+    goto <bb 8>; [92.50%]
+
+  <bb 4> [79.18%]:
+  _1 = mem_array[1][i_16];
+  if (_1 == adj_addr_15(D))
+    goto <bb 5>; [7.50%]
+  else
+    goto <bb 8>; [92.50%]
+
+  <bb 5> [6.94%]:
+  # i_29 = PHI <i_16(4), 0(3)>
+  _2 = mem_array[0][i_29];
+  *true_addr_17(D) = _2;
+  _24 = i_29 + 1;
+  if (_24 < mem_array_ents.13_26)
+    goto <bb 6>; [85.00%]
+  else
+    goto <bb 7>; [15.00%]
+
+  <bb 6> [39.31%]:
+  # _27 = PHI <_5(6), _24(5)>
+  # j_31 = PHI <_27(6), i_29(5)>
+  _3 = mem_array[0][_27];
+  mem_array[0][j_31] = _3;
+  _4 = mem_array[1][_27];
+  mem_array[1][j_31] = _4;
+  _5 = _27 + 1;
+  if (_5 < mem_array_ents.13_26)
+    goto <bb 6>; [85.00%]
+  else
+    goto <bb 7>; [15.00%]
+
+  <bb 7> [6.94%]:
+  _7 = mem_array_ents.13_26 + -1;
+  mem_array_ents = _7;
+  goto <bb 9>; [100.00%]
+
+  <bb 8> [85.60%]:
+  # i_30 = PHI <i_16(4), 0(3)>
+  i_16 = i_30 + 1;
+  if (i_16 < mem_array_ents.13_26)
+    goto <bb 4>; [92.50%]
+  else
+    goto <bb 9>; [7.50%]
+
+  <bb 9> [14.44%]:
+  # _11 = PHI <0(7), -1(8), -1(2)>
+  return _11;
+
+}
+
+
+
+;; Function CreateFile (CreateFile, funcdef_no=58, decl_uid=3609, cgraph_uid=58, symbol_order=58)
+
+CreateFile (char * filename, int * errorcode)
+{
+  struct FILE * fhandle;
+  int cstore_11;
+
+  <bb 2> [100.00%]:
+  fhandle_5 = fopen (filename_3(D), "w");
+  if (fhandle_5 == 0B)
+    goto <bb 4>; [26.74%]
+  else
+    goto <bb 3>; [73.26%]
+
+  <bb 3> [73.26%]:
+
+  <bb 4> [100.00%]:
+  # cstore_11 = PHI <10(2), 0(3)>
+  *errorcode_6(D) = cstore_11;
+  fclose (fhandle_5);
+  return;
+
+}
+
+
+
+;; Function bmOpenFile (bmOpenFile, funcdef_no=59, decl_uid=3612, cgraph_uid=59, symbol_order=59)
+
+bmOpenFile (char * fname, int * errorcode)
+{
+  struct FILE * fhandle;
+  int cstore_10;
+
+  <bb 2> [100.00%]:
+  fhandle_5 = fopen (fname_3(D), "w+");
+  if (fhandle_5 == 0B)
+    goto <bb 4>; [26.74%]
+  else
+    goto <bb 3>; [73.26%]
+
+  <bb 3> [73.26%]:
+
+  <bb 4> [100.00%]:
+  # cstore_10 = PHI <13(2), 0(3)>
+  *errorcode_6(D) = cstore_10;
+  return fhandle_5;
+
+}
+
+
+
+;; Function CloseFile (CloseFile, funcdef_no=60, decl_uid=3615, cgraph_uid=60, symbol_order=60)
+
+CloseFile (struct FILE * fhandle, int * errorcode)
+{
+  <bb 2> [100.00%]:
+  fclose (fhandle_2(D));
+  *errorcode_4(D) = 0;
+  return;
+
+}
+
+
+
+;; Function readfile (readfile, funcdef_no=61, decl_uid=3621, cgraph_uid=61, symbol_order=61)
+
+readfile (struct FILE * fhandle, long unsigned int offset, long unsigned int nbytes, void * buffer, int * errorcode)
+{
+  size_t nelems;
+  long int offset.14_1;
+  int _2;
+  long unsigned int _19;
+
+  <bb 2> [100.00%]:
+  *errorcode_5(D) = 0;
+  offset.14_1 = (long int) offset_7(D);
+  _2 = fseek (fhandle_8(D), offset.14_1, 0);
+  if (_2 == -1)
+    goto <bb 3>; [30.50%]
+  else
+    goto <bb 4>; [69.50%]
+
+  <bb 3> [30.50%]:
+  *errorcode_5(D) = 14;
+  goto <bb 6>; [100.00%]
+
+  <bb 4> [69.50%]:
+  nelems_11 = nbytes_10(D) & 65535;
+  _19 = __fread_alias (buffer_12(D), 1, nelems_11, fhandle_8(D));
+  if (nelems_11 != _19)
+    goto <bb 5>; [69.50%]
+  else
+    goto <bb 6>; [30.50%]
+
+  <bb 5> [48.30%]:
+  *errorcode_5(D) = 11;
+
+  <bb 6> [100.00%]:
+  return;
+
+}
+
+
+
+;; Function writefile (writefile, funcdef_no=62, decl_uid=3627, cgraph_uid=62, symbol_order=62)
+
+writefile (struct FILE * fhandle, long unsigned int offset, long unsigned int nbytes, void * buffer, int * errorcode)
+{
+  size_t writecode;
+  size_t nelems;
+  long int offset.15_1;
+  int _2;
+
+  <bb 2> [100.00%]:
+  *errorcode_5(D) = 0;
+  offset.15_1 = (long int) offset_7(D);
+  _2 = fseek (fhandle_8(D), offset.15_1, 0);
+  if (_2 == -1)
+    goto <bb 3>; [47.12%]
+  else
+    goto <bb 4>; [52.88%]
+
+  <bb 3> [47.12%]:
+  *errorcode_5(D) = 14;
+  goto <bb 6>; [100.00%]
+
+  <bb 4> [52.88%]:
+  nelems_11 = nbytes_10(D) & 65535;
+  writecode_14 = fwrite (buffer_12(D), 1, nelems_11, fhandle_8(D));
+  if (nelems_11 == writecode_14)
+    goto <bb 5>; [37.68%]
+  else
+    goto <bb 6>; [62.32%]
+
+  <bb 5> [19.93%]:
+  *errorcode_5(D) = 12;
+
+  <bb 6> [100.00%]:
+  return;
+
+}
+
+
+
+;; Function ReportError (ReportError, funcdef_no=63, decl_uid=3605, cgraph_uid=63, symbol_order=63)
+
+ReportError (char * errorcontext, int errorcode)
+{
+  <bb 2> [100.00%]:
+  __printf_chk (1, "ERROR CONDITION\nContext: %s\n", errorcontext_2(D));
+  __printf_chk (1, "Code: %d", errorcode_3(D));
+  return;
+
+}
+
+
+
+;; Function ErrorExit (ErrorExit, funcdef_no=64, decl_uid=3606, cgraph_uid=64, symbol_order=64) (executed once)
+
+ErrorExit ()
+{
+  <bb 2> [100.00%]:
+  exit (1);
+
+}
+
+
+
+;; Function StartStopwatch (StartStopwatch, funcdef_no=65, decl_uid=3628, cgraph_uid=65, symbol_order=65)
+
+StartStopwatch ()
+{
+  long int _1;
+  long unsigned int _4;
+
+  <bb 2> [100.00%]:
+  _1 = clock ();
+  _4 = (long unsigned int) _1;
+  return _4;
+
+}
+
+
+
+;; Function StopStopwatch (StopStopwatch, funcdef_no=66, decl_uid=3630, cgraph_uid=66, symbol_order=66)
+
+StopStopwatch (long unsigned int startticks)
+{
+  long int _1;
+  long unsigned int _2;
+  long unsigned int _6;
+
+  <bb 2> [100.00%]:
+  _1 = clock ();
+  _2 = (long unsigned int) _1;
+  _6 = _2 - startticks_5(D);
+  return _6;
+
+}
+
+
+
+;; Function TicksToSecs (TicksToSecs, funcdef_no=67, decl_uid=3632, cgraph_uid=67, symbol_order=67)
+
+TicksToSecs (long unsigned int tickamount)
+{
+  long unsigned int _2;
+
+  <bb 2> [100.00%]:
+  _2 = tickamount_1(D) / 1000000;
+  return _2;
+
+}
+
+
+
+;; Function TicksToFracSecs (TicksToFracSecs, funcdef_no=68, decl_uid=3634, cgraph_uid=68, symbol_order=68)
+
+TicksToFracSecs (long unsigned int tickamount)
+{
+  double _1;
+  double _3;
+
+  <bb 2> [100.00%]:
+  _1 = (double) tickamount_2(D);
+  _3 = _1 / 1.0e+6;
+  return _3;
+
+}
+
+

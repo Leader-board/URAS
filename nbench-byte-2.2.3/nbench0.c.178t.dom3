@@ -1,0 +1,796 @@
+
+;; Function output_string (output_string, funcdef_no=64, decl_uid=4727, cgraph_uid=64, symbol_order=96)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4
+;; 2 succs { 3 4 }
+;; 3 succs { 4 }
+;; 4 succs { 1 }
+output_string (char * buffer)
+{
+  int write_to_file.30_1;
+  struct FILE * global_ofile.31_7;
+
+  <bb 2> [100.00%]:
+  __printf_chk (1, "%s", buffer_3(D));
+  write_to_file.30_1 = write_to_file;
+  if (write_to_file.30_1 != 0)
+    goto <bb 3>; [36.64%]
+  else
+    goto <bb 4>; [63.36%]
+
+  <bb 3> [36.64%]:
+  global_ofile.31_7 = global_ofile;
+  __builtin_fputs (buffer_3(D), global_ofile.31_7);
+
+  <bb 4> [100.00%]:
+  return;
+
+}
+
+
+
+;; Function main (main, funcdef_no=54, decl_uid=4760, cgraph_uid=54, symbol_order=86) (executed once)
+
+;; 5 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 63 60 61 62
+;;
+;; Loop 2
+;;  header 7, latch 63
+;;  depth 1, outer 0
+;;  nodes: 7 63 59 21 58 24 29 33 37 41 43 45 49 53 55 57 28 27 32 36 40 42 44 48 52 54 56 51 50 47 46 39 38 35 34 31 30 26 25 22 23 20 13 19 18 17 15 14 12 11 10 9 8 16
+;; 2 succs { 3 4 }
+;; 3 succs { 4 }
+;; 4 succs { 5 6 }
+;; 5 succs { 6 }
+;; 6 succs { 7 }
+;; 7 succs { 8 59 }
+;; 8 succs { 9 10 }
+;; 9 succs { 10 }
+;; 10 succs { 11 12 }
+;; 11 succs { 12 }
+;; 12 succs { 13 14 }
+;; 13 succs { 20 }
+;; 14 succs { 16 15 }
+;; 15 succs { 18 }
+;; 16 succs { 17 }
+;; 17 succs { 19 18 }
+;; 18 succs { 20 }
+;; 19 succs { 20 }
+;; 20 succs { 22 21 }
+;; 21 succs { 59 }
+;; 22 succs { 23 24 }
+;; 23 succs { 24 }
+;; 24 succs { 58 25 30 34 38 42 44 46 50 54 56 }
+;; 25 succs { 26 27 }
+;; 26 succs { 27 }
+;; 27 succs { 29 28 }
+;; 28 succs { 58 }
+;; 29 succs { 58 }
+;; 30 succs { 31 32 }
+;; 31 succs { 32 }
+;; 32 succs { 33 28 }
+;; 33 succs { 58 }
+;; 34 succs { 35 36 }
+;; 35 succs { 36 }
+;; 36 succs { 37 28 }
+;; 37 succs { 58 }
+;; 38 succs { 39 40 }
+;; 39 succs { 40 }
+;; 40 succs { 41 28 }
+;; 41 succs { 58 }
+;; 42 succs { 43 28 }
+;; 43 succs { 58 }
+;; 44 succs { 45 28 }
+;; 45 succs { 58 }
+;; 46 succs { 47 48 }
+;; 47 succs { 48 }
+;; 48 succs { 49 28 }
+;; 49 succs { 58 }
+;; 50 succs { 51 52 }
+;; 51 succs { 52 }
+;; 52 succs { 53 28 }
+;; 53 succs { 58 }
+;; 54 succs { 55 28 }
+;; 55 succs { 58 }
+;; 56 succs { 57 28 }
+;; 57 succs { 58 }
+;; 58 succs { 59 }
+;; 59 succs { 63 60 }
+;; 63 succs { 7 }
+;; 60 succs { 61 62 }
+;; 61 succs { 62 }
+;; 62 succs { }
+Merging blocks 16 and 17
+Removing basic block 63
+main (int argc, char * * argv)
+{
+  sizetype ivtmp.54;
+  vector(4) int * vectp_tests_to_do.49;
+  vector(4) int * vectp_tests_to_do.48;
+  unsigned int tmp.47;
+  int tmp.46;
+  char buffer[80];
+  double fpindex;
+  double intindex;
+  double lx_fpindex;
+  double lx_intindex;
+  double lx_memindex;
+  double bstdev;
+  double bmean;
+  struct tm * loctime;
+  time_t time_and_date;
+  int i;
+  char * _1;
+  int global_allstats.0_2;
+  char * _3;
+  int _4;
+  char * _5;
+  double _6;
+  double _7;
+  double _8;
+  double _9;
+  _Bool _10;
+  double pretmp_12;
+  double _14;
+  double _16;
+  unsigned int ivtmp_17;
+  double _18;
+  int prephitmp_19;
+  int pretmp_20;
+  double pretmp_21;
+  int pretmp_22;
+  int prephitmp_23;
+  double _25;
+  double _27;
+  int global_allstats.10_28;
+  double _29;
+  double _30;
+  char * _31;
+  int global_custrun.17_33;
+  double _34;
+  double _35;
+  struct FILE * global_ofile.18_36;
+  int write_to_file.19_37;
+  double _38;
+  double _39;
+  double _40;
+  unsigned int ivtmp_42;
+  _Bool _48;
+  _Bool _54;
+  sizetype _57;
+  unsigned int _58;
+  unsigned int _133;
+  _Bool _134;
+  unsigned int ivtmp_135;
+  sizetype _144;
+  unsigned int _147;
+  long int _149;
+  int _150;
+  int _152;
+  void (*<T8d0>) (void) _153;
+  unsigned int ivtmp_154;
+  int write_to_file.30_189;
+  int write_to_file.30_190;
+  struct FILE * global_ofile.31_191;
+  struct FILE * global_ofile.31_192;
+  short unsigned int _193;
+  int _194;
+  long unsigned int _195;
+  short unsigned int _196;
+  int _197;
+  long unsigned int _198;
+  long unsigned int _199;
+  long unsigned int _200;
+  long unsigned int _201;
+  long unsigned int _202;
+  long unsigned int _203;
+  long unsigned int _204;
+  long unsigned int _205;
+  long unsigned int _206;
+  long unsigned int _207;
+  long unsigned int _208;
+  long unsigned int _209;
+  long unsigned int _210;
+  int write_to_file.30_211;
+  int write_to_file.30_212;
+  struct FILE * global_ofile.31_213;
+  struct FILE * global_ofile.31_214;
+  int write_to_file.30_215;
+  int write_to_file.30_216;
+  struct FILE * global_ofile.31_217;
+  struct FILE * global_ofile.31_218;
+  int write_to_file.30_219;
+  int write_to_file.30_220;
+  struct FILE * global_ofile.31_221;
+  struct FILE * global_ofile.31_222;
+  int write_to_file.30_223;
+  int write_to_file.30_224;
+  struct FILE * global_ofile.31_225;
+  struct FILE * global_ofile.31_226;
+  int write_to_file.30_227;
+  struct FILE * global_ofile.31_228;
+  int write_to_file.30_229;
+  struct FILE * global_ofile.31_230;
+  int write_to_file.30_231;
+  int write_to_file.30_232;
+  struct FILE * global_ofile.31_233;
+  struct FILE * global_ofile.31_234;
+  int write_to_file.30_235;
+  int write_to_file.30_236;
+  struct FILE * global_ofile.31_237;
+  struct FILE * global_ofile.31_238;
+  int write_to_file.30_239;
+  struct FILE * global_ofile.31_240;
+  int write_to_file.30_241;
+  struct FILE * global_ofile.31_242;
+  unsigned int _307;
+  unsigned int _309;
+  long unsigned int _312;
+  long unsigned int _314;
+  _Bool _316;
+  sizetype _323;
+  vector(4) int vect_cst__324;
+  sizetype _326;
+  sizetype _327;
+  sizetype _328;
+  sizetype _329;
+  sizetype _330;
+
+  <bb 2> [9.11%]:
+  global_min_ticks = 60;
+  global_min_seconds = 5;
+  global_allstats = 0;
+  global_custrun = 0;
+  global_align = 8;
+  write_to_file = 0;
+  mem_array_ents = 0;
+  vect_cst__324 = { 1, 1, 1, 1 };
+  MEM[(int *)&tests_to_do] = { 1, 1, 1, 1 };
+  vectp_tests_to_do.48_305 = &tests_to_do + 16;
+  ivtmp_135 = 1;
+  MEM[(int *)&tests_to_do + 16B] = { 1, 1, 1, 1 };
+  vectp_tests_to_do.48_41 = &MEM[(void *)&tests_to_do + 16B] + 16;
+  ivtmp_154 = 2;
+  tests_to_do[8] = 1;
+  i_148 = 9;
+  ivtmp_17 = 1;
+  tests_to_do[9] = 1;
+  i_32 = 10;
+  ivtmp_42 = 0;
+  global_numsortstruct.request_secs = 5;
+  global_strsortstruct.request_secs = 5;
+  global_bitopstruct.request_secs = 5;
+  global_emfloatstruct.request_secs = 5;
+  global_fourierstruct.request_secs = 5;
+  global_assignstruct.request_secs = 5;
+  global_ideastruct.request_secs = 5;
+  global_huffstruct.request_secs = 5;
+  global_nnetstruct.request_secs = 5;
+  global_lustruct.request_secs = 5;
+  global_numsortstruct.adjust = 0;
+  global_numsortstruct.arraysize = 8111;
+  global_strsortstruct.adjust = 0;
+  global_strsortstruct.arraysize = 8111;
+  global_bitopstruct.adjust = 0;
+  global_bitopstruct.bitfieldarraysize = 16384;
+  global_emfloatstruct.adjust = 0;
+  global_emfloatstruct.arraysize = 3000;
+  global_fourierstruct.adjust = 0;
+  global_assignstruct.adjust = 0;
+  global_ideastruct.adjust = 0;
+  global_ideastruct.arraysize = 4000;
+  global_huffstruct.adjust = 0;
+  global_huffstruct.arraysize = 5000;
+  global_nnetstruct.adjust = 0;
+  global_lustruct.adjust = 0;
+  if (argc_90(D) == 2)
+    goto <bb 3>; [20.24%]
+  else
+    goto <bb 4>; [79.76%]
+
+  <bb 3> [1.84%]:
+  _1 = MEM[(char * *)argv_91(D) + 8B];
+  _149 = strtol (_1, 0B, 10);
+  _150 = (int) _149;
+  testnum = _150;
+
+  <bb 4> [9.09%]:
+  output_string ("\nBYTEmark* Native Mode Benchmark ver. 2 (10/95)\n");
+  output_string ("Index-split by Andrew D. Balsa (11/97)\n");
+  output_string ("Linux/Unix* port by Uwe F. Mayer (12/96,11/97)\n");
+  global_allstats.0_2 = global_allstats;
+  if (global_allstats.0_2 != 0)
+    goto <bb 5>; [33.00%]
+  else
+    goto <bb 6>; [67.00%]
+
+  <bb 5> [3.00%]:
+  output_string ("\n");
+  output_string ("============================== ALL STATISTICS ===============================\n");
+  time (&time_and_date);
+  loctime_100 = localtime (&time_and_date);
+  _3 = asctime (loctime_100);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "**Date and time of benchmark run: %s", _3);
+  output_string (&buffer);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "**Sizeof: char:%u short:%u int:%u long:%u u8:%u u16:%u u32:%u int32:%u\n", 1, 2, 4, 8, 1, 2, 4, 4);
+  output_string (&buffer);
+  __builtin_memcpy (&buffer, "**System used for compilation:\n", 32);
+  output_string (&buffer);
+  __builtin_memcpy (&buffer, "**Linux elvenado 4.15.0-112-generic #113-Ubuntu SMP Thu Jul 9 23:41:39 UTC 2020 \n", 82);
+  output_string (&buffer);
+  __builtin_memcpy (&buffer, "**C compiler: gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) \n", 64);
+  output_string (&buffer);
+  __builtin_memcpy (&buffer, "**libc: libc-2.27.so\n", 22);
+  output_string (&buffer);
+  __builtin_memcpy (&buffer, "**Date of compilation: Mon 24 Aug 10:41:27 BST 2020\n", 53);
+  output_string (&buffer);
+  output_string ("=============================================================================\n");
+
+  <bb 6> [9.09%]:
+  output_string ("\nTEST                : Iterations/sec.  : Old Index   : New Index\n");
+  output_string ("                    :                  : Pentium 90* : AMD K6/233*\n");
+  output_string ("--------------------:------------------:-------------:------------\n");
+  i_113 = testnum;
+  ivtmp.54_26 = (sizetype) i_113;
+
+  <bb 7> [51.51%]:
+  # lx_memindex_319 = PHI <lx_memindex_44(58), 1.0e+0(6)>
+  # lx_intindex_317 = PHI <lx_intindex_47(58), 1.0e+0(6)>
+  # lx_fpindex_315 = PHI <lx_fpindex_50(58), 1.0e+0(6)>
+  # intindex_313 = PHI <intindex_53(58), 1.0e+0(6)>
+  # fpindex_322 = PHI <fpindex_56(58), 1.0e+0(6)>
+  # prephitmp_19 = PHI <prephitmp_23(58), i_113(6)>
+  # ivtmp.54_13 = PHI <ivtmp.54_24(58), ivtmp.54_26(6)>
+  i_320 = (int) ivtmp.54_13;
+  _57 = ivtmp.54_13 * 4;
+  _4 = MEM[symbol: tests_to_do, index: _57, offset: 0B];
+  if (_4 != 0)
+    goto <bb 8>; [33.00%]
+  else
+    goto <bb 58>; [67.00%]
+
+  <bb 8> [17.00%]:
+  _326 = ivtmp.54_13 * 8;
+  _5 = MEM[symbol: ftestnames, index: _326, offset: 0B];
+  __builtin___sprintf_chk (&buffer, 1, 1024, "%s    :", _5);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_190 = write_to_file;
+  if (write_to_file.30_190 != 0)
+    goto <bb 9>; [36.64%]
+  else
+    goto <bb 10>; [63.36%]
+
+  <bb 9> [6.23%]:
+  global_ofile.31_191 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_191);
+
+  <bb 10> [17.00%]:
+  _330 = _326;
+  _153 = MEM[symbol: funcpointer, index: _326, offset: 0B];
+  _153 ();
+  _329 = _326;
+  _6 = MEM[symbol: lx_bindex, index: _326, offset: 0B];
+  _7 = bmean_187(D) / _6;
+  _327 = _326;
+  _8 = MEM[symbol: bindex, index: _326, offset: 0B];
+  _9 = bmean_187(D) / _8;
+  __builtin___sprintf_chk (&buffer, 1, 1024, " %15.5g  :  %9.2f  :  %9.2f\n", bmean_187(D), _9, _7);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_189 = write_to_file;
+  if (write_to_file.30_189 != 0)
+    goto <bb 11>; [36.64%]
+  else
+    goto <bb 12>; [63.36%]
+
+  <bb 11> [6.23%]:
+  global_ofile.31_192 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_192);
+
+  <bb 12> [17.00%]:
+  i_308 = i_320;
+  _10 = i_320 == 4;
+  _147 = (unsigned int) ivtmp.54_13;
+  _133 = _147 + 4294967288;
+  _48 = _133 <= 1;
+  _134 = _48 | _10;
+  _144 = _326;
+  pretmp_12 = MEM[symbol: bindex, index: _326, offset: 0B];
+  _328 = _326;
+  pretmp_21 = MEM[symbol: lx_bindex, index: _326, offset: 0B];
+  if (_134 != 0)
+    goto <bb 13>; [67.00%]
+  else
+    goto <bb 14>; [33.00%]
+
+  <bb 13> [11.39%]:
+  _14 = bmean_187(D) / pretmp_12;
+  fpindex_139 = _14 * fpindex_322;
+  _16 = bmean_187(D) / pretmp_21;
+  lx_fpindex_140 = _16 * lx_fpindex_315;
+  goto <bb 19>; [100.00%]
+
+  <bb 14> [5.61%]:
+  _18 = bmean_187(D) / pretmp_12;
+  intindex_136 = _18 * intindex_313;
+  _307 = _147;
+  if (_147 > 7)
+    goto <bb 15>; [50.00%]
+  else
+    goto <bb 16>; [50.00%]
+
+  <bb 15> [2.81%]:
+  # _54 = PHI <1(14)>
+  goto <bb 17>; [100.00%]
+
+  <bb 16> [5.61%]:
+  _312 = 201 >> i_320;
+  _314 = _312 & 1;
+  _316 = _314 == 0;
+  if (_316 != 0)
+    goto <bb 17>; [20.00%]
+  else
+    goto <bb 18>; [80.00%]
+
+  <bb 17> [2.80%]:
+  _27 = bmean_187(D) / pretmp_21;
+  lx_memindex_137 = _27 * lx_memindex_319;
+  goto <bb 19>; [100.00%]
+
+  <bb 18> [3.81%]:
+  _25 = bmean_187(D) / pretmp_21;
+  lx_intindex_138 = _25 * lx_intindex_317;
+
+  <bb 19> [17.00%]:
+  # lx_memindex_43 = PHI <lx_memindex_319(13), lx_memindex_319(18), lx_memindex_137(17)>
+  # lx_intindex_46 = PHI <lx_intindex_317(13), lx_intindex_138(18), lx_intindex_317(17)>
+  # lx_fpindex_49 = PHI <lx_fpindex_140(13), lx_fpindex_315(18), lx_fpindex_315(17)>
+  # intindex_52 = PHI <intindex_313(13), intindex_136(18), intindex_136(17)>
+  # fpindex_55 = PHI <fpindex_139(13), fpindex_322(18), fpindex_322(17)>
+  global_allstats.10_28 = global_allstats;
+  if (global_allstats.10_28 != 0)
+    goto <bb 21>; [33.00%]
+  else
+    goto <bb 20>; [67.00%]
+
+  <bb 20> [11.39%]:
+  pretmp_20 = testnum;
+  goto <bb 58>; [100.00%]
+
+  <bb 21> [5.61%]:
+  __builtin___sprintf_chk (&buffer, 1, 1024, "  Absolute standard deviation: %g\n", bstdev_188(D));
+  output_string (&buffer);
+  if (bmean_187(D) > 1.00000000000000001999189980260288361964776078853415942018e-100)
+    goto <bb 22>; [33.00%]
+  else
+    goto <bb 23>; [67.00%]
+
+  <bb 22> [1.85%]:
+  _29 = bstdev_188(D) * 1.0e+2;
+  _30 = _29 / bmean_187(D);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "  Relative standard deviation: %g %%\n", _30);
+  output_string (&buffer);
+
+  <bb 23> [5.61%]:
+  __builtin___sprintf_chk (&buffer, 1, 1024, "  Number of runs: %lu\n", 5);
+  output_string (&buffer);
+  switch (i_320) <default: <L39> [9.09%], case 0: <L29> [9.09%], case 1: <L30> [9.09%], case 2: <L31> [9.09%], case 3: <L32> [9.09%], case 4: <L33> [9.09%], case 5: <L34> [9.09%], case 6: <L35> [9.09%], case 7: <L36> [9.09%], case 8: <L37> [9.09%], case 9: <L38> [9.09%]>
+
+<L29> [0.51%]:
+  _193 = global_numsortstruct.numarrays;
+  _194 = (int) _193;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of arrays: %d\n", _194);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_212 = write_to_file;
+  if (write_to_file.30_212 != 0)
+    goto <bb 25>; [36.64%]
+  else
+    goto <bb 26>; [63.36%]
+
+  <bb 25> [0.19%]:
+  global_ofile.31_213 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_213);
+
+  <bb 26> [0.51%]:
+  _195 = global_numsortstruct.arraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %ld\n", _195);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_211 = write_to_file;
+  if (write_to_file.30_211 != 0)
+    goto <bb 28>; [36.64%]
+  else
+    goto <bb 27>; [63.36%]
+
+  <bb 27> [3.20%]:
+  goto <bb 57> (<L39>); [100.00%]
+
+  <bb 28> [0.19%]:
+  global_ofile.31_214 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_214);
+  goto <bb 57> (<L39>); [100.00%]
+
+<L30> [0.51%]:
+  _196 = global_strsortstruct.numarrays;
+  _197 = (int) _196;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of arrays: %d\n", _197);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_216 = write_to_file;
+  if (write_to_file.30_216 != 0)
+    goto <bb 30>; [36.64%]
+  else
+    goto <bb 31>; [63.36%]
+
+  <bb 30> [0.19%]:
+  global_ofile.31_217 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_217);
+
+  <bb 31> [0.51%]:
+  _198 = global_strsortstruct.arraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %ld\n", _198);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_215 = write_to_file;
+  if (write_to_file.30_215 != 0)
+    goto <bb 32>; [36.64%]
+  else
+    goto <bb 27>; [63.36%]
+
+  <bb 32> [0.19%]:
+  global_ofile.31_218 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_218);
+  goto <bb 57> (<L39>); [100.00%]
+
+<L31> [0.51%]:
+  _199 = global_bitopstruct.bitoparraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Operations array size: %ld\n", _199);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_220 = write_to_file;
+  if (write_to_file.30_220 != 0)
+    goto <bb 34>; [36.64%]
+  else
+    goto <bb 35>; [63.36%]
+
+  <bb 34> [0.19%]:
+  global_ofile.31_221 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_221);
+
+  <bb 35> [0.51%]:
+  _200 = global_bitopstruct.bitfieldarraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Bitfield array size: %ld\n", _200);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_219 = write_to_file;
+  if (write_to_file.30_219 != 0)
+    goto <bb 36>; [36.64%]
+  else
+    goto <bb 27>; [63.36%]
+
+  <bb 36> [0.19%]:
+  global_ofile.31_222 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_222);
+  goto <bb 57> (<L39>); [100.00%]
+
+<L32> [0.51%]:
+  _201 = global_emfloatstruct.loops;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of loops: %lu\n", _201);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_224 = write_to_file;
+  if (write_to_file.30_224 != 0)
+    goto <bb 38>; [36.64%]
+  else
+    goto <bb 39>; [63.36%]
+
+  <bb 38> [0.19%]:
+  global_ofile.31_225 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_225);
+
+  <bb 39> [0.51%]:
+  _202 = global_emfloatstruct.arraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %lu\n", _202);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_223 = write_to_file;
+  if (write_to_file.30_223 != 0)
+    goto <bb 40>; [36.64%]
+  else
+    goto <bb 27>; [63.36%]
+
+  <bb 40> [0.19%]:
+  global_ofile.31_226 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_226);
+  goto <bb 57> (<L39>); [100.00%]
+
+<L33> [0.51%]:
+  _203 = global_fourierstruct.arraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of coefficients: %lu\n", _203);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_227 = write_to_file;
+  if (write_to_file.30_227 != 0)
+    goto <bb 42>; [36.64%]
+  else
+    goto <bb 27>; [63.36%]
+
+  <bb 42> [0.19%]:
+  global_ofile.31_228 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_228);
+  goto <bb 57> (<L39>); [100.00%]
+
+<L34> [0.51%]:
+  _204 = global_assignstruct.numarrays;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of arrays: %lu\n", _204);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_229 = write_to_file;
+  if (write_to_file.30_229 != 0)
+    goto <bb 44>; [36.64%]
+  else
+    goto <bb 27>; [63.36%]
+
+  <bb 44> [0.19%]:
+  global_ofile.31_230 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_230);
+  goto <bb 57> (<L39>); [100.00%]
+
+<L35> [0.51%]:
+  _205 = global_ideastruct.arraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %lu\n", _205);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_232 = write_to_file;
+  if (write_to_file.30_232 != 0)
+    goto <bb 46>; [36.64%]
+  else
+    goto <bb 47>; [63.36%]
+
+  <bb 46> [0.19%]:
+  global_ofile.31_233 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_233);
+
+  <bb 47> [0.51%]:
+  _206 = global_ideastruct.loops;
+  __builtin___sprintf_chk (&buffer, 1, 80, " Number of loops: %lu\n", _206);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_231 = write_to_file;
+  if (write_to_file.30_231 != 0)
+    goto <bb 48>; [36.64%]
+  else
+    goto <bb 27>; [63.36%]
+
+  <bb 48> [0.19%]:
+  global_ofile.31_234 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_234);
+  goto <bb 57> (<L39>); [100.00%]
+
+<L36> [0.51%]:
+  _207 = global_huffstruct.arraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %lu\n", _207);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_236 = write_to_file;
+  if (write_to_file.30_236 != 0)
+    goto <bb 50>; [36.64%]
+  else
+    goto <bb 51>; [63.36%]
+
+  <bb 50> [0.19%]:
+  global_ofile.31_237 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_237);
+
+  <bb 51> [0.51%]:
+  _208 = global_huffstruct.loops;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of loops: %lu\n", _208);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_235 = write_to_file;
+  if (write_to_file.30_235 != 0)
+    goto <bb 52>; [36.64%]
+  else
+    goto <bb 27>; [63.36%]
+
+  <bb 52> [0.19%]:
+  global_ofile.31_238 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_238);
+  goto <bb 57> (<L39>); [100.00%]
+
+<L37> [0.51%]:
+  _209 = global_nnetstruct.loops;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of loops: %lu\n", _209);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_239 = write_to_file;
+  if (write_to_file.30_239 != 0)
+    goto <bb 54>; [36.64%]
+  else
+    goto <bb 27>; [63.36%]
+
+  <bb 54> [0.19%]:
+  global_ofile.31_240 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_240);
+  goto <bb 57> (<L39>); [100.00%]
+
+<L38> [0.51%]:
+  _210 = global_lustruct.numarrays;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of arrays: %lu\n", _210);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_241 = write_to_file;
+  if (write_to_file.30_241 != 0)
+    goto <bb 56>; [36.64%]
+  else
+    goto <bb 27>; [63.36%]
+
+  <bb 56> [0.19%]:
+  global_ofile.31_242 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_242);
+
+<L39> [5.61%]:
+  buffer ={v} {CLOBBER};
+  _323 = _326;
+  _31 = MEM[symbol: ftestnames, index: _326, offset: 0B];
+  __builtin___sprintf_chk (&buffer, 1, 1024, "Done with %s\n\n", _31);
+  output_string (&buffer);
+  pretmp_22 = testnum;
+
+  <bb 58> [51.51%]:
+  # lx_memindex_44 = PHI <lx_memindex_319(7), lx_memindex_43(20), lx_memindex_43(57)>
+  # lx_intindex_47 = PHI <lx_intindex_317(7), lx_intindex_46(20), lx_intindex_46(57)>
+  # lx_fpindex_50 = PHI <lx_fpindex_315(7), lx_fpindex_49(20), lx_fpindex_49(57)>
+  # intindex_53 = PHI <intindex_313(7), intindex_52(20), intindex_52(57)>
+  # fpindex_56 = PHI <fpindex_322(7), fpindex_55(20), fpindex_55(57)>
+  # prephitmp_23 = PHI <prephitmp_19(7), pretmp_20(20), pretmp_22(57)>
+  _58 = (unsigned int) ivtmp.54_13;
+  _309 = _58 + 1;
+  _152 = (int) _309;
+  i_146 = _152;
+  ivtmp.54_24 = ivtmp.54_13 + 1;
+  if (prephitmp_23 >= _152)
+    goto <bb 7>; [85.00%]
+  else
+    goto <bb 59>; [15.00%]
+
+  <bb 59> [9.09%]:
+  # lx_memindex_64 = PHI <lx_memindex_44(58)>
+  # lx_intindex_321 = PHI <lx_intindex_47(58)>
+  # lx_fpindex_311 = PHI <lx_fpindex_50(58)>
+  # intindex_61 = PHI <intindex_53(58)>
+  # fpindex_11 = PHI <fpindex_56(58)>
+  global_custrun.17_33 = global_custrun;
+  if (global_custrun.17_33 == 0)
+    goto <bb 60>; [33.00%]
+  else
+    goto <bb 61>; [67.00%]
+
+  <bb 60> [3.00%]:
+  output_string ("==========================ORIGINAL BYTEMARK RESULTS==========================\n");
+  _34 = pow (intindex_53, 1.428570000000000117523768494720570743083953857421875e-1);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "INTEGER INDEX       : %.3f\n", _34);
+  output_string (&buffer);
+  _35 = pow (fpindex_56, 3.3333000000000001517008740847813896834850311279296875e-1);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "FLOATING-POINT INDEX: %.3f\n", _35);
+  output_string (&buffer);
+  output_string ("Baseline (MSDOS*)   : Pentium* 90, 256 KB L2-cache, Watcom* compiler 10.0\n");
+  output_string ("==============================LINUX DATA BELOW===============================\n");
+  global_ofile.18_36 = global_ofile;
+  write_to_file.19_37 = write_to_file;
+  hardware (write_to_file.19_37, global_ofile.18_36);
+  __builtin_memcpy (&buffer, "C compiler          : gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) \n", 72);
+  output_string (&buffer);
+  __builtin_memcpy (&buffer, "libc                : libc-2.27.so\n", 36);
+  output_string (&buffer);
+  _38 = pow (lx_memindex_44, 3.33333333299999978738270556277711875736713409423828125e-1);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "MEMORY INDEX        : %.3f\n", _38);
+  output_string (&buffer);
+  _39 = pow (lx_intindex_47, 2.5e-1);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "INTEGER INDEX       : %.3f\n", _39);
+  output_string (&buffer);
+  _40 = pow (lx_fpindex_50, 3.33333333299999978738270556277711875736713409423828125e-1);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "FLOATING-POINT INDEX: %.3f\n", _40);
+  output_string (&buffer);
+  output_string ("Baseline (LINUX)    : AMD K6/233*, 512 KB L2-cache, gcc 2.7.2.3, libc-5.4.38\n");
+  output_string ("* Trademarks are property of their respective holder.\n");
+
+  <bb 61> [9.09%]:
+  exit (0);
+
+}
+
+
