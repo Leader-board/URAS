@@ -1,0 +1,2123 @@
+
+;; Function hardware (hardware, funcdef_no=56, decl_uid=3373, cgraph_uid=56, symbol_order=56)
+
+Points-to analysis
+
+Constraints:
+
+ANYTHING = &ANYTHING
+ESCAPED = *ESCAPED
+ESCAPED = ESCAPED + UNKNOWN
+*ESCAPED = NONLOCAL
+NONLOCAL = &NONLOCAL
+NONLOCAL = &ESCAPED
+INTEGER = &ANYTHING
+write_to_file = &NONLOCAL
+global_ofile = &NONLOCAL
+ESCAPED = &os_command
+ESCAPED = &STRING
+pipe_22 = NONLOCAL
+os = &NULL
+ESCAPED = &os
+ESCAPED = &NONLOCAL
+ESCAPED = pipe_22
+_25 = NONLOCAL
+os = &NULL
+ESCAPED = pipe_22
+_27 = os
+CALLUSED(19) = CALLUSED(19) + UNKNOWN
+CALLUSED(19) = *CALLUSED(19) + UNKNOWN
+CALLUSED(19) = &os
+_28 = CALLUSED(19)
+_28 = NONLOCAL
+_29 = _28
+_29 = &NONLOCAL
+_30 = &os
+_31 = *_30
+derefaddrtmp(25) = &NULL
+*_30 = derefaddrtmp(25)
+_1 = &os
+_1 = &NULL
+cache = &NULL
+model = &NULL
+cpu_MHz = &NULL
+model_name = &NULL
+vendor_id = &NULL
+ESCAPED = &STRING
+ESCAPED = &STRING
+info_32 = NONLOCAL
+CALLUSED(34) = CALLUSED(34) + UNKNOWN
+CALLUSED(34) = *CALLUSED(34) + UNKNOWN
+CALLUSED(34) = &buffer
+_33 = CALLUSED(34)
+_33 = NONLOCAL
+buffer_end_34 = &buffer
+CALLUSED(40) = CALLUSED(40) + UNKNOWN
+CALLUSED(40) = *CALLUSED(40) + UNKNOWN
+CALLUSED(40) = &buffer
+CALLUSED(40) = &STRING
+CALLUSED(40) = &NONLOCAL
+_35 = CALLUSED(40)
+_35 = NONLOCAL
+cpus_37 = cpus_36
+cpus_37 = &NONLOCAL
+CALLUSED(45) = CALLUSED(45) + UNKNOWN
+CALLUSED(45) = *CALLUSED(45) + UNKNOWN
+CALLUSED(45) = &buffer
+CALLUSED(45) = &STRING
+CALLUSED(45) = &NONLOCAL
+_38 = CALLUSED(45)
+_38 = NONLOCAL
+cp_40 = cp_39 + 8
+cp_39 = &buffer
+cp_39 = cp_40
+_41 = *cp_39
+_44 = _42
+_44 = _43
+cp_45 = cp_39
+cp_45 = cp_39
+vendor_id = *cp_45 + UNKNOWN
+_46 = vendor_id
+CALLUSED(56) = CALLUSED(56) + UNKNOWN
+CALLUSED(56) = *CALLUSED(56) + UNKNOWN
+CALLUSED(56) = &vendor_id
+_104 = CALLUSED(56)
+_104 = NONLOCAL
+_105 = _104
+_105 = &NONLOCAL
+_106 = &vendor_id
+_107 = *_106
+derefaddrtmp(62) = &NULL
+*_106 = derefaddrtmp(62)
+CALLUSED(63) = CALLUSED(63) + UNKNOWN
+CALLUSED(63) = *CALLUSED(63) + UNKNOWN
+CALLUSED(63) = &buffer
+CALLUSED(63) = &STRING
+CALLUSED(63) = &NONLOCAL
+_47 = CALLUSED(63)
+_47 = NONLOCAL
+cp_49 = cp_48 + 8
+cp_48 = &buffer
+cp_48 = cp_49
+_50 = *cp_48
+_53 = _51
+_53 = _52
+cp_54 = cp_48
+cp_54 = cp_48
+model_name = *cp_54 + UNKNOWN
+_55 = model_name
+CALLUSED(74) = CALLUSED(74) + UNKNOWN
+CALLUSED(74) = *CALLUSED(74) + UNKNOWN
+CALLUSED(74) = &model_name
+_108 = CALLUSED(74)
+_108 = NONLOCAL
+_109 = _108
+_109 = &NONLOCAL
+_110 = &model_name
+_111 = *_110
+derefaddrtmp(80) = &NULL
+*_110 = derefaddrtmp(80)
+CALLUSED(81) = CALLUSED(81) + UNKNOWN
+CALLUSED(81) = *CALLUSED(81) + UNKNOWN
+CALLUSED(81) = &buffer
+CALLUSED(81) = &STRING
+CALLUSED(81) = &NONLOCAL
+_56 = CALLUSED(81)
+_56 = NONLOCAL
+cp_58 = cp_57 + 8
+cp_57 = &buffer
+cp_57 = cp_58
+_59 = *cp_57
+_62 = _60
+_62 = _61
+cp_63 = cp_57
+cp_63 = cp_57
+cpu_MHz = *cp_63 + UNKNOWN
+_64 = cpu_MHz
+CALLUSED(92) = CALLUSED(92) + UNKNOWN
+CALLUSED(92) = *CALLUSED(92) + UNKNOWN
+CALLUSED(92) = &cpu_MHz
+_112 = CALLUSED(92)
+_112 = NONLOCAL
+_113 = _112
+_113 = &NONLOCAL
+_114 = &cpu_MHz
+_115 = *_114
+derefaddrtmp(98) = &NULL
+*_114 = derefaddrtmp(98)
+CALLUSED(99) = CALLUSED(99) + UNKNOWN
+CALLUSED(99) = *CALLUSED(99) + UNKNOWN
+CALLUSED(99) = &buffer
+CALLUSED(99) = &STRING
+CALLUSED(99) = &NONLOCAL
+_65 = CALLUSED(99)
+_65 = NONLOCAL
+cp_67 = cp_66 + 8
+cp_66 = &buffer
+cp_66 = cp_67
+_68 = *cp_66
+_71 = _69
+_71 = _70
+cp_72 = cp_66
+cp_72 = cp_66
+cache = *cp_72 + UNKNOWN
+_74 = cache
+CALLUSED(110) = CALLUSED(110) + UNKNOWN
+CALLUSED(110) = *CALLUSED(110) + UNKNOWN
+CALLUSED(110) = &cache
+_116 = CALLUSED(110)
+_116 = NONLOCAL
+_117 = _116
+_117 = &NONLOCAL
+_118 = &cache
+_119 = *_118
+derefaddrtmp(116) = &NULL
+*_118 = derefaddrtmp(116)
+cpus_103 = cpus_37
+cpus_103 = cpus_36
+cpus_103 = cpus_36
+cpus_103 = cpus_36
+cpus_103 = cpus_36
+cpus_103 = cpus_36
+cpus_103 = cpus_36
+cpus_103 = cpus_36
+cpus_103 = cpus_36
+cpus_103 = cpus_36
+cpus_103 = cpus_36
+cpus_103 = cpus_36
+cpus_103 = cpus_36
+cpus_103 = cpus_36
+cpus_36 = &NULL
+cpus_36 = cpus_103
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = info_32
+_75 = NONLOCAL
+cpus_76 = cpus_36
+ESCAPED = &model
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = cpus_76
+CALLUSED(121) = CALLUSED(121) + UNKNOWN
+CALLUSED(121) = *CALLUSED(121) + UNKNOWN
+CALLUSED(121) = &model
+_79 = CALLUSED(121)
+_79 = NONLOCAL
+cp_80 = &model
+_81 = vendor_id
+cp_82 = cp_80 + 8
+derefaddrtmp(127) = &NONLOCAL
+*cp_80 = derefaddrtmp(127)
+cp_83 = cp_80
+cp_83 = cp_82
+CALLUSED(130) = CALLUSED(130) + UNKNOWN
+CALLUSED(130) = *CALLUSED(130) + UNKNOWN
+CALLUSED(130) = cp_83
+CALLUSED(130) = &NONLOCAL
+_84 = CALLUSED(130)
+_84 = NONLOCAL
+*cp_83 + UNKNOWN = vendor_id
+CALLUSED(133) = CALLUSED(133) + UNKNOWN
+CALLUSED(133) = *CALLUSED(133) + UNKNOWN
+CALLUSED(133) = &vendor_id
+_85 = CALLUSED(133)
+_85 = NONLOCAL
+cp_86 = cp_83 + UNKNOWN
+cp_88 = cp_80
+cp_88 = cp_86
+_87 = model_name
+cp_89 = cp_88 + 8
+derefaddrtmp(140) = &NONLOCAL
+*cp_88 = derefaddrtmp(140)
+cp_90 = cp_88
+cp_90 = cp_89
+CALLUSED(142) = CALLUSED(142) + UNKNOWN
+CALLUSED(142) = *CALLUSED(142) + UNKNOWN
+CALLUSED(142) = cp_90
+CALLUSED(142) = &NONLOCAL
+_91 = CALLUSED(142)
+_91 = NONLOCAL
+*cp_90 + UNKNOWN = model_name
+CALLUSED(145) = CALLUSED(145) + UNKNOWN
+CALLUSED(145) = *CALLUSED(145) + UNKNOWN
+CALLUSED(145) = &model_name
+_92 = CALLUSED(145)
+_92 = NONLOCAL
+cp_93 = cp_90 + UNKNOWN
+cp_95 = cp_88
+cp_95 = cp_93
+_94 = cpu_MHz
+cp_96 = cp_95 + 8
+derefaddrtmp(152) = &NONLOCAL
+*cp_95 = derefaddrtmp(152)
+cp_101 = cp_95
+cp_101 = cp_96
+ESCAPED = &cpu_MHz
+ESCAPED = &NULL
+_97 = NONLOCAL
+f_98 = _97
+_99 = f_98
+_99 = &NONLOCAL
+i_100 = _99
+ESCAPED = &cpu_MHz
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = i_100
+CALLUSED(159) = CALLUSED(159) + UNKNOWN
+CALLUSED(159) = *CALLUSED(159) + UNKNOWN
+CALLUSED(159) = cp_101
+CALLUSED(159) = &NONLOCAL
+_102 = CALLUSED(159)
+_102 = NONLOCAL
+*cp_101 + UNKNOWN = cpu_MHz
+ESCAPED = info_32
+model = &NULL
+cache = &NULL
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &model
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &buffer
+ESCAPED = &buffer
+ESCAPED = global_ofile
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &cache
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &buffer
+ESCAPED = &buffer
+ESCAPED = global_ofile
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &os
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &buffer
+ESCAPED = &buffer
+ESCAPED = global_ofile
+
+Collapsing static cycles and doing variable substitution
+Building predecessor graph
+Detecting pointer and location equivalences
+
+
+// The constraint graph before var-substitution in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING"[label="ANYTHING = { 2 }"];
+"STRING";
+"ESCAPED"[label="ESCAPED = { 1 3 5 10 13 27 28 29 36 163 }"];
+"NONLOCAL"[label="NONLOCAL = { 4 5 }"];
+"STOREDANYTHING";
+"INTEGER"[label="INTEGER = { 2 }"];
+"write_to_file"[label="write_to_file = { 5 }"];
+"global_ofile"[label="global_ofile = { 5 }"];
+"os_command";
+"popen";
+"pipe_22";
+"os"[label="os = { 1 }"];
+"*fgets";
+"_25";
+"pclose";
+"_27";
+"strlen";
+"CALLUSED(19)"[label="CALLUSED(19) = { 13 }"];
+"CALLCLOBBERED(20)";
+"_28";
+"_29"[label="_29 = { 5 }"];
+"_30"[label="_30 = { 13 }"];
+"_31";
+"derefaddrtmp(25)"[label="derefaddrtmp(25) = { 1 }"];
+"_1"[label="_1 = { 1 13 }"];
+"cache"[label="cache = { 1 }"];
+"model"[label="model = { 1 }"];
+"cpu_MHz"[label="cpu_MHz = { 1 }"];
+"model_name"[label="model_name = { 1 }"];
+"vendor_id"[label="vendor_id = { 1 }"];
+"fopen";
+"info_32";
+"CALLUSED(34)"[label="CALLUSED(34) = { 36 }"];
+"CALLCLOBBERED(35)";
+"buffer";
+"_33";
+"buffer_end_34"[label="buffer_end_34 = { 36 }"];
+"strncmp";
+"CALLUSED(40)"[label="CALLUSED(40) = { 3 5 36 }"];
+"CALLCLOBBERED(41)";
+"_35";
+"cpus_36"[label="cpus_36 = { 1 5 }"];
+"CALLUSED(45)"[label="CALLUSED(45) = { 3 5 36 }"];
+"CALLCLOBBERED(46)";
+"_38";
+"cp_40";
+"cp_39"[label="cp_39 = { 36 }"];
+"_41";
+"_42";
+"_43";
+"_44";
+"cp_45";
+"_46";
+"CALLUSED(56)"[label="CALLUSED(56) = { 31 }"];
+"CALLCLOBBERED(57)";
+"_104";
+"_105"[label="_105 = { 5 }"];
+"_106"[label="_106 = { 31 }"];
+"_107";
+"derefaddrtmp(62)"[label="derefaddrtmp(62) = { 1 }"];
+"CALLUSED(63)"[label="CALLUSED(63) = { 3 5 36 }"];
+"CALLCLOBBERED(64)";
+"_47";
+"cp_49";
+"cp_48"[label="cp_48 = { 36 }"];
+"_50";
+"_51";
+"_52";
+"_53";
+"cp_54";
+"_55";
+"CALLUSED(74)"[label="CALLUSED(74) = { 30 }"];
+"CALLCLOBBERED(75)";
+"_108";
+"_109"[label="_109 = { 5 }"];
+"_110"[label="_110 = { 30 }"];
+"_111";
+"derefaddrtmp(80)"[label="derefaddrtmp(80) = { 1 }"];
+"CALLUSED(81)"[label="CALLUSED(81) = { 3 5 36 }"];
+"CALLCLOBBERED(82)";
+"_56";
+"cp_58";
+"cp_57"[label="cp_57 = { 36 }"];
+"_59";
+"_60";
+"_61";
+"_62";
+"cp_63";
+"_64";
+"CALLUSED(92)"[label="CALLUSED(92) = { 29 }"];
+"CALLCLOBBERED(93)";
+"_112";
+"_113"[label="_113 = { 5 }"];
+"_114"[label="_114 = { 29 }"];
+"_115";
+"derefaddrtmp(98)"[label="derefaddrtmp(98) = { 1 }"];
+"CALLUSED(99)"[label="CALLUSED(99) = { 3 5 36 }"];
+"CALLCLOBBERED(100)";
+"_65";
+"cp_67";
+"cp_66"[label="cp_66 = { 36 }"];
+"_68";
+"_69";
+"_70";
+"_71";
+"cp_72";
+"_74";
+"CALLUSED(110)"[label="CALLUSED(110) = { 27 }"];
+"CALLCLOBBERED(111)";
+"_116";
+"_117"[label="_117 = { 5 }"];
+"_118"[label="_118 = { 27 }"];
+"_119";
+"derefaddrtmp(116)"[label="derefaddrtmp(116) = { 1 }"];
+"_75";
+"cpus_76";
+"__sprintf_chk";
+"CALLUSED(121)"[label="CALLUSED(121) = { 28 }"];
+"CALLCLOBBERED(122)";
+"_79";
+"cp_80"[label="cp_80 = { 28 }"];
+"_81";
+"cp_82";
+"derefaddrtmp(127)"[label="derefaddrtmp(127) = { 5 }"];
+"cp_83";
+"__builtin_object_size";
+"CALLUSED(130)"[label="CALLUSED(130) = { 5 }"];
+"CALLCLOBBERED(131)";
+"_84";
+"CALLUSED(133)"[label="CALLUSED(133) = { 31 }"];
+"CALLCLOBBERED(134)";
+"_85";
+"cp_86";
+"cp_88";
+"_87";
+"cp_89";
+"derefaddrtmp(140)"[label="derefaddrtmp(140) = { 5 }"];
+"cp_90";
+"CALLUSED(142)"[label="CALLUSED(142) = { 5 }"];
+"CALLCLOBBERED(143)";
+"_91";
+"CALLUSED(145)"[label="CALLUSED(145) = { 30 }"];
+"CALLCLOBBERED(146)";
+"_92";
+"cp_93";
+"cp_95";
+"_94";
+"cp_96";
+"derefaddrtmp(152)"[label="derefaddrtmp(152) = { 5 }"];
+"cp_101";
+"strtod";
+"_97";
+"f_98";
+"_99"[label="_99 = { 5 }"];
+"i_100";
+"CALLUSED(159)"[label="CALLUSED(159) = { 5 }"];
+"CALLCLOBBERED(160)";
+"_102";
+"fclose";
+"buffer";
+"__printf_chk";
+"fputs";
+"*NULL";
+"*ANYTHING";
+"*STRING";
+"*STOREDANYTHING";
+"*INTEGER";
+"*write_to_file";
+"*global_ofile";
+"*os_command";
+"*popen";
+"*os";
+"**fgets";
+"*_25";
+"*pclose";
+"*_27";
+"*strlen";
+"*CALLUSED(19)";
+"*CALLCLOBBERED(20)";
+"*_28";
+"*_29";
+"*_30";
+"*_31";
+"*derefaddrtmp(25)";
+"*_1";
+"*cache";
+"*model";
+"*cpu_MHz";
+"*model_name";
+"*vendor_id";
+"*fopen";
+"*CALLUSED(34)";
+"*CALLCLOBBERED(35)";
+"*buffer";
+"*_33";
+"*buffer_end_34";
+"*strncmp";
+"*CALLUSED(40)";
+"*CALLCLOBBERED(41)";
+"*_35";
+"*cpus_36";
+"*CALLUSED(45)";
+"*CALLCLOBBERED(46)";
+"*_38";
+"*cp_40";
+"*cp_39";
+"*_41";
+"*_42";
+"*_43";
+"*_44";
+"*cp_45";
+"*_46";
+"*CALLUSED(56)";
+"*CALLCLOBBERED(57)";
+"*_104";
+"*_105";
+"*_106";
+"*_107";
+"*derefaddrtmp(62)";
+"*CALLUSED(63)";
+"*CALLCLOBBERED(64)";
+"*_47";
+"*cp_49";
+"*cp_48";
+"*_50";
+"*_51";
+"*_52";
+"*_53";
+"*cp_54";
+"*_55";
+"*CALLUSED(74)";
+"*CALLCLOBBERED(75)";
+"*_108";
+"*_109";
+"*_110";
+"*_111";
+"*derefaddrtmp(80)";
+"*CALLUSED(81)";
+"*CALLCLOBBERED(82)";
+"*_56";
+"*cp_58";
+"*cp_57";
+"*_59";
+"*_60";
+"*_61";
+"*_62";
+"*cp_63";
+"*_64";
+"*CALLUSED(92)";
+"*CALLCLOBBERED(93)";
+"*_112";
+"*_113";
+"*_114";
+"*_115";
+"*derefaddrtmp(98)";
+"*CALLUSED(99)";
+"*CALLCLOBBERED(100)";
+"*_65";
+"*cp_67";
+"*cp_66";
+"*_68";
+"*_69";
+"*_70";
+"*_71";
+"*cp_72";
+"*_74";
+"*CALLUSED(110)";
+"*CALLCLOBBERED(111)";
+"*_116";
+"*_117";
+"*_118";
+"*_119";
+"*derefaddrtmp(116)";
+"*_75";
+"*cpus_76";
+"*__sprintf_chk";
+"*CALLUSED(121)";
+"*CALLCLOBBERED(122)";
+"*_79";
+"*cp_80";
+"*_81";
+"*cp_82";
+"*derefaddrtmp(127)";
+"*cp_83";
+"*__builtin_object_size";
+"*CALLUSED(130)";
+"*CALLCLOBBERED(131)";
+"*_84";
+"*CALLUSED(133)";
+"*CALLCLOBBERED(134)";
+"*_85";
+"*cp_86";
+"*cp_88";
+"*_87";
+"*cp_89";
+"*derefaddrtmp(140)";
+"*cp_90";
+"*CALLUSED(142)";
+"*CALLCLOBBERED(143)";
+"*_91";
+"*CALLUSED(145)";
+"*CALLCLOBBERED(146)";
+"*_92";
+"*cp_93";
+"*cp_95";
+"*_94";
+"*cp_96";
+"*derefaddrtmp(152)";
+"*cp_101";
+"*strtod";
+"*CALLUSED(159)";
+"*CALLCLOBBERED(160)";
+"*_102";
+"*fclose";
+"*buffer";
+"*__printf_chk";
+"*fputs";
+
+  // Edges in the constraint graph:
+"NONLOCAL" -> "ESCAPED";
+"global_ofile" -> "ESCAPED";
+"pipe_22" -> "ESCAPED";
+"info_32" -> "ESCAPED";
+"cpus_76" -> "ESCAPED";
+"i_100" -> "ESCAPED";
+"ESCAPED" -> "ESCAPED";
+"NONLOCAL" -> "pipe_22";
+"NONLOCAL" -> "_25";
+"os" -> "_27";
+"NONLOCAL" -> "_28";
+"CALLUSED(19)" -> "_28";
+"_28" -> "_29";
+"*_30" -> "_31";
+"NONLOCAL" -> "info_32";
+"NONLOCAL" -> "_33";
+"CALLUSED(34)" -> "_33";
+"NONLOCAL" -> "_35";
+"CALLUSED(40)" -> "_35";
+"cpus_36" -> "cpus_36";
+"cpus_36" -> "cpus_36";
+"cpus_36" -> "cpus_36";
+"NONLOCAL" -> "_38";
+"CALLUSED(45)" -> "_38";
+"cp_40" -> "cp_39";
+"*cp_39" -> "_41";
+"_42" -> "_44";
+"_43" -> "_44";
+"cp_39" -> "cp_45";
+"vendor_id" -> "_46";
+"NONLOCAL" -> "_104";
+"CALLUSED(56)" -> "_104";
+"_104" -> "_105";
+"*_106" -> "_107";
+"NONLOCAL" -> "_47";
+"CALLUSED(63)" -> "_47";
+"cp_49" -> "cp_48";
+"*cp_48" -> "_50";
+"_51" -> "_53";
+"_52" -> "_53";
+"cp_48" -> "cp_54";
+"model_name" -> "_55";
+"NONLOCAL" -> "_108";
+"CALLUSED(74)" -> "_108";
+"_108" -> "_109";
+"*_110" -> "_111";
+"NONLOCAL" -> "_56";
+"CALLUSED(81)" -> "_56";
+"cp_58" -> "cp_57";
+"*cp_57" -> "_59";
+"_60" -> "_62";
+"_61" -> "_62";
+"cp_57" -> "cp_63";
+"cpu_MHz" -> "_64";
+"NONLOCAL" -> "_112";
+"CALLUSED(92)" -> "_112";
+"_112" -> "_113";
+"*_114" -> "_115";
+"NONLOCAL" -> "_65";
+"CALLUSED(99)" -> "_65";
+"cp_67" -> "cp_66";
+"*cp_66" -> "_68";
+"_69" -> "_71";
+"_70" -> "_71";
+"cp_66" -> "cp_72";
+"cache" -> "_74";
+"NONLOCAL" -> "_116";
+"CALLUSED(110)" -> "_116";
+"_116" -> "_117";
+"*_118" -> "_119";
+"NONLOCAL" -> "_75";
+"cpus_36" -> "cpus_76";
+"NONLOCAL" -> "_79";
+"CALLUSED(121)" -> "_79";
+"vendor_id" -> "_81";
+"cp_80" -> "cp_83";
+"cp_82" -> "cp_83";
+"cp_83" -> "CALLUSED(130)";
+"NONLOCAL" -> "_84";
+"CALLUSED(130)" -> "_84";
+"NONLOCAL" -> "_85";
+"CALLUSED(133)" -> "_85";
+"cp_80" -> "cp_88";
+"cp_86" -> "cp_88";
+"model_name" -> "_87";
+"cp_88" -> "cp_90";
+"cp_89" -> "cp_90";
+"cp_90" -> "CALLUSED(142)";
+"NONLOCAL" -> "_91";
+"CALLUSED(142)" -> "_91";
+"NONLOCAL" -> "_92";
+"CALLUSED(145)" -> "_92";
+"cp_88" -> "cp_95";
+"cp_93" -> "cp_95";
+"cpu_MHz" -> "_94";
+"cp_95" -> "cp_101";
+"cp_96" -> "cp_101";
+"NONLOCAL" -> "_97";
+"_97" -> "f_98";
+"f_98" -> "_99";
+"_99" -> "i_100";
+"cp_101" -> "CALLUSED(159)";
+"NONLOCAL" -> "_102";
+"CALLUSED(159)" -> "_102";
+"derefaddrtmp(25)" -> "*_30";
+"derefaddrtmp(62)" -> "*_106";
+"derefaddrtmp(80)" -> "*_110";
+"derefaddrtmp(98)" -> "*_114";
+"derefaddrtmp(116)" -> "*_118";
+"derefaddrtmp(127)" -> "*cp_80";
+"derefaddrtmp(140)" -> "*cp_88";
+"derefaddrtmp(152)" -> "*cp_95";
+}
+
+
+Rewriting constraints and unifying variables
+Uniting pointer but not location equivalent variables
+Finding indirect cycles
+
+
+// The constraint graph before solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = NONLOCAL\l"];
+"STOREDANYTHING";
+"INTEGER";
+"write_to_file";
+"os_command";
+"popen";
+"pipe_22";
+"*fgets";
+"pclose";
+"_27";
+"strlen";
+"CALLUSED(19)" [label="\N\nCALLUSED(19) = CALLUSED(19) + UNKNOWN\lCALLUSED(19) = *CALLUSED(19) + UNKNOWN\l"];
+"CALLCLOBBERED(20)";
+"_28";
+"_30" [label="\N\n_31 = *_30\l*_30 = derefaddrtmp(25)\l"];
+"_31";
+"derefaddrtmp(25)";
+"_1";
+"model";
+"fopen";
+"CALLUSED(34)" [label="\N\nCALLUSED(34) = CALLUSED(34) + UNKNOWN\lCALLUSED(34) = *CALLUSED(34) + UNKNOWN\l"];
+"CALLCLOBBERED(35)";
+"buffer";
+"_33";
+"buffer_end_34";
+"strncmp";
+"CALLUSED(40)" [label="\N\nCALLUSED(40) = CALLUSED(40) + UNKNOWN\lCALLUSED(40) = *CALLUSED(40) + UNKNOWN\l"];
+"CALLCLOBBERED(41)";
+"_35";
+"cpus_37";
+"CALLUSED(45)" [label="\N\nCALLUSED(45) = CALLUSED(45) + UNKNOWN\lCALLUSED(45) = *CALLUSED(45) + UNKNOWN\l"];
+"CALLCLOBBERED(46)";
+"_38";
+"cp_40";
+"cp_39" [label="\N\nvendor_id = *cp_39 + UNKNOWN\lcp_40 = cp_39 + 8\l_41 = *cp_39\l"];
+"_41";
+"_42";
+"_43";
+"_44";
+"_46";
+"CALLUSED(56)" [label="\N\nCALLUSED(56) = CALLUSED(56) + UNKNOWN\lCALLUSED(56) = *CALLUSED(56) + UNKNOWN\l"];
+"CALLCLOBBERED(57)";
+"_104";
+"_106" [label="\N\n_107 = *_106\l*_106 = derefaddrtmp(25)\l"];
+"_107";
+"CALLUSED(63)" [label="\N\nCALLUSED(63) = CALLUSED(63) + UNKNOWN\lCALLUSED(63) = *CALLUSED(63) + UNKNOWN\l"];
+"CALLCLOBBERED(64)";
+"_47";
+"cp_49";
+"cp_48" [label="\N\nmodel_name = *cp_48 + UNKNOWN\lcp_49 = cp_48 + 8\l_50 = *cp_48\l"];
+"_50";
+"_51";
+"_52";
+"_53";
+"_55";
+"CALLUSED(74)" [label="\N\nCALLUSED(74) = CALLUSED(74) + UNKNOWN\lCALLUSED(74) = *CALLUSED(74) + UNKNOWN\l"];
+"CALLCLOBBERED(75)";
+"_108";
+"_110" [label="\N\n_111 = *_110\l*_110 = derefaddrtmp(25)\l"];
+"_111";
+"CALLUSED(81)" [label="\N\nCALLUSED(81) = CALLUSED(81) + UNKNOWN\lCALLUSED(81) = *CALLUSED(81) + UNKNOWN\l"];
+"CALLCLOBBERED(82)";
+"_56";
+"cp_58";
+"cp_57" [label="\N\ncpu_MHz = *cp_57 + UNKNOWN\lcp_58 = cp_57 + 8\l_59 = *cp_57\l"];
+"_59";
+"_60";
+"_61";
+"_62";
+"_64";
+"CALLUSED(92)" [label="\N\nCALLUSED(92) = CALLUSED(92) + UNKNOWN\lCALLUSED(92) = *CALLUSED(92) + UNKNOWN\l"];
+"CALLCLOBBERED(93)";
+"_112";
+"_114" [label="\N\n_115 = *_114\l*_114 = derefaddrtmp(25)\l"];
+"_115";
+"CALLUSED(99)" [label="\N\nCALLUSED(99) = CALLUSED(99) + UNKNOWN\lCALLUSED(99) = *CALLUSED(99) + UNKNOWN\l"];
+"CALLCLOBBERED(100)";
+"_65";
+"cp_67";
+"cp_66" [label="\N\ncache = *cp_66 + UNKNOWN\lcp_67 = cp_66 + 8\l_68 = *cp_66\l"];
+"_68";
+"_69";
+"_70";
+"_71";
+"_74";
+"CALLUSED(110)" [label="\N\nCALLUSED(110) = CALLUSED(110) + UNKNOWN\lCALLUSED(110) = *CALLUSED(110) + UNKNOWN\l"];
+"CALLCLOBBERED(111)";
+"_116";
+"_118" [label="\N\n_119 = *_118\l*_118 = derefaddrtmp(25)\l"];
+"_119";
+"__sprintf_chk";
+"CALLUSED(121)" [label="\N\nCALLUSED(121) = CALLUSED(121) + UNKNOWN\lCALLUSED(121) = *CALLUSED(121) + UNKNOWN\l"];
+"CALLCLOBBERED(122)";
+"_79";
+"cp_80" [label="\N\ncp_82 = cp_80 + 8\l*cp_80 = write_to_file\l"];
+"cp_82";
+"cp_83" [label="\N\ncp_86 = cp_83 + UNKNOWN\l*cp_83 + UNKNOWN = vendor_id\l"];
+"__builtin_object_size";
+"CALLUSED(130)" [label="\N\nCALLUSED(130) = CALLUSED(130) + UNKNOWN\lCALLUSED(130) = *CALLUSED(130) + UNKNOWN\l"];
+"CALLCLOBBERED(131)";
+"_84";
+"CALLUSED(133)" [label="\N\nCALLUSED(133) = CALLUSED(133) + UNKNOWN\lCALLUSED(133) = *CALLUSED(133) + UNKNOWN\l"];
+"CALLCLOBBERED(134)";
+"_85";
+"cp_86";
+"cp_88" [label="\N\ncp_89 = cp_88 + 8\l*cp_88 = write_to_file\l"];
+"cp_89";
+"cp_90" [label="\N\ncp_93 = cp_90 + UNKNOWN\l*cp_90 + UNKNOWN = model_name\l"];
+"CALLUSED(142)" [label="\N\nCALLUSED(142) = CALLUSED(142) + UNKNOWN\lCALLUSED(142) = *CALLUSED(142) + UNKNOWN\l"];
+"CALLCLOBBERED(143)";
+"_91";
+"CALLUSED(145)" [label="\N\nCALLUSED(145) = CALLUSED(145) + UNKNOWN\lCALLUSED(145) = *CALLUSED(145) + UNKNOWN\l"];
+"CALLCLOBBERED(146)";
+"_92";
+"cp_93";
+"cp_95" [label="\N\ncp_96 = cp_95 + 8\l*cp_95 = write_to_file\l"];
+"cp_96";
+"cp_101" [label="\N\n*cp_101 + UNKNOWN = cpu_MHz\l"];
+"strtod";
+"CALLUSED(159)" [label="\N\nCALLUSED(159) = CALLUSED(159) + UNKNOWN\lCALLUSED(159) = *CALLUSED(159) + UNKNOWN\l"];
+"CALLCLOBBERED(160)";
+"_102";
+"fclose";
+"buffer";
+"__printf_chk";
+"fputs";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "os_command";
+"STOREDANYTHING" -> "_27";
+"STOREDANYTHING" -> "CALLUSED(19)";
+"STOREDANYTHING" -> "_74";
+"STOREDANYTHING" -> "model";
+"STOREDANYTHING" -> "_64";
+"STOREDANYTHING" -> "_55";
+"STOREDANYTHING" -> "_46";
+"STOREDANYTHING" -> "CALLUSED(34)";
+"STOREDANYTHING" -> "buffer";
+"STOREDANYTHING" -> "CALLUSED(40)";
+"STOREDANYTHING" -> "CALLUSED(45)";
+"STOREDANYTHING" -> "cp_40";
+"STOREDANYTHING" -> "CALLUSED(56)";
+"STOREDANYTHING" -> "CALLUSED(63)";
+"STOREDANYTHING" -> "cp_49";
+"STOREDANYTHING" -> "CALLUSED(74)";
+"STOREDANYTHING" -> "CALLUSED(81)";
+"STOREDANYTHING" -> "cp_58";
+"STOREDANYTHING" -> "CALLUSED(92)";
+"STOREDANYTHING" -> "CALLUSED(99)";
+"STOREDANYTHING" -> "cp_67";
+"STOREDANYTHING" -> "CALLUSED(110)";
+"STOREDANYTHING" -> "CALLUSED(121)";
+"STOREDANYTHING" -> "cp_82";
+"STOREDANYTHING" -> "CALLUSED(130)";
+"STOREDANYTHING" -> "CALLUSED(133)";
+"STOREDANYTHING" -> "cp_86";
+"STOREDANYTHING" -> "cp_89";
+"STOREDANYTHING" -> "CALLUSED(142)";
+"STOREDANYTHING" -> "CALLUSED(145)";
+"STOREDANYTHING" -> "cp_93";
+"STOREDANYTHING" -> "cp_96";
+"STOREDANYTHING" -> "CALLUSED(159)";
+"STOREDANYTHING" -> "buffer";
+"write_to_file" -> "ESCAPED";
+"pipe_22" -> "ESCAPED";
+"pipe_22" -> "_28";
+"pipe_22" -> "_33";
+"pipe_22" -> "_35";
+"pipe_22" -> "_38";
+"pipe_22" -> "_104";
+"pipe_22" -> "_47";
+"pipe_22" -> "_108";
+"pipe_22" -> "_56";
+"pipe_22" -> "_112";
+"pipe_22" -> "_65";
+"pipe_22" -> "_116";
+"pipe_22" -> "_79";
+"pipe_22" -> "_84";
+"pipe_22" -> "_85";
+"pipe_22" -> "_91";
+"pipe_22" -> "_92";
+"pipe_22" -> "_102";
+"CALLUSED(19)" -> "_28";
+"CALLUSED(34)" -> "_33";
+"CALLUSED(40)" -> "_35";
+"cpus_37" -> "ESCAPED";
+"CALLUSED(45)" -> "_38";
+"cp_40" -> "cp_39";
+"CALLUSED(56)" -> "_104";
+"CALLUSED(63)" -> "_47";
+"cp_49" -> "cp_48";
+"CALLUSED(74)" -> "_108";
+"CALLUSED(81)" -> "_56";
+"cp_58" -> "cp_57";
+"CALLUSED(92)" -> "_112";
+"CALLUSED(99)" -> "_65";
+"cp_67" -> "cp_66";
+"CALLUSED(110)" -> "_116";
+"CALLUSED(121)" -> "_79";
+"cp_80" -> "cp_83";
+"cp_80" -> "cp_88";
+"cp_82" -> "cp_83";
+"cp_83" -> "CALLUSED(130)";
+"CALLUSED(130)" -> "_84";
+"CALLUSED(133)" -> "_85";
+"cp_86" -> "cp_88";
+"cp_88" -> "cp_90";
+"cp_88" -> "cp_95";
+"cp_89" -> "cp_90";
+"cp_90" -> "CALLUSED(142)";
+"CALLUSED(142)" -> "_91";
+"CALLUSED(145)" -> "_92";
+"cp_93" -> "cp_95";
+"cp_95" -> "cp_101";
+"cp_96" -> "cp_101";
+"cp_101" -> "CALLUSED(159)";
+"CALLUSED(159)" -> "_102";
+}
+
+
+Solving graph
+
+
+// The constraint graph after solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = pipe_22\l"];
+"STOREDANYTHING";
+"INTEGER";
+"write_to_file";
+"os_command";
+"popen";
+"pipe_22";
+"*fgets";
+"pclose";
+"_27";
+"strlen";
+"CALLUSED(19)" [label="\N\nCALLUSED(19) = CALLUSED(19) + UNKNOWN\lCALLUSED(19) = *CALLUSED(19) + UNKNOWN\l"];
+"CALLCLOBBERED(20)";
+"_28";
+"_30" [label="\N\n_31 = *_30\l*_30 = derefaddrtmp(25)\l"];
+"_31";
+"derefaddrtmp(25)";
+"_1";
+"model";
+"fopen";
+"CALLUSED(34)" [label="\N\nCALLUSED(34) = CALLUSED(34) + UNKNOWN\lCALLUSED(34) = *CALLUSED(34) + UNKNOWN\l"];
+"CALLCLOBBERED(35)";
+"buffer";
+"_33";
+"buffer_end_34";
+"strncmp";
+"CALLUSED(40)" [label="\N\nCALLUSED(40) = CALLUSED(40) + UNKNOWN\lCALLUSED(40) = *CALLUSED(40) + UNKNOWN\l"];
+"CALLCLOBBERED(41)";
+"_35";
+"cpus_37";
+"CALLUSED(45)" [label="\N\nCALLUSED(45) = CALLUSED(45) + UNKNOWN\lCALLUSED(45) = *CALLUSED(45) + UNKNOWN\l"];
+"CALLCLOBBERED(46)";
+"_38";
+"cp_40";
+"cp_39" [label="\N\n_46 = *cp_39 + UNKNOWN\lcp_40 = cp_39 + 8\l_41 = *cp_39\l"];
+"_41";
+"_42";
+"_43";
+"_44";
+"_46";
+"CALLUSED(56)" [label="\N\nCALLUSED(56) = CALLUSED(56) + UNKNOWN\lCALLUSED(56) = *CALLUSED(56) + UNKNOWN\l"];
+"CALLCLOBBERED(57)";
+"_104";
+"_106" [label="\N\n_107 = *_106\l*_106 = derefaddrtmp(25)\l"];
+"_107";
+"CALLUSED(63)" [label="\N\nCALLUSED(63) = CALLUSED(63) + UNKNOWN\lCALLUSED(63) = *CALLUSED(63) + UNKNOWN\l"];
+"CALLCLOBBERED(64)";
+"_47";
+"cp_49";
+"cp_48" [label="\N\n_55 = *cp_48 + UNKNOWN\lcp_49 = cp_48 + 8\l_50 = *cp_48\l"];
+"_50";
+"_51";
+"_52";
+"_53";
+"_55";
+"CALLUSED(74)" [label="\N\nCALLUSED(74) = CALLUSED(74) + UNKNOWN\lCALLUSED(74) = *CALLUSED(74) + UNKNOWN\l"];
+"CALLCLOBBERED(75)";
+"_108";
+"_110" [label="\N\n_111 = *_110\l*_110 = derefaddrtmp(25)\l"];
+"_111";
+"CALLUSED(81)" [label="\N\nCALLUSED(81) = CALLUSED(81) + UNKNOWN\lCALLUSED(81) = *CALLUSED(81) + UNKNOWN\l"];
+"CALLCLOBBERED(82)";
+"_56";
+"cp_58";
+"cp_57" [label="\N\n_64 = *cp_57 + UNKNOWN\lcp_58 = cp_57 + 8\l_59 = *cp_57\l"];
+"_59";
+"_60";
+"_61";
+"_62";
+"_64";
+"CALLUSED(92)" [label="\N\nCALLUSED(92) = CALLUSED(92) + UNKNOWN\lCALLUSED(92) = *CALLUSED(92) + UNKNOWN\l"];
+"CALLCLOBBERED(93)";
+"_112";
+"_114" [label="\N\n_115 = *_114\l*_114 = derefaddrtmp(25)\l"];
+"_115";
+"CALLUSED(99)" [label="\N\nCALLUSED(99) = CALLUSED(99) + UNKNOWN\lCALLUSED(99) = *CALLUSED(99) + UNKNOWN\l"];
+"CALLCLOBBERED(100)";
+"_65";
+"cp_67";
+"cp_66" [label="\N\n_74 = *cp_66 + UNKNOWN\lcp_67 = cp_66 + 8\l_68 = *cp_66\l"];
+"_68";
+"_69";
+"_70";
+"_71";
+"_74";
+"CALLUSED(110)" [label="\N\nCALLUSED(110) = CALLUSED(110) + UNKNOWN\lCALLUSED(110) = *CALLUSED(110) + UNKNOWN\l"];
+"CALLCLOBBERED(111)";
+"_116";
+"_118" [label="\N\n_119 = *_118\l*_118 = derefaddrtmp(25)\l"];
+"_119";
+"__sprintf_chk";
+"CALLUSED(121)" [label="\N\nCALLUSED(121) = CALLUSED(121) + UNKNOWN\lCALLUSED(121) = *CALLUSED(121) + UNKNOWN\l"];
+"CALLCLOBBERED(122)";
+"_79";
+"cp_80" [label="\N\ncp_82 = cp_80 + 8\l*cp_80 = write_to_file\l"];
+"cp_82";
+"cp_83" [label="\N\ncp_86 = cp_83 + UNKNOWN\l*cp_83 + UNKNOWN = _46\l"];
+"__builtin_object_size";
+"CALLUSED(130)" [label="\N\nCALLUSED(130) = CALLUSED(130) + UNKNOWN\lCALLUSED(130) = *CALLUSED(130) + UNKNOWN\l"];
+"CALLCLOBBERED(131)";
+"_84";
+"CALLUSED(133)" [label="\N\nCALLUSED(133) = CALLUSED(133) + UNKNOWN\lCALLUSED(133) = *CALLUSED(133) + UNKNOWN\l"];
+"CALLCLOBBERED(134)";
+"_85";
+"cp_86";
+"cp_88" [label="\N\ncp_89 = cp_88 + 8\l*cp_88 = write_to_file\l"];
+"cp_89";
+"cp_90" [label="\N\ncp_93 = cp_90 + UNKNOWN\l*cp_90 + UNKNOWN = _55\l"];
+"CALLUSED(142)" [label="\N\nCALLUSED(142) = CALLUSED(142) + UNKNOWN\lCALLUSED(142) = *CALLUSED(142) + UNKNOWN\l"];
+"CALLCLOBBERED(143)";
+"_91";
+"CALLUSED(145)" [label="\N\nCALLUSED(145) = CALLUSED(145) + UNKNOWN\lCALLUSED(145) = *CALLUSED(145) + UNKNOWN\l"];
+"CALLCLOBBERED(146)";
+"_92";
+"cp_93";
+"cp_95" [label="\N\ncp_96 = cp_95 + 8\l*cp_95 = write_to_file\l"];
+"cp_96";
+"cp_101" [label="\N\n*cp_101 + UNKNOWN = _64\l"];
+"strtod";
+"CALLUSED(159)" [label="\N\nCALLUSED(159) = CALLUSED(159) + UNKNOWN\lCALLUSED(159) = *CALLUSED(159) + UNKNOWN\l"];
+"CALLCLOBBERED(160)";
+"_102";
+"fclose";
+"buffer";
+"__printf_chk";
+"fputs";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "os_command";
+"STOREDANYTHING" -> "_27";
+"STOREDANYTHING" -> "CALLUSED(19)";
+"STOREDANYTHING" -> "_74";
+"STOREDANYTHING" -> "model";
+"STOREDANYTHING" -> "_64";
+"STOREDANYTHING" -> "_55";
+"STOREDANYTHING" -> "_46";
+"STOREDANYTHING" -> "CALLUSED(34)";
+"STOREDANYTHING" -> "buffer";
+"STOREDANYTHING" -> "CALLUSED(40)";
+"STOREDANYTHING" -> "CALLUSED(45)";
+"STOREDANYTHING" -> "cp_40";
+"STOREDANYTHING" -> "CALLUSED(56)";
+"STOREDANYTHING" -> "CALLUSED(63)";
+"STOREDANYTHING" -> "cp_49";
+"STOREDANYTHING" -> "CALLUSED(74)";
+"STOREDANYTHING" -> "CALLUSED(81)";
+"STOREDANYTHING" -> "cp_58";
+"STOREDANYTHING" -> "CALLUSED(92)";
+"STOREDANYTHING" -> "CALLUSED(99)";
+"STOREDANYTHING" -> "cp_67";
+"STOREDANYTHING" -> "CALLUSED(110)";
+"STOREDANYTHING" -> "CALLUSED(121)";
+"STOREDANYTHING" -> "cp_82";
+"STOREDANYTHING" -> "CALLUSED(130)";
+"STOREDANYTHING" -> "CALLUSED(133)";
+"STOREDANYTHING" -> "cp_86";
+"STOREDANYTHING" -> "cp_89";
+"STOREDANYTHING" -> "CALLUSED(142)";
+"STOREDANYTHING" -> "CALLUSED(145)";
+"STOREDANYTHING" -> "cp_93";
+"STOREDANYTHING" -> "cp_96";
+"STOREDANYTHING" -> "CALLUSED(159)";
+"STOREDANYTHING" -> "buffer";
+"write_to_file" -> "ESCAPED";
+"write_to_file" -> "model";
+"os_command" -> "ESCAPED";
+"pipe_22" -> "ESCAPED";
+"pipe_22" -> "os_command";
+"pipe_22" -> "_27";
+"pipe_22" -> "CALLUSED(19)";
+"pipe_22" -> "_28";
+"pipe_22" -> "model";
+"pipe_22" -> "CALLUSED(34)";
+"pipe_22" -> "buffer";
+"pipe_22" -> "_33";
+"pipe_22" -> "CALLUSED(40)";
+"pipe_22" -> "_35";
+"pipe_22" -> "CALLUSED(45)";
+"pipe_22" -> "_38";
+"pipe_22" -> "CALLUSED(56)";
+"pipe_22" -> "_104";
+"pipe_22" -> "CALLUSED(63)";
+"pipe_22" -> "_47";
+"pipe_22" -> "CALLUSED(74)";
+"pipe_22" -> "_108";
+"pipe_22" -> "CALLUSED(81)";
+"pipe_22" -> "_56";
+"pipe_22" -> "_64";
+"pipe_22" -> "CALLUSED(92)";
+"pipe_22" -> "_112";
+"pipe_22" -> "CALLUSED(99)";
+"pipe_22" -> "_65";
+"pipe_22" -> "_74";
+"pipe_22" -> "CALLUSED(110)";
+"pipe_22" -> "_116";
+"pipe_22" -> "CALLUSED(121)";
+"pipe_22" -> "_79";
+"pipe_22" -> "CALLUSED(130)";
+"pipe_22" -> "_84";
+"pipe_22" -> "CALLUSED(133)";
+"pipe_22" -> "_85";
+"pipe_22" -> "CALLUSED(142)";
+"pipe_22" -> "_91";
+"pipe_22" -> "CALLUSED(145)";
+"pipe_22" -> "_92";
+"pipe_22" -> "CALLUSED(159)";
+"pipe_22" -> "_102";
+"pipe_22" -> "buffer";
+"_27" -> "ESCAPED";
+"_27" -> "CALLUSED(19)";
+"_27" -> "_31";
+"CALLUSED(19)" -> "_28";
+"derefaddrtmp(25)" -> "_27";
+"derefaddrtmp(25)" -> "_46";
+"derefaddrtmp(25)" -> "_55";
+"derefaddrtmp(25)" -> "_64";
+"derefaddrtmp(25)" -> "_74";
+"model" -> "ESCAPED";
+"model" -> "CALLUSED(121)";
+"model" -> "CALLUSED(130)";
+"model" -> "CALLUSED(142)";
+"model" -> "CALLUSED(159)";
+"CALLUSED(34)" -> "_33";
+"buffer" -> "ESCAPED";
+"buffer" -> "CALLUSED(34)";
+"buffer" -> "CALLUSED(40)";
+"buffer" -> "CALLUSED(45)";
+"buffer" -> "_41";
+"buffer" -> "_46";
+"buffer" -> "CALLUSED(63)";
+"buffer" -> "_50";
+"buffer" -> "_55";
+"buffer" -> "CALLUSED(81)";
+"buffer" -> "_59";
+"buffer" -> "_64";
+"buffer" -> "CALLUSED(99)";
+"buffer" -> "_68";
+"buffer" -> "_74";
+"CALLUSED(40)" -> "_35";
+"cpus_37" -> "ESCAPED";
+"CALLUSED(45)" -> "_38";
+"cp_40" -> "cp_39";
+"_46" -> "model";
+"_46" -> "CALLUSED(56)";
+"_46" -> "_107";
+"_46" -> "CALLUSED(133)";
+"CALLUSED(56)" -> "_104";
+"CALLUSED(63)" -> "_47";
+"cp_49" -> "cp_48";
+"_55" -> "model";
+"_55" -> "CALLUSED(74)";
+"_55" -> "_111";
+"_55" -> "CALLUSED(145)";
+"CALLUSED(74)" -> "_108";
+"CALLUSED(81)" -> "_56";
+"cp_58" -> "cp_57";
+"_64" -> "ESCAPED";
+"_64" -> "model";
+"_64" -> "CALLUSED(92)";
+"_64" -> "_115";
+"CALLUSED(92)" -> "_112";
+"CALLUSED(99)" -> "_65";
+"cp_67" -> "cp_66";
+"_74" -> "ESCAPED";
+"_74" -> "CALLUSED(110)";
+"_74" -> "_119";
+"CALLUSED(110)" -> "_116";
+"CALLUSED(121)" -> "_79";
+"cp_80" -> "cp_83";
+"cp_80" -> "cp_88";
+"cp_82" -> "cp_83";
+"cp_83" -> "CALLUSED(130)";
+"CALLUSED(130)" -> "_84";
+"CALLUSED(133)" -> "_85";
+"cp_86" -> "cp_88";
+"cp_88" -> "cp_90";
+"cp_88" -> "cp_95";
+"cp_89" -> "cp_90";
+"cp_90" -> "CALLUSED(142)";
+"CALLUSED(142)" -> "_91";
+"CALLUSED(145)" -> "_92";
+"cp_93" -> "cp_95";
+"cp_95" -> "cp_101";
+"cp_96" -> "cp_101";
+"cp_101" -> "CALLUSED(159)";
+"CALLUSED(159)" -> "_102";
+"buffer" -> "ESCAPED";
+}
+
+
+
+Points-to sets
+
+ANYTHING = { ANYTHING }
+ESCAPED = { NULL STRING ESCAPED NONLOCAL os_command os cache model cpu_MHz buffer buffer }
+NONLOCAL = { ESCAPED NONLOCAL } same as pipe_22
+STOREDANYTHING = { }
+INTEGER = { ANYTHING }
+write_to_file = { NONLOCAL }
+global_ofile = { NONLOCAL } same as write_to_file
+os_command = { ESCAPED NONLOCAL }
+popen = { }
+pipe_22 = { ESCAPED NONLOCAL }
+os = { NULL ESCAPED NONLOCAL } same as _27
+*fgets = { }
+_25 = { ESCAPED NONLOCAL } same as pipe_22
+pclose = { }
+_27 = { NULL ESCAPED NONLOCAL }
+strlen = { }
+CALLUSED(19) = { NULL ESCAPED NONLOCAL os }
+CALLCLOBBERED(20) = { }
+_28 = { NULL ESCAPED NONLOCAL os }
+_29 = { NULL ESCAPED NONLOCAL os } same as _28
+_30 = { os }
+_31 = { NULL ESCAPED NONLOCAL }
+derefaddrtmp(25) = { NULL }
+_1 = { NULL os }
+cache = { NULL ESCAPED NONLOCAL } same as _74
+model = { NULL ESCAPED NONLOCAL }
+cpu_MHz = { NULL ESCAPED NONLOCAL } same as _64
+model_name = { NULL ESCAPED NONLOCAL } same as _55
+vendor_id = { NULL ESCAPED NONLOCAL } same as _46
+fopen = { }
+info_32 = { ESCAPED NONLOCAL } same as pipe_22
+CALLUSED(34) = { ESCAPED NONLOCAL buffer }
+CALLCLOBBERED(35) = { }
+buffer = { ESCAPED NONLOCAL }
+_33 = { ESCAPED NONLOCAL buffer }
+buffer_end_34 = { buffer }
+strncmp = { }
+CALLUSED(40) = { STRING ESCAPED NONLOCAL buffer }
+CALLCLOBBERED(41) = { }
+_35 = { STRING ESCAPED NONLOCAL buffer }
+cpus_37 = { NULL NONLOCAL }
+cpus_36 = { NULL NONLOCAL } same as cpus_37
+CALLUSED(45) = { STRING ESCAPED NONLOCAL buffer }
+CALLCLOBBERED(46) = { }
+_38 = { STRING ESCAPED NONLOCAL buffer }
+cp_40 = { buffer }
+cp_39 = { buffer }
+_41 = { ESCAPED NONLOCAL }
+_42 = { }
+_43 = { }
+_44 = { }
+cp_45 = { buffer } same as cp_39
+_46 = { NULL ESCAPED NONLOCAL }
+CALLUSED(56) = { NULL ESCAPED NONLOCAL vendor_id }
+CALLCLOBBERED(57) = { }
+_104 = { NULL ESCAPED NONLOCAL vendor_id }
+_105 = { NULL ESCAPED NONLOCAL vendor_id } same as _104
+_106 = { vendor_id }
+_107 = { NULL ESCAPED NONLOCAL }
+derefaddrtmp(62) = { NULL } same as derefaddrtmp(25)
+CALLUSED(63) = { STRING ESCAPED NONLOCAL buffer }
+CALLCLOBBERED(64) = { }
+_47 = { STRING ESCAPED NONLOCAL buffer }
+cp_49 = { buffer }
+cp_48 = { buffer }
+_50 = { ESCAPED NONLOCAL }
+_51 = { }
+_52 = { }
+_53 = { }
+cp_54 = { buffer } same as cp_48
+_55 = { NULL ESCAPED NONLOCAL }
+CALLUSED(74) = { NULL ESCAPED NONLOCAL model_name }
+CALLCLOBBERED(75) = { }
+_108 = { NULL ESCAPED NONLOCAL model_name }
+_109 = { NULL ESCAPED NONLOCAL model_name } same as _108
+_110 = { model_name }
+_111 = { NULL ESCAPED NONLOCAL }
+derefaddrtmp(80) = { NULL } same as derefaddrtmp(25)
+CALLUSED(81) = { STRING ESCAPED NONLOCAL buffer }
+CALLCLOBBERED(82) = { }
+_56 = { STRING ESCAPED NONLOCAL buffer }
+cp_58 = { buffer }
+cp_57 = { buffer }
+_59 = { ESCAPED NONLOCAL }
+_60 = { }
+_61 = { }
+_62 = { }
+cp_63 = { buffer } same as cp_57
+_64 = { NULL ESCAPED NONLOCAL }
+CALLUSED(92) = { NULL ESCAPED NONLOCAL cpu_MHz }
+CALLCLOBBERED(93) = { }
+_112 = { NULL ESCAPED NONLOCAL cpu_MHz }
+_113 = { NULL ESCAPED NONLOCAL cpu_MHz } same as _112
+_114 = { cpu_MHz }
+_115 = { NULL ESCAPED NONLOCAL }
+derefaddrtmp(98) = { NULL } same as derefaddrtmp(25)
+CALLUSED(99) = { STRING ESCAPED NONLOCAL buffer }
+CALLCLOBBERED(100) = { }
+_65 = { STRING ESCAPED NONLOCAL buffer }
+cp_67 = { buffer }
+cp_66 = { buffer }
+_68 = { ESCAPED NONLOCAL }
+_69 = { }
+_70 = { }
+_71 = { }
+cp_72 = { buffer } same as cp_66
+_74 = { NULL ESCAPED NONLOCAL }
+CALLUSED(110) = { NULL ESCAPED NONLOCAL cache }
+CALLCLOBBERED(111) = { }
+_116 = { NULL ESCAPED NONLOCAL cache }
+_117 = { NULL ESCAPED NONLOCAL cache } same as _116
+_118 = { cache }
+_119 = { NULL ESCAPED NONLOCAL }
+derefaddrtmp(116) = { NULL } same as derefaddrtmp(25)
+cpus_103 = { NULL NONLOCAL } same as cpus_37
+_75 = { ESCAPED NONLOCAL } same as pipe_22
+cpus_76 = { NULL NONLOCAL } same as cpus_37
+__sprintf_chk = { }
+CALLUSED(121) = { NULL ESCAPED NONLOCAL model }
+CALLCLOBBERED(122) = { }
+_79 = { NULL ESCAPED NONLOCAL model }
+cp_80 = { model }
+_81 = { NULL ESCAPED NONLOCAL } same as _46
+cp_82 = { model }
+derefaddrtmp(127) = { NONLOCAL } same as write_to_file
+cp_83 = { model }
+__builtin_object_size = { }
+CALLUSED(130) = { NULL ESCAPED NONLOCAL model }
+CALLCLOBBERED(131) = { }
+_84 = { NULL ESCAPED NONLOCAL model }
+CALLUSED(133) = { NULL ESCAPED NONLOCAL vendor_id }
+CALLCLOBBERED(134) = { }
+_85 = { NULL ESCAPED NONLOCAL vendor_id }
+cp_86 = { model }
+cp_88 = { model }
+_87 = { NULL ESCAPED NONLOCAL } same as _55
+cp_89 = { model }
+derefaddrtmp(140) = { NONLOCAL } same as write_to_file
+cp_90 = { model }
+CALLUSED(142) = { NULL ESCAPED NONLOCAL model }
+CALLCLOBBERED(143) = { }
+_91 = { NULL ESCAPED NONLOCAL model }
+CALLUSED(145) = { NULL ESCAPED NONLOCAL model_name }
+CALLCLOBBERED(146) = { }
+_92 = { NULL ESCAPED NONLOCAL model_name }
+cp_93 = { model }
+cp_95 = { model }
+_94 = { NULL ESCAPED NONLOCAL } same as _64
+cp_96 = { model }
+derefaddrtmp(152) = { NONLOCAL } same as write_to_file
+cp_101 = { model }
+strtod = { }
+_97 = { ESCAPED NONLOCAL } same as pipe_22
+f_98 = { ESCAPED NONLOCAL } same as pipe_22
+_99 = { ESCAPED NONLOCAL } same as pipe_22
+i_100 = { ESCAPED NONLOCAL } same as pipe_22
+CALLUSED(159) = { NULL ESCAPED NONLOCAL model }
+CALLCLOBBERED(160) = { }
+_102 = { NULL ESCAPED NONLOCAL model }
+fclose = { }
+buffer = { ESCAPED NONLOCAL }
+__printf_chk = { }
+fputs = { }
+
+
+Alias information for hardware
+
+Aliased symbols
+
+buffer, UID D.3580, char[1024], is addressable
+vendor_id, UID D.3581, char[1024], is addressable
+model_name, UID D.3582, char[1024], is addressable
+cpu_MHz, UID D.3583, char[1024], is addressable
+os_command, UID D.3379, char[12], is addressable
+cache, UID D.3378, char[1024], is addressable
+model, UID D.3377, char[1024], is addressable
+os, UID D.3376, char[1024], is addressable
+buffer, UID D.3375, char[1024], is addressable
+
+Call clobber information
+
+ESCAPED, points-to non-local, points-to NULL, points-to vars: { D.3375 D.3376 D.3377 D.3378 D.3379 D.3580 D.3583 } (escaped)
+
+Flow-insensitive points-to information
+
+_1, points-to NULL, points-to vars: { D.3376 } (escaped)
+global_ofile_10(D), points-to non-local, points-to NULL, points-to vars: { }
+pipe_22, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+_25, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+_30, points-to NULL, points-to vars: { D.3376 } (escaped)
+info_32, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+buffer_end_34, points-to NULL, points-to vars: { D.3580 } (escaped)
+cp_39, points-to NULL, points-to vars: { D.3580 } (escaped)
+cp_40, points-to NULL, points-to vars: { D.3580 } (escaped)
+cp_45, points-to NULL, points-to vars: { D.3580 } (escaped)
+cp_48, points-to NULL, points-to vars: { D.3580 } (escaped)
+cp_49, points-to NULL, points-to vars: { D.3580 } (escaped)
+cp_54, points-to NULL, points-to vars: { D.3580 } (escaped)
+cp_57, points-to NULL, points-to vars: { D.3580 } (escaped)
+cp_58, points-to NULL, points-to vars: { D.3580 } (escaped)
+cp_63, points-to NULL, points-to vars: { D.3580 } (escaped)
+cp_66, points-to NULL, points-to vars: { D.3580 } (escaped)
+cp_67, points-to NULL, points-to vars: { D.3580 } (escaped)
+cp_72, points-to NULL, points-to vars: { D.3580 } (escaped)
+_75, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+cp_80, points-to NULL, points-to vars: { D.3377 } (escaped)
+cp_82, points-to NULL, points-to vars: { D.3377 } (escaped)
+cp_83, points-to NULL, points-to vars: { D.3377 } (escaped)
+cp_86, points-to NULL, points-to vars: { D.3377 } (escaped)
+cp_88, points-to NULL, points-to vars: { D.3377 } (escaped)
+cp_89, points-to NULL, points-to vars: { D.3377 } (escaped)
+cp_90, points-to NULL, points-to vars: { D.3377 } (escaped)
+cp_93, points-to NULL, points-to vars: { D.3377 } (escaped)
+cp_95, points-to NULL, points-to vars: { D.3377 } (escaped)
+cp_96, points-to NULL, points-to vars: { D.3377 } (escaped)
+cp_101, points-to NULL, points-to vars: { D.3377 } (escaped)
+_106, points-to NULL, points-to vars: { D.3581 }
+_110, points-to NULL, points-to vars: { D.3582 }
+_114, points-to NULL, points-to vars: { D.3583 } (escaped)
+_118, points-to NULL, points-to vars: { D.3378 } (escaped)
+
+hardware (const int write_to_file, struct FILE * global_ofile)
+{
+  struct FILE * info;
+  char * cp;
+  int cpus;
+  char * buffer_end;
+  char buffer[1024];
+  char vendor_id[1024];
+  char model_name[1024];
+  char cpu_MHz[1024];
+  int i;
+  float f;
+  struct FILE * pipe;
+  char os_command[12];
+  char cache[1024];
+  char model[1024];
+  char os[1024];
+  char buffer[1024];
+  char * _1;
+  char * _25;
+  char _27;
+  long unsigned int _28;
+  sizetype _29;
+  char * _30;
+  char _31;
+  long unsigned int _33;
+  int _35;
+  int _38;
+  char _41;
+  _Bool _42;
+  _Bool _43;
+  _Bool _44;
+  char _46;
+  int _47;
+  char _50;
+  _Bool _51;
+  _Bool _52;
+  _Bool _53;
+  char _55;
+  int _56;
+  char _59;
+  _Bool _60;
+  _Bool _61;
+  _Bool _62;
+  char _64;
+  int _65;
+  char _68;
+  _Bool _69;
+  _Bool _70;
+  _Bool _71;
+  char _74;
+  char * _75;
+  long unsigned int _79;
+  char _81;
+  long unsigned int _84;
+  long unsigned int _85;
+  char _87;
+  long unsigned int _91;
+  long unsigned int _92;
+  char _94;
+  double _97;
+  float _99;
+  long unsigned int _102;
+  long unsigned int _104;
+  sizetype _105;
+  char * _106;
+  char _107;
+  long unsigned int _108;
+  sizetype _109;
+  char * _110;
+  char _111;
+  long unsigned int _112;
+  sizetype _113;
+  char * _114;
+  char _115;
+  long unsigned int _116;
+  sizetype _117;
+  char * _118;
+  char _119;
+
+  <bb 2> [31.42%]:
+  os_command = "uname -s -r";
+  pipe_22 = popen (&os_command, "r");
+  if (pipe_22 == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 4>; [70.00%]
+
+  <bb 3> [9.43%]:
+  MEM[(char *)&os] = 0;
+  goto <bb 7>; [100.00%]
+
+  <bb 4> [21.99%]:
+  _25 = __fgets_alias (&os, 1024, pipe_22);
+  if (_25 == 0B)
+    goto <bb 5>; [30.00%]
+  else
+    goto <bb 6>; [70.00%]
+
+  <bb 5> [6.60%]:
+  MEM[(char *)&os] = 0;
+
+  <bb 6> [21.99%]:
+  pclose (pipe_22);
+
+  <bb 7> [31.42%]:
+  _27 = MEM[(const char *)&os];
+  if (_27 != 0)
+    goto <bb 8>; [36.64%]
+  else
+    goto <bb 10>; [63.36%]
+
+  <bb 8> [11.51%]:
+  _28 = strlen (&os);
+  _29 = _28 + 18446744073709551615;
+  _30 = &os + _29;
+  _31 = *_30;
+  if (_31 == 10)
+    goto <bb 9>; [37.68%]
+  else
+    goto <bb 10>; [62.32%]
+
+  <bb 9> [4.34%]:
+  *_30 = 0;
+
+  <bb 10> [31.42%]:
+  _1 = strstr (&os, "Linux");
+  if (_1 != 0B)
+    goto <bb 11>; [49.47%]
+  else
+    goto <bb 74>; [50.53%]
+
+  <bb 11> [15.54%]:
+  MEM[(char *)&cache] = 0;
+  MEM[(char *)&model] = 0;
+  cpu_MHz[0] = 0;
+  model_name[0] = 0;
+  vendor_id[0] = 0;
+  info_32 = fopen ("/proc/cpuinfo", "r");
+  if (info_32 != 0B)
+    goto <bb 82>; [73.26%]
+  else
+    goto <bb 73>; [26.74%]
+
+  <bb 82> [11.38%]:
+  goto <bb 55>; [100.00%]
+
+  <bb 12> [64.52%]:
+  _33 = strlen (&buffer);
+  buffer_end_34 = &buffer + _33;
+  _35 = strncmp (&buffer, "processor", 9);
+  if (_35 == 0)
+    goto <bb 13>; [50.00%]
+  else
+    goto <bb 14>; [50.00%]
+
+  <bb 13> [32.26%]:
+  cpus_37 = cpus_36 + 1;
+  goto <bb 54>; [100.00%]
+
+  <bb 14> [32.26%]:
+  _38 = strncmp (&buffer, "vendor_id", 9);
+  if (_38 == 0)
+    goto <bb 83>; [34.00%]
+  else
+    goto <bb 24>; [66.00%]
+
+  <bb 83> [10.97%]:
+  goto <bb 16>; [100.00%]
+
+  <bb 15> [89.03%]:
+  cp_40 = cp_39 + 1;
+
+  <bb 16> [100.00%]:
+  # cp_39 = PHI <&MEM[(void *)&buffer + 9B](83), cp_40(15)>
+  if (buffer_end_34 > cp_39)
+    goto <bb 17>; [92.50%]
+  else
+    goto <bb 19>; [7.50%]
+
+  <bb 17> [92.50%]:
+  _41 = *cp_39;
+  _42 = _41 == 32;
+  _43 = _41 == 58;
+  _44 = _42 | _43;
+  if (_44 != 0)
+    goto <bb 15>; [50.00%]
+  else
+    goto <bb 18>; [50.00%]
+
+  <bb 18> [46.25%]:
+  if (_41 == 9)
+    goto <bb 15>; [92.50%]
+  else
+    goto <bb 19>; [7.50%]
+
+  <bb 19> [10.97%]:
+  # cp_45 = PHI <cp_39(16), cp_39(18)>
+  if (buffer_end_34 > cp_39)
+    goto <bb 20>; [33.00%]
+  else
+    goto <bb 21>; [67.00%]
+
+  <bb 20> [3.62%]:
+  __builtin___strcpy_chk (&vendor_id, cp_45, 1024);
+
+  <bb 21> [10.97%]:
+  _46 = MEM[(const char *)&vendor_id];
+  if (_46 != 0)
+    goto <bb 22>; [33.00%]
+  else
+    goto <bb 54>; [67.00%]
+
+  <bb 22> [3.62%]:
+  _104 = strlen (&vendor_id);
+  _105 = _104 + 18446744073709551615;
+  _106 = &vendor_id + _105;
+  _107 = *_106;
+  if (_107 == 10)
+    goto <bb 23>; [37.68%]
+  else
+    goto <bb 54>; [62.32%]
+
+  <bb 23> [1.36%]:
+  *_106 = 0;
+  goto <bb 54>; [100.00%]
+
+  <bb 24> [21.29%]:
+  _47 = strncmp (&buffer, "model name", 10);
+  if (_47 == 0)
+    goto <bb 84>; [34.00%]
+  else
+    goto <bb 34>; [66.00%]
+
+  <bb 84> [7.24%]:
+  goto <bb 26>; [100.00%]
+
+  <bb 25> [58.76%]:
+  cp_49 = cp_48 + 1;
+
+  <bb 26> [66.00%]:
+  # cp_48 = PHI <&MEM[(void *)&buffer + 10B](84), cp_49(25)>
+  if (buffer_end_34 > cp_48)
+    goto <bb 27>; [92.50%]
+  else
+    goto <bb 29>; [7.50%]
+
+  <bb 27> [61.05%]:
+  _50 = *cp_48;
+  _51 = _50 == 32;
+  _52 = _50 == 58;
+  _53 = _51 | _52;
+  if (_53 != 0)
+    goto <bb 25>; [50.00%]
+  else
+    goto <bb 28>; [50.00%]
+
+  <bb 28> [30.52%]:
+  if (_50 == 9)
+    goto <bb 25>; [92.50%]
+  else
+    goto <bb 29>; [7.50%]
+
+  <bb 29> [7.24%]:
+  # cp_54 = PHI <cp_48(26), cp_48(28)>
+  if (buffer_end_34 > cp_48)
+    goto <bb 30>; [33.00%]
+  else
+    goto <bb 31>; [67.00%]
+
+  <bb 30> [2.39%]:
+  __builtin___strcpy_chk (&model_name, cp_54, 1024);
+
+  <bb 31> [7.24%]:
+  _55 = MEM[(const char *)&model_name];
+  if (_55 != 0)
+    goto <bb 32>; [33.00%]
+  else
+    goto <bb 54>; [67.00%]
+
+  <bb 32> [2.39%]:
+  _108 = strlen (&model_name);
+  _109 = _108 + 18446744073709551615;
+  _110 = &model_name + _109;
+  _111 = *_110;
+  if (_111 == 10)
+    goto <bb 33>; [37.68%]
+  else
+    goto <bb 54>; [62.32%]
+
+  <bb 33> [0.90%]:
+  *_110 = 0;
+  goto <bb 54>; [100.00%]
+
+  <bb 34> [14.05%]:
+  _56 = strncmp (&buffer, "cpu MHz", 7);
+  if (_56 == 0)
+    goto <bb 85>; [34.00%]
+  else
+    goto <bb 44>; [66.00%]
+
+  <bb 85> [4.78%]:
+  goto <bb 36>; [100.00%]
+
+  <bb 35> [38.78%]:
+  cp_58 = cp_57 + 1;
+
+  <bb 36> [43.56%]:
+  # cp_57 = PHI <&MEM[(void *)&buffer + 7B](85), cp_58(35)>
+  if (buffer_end_34 > cp_57)
+    goto <bb 37>; [92.50%]
+  else
+    goto <bb 39>; [7.50%]
+
+  <bb 37> [40.29%]:
+  _59 = *cp_57;
+  _60 = _59 == 32;
+  _61 = _59 == 58;
+  _62 = _60 | _61;
+  if (_62 != 0)
+    goto <bb 35>; [50.00%]
+  else
+    goto <bb 38>; [50.00%]
+
+  <bb 38> [20.15%]:
+  if (_59 == 9)
+    goto <bb 35>; [92.50%]
+  else
+    goto <bb 39>; [7.50%]
+
+  <bb 39> [4.78%]:
+  # cp_63 = PHI <cp_57(36), cp_57(38)>
+  if (buffer_end_34 > cp_57)
+    goto <bb 40>; [33.00%]
+  else
+    goto <bb 41>; [67.00%]
+
+  <bb 40> [1.58%]:
+  __builtin___strcpy_chk (&cpu_MHz, cp_63, 1024);
+
+  <bb 41> [4.78%]:
+  _64 = MEM[(const char *)&cpu_MHz];
+  if (_64 != 0)
+    goto <bb 42>; [33.00%]
+  else
+    goto <bb 54>; [67.00%]
+
+  <bb 42> [1.58%]:
+  _112 = strlen (&cpu_MHz);
+  _113 = _112 + 18446744073709551615;
+  _114 = &cpu_MHz + _113;
+  _115 = *_114;
+  if (_115 == 10)
+    goto <bb 43>; [37.68%]
+  else
+    goto <bb 54>; [62.32%]
+
+  <bb 43> [0.59%]:
+  *_114 = 0;
+  goto <bb 54>; [100.00%]
+
+  <bb 44> [9.27%]:
+  _65 = strncmp (&buffer, "cache size", 10);
+  if (_65 == 0)
+    goto <bb 86>; [34.00%]
+  else
+    goto <bb 54>; [66.00%]
+
+  <bb 86> [3.15%]:
+  goto <bb 46>; [100.00%]
+
+  <bb 45> [25.60%]:
+  cp_67 = cp_66 + 1;
+
+  <bb 46> [28.75%]:
+  # cp_66 = PHI <&MEM[(void *)&buffer + 10B](86), cp_67(45)>
+  if (buffer_end_34 > cp_66)
+    goto <bb 47>; [92.50%]
+  else
+    goto <bb 49>; [7.50%]
+
+  <bb 47> [26.59%]:
+  _68 = *cp_66;
+  _69 = _68 == 32;
+  _70 = _68 == 58;
+  _71 = _69 | _70;
+  if (_71 != 0)
+    goto <bb 45>; [50.00%]
+  else
+    goto <bb 48>; [50.00%]
+
+  <bb 48> [13.30%]:
+  if (_68 == 9)
+    goto <bb 45>; [92.50%]
+  else
+    goto <bb 49>; [7.50%]
+
+  <bb 49> [3.15%]:
+  # cp_72 = PHI <cp_66(46), cp_66(48)>
+  if (buffer_end_34 > cp_66)
+    goto <bb 50>; [33.00%]
+  else
+    goto <bb 51>; [67.00%]
+
+  <bb 50> [1.04%]:
+  __builtin___strcpy_chk (&cache, cp_72, 1024);
+
+  <bb 51> [3.15%]:
+  _74 = MEM[(const char *)&cache];
+  if (_74 != 0)
+    goto <bb 52>; [33.00%]
+  else
+    goto <bb 54>; [67.00%]
+
+  <bb 52> [1.04%]:
+  _116 = strlen (&cache);
+  _117 = _116 + 18446744073709551615;
+  _118 = &cache + _117;
+  _119 = *_118;
+  if (_119 == 10)
+    goto <bb 53>; [37.68%]
+  else
+    goto <bb 54>; [62.32%]
+
+  <bb 53> [0.39%]:
+  *_118 = 0;
+
+  <bb 54> [64.52%]:
+  # cpus_103 = PHI <cpus_37(13), cpus_36(21), cpus_36(23), cpus_36(31), cpus_36(33), cpus_36(41), cpus_36(43), cpus_36(44), cpus_36(51), cpus_36(53), cpus_36(22), cpus_36(32), cpus_36(42), cpus_36(52)>
+
+  <bb 55> [75.91%]:
+  # cpus_36 = PHI <0(82), cpus_103(54)>
+  _75 = __fgets_alias (&buffer, 1024, info_32);
+  if (_75 != 0B)
+    goto <bb 12>; [85.00%]
+  else
+    goto <bb 56>; [15.00%]
+
+  <bb 56> [11.39%]:
+  # cpus_76 = PHI <cpus_36(55)>
+  if (cpus_36 > 1)
+    goto <bb 57>; [64.00%]
+  else
+    goto <bb 60>; [36.00%]
+
+  <bb 57> [7.29%]:
+  if (cpus_36 == 2)
+    goto <bb 58>; [34.00%]
+  else
+    goto <bb 59>; [66.00%]
+
+  <bb 58> [2.48%]:
+  __builtin_memcpy (&model, "Dual", 5);
+  goto <bb 60>; [100.00%]
+
+  <bb 59> [4.81%]:
+  __builtin___sprintf_chk (&model, 1, 1024, "%d CPU", cpus_76);
+
+  <bb 60> [11.39%]:
+  _79 = strlen (&model);
+  cp_80 = &model + _79;
+  _81 = vendor_id[0];
+  if (_81 != 0)
+    goto <bb 61>; [50.00%]
+  else
+    goto <bb 64>; [50.00%]
+
+  <bb 61> [5.69%]:
+  if (&model != cp_80)
+    goto <bb 62>; [70.00%]
+  else
+    goto <bb 63>; [30.00%]
+
+  <bb 62> [3.99%]:
+  cp_82 = cp_80 + 1;
+  *cp_80 = 32;
+
+  <bb 63> [5.69%]:
+  # cp_83 = PHI <cp_80(61), cp_82(62)>
+  _84 = __builtin_object_size (cp_83, 1);
+  __builtin_strcpy (cp_83, &vendor_id);
+  _85 = strlen (&vendor_id);
+  cp_86 = cp_83 + _85;
+
+  <bb 64> [11.39%]:
+  # cp_88 = PHI <cp_80(60), cp_86(63)>
+  _87 = model_name[0];
+  if (_87 != 0)
+    goto <bb 65>; [50.00%]
+  else
+    goto <bb 68>; [50.00%]
+
+  <bb 65> [5.69%]:
+  if (&model != cp_88)
+    goto <bb 66>; [70.00%]
+  else
+    goto <bb 67>; [30.00%]
+
+  <bb 66> [3.99%]:
+  cp_89 = cp_88 + 1;
+  *cp_88 = 32;
+
+  <bb 67> [5.69%]:
+  # cp_90 = PHI <cp_88(65), cp_89(66)>
+  _91 = __builtin_object_size (cp_90, 1);
+  __builtin_strcpy (cp_90, &model_name);
+  _92 = strlen (&model_name);
+  cp_93 = cp_90 + _92;
+
+  <bb 68> [11.39%]:
+  # cp_95 = PHI <cp_88(64), cp_93(67)>
+  _94 = cpu_MHz[0];
+  if (_94 != 0)
+    goto <bb 69>; [50.00%]
+  else
+    goto <bb 72>; [50.00%]
+
+  <bb 69> [5.69%]:
+  if (&model != cp_95)
+    goto <bb 70>; [70.00%]
+  else
+    goto <bb 71>; [30.00%]
+
+  <bb 70> [3.99%]:
+  cp_96 = cp_95 + 1;
+  *cp_95 = 32;
+
+  <bb 71> [5.69%]:
+  # cp_101 = PHI <cp_95(69), cp_96(70)>
+  _97 = strtod (&cpu_MHz, 0B);
+  f_98 = (float) _97;
+  _99 = f_98 + 5.0e-1;
+  i_100 = (int) _99;
+  __builtin___sprintf_chk (&cpu_MHz, 1, 1024, "%dMHz", i_100);
+  _102 = __builtin_object_size (cp_101, 1);
+  __builtin_strcpy (cp_101, &cpu_MHz);
+
+  <bb 72> [11.39%]:
+  fclose (info_32);
+
+  <bb 73> [15.54%]:
+  buffer ={v} {CLOBBER};
+  vendor_id ={v} {CLOBBER};
+  model_name ={v} {CLOBBER};
+  cpu_MHz ={v} {CLOBBER};
+  goto <bb 75>; [100.00%]
+
+  <bb 74> [15.88%]:
+  model[0] = 0;
+  cache[0] = 0;
+
+  <bb 75> [31.42%]:
+  __builtin___sprintf_chk (&buffer, 1, 1024, "CPU                 : %s\n", &model);
+  __printf_chk (1, "%s", &buffer);
+  if (write_to_file_9(D) != 0)
+    goto <bb 76>; [36.64%]
+  else
+    goto <bb 77>; [63.36%]
+
+  <bb 76> [11.51%]:
+  __builtin_fputs (&buffer, global_ofile_10(D));
+
+  <bb 77> [31.42%]:
+  __builtin___sprintf_chk (&buffer, 1, 1024, "L2 Cache            : %s\n", &cache);
+  __printf_chk (1, "%s", &buffer);
+  if (write_to_file_9(D) != 0)
+    goto <bb 78>; [36.64%]
+  else
+    goto <bb 79>; [63.36%]
+
+  <bb 78> [11.51%]:
+  __builtin_fputs (&buffer, global_ofile_10(D));
+
+  <bb 79> [31.42%]:
+  __builtin___sprintf_chk (&buffer, 1, 1024, "OS                  : %s\n", &os);
+  __printf_chk (1, "%s", &buffer);
+  if (write_to_file_9(D) != 0)
+    goto <bb 80>; [36.64%]
+  else
+    goto <bb 81>; [63.36%]
+
+  <bb 80> [11.51%]:
+  __builtin_fputs (&buffer, global_ofile_10(D));
+
+  <bb 81> [31.42%]:
+  buffer ={v} {CLOBBER};
+  os ={v} {CLOBBER};
+  model ={v} {CLOBBER};
+  cache ={v} {CLOBBER};
+  os_command ={v} {CLOBBER};
+  return;
+
+}
+
+

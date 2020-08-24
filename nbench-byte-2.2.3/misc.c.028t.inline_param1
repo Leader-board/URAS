@@ -1,0 +1,137 @@
+
+;; Function randnum (randnum, funcdef_no=25, decl_uid=2518, cgraph_uid=25, symbol_order=25)
+
+
+Analyzing function body size: randnum
+
+Inline summary for randnum/25 inlinable
+  self time:       15
+  global time:     0
+  self size:       16
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:9.000000, time:9.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+    size:2.000000, time:2.000000, predicate:(op0 changed)
+    size:2.000000, time:2.000000, predicate:(op0 != 0)
+  calls:
+
+randnum (int32 lngval)
+{
+  static int32 randw[2] = {13, 117};
+  register int32 interm;
+  int _1;
+  int _2;
+  int _3;
+  int _4;
+  int _5;
+  int _6;
+  int32 _15;
+
+  <bb 2> [0.00%]:
+  if (lngval_8(D) != 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  randw[0] = 13;
+  randw[1] = 117;
+
+  <bb 4> [0.00%]:
+  _1 = randw[0];
+  _2 = _1 * 254754;
+  _3 = randw[1];
+  _4 = _3 * 529562;
+  _5 = _2 + _4;
+  interm_12 = _5 % 999563;
+  _6 = randw[0];
+  randw[1] = _6;
+  randw[0] = interm_12;
+  _15 = interm_12;
+  return _15;
+
+}
+
+
+
+;; Function randwc (randwc, funcdef_no=23, decl_uid=2514, cgraph_uid=23, symbol_order=23)
+
+
+Analyzing function body size: randwc
+
+Inline summary for randwc/23 inlinable
+  self time:       24
+  global time:     0
+  self size:       7
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:1.000000, time:10.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+    randnum/25 function not considered for inlining
+      loop depth: 0 freq:1000 size: 3 time: 12 callee size: 7 stack: 0
+       op0 is compile time invariant
+
+randwc (int32 num)
+{
+  int _1;
+  int32 _5;
+
+  <bb 2> [0.00%]:
+  _1 = randnum (0);
+  _5 = _1 % num_4(D);
+  return _5;
+
+}
+
+
+
+;; Function abs_randwc (abs_randwc, funcdef_no=24, decl_uid=2516, cgraph_uid=24, symbol_order=24)
+
+
+Analyzing function body size: abs_randwc
+
+Inline summary for abs_randwc/24 inlinable
+  self time:       17
+  global time:     0
+  self size:       9
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:3.000000, time:3.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+    randwc/23 function not considered for inlining
+      loop depth: 0 freq:1000 size: 3 time: 12 callee size: 6 stack: 0
+
+abs_randwc (u32 num)
+{
+  int32 temp;
+  int num.0_1;
+  u32 _8;
+
+  <bb 2> [0.00%]:
+  num.0_1 = (int) num_3(D);
+  temp_6 = randwc (num.0_1);
+  if (temp_6 < 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  temp_7 = -temp_6;
+
+  <bb 4> [0.00%]:
+  # temp_2 = PHI <temp_6(2), temp_7(3)>
+  _8 = (u32) temp_2;
+  return _8;
+
+}
+
+

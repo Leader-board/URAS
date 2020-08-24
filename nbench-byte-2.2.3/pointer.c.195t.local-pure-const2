@@ -1,0 +1,19 @@
+
+;; Function main (main, funcdef_no=23, decl_uid=2444, cgraph_uid=23, symbol_order=23) (executed once)
+
+
+
+ local analysis of main
+   scanning: __printf_chk (1, "%d", 8);
+  scanning: return 0;
+Function is locally looping.
+Function can locally free.
+main ()
+{
+  <bb 2> [100.00%]:
+  __printf_chk (1, "%d", 8);
+  return 0;
+
+}
+
+

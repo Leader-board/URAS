@@ -1,0 +1,2307 @@
+
+;; Function output_string (output_string, funcdef_no=64, decl_uid=4727, cgraph_uid=64, symbol_order=96)
+
+Points-to analysis
+
+Constraints:
+
+ANYTHING = &ANYTHING
+ESCAPED = *ESCAPED
+ESCAPED = ESCAPED + UNKNOWN
+*ESCAPED = NONLOCAL
+NONLOCAL = &NONLOCAL
+NONLOCAL = &ESCAPED
+INTEGER = &ANYTHING
+buffer = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = buffer
+write_to_file = NONLOCAL
+write_to_file.30_1 = write_to_file
+global_ofile = NONLOCAL
+global_ofile.31_7 = global_ofile
+ESCAPED = buffer
+ESCAPED = global_ofile.31_7
+
+Collapsing static cycles and doing variable substitution
+Building predecessor graph
+Detecting pointer and location equivalences
+
+
+// The constraint graph before var-substitution in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING"[label="ANYTHING = { 2 }"];
+"STRING";
+"ESCAPED"[label="ESCAPED = { 3 5 }"];
+"NONLOCAL"[label="NONLOCAL = { 4 5 }"];
+"STOREDANYTHING";
+"INTEGER"[label="INTEGER = { 2 }"];
+"buffer"[label="buffer = { 5 }"];
+"__printf_chk";
+"write_to_file.30_1";
+"write_to_file";
+"global_ofile.31_7";
+"global_ofile";
+"fputs";
+"*NULL";
+"*ANYTHING";
+"*STRING";
+"*STOREDANYTHING";
+"*INTEGER";
+"*buffer";
+"*__printf_chk";
+"*write_to_file.30_1";
+"*write_to_file";
+"*fputs";
+
+  // Edges in the constraint graph:
+"NONLOCAL" -> "ESCAPED";
+"buffer" -> "ESCAPED";
+"global_ofile.31_7" -> "ESCAPED";
+"ESCAPED" -> "ESCAPED";
+"write_to_file" -> "write_to_file.30_1";
+"NONLOCAL" -> "write_to_file";
+"global_ofile" -> "global_ofile.31_7";
+"NONLOCAL" -> "global_ofile";
+}
+
+
+Rewriting constraints and unifying variables
+Uniting pointer but not location equivalent variables
+Finding indirect cycles
+
+
+// The constraint graph before solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = NONLOCAL\l"];
+"STOREDANYTHING";
+"INTEGER";
+"buffer";
+"__printf_chk";
+"write_to_file";
+"fputs";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"buffer" -> "ESCAPED";
+"write_to_file" -> "ESCAPED";
+}
+
+
+Solving graph
+
+
+// The constraint graph after solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = write_to_file\l"];
+"STOREDANYTHING";
+"INTEGER";
+"buffer";
+"__printf_chk";
+"write_to_file";
+"fputs";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"buffer" -> "ESCAPED";
+"write_to_file" -> "ESCAPED";
+}
+
+
+
+Points-to sets
+
+ANYTHING = { ANYTHING }
+ESCAPED = { STRING ESCAPED NONLOCAL }
+NONLOCAL = { ESCAPED NONLOCAL } same as write_to_file
+STOREDANYTHING = { }
+INTEGER = { ANYTHING }
+buffer = { NONLOCAL }
+__printf_chk = { }
+write_to_file.30_1 = { ESCAPED NONLOCAL } same as write_to_file
+write_to_file = { ESCAPED NONLOCAL }
+global_ofile.31_7 = { ESCAPED NONLOCAL } same as write_to_file
+global_ofile = { ESCAPED NONLOCAL } same as write_to_file
+fputs = { }
+
+
+Alias information for output_string
+
+Aliased symbols
+
+
+Call clobber information
+
+ESCAPED, points-to non-local, points-to vars: { }
+
+Flow-insensitive points-to information
+
+buffer_3(D), points-to non-local, points-to vars: { }
+global_ofile.31_7, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+
+output_string (char * buffer)
+{
+  int write_to_file.30_1;
+  struct FILE * global_ofile.31_7;
+
+  <bb 2> [100.00%]:
+  __printf_chk (1, "%s", buffer_3(D));
+  write_to_file.30_1 = write_to_file;
+  if (write_to_file.30_1 != 0)
+    goto <bb 3>; [36.64%]
+  else
+    goto <bb 4>; [63.36%]
+
+  <bb 3> [36.64%]:
+  global_ofile.31_7 = global_ofile;
+  __builtin_fputs (buffer_3(D), global_ofile.31_7);
+
+  <bb 4> [100.00%]:
+  return;
+
+}
+
+
+
+;; Function main (main, funcdef_no=54, decl_uid=4760, cgraph_uid=54, symbol_order=86) (executed once)
+
+Points-to analysis
+
+Constraints:
+
+ANYTHING = &ANYTHING
+ESCAPED = *ESCAPED
+ESCAPED = ESCAPED + UNKNOWN
+*ESCAPED = NONLOCAL
+NONLOCAL = &NONLOCAL
+NONLOCAL = &ESCAPED
+INTEGER = &ANYTHING
+argc = &NONLOCAL
+argv = &NONLOCAL
+global_min_ticks = NONLOCAL
+global_min_ticks = &NONLOCAL
+ESCAPED = &NONLOCAL
+global_min_seconds = NONLOCAL
+global_min_seconds = &NONLOCAL
+ESCAPED = &NONLOCAL
+global_allstats = NONLOCAL
+global_allstats = &NULL
+ESCAPED = &NULL
+global_custrun = NONLOCAL
+global_custrun = &NULL
+ESCAPED = &NULL
+global_align = NONLOCAL
+global_align = &NONLOCAL
+ESCAPED = &NONLOCAL
+write_to_file = NONLOCAL
+write_to_file = &NULL
+ESCAPED = &NULL
+mem_array_ents = NONLOCAL
+mem_array_ents = &NULL
+ESCAPED = &NULL
+tests_to_do = NONLOCAL
+tests_to_do = &NONLOCAL
+ESCAPED = &NONLOCAL
+i_148 = i_41
+i_148 = &NONLOCAL
+i_41 = &NULL
+i_41 = i_148
+global_numsortstruct.0+32 = NONLOCAL
+global_numsortstruct.64+144 = NONLOCAL
+global_numsortstruct.256+64 = NONLOCAL
+global_numsortstruct.64+144 = &NONLOCAL
+ESCAPED = &NONLOCAL
+global_strsortstruct.0+32 = NONLOCAL
+global_strsortstruct.64+144 = NONLOCAL
+global_strsortstruct.256+64 = NONLOCAL
+global_strsortstruct.64+144 = &NONLOCAL
+ESCAPED = &NONLOCAL
+global_bitopstruct.0+32 = NONLOCAL
+global_bitopstruct.64+256 = NONLOCAL
+global_bitopstruct.64+256 = &NONLOCAL
+ESCAPED = &NONLOCAL
+global_emfloatstruct.0+32 = NONLOCAL
+global_emfloatstruct.64+256 = NONLOCAL
+global_emfloatstruct.64+256 = &NONLOCAL
+ESCAPED = &NONLOCAL
+global_fourierstruct.0+32 = NONLOCAL
+global_fourierstruct.64+192 = NONLOCAL
+global_fourierstruct.64+192 = &NONLOCAL
+ESCAPED = &NONLOCAL
+global_assignstruct.0+32 = NONLOCAL
+global_assignstruct.64+192 = NONLOCAL
+global_assignstruct.64+192 = &NONLOCAL
+ESCAPED = &NONLOCAL
+global_ideastruct.0+32 = NONLOCAL
+global_ideastruct.64+256 = NONLOCAL
+global_ideastruct.64+256 = &NONLOCAL
+ESCAPED = &NONLOCAL
+global_huffstruct.0+32 = NONLOCAL
+global_huffstruct.64+256 = NONLOCAL
+global_huffstruct.64+256 = &NONLOCAL
+ESCAPED = &NONLOCAL
+global_nnetstruct.0+32 = NONLOCAL
+global_nnetstruct.64+192 = NONLOCAL
+global_nnetstruct.64+192 = &NONLOCAL
+ESCAPED = &NONLOCAL
+global_lustruct.0+32 = NONLOCAL
+global_lustruct.64+192 = NONLOCAL
+global_lustruct.64+192 = &NONLOCAL
+ESCAPED = &NONLOCAL
+global_numsortstruct.0+32 = &NULL
+ESCAPED = &NULL
+global_numsortstruct.256+64 = &NONLOCAL
+ESCAPED = &NONLOCAL
+global_strsortstruct.0+32 = &NULL
+ESCAPED = &NULL
+global_strsortstruct.256+64 = &NONLOCAL
+ESCAPED = &NONLOCAL
+global_bitopstruct.0+32 = &NULL
+ESCAPED = &NULL
+global_bitopstruct.64+256 = &NONLOCAL
+ESCAPED = &NONLOCAL
+global_emfloatstruct.0+32 = &NULL
+ESCAPED = &NULL
+global_emfloatstruct.64+256 = &NONLOCAL
+ESCAPED = &NONLOCAL
+global_fourierstruct.0+32 = &NULL
+ESCAPED = &NULL
+global_assignstruct.0+32 = &NULL
+ESCAPED = &NULL
+global_ideastruct.0+32 = &NULL
+ESCAPED = &NULL
+global_ideastruct.64+256 = &NONLOCAL
+ESCAPED = &NONLOCAL
+global_huffstruct.0+32 = &NULL
+ESCAPED = &NULL
+global_huffstruct.64+256 = &NONLOCAL
+ESCAPED = &NONLOCAL
+global_nnetstruct.0+32 = &NULL
+ESCAPED = &NULL
+global_lustruct.0+32 = &NULL
+ESCAPED = &NULL
+_1 = *argv + 64
+ESCAPED = _1
+ESCAPED = &NULL
+ESCAPED = &NONLOCAL
+_149 = NONLOCAL
+_150 = _149
+testnum = NONLOCAL
+testnum = _150
+ESCAPED = _150
+ESCAPED = &STRING
+ESCAPED = &STRING
+ESCAPED = &STRING
+global_allstats.0_2 = global_allstats
+ESCAPED = &STRING
+ESCAPED = &STRING
+ESCAPED = &time_and_date
+ESCAPED = &time_and_date
+loctime_100 = NONLOCAL
+ESCAPED = loctime_100
+_3 = NONLOCAL
+buffer = NONLOCAL
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _3
+ESCAPED = &buffer
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &buffer
+ESCAPED = &buffer
+ESCAPED = &buffer
+ESCAPED = &buffer
+ESCAPED = &buffer
+ESCAPED = &buffer
+ESCAPED = &STRING
+ESCAPED = &STRING
+ESCAPED = &STRING
+ESCAPED = &STRING
+i_113 = testnum
+_4 = tests_to_do
+ftestnames = NONLOCAL
+_5 = ftestnames
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _5
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &buffer
+write_to_file.30_190 = write_to_file
+global_ofile = NONLOCAL
+global_ofile.31_191 = global_ofile
+ESCAPED = &buffer
+ESCAPED = global_ofile.31_191
+funcpointer = NONLOCAL
+_153 = funcpointer
+lx_bindex = NONLOCAL
+_6 = lx_bindex
+_7 = bmean_187
+_7 = _6
+bindex = NONLOCAL
+_8 = bindex
+_9 = bmean_187
+_9 = _8
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = bmean_187
+ESCAPED = _9
+ESCAPED = _7
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &buffer
+write_to_file.30_189 = write_to_file
+global_ofile.31_192 = global_ofile
+ESCAPED = &buffer
+ESCAPED = global_ofile.31_192
+_12 = _10
+_12 = _11
+_13 = bindex
+_14 = bmean_187
+_14 = _13
+fpindex_139 = _14
+fpindex_139 = fpindex_57
+_15 = lx_bindex
+_16 = bmean_187
+_16 = _15
+lx_fpindex_140 = _16
+lx_fpindex_140 = lx_fpindex_51
+_17 = bindex
+_18 = bmean_187
+_18 = _17
+intindex_136 = _18
+intindex_136 = intindex_54
+_21 = _19
+_21 = _20
+i.7_22 = i_42
+_23 = i.7_22
+_23 = &NONLOCAL
+_24 = lx_bindex
+_25 = bmean_187
+_25 = _24
+lx_intindex_138 = _25
+lx_intindex_138 = lx_intindex_48
+_26 = lx_bindex
+_27 = bmean_187
+_27 = _26
+lx_memindex_137 = _27
+lx_memindex_137 = lx_memindex_45
+lx_memindex_43 = lx_memindex_45
+lx_memindex_43 = lx_memindex_45
+lx_memindex_43 = lx_memindex_137
+lx_intindex_46 = lx_intindex_48
+lx_intindex_46 = lx_intindex_138
+lx_intindex_46 = lx_intindex_48
+lx_fpindex_49 = lx_fpindex_140
+lx_fpindex_49 = lx_fpindex_51
+lx_fpindex_49 = lx_fpindex_51
+intindex_52 = intindex_54
+intindex_52 = intindex_136
+intindex_52 = intindex_136
+fpindex_55 = fpindex_139
+fpindex_55 = fpindex_57
+fpindex_55 = fpindex_57
+global_allstats.10_28 = global_allstats
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = bstdev_188
+ESCAPED = &buffer
+_29 = bstdev_188
+_29 = &NONLOCAL
+_30 = _29
+_30 = bmean_187
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _30
+ESCAPED = &buffer
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &NONLOCAL
+ESCAPED = &buffer
+_193 = global_numsortstruct.64+144
+_194 = _193
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _194
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &buffer
+write_to_file.30_212 = write_to_file
+global_ofile.31_213 = global_ofile
+ESCAPED = &buffer
+ESCAPED = global_ofile.31_213
+_195 = global_numsortstruct.256+64
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _195
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &buffer
+write_to_file.30_211 = write_to_file
+global_ofile.31_214 = global_ofile
+ESCAPED = &buffer
+ESCAPED = global_ofile.31_214
+_196 = global_strsortstruct.64+144
+_197 = _196
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _197
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &buffer
+write_to_file.30_216 = write_to_file
+global_ofile.31_217 = global_ofile
+ESCAPED = &buffer
+ESCAPED = global_ofile.31_217
+_198 = global_strsortstruct.256+64
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _198
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &buffer
+write_to_file.30_215 = write_to_file
+global_ofile.31_218 = global_ofile
+ESCAPED = &buffer
+ESCAPED = global_ofile.31_218
+_199 = global_bitopstruct.64+256
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _199
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &buffer
+write_to_file.30_220 = write_to_file
+global_ofile.31_221 = global_ofile
+ESCAPED = &buffer
+ESCAPED = global_ofile.31_221
+_200 = global_bitopstruct.64+256
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _200
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &buffer
+write_to_file.30_219 = write_to_file
+global_ofile.31_222 = global_ofile
+ESCAPED = &buffer
+ESCAPED = global_ofile.31_222
+_201 = global_emfloatstruct.64+256
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _201
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &buffer
+write_to_file.30_224 = write_to_file
+global_ofile.31_225 = global_ofile
+ESCAPED = &buffer
+ESCAPED = global_ofile.31_225
+_202 = global_emfloatstruct.64+256
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _202
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &buffer
+write_to_file.30_223 = write_to_file
+global_ofile.31_226 = global_ofile
+ESCAPED = &buffer
+ESCAPED = global_ofile.31_226
+_203 = global_fourierstruct.64+192
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _203
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &buffer
+write_to_file.30_227 = write_to_file
+global_ofile.31_228 = global_ofile
+ESCAPED = &buffer
+ESCAPED = global_ofile.31_228
+_204 = global_assignstruct.64+192
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _204
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &buffer
+write_to_file.30_229 = write_to_file
+global_ofile.31_230 = global_ofile
+ESCAPED = &buffer
+ESCAPED = global_ofile.31_230
+_205 = global_ideastruct.64+256
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _205
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &buffer
+write_to_file.30_232 = write_to_file
+global_ofile.31_233 = global_ofile
+ESCAPED = &buffer
+ESCAPED = global_ofile.31_233
+_206 = global_ideastruct.64+256
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _206
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &buffer
+write_to_file.30_231 = write_to_file
+global_ofile.31_234 = global_ofile
+ESCAPED = &buffer
+ESCAPED = global_ofile.31_234
+_207 = global_huffstruct.64+256
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _207
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &buffer
+write_to_file.30_236 = write_to_file
+global_ofile.31_237 = global_ofile
+ESCAPED = &buffer
+ESCAPED = global_ofile.31_237
+_208 = global_huffstruct.64+256
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _208
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &buffer
+write_to_file.30_235 = write_to_file
+global_ofile.31_238 = global_ofile
+ESCAPED = &buffer
+ESCAPED = global_ofile.31_238
+_209 = global_nnetstruct.64+192
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _209
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &buffer
+write_to_file.30_239 = write_to_file
+global_ofile.31_240 = global_ofile
+ESCAPED = &buffer
+ESCAPED = global_ofile.31_240
+_210 = global_lustruct.64+192
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _210
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &buffer
+write_to_file.30_241 = write_to_file
+global_ofile.31_242 = global_ofile
+ESCAPED = &buffer
+ESCAPED = global_ofile.31_242
+_31 = ftestnames
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _31
+ESCAPED = &buffer
+lx_memindex_44 = lx_memindex_45
+lx_memindex_44 = lx_memindex_43
+lx_memindex_44 = lx_memindex_43
+lx_intindex_47 = lx_intindex_48
+lx_intindex_47 = lx_intindex_46
+lx_intindex_47 = lx_intindex_46
+lx_fpindex_50 = lx_fpindex_51
+lx_fpindex_50 = lx_fpindex_49
+lx_fpindex_50 = lx_fpindex_49
+intindex_53 = intindex_54
+intindex_53 = intindex_52
+intindex_53 = intindex_52
+fpindex_56 = fpindex_57
+fpindex_56 = fpindex_55
+fpindex_56 = fpindex_55
+i_146 = i_42
+i_146 = &NONLOCAL
+i_42 = i_113
+i_42 = i_146
+lx_memindex_45 = &NONLOCAL
+lx_memindex_45 = lx_memindex_44
+lx_intindex_48 = &NONLOCAL
+lx_intindex_48 = lx_intindex_47
+lx_fpindex_51 = &NONLOCAL
+lx_fpindex_51 = lx_fpindex_50
+intindex_54 = &NONLOCAL
+intindex_54 = intindex_53
+fpindex_57 = &NONLOCAL
+fpindex_57 = fpindex_56
+testnum.16_32 = testnum
+lx_memindex_61 = lx_memindex_45
+lx_intindex_134 = lx_intindex_48
+lx_fpindex_154 = lx_fpindex_51
+intindex_152 = intindex_54
+fpindex_151 = fpindex_57
+global_custrun.17_33 = global_custrun
+ESCAPED = &STRING
+ESCAPED = intindex_54
+ESCAPED = &NONLOCAL
+_34 = NONLOCAL
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _34
+ESCAPED = &buffer
+ESCAPED = fpindex_57
+ESCAPED = &NONLOCAL
+_35 = NONLOCAL
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _35
+ESCAPED = &buffer
+ESCAPED = &STRING
+ESCAPED = &STRING
+global_ofile.18_36 = global_ofile
+write_to_file.19_37 = write_to_file
+ESCAPED = write_to_file.19_37
+ESCAPED = global_ofile.18_36
+ESCAPED = &buffer
+ESCAPED = &buffer
+ESCAPED = lx_memindex_45
+ESCAPED = &NONLOCAL
+_38 = NONLOCAL
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _38
+ESCAPED = &buffer
+ESCAPED = lx_intindex_48
+ESCAPED = &NONLOCAL
+_39 = NONLOCAL
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _39
+ESCAPED = &buffer
+ESCAPED = lx_fpindex_51
+ESCAPED = &NONLOCAL
+_40 = NONLOCAL
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = _40
+ESCAPED = &buffer
+ESCAPED = &STRING
+ESCAPED = &STRING
+ESCAPED = &NULL
+
+Collapsing static cycles and doing variable substitution
+Building predecessor graph
+Detecting pointer and location equivalences
+
+
+// The constraint graph before var-substitution in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING"[label="ANYTHING = { 2 }"];
+"STRING";
+"ESCAPED"[label="ESCAPED = { 1 3 5 50 56 117 }"];
+"NONLOCAL"[label="NONLOCAL = { 4 5 }"];
+"STOREDANYTHING";
+"INTEGER"[label="INTEGER = { 2 }"];
+"argc"[label="argc = { 5 }"];
+"argv"[label="argv = { 5 }"];
+"global_min_ticks"[label="global_min_ticks = { 5 }"];
+"global_min_seconds"[label="global_min_seconds = { 5 }"];
+"global_allstats"[label="global_allstats = { 1 }"];
+"global_custrun"[label="global_custrun = { 1 }"];
+"global_align"[label="global_align = { 5 }"];
+"write_to_file"[label="write_to_file = { 1 }"];
+"mem_array_ents"[label="mem_array_ents = { 1 }"];
+"tests_to_do"[label="tests_to_do = { 5 }"];
+"i_148"[label="i_148 = { 1 5 }"];
+"global_numsortstruct.0+32"[label="global_numsortstruct.0+32 = { 1 }"];
+"global_numsortstruct.64+144"[label="global_numsortstruct.64+144 = { 5 }"];
+"global_numsortstruct.256+64"[label="global_numsortstruct.256+64 = { 5 }"];
+"global_strsortstruct.0+32"[label="global_strsortstruct.0+32 = { 1 }"];
+"global_strsortstruct.64+144"[label="global_strsortstruct.64+144 = { 5 }"];
+"global_strsortstruct.256+64"[label="global_strsortstruct.256+64 = { 5 }"];
+"global_bitopstruct.0+32"[label="global_bitopstruct.0+32 = { 1 }"];
+"global_bitopstruct.64+256"[label="global_bitopstruct.64+256 = { 5 }"];
+"global_emfloatstruct.0+32"[label="global_emfloatstruct.0+32 = { 1 }"];
+"global_emfloatstruct.64+256"[label="global_emfloatstruct.64+256 = { 5 }"];
+"global_fourierstruct.0+32"[label="global_fourierstruct.0+32 = { 1 }"];
+"global_fourierstruct.64+192"[label="global_fourierstruct.64+192 = { 5 }"];
+"global_assignstruct.0+32"[label="global_assignstruct.0+32 = { 1 }"];
+"global_assignstruct.64+192"[label="global_assignstruct.64+192 = { 5 }"];
+"global_ideastruct.0+32"[label="global_ideastruct.0+32 = { 1 }"];
+"global_ideastruct.64+256"[label="global_ideastruct.64+256 = { 5 }"];
+"global_huffstruct.0+32"[label="global_huffstruct.0+32 = { 1 }"];
+"global_huffstruct.64+256"[label="global_huffstruct.64+256 = { 5 }"];
+"global_nnetstruct.0+32"[label="global_nnetstruct.0+32 = { 1 }"];
+"global_nnetstruct.64+192"[label="global_nnetstruct.64+192 = { 5 }"];
+"global_lustruct.0+32"[label="global_lustruct.0+32 = { 1 }"];
+"global_lustruct.64+192"[label="global_lustruct.64+192 = { 5 }"];
+"_1";
+"strtol";
+"_149";
+"_150";
+"testnum";
+"output_string";
+"global_allstats.0_2";
+"time";
+"time_and_date";
+"localtime";
+"loctime_100";
+"asctime";
+"_3";
+"__sprintf_chk";
+"buffer";
+"i_113";
+"_4";
+"_5";
+"ftestnames";
+"__printf_chk";
+"write_to_file.30_190";
+"global_ofile.31_191";
+"global_ofile";
+"fputs";
+"_153";
+"funcpointer";
+"_6";
+"lx_bindex";
+"_7";
+"bmean_187";
+"_8";
+"bindex";
+"_9";
+"write_to_file.30_189";
+"global_ofile.31_192";
+"_10";
+"_11";
+"_12";
+"_13";
+"_14";
+"fpindex_57"[label="fpindex_57 = { 5 }"];
+"_15";
+"_16";
+"lx_fpindex_51"[label="lx_fpindex_51 = { 5 }"];
+"_17";
+"_18";
+"intindex_54"[label="intindex_54 = { 5 }"];
+"_19";
+"_20";
+"_21";
+"i.7_22";
+"i_42"[label="i_42 = { 5 }"];
+"_23"[label="_23 = { 5 }"];
+"_24";
+"_25";
+"lx_intindex_48"[label="lx_intindex_48 = { 5 }"];
+"_26";
+"_27";
+"lx_memindex_45"[label="lx_memindex_45 = { 5 }"];
+"global_allstats.10_28";
+"bstdev_188";
+"_29"[label="_29 = { 5 }"];
+"_30";
+"_193";
+"_194";
+"buffer";
+"write_to_file.30_212";
+"global_ofile.31_213";
+"_195";
+"write_to_file.30_211";
+"global_ofile.31_214";
+"_196";
+"_197";
+"write_to_file.30_216";
+"global_ofile.31_217";
+"_198";
+"write_to_file.30_215";
+"global_ofile.31_218";
+"_199";
+"write_to_file.30_220";
+"global_ofile.31_221";
+"_200";
+"write_to_file.30_219";
+"global_ofile.31_222";
+"_201";
+"write_to_file.30_224";
+"global_ofile.31_225";
+"_202";
+"write_to_file.30_223";
+"global_ofile.31_226";
+"_203";
+"write_to_file.30_227";
+"global_ofile.31_228";
+"_204";
+"write_to_file.30_229";
+"global_ofile.31_230";
+"_205";
+"write_to_file.30_232";
+"global_ofile.31_233";
+"_206";
+"write_to_file.30_231";
+"global_ofile.31_234";
+"_207";
+"write_to_file.30_236";
+"global_ofile.31_237";
+"_208";
+"write_to_file.30_235";
+"global_ofile.31_238";
+"_209";
+"write_to_file.30_239";
+"global_ofile.31_240";
+"_210";
+"write_to_file.30_241";
+"global_ofile.31_242";
+"_31";
+"testnum.16_32";
+"lx_memindex_61";
+"lx_intindex_134";
+"lx_fpindex_154";
+"intindex_152";
+"fpindex_151";
+"global_custrun.17_33";
+"pow";
+"_34";
+"_35";
+"global_ofile.18_36";
+"write_to_file.19_37";
+"hardware";
+"_38";
+"_39";
+"_40";
+"exit";
+"*NULL";
+"*ANYTHING";
+"*STRING";
+"*STOREDANYTHING";
+"*INTEGER";
+"*argc";
+"*argv";
+"*global_min_ticks";
+"*global_min_seconds";
+"*global_allstats";
+"*global_custrun";
+"*global_align";
+"*mem_array_ents";
+"*tests_to_do";
+"*i_148";
+"*i_41";
+"*global_numsortstruct.0+32";
+"*global_strsortstruct.0+32";
+"*global_bitopstruct.0+32";
+"*global_emfloatstruct.0+32";
+"*global_fourierstruct.0+32";
+"*global_assignstruct.0+32";
+"*global_ideastruct.0+32";
+"*global_huffstruct.0+32";
+"*global_nnetstruct.0+32";
+"*global_lustruct.0+32";
+"*_1";
+"*strtol";
+"*testnum";
+"*output_string";
+"*global_allstats.0_2";
+"*time";
+"*time_and_date";
+"*localtime";
+"*asctime";
+"*__sprintf_chk";
+"*buffer";
+"*i_113";
+"*_4";
+"*__printf_chk";
+"*write_to_file.30_190";
+"*fputs";
+"*_153";
+"*funcpointer";
+"*bmean_187";
+"*write_to_file.30_189";
+"*_10";
+"*_11";
+"*_12";
+"*_19";
+"*_20";
+"*_21";
+"*i.7_22";
+"*i_42";
+"*_23";
+"*global_allstats.10_28";
+"*bstdev_188";
+"*_29";
+"*_30";
+"*buffer";
+"*write_to_file.30_212";
+"*write_to_file.30_211";
+"*write_to_file.30_216";
+"*write_to_file.30_215";
+"*write_to_file.30_220";
+"*write_to_file.30_219";
+"*write_to_file.30_224";
+"*write_to_file.30_223";
+"*write_to_file.30_227";
+"*write_to_file.30_229";
+"*write_to_file.30_232";
+"*write_to_file.30_231";
+"*write_to_file.30_236";
+"*write_to_file.30_235";
+"*write_to_file.30_239";
+"*write_to_file.30_241";
+"*i_146";
+"*testnum.16_32";
+"*lx_memindex_61";
+"*lx_intindex_134";
+"*lx_fpindex_154";
+"*intindex_152";
+"*fpindex_151";
+"*global_custrun.17_33";
+"*pow";
+"*hardware";
+"*exit";
+
+  // Edges in the constraint graph:
+"NONLOCAL" -> "ESCAPED";
+"_1" -> "ESCAPED";
+"_150" -> "ESCAPED";
+"loctime_100" -> "ESCAPED";
+"_3" -> "ESCAPED";
+"_5" -> "ESCAPED";
+"global_ofile.31_191" -> "ESCAPED";
+"_7" -> "ESCAPED";
+"bmean_187" -> "ESCAPED";
+"_9" -> "ESCAPED";
+"global_ofile.31_192" -> "ESCAPED";
+"fpindex_57" -> "ESCAPED";
+"lx_fpindex_51" -> "ESCAPED";
+"intindex_54" -> "ESCAPED";
+"lx_intindex_48" -> "ESCAPED";
+"lx_memindex_45" -> "ESCAPED";
+"bstdev_188" -> "ESCAPED";
+"_30" -> "ESCAPED";
+"_194" -> "ESCAPED";
+"global_ofile.31_213" -> "ESCAPED";
+"_195" -> "ESCAPED";
+"global_ofile.31_214" -> "ESCAPED";
+"_197" -> "ESCAPED";
+"global_ofile.31_217" -> "ESCAPED";
+"_198" -> "ESCAPED";
+"global_ofile.31_218" -> "ESCAPED";
+"_199" -> "ESCAPED";
+"global_ofile.31_221" -> "ESCAPED";
+"_200" -> "ESCAPED";
+"global_ofile.31_222" -> "ESCAPED";
+"_201" -> "ESCAPED";
+"global_ofile.31_225" -> "ESCAPED";
+"_202" -> "ESCAPED";
+"global_ofile.31_226" -> "ESCAPED";
+"_203" -> "ESCAPED";
+"global_ofile.31_228" -> "ESCAPED";
+"_204" -> "ESCAPED";
+"global_ofile.31_230" -> "ESCAPED";
+"_205" -> "ESCAPED";
+"global_ofile.31_233" -> "ESCAPED";
+"_206" -> "ESCAPED";
+"global_ofile.31_234" -> "ESCAPED";
+"_207" -> "ESCAPED";
+"global_ofile.31_237" -> "ESCAPED";
+"_208" -> "ESCAPED";
+"global_ofile.31_238" -> "ESCAPED";
+"_209" -> "ESCAPED";
+"global_ofile.31_240" -> "ESCAPED";
+"_210" -> "ESCAPED";
+"global_ofile.31_242" -> "ESCAPED";
+"_31" -> "ESCAPED";
+"_34" -> "ESCAPED";
+"_35" -> "ESCAPED";
+"global_ofile.18_36" -> "ESCAPED";
+"write_to_file.19_37" -> "ESCAPED";
+"_38" -> "ESCAPED";
+"_39" -> "ESCAPED";
+"_40" -> "ESCAPED";
+"ESCAPED" -> "ESCAPED";
+"NONLOCAL" -> "global_min_ticks";
+"NONLOCAL" -> "global_min_seconds";
+"NONLOCAL" -> "global_allstats";
+"NONLOCAL" -> "global_custrun";
+"NONLOCAL" -> "global_align";
+"NONLOCAL" -> "write_to_file";
+"NONLOCAL" -> "mem_array_ents";
+"NONLOCAL" -> "tests_to_do";
+"i_148" -> "i_148";
+"i_148" -> "i_148";
+"NONLOCAL" -> "global_numsortstruct.0+32";
+"NONLOCAL" -> "global_numsortstruct.64+144";
+"NONLOCAL" -> "global_numsortstruct.256+64";
+"NONLOCAL" -> "global_strsortstruct.0+32";
+"NONLOCAL" -> "global_strsortstruct.64+144";
+"NONLOCAL" -> "global_strsortstruct.256+64";
+"NONLOCAL" -> "global_bitopstruct.0+32";
+"NONLOCAL" -> "global_bitopstruct.64+256";
+"NONLOCAL" -> "global_emfloatstruct.0+32";
+"NONLOCAL" -> "global_emfloatstruct.64+256";
+"NONLOCAL" -> "global_fourierstruct.0+32";
+"NONLOCAL" -> "global_fourierstruct.64+192";
+"NONLOCAL" -> "global_assignstruct.0+32";
+"NONLOCAL" -> "global_assignstruct.64+192";
+"NONLOCAL" -> "global_ideastruct.0+32";
+"NONLOCAL" -> "global_ideastruct.64+256";
+"NONLOCAL" -> "global_huffstruct.0+32";
+"NONLOCAL" -> "global_huffstruct.64+256";
+"NONLOCAL" -> "global_nnetstruct.0+32";
+"NONLOCAL" -> "global_nnetstruct.64+192";
+"NONLOCAL" -> "global_lustruct.0+32";
+"NONLOCAL" -> "global_lustruct.64+192";
+"NONLOCAL" -> "_149";
+"_149" -> "_150";
+"NONLOCAL" -> "testnum";
+"_150" -> "testnum";
+"global_allstats" -> "global_allstats.0_2";
+"NONLOCAL" -> "loctime_100";
+"NONLOCAL" -> "_3";
+"NONLOCAL" -> "buffer";
+"testnum" -> "i_113";
+"tests_to_do" -> "_4";
+"ftestnames" -> "_5";
+"NONLOCAL" -> "ftestnames";
+"write_to_file" -> "write_to_file.30_190";
+"global_ofile" -> "global_ofile.31_191";
+"NONLOCAL" -> "global_ofile";
+"funcpointer" -> "_153";
+"NONLOCAL" -> "funcpointer";
+"lx_bindex" -> "_6";
+"NONLOCAL" -> "lx_bindex";
+"_6" -> "_7";
+"bmean_187" -> "_7";
+"bindex" -> "_8";
+"NONLOCAL" -> "bindex";
+"bmean_187" -> "_9";
+"_8" -> "_9";
+"write_to_file" -> "write_to_file.30_189";
+"global_ofile" -> "global_ofile.31_192";
+"_10" -> "_12";
+"_11" -> "_12";
+"bindex" -> "_13";
+"bmean_187" -> "_14";
+"_13" -> "_14";
+"_14" -> "fpindex_57";
+"fpindex_57" -> "fpindex_57";
+"fpindex_57" -> "fpindex_57";
+"fpindex_57" -> "fpindex_57";
+"fpindex_57" -> "fpindex_57";
+"lx_bindex" -> "_15";
+"bmean_187" -> "_16";
+"_15" -> "_16";
+"_16" -> "lx_fpindex_51";
+"lx_fpindex_51" -> "lx_fpindex_51";
+"lx_fpindex_51" -> "lx_fpindex_51";
+"lx_fpindex_51" -> "lx_fpindex_51";
+"lx_fpindex_51" -> "lx_fpindex_51";
+"bindex" -> "_17";
+"bmean_187" -> "_18";
+"_17" -> "_18";
+"_18" -> "intindex_54";
+"intindex_54" -> "intindex_54";
+"intindex_54" -> "intindex_54";
+"intindex_54" -> "intindex_54";
+"intindex_54" -> "intindex_54";
+"_19" -> "_21";
+"_20" -> "_21";
+"i_42" -> "i.7_22";
+"i_113" -> "i_42";
+"i_42" -> "i_42";
+"i_42" -> "i_42";
+"i.7_22" -> "_23";
+"lx_bindex" -> "_24";
+"bmean_187" -> "_25";
+"_24" -> "_25";
+"_25" -> "lx_intindex_48";
+"lx_intindex_48" -> "lx_intindex_48";
+"lx_intindex_48" -> "lx_intindex_48";
+"lx_intindex_48" -> "lx_intindex_48";
+"lx_intindex_48" -> "lx_intindex_48";
+"lx_bindex" -> "_26";
+"bmean_187" -> "_27";
+"_26" -> "_27";
+"_27" -> "lx_memindex_45";
+"lx_memindex_45" -> "lx_memindex_45";
+"lx_memindex_45" -> "lx_memindex_45";
+"lx_memindex_45" -> "lx_memindex_45";
+"lx_memindex_45" -> "lx_memindex_45";
+"global_allstats" -> "global_allstats.10_28";
+"bstdev_188" -> "_29";
+"bmean_187" -> "_30";
+"_29" -> "_30";
+"global_numsortstruct.64+144" -> "_193";
+"_193" -> "_194";
+"write_to_file" -> "write_to_file.30_212";
+"global_ofile" -> "global_ofile.31_213";
+"global_numsortstruct.256+64" -> "_195";
+"write_to_file" -> "write_to_file.30_211";
+"global_ofile" -> "global_ofile.31_214";
+"global_strsortstruct.64+144" -> "_196";
+"_196" -> "_197";
+"write_to_file" -> "write_to_file.30_216";
+"global_ofile" -> "global_ofile.31_217";
+"global_strsortstruct.256+64" -> "_198";
+"write_to_file" -> "write_to_file.30_215";
+"global_ofile" -> "global_ofile.31_218";
+"global_bitopstruct.64+256" -> "_199";
+"write_to_file" -> "write_to_file.30_220";
+"global_ofile" -> "global_ofile.31_221";
+"global_bitopstruct.64+256" -> "_200";
+"write_to_file" -> "write_to_file.30_219";
+"global_ofile" -> "global_ofile.31_222";
+"global_emfloatstruct.64+256" -> "_201";
+"write_to_file" -> "write_to_file.30_224";
+"global_ofile" -> "global_ofile.31_225";
+"global_emfloatstruct.64+256" -> "_202";
+"write_to_file" -> "write_to_file.30_223";
+"global_ofile" -> "global_ofile.31_226";
+"global_fourierstruct.64+192" -> "_203";
+"write_to_file" -> "write_to_file.30_227";
+"global_ofile" -> "global_ofile.31_228";
+"global_assignstruct.64+192" -> "_204";
+"write_to_file" -> "write_to_file.30_229";
+"global_ofile" -> "global_ofile.31_230";
+"global_ideastruct.64+256" -> "_205";
+"write_to_file" -> "write_to_file.30_232";
+"global_ofile" -> "global_ofile.31_233";
+"global_ideastruct.64+256" -> "_206";
+"write_to_file" -> "write_to_file.30_231";
+"global_ofile" -> "global_ofile.31_234";
+"global_huffstruct.64+256" -> "_207";
+"write_to_file" -> "write_to_file.30_236";
+"global_ofile" -> "global_ofile.31_237";
+"global_huffstruct.64+256" -> "_208";
+"write_to_file" -> "write_to_file.30_235";
+"global_ofile" -> "global_ofile.31_238";
+"global_nnetstruct.64+192" -> "_209";
+"write_to_file" -> "write_to_file.30_239";
+"global_ofile" -> "global_ofile.31_240";
+"global_lustruct.64+192" -> "_210";
+"write_to_file" -> "write_to_file.30_241";
+"global_ofile" -> "global_ofile.31_242";
+"ftestnames" -> "_31";
+"testnum" -> "testnum.16_32";
+"lx_memindex_45" -> "lx_memindex_61";
+"lx_intindex_48" -> "lx_intindex_134";
+"lx_fpindex_51" -> "lx_fpindex_154";
+"intindex_54" -> "intindex_152";
+"fpindex_57" -> "fpindex_151";
+"global_custrun" -> "global_custrun.17_33";
+"NONLOCAL" -> "_34";
+"NONLOCAL" -> "_35";
+"global_ofile" -> "global_ofile.18_36";
+"write_to_file" -> "write_to_file.19_37";
+"NONLOCAL" -> "_38";
+"NONLOCAL" -> "_39";
+"NONLOCAL" -> "_40";
+}
+
+
+Rewriting constraints and unifying variables
+Uniting pointer but not location equivalent variables
+Finding indirect cycles
+
+
+// The constraint graph before solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = NONLOCAL\l"];
+"STOREDANYTHING";
+"INTEGER";
+"argc" [label="\N\n_1 = *argc + 64\l"];
+"global_min_ticks";
+"global_allstats";
+"i_148";
+"_1";
+"strtol";
+"output_string";
+"time";
+"time_and_date";
+"localtime";
+"asctime";
+"__sprintf_chk";
+"buffer";
+"__printf_chk";
+"fputs";
+"bmean_187";
+"_10";
+"_11";
+"_12";
+"_19";
+"_20";
+"_21";
+"bstdev_188";
+"buffer";
+"pow";
+"hardware";
+"exit";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "_1";
+"STOREDANYTHING" -> "time_and_date";
+"STOREDANYTHING" -> "buffer";
+"STOREDANYTHING" -> "buffer";
+"argc" -> "ESCAPED";
+"global_min_ticks" -> "ESCAPED";
+"global_min_ticks" -> "global_allstats";
+"global_min_ticks" -> "buffer";
+"global_allstats" -> "ESCAPED";
+"_1" -> "ESCAPED";
+}
+
+
+Solving graph
+
+
+// The constraint graph after solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = global_min_ticks\l"];
+"STOREDANYTHING";
+"INTEGER";
+"argc" [label="\N\n_1 = *argc + 64\l"];
+"global_min_ticks";
+"global_allstats";
+"i_148";
+"_1";
+"strtol";
+"output_string";
+"time";
+"time_and_date";
+"localtime";
+"asctime";
+"__sprintf_chk";
+"buffer";
+"__printf_chk";
+"fputs";
+"bmean_187";
+"_10";
+"_11";
+"_12";
+"_19";
+"_20";
+"_21";
+"bstdev_188";
+"buffer";
+"pow";
+"hardware";
+"exit";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "_1";
+"STOREDANYTHING" -> "time_and_date";
+"STOREDANYTHING" -> "buffer";
+"STOREDANYTHING" -> "buffer";
+"argc" -> "ESCAPED";
+"global_min_ticks" -> "ESCAPED";
+"global_min_ticks" -> "global_allstats";
+"global_min_ticks" -> "_1";
+"global_min_ticks" -> "time_and_date";
+"global_min_ticks" -> "buffer";
+"global_min_ticks" -> "buffer";
+"global_allstats" -> "ESCAPED";
+"_1" -> "ESCAPED";
+"time_and_date" -> "ESCAPED";
+"buffer" -> "ESCAPED";
+"buffer" -> "ESCAPED";
+}
+
+
+
+Points-to sets
+
+ANYTHING = { ANYTHING }
+ESCAPED = { NULL STRING ESCAPED NONLOCAL time_and_date buffer buffer }
+NONLOCAL = { ESCAPED NONLOCAL } same as global_min_ticks
+STOREDANYTHING = { }
+INTEGER = { ANYTHING }
+argc = { NONLOCAL }
+argv = { NONLOCAL } same as argc
+global_min_ticks = { ESCAPED NONLOCAL }
+global_min_seconds = { ESCAPED NONLOCAL } same as global_min_ticks
+global_allstats = { NULL ESCAPED NONLOCAL }
+global_custrun = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_align = { ESCAPED NONLOCAL } same as global_min_ticks
+write_to_file = { NULL ESCAPED NONLOCAL } same as global_allstats
+mem_array_ents = { NULL ESCAPED NONLOCAL } same as global_allstats
+tests_to_do = { ESCAPED NONLOCAL } same as global_min_ticks
+i_148 = { NULL NONLOCAL }
+i_41 = { NULL NONLOCAL } same as i_148
+global_numsortstruct.0+32 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_numsortstruct.64+144 = { ESCAPED NONLOCAL } same as global_min_ticks
+global_numsortstruct.256+64 = { ESCAPED NONLOCAL } same as global_min_ticks
+global_strsortstruct.0+32 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_strsortstruct.64+144 = { ESCAPED NONLOCAL } same as global_min_ticks
+global_strsortstruct.256+64 = { ESCAPED NONLOCAL } same as global_min_ticks
+global_bitopstruct.0+32 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_bitopstruct.64+256 = { ESCAPED NONLOCAL } same as global_min_ticks
+global_emfloatstruct.0+32 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_emfloatstruct.64+256 = { ESCAPED NONLOCAL } same as global_min_ticks
+global_fourierstruct.0+32 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_fourierstruct.64+192 = { ESCAPED NONLOCAL } same as global_min_ticks
+global_assignstruct.0+32 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_assignstruct.64+192 = { ESCAPED NONLOCAL } same as global_min_ticks
+global_ideastruct.0+32 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_ideastruct.64+256 = { ESCAPED NONLOCAL } same as global_min_ticks
+global_huffstruct.0+32 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_huffstruct.64+256 = { ESCAPED NONLOCAL } same as global_min_ticks
+global_nnetstruct.0+32 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_nnetstruct.64+192 = { ESCAPED NONLOCAL } same as global_min_ticks
+global_lustruct.0+32 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_lustruct.64+192 = { ESCAPED NONLOCAL } same as global_min_ticks
+_1 = { ESCAPED NONLOCAL }
+strtol = { }
+_149 = { ESCAPED NONLOCAL } same as global_min_ticks
+_150 = { ESCAPED NONLOCAL } same as global_min_ticks
+testnum = { ESCAPED NONLOCAL } same as global_min_ticks
+output_string = { }
+global_allstats.0_2 = { NULL ESCAPED NONLOCAL } same as global_allstats
+time = { }
+time_and_date = { ESCAPED NONLOCAL }
+localtime = { }
+loctime_100 = { ESCAPED NONLOCAL } same as global_min_ticks
+asctime = { }
+_3 = { ESCAPED NONLOCAL } same as global_min_ticks
+__sprintf_chk = { }
+buffer = { ESCAPED NONLOCAL }
+i_113 = { ESCAPED NONLOCAL } same as global_min_ticks
+_4 = { ESCAPED NONLOCAL } same as global_min_ticks
+_5 = { ESCAPED NONLOCAL } same as global_min_ticks
+ftestnames = { ESCAPED NONLOCAL } same as global_min_ticks
+__printf_chk = { }
+write_to_file.30_190 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_ofile.31_191 = { ESCAPED NONLOCAL } same as global_min_ticks
+global_ofile = { ESCAPED NONLOCAL } same as global_min_ticks
+fputs = { }
+_153 = { ESCAPED NONLOCAL } same as global_min_ticks
+funcpointer = { ESCAPED NONLOCAL } same as global_min_ticks
+_6 = { ESCAPED NONLOCAL } same as global_min_ticks
+lx_bindex = { ESCAPED NONLOCAL } same as global_min_ticks
+_7 = { ESCAPED NONLOCAL } same as global_min_ticks
+bmean_187 = { }
+_8 = { ESCAPED NONLOCAL } same as global_min_ticks
+bindex = { ESCAPED NONLOCAL } same as global_min_ticks
+_9 = { ESCAPED NONLOCAL } same as global_min_ticks
+write_to_file.30_189 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_ofile.31_192 = { ESCAPED NONLOCAL } same as global_min_ticks
+_10 = { }
+_11 = { }
+_12 = { }
+_13 = { ESCAPED NONLOCAL } same as global_min_ticks
+_14 = { ESCAPED NONLOCAL } same as global_min_ticks
+fpindex_139 = { ESCAPED NONLOCAL } same as global_min_ticks
+fpindex_57 = { ESCAPED NONLOCAL } same as global_min_ticks
+_15 = { ESCAPED NONLOCAL } same as global_min_ticks
+_16 = { ESCAPED NONLOCAL } same as global_min_ticks
+lx_fpindex_140 = { ESCAPED NONLOCAL } same as global_min_ticks
+lx_fpindex_51 = { ESCAPED NONLOCAL } same as global_min_ticks
+_17 = { ESCAPED NONLOCAL } same as global_min_ticks
+_18 = { ESCAPED NONLOCAL } same as global_min_ticks
+intindex_136 = { ESCAPED NONLOCAL } same as global_min_ticks
+intindex_54 = { ESCAPED NONLOCAL } same as global_min_ticks
+_19 = { }
+_20 = { }
+_21 = { }
+i.7_22 = { ESCAPED NONLOCAL } same as global_min_ticks
+i_42 = { ESCAPED NONLOCAL } same as global_min_ticks
+_23 = { ESCAPED NONLOCAL } same as global_min_ticks
+_24 = { ESCAPED NONLOCAL } same as global_min_ticks
+_25 = { ESCAPED NONLOCAL } same as global_min_ticks
+lx_intindex_138 = { ESCAPED NONLOCAL } same as global_min_ticks
+lx_intindex_48 = { ESCAPED NONLOCAL } same as global_min_ticks
+_26 = { ESCAPED NONLOCAL } same as global_min_ticks
+_27 = { ESCAPED NONLOCAL } same as global_min_ticks
+lx_memindex_137 = { ESCAPED NONLOCAL } same as global_min_ticks
+lx_memindex_45 = { ESCAPED NONLOCAL } same as global_min_ticks
+lx_memindex_43 = { ESCAPED NONLOCAL } same as global_min_ticks
+lx_intindex_46 = { ESCAPED NONLOCAL } same as global_min_ticks
+lx_fpindex_49 = { ESCAPED NONLOCAL } same as global_min_ticks
+intindex_52 = { ESCAPED NONLOCAL } same as global_min_ticks
+fpindex_55 = { ESCAPED NONLOCAL } same as global_min_ticks
+global_allstats.10_28 = { NULL ESCAPED NONLOCAL } same as global_allstats
+bstdev_188 = { }
+_29 = { NONLOCAL } same as argc
+_30 = { NONLOCAL } same as argc
+_193 = { ESCAPED NONLOCAL } same as global_min_ticks
+_194 = { ESCAPED NONLOCAL } same as global_min_ticks
+buffer = { ESCAPED NONLOCAL }
+write_to_file.30_212 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_ofile.31_213 = { ESCAPED NONLOCAL } same as global_min_ticks
+_195 = { ESCAPED NONLOCAL } same as global_min_ticks
+write_to_file.30_211 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_ofile.31_214 = { ESCAPED NONLOCAL } same as global_min_ticks
+_196 = { ESCAPED NONLOCAL } same as global_min_ticks
+_197 = { ESCAPED NONLOCAL } same as global_min_ticks
+write_to_file.30_216 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_ofile.31_217 = { ESCAPED NONLOCAL } same as global_min_ticks
+_198 = { ESCAPED NONLOCAL } same as global_min_ticks
+write_to_file.30_215 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_ofile.31_218 = { ESCAPED NONLOCAL } same as global_min_ticks
+_199 = { ESCAPED NONLOCAL } same as global_min_ticks
+write_to_file.30_220 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_ofile.31_221 = { ESCAPED NONLOCAL } same as global_min_ticks
+_200 = { ESCAPED NONLOCAL } same as global_min_ticks
+write_to_file.30_219 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_ofile.31_222 = { ESCAPED NONLOCAL } same as global_min_ticks
+_201 = { ESCAPED NONLOCAL } same as global_min_ticks
+write_to_file.30_224 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_ofile.31_225 = { ESCAPED NONLOCAL } same as global_min_ticks
+_202 = { ESCAPED NONLOCAL } same as global_min_ticks
+write_to_file.30_223 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_ofile.31_226 = { ESCAPED NONLOCAL } same as global_min_ticks
+_203 = { ESCAPED NONLOCAL } same as global_min_ticks
+write_to_file.30_227 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_ofile.31_228 = { ESCAPED NONLOCAL } same as global_min_ticks
+_204 = { ESCAPED NONLOCAL } same as global_min_ticks
+write_to_file.30_229 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_ofile.31_230 = { ESCAPED NONLOCAL } same as global_min_ticks
+_205 = { ESCAPED NONLOCAL } same as global_min_ticks
+write_to_file.30_232 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_ofile.31_233 = { ESCAPED NONLOCAL } same as global_min_ticks
+_206 = { ESCAPED NONLOCAL } same as global_min_ticks
+write_to_file.30_231 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_ofile.31_234 = { ESCAPED NONLOCAL } same as global_min_ticks
+_207 = { ESCAPED NONLOCAL } same as global_min_ticks
+write_to_file.30_236 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_ofile.31_237 = { ESCAPED NONLOCAL } same as global_min_ticks
+_208 = { ESCAPED NONLOCAL } same as global_min_ticks
+write_to_file.30_235 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_ofile.31_238 = { ESCAPED NONLOCAL } same as global_min_ticks
+_209 = { ESCAPED NONLOCAL } same as global_min_ticks
+write_to_file.30_239 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_ofile.31_240 = { ESCAPED NONLOCAL } same as global_min_ticks
+_210 = { ESCAPED NONLOCAL } same as global_min_ticks
+write_to_file.30_241 = { NULL ESCAPED NONLOCAL } same as global_allstats
+global_ofile.31_242 = { ESCAPED NONLOCAL } same as global_min_ticks
+_31 = { ESCAPED NONLOCAL } same as global_min_ticks
+lx_memindex_44 = { ESCAPED NONLOCAL } same as global_min_ticks
+lx_intindex_47 = { ESCAPED NONLOCAL } same as global_min_ticks
+lx_fpindex_50 = { ESCAPED NONLOCAL } same as global_min_ticks
+intindex_53 = { ESCAPED NONLOCAL } same as global_min_ticks
+fpindex_56 = { ESCAPED NONLOCAL } same as global_min_ticks
+i_146 = { ESCAPED NONLOCAL } same as global_min_ticks
+testnum.16_32 = { ESCAPED NONLOCAL } same as global_min_ticks
+lx_memindex_61 = { ESCAPED NONLOCAL } same as global_min_ticks
+lx_intindex_134 = { ESCAPED NONLOCAL } same as global_min_ticks
+lx_fpindex_154 = { ESCAPED NONLOCAL } same as global_min_ticks
+intindex_152 = { ESCAPED NONLOCAL } same as global_min_ticks
+fpindex_151 = { ESCAPED NONLOCAL } same as global_min_ticks
+global_custrun.17_33 = { NULL ESCAPED NONLOCAL } same as global_allstats
+pow = { }
+_34 = { ESCAPED NONLOCAL } same as global_min_ticks
+_35 = { ESCAPED NONLOCAL } same as global_min_ticks
+global_ofile.18_36 = { ESCAPED NONLOCAL } same as global_min_ticks
+write_to_file.19_37 = { NULL ESCAPED NONLOCAL } same as global_allstats
+hardware = { }
+_38 = { ESCAPED NONLOCAL } same as global_min_ticks
+_39 = { ESCAPED NONLOCAL } same as global_min_ticks
+_40 = { ESCAPED NONLOCAL } same as global_min_ticks
+exit = { }
+
+
+Alias information for main
+
+Aliased symbols
+
+buffer, UID D.5159, char[80], is addressable
+time_and_date, UID D.4763, time_t, is addressable
+
+Call clobber information
+
+ESCAPED, points-to non-local, points-to NULL, points-to vars: { D.4679 D.4763 D.5159 } (nonlocal, escaped, interposable)
+
+Flow-insensitive points-to information
+
+_1, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+_3, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+_5, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+_31, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+global_ofile.18_36, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+argv_91(D), points-to non-local, points-to NULL, points-to vars: { }
+loctime_100, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+_153, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+global_ofile.31_191, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+global_ofile.31_192, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+global_ofile.31_213, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+global_ofile.31_214, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+global_ofile.31_217, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+global_ofile.31_218, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+global_ofile.31_221, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+global_ofile.31_222, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+global_ofile.31_225, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+global_ofile.31_226, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+global_ofile.31_228, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+global_ofile.31_230, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+global_ofile.31_233, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+global_ofile.31_234, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+global_ofile.31_237, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+global_ofile.31_238, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+global_ofile.31_240, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+global_ofile.31_242, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+
+main (int argc, char * * argv)
+{
+  char buffer[80];
+  double fpindex;
+  double intindex;
+  double lx_fpindex;
+  double lx_intindex;
+  double lx_memindex;
+  double bstdev;
+  double bmean;
+  struct tm * loctime;
+  time_t time_and_date;
+  int i;
+  char * _1;
+  int global_allstats.0_2;
+  char * _3;
+  int _4;
+  char * _5;
+  double _6;
+  double _7;
+  double _8;
+  double _9;
+  _Bool _10;
+  _Bool _11;
+  _Bool _12;
+  double _13;
+  double _14;
+  double _15;
+  double _16;
+  double _17;
+  double _18;
+  _Bool _19;
+  _Bool _20;
+  _Bool _21;
+  unsigned int i.7_22;
+  unsigned int _23;
+  double _24;
+  double _25;
+  double _26;
+  double _27;
+  int global_allstats.10_28;
+  double _29;
+  double _30;
+  char * _31;
+  int testnum.16_32;
+  int global_custrun.17_33;
+  double _34;
+  double _35;
+  struct FILE * global_ofile.18_36;
+  int write_to_file.19_37;
+  double _38;
+  double _39;
+  double _40;
+  long int _149;
+  int _150;
+  void (*<T8d0>) (void) _153;
+  int write_to_file.30_189;
+  int write_to_file.30_190;
+  struct FILE * global_ofile.31_191;
+  struct FILE * global_ofile.31_192;
+  short unsigned int _193;
+  int _194;
+  long unsigned int _195;
+  short unsigned int _196;
+  int _197;
+  long unsigned int _198;
+  long unsigned int _199;
+  long unsigned int _200;
+  long unsigned int _201;
+  long unsigned int _202;
+  long unsigned int _203;
+  long unsigned int _204;
+  long unsigned int _205;
+  long unsigned int _206;
+  long unsigned int _207;
+  long unsigned int _208;
+  long unsigned int _209;
+  long unsigned int _210;
+  int write_to_file.30_211;
+  int write_to_file.30_212;
+  struct FILE * global_ofile.31_213;
+  struct FILE * global_ofile.31_214;
+  int write_to_file.30_215;
+  int write_to_file.30_216;
+  struct FILE * global_ofile.31_217;
+  struct FILE * global_ofile.31_218;
+  int write_to_file.30_219;
+  int write_to_file.30_220;
+  struct FILE * global_ofile.31_221;
+  struct FILE * global_ofile.31_222;
+  int write_to_file.30_223;
+  int write_to_file.30_224;
+  struct FILE * global_ofile.31_225;
+  struct FILE * global_ofile.31_226;
+  int write_to_file.30_227;
+  struct FILE * global_ofile.31_228;
+  int write_to_file.30_229;
+  struct FILE * global_ofile.31_230;
+  int write_to_file.30_231;
+  int write_to_file.30_232;
+  struct FILE * global_ofile.31_233;
+  struct FILE * global_ofile.31_234;
+  int write_to_file.30_235;
+  int write_to_file.30_236;
+  struct FILE * global_ofile.31_237;
+  struct FILE * global_ofile.31_238;
+  int write_to_file.30_239;
+  struct FILE * global_ofile.31_240;
+  int write_to_file.30_241;
+  struct FILE * global_ofile.31_242;
+
+  <bb 2> [9.09%]:
+  global_min_ticks = 60;
+  global_min_seconds = 5;
+  global_allstats = 0;
+  global_custrun = 0;
+  global_align = 8;
+  write_to_file = 0;
+  mem_array_ents = 0;
+  goto <bb 4>; [100.00%]
+
+  <bb 3> [90.91%]:
+  tests_to_do[i_41] = 1;
+  i_148 = i_41 + 1;
+
+  <bb 4> [100.00%]:
+  # i_41 = PHI <0(2), i_148(3)>
+  if (i_41 <= 9)
+    goto <bb 3>; [90.91%]
+  else
+    goto <bb 5>; [9.09%]
+
+  <bb 5> [9.09%]:
+  global_numsortstruct.request_secs = 5;
+  global_strsortstruct.request_secs = 5;
+  global_bitopstruct.request_secs = 5;
+  global_emfloatstruct.request_secs = 5;
+  global_fourierstruct.request_secs = 5;
+  global_assignstruct.request_secs = 5;
+  global_ideastruct.request_secs = 5;
+  global_huffstruct.request_secs = 5;
+  global_nnetstruct.request_secs = 5;
+  global_lustruct.request_secs = 5;
+  global_numsortstruct.adjust = 0;
+  global_numsortstruct.arraysize = 8111;
+  global_strsortstruct.adjust = 0;
+  global_strsortstruct.arraysize = 8111;
+  global_bitopstruct.adjust = 0;
+  global_bitopstruct.bitfieldarraysize = 16384;
+  global_emfloatstruct.adjust = 0;
+  global_emfloatstruct.arraysize = 3000;
+  global_fourierstruct.adjust = 0;
+  global_assignstruct.adjust = 0;
+  global_ideastruct.adjust = 0;
+  global_ideastruct.arraysize = 4000;
+  global_huffstruct.adjust = 0;
+  global_huffstruct.arraysize = 5000;
+  global_nnetstruct.adjust = 0;
+  global_lustruct.adjust = 0;
+  if (argc_90(D) == 2)
+    goto <bb 6>; [20.24%]
+  else
+    goto <bb 7>; [79.76%]
+
+  <bb 6> [1.84%]:
+  _1 = MEM[(char * *)argv_91(D) + 8B];
+  _149 = strtol (_1, 0B, 10);
+  _150 = (int) _149;
+  testnum = _150;
+
+  <bb 7> [9.09%]:
+  output_string ("\nBYTEmark* Native Mode Benchmark ver. 2 (10/95)\n");
+  output_string ("Index-split by Andrew D. Balsa (11/97)\n");
+  output_string ("Linux/Unix* port by Uwe F. Mayer (12/96,11/97)\n");
+  global_allstats.0_2 = global_allstats;
+  if (global_allstats.0_2 != 0)
+    goto <bb 8>; [33.00%]
+  else
+    goto <bb 9>; [67.00%]
+
+  <bb 8> [3.00%]:
+  output_string ("\n");
+  output_string ("============================== ALL STATISTICS ===============================\n");
+  time (&time_and_date);
+  loctime_100 = localtime (&time_and_date);
+  _3 = asctime (loctime_100);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "**Date and time of benchmark run: %s", _3);
+  output_string (&buffer);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "**Sizeof: char:%u short:%u int:%u long:%u u8:%u u16:%u u32:%u int32:%u\n", 1, 2, 4, 8, 1, 2, 4, 4);
+  output_string (&buffer);
+  __builtin_memcpy (&buffer, "**System used for compilation:\n", 32);
+  output_string (&buffer);
+  __builtin_memcpy (&buffer, "**Linux elvenado 4.15.0-112-generic #113-Ubuntu SMP Thu Jul 9 23:41:39 UTC 2020 \n", 82);
+  output_string (&buffer);
+  __builtin_memcpy (&buffer, "**C compiler: gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) \n", 64);
+  output_string (&buffer);
+  __builtin_memcpy (&buffer, "**libc: libc-2.27.so\n", 22);
+  output_string (&buffer);
+  __builtin_memcpy (&buffer, "**Date of compilation: Mon 24 Aug 10:41:27 BST 2020\n", 53);
+  output_string (&buffer);
+  output_string ("=============================================================================\n");
+
+  <bb 9> [9.09%]:
+  output_string ("\nTEST                : Iterations/sec.  : Old Index   : New Index\n");
+  output_string ("                    :                  : Pentium 90* : AMD K6/233*\n");
+  output_string ("--------------------:------------------:-------------:------------\n");
+  i_113 = testnum;
+  goto <bb 60>; [100.00%]
+
+  <bb 10> [51.51%]:
+  _4 = tests_to_do[i_42];
+  if (_4 != 0)
+    goto <bb 11>; [33.00%]
+  else
+    goto <bb 59>; [67.00%]
+
+  <bb 11> [17.00%]:
+  _5 = ftestnames[i_42];
+  __builtin___sprintf_chk (&buffer, 1, 1024, "%s    :", _5);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_190 = write_to_file;
+  if (write_to_file.30_190 != 0)
+    goto <bb 12>; [36.64%]
+  else
+    goto <bb 13>; [63.36%]
+
+  <bb 12> [6.23%]:
+  global_ofile.31_191 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_191);
+
+  <bb 13> [17.00%]:
+  _153 = funcpointer[i_42];
+  _153 ();
+  _6 = lx_bindex[i_42];
+  _7 = bmean_187(D) / _6;
+  _8 = bindex[i_42];
+  _9 = bmean_187(D) / _8;
+  __builtin___sprintf_chk (&buffer, 1, 1024, " %15.5g  :  %9.2f  :  %9.2f\n", bmean_187(D), _9, _7);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_189 = write_to_file;
+  if (write_to_file.30_189 != 0)
+    goto <bb 14>; [36.64%]
+  else
+    goto <bb 15>; [63.36%]
+
+  <bb 14> [6.23%]:
+  global_ofile.31_192 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_192);
+
+  <bb 15> [17.00%]:
+  _10 = i_42 == 4;
+  _11 = i_42 == 8;
+  _12 = _10 | _11;
+  if (_12 != 0)
+    goto <bb 17>; [50.00%]
+  else
+    goto <bb 16>; [50.00%]
+
+  <bb 16> [8.50%]:
+  if (i_42 == 9)
+    goto <bb 17>; [34.00%]
+  else
+    goto <bb 18>; [66.00%]
+
+  <bb 17> [11.39%]:
+  _13 = bindex[i_42];
+  _14 = bmean_187(D) / _13;
+  fpindex_139 = _14 * fpindex_57;
+  _15 = lx_bindex[i_42];
+  _16 = bmean_187(D) / _15;
+  lx_fpindex_140 = _16 * lx_fpindex_51;
+  goto <bb 22>; [100.00%]
+
+  <bb 18> [5.61%]:
+  _17 = bindex[i_42];
+  _18 = bmean_187(D) / _17;
+  intindex_136 = _18 * intindex_54;
+  _19 = i_42 == 0;
+  _20 = i_42 == 3;
+  _21 = _19 | _20;
+  if (_21 != 0)
+    goto <bb 20>; [50.00%]
+  else
+    goto <bb 19>; [50.00%]
+
+  <bb 19> [2.80%]:
+  i.7_22 = (unsigned int) i_42;
+  _23 = i.7_22 + 4294967290;
+  if (_23 <= 1)
+    goto <bb 20>; [36.00%]
+  else
+    goto <bb 21>; [64.00%]
+
+  <bb 20> [3.81%]:
+  _24 = lx_bindex[i_42];
+  _25 = bmean_187(D) / _24;
+  lx_intindex_138 = _25 * lx_intindex_48;
+  goto <bb 22>; [100.00%]
+
+  <bb 21> [1.79%]:
+  _26 = lx_bindex[i_42];
+  _27 = bmean_187(D) / _26;
+  lx_memindex_137 = _27 * lx_memindex_45;
+
+  <bb 22> [17.00%]:
+  # lx_memindex_43 = PHI <lx_memindex_45(17), lx_memindex_45(20), lx_memindex_137(21)>
+  # lx_intindex_46 = PHI <lx_intindex_48(17), lx_intindex_138(20), lx_intindex_48(21)>
+  # lx_fpindex_49 = PHI <lx_fpindex_140(17), lx_fpindex_51(20), lx_fpindex_51(21)>
+  # intindex_52 = PHI <intindex_54(17), intindex_136(20), intindex_136(21)>
+  # fpindex_55 = PHI <fpindex_139(17), fpindex_57(20), fpindex_57(21)>
+  global_allstats.10_28 = global_allstats;
+  if (global_allstats.10_28 != 0)
+    goto <bb 23>; [33.00%]
+  else
+    goto <bb 59>; [67.00%]
+
+  <bb 23> [5.61%]:
+  __builtin___sprintf_chk (&buffer, 1, 1024, "  Absolute standard deviation: %g\n", bstdev_188(D));
+  output_string (&buffer);
+  if (bmean_187(D) > 1.00000000000000001999189980260288361964776078853415942018e-100)
+    goto <bb 24>; [33.00%]
+  else
+    goto <bb 25>; [67.00%]
+
+  <bb 24> [1.85%]:
+  _29 = bstdev_188(D) * 1.0e+2;
+  _30 = _29 / bmean_187(D);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "  Relative standard deviation: %g %%\n", _30);
+  output_string (&buffer);
+
+  <bb 25> [5.61%]:
+  __builtin___sprintf_chk (&buffer, 1, 1024, "  Number of runs: %lu\n", 5);
+  output_string (&buffer);
+  switch (i_42) <default: <L39> [9.09%], case 0: <L29> [9.09%], case 1: <L30> [9.09%], case 2: <L31> [9.09%], case 3: <L32> [9.09%], case 4: <L33> [9.09%], case 5: <L34> [9.09%], case 6: <L35> [9.09%], case 7: <L36> [9.09%], case 8: <L37> [9.09%], case 9: <L38> [9.09%]>
+
+<L29> [0.51%]:
+  _193 = global_numsortstruct.numarrays;
+  _194 = (int) _193;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of arrays: %d\n", _194);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_212 = write_to_file;
+  if (write_to_file.30_212 != 0)
+    goto <bb 27>; [36.64%]
+  else
+    goto <bb 28>; [63.36%]
+
+  <bb 27> [0.19%]:
+  global_ofile.31_213 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_213);
+
+  <bb 28> [0.51%]:
+  _195 = global_numsortstruct.arraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %ld\n", _195);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_211 = write_to_file;
+  if (write_to_file.30_211 != 0)
+    goto <bb 29>; [36.64%]
+  else
+    goto <bb 58> (<L39>); [63.36%]
+
+  <bb 29> [0.19%]:
+  global_ofile.31_214 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_214);
+  goto <bb 58> (<L39>); [100.00%]
+
+<L30> [0.51%]:
+  _196 = global_strsortstruct.numarrays;
+  _197 = (int) _196;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of arrays: %d\n", _197);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_216 = write_to_file;
+  if (write_to_file.30_216 != 0)
+    goto <bb 31>; [36.64%]
+  else
+    goto <bb 32>; [63.36%]
+
+  <bb 31> [0.19%]:
+  global_ofile.31_217 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_217);
+
+  <bb 32> [0.51%]:
+  _198 = global_strsortstruct.arraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %ld\n", _198);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_215 = write_to_file;
+  if (write_to_file.30_215 != 0)
+    goto <bb 33>; [36.64%]
+  else
+    goto <bb 58> (<L39>); [63.36%]
+
+  <bb 33> [0.19%]:
+  global_ofile.31_218 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_218);
+  goto <bb 58> (<L39>); [100.00%]
+
+<L31> [0.51%]:
+  _199 = global_bitopstruct.bitoparraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Operations array size: %ld\n", _199);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_220 = write_to_file;
+  if (write_to_file.30_220 != 0)
+    goto <bb 35>; [36.64%]
+  else
+    goto <bb 36>; [63.36%]
+
+  <bb 35> [0.19%]:
+  global_ofile.31_221 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_221);
+
+  <bb 36> [0.51%]:
+  _200 = global_bitopstruct.bitfieldarraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Bitfield array size: %ld\n", _200);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_219 = write_to_file;
+  if (write_to_file.30_219 != 0)
+    goto <bb 37>; [36.64%]
+  else
+    goto <bb 58> (<L39>); [63.36%]
+
+  <bb 37> [0.19%]:
+  global_ofile.31_222 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_222);
+  goto <bb 58> (<L39>); [100.00%]
+
+<L32> [0.51%]:
+  _201 = global_emfloatstruct.loops;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of loops: %lu\n", _201);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_224 = write_to_file;
+  if (write_to_file.30_224 != 0)
+    goto <bb 39>; [36.64%]
+  else
+    goto <bb 40>; [63.36%]
+
+  <bb 39> [0.19%]:
+  global_ofile.31_225 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_225);
+
+  <bb 40> [0.51%]:
+  _202 = global_emfloatstruct.arraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %lu\n", _202);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_223 = write_to_file;
+  if (write_to_file.30_223 != 0)
+    goto <bb 41>; [36.64%]
+  else
+    goto <bb 58> (<L39>); [63.36%]
+
+  <bb 41> [0.19%]:
+  global_ofile.31_226 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_226);
+  goto <bb 58> (<L39>); [100.00%]
+
+<L33> [0.51%]:
+  _203 = global_fourierstruct.arraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of coefficients: %lu\n", _203);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_227 = write_to_file;
+  if (write_to_file.30_227 != 0)
+    goto <bb 43>; [36.64%]
+  else
+    goto <bb 58> (<L39>); [63.36%]
+
+  <bb 43> [0.19%]:
+  global_ofile.31_228 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_228);
+  goto <bb 58> (<L39>); [100.00%]
+
+<L34> [0.51%]:
+  _204 = global_assignstruct.numarrays;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of arrays: %lu\n", _204);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_229 = write_to_file;
+  if (write_to_file.30_229 != 0)
+    goto <bb 45>; [36.64%]
+  else
+    goto <bb 58> (<L39>); [63.36%]
+
+  <bb 45> [0.19%]:
+  global_ofile.31_230 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_230);
+  goto <bb 58> (<L39>); [100.00%]
+
+<L35> [0.51%]:
+  _205 = global_ideastruct.arraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %lu\n", _205);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_232 = write_to_file;
+  if (write_to_file.30_232 != 0)
+    goto <bb 47>; [36.64%]
+  else
+    goto <bb 48>; [63.36%]
+
+  <bb 47> [0.19%]:
+  global_ofile.31_233 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_233);
+
+  <bb 48> [0.51%]:
+  _206 = global_ideastruct.loops;
+  __builtin___sprintf_chk (&buffer, 1, 80, " Number of loops: %lu\n", _206);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_231 = write_to_file;
+  if (write_to_file.30_231 != 0)
+    goto <bb 49>; [36.64%]
+  else
+    goto <bb 58> (<L39>); [63.36%]
+
+  <bb 49> [0.19%]:
+  global_ofile.31_234 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_234);
+  goto <bb 58> (<L39>); [100.00%]
+
+<L36> [0.51%]:
+  _207 = global_huffstruct.arraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %lu\n", _207);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_236 = write_to_file;
+  if (write_to_file.30_236 != 0)
+    goto <bb 51>; [36.64%]
+  else
+    goto <bb 52>; [63.36%]
+
+  <bb 51> [0.19%]:
+  global_ofile.31_237 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_237);
+
+  <bb 52> [0.51%]:
+  _208 = global_huffstruct.loops;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of loops: %lu\n", _208);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_235 = write_to_file;
+  if (write_to_file.30_235 != 0)
+    goto <bb 53>; [36.64%]
+  else
+    goto <bb 58> (<L39>); [63.36%]
+
+  <bb 53> [0.19%]:
+  global_ofile.31_238 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_238);
+  goto <bb 58> (<L39>); [100.00%]
+
+<L37> [0.51%]:
+  _209 = global_nnetstruct.loops;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of loops: %lu\n", _209);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_239 = write_to_file;
+  if (write_to_file.30_239 != 0)
+    goto <bb 55>; [36.64%]
+  else
+    goto <bb 58> (<L39>); [63.36%]
+
+  <bb 55> [0.19%]:
+  global_ofile.31_240 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_240);
+  goto <bb 58> (<L39>); [100.00%]
+
+<L38> [0.51%]:
+  _210 = global_lustruct.numarrays;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of arrays: %lu\n", _210);
+  __printf_chk (1, "%s", &buffer);
+  write_to_file.30_241 = write_to_file;
+  if (write_to_file.30_241 != 0)
+    goto <bb 57>; [36.64%]
+  else
+    goto <bb 58> (<L39>); [63.36%]
+
+  <bb 57> [0.19%]:
+  global_ofile.31_242 = global_ofile;
+  __builtin_fputs (&buffer, global_ofile.31_242);
+
+<L39> [5.61%]:
+  buffer ={v} {CLOBBER};
+  _31 = ftestnames[i_42];
+  __builtin___sprintf_chk (&buffer, 1, 1024, "Done with %s\n\n", _31);
+  output_string (&buffer);
+
+  <bb 59> [51.51%]:
+  # lx_memindex_44 = PHI <lx_memindex_45(10), lx_memindex_43(22), lx_memindex_43(58)>
+  # lx_intindex_47 = PHI <lx_intindex_48(10), lx_intindex_46(22), lx_intindex_46(58)>
+  # lx_fpindex_50 = PHI <lx_fpindex_51(10), lx_fpindex_49(22), lx_fpindex_49(58)>
+  # intindex_53 = PHI <intindex_54(10), intindex_52(22), intindex_52(58)>
+  # fpindex_56 = PHI <fpindex_57(10), fpindex_55(22), fpindex_55(58)>
+  i_146 = i_42 + 1;
+
+  <bb 60> [60.60%]:
+  # i_42 = PHI <i_113(9), i_146(59)>
+  # lx_memindex_45 = PHI <1.0e+0(9), lx_memindex_44(59)>
+  # lx_intindex_48 = PHI <1.0e+0(9), lx_intindex_47(59)>
+  # lx_fpindex_51 = PHI <1.0e+0(9), lx_fpindex_50(59)>
+  # intindex_54 = PHI <1.0e+0(9), intindex_53(59)>
+  # fpindex_57 = PHI <1.0e+0(9), fpindex_56(59)>
+  testnum.16_32 = testnum;
+  if (testnum.16_32 >= i_42)
+    goto <bb 10>; [85.00%]
+  else
+    goto <bb 61>; [15.00%]
+
+  <bb 61> [9.09%]:
+  # lx_memindex_61 = PHI <lx_memindex_45(60)>
+  # lx_intindex_134 = PHI <lx_intindex_48(60)>
+  # lx_fpindex_154 = PHI <lx_fpindex_51(60)>
+  # intindex_152 = PHI <intindex_54(60)>
+  # fpindex_151 = PHI <fpindex_57(60)>
+  global_custrun.17_33 = global_custrun;
+  if (global_custrun.17_33 == 0)
+    goto <bb 62>; [33.00%]
+  else
+    goto <bb 63>; [67.00%]
+
+  <bb 62> [3.00%]:
+  output_string ("==========================ORIGINAL BYTEMARK RESULTS==========================\n");
+  _34 = pow (intindex_54, 1.428570000000000117523768494720570743083953857421875e-1);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "INTEGER INDEX       : %.3f\n", _34);
+  output_string (&buffer);
+  _35 = pow (fpindex_57, 3.3333000000000001517008740847813896834850311279296875e-1);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "FLOATING-POINT INDEX: %.3f\n", _35);
+  output_string (&buffer);
+  output_string ("Baseline (MSDOS*)   : Pentium* 90, 256 KB L2-cache, Watcom* compiler 10.0\n");
+  output_string ("==============================LINUX DATA BELOW===============================\n");
+  global_ofile.18_36 = global_ofile;
+  write_to_file.19_37 = write_to_file;
+  hardware (write_to_file.19_37, global_ofile.18_36);
+  __builtin_memcpy (&buffer, "C compiler          : gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) \n", 72);
+  output_string (&buffer);
+  __builtin_memcpy (&buffer, "libc                : libc-2.27.so\n", 36);
+  output_string (&buffer);
+  _38 = pow (lx_memindex_45, 3.33333333299999978738270556277711875736713409423828125e-1);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "MEMORY INDEX        : %.3f\n", _38);
+  output_string (&buffer);
+  _39 = pow (lx_intindex_48, 2.5e-1);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "INTEGER INDEX       : %.3f\n", _39);
+  output_string (&buffer);
+  _40 = pow (lx_fpindex_51, 3.33333333299999978738270556277711875736713409423828125e-1);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "FLOATING-POINT INDEX: %.3f\n", _40);
+  output_string (&buffer);
+  output_string ("Baseline (LINUX)    : AMD K6/233*, 512 KB L2-cache, gcc 2.7.2.3, libc-5.4.38\n");
+  output_string ("* Trademarks are property of their respective holder.\n");
+
+  <bb 63> [9.09%]:
+  exit (0);
+
+}
+
+

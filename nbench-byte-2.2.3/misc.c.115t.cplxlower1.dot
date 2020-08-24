@@ -1,0 +1,95 @@
+digraph "misc.c.115t.cplxlower1" {
+overlap=false;
+subgraph "cluster_randwc" {
+	style="dashed";
+	color="black";
+	label="randwc ()";
+	fn_23_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_23_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_23_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:10000 |\<bb\ 2\>:\l\
+|_4\ =\ randw[0];\l\
+|_5\ =\ _4\ *\ 254754;\l\
+|_6\ =\ randw[1];\l\
+|_7\ =\ _6\ *\ 529562;\l\
+|_8\ =\ _5\ +\ _7;\l\
+|interm_9\ =\ _8\ %\ 999563;\l\
+|randw[1]\ =\ _4;\l\
+|randw[0]\ =\ interm_9;\l\
+|_3\ =\ interm_9\ %\ num_2(D);\l\
+|return\ _3;\l\
+}"];
+
+	fn_23_basic_block_0:s -> fn_23_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_23_basic_block_2:s -> fn_23_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true, label="[100%]"];
+	fn_23_basic_block_0:s -> fn_23_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_abs_randwc" {
+	style="dashed";
+	color="black";
+	label="abs_randwc ()";
+	fn_24_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_24_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_24_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:10000 |\<bb\ 2\>:\l\
+|num.0_1\ =\ (int)\ num_3(D);\l\
+|_7\ =\ randw[0];\l\
+|_8\ =\ _7\ *\ 254754;\l\
+|_9\ =\ randw[1];\l\
+|_10\ =\ _9\ *\ 529562;\l\
+|_11\ =\ _8\ +\ _10;\l\
+|interm_12\ =\ _11\ %\ 999563;\l\
+|randw[1]\ =\ _7;\l\
+|randw[0]\ =\ interm_12;\l\
+|_13\ =\ interm_12\ %\ num.0_1;\l\
+|temp_16\ =\ ABS_EXPR\ \<_13\>;\l\
+|_6\ =\ (u32)\ temp_16;\l\
+|return\ _6;\l\
+}"];
+
+	fn_24_basic_block_0:s -> fn_24_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_24_basic_block_2:s -> fn_24_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true, label="[100%]"];
+	fn_24_basic_block_0:s -> fn_24_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_randnum" {
+	style="dashed";
+	color="black";
+	label="randnum ()";
+	fn_25_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_25_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_25_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:10000 |\<bb\ 2\>:\l\
+|if\ (lngval_7(D)\ !=\ 0)\l\
+\ \ goto\ \<bb\ 3\>;\ [54.00%]\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\ [46.00%]\l\
+}"];
+
+	fn_25_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:5400 |\<bb\ 3\>:\l\
+|randw[0]\ =\ 13;\l\
+|randw[1]\ =\ 117;\l\
+}"];
+
+	fn_25_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:10000 |\<bb\ 4\>:\l\
+|_1\ =\ randw[0];\l\
+|_2\ =\ _1\ *\ 254754;\l\
+|_3\ =\ randw[1];\l\
+|_4\ =\ _3\ *\ 529562;\l\
+|_5\ =\ _2\ +\ _4;\l\
+|interm_11\ =\ _5\ %\ 999563;\l\
+|randw[1]\ =\ _1;\l\
+|randw[0]\ =\ interm_11;\l\
+|return\ interm_11;\l\
+}"];
+
+	fn_25_basic_block_0:s -> fn_25_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_25_basic_block_2:s -> fn_25_basic_block_3:n [style="solid,bold",color=black,weight=10,constraint=true, label="[54%]"];
+	fn_25_basic_block_2:s -> fn_25_basic_block_4:n [style="solid,bold",color=black,weight=10,constraint=true, label="[46%]"];
+	fn_25_basic_block_3:s -> fn_25_basic_block_4:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[100%]"];
+	fn_25_basic_block_4:s -> fn_25_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true, label="[100%]"];
+	fn_25_basic_block_0:s -> fn_25_basic_block_1:n [style="invis",constraint=true];
+}
+}

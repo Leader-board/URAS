@@ -1,0 +1,1236 @@
+
+;; Function printf (printf, funcdef_no=33, decl_uid=798, cgraph_uid=33, symbol_order=33)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+
+Value ranges after Early VRP:
+
+__fmt_2(D): ~[0B, 0B]
+_4: VARYING
+
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__))
+printf (const char * restrict __fmt)
+{
+  int _4;
+
+  <bb 2> [0.00%]:
+  _4 = __printf_chk (1, __fmt_2(D), __builtin_va_arg_pack ());
+  return _4;
+
+}
+
+
+
+;; Function fread (fread, funcdef_no=39, decl_uid=2819, cgraph_uid=39, symbol_order=39)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8 9 10
+;; 2 succs { 3 9 }
+;; 3 succs { 6 4 }
+;; 4 succs { 6 5 }
+;; 5 succs { 6 7 }
+;; 6 succs { 10 }
+;; 7 succs { 8 9 }
+;; 8 succs { 10 }
+;; 9 succs { 10 }
+;; 10 succs { 1 }
+
+Value ranges after Early VRP:
+
+_1: VARYING
+_2: VARYING
+_3: VARYING
+_4: [0, +INF]
+_6: [0, +INF]
+_9: VARYING
+__ptr_12(D): VARYING
+__size_13(D): VARYING
+__n_14(D): VARYING
+__stream_15(D): VARYING
+_17: VARYING
+_19: VARYING
+_21: VARYING
+
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__))
+fread (void * restrict __ptr, size_t __size, size_t __n, struct FILE * restrict __stream)
+{
+  long unsigned int _1;
+  int _2;
+  int _3;
+  long unsigned int _4;
+  long unsigned int _6;
+  size_t _9;
+  size_t _17;
+  size_t _19;
+  size_t _21;
+
+  <bb 2> [0.00%]:
+  _1 = __builtin_object_size (__ptr_12(D), 0);
+  if (_1 != 18446744073709551615)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 9>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _2 = __builtin_constant_p (__size_13(D));
+  if (_2 == 0)
+    goto <bb 6>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _3 = __builtin_constant_p (__n_14(D));
+  if (_3 == 0)
+    goto <bb 6>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 5> [0.00%]:
+  _4 = __size_13(D) | __n_14(D);
+  if (_4 > 4294967295)
+    goto <bb 6>; [0.00%]
+  else
+    goto <bb 7>; [0.00%]
+
+  <bb 6> [0.00%]:
+  _19 = __fread_chk (__ptr_12(D), _1, __size_13(D), __n_14(D), __stream_15(D));
+  goto <bb 10>; [0.00%]
+
+  <bb 7> [0.00%]:
+  _6 = __size_13(D) * __n_14(D);
+  if (_1 < _6)
+    goto <bb 8>; [0.00%]
+  else
+    goto <bb 9>; [0.00%]
+
+  <bb 8> [0.00%]:
+  _17 = __fread_chk_warn (__ptr_12(D), _1, __size_13(D), __n_14(D), __stream_15(D));
+  goto <bb 10>; [0.00%]
+
+  <bb 9> [0.00%]:
+  _21 = __fread_alias (__ptr_12(D), __size_13(D), __n_14(D), __stream_15(D));
+
+  <bb 10> [0.00%]:
+  # _9 = PHI <_19(6), _17(8), _21(9)>
+  return _9;
+
+}
+
+
+
+;; Function memmove (memmove, funcdef_no=44, decl_uid=730, cgraph_uid=44, symbol_order=44)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+
+Value ranges after Early VRP:
+
+_1: VARYING
+__dest_3(D): ~[0B, 0B]
+__src_4(D): ~[0B, 0B]
+__len_5(D): VARYING
+_7: ~[0B, 0B]
+
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__, __nothrow__, __leaf__))
+memmove (void * __dest, const void * __src, size_t __len)
+{
+  long unsigned int _1;
+  void * _7;
+
+  <bb 2> [0.00%]:
+  _1 = __builtin_object_size (__dest_3(D), 0);
+  _7 = __builtin___memmove_chk (__dest_3(D), __src_4(D), __len_5(D), _1);
+  return _7;
+
+}
+
+
+
+;; Function MoveMemory (MoveMemory, funcdef_no=54, decl_uid=3594, cgraph_uid=54, symbol_order=54)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+
+Value ranges after Early VRP:
+
+destination_2(D): VARYING
+source_3(D): VARYING
+nbytes_4(D): VARYING
+_6: VARYING
+_7: ~[0B, 0B]
+
+
+MoveMemory (farvoid * destination, farvoid * source, long unsigned int nbytes)
+{
+  void * D.3830;
+  long unsigned int _6;
+  void * _7;
+
+  <bb 2> [100.00%]:
+  _6 = __builtin_object_size (destination_2(D), 0);
+  _7 = __builtin___memmove_chk (destination_2(D), source_3(D), nbytes_4(D), _6);
+  return;
+
+}
+
+
+
+;; Function InitMemArray (InitMemArray, funcdef_no=55, decl_uid=3596, cgraph_uid=55, symbol_order=55)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+
+Value ranges after Early VRP:
+
+
+
+InitMemArray ()
+{
+  <bb 2> [0.00%]:
+  mem_array_ents = 0;
+  return;
+
+}
+
+
+
+;; Function AddMemArray (AddMemArray, funcdef_no=56, decl_uid=3599, cgraph_uid=56, symbol_order=56)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4
+;; 2 succs { 4 3 }
+;; 3 succs { 4 }
+;; 4 succs { 1 }
+
+Value ranges after Early VRP:
+
+mem_array_ents.7_1: VARYING
+_5: [-2147483647, 20]
+_6: [-1, 0]
+true_addr_9(D): VARYING
+adj_addr_11(D): VARYING
+
+
+AddMemArray (long unsigned int true_addr, long unsigned int adj_addr)
+{
+  int mem_array_ents.7_1;
+  int _5;
+  int _6;
+
+  <bb 2> [0.00%]:
+  mem_array_ents.7_1 = mem_array_ents;
+  if (mem_array_ents.7_1 > 19)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 3>; [0.00%]
+
+  <bb 3> [0.00%]:
+  mem_array[0][mem_array_ents.7_1] = true_addr_9(D);
+  mem_array[1][mem_array_ents.7_1] = adj_addr_11(D);
+  _5 = mem_array_ents.7_1 + 1;
+  mem_array_ents = _5;
+
+  <bb 4> [0.00%]:
+  # _6 = PHI <-1(2), 0(3)>
+  return _6;
+
+}
+
+
+
+;; Function AllocateMemory (AllocateMemory, funcdef_no=52, decl_uid=3587, cgraph_uid=52, symbol_order=52)
+
+Created preheader block for loop 1
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8 9 10 21 11 12 13 14 15 16 17 18 19 20
+;;
+;; Loop 1
+;;  header 13, latch 12
+;;  depth 1, outer 0
+;;  nodes: 13 12
+;; 2 succs { 3 4 }
+;; 3 succs { 5 }
+;; 4 succs { 5 }
+;; 5 succs { 6 10 }
+;; 6 succs { 7 8 }
+;; 7 succs { 9 }
+;; 8 succs { 9 }
+;; 9 succs { 20 }
+;; 10 succs { 11 21 }
+;; 21 succs { 13 }
+;; 11 succs { 16 }
+;; 12 succs { 13 }
+;; 13 succs { 12 14 }
+;; 14 succs { 15 16 }
+;; 15 succs { 16 }
+;; 16 succs { 18 17 }
+;; 17 succs { 19 }
+;; 18 succs { 19 }
+;; 19 succs { 20 }
+;; 20 succs { 1 }
+
+SSA replacement table
+N_i -> { O_1 ... O_j } means that N_i replaces O_1, ..., O_j
+
+_42 -> { _11 }
+adj_addr_43 -> { adj_addr_20 }
+Incremental SSA update started at block: 10
+Number of blocks in CFG: 22
+Number of blocks to update: 5 ( 23%)
+
+
+
+Value ranges after Early VRP:
+
+global_align.0_1: VARYING
+_2: [-2147483648, 2147483647]
+_3: [-4294967296, 4294967294]
+_4: ~[4294967295, 18446744069414584319]
+_5: [0, +INF]
+global_align.1_6: VARYING
+_11: [2, +INF]
+_12: [0, 18446744073709551614]
+_14: ~[-1, 3]
+_15: [4, 18446744073709551614]
+_16: [0, 18446744073709551613]
+adj_addr_20: VARYING
+adj_addr_21: VARYING
+_22: VARYING
+nbytes_28(D): VARYING
+returnval_30: VARYING
+errorcode_31(D): VARYING
+true_addr_34: [0, +INF]
+adj_addr_36: [0, +INF]
+adj_addr_37: [0, +INF]
+adj_addr_38: [0, +INF]
+returnval_39: VARYING
+_42: [2, +INF]
+adj_addr_43: [adj_addr_20, adj_addr_20]
+mem_array_ents.7_46: VARYING
+_47: [-2147483647, 20]
+mem_array_ents.7_49: VARYING
+_50: [-2147483647, 20]
+
+
+Removing basic block 21
+AllocateMemory (long unsigned int nbytes, int * errorcode)
+{
+  int D.3839;
+  int D.3836;
+  long unsigned int adj_addr;
+  long unsigned int true_addr;
+  farvoid * returnval;
+  int global_align.0_1;
+  long int _2;
+  long int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  int global_align.1_6;
+  long unsigned int _11;
+  long unsigned int _12;
+  int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  farvoid * _22;
+  long unsigned int _42;
+  int mem_array_ents.7_46;
+  int _47;
+  int mem_array_ents.7_49;
+  int _50;
+
+  <bb 2> [0.00%]:
+  global_align.0_1 = global_align;
+  _2 = (long int) global_align.0_1;
+  _3 = _2 * 2;
+  _4 = (long unsigned int) _3;
+  _5 = _4 + nbytes_28(D);
+  returnval_30 = malloc (_5);
+  if (returnval_30 == 0B)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  *errorcode_31(D) = 1;
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  *errorcode_31(D) = 0;
+
+  <bb 5> [0.00%]:
+  true_addr_34 = (long unsigned int) returnval_30;
+  global_align.1_6 = global_align;
+  if (global_align.1_6 == 0)
+    goto <bb 6>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 6> [100.00%]:
+  mem_array_ents.7_46 = mem_array_ents;
+  if (mem_array_ents.7_46 > 19)
+    goto <bb 7>; [2.00%]
+  else
+    goto <bb 8>; [98.00%]
+
+  <bb 7> [2.00%]:
+  *errorcode_31(D) = 2;
+  goto <bb 9>; [0.00%]
+
+  <bb 8> [98.00%]:
+  mem_array[0][mem_array_ents.7_46] = true_addr_34;
+  mem_array[1][mem_array_ents.7_46] = true_addr_34;
+  _47 = mem_array_ents.7_46 + 1;
+  mem_array_ents = _47;
+
+  <bb 9> [0.00%]:
+  goto <bb 20>; [0.00%]
+
+  <bb 10> [0.00%]:
+  if (global_align.1_6 == 1)
+    goto <bb 11>; [0.00%]
+  else
+    goto <bb 13>; [0.00%]
+
+  <bb 11> [0.00%]:
+  adj_addr_38 = true_addr_34 + 1;
+  goto <bb 16>; [0.00%]
+
+  <bb 12> [0.00%]:
+  adj_addr_37 = adj_addr_20 + 1;
+
+  <bb 13> [0.00%]:
+  # adj_addr_20 = PHI <true_addr_34(10), adj_addr_37(12)>
+  _11 = (long unsigned int) global_align.1_6;
+  _12 = adj_addr_20 % _11;
+  if (_12 != 0)
+    goto <bb 12>; [0.00%]
+  else
+    goto <bb 14>; [0.00%]
+
+  <bb 14> [0.00%]:
+  # _42 = PHI <_11(13)>
+  # adj_addr_43 = PHI <adj_addr_20(13)>
+  _14 = global_align.1_6 * 2;
+  _15 = (long unsigned int) _14;
+  _16 = adj_addr_43 % _15;
+  if (_16 == 0)
+    goto <bb 15>; [0.00%]
+  else
+    goto <bb 16>; [0.00%]
+
+  <bb 15> [0.00%]:
+  adj_addr_36 = _42 + adj_addr_43;
+
+  <bb 16> [100.00%]:
+  # adj_addr_21 = PHI <adj_addr_38(11), adj_addr_43(14), adj_addr_36(15)>
+  returnval_39 = (farvoid *) adj_addr_21;
+  mem_array_ents.7_49 = mem_array_ents;
+  if (mem_array_ents.7_49 > 19)
+    goto <bb 18>; [2.00%]
+  else
+    goto <bb 17>; [98.00%]
+
+  <bb 17> [98.00%]:
+  mem_array[0][mem_array_ents.7_49] = true_addr_34;
+  mem_array[1][mem_array_ents.7_49] = adj_addr_21;
+  _50 = mem_array_ents.7_49 + 1;
+  mem_array_ents = _50;
+  goto <bb 19>; [100.00%]
+
+  <bb 18> [2.00%]:
+  *errorcode_31(D) = 2;
+
+  <bb 19> [0.00%]:
+
+  <bb 20> [0.00%]:
+  # _22 = PHI <returnval_30(9), returnval_39(19)>
+  return _22;
+
+}
+
+
+
+;; Function RemoveMemArray (RemoveMemArray, funcdef_no=57, decl_uid=3602, cgraph_uid=57, symbol_order=57)
+
+;; 3 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8 9 10
+;;
+;; Loop 2
+;;  header 6, latch 5
+;;  depth 1, outer 0
+;;  nodes: 6 5
+;;
+;; Loop 1
+;;  header 9, latch 8
+;;  depth 1, outer 0
+;;  nodes: 9 8 3
+;; 2 succs { 9 }
+;; 3 succs { 4 8 }
+;; 4 succs { 6 }
+;; 5 succs { 6 }
+;; 6 succs { 5 7 }
+;; 7 succs { 10 }
+;; 8 succs { 9 }
+;; 9 succs { 3 10 }
+;; 10 succs { 1 }
+
+SSA replacement table
+N_i -> { O_1 ... O_j } means that N_i replaces O_1, ..., O_j
+
+i_8 -> { i_12 }
+mem_array_ents.13_24 -> { mem_array_ents.13_11 }
+Incremental SSA update started at block: 9
+Number of blocks in CFG: 11
+Number of blocks to update: 7 ( 64%)
+
+
+
+Value ranges after Early VRP:
+
+_1: VARYING
+_2: VARYING
+_4: VARYING
+_6: VARYING
+_7: VARYING
+i_8: [-INF, mem_array_ents.13_11 + -1]  EQUIVALENCES: { i_12 } (1 elements)
+_10: VARYING
+mem_array_ents.13_11: VARYING
+i_12: [0, 20]
+j_13: [i_8, +INF]
+_14: [-1, 0]
+adj_addr_20(D): VARYING
+i_21: VARYING
+true_addr_22(D): VARYING
+mem_array_ents.13_24: [1, +INF]  EQUIVALENCES: { mem_array_ents.13_11 } (1 elements)
+
+
+RemoveMemArray (long unsigned int adj_addr, long unsigned int * true_addr)
+{
+  int j;
+  int i;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _4;
+  long unsigned int _6;
+  int _7;
+  int _10;
+  int mem_array_ents.13_11;
+  int _14;
+  int mem_array_ents.13_24;
+
+  <bb 2> [0.00%]:
+  goto <bb 9>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _1 = mem_array[1][i_12];
+  if (_1 == adj_addr_20(D))
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 4> [0.00%]:
+  # mem_array_ents.13_24 = PHI <mem_array_ents.13_11(3)>
+  # i_8 = PHI <i_12(3)>
+  _2 = mem_array[0][i_8];
+  *true_addr_22(D) = _2;
+  goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  _4 = mem_array[0][_7];
+  mem_array[0][j_13] = _4;
+  _6 = mem_array[1][_7];
+  mem_array[1][j_13] = _6;
+
+  <bb 6> [0.00%]:
+  # j_13 = PHI <i_8(4), _7(5)>
+  _7 = j_13 + 1;
+  if (_7 < mem_array_ents.13_24)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 7>; [0.00%]
+
+  <bb 7> [0.00%]:
+  _10 = mem_array_ents.13_24 + -1;
+  mem_array_ents = _10;
+  goto <bb 10>; [0.00%]
+
+  <bb 8> [0.00%]:
+  i_21 = i_12 + 1;
+
+  <bb 9> [0.00%]:
+  # i_12 = PHI <0(2), i_21(8)>
+  mem_array_ents.13_11 = mem_array_ents;
+  if (mem_array_ents.13_11 > i_12)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 10> [0.00%]:
+  # _14 = PHI <0(7), -1(9)>
+  return _14;
+
+}
+
+
+
+;; Function FreeMemory (FreeMemory, funcdef_no=53, decl_uid=3590, cgraph_uid=53, symbol_order=53)
+
+;; 3 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8 9 10 11
+;;
+;; Loop 1
+;;  header 6, latch 5
+;;  depth 1, outer 0
+;;  nodes: 6 5
+;;
+;; Loop 2
+;;  header 9, latch 8
+;;  depth 1, outer 0
+;;  nodes: 9 8 3
+;; 2 succs { 9 }
+;; 3 succs { 4 8 }
+;; 4 succs { 6 }
+;; 5 succs { 6 }
+;; 6 succs { 5 7 }
+;; 7 succs { 11 }
+;; 8 succs { 9 }
+;; 9 succs { 3 10 }
+;; 10 succs { 11 }
+;; 11 succs { 1 }
+
+SSA replacement table
+N_i -> { O_1 ... O_j } means that N_i replaces O_1, ..., O_j
+
+mem_array_ents.13_1 -> { mem_array_ents.13_25 }
+i_2 -> { i_14 }
+Incremental SSA update started at block: 9
+Number of blocks in CFG: 12
+Number of blocks to update: 8 ( 67%)
+
+
+
+Value ranges after Early VRP:
+
+mem_array_ents.13_1: [1, +INF]  EQUIVALENCES: { mem_array_ents.13_25 } (1 elements)
+i_2: [-INF, mem_array_ents.13_25 + -1]  EQUIVALENCES: { i_14 } (1 elements)
+mempointer_4(D): VARYING
+adj_addr_5: [0, +INF]
+mempointer_8: VARYING
+errorcode_10(D): VARYING
+i_14: [0, 20]
+_15: VARYING
+_17: VARYING
+_18: VARYING
+_19: VARYING
+j_20: [i_2, +INF]
+_21: VARYING
+_23: VARYING
+i_24: VARYING
+mem_array_ents.13_25: VARYING
+
+
+FreeMemory (farvoid * mempointer, int * errorcode)
+{
+  int i;
+  int j;
+  int D.3847;
+  long unsigned int true_addr;
+  long unsigned int adj_addr;
+  int mem_array_ents.13_1;
+  long unsigned int _15;
+  long unsigned int _17;
+  int _18;
+  long unsigned int _19;
+  long unsigned int _21;
+  int _23;
+  int mem_array_ents.13_25;
+
+  <bb 2> [14.44%]:
+  adj_addr_5 = (long unsigned int) mempointer_4(D);
+  goto <bb 9>; [100.00%]
+
+  <bb 3> [92.50%]:
+  _15 = mem_array[1][i_14];
+  if (adj_addr_5 == _15)
+    goto <bb 4>; [7.50%]
+  else
+    goto <bb 8>; [92.50%]
+
+  <bb 4> [6.94%]:
+  # i_2 = PHI <i_14(3)>
+  # mem_array_ents.13_1 = PHI <mem_array_ents.13_25(3)>
+  _17 = mem_array[0][i_2];
+  goto <bb 6>; [100.00%]
+
+  <bb 5> [39.31%]:
+  _19 = mem_array[0][_18];
+  mem_array[0][j_20] = _19;
+  _21 = mem_array[1][_18];
+  mem_array[1][j_20] = _21;
+
+  <bb 6> [46.25%]:
+  # j_20 = PHI <i_2(4), _18(5)>
+  _18 = j_20 + 1;
+  if (mem_array_ents.13_1 > _18)
+    goto <bb 5>; [85.00%]
+  else
+    goto <bb 7>; [15.00%]
+
+  <bb 7> [6.95%]:
+  _23 = mem_array_ents.13_1 + -1;
+  mem_array_ents = _23;
+  mempointer_8 = (farvoid *) _17;
+  free (mempointer_8);
+  *errorcode_10(D) = 0;
+  goto <bb 11>; [0.00%]
+
+  <bb 8> [85.56%]:
+  i_24 = i_14 + 1;
+
+  <bb 9> [100.00%]:
+  # i_14 = PHI <0(2), i_24(8)>
+  mem_array_ents.13_25 = mem_array_ents;
+  if (i_14 < mem_array_ents.13_25)
+    goto <bb 3>; [92.50%]
+  else
+    goto <bb 10>; [7.50%]
+
+  <bb 10> [7.50%]:
+  *errorcode_10(D) = 3;
+
+  <bb 11> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function CreateFile (CreateFile, funcdef_no=58, decl_uid=3609, cgraph_uid=58, symbol_order=58)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5
+;; 2 succs { 3 4 }
+;; 3 succs { 5 }
+;; 4 succs { 5 }
+;; 5 succs { 1 }
+
+Value ranges after Early VRP:
+
+filename_3(D): VARYING
+fhandle_5: VARYING
+errorcode_6(D): VARYING
+
+
+CreateFile (char * filename, int * errorcode)
+{
+  struct FILE * fhandle;
+
+  <bb 2> [0.00%]:
+  fhandle_5 = fopen (filename_3(D), "w");
+  if (fhandle_5 == 0B)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  *errorcode_6(D) = 10;
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  *errorcode_6(D) = 0;
+
+  <bb 5> [0.00%]:
+  fclose (fhandle_5);
+  return;
+
+}
+
+
+
+;; Function bmOpenFile (bmOpenFile, funcdef_no=59, decl_uid=3612, cgraph_uid=59, symbol_order=59)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5
+;; 2 succs { 3 4 }
+;; 3 succs { 5 }
+;; 4 succs { 5 }
+;; 5 succs { 1 }
+
+Value ranges after Early VRP:
+
+fname_3(D): VARYING
+fhandle_5: VARYING
+errorcode_6(D): VARYING
+
+
+bmOpenFile (char * fname, int * errorcode)
+{
+  struct FILE * fhandle;
+
+  <bb 2> [0.00%]:
+  fhandle_5 = fopen (fname_3(D), "w+");
+  if (fhandle_5 == 0B)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  *errorcode_6(D) = 13;
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  *errorcode_6(D) = 0;
+
+  <bb 5> [0.00%]:
+  return fhandle_5;
+
+}
+
+
+
+;; Function CloseFile (CloseFile, funcdef_no=60, decl_uid=3615, cgraph_uid=60, symbol_order=60)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+
+Value ranges after Early VRP:
+
+fhandle_2(D): VARYING
+errorcode_4(D): VARYING
+
+
+CloseFile (struct FILE * fhandle, int * errorcode)
+{
+  <bb 2> [0.00%]:
+  fclose (fhandle_2(D));
+  *errorcode_4(D) = 0;
+  return;
+
+}
+
+
+
+;; Function readfile (readfile, funcdef_no=61, decl_uid=3621, cgraph_uid=61, symbol_order=61)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8 9 10 11 12
+;; 2 succs { 3 4 }
+;; 3 succs { 12 }
+;; 4 succs { 5 9 }
+;; 5 succs { 7 6 }
+;; 6 succs { 8 9 }
+;; 7 succs { 10 }
+;; 8 succs { 10 }
+;; 9 succs { 10 }
+;; 10 succs { 11 12 }
+;; 11 succs { 12 }
+;; 12 succs { 1 }
+
+Value ranges after Early VRP:
+
+offset.14_1: VARYING
+_2: VARYING
+errorcode_5(D): VARYING
+offset_7(D): VARYING
+fhandle_8(D): VARYING
+newoffset_10: [-2147483648, 2147483647]
+nbytes_11(D): VARYING
+nelems_12: [0, 65535]
+buffer_13(D): VARYING
+_18: VARYING
+_20: VARYING
+_21: [1, 65535]
+_22: VARYING
+_24: VARYING
+_25: VARYING
+_26: VARYING
+
+
+readfile (struct FILE * fhandle, long unsigned int offset, long unsigned int nbytes, void * buffer, int * errorcode)
+{
+  size_t D.3856;
+  size_t readcode;
+  size_t nelems;
+  long int newoffset;
+  long int offset.14_1;
+  int _2;
+  long unsigned int _18;
+  int _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  long unsigned int _24;
+  long unsigned int _25;
+  long unsigned int _26;
+
+  <bb 2> [0.00%]:
+  *errorcode_5(D) = 0;
+  offset.14_1 = (long int) offset_7(D);
+  _2 = fseek (fhandle_8(D), offset.14_1, 0);
+  newoffset_10 = (long int) _2;
+  if (_2 == -1)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  *errorcode_5(D) = 14;
+  goto <bb 12>; [0.00%]
+
+  <bb 4> [100.00%]:
+  nelems_12 = nbytes_11(D) & 65535;
+  _18 = __builtin_object_size (buffer_13(D), 0);
+  if (_18 != 18446744073709551615)
+    goto <bb 5>; [79.76%]
+  else
+    goto <bb 9>; [20.24%]
+
+  <bb 5> [56.18%]:
+  _20 = __builtin_constant_p (nelems_12);
+  if (_20 == 0)
+    goto <bb 7>; [46.00%]
+  else
+    goto <bb 6>; [54.00%]
+
+  <bb 6> [30.34%]:
+  _21 = nelems_12 | 1;
+  if (nelems_12 > _18)
+    goto <bb 8>; [29.56%]
+  else
+    goto <bb 9>; [70.44%]
+
+  <bb 7> [63.38%]:
+  _22 = __fread_chk (buffer_13(D), _18, 1, nelems_12, fhandle_8(D));
+  goto <bb 10>; [100.00%]
+
+  <bb 8> [4.84%]:
+  _24 = __fread_chk_warn (buffer_13(D), _18, 1, nelems_12, fhandle_8(D));
+  goto <bb 10>; [100.00%]
+
+  <bb 9> [31.78%]:
+  _25 = __fread_alias (buffer_13(D), 1, nelems_12, fhandle_8(D));
+
+  <bb 10> [100.00%]:
+  # _26 = PHI <_22(7), _24(8), _25(9)>
+  if (nelems_12 != _26)
+    goto <bb 11>; [0.00%]
+  else
+    goto <bb 12>; [0.00%]
+
+  <bb 11> [0.00%]:
+  *errorcode_5(D) = 11;
+
+  <bb 12> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function writefile (writefile, funcdef_no=62, decl_uid=3627, cgraph_uid=62, symbol_order=62)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6
+;; 2 succs { 3 4 }
+;; 3 succs { 6 }
+;; 4 succs { 5 6 }
+;; 5 succs { 6 }
+;; 6 succs { 1 }
+
+Value ranges after Early VRP:
+
+offset.15_1: VARYING
+_2: VARYING
+errorcode_5(D): VARYING
+offset_7(D): VARYING
+fhandle_8(D): VARYING
+newoffset_10: [-2147483648, 2147483647]
+nbytes_11(D): VARYING
+nelems_12: [0, 65535]
+buffer_13(D): VARYING
+writecode_15: VARYING
+
+
+writefile (struct FILE * fhandle, long unsigned int offset, long unsigned int nbytes, void * buffer, int * errorcode)
+{
+  size_t writecode;
+  size_t nelems;
+  long int newoffset;
+  long int offset.15_1;
+  int _2;
+
+  <bb 2> [0.00%]:
+  *errorcode_5(D) = 0;
+  offset.15_1 = (long int) offset_7(D);
+  _2 = fseek (fhandle_8(D), offset.15_1, 0);
+  newoffset_10 = (long int) _2;
+  if (_2 == -1)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  *errorcode_5(D) = 14;
+  goto <bb 6>; [0.00%]
+
+  <bb 4> [0.00%]:
+  nelems_12 = nbytes_11(D) & 65535;
+  writecode_15 = fwrite (buffer_13(D), 1, nelems_12, fhandle_8(D));
+  if (nelems_12 == writecode_15)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  *errorcode_5(D) = 12;
+
+  <bb 6> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function ReportError (ReportError, funcdef_no=63, decl_uid=3605, cgraph_uid=63, symbol_order=63)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+
+Value ranges after Early VRP:
+
+errorcontext_2(D): VARYING
+errorcode_4(D): VARYING
+_6: VARYING
+_7: VARYING
+
+
+ReportError (char * errorcontext, int errorcode)
+{
+  int D.3862;
+  int D.3860;
+  int _6;
+  int _7;
+
+  <bb 2> [100.00%]:
+  _7 = __printf_chk (1, "ERROR CONDITION\nContext: %s\n", errorcontext_2(D));
+  _6 = __printf_chk (1, "Code: %d", errorcode_4(D));
+  return;
+
+}
+
+
+
+;; Function ErrorExit (ErrorExit, funcdef_no=64, decl_uid=3606, cgraph_uid=64, symbol_order=64)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { }
+
+Value ranges after Early VRP:
+
+
+
+ErrorExit ()
+{
+  <bb 2> [0.00%]:
+  exit (1);
+
+}
+
+
+
+;; Function StartStopwatch (StartStopwatch, funcdef_no=65, decl_uid=3628, cgraph_uid=65, symbol_order=65)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+
+Value ranges after Early VRP:
+
+_1: VARYING
+_4: [0, +INF]
+
+
+StartStopwatch ()
+{
+  long int _1;
+  long unsigned int _4;
+
+  <bb 2> [0.00%]:
+  _1 = clock ();
+  _4 = (long unsigned int) _1;
+  return _4;
+
+}
+
+
+
+;; Function StopStopwatch (StopStopwatch, funcdef_no=66, decl_uid=3630, cgraph_uid=66, symbol_order=66)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+
+Value ranges after Early VRP:
+
+_1: VARYING
+_2: [0, +INF]
+startticks_5(D): VARYING
+_6: [0, +INF]
+
+
+StopStopwatch (long unsigned int startticks)
+{
+  long int _1;
+  long unsigned int _2;
+  long unsigned int _6;
+
+  <bb 2> [0.00%]:
+  _1 = clock ();
+  _2 = (long unsigned int) _1;
+  _6 = _2 - startticks_5(D);
+  return _6;
+
+}
+
+
+
+;; Function TicksToSecs (TicksToSecs, funcdef_no=67, decl_uid=3632, cgraph_uid=67, symbol_order=67)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+
+Value ranges after Early VRP:
+
+tickamount_1(D): VARYING
+_2: [0, 18446744073709]
+
+
+TicksToSecs (long unsigned int tickamount)
+{
+  long unsigned int _2;
+
+  <bb 2> [0.00%]:
+  _2 = tickamount_1(D) / 1000000;
+  return _2;
+
+}
+
+
+
+;; Function TicksToFracSecs (TicksToFracSecs, funcdef_no=68, decl_uid=3634, cgraph_uid=68, symbol_order=68)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+
+Value ranges after Early VRP:
+
+_1: VARYING
+tickamount_2(D): VARYING
+_3: VARYING
+
+
+TicksToFracSecs (long unsigned int tickamount)
+{
+  double _1;
+  double _3;
+
+  <bb 2> [0.00%]:
+  _1 = (double) tickamount_2(D);
+  _3 = _1 / 1.0e+6;
+  return _3;
+
+}
+
+

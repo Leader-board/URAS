@@ -1,0 +1,4844 @@
+
+;; Function sprintf (sprintf, funcdef_no=10, decl_uid=814, cgraph_uid=10, symbol_order=10)
+
+Points-to analysis
+
+Constraints:
+
+ANYTHING = &ANYTHING
+ESCAPED = *ESCAPED
+ESCAPED = ESCAPED + UNKNOWN
+*ESCAPED = NONLOCAL
+NONLOCAL = &NONLOCAL
+NONLOCAL = &ESCAPED
+INTEGER = &ANYTHING
+__s = &PARM_NOALIAS(9)
+PARM_NOALIAS(9) = &NONLOCAL
+__fmt = &PARM_NOALIAS(11)
+PARM_NOALIAS(11) = &NONLOCAL
+CALLUSED(13) = CALLUSED(13) + UNKNOWN
+CALLUSED(13) = *CALLUSED(13) + UNKNOWN
+CALLUSED(13) = __s
+CALLUSED(13) = &NONLOCAL
+_1 = CALLUSED(13)
+_1 = NONLOCAL
+ESCAPED = __s
+ESCAPED = &NONLOCAL
+ESCAPED = _1
+ESCAPED = __fmt
+_6 = NONLOCAL
+ESCAPED = _6
+
+Collapsing static cycles and doing variable substitution
+Building predecessor graph
+Detecting pointer and location equivalences
+
+
+// The constraint graph before var-substitution in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING"[label="ANYTHING = { 2 }"];
+"STRING";
+"ESCAPED"[label="ESCAPED = { 5 }"];
+"NONLOCAL"[label="NONLOCAL = { 4 5 }"];
+"STOREDANYTHING";
+"INTEGER"[label="INTEGER = { 2 }"];
+"__s"[label="__s = { 9 }"];
+"PARM_NOALIAS(9)"[label="PARM_NOALIAS(9) = { 5 }"];
+"__fmt"[label="__fmt = { 11 }"];
+"PARM_NOALIAS(11)"[label="PARM_NOALIAS(11) = { 5 }"];
+"__builtin_object_size";
+"CALLUSED(13)"[label="CALLUSED(13) = { 5 }"];
+"CALLCLOBBERED(14)";
+"_1";
+"__sprintf_chk";
+"_6";
+"*NULL";
+"*ANYTHING";
+"*STRING";
+"*STOREDANYTHING";
+"*INTEGER";
+"*__s";
+"*PARM_NOALIAS(9)";
+"*__fmt";
+"*PARM_NOALIAS(11)";
+"*__builtin_object_size";
+"*CALLUSED(13)";
+"*CALLCLOBBERED(14)";
+"*__sprintf_chk";
+
+  // Edges in the constraint graph:
+"NONLOCAL" -> "ESCAPED";
+"__s" -> "ESCAPED";
+"__fmt" -> "ESCAPED";
+"_1" -> "ESCAPED";
+"_6" -> "ESCAPED";
+"ESCAPED" -> "ESCAPED";
+"__s" -> "CALLUSED(13)";
+"NONLOCAL" -> "_1";
+"CALLUSED(13)" -> "_1";
+"NONLOCAL" -> "_6";
+}
+
+
+Rewriting constraints and unifying variables
+Uniting pointer but not location equivalent variables
+Finding indirect cycles
+
+
+// The constraint graph before solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = NONLOCAL\l"];
+"STOREDANYTHING";
+"INTEGER";
+"__s";
+"PARM_NOALIAS(9)";
+"__fmt";
+"PARM_NOALIAS(11)";
+"__builtin_object_size";
+"CALLUSED(13)" [label="\N\nCALLUSED(13) = CALLUSED(13) + UNKNOWN\lCALLUSED(13) = *CALLUSED(13) + UNKNOWN\l"];
+"CALLCLOBBERED(14)";
+"_1";
+"__sprintf_chk";
+"_6";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "PARM_NOALIAS(9)";
+"STOREDANYTHING" -> "PARM_NOALIAS(11)";
+"STOREDANYTHING" -> "CALLUSED(13)";
+"__s" -> "ESCAPED";
+"__s" -> "CALLUSED(13)";
+"__fmt" -> "ESCAPED";
+"CALLUSED(13)" -> "_1";
+"_1" -> "ESCAPED";
+"_6" -> "ESCAPED";
+"_6" -> "_1";
+}
+
+
+Solving graph
+
+
+// The constraint graph after solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = _6\l"];
+"STOREDANYTHING";
+"INTEGER";
+"__s";
+"PARM_NOALIAS(9)";
+"__fmt";
+"PARM_NOALIAS(11)";
+"__builtin_object_size";
+"CALLUSED(13)" [label="\N\nCALLUSED(13) = CALLUSED(13) + UNKNOWN\lCALLUSED(13) = *CALLUSED(13) + UNKNOWN\l"];
+"CALLCLOBBERED(14)";
+"_1";
+"__sprintf_chk";
+"_6";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "PARM_NOALIAS(9)";
+"STOREDANYTHING" -> "PARM_NOALIAS(11)";
+"STOREDANYTHING" -> "CALLUSED(13)";
+"__s" -> "ESCAPED";
+"__s" -> "CALLUSED(13)";
+"PARM_NOALIAS(9)" -> "ESCAPED";
+"PARM_NOALIAS(9)" -> "CALLUSED(13)";
+"__fmt" -> "ESCAPED";
+"PARM_NOALIAS(11)" -> "ESCAPED";
+"CALLUSED(13)" -> "_1";
+"_1" -> "ESCAPED";
+"_6" -> "ESCAPED";
+"_6" -> "PARM_NOALIAS(9)";
+"_6" -> "PARM_NOALIAS(11)";
+"_6" -> "CALLUSED(13)";
+"_6" -> "_1";
+}
+
+
+
+Points-to sets
+
+ANYTHING = { ANYTHING }
+ESCAPED = { ESCAPED NONLOCAL PARM_NOALIAS(9) PARM_NOALIAS(11) }
+NONLOCAL = { ESCAPED NONLOCAL } same as _6
+STOREDANYTHING = { }
+INTEGER = { ANYTHING }
+__s = { PARM_NOALIAS(9) }
+PARM_NOALIAS(9) = { ESCAPED NONLOCAL }
+__fmt = { PARM_NOALIAS(11) }
+PARM_NOALIAS(11) = { ESCAPED NONLOCAL }
+__builtin_object_size = { }
+CALLUSED(13) = { ESCAPED NONLOCAL PARM_NOALIAS(9) }
+CALLCLOBBERED(14) = { }
+_1 = { ESCAPED NONLOCAL PARM_NOALIAS(9) }
+__sprintf_chk = { }
+_6 = { ESCAPED NONLOCAL }
+
+
+Alias information for sprintf
+
+Aliased symbols
+
+
+Call clobber information
+
+ESCAPED, points-to non-local, points-to vars: { D.3479 D.3480 } (nonlocal, escaped, restrict)
+
+Flow-insensitive points-to information
+
+__s_3(D), points-to NULL, points-to vars: { D.3479 } (nonlocal, escaped, restrict)
+__fmt_4(D), points-to NULL, points-to vars: { D.3480 } (nonlocal, escaped, restrict)
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__, __leaf__, __nothrow__))
+sprintf (char * restrict __s, const char * restrict __fmt)
+{
+  long unsigned int _1;
+  int _6;
+
+  <bb 2> [0.00%]:
+  _1 = __builtin_object_size (__s_3(D), 1);
+  _6 = __builtin___sprintf_chk (__s_3(D), 1, _1, __fmt_4(D), __builtin_va_arg_pack ());
+  return _6;
+
+}
+
+
+
+;; Function fprintf (fprintf, funcdef_no=14, decl_uid=776, cgraph_uid=14, symbol_order=14)
+
+Points-to analysis
+
+Constraints:
+
+ANYTHING = &ANYTHING
+ESCAPED = *ESCAPED
+ESCAPED = ESCAPED + UNKNOWN
+*ESCAPED = NONLOCAL
+NONLOCAL = &NONLOCAL
+NONLOCAL = &ESCAPED
+INTEGER = &ANYTHING
+__stream = &PARM_NOALIAS.0+32
+PARM_NOALIAS.0+32 = &NONLOCAL
+PARM_NOALIAS.64+64 = &NONLOCAL
+PARM_NOALIAS.128+64 = &NONLOCAL
+PARM_NOALIAS.192+64 = &NONLOCAL
+PARM_NOALIAS.256+64 = &NONLOCAL
+PARM_NOALIAS.320+64 = &NONLOCAL
+PARM_NOALIAS.384+64 = &NONLOCAL
+PARM_NOALIAS.448+64 = &NONLOCAL
+PARM_NOALIAS.512+64 = &NONLOCAL
+PARM_NOALIAS.576+64 = &NONLOCAL
+PARM_NOALIAS.640+64 = &NONLOCAL
+PARM_NOALIAS.704+64 = &NONLOCAL
+PARM_NOALIAS.768+64 = &NONLOCAL
+PARM_NOALIAS.832+64 = &NONLOCAL
+PARM_NOALIAS.896+160 = &NONLOCAL
+PARM_NOALIAS.1088+64 = &NONLOCAL
+PARM_NOALIAS.1152+64 = &NONLOCAL
+PARM_NOALIAS.1216+64 = &NONLOCAL
+PARM_NOALIAS.1280+64 = &NONLOCAL
+PARM_NOALIAS.1344+64 = &NONLOCAL
+PARM_NOALIAS.1408+64 = &NONLOCAL
+PARM_NOALIAS.1472+256 = &NONLOCAL
+__fmt = &PARM_NOALIAS(32)
+PARM_NOALIAS(32) = &NONLOCAL
+ESCAPED = __stream
+ESCAPED = &NONLOCAL
+ESCAPED = __fmt
+_5 = NONLOCAL
+ESCAPED = _5
+
+Collapsing static cycles and doing variable substitution
+Building predecessor graph
+Detecting pointer and location equivalences
+
+
+// The constraint graph before var-substitution in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING"[label="ANYTHING = { 2 }"];
+"STRING";
+"ESCAPED"[label="ESCAPED = { 5 }"];
+"NONLOCAL"[label="NONLOCAL = { 4 5 }"];
+"STOREDANYTHING";
+"INTEGER"[label="INTEGER = { 2 }"];
+"__stream"[label="__stream = { 9 }"];
+"PARM_NOALIAS.0+32"[label="PARM_NOALIAS.0+32 = { 5 }"];
+"PARM_NOALIAS.64+64"[label="PARM_NOALIAS.64+64 = { 5 }"];
+"PARM_NOALIAS.128+64"[label="PARM_NOALIAS.128+64 = { 5 }"];
+"PARM_NOALIAS.192+64"[label="PARM_NOALIAS.192+64 = { 5 }"];
+"PARM_NOALIAS.256+64"[label="PARM_NOALIAS.256+64 = { 5 }"];
+"PARM_NOALIAS.320+64"[label="PARM_NOALIAS.320+64 = { 5 }"];
+"PARM_NOALIAS.384+64"[label="PARM_NOALIAS.384+64 = { 5 }"];
+"PARM_NOALIAS.448+64"[label="PARM_NOALIAS.448+64 = { 5 }"];
+"PARM_NOALIAS.512+64"[label="PARM_NOALIAS.512+64 = { 5 }"];
+"PARM_NOALIAS.576+64"[label="PARM_NOALIAS.576+64 = { 5 }"];
+"PARM_NOALIAS.640+64"[label="PARM_NOALIAS.640+64 = { 5 }"];
+"PARM_NOALIAS.704+64"[label="PARM_NOALIAS.704+64 = { 5 }"];
+"PARM_NOALIAS.768+64"[label="PARM_NOALIAS.768+64 = { 5 }"];
+"PARM_NOALIAS.832+64"[label="PARM_NOALIAS.832+64 = { 5 }"];
+"PARM_NOALIAS.896+160"[label="PARM_NOALIAS.896+160 = { 5 }"];
+"PARM_NOALIAS.1088+64"[label="PARM_NOALIAS.1088+64 = { 5 }"];
+"PARM_NOALIAS.1152+64"[label="PARM_NOALIAS.1152+64 = { 5 }"];
+"PARM_NOALIAS.1216+64"[label="PARM_NOALIAS.1216+64 = { 5 }"];
+"PARM_NOALIAS.1280+64"[label="PARM_NOALIAS.1280+64 = { 5 }"];
+"PARM_NOALIAS.1344+64"[label="PARM_NOALIAS.1344+64 = { 5 }"];
+"PARM_NOALIAS.1408+64"[label="PARM_NOALIAS.1408+64 = { 5 }"];
+"PARM_NOALIAS.1472+256"[label="PARM_NOALIAS.1472+256 = { 5 }"];
+"__fmt"[label="__fmt = { 32 }"];
+"PARM_NOALIAS(32)"[label="PARM_NOALIAS(32) = { 5 }"];
+"__fprintf_chk";
+"_5";
+"*NULL";
+"*ANYTHING";
+"*STRING";
+"*STOREDANYTHING";
+"*INTEGER";
+"*__stream";
+"*PARM_NOALIAS.0+32";
+"*PARM_NOALIAS.64+64";
+"*PARM_NOALIAS.128+64";
+"*PARM_NOALIAS.192+64";
+"*PARM_NOALIAS.256+64";
+"*PARM_NOALIAS.320+64";
+"*PARM_NOALIAS.384+64";
+"*PARM_NOALIAS.448+64";
+"*PARM_NOALIAS.512+64";
+"*PARM_NOALIAS.576+64";
+"*PARM_NOALIAS.640+64";
+"*PARM_NOALIAS.704+64";
+"*PARM_NOALIAS.768+64";
+"*PARM_NOALIAS.832+64";
+"*PARM_NOALIAS.896+160";
+"*PARM_NOALIAS.1088+64";
+"*PARM_NOALIAS.1152+64";
+"*PARM_NOALIAS.1216+64";
+"*PARM_NOALIAS.1280+64";
+"*PARM_NOALIAS.1344+64";
+"*PARM_NOALIAS.1408+64";
+"*PARM_NOALIAS.1472+256";
+"*__fmt";
+"*PARM_NOALIAS(32)";
+"*__fprintf_chk";
+
+  // Edges in the constraint graph:
+"NONLOCAL" -> "ESCAPED";
+"__stream" -> "ESCAPED";
+"__fmt" -> "ESCAPED";
+"_5" -> "ESCAPED";
+"ESCAPED" -> "ESCAPED";
+"NONLOCAL" -> "_5";
+}
+
+
+Rewriting constraints and unifying variables
+Uniting pointer but not location equivalent variables
+Finding indirect cycles
+
+
+// The constraint graph before solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = NONLOCAL\l"];
+"STOREDANYTHING";
+"INTEGER";
+"__stream";
+"PARM_NOALIAS.0+32";
+"PARM_NOALIAS.64+64";
+"PARM_NOALIAS.128+64";
+"PARM_NOALIAS.192+64";
+"PARM_NOALIAS.256+64";
+"PARM_NOALIAS.320+64";
+"PARM_NOALIAS.384+64";
+"PARM_NOALIAS.448+64";
+"PARM_NOALIAS.512+64";
+"PARM_NOALIAS.576+64";
+"PARM_NOALIAS.640+64";
+"PARM_NOALIAS.704+64";
+"PARM_NOALIAS.768+64";
+"PARM_NOALIAS.832+64";
+"PARM_NOALIAS.896+160";
+"PARM_NOALIAS.1088+64";
+"PARM_NOALIAS.1152+64";
+"PARM_NOALIAS.1216+64";
+"PARM_NOALIAS.1280+64";
+"PARM_NOALIAS.1344+64";
+"PARM_NOALIAS.1408+64";
+"PARM_NOALIAS.1472+256";
+"__fmt";
+"PARM_NOALIAS(32)";
+"__fprintf_chk";
+"_5";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "PARM_NOALIAS.0+32";
+"STOREDANYTHING" -> "PARM_NOALIAS.64+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.128+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.192+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.256+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.320+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.384+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.448+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.512+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.576+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.640+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.704+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.768+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.832+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.896+160";
+"STOREDANYTHING" -> "PARM_NOALIAS.1088+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1152+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1216+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1280+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1344+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1408+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1472+256";
+"STOREDANYTHING" -> "PARM_NOALIAS(32)";
+"__stream" -> "ESCAPED";
+"__fmt" -> "ESCAPED";
+"_5" -> "ESCAPED";
+}
+
+
+Solving graph
+
+
+// The constraint graph after solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = _5\l"];
+"STOREDANYTHING";
+"INTEGER";
+"__stream";
+"PARM_NOALIAS.0+32";
+"PARM_NOALIAS.64+64";
+"PARM_NOALIAS.128+64";
+"PARM_NOALIAS.192+64";
+"PARM_NOALIAS.256+64";
+"PARM_NOALIAS.320+64";
+"PARM_NOALIAS.384+64";
+"PARM_NOALIAS.448+64";
+"PARM_NOALIAS.512+64";
+"PARM_NOALIAS.576+64";
+"PARM_NOALIAS.640+64";
+"PARM_NOALIAS.704+64";
+"PARM_NOALIAS.768+64";
+"PARM_NOALIAS.832+64";
+"PARM_NOALIAS.896+160";
+"PARM_NOALIAS.1088+64";
+"PARM_NOALIAS.1152+64";
+"PARM_NOALIAS.1216+64";
+"PARM_NOALIAS.1280+64";
+"PARM_NOALIAS.1344+64";
+"PARM_NOALIAS.1408+64";
+"PARM_NOALIAS.1472+256";
+"__fmt";
+"PARM_NOALIAS(32)";
+"__fprintf_chk";
+"_5";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "PARM_NOALIAS.0+32";
+"STOREDANYTHING" -> "PARM_NOALIAS.64+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.128+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.192+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.256+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.320+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.384+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.448+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.512+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.576+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.640+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.704+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.768+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.832+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.896+160";
+"STOREDANYTHING" -> "PARM_NOALIAS.1088+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1152+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1216+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1280+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1344+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1408+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1472+256";
+"STOREDANYTHING" -> "PARM_NOALIAS(32)";
+"__stream" -> "ESCAPED";
+"PARM_NOALIAS.0+32" -> "ESCAPED";
+"PARM_NOALIAS.64+64" -> "ESCAPED";
+"PARM_NOALIAS.128+64" -> "ESCAPED";
+"PARM_NOALIAS.192+64" -> "ESCAPED";
+"PARM_NOALIAS.256+64" -> "ESCAPED";
+"PARM_NOALIAS.320+64" -> "ESCAPED";
+"PARM_NOALIAS.384+64" -> "ESCAPED";
+"PARM_NOALIAS.448+64" -> "ESCAPED";
+"PARM_NOALIAS.512+64" -> "ESCAPED";
+"PARM_NOALIAS.576+64" -> "ESCAPED";
+"PARM_NOALIAS.640+64" -> "ESCAPED";
+"PARM_NOALIAS.704+64" -> "ESCAPED";
+"PARM_NOALIAS.768+64" -> "ESCAPED";
+"PARM_NOALIAS.832+64" -> "ESCAPED";
+"PARM_NOALIAS.896+160" -> "ESCAPED";
+"PARM_NOALIAS.1088+64" -> "ESCAPED";
+"PARM_NOALIAS.1152+64" -> "ESCAPED";
+"PARM_NOALIAS.1216+64" -> "ESCAPED";
+"PARM_NOALIAS.1280+64" -> "ESCAPED";
+"PARM_NOALIAS.1344+64" -> "ESCAPED";
+"PARM_NOALIAS.1408+64" -> "ESCAPED";
+"PARM_NOALIAS.1472+256" -> "ESCAPED";
+"__fmt" -> "ESCAPED";
+"PARM_NOALIAS(32)" -> "ESCAPED";
+"_5" -> "ESCAPED";
+"_5" -> "PARM_NOALIAS.0+32";
+"_5" -> "PARM_NOALIAS.64+64";
+"_5" -> "PARM_NOALIAS.128+64";
+"_5" -> "PARM_NOALIAS.192+64";
+"_5" -> "PARM_NOALIAS.256+64";
+"_5" -> "PARM_NOALIAS.320+64";
+"_5" -> "PARM_NOALIAS.384+64";
+"_5" -> "PARM_NOALIAS.448+64";
+"_5" -> "PARM_NOALIAS.512+64";
+"_5" -> "PARM_NOALIAS.576+64";
+"_5" -> "PARM_NOALIAS.640+64";
+"_5" -> "PARM_NOALIAS.704+64";
+"_5" -> "PARM_NOALIAS.768+64";
+"_5" -> "PARM_NOALIAS.832+64";
+"_5" -> "PARM_NOALIAS.896+160";
+"_5" -> "PARM_NOALIAS.1088+64";
+"_5" -> "PARM_NOALIAS.1152+64";
+"_5" -> "PARM_NOALIAS.1216+64";
+"_5" -> "PARM_NOALIAS.1280+64";
+"_5" -> "PARM_NOALIAS.1344+64";
+"_5" -> "PARM_NOALIAS.1408+64";
+"_5" -> "PARM_NOALIAS.1472+256";
+"_5" -> "PARM_NOALIAS(32)";
+}
+
+
+
+Points-to sets
+
+ANYTHING = { ANYTHING }
+ESCAPED = { ESCAPED NONLOCAL PARM_NOALIAS.0+32 PARM_NOALIAS.64+64 PARM_NOALIAS.128+64 PARM_NOALIAS.192+64 PARM_NOALIAS.256+64 PARM_NOALIAS.320+64 PARM_NOALIAS.384+64 PARM_NOALIAS.448+64 PARM_NOALIAS.512+64 PARM_NOALIAS.576+64 PARM_NOALIAS.640+64 PARM_NOALIAS.704+64 PARM_NOALIAS.768+64 PARM_NOALIAS.832+64 PARM_NOALIAS.896+160 PARM_NOALIAS.1088+64 PARM_NOALIAS.1152+64 PARM_NOALIAS.1216+64 PARM_NOALIAS.1280+64 PARM_NOALIAS.1344+64 PARM_NOALIAS.1408+64 PARM_NOALIAS.1472+256 PARM_NOALIAS(32) }
+NONLOCAL = { ESCAPED NONLOCAL } same as _5
+STOREDANYTHING = { }
+INTEGER = { ANYTHING }
+__stream = { PARM_NOALIAS.0+32 }
+PARM_NOALIAS.0+32 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.64+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.128+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.192+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.256+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.320+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.384+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.448+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.512+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.576+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.640+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.704+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.768+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.832+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.896+160 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.1088+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.1152+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.1216+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.1280+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.1344+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.1408+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.1472+256 = { ESCAPED NONLOCAL }
+__fmt = { PARM_NOALIAS(32) }
+PARM_NOALIAS(32) = { ESCAPED NONLOCAL }
+__fprintf_chk = { }
+_5 = { ESCAPED NONLOCAL }
+
+
+Alias information for fprintf
+
+Aliased symbols
+
+
+Call clobber information
+
+ESCAPED, points-to non-local, points-to vars: { D.3482 D.3483 } (nonlocal, escaped, restrict)
+
+Flow-insensitive points-to information
+
+__stream_2(D), points-to NULL, points-to vars: { D.3482 } (nonlocal, escaped, restrict)
+__fmt_3(D), points-to NULL, points-to vars: { D.3483 } (nonlocal, escaped, restrict)
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__))
+fprintf (struct FILE * restrict __stream, const char * restrict __fmt)
+{
+  int _5;
+
+  <bb 2> [0.00%]:
+  _5 = __fprintf_chk (__stream_2(D), 1, __fmt_3(D), __builtin_va_arg_pack ());
+  return _5;
+
+}
+
+
+
+;; Function printf (printf, funcdef_no=15, decl_uid=798, cgraph_uid=15, symbol_order=15)
+
+Points-to analysis
+
+Constraints:
+
+ANYTHING = &ANYTHING
+ESCAPED = *ESCAPED
+ESCAPED = ESCAPED + UNKNOWN
+*ESCAPED = NONLOCAL
+NONLOCAL = &NONLOCAL
+NONLOCAL = &ESCAPED
+INTEGER = &ANYTHING
+__fmt = &PARM_NOALIAS(9)
+PARM_NOALIAS(9) = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = __fmt
+_4 = NONLOCAL
+ESCAPED = _4
+
+Collapsing static cycles and doing variable substitution
+Building predecessor graph
+Detecting pointer and location equivalences
+
+
+// The constraint graph before var-substitution in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING"[label="ANYTHING = { 2 }"];
+"STRING";
+"ESCAPED"[label="ESCAPED = { 5 }"];
+"NONLOCAL"[label="NONLOCAL = { 4 5 }"];
+"STOREDANYTHING";
+"INTEGER"[label="INTEGER = { 2 }"];
+"__fmt"[label="__fmt = { 9 }"];
+"PARM_NOALIAS(9)"[label="PARM_NOALIAS(9) = { 5 }"];
+"__printf_chk";
+"_4";
+"*NULL";
+"*ANYTHING";
+"*STRING";
+"*STOREDANYTHING";
+"*INTEGER";
+"*__fmt";
+"*PARM_NOALIAS(9)";
+"*__printf_chk";
+
+  // Edges in the constraint graph:
+"NONLOCAL" -> "ESCAPED";
+"__fmt" -> "ESCAPED";
+"_4" -> "ESCAPED";
+"ESCAPED" -> "ESCAPED";
+"NONLOCAL" -> "_4";
+}
+
+
+Rewriting constraints and unifying variables
+Uniting pointer but not location equivalent variables
+Finding indirect cycles
+
+
+// The constraint graph before solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = NONLOCAL\l"];
+"STOREDANYTHING";
+"INTEGER";
+"__fmt";
+"PARM_NOALIAS(9)";
+"__printf_chk";
+"_4";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "PARM_NOALIAS(9)";
+"__fmt" -> "ESCAPED";
+"_4" -> "ESCAPED";
+}
+
+
+Solving graph
+
+
+// The constraint graph after solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = _4\l"];
+"STOREDANYTHING";
+"INTEGER";
+"__fmt";
+"PARM_NOALIAS(9)";
+"__printf_chk";
+"_4";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "PARM_NOALIAS(9)";
+"__fmt" -> "ESCAPED";
+"PARM_NOALIAS(9)" -> "ESCAPED";
+"_4" -> "ESCAPED";
+"_4" -> "PARM_NOALIAS(9)";
+}
+
+
+
+Points-to sets
+
+ANYTHING = { ANYTHING }
+ESCAPED = { ESCAPED NONLOCAL PARM_NOALIAS(9) }
+NONLOCAL = { ESCAPED NONLOCAL } same as _4
+STOREDANYTHING = { }
+INTEGER = { ANYTHING }
+__fmt = { PARM_NOALIAS(9) }
+PARM_NOALIAS(9) = { ESCAPED NONLOCAL }
+__printf_chk = { }
+_4 = { ESCAPED NONLOCAL }
+
+
+Alias information for printf
+
+Aliased symbols
+
+
+Call clobber information
+
+ESCAPED, points-to non-local, points-to vars: { D.3485 } (nonlocal, escaped, restrict)
+
+Flow-insensitive points-to information
+
+__fmt_2(D), points-to NULL, points-to vars: { D.3485 } (nonlocal, escaped, restrict)
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__))
+printf (const char * restrict __fmt)
+{
+  int _4;
+
+  <bb 2> [0.00%]:
+  _4 = __printf_chk (1, __fmt_2(D), __builtin_va_arg_pack ());
+  return _4;
+
+}
+
+
+
+;; Function fgets (fgets, funcdef_no=20, decl_uid=2151, cgraph_uid=20, symbol_order=20)
+
+Points-to analysis
+
+Constraints:
+
+ANYTHING = &ANYTHING
+ESCAPED = *ESCAPED
+ESCAPED = ESCAPED + UNKNOWN
+*ESCAPED = NONLOCAL
+NONLOCAL = &NONLOCAL
+NONLOCAL = &ESCAPED
+INTEGER = &ANYTHING
+__s = &PARM_NOALIAS(9)
+PARM_NOALIAS(9) = &NONLOCAL
+__n = &NONLOCAL
+__stream = &PARM_NOALIAS.0+32
+PARM_NOALIAS.0+32 = &NONLOCAL
+PARM_NOALIAS.64+64 = &NONLOCAL
+PARM_NOALIAS.128+64 = &NONLOCAL
+PARM_NOALIAS.192+64 = &NONLOCAL
+PARM_NOALIAS.256+64 = &NONLOCAL
+PARM_NOALIAS.320+64 = &NONLOCAL
+PARM_NOALIAS.384+64 = &NONLOCAL
+PARM_NOALIAS.448+64 = &NONLOCAL
+PARM_NOALIAS.512+64 = &NONLOCAL
+PARM_NOALIAS.576+64 = &NONLOCAL
+PARM_NOALIAS.640+64 = &NONLOCAL
+PARM_NOALIAS.704+64 = &NONLOCAL
+PARM_NOALIAS.768+64 = &NONLOCAL
+PARM_NOALIAS.832+64 = &NONLOCAL
+PARM_NOALIAS.896+160 = &NONLOCAL
+PARM_NOALIAS.1088+64 = &NONLOCAL
+PARM_NOALIAS.1152+64 = &NONLOCAL
+PARM_NOALIAS.1216+64 = &NONLOCAL
+PARM_NOALIAS.1280+64 = &NONLOCAL
+PARM_NOALIAS.1344+64 = &NONLOCAL
+PARM_NOALIAS.1408+64 = &NONLOCAL
+PARM_NOALIAS.1472+256 = &NONLOCAL
+CALLUSED(35) = CALLUSED(35) + UNKNOWN
+CALLUSED(35) = *CALLUSED(35) + UNKNOWN
+CALLUSED(35) = __s
+CALLUSED(35) = &NONLOCAL
+_1 = CALLUSED(35)
+_1 = NONLOCAL
+callarg(39) = __n
+_2 = callarg(39) + UNKNOWN
+_2 = &NONLOCAL
+CALLUSED(41) = CALLUSED(41) + UNKNOWN
+CALLUSED(41) = *CALLUSED(41) + UNKNOWN
+CALLUSED(41) = __s
+CALLUSED(41) = &NONLOCAL
+_3 = CALLUSED(41)
+_3 = NONLOCAL
+ESCAPED = __s
+ESCAPED = _3
+ESCAPED = __n
+ESCAPED = __stream
+_16 = NONLOCAL
+_4 = __n
+CALLUSED(47) = CALLUSED(47) + UNKNOWN
+CALLUSED(47) = *CALLUSED(47) + UNKNOWN
+CALLUSED(47) = __s
+CALLUSED(47) = &NONLOCAL
+_5 = CALLUSED(47)
+_5 = NONLOCAL
+CALLUSED(50) = CALLUSED(50) + UNKNOWN
+CALLUSED(50) = *CALLUSED(50) + UNKNOWN
+CALLUSED(50) = __s
+CALLUSED(50) = &NONLOCAL
+_6 = CALLUSED(50)
+_6 = NONLOCAL
+ESCAPED = __s
+ESCAPED = _6
+ESCAPED = __n
+ESCAPED = __stream
+_14 = NONLOCAL
+ESCAPED = __s
+ESCAPED = __n
+ESCAPED = __stream
+_18 = NONLOCAL
+_7 = _16
+_7 = _14
+_7 = _18
+ESCAPED = _7
+
+Collapsing static cycles and doing variable substitution
+Building predecessor graph
+Detecting pointer and location equivalences
+
+
+// The constraint graph before var-substitution in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING"[label="ANYTHING = { 2 }"];
+"STRING";
+"ESCAPED";
+"NONLOCAL"[label="NONLOCAL = { 4 5 }"];
+"STOREDANYTHING";
+"INTEGER"[label="INTEGER = { 2 }"];
+"__s"[label="__s = { 9 }"];
+"PARM_NOALIAS(9)"[label="PARM_NOALIAS(9) = { 5 }"];
+"__n"[label="__n = { 5 }"];
+"__stream"[label="__stream = { 12 }"];
+"PARM_NOALIAS.0+32"[label="PARM_NOALIAS.0+32 = { 5 }"];
+"PARM_NOALIAS.64+64"[label="PARM_NOALIAS.64+64 = { 5 }"];
+"PARM_NOALIAS.128+64"[label="PARM_NOALIAS.128+64 = { 5 }"];
+"PARM_NOALIAS.192+64"[label="PARM_NOALIAS.192+64 = { 5 }"];
+"PARM_NOALIAS.256+64"[label="PARM_NOALIAS.256+64 = { 5 }"];
+"PARM_NOALIAS.320+64"[label="PARM_NOALIAS.320+64 = { 5 }"];
+"PARM_NOALIAS.384+64"[label="PARM_NOALIAS.384+64 = { 5 }"];
+"PARM_NOALIAS.448+64"[label="PARM_NOALIAS.448+64 = { 5 }"];
+"PARM_NOALIAS.512+64"[label="PARM_NOALIAS.512+64 = { 5 }"];
+"PARM_NOALIAS.576+64"[label="PARM_NOALIAS.576+64 = { 5 }"];
+"PARM_NOALIAS.640+64"[label="PARM_NOALIAS.640+64 = { 5 }"];
+"PARM_NOALIAS.704+64"[label="PARM_NOALIAS.704+64 = { 5 }"];
+"PARM_NOALIAS.768+64"[label="PARM_NOALIAS.768+64 = { 5 }"];
+"PARM_NOALIAS.832+64"[label="PARM_NOALIAS.832+64 = { 5 }"];
+"PARM_NOALIAS.896+160"[label="PARM_NOALIAS.896+160 = { 5 }"];
+"PARM_NOALIAS.1088+64"[label="PARM_NOALIAS.1088+64 = { 5 }"];
+"PARM_NOALIAS.1152+64"[label="PARM_NOALIAS.1152+64 = { 5 }"];
+"PARM_NOALIAS.1216+64"[label="PARM_NOALIAS.1216+64 = { 5 }"];
+"PARM_NOALIAS.1280+64"[label="PARM_NOALIAS.1280+64 = { 5 }"];
+"PARM_NOALIAS.1344+64"[label="PARM_NOALIAS.1344+64 = { 5 }"];
+"PARM_NOALIAS.1408+64"[label="PARM_NOALIAS.1408+64 = { 5 }"];
+"PARM_NOALIAS.1472+256"[label="PARM_NOALIAS.1472+256 = { 5 }"];
+"__builtin_object_size";
+"CALLUSED(35)"[label="CALLUSED(35) = { 5 }"];
+"CALLCLOBBERED(36)";
+"_1";
+"__builtin_constant_p";
+"callarg(39)";
+"_2"[label="_2 = { 5 }"];
+"CALLUSED(41)"[label="CALLUSED(41) = { 5 }"];
+"CALLCLOBBERED(42)";
+"_3";
+"__fgets_chk";
+"_16";
+"_4";
+"CALLUSED(47)"[label="CALLUSED(47) = { 5 }"];
+"CALLCLOBBERED(48)";
+"_5";
+"CALLUSED(50)"[label="CALLUSED(50) = { 5 }"];
+"CALLCLOBBERED(51)";
+"_6";
+"*__fgets_chk";
+"_14";
+"*fgets";
+"_18";
+"_7";
+"*NULL";
+"*ANYTHING";
+"*STRING";
+"*STOREDANYTHING";
+"*INTEGER";
+"*__s";
+"*PARM_NOALIAS(9)";
+"*__n";
+"*__stream";
+"*PARM_NOALIAS.0+32";
+"*PARM_NOALIAS.64+64";
+"*PARM_NOALIAS.128+64";
+"*PARM_NOALIAS.192+64";
+"*PARM_NOALIAS.256+64";
+"*PARM_NOALIAS.320+64";
+"*PARM_NOALIAS.384+64";
+"*PARM_NOALIAS.448+64";
+"*PARM_NOALIAS.512+64";
+"*PARM_NOALIAS.576+64";
+"*PARM_NOALIAS.640+64";
+"*PARM_NOALIAS.704+64";
+"*PARM_NOALIAS.768+64";
+"*PARM_NOALIAS.832+64";
+"*PARM_NOALIAS.896+160";
+"*PARM_NOALIAS.1088+64";
+"*PARM_NOALIAS.1152+64";
+"*PARM_NOALIAS.1216+64";
+"*PARM_NOALIAS.1280+64";
+"*PARM_NOALIAS.1344+64";
+"*PARM_NOALIAS.1408+64";
+"*PARM_NOALIAS.1472+256";
+"*__builtin_object_size";
+"*CALLUSED(35)";
+"*CALLCLOBBERED(36)";
+"*_1";
+"*__builtin_constant_p";
+"*callarg(39)";
+"*_2";
+"*CALLUSED(41)";
+"*CALLCLOBBERED(42)";
+"*__fgets_chk";
+"*_4";
+"*CALLUSED(47)";
+"*CALLCLOBBERED(48)";
+"*_5";
+"*CALLUSED(50)";
+"*CALLCLOBBERED(51)";
+"**__fgets_chk";
+"**fgets";
+
+  // Edges in the constraint graph:
+"NONLOCAL" -> "ESCAPED";
+"__s" -> "ESCAPED";
+"__n" -> "ESCAPED";
+"__stream" -> "ESCAPED";
+"_3" -> "ESCAPED";
+"_6" -> "ESCAPED";
+"_7" -> "ESCAPED";
+"ESCAPED" -> "ESCAPED";
+"__s" -> "CALLUSED(35)";
+"NONLOCAL" -> "_1";
+"CALLUSED(35)" -> "_1";
+"__n" -> "callarg(39)";
+"__s" -> "CALLUSED(41)";
+"NONLOCAL" -> "_3";
+"CALLUSED(41)" -> "_3";
+"NONLOCAL" -> "_16";
+"__n" -> "_4";
+"__s" -> "CALLUSED(47)";
+"NONLOCAL" -> "_5";
+"CALLUSED(47)" -> "_5";
+"__s" -> "CALLUSED(50)";
+"NONLOCAL" -> "_6";
+"CALLUSED(50)" -> "_6";
+"NONLOCAL" -> "_14";
+"NONLOCAL" -> "_18";
+"_16" -> "_7";
+"_14" -> "_7";
+"_18" -> "_7";
+}
+
+
+Rewriting constraints and unifying variables
+Uniting pointer but not location equivalent variables
+Finding indirect cycles
+
+
+// The constraint graph before solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = NONLOCAL\l"];
+"STOREDANYTHING";
+"INTEGER";
+"__s";
+"PARM_NOALIAS(9)";
+"__n" [label="\N\n_2 = __n + UNKNOWN\l"];
+"__stream";
+"PARM_NOALIAS.0+32";
+"PARM_NOALIAS.64+64";
+"PARM_NOALIAS.128+64";
+"PARM_NOALIAS.192+64";
+"PARM_NOALIAS.256+64";
+"PARM_NOALIAS.320+64";
+"PARM_NOALIAS.384+64";
+"PARM_NOALIAS.448+64";
+"PARM_NOALIAS.512+64";
+"PARM_NOALIAS.576+64";
+"PARM_NOALIAS.640+64";
+"PARM_NOALIAS.704+64";
+"PARM_NOALIAS.768+64";
+"PARM_NOALIAS.832+64";
+"PARM_NOALIAS.896+160";
+"PARM_NOALIAS.1088+64";
+"PARM_NOALIAS.1152+64";
+"PARM_NOALIAS.1216+64";
+"PARM_NOALIAS.1280+64";
+"PARM_NOALIAS.1344+64";
+"PARM_NOALIAS.1408+64";
+"PARM_NOALIAS.1472+256";
+"__builtin_object_size";
+"CALLUSED(35)" [label="\N\nCALLUSED(35) = CALLUSED(35) + UNKNOWN\lCALLUSED(35) = *CALLUSED(35) + UNKNOWN\l"];
+"CALLCLOBBERED(36)";
+"_1";
+"__builtin_constant_p";
+"_2";
+"CALLUSED(41)" [label="\N\nCALLUSED(41) = CALLUSED(41) + UNKNOWN\lCALLUSED(41) = *CALLUSED(41) + UNKNOWN\l"];
+"CALLCLOBBERED(42)";
+"_3";
+"__fgets_chk";
+"_16";
+"CALLUSED(47)" [label="\N\nCALLUSED(47) = CALLUSED(47) + UNKNOWN\lCALLUSED(47) = *CALLUSED(47) + UNKNOWN\l"];
+"CALLCLOBBERED(48)";
+"_5";
+"CALLUSED(50)" [label="\N\nCALLUSED(50) = CALLUSED(50) + UNKNOWN\lCALLUSED(50) = *CALLUSED(50) + UNKNOWN\l"];
+"CALLCLOBBERED(51)";
+"_6";
+"*__fgets_chk";
+"*fgets";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "PARM_NOALIAS(9)";
+"STOREDANYTHING" -> "PARM_NOALIAS.0+32";
+"STOREDANYTHING" -> "PARM_NOALIAS.64+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.128+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.192+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.256+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.320+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.384+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.448+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.512+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.576+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.640+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.704+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.768+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.832+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.896+160";
+"STOREDANYTHING" -> "PARM_NOALIAS.1088+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1152+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1216+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1280+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1344+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1408+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1472+256";
+"STOREDANYTHING" -> "CALLUSED(35)";
+"STOREDANYTHING" -> "_2";
+"STOREDANYTHING" -> "CALLUSED(41)";
+"STOREDANYTHING" -> "CALLUSED(47)";
+"STOREDANYTHING" -> "CALLUSED(50)";
+"__s" -> "ESCAPED";
+"__s" -> "CALLUSED(35)";
+"__s" -> "CALLUSED(41)";
+"__s" -> "CALLUSED(47)";
+"__s" -> "CALLUSED(50)";
+"__n" -> "ESCAPED";
+"__stream" -> "ESCAPED";
+"CALLUSED(35)" -> "_1";
+"CALLUSED(41)" -> "_3";
+"_3" -> "ESCAPED";
+"_16" -> "ESCAPED";
+"_16" -> "_1";
+"_16" -> "_3";
+"_16" -> "_5";
+"_16" -> "_6";
+"CALLUSED(47)" -> "_5";
+"CALLUSED(50)" -> "_6";
+"_6" -> "ESCAPED";
+}
+
+
+Solving graph
+
+
+// The constraint graph after solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = _16\l"];
+"STOREDANYTHING";
+"INTEGER";
+"__s";
+"PARM_NOALIAS(9)";
+"__n" [label="\N\n_2 = __n + UNKNOWN\l"];
+"__stream";
+"PARM_NOALIAS.0+32";
+"PARM_NOALIAS.64+64";
+"PARM_NOALIAS.128+64";
+"PARM_NOALIAS.192+64";
+"PARM_NOALIAS.256+64";
+"PARM_NOALIAS.320+64";
+"PARM_NOALIAS.384+64";
+"PARM_NOALIAS.448+64";
+"PARM_NOALIAS.512+64";
+"PARM_NOALIAS.576+64";
+"PARM_NOALIAS.640+64";
+"PARM_NOALIAS.704+64";
+"PARM_NOALIAS.768+64";
+"PARM_NOALIAS.832+64";
+"PARM_NOALIAS.896+160";
+"PARM_NOALIAS.1088+64";
+"PARM_NOALIAS.1152+64";
+"PARM_NOALIAS.1216+64";
+"PARM_NOALIAS.1280+64";
+"PARM_NOALIAS.1344+64";
+"PARM_NOALIAS.1408+64";
+"PARM_NOALIAS.1472+256";
+"__builtin_object_size";
+"CALLUSED(35)" [label="\N\nCALLUSED(35) = CALLUSED(35) + UNKNOWN\lCALLUSED(35) = *CALLUSED(35) + UNKNOWN\l"];
+"CALLCLOBBERED(36)";
+"_1";
+"__builtin_constant_p";
+"_2";
+"CALLUSED(41)" [label="\N\nCALLUSED(41) = CALLUSED(41) + UNKNOWN\lCALLUSED(41) = *CALLUSED(41) + UNKNOWN\l"];
+"CALLCLOBBERED(42)";
+"_3";
+"__fgets_chk";
+"_16";
+"CALLUSED(47)" [label="\N\nCALLUSED(47) = CALLUSED(47) + UNKNOWN\lCALLUSED(47) = *CALLUSED(47) + UNKNOWN\l"];
+"CALLCLOBBERED(48)";
+"_5";
+"CALLUSED(50)" [label="\N\nCALLUSED(50) = CALLUSED(50) + UNKNOWN\lCALLUSED(50) = *CALLUSED(50) + UNKNOWN\l"];
+"CALLCLOBBERED(51)";
+"_6";
+"*__fgets_chk";
+"*fgets";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "PARM_NOALIAS(9)";
+"STOREDANYTHING" -> "PARM_NOALIAS.0+32";
+"STOREDANYTHING" -> "PARM_NOALIAS.64+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.128+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.192+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.256+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.320+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.384+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.448+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.512+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.576+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.640+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.704+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.768+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.832+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.896+160";
+"STOREDANYTHING" -> "PARM_NOALIAS.1088+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1152+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1216+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1280+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1344+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1408+64";
+"STOREDANYTHING" -> "PARM_NOALIAS.1472+256";
+"STOREDANYTHING" -> "CALLUSED(35)";
+"STOREDANYTHING" -> "_2";
+"STOREDANYTHING" -> "CALLUSED(41)";
+"STOREDANYTHING" -> "CALLUSED(47)";
+"STOREDANYTHING" -> "CALLUSED(50)";
+"__s" -> "ESCAPED";
+"__s" -> "CALLUSED(35)";
+"__s" -> "CALLUSED(41)";
+"__s" -> "CALLUSED(47)";
+"__s" -> "CALLUSED(50)";
+"PARM_NOALIAS(9)" -> "ESCAPED";
+"PARM_NOALIAS(9)" -> "CALLUSED(35)";
+"PARM_NOALIAS(9)" -> "CALLUSED(41)";
+"PARM_NOALIAS(9)" -> "CALLUSED(47)";
+"PARM_NOALIAS(9)" -> "CALLUSED(50)";
+"__n" -> "ESCAPED";
+"__stream" -> "ESCAPED";
+"PARM_NOALIAS.0+32" -> "ESCAPED";
+"PARM_NOALIAS.64+64" -> "ESCAPED";
+"PARM_NOALIAS.128+64" -> "ESCAPED";
+"PARM_NOALIAS.192+64" -> "ESCAPED";
+"PARM_NOALIAS.256+64" -> "ESCAPED";
+"PARM_NOALIAS.320+64" -> "ESCAPED";
+"PARM_NOALIAS.384+64" -> "ESCAPED";
+"PARM_NOALIAS.448+64" -> "ESCAPED";
+"PARM_NOALIAS.512+64" -> "ESCAPED";
+"PARM_NOALIAS.576+64" -> "ESCAPED";
+"PARM_NOALIAS.640+64" -> "ESCAPED";
+"PARM_NOALIAS.704+64" -> "ESCAPED";
+"PARM_NOALIAS.768+64" -> "ESCAPED";
+"PARM_NOALIAS.832+64" -> "ESCAPED";
+"PARM_NOALIAS.896+160" -> "ESCAPED";
+"PARM_NOALIAS.1088+64" -> "ESCAPED";
+"PARM_NOALIAS.1152+64" -> "ESCAPED";
+"PARM_NOALIAS.1216+64" -> "ESCAPED";
+"PARM_NOALIAS.1280+64" -> "ESCAPED";
+"PARM_NOALIAS.1344+64" -> "ESCAPED";
+"PARM_NOALIAS.1408+64" -> "ESCAPED";
+"PARM_NOALIAS.1472+256" -> "ESCAPED";
+"CALLUSED(35)" -> "_1";
+"CALLUSED(41)" -> "_3";
+"_3" -> "ESCAPED";
+"_16" -> "ESCAPED";
+"_16" -> "PARM_NOALIAS(9)";
+"_16" -> "PARM_NOALIAS.0+32";
+"_16" -> "PARM_NOALIAS.64+64";
+"_16" -> "PARM_NOALIAS.128+64";
+"_16" -> "PARM_NOALIAS.192+64";
+"_16" -> "PARM_NOALIAS.256+64";
+"_16" -> "PARM_NOALIAS.320+64";
+"_16" -> "PARM_NOALIAS.384+64";
+"_16" -> "PARM_NOALIAS.448+64";
+"_16" -> "PARM_NOALIAS.512+64";
+"_16" -> "PARM_NOALIAS.576+64";
+"_16" -> "PARM_NOALIAS.640+64";
+"_16" -> "PARM_NOALIAS.704+64";
+"_16" -> "PARM_NOALIAS.768+64";
+"_16" -> "PARM_NOALIAS.832+64";
+"_16" -> "PARM_NOALIAS.896+160";
+"_16" -> "PARM_NOALIAS.1088+64";
+"_16" -> "PARM_NOALIAS.1152+64";
+"_16" -> "PARM_NOALIAS.1216+64";
+"_16" -> "PARM_NOALIAS.1280+64";
+"_16" -> "PARM_NOALIAS.1344+64";
+"_16" -> "PARM_NOALIAS.1408+64";
+"_16" -> "PARM_NOALIAS.1472+256";
+"_16" -> "CALLUSED(35)";
+"_16" -> "_1";
+"_16" -> "CALLUSED(41)";
+"_16" -> "_3";
+"_16" -> "CALLUSED(47)";
+"_16" -> "_5";
+"_16" -> "CALLUSED(50)";
+"_16" -> "_6";
+"CALLUSED(47)" -> "_5";
+"CALLUSED(50)" -> "_6";
+"_6" -> "ESCAPED";
+}
+
+
+
+Points-to sets
+
+ANYTHING = { ANYTHING }
+ESCAPED = { ESCAPED NONLOCAL PARM_NOALIAS(9) PARM_NOALIAS.0+32 PARM_NOALIAS.64+64 PARM_NOALIAS.128+64 PARM_NOALIAS.192+64 PARM_NOALIAS.256+64 PARM_NOALIAS.320+64 PARM_NOALIAS.384+64 PARM_NOALIAS.448+64 PARM_NOALIAS.512+64 PARM_NOALIAS.576+64 PARM_NOALIAS.640+64 PARM_NOALIAS.704+64 PARM_NOALIAS.768+64 PARM_NOALIAS.832+64 PARM_NOALIAS.896+160 PARM_NOALIAS.1088+64 PARM_NOALIAS.1152+64 PARM_NOALIAS.1216+64 PARM_NOALIAS.1280+64 PARM_NOALIAS.1344+64 PARM_NOALIAS.1408+64 PARM_NOALIAS.1472+256 }
+NONLOCAL = { ESCAPED NONLOCAL } same as _16
+STOREDANYTHING = { }
+INTEGER = { ANYTHING }
+__s = { PARM_NOALIAS(9) }
+PARM_NOALIAS(9) = { ESCAPED NONLOCAL }
+__n = { NONLOCAL }
+__stream = { PARM_NOALIAS.0+32 }
+PARM_NOALIAS.0+32 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.64+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.128+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.192+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.256+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.320+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.384+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.448+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.512+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.576+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.640+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.704+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.768+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.832+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.896+160 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.1088+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.1152+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.1216+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.1280+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.1344+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.1408+64 = { ESCAPED NONLOCAL }
+PARM_NOALIAS.1472+256 = { ESCAPED NONLOCAL }
+__builtin_object_size = { }
+CALLUSED(35) = { ESCAPED NONLOCAL PARM_NOALIAS(9) }
+CALLCLOBBERED(36) = { }
+_1 = { ESCAPED NONLOCAL PARM_NOALIAS(9) }
+__builtin_constant_p = { }
+callarg(39) = { NONLOCAL } same as __n
+_2 = { NONLOCAL }
+CALLUSED(41) = { ESCAPED NONLOCAL PARM_NOALIAS(9) }
+CALLCLOBBERED(42) = { }
+_3 = { ESCAPED NONLOCAL PARM_NOALIAS(9) }
+__fgets_chk = { }
+_16 = { ESCAPED NONLOCAL }
+_4 = { NONLOCAL } same as __n
+CALLUSED(47) = { ESCAPED NONLOCAL PARM_NOALIAS(9) }
+CALLCLOBBERED(48) = { }
+_5 = { ESCAPED NONLOCAL PARM_NOALIAS(9) }
+CALLUSED(50) = { ESCAPED NONLOCAL PARM_NOALIAS(9) }
+CALLCLOBBERED(51) = { }
+_6 = { ESCAPED NONLOCAL PARM_NOALIAS(9) }
+*__fgets_chk = { }
+_14 = { ESCAPED NONLOCAL } same as _16
+*fgets = { }
+_18 = { ESCAPED NONLOCAL } same as _16
+_7 = { ESCAPED NONLOCAL } same as _16
+
+
+Alias information for fgets
+
+Aliased symbols
+
+
+Call clobber information
+
+ESCAPED, points-to non-local, points-to vars: { D.3487 D.3488 } (nonlocal, escaped, restrict)
+
+Flow-insensitive points-to information
+
+_7, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+__s_10(D), points-to NULL, points-to vars: { D.3487 } (nonlocal, escaped, restrict)
+__stream_12(D), points-to NULL, points-to vars: { D.3488 } (nonlocal, escaped, restrict)
+_14, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+_16, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+_18, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__))
+fgets (char * restrict __s, int __n, struct FILE * restrict __stream)
+{
+  long unsigned int _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  char * _7;
+  char * _14;
+  char * _16;
+  char * _18;
+
+  <bb 2> [0.00%]:
+  _1 = __builtin_object_size (__s_10(D), 1);
+  if (_1 != 18446744073709551615)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _2 = __builtin_constant_p (__n_11(D));
+  if (_2 == 0)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 4> [0.00%]:
+  if (__n_11(D) <= 0)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  _3 = __builtin_object_size (__s_10(D), 1);
+  _16 = __fgets_chk (__s_10(D), _3, __n_11(D), __stream_12(D));
+  goto <bb 9>; [0.00%]
+
+  <bb 6> [0.00%]:
+  _4 = (long unsigned int) __n_11(D);
+  _5 = __builtin_object_size (__s_10(D), 1);
+  if (_4 > _5)
+    goto <bb 7>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 7> [0.00%]:
+  _6 = __builtin_object_size (__s_10(D), 1);
+  _14 = __fgets_chk_warn (__s_10(D), _6, __n_11(D), __stream_12(D));
+  goto <bb 9>; [0.00%]
+
+  <bb 8> [0.00%]:
+  _18 = __fgets_alias (__s_10(D), __n_11(D), __stream_12(D));
+
+  <bb 9> [0.00%]:
+  # _7 = PHI <_16(5), _14(7), _18(8)>
+  return _7;
+
+}
+
+
+
+;; Function strcpy (strcpy, funcdef_no=29, decl_uid=750, cgraph_uid=29, symbol_order=29)
+
+Points-to analysis
+
+Constraints:
+
+ANYTHING = &ANYTHING
+ESCAPED = *ESCAPED
+ESCAPED = ESCAPED + UNKNOWN
+*ESCAPED = NONLOCAL
+NONLOCAL = &NONLOCAL
+NONLOCAL = &ESCAPED
+INTEGER = &ANYTHING
+__dest = &PARM_NOALIAS(9)
+PARM_NOALIAS(9) = &NONLOCAL
+__src = &PARM_NOALIAS(11)
+PARM_NOALIAS(11) = &NONLOCAL
+CALLUSED(13) = CALLUSED(13) + UNKNOWN
+CALLUSED(13) = *CALLUSED(13) + UNKNOWN
+CALLUSED(13) = __dest
+CALLUSED(13) = &NONLOCAL
+_1 = CALLUSED(13)
+_1 = NONLOCAL
+_6 = __dest
+doubledereftmp(17) = *__src + UNKNOWN
+*__dest + UNKNOWN = doubledereftmp(17)
+ESCAPED = _6
+
+Collapsing static cycles and doing variable substitution
+Building predecessor graph
+Detecting pointer and location equivalences
+
+
+// The constraint graph before var-substitution in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING"[label="ANYTHING = { 2 }"];
+"STRING";
+"ESCAPED";
+"NONLOCAL"[label="NONLOCAL = { 4 5 }"];
+"STOREDANYTHING";
+"INTEGER"[label="INTEGER = { 2 }"];
+"__dest"[label="__dest = { 9 }"];
+"PARM_NOALIAS(9)"[label="PARM_NOALIAS(9) = { 5 }"];
+"__src"[label="__src = { 11 }"];
+"PARM_NOALIAS(11)"[label="PARM_NOALIAS(11) = { 5 }"];
+"__builtin_object_size";
+"CALLUSED(13)"[label="CALLUSED(13) = { 5 }"];
+"CALLCLOBBERED(14)";
+"_1";
+"_6";
+"doubledereftmp(17)";
+"*NULL";
+"*ANYTHING";
+"*STRING";
+"*ESCAPED";
+"*NONLOCAL";
+"*STOREDANYTHING";
+"*INTEGER";
+"*__dest";
+"*PARM_NOALIAS(9)";
+"*__src";
+"*PARM_NOALIAS(11)";
+"*__builtin_object_size";
+"*CALLUSED(13)";
+"*CALLCLOBBERED(14)";
+"*_1";
+"*_6";
+"*doubledereftmp(17)";
+
+  // Edges in the constraint graph:
+"_6" -> "ESCAPED";
+"*ESCAPED" -> "ESCAPED";
+"__dest" -> "CALLUSED(13)";
+"NONLOCAL" -> "_1";
+"CALLUSED(13)" -> "_1";
+"__dest" -> "_6";
+"NONLOCAL" -> "*ESCAPED";
+}
+
+
+Rewriting constraints and unifying variables
+Uniting pointer but not location equivalent variables
+Finding indirect cycles
+
+
+// The constraint graph before solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = NONLOCAL\l"];
+"NONLOCAL";
+"STOREDANYTHING";
+"INTEGER";
+"__dest" [label="\N\n*__dest + UNKNOWN = doubledereftmp(17)\l"];
+"PARM_NOALIAS(9)";
+"__src" [label="\N\ndoubledereftmp(17) = *__src + UNKNOWN\l"];
+"PARM_NOALIAS(11)";
+"__builtin_object_size";
+"CALLUSED(13)" [label="\N\nCALLUSED(13) = CALLUSED(13) + UNKNOWN\lCALLUSED(13) = *CALLUSED(13) + UNKNOWN\l"];
+"CALLCLOBBERED(14)";
+"_1";
+"doubledereftmp(17)";
+
+  // Edges in the constraint graph:
+"NONLOCAL" -> "_1";
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "PARM_NOALIAS(9)";
+"STOREDANYTHING" -> "PARM_NOALIAS(11)";
+"STOREDANYTHING" -> "CALLUSED(13)";
+"STOREDANYTHING" -> "doubledereftmp(17)";
+"__dest" -> "ESCAPED";
+"__dest" -> "CALLUSED(13)";
+"CALLUSED(13)" -> "_1";
+}
+
+
+Solving graph
+
+
+// The constraint graph after solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = NONLOCAL\l"];
+"NONLOCAL";
+"STOREDANYTHING";
+"INTEGER";
+"__dest" [label="\N\n*__dest + UNKNOWN = doubledereftmp(17)\l"];
+"PARM_NOALIAS(9)";
+"__src" [label="\N\ndoubledereftmp(17) = *__src + UNKNOWN\l"];
+"PARM_NOALIAS(11)";
+"__builtin_object_size";
+"CALLUSED(13)" [label="\N\nCALLUSED(13) = CALLUSED(13) + UNKNOWN\lCALLUSED(13) = *CALLUSED(13) + UNKNOWN\l"];
+"CALLCLOBBERED(14)";
+"_1";
+"doubledereftmp(17)";
+
+  // Edges in the constraint graph:
+"NONLOCAL" -> "ESCAPED";
+"NONLOCAL" -> "PARM_NOALIAS(9)";
+"NONLOCAL" -> "_1";
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "PARM_NOALIAS(9)";
+"STOREDANYTHING" -> "PARM_NOALIAS(11)";
+"STOREDANYTHING" -> "CALLUSED(13)";
+"STOREDANYTHING" -> "doubledereftmp(17)";
+"__dest" -> "ESCAPED";
+"__dest" -> "CALLUSED(13)";
+"PARM_NOALIAS(9)" -> "ESCAPED";
+"PARM_NOALIAS(9)" -> "CALLUSED(13)";
+"PARM_NOALIAS(11)" -> "doubledereftmp(17)";
+"CALLUSED(13)" -> "_1";
+"doubledereftmp(17)" -> "ESCAPED";
+"doubledereftmp(17)" -> "PARM_NOALIAS(9)";
+}
+
+
+
+Points-to sets
+
+ANYTHING = { ANYTHING }
+ESCAPED = { ESCAPED NONLOCAL PARM_NOALIAS(9) }
+NONLOCAL = { ESCAPED NONLOCAL }
+STOREDANYTHING = { }
+INTEGER = { ANYTHING }
+__dest = { PARM_NOALIAS(9) }
+PARM_NOALIAS(9) = { ESCAPED NONLOCAL }
+__src = { PARM_NOALIAS(11) }
+PARM_NOALIAS(11) = { NONLOCAL }
+__builtin_object_size = { }
+CALLUSED(13) = { ESCAPED NONLOCAL PARM_NOALIAS(9) }
+CALLCLOBBERED(14) = { }
+_1 = { ESCAPED NONLOCAL PARM_NOALIAS(9) }
+_6 = { PARM_NOALIAS(9) } same as __dest
+doubledereftmp(17) = { NONLOCAL }
+
+
+Alias information for strcpy
+
+Aliased symbols
+
+
+Call clobber information
+
+ESCAPED, points-to non-local, points-to vars: { D.3490 } (nonlocal, escaped, restrict)
+
+Flow-insensitive points-to information
+
+__dest_3(D), points-to NULL, points-to vars: { D.3490 } (nonlocal, escaped, restrict)
+__src_4(D), points-to NULL, points-to vars: { D.3491 } (nonlocal, restrict)
+_6, points-to NULL, points-to vars: { D.3490 } (nonlocal, escaped, restrict)
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__, __nothrow__, __leaf__))
+strcpy (char * restrict __dest, const char * restrict __src)
+{
+  long unsigned int _1;
+  char * _6;
+
+  <bb 2> [0.00%]:
+  _1 = __builtin_object_size (__dest_3(D), 1);
+  _6 = __builtin___strcpy_chk (__dest_3(D), __src_4(D), _1);
+  return _6;
+
+}
+
+
+
+;; Function atof (atof, funcdef_no=46, decl_uid=2709, cgraph_uid=46, symbol_order=46)
+
+Points-to analysis
+
+Constraints:
+
+ANYTHING = &ANYTHING
+ESCAPED = *ESCAPED
+ESCAPED = ESCAPED + UNKNOWN
+*ESCAPED = NONLOCAL
+NONLOCAL = &NONLOCAL
+NONLOCAL = &ESCAPED
+INTEGER = &ANYTHING
+__nptr = &NONLOCAL
+ESCAPED = __nptr
+ESCAPED = &NULL
+_4 = NONLOCAL
+ESCAPED = _4
+
+Collapsing static cycles and doing variable substitution
+Building predecessor graph
+Detecting pointer and location equivalences
+
+
+// The constraint graph before var-substitution in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING"[label="ANYTHING = { 2 }"];
+"STRING";
+"ESCAPED"[label="ESCAPED = { 1 }"];
+"NONLOCAL"[label="NONLOCAL = { 4 5 }"];
+"STOREDANYTHING";
+"INTEGER"[label="INTEGER = { 2 }"];
+"__nptr"[label="__nptr = { 5 }"];
+"strtod";
+"_4";
+"*NULL";
+"*ANYTHING";
+"*STRING";
+"*STOREDANYTHING";
+"*INTEGER";
+"*__nptr";
+"*strtod";
+
+  // Edges in the constraint graph:
+"NONLOCAL" -> "ESCAPED";
+"__nptr" -> "ESCAPED";
+"_4" -> "ESCAPED";
+"ESCAPED" -> "ESCAPED";
+"NONLOCAL" -> "_4";
+}
+
+
+Rewriting constraints and unifying variables
+Uniting pointer but not location equivalent variables
+Finding indirect cycles
+
+
+// The constraint graph before solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = NONLOCAL\l"];
+"STOREDANYTHING";
+"INTEGER";
+"__nptr";
+"strtod";
+"_4";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"__nptr" -> "ESCAPED";
+"_4" -> "ESCAPED";
+}
+
+
+Solving graph
+
+
+// The constraint graph after solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = _4\l"];
+"STOREDANYTHING";
+"INTEGER";
+"__nptr";
+"strtod";
+"_4";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"__nptr" -> "ESCAPED";
+"_4" -> "ESCAPED";
+}
+
+
+
+Points-to sets
+
+ANYTHING = { ANYTHING }
+ESCAPED = { NULL ESCAPED NONLOCAL }
+NONLOCAL = { ESCAPED NONLOCAL } same as _4
+STOREDANYTHING = { }
+INTEGER = { ANYTHING }
+__nptr = { NONLOCAL }
+strtod = { }
+_4 = { ESCAPED NONLOCAL }
+
+
+Alias information for atof
+
+Aliased symbols
+
+
+Call clobber information
+
+ESCAPED, points-to non-local, points-to NULL, points-to vars: { }
+
+Flow-insensitive points-to information
+
+__nptr_2(D), points-to non-local, points-to NULL, points-to vars: { }
+
+__attribute__((__gnu_inline__, __pure__, __leaf__, __nothrow__))
+atof (const char * __nptr)
+{
+  double _4;
+
+  <bb 2> [0.00%]:
+  _4 = strtod (__nptr_2(D), 0B);
+  return _4;
+
+}
+
+
+
+;; Function output_string (output_string, funcdef_no=52, decl_uid=3332, cgraph_uid=52, symbol_order=52)
+
+Points-to analysis
+
+Constraints:
+
+ANYTHING = &ANYTHING
+ESCAPED = *ESCAPED
+ESCAPED = ESCAPED + UNKNOWN
+*ESCAPED = NONLOCAL
+NONLOCAL = &NONLOCAL
+NONLOCAL = &ESCAPED
+INTEGER = &ANYTHING
+buffer = &NONLOCAL
+write_to_file = &NONLOCAL
+global_ofile = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = buffer
+_8 = NONLOCAL
+ESCAPED = global_ofile
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = buffer
+_9 = NONLOCAL
+
+Collapsing static cycles and doing variable substitution
+Building predecessor graph
+Detecting pointer and location equivalences
+
+
+// The constraint graph before var-substitution in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING"[label="ANYTHING = { 2 }"];
+"STRING";
+"ESCAPED"[label="ESCAPED = { 3 5 }"];
+"NONLOCAL"[label="NONLOCAL = { 4 5 }"];
+"STOREDANYTHING";
+"INTEGER"[label="INTEGER = { 2 }"];
+"buffer"[label="buffer = { 5 }"];
+"write_to_file"[label="write_to_file = { 5 }"];
+"global_ofile"[label="global_ofile = { 5 }"];
+"__printf_chk";
+"_8";
+"__fprintf_chk";
+"_9";
+"*NULL";
+"*ANYTHING";
+"*STRING";
+"*ESCAPED";
+"*NONLOCAL";
+"*STOREDANYTHING";
+"*INTEGER";
+"*buffer";
+"*write_to_file";
+"*global_ofile";
+"*__printf_chk";
+"*_8";
+"*__fprintf_chk";
+"*_9";
+
+  // Edges in the constraint graph:
+"buffer" -> "ESCAPED";
+"global_ofile" -> "ESCAPED";
+"*ESCAPED" -> "ESCAPED";
+"NONLOCAL" -> "_8";
+"NONLOCAL" -> "_9";
+"NONLOCAL" -> "*ESCAPED";
+}
+
+
+Rewriting constraints and unifying variables
+Uniting pointer but not location equivalent variables
+Finding indirect cycles
+
+
+// The constraint graph before solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = NONLOCAL\l"];
+"STOREDANYTHING";
+"INTEGER";
+"buffer";
+"__printf_chk";
+"_8";
+"__fprintf_chk";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"buffer" -> "ESCAPED";
+}
+
+
+Solving graph
+
+
+// The constraint graph after solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = _8\l"];
+"STOREDANYTHING";
+"INTEGER";
+"buffer";
+"__printf_chk";
+"_8";
+"__fprintf_chk";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"buffer" -> "ESCAPED";
+"_8" -> "ESCAPED";
+}
+
+
+
+Points-to sets
+
+ANYTHING = { ANYTHING }
+ESCAPED = { STRING ESCAPED NONLOCAL }
+NONLOCAL = { ESCAPED NONLOCAL } same as _8
+STOREDANYTHING = { }
+INTEGER = { ANYTHING }
+buffer = { NONLOCAL }
+write_to_file = { NONLOCAL } same as buffer
+global_ofile = { NONLOCAL } same as buffer
+__printf_chk = { }
+_8 = { ESCAPED NONLOCAL }
+__fprintf_chk = { }
+_9 = { ESCAPED NONLOCAL } same as _8
+
+
+Alias information for output_string
+
+Aliased symbols
+
+
+Call clobber information
+
+ESCAPED, points-to non-local, points-to vars: { }
+
+Flow-insensitive points-to information
+
+buffer_3(D), points-to non-local, points-to NULL, points-to vars: { }
+global_ofile_6(D), points-to non-local, points-to NULL, points-to vars: { }
+
+output_string (const char * buffer, const int write_to_file, struct FILE * global_ofile)
+{
+  int D.3498;
+  int D.3495;
+  int _8;
+  int _9;
+
+  <bb 2> [100.00%]:
+  _8 = __printf_chk (1, "%s", buffer_3(D));
+  if (write_to_file_5(D) != 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [100.00%]:
+  _9 = __fprintf_chk (global_ofile_6(D), 1, "%s", buffer_3(D));
+
+  <bb 4> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function removeNewLine (removeNewLine, funcdef_no=53, decl_uid=3335, cgraph_uid=53, symbol_order=53)
+
+Points-to analysis
+
+Constraints:
+
+ANYTHING = &ANYTHING
+ESCAPED = *ESCAPED
+ESCAPED = ESCAPED + UNKNOWN
+*ESCAPED = NONLOCAL
+NONLOCAL = &NONLOCAL
+NONLOCAL = &ESCAPED
+INTEGER = &ANYTHING
+s = &NONLOCAL
+_1 = *s
+CALLUSED(11) = CALLUSED(11) + UNKNOWN
+CALLUSED(11) = *CALLUSED(11) + UNKNOWN
+CALLUSED(11) = s
+_2 = CALLUSED(11)
+_2 = NONLOCAL
+_3 = _2
+_3 = &NONLOCAL
+_4 = s + UNKNOWN
+_5 = *_4
+CALLUSED(17) = CALLUSED(17) + UNKNOWN
+CALLUSED(17) = *CALLUSED(17) + UNKNOWN
+CALLUSED(17) = s
+_6 = CALLUSED(17)
+_6 = NONLOCAL
+_7 = _6
+_7 = &NONLOCAL
+_8 = s + UNKNOWN
+derefaddrtmp(22) = &NULL
+*_8 = derefaddrtmp(22)
+
+Collapsing static cycles and doing variable substitution
+Building predecessor graph
+Detecting pointer and location equivalences
+
+
+// The constraint graph before var-substitution in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING"[label="ANYTHING = { 2 }"];
+"STRING";
+"ESCAPED";
+"NONLOCAL"[label="NONLOCAL = { 4 5 }"];
+"STOREDANYTHING";
+"INTEGER"[label="INTEGER = { 2 }"];
+"s"[label="s = { 5 }"];
+"_1";
+"strlen";
+"CALLUSED(11)";
+"CALLCLOBBERED(12)";
+"_2";
+"_3"[label="_3 = { 5 }"];
+"_4";
+"_5";
+"CALLUSED(17)";
+"CALLCLOBBERED(18)";
+"_6";
+"_7"[label="_7 = { 5 }"];
+"_8";
+"derefaddrtmp(22)"[label="derefaddrtmp(22) = { 1 }"];
+"*NULL";
+"*ANYTHING";
+"*STRING";
+"*ESCAPED";
+"*NONLOCAL";
+"*STOREDANYTHING";
+"*INTEGER";
+"*s";
+"*_1";
+"*strlen";
+"*CALLUSED(11)";
+"*CALLCLOBBERED(12)";
+"*_2";
+"*_3";
+"*_4";
+"*_5";
+"*CALLUSED(17)";
+"*CALLCLOBBERED(18)";
+"*_6";
+"*_7";
+"*_8";
+"*derefaddrtmp(22)";
+
+  // Edges in the constraint graph:
+"*ESCAPED" -> "ESCAPED";
+"*s" -> "_1";
+"s" -> "CALLUSED(11)";
+"NONLOCAL" -> "_2";
+"CALLUSED(11)" -> "_2";
+"_2" -> "_3";
+"*_4" -> "_5";
+"s" -> "CALLUSED(17)";
+"NONLOCAL" -> "_6";
+"CALLUSED(17)" -> "_6";
+"_6" -> "_7";
+"NONLOCAL" -> "*ESCAPED";
+"derefaddrtmp(22)" -> "*_8";
+}
+
+
+Rewriting constraints and unifying variables
+Uniting pointer but not location equivalent variables
+Finding indirect cycles
+
+
+// The constraint graph before solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = NONLOCAL\l"];
+"NONLOCAL";
+"STOREDANYTHING";
+"INTEGER";
+"s" [label="\N\n_1 = *s\l_4 = s + UNKNOWN\l_8 = s + UNKNOWN\l"];
+"_1";
+"strlen";
+"CALLUSED(11)" [label="\N\nCALLUSED(11) = CALLUSED(11) + UNKNOWN\lCALLUSED(11) = *CALLUSED(11) + UNKNOWN\l"];
+"CALLCLOBBERED(12)";
+"_2";
+"_4" [label="\N\n_5 = *_4\l"];
+"_5";
+"CALLUSED(17)" [label="\N\nCALLUSED(17) = CALLUSED(17) + UNKNOWN\lCALLUSED(17) = *CALLUSED(17) + UNKNOWN\l"];
+"CALLCLOBBERED(18)";
+"_6";
+"_8" [label="\N\n*_8 = derefaddrtmp(22)\l"];
+"derefaddrtmp(22)";
+
+  // Edges in the constraint graph:
+"NONLOCAL" -> "_2";
+"NONLOCAL" -> "_6";
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "CALLUSED(11)";
+"STOREDANYTHING" -> "_4";
+"STOREDANYTHING" -> "CALLUSED(17)";
+"STOREDANYTHING" -> "_8";
+"s" -> "CALLUSED(11)";
+"s" -> "CALLUSED(17)";
+"CALLUSED(11)" -> "_2";
+"CALLUSED(17)" -> "_6";
+}
+
+
+Solving graph
+
+
+// The constraint graph after solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = NONLOCAL\l"];
+"NONLOCAL";
+"STOREDANYTHING";
+"INTEGER";
+"s" [label="\N\n_1 = *s\l_4 = s + UNKNOWN\l_8 = s + UNKNOWN\l"];
+"_1";
+"strlen";
+"CALLUSED(11)" [label="\N\nCALLUSED(11) = CALLUSED(11) + UNKNOWN\lCALLUSED(11) = *CALLUSED(11) + UNKNOWN\l"];
+"CALLCLOBBERED(12)";
+"_2";
+"_4" [label="\N\n_5 = *_4\l"];
+"_5";
+"CALLUSED(17)" [label="\N\nCALLUSED(17) = CALLUSED(17) + UNKNOWN\lCALLUSED(17) = *CALLUSED(17) + UNKNOWN\l"];
+"CALLCLOBBERED(18)";
+"_6";
+"_8" [label="\N\n*_8 = derefaddrtmp(22)\l"];
+"derefaddrtmp(22)";
+
+  // Edges in the constraint graph:
+"NONLOCAL" -> "_2";
+"NONLOCAL" -> "_6";
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "CALLUSED(11)";
+"STOREDANYTHING" -> "_4";
+"STOREDANYTHING" -> "CALLUSED(17)";
+"STOREDANYTHING" -> "_8";
+"s" -> "CALLUSED(11)";
+"s" -> "CALLUSED(17)";
+"CALLUSED(11)" -> "_2";
+"CALLUSED(17)" -> "_6";
+"derefaddrtmp(22)" -> "ESCAPED";
+}
+
+
+
+Points-to sets
+
+ANYTHING = { ANYTHING }
+ESCAPED = { NULL }
+NONLOCAL = { ESCAPED NONLOCAL }
+STOREDANYTHING = { }
+INTEGER = { ANYTHING }
+s = { NONLOCAL }
+_1 = { ESCAPED NONLOCAL }
+strlen = { }
+CALLUSED(11) = { ESCAPED NONLOCAL }
+CALLCLOBBERED(12) = { }
+_2 = { ESCAPED NONLOCAL }
+_3 = { ESCAPED NONLOCAL } same as _2
+_4 = { NONLOCAL }
+_5 = { ESCAPED NONLOCAL }
+CALLUSED(17) = { ESCAPED NONLOCAL }
+CALLCLOBBERED(18) = { }
+_6 = { ESCAPED NONLOCAL }
+_7 = { ESCAPED NONLOCAL } same as _6
+_8 = { NONLOCAL }
+derefaddrtmp(22) = { NULL }
+
+
+Alias information for removeNewLine
+
+Aliased symbols
+
+
+Call clobber information
+
+ESCAPED, points-to NULL, points-to vars: { }
+
+Flow-insensitive points-to information
+
+_4, points-to non-local, points-to NULL, points-to vars: { }
+_8, points-to non-local, points-to NULL, points-to vars: { }
+s_11(D), points-to non-local, points-to NULL, points-to vars: { }
+
+removeNewLine (char * s)
+{
+  char _1;
+  long unsigned int _2;
+  sizetype _3;
+  char * _4;
+  char _5;
+  long unsigned int _6;
+  sizetype _7;
+  char * _8;
+
+  <bb 2> [0.00%]:
+  _1 = MEM[(const char *)s_11(D)];
+  if (_1 != 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _2 = strlen (s_11(D));
+  _3 = _2 + 18446744073709551615;
+  _4 = s_11(D) + _3;
+  _5 = *_4;
+  if (_5 == 10)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _6 = strlen (s_11(D));
+  _7 = _6 + 18446744073709551615;
+  _8 = s_11(D) + _7;
+  *_8 = 0;
+
+  <bb 5> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function runCommand (runCommand, funcdef_no=54, decl_uid=3339, cgraph_uid=54, symbol_order=54)
+
+Points-to analysis
+
+Constraints:
+
+ANYTHING = &ANYTHING
+ESCAPED = *ESCAPED
+ESCAPED = ESCAPED + UNKNOWN
+*ESCAPED = NONLOCAL
+NONLOCAL = &NONLOCAL
+NONLOCAL = &ESCAPED
+INTEGER = &ANYTHING
+command = &NONLOCAL
+result = &NONLOCAL
+ESCAPED = command
+ESCAPED = &STRING
+pipe_7 = NONLOCAL
+derefaddrtmp(12) = &NULL
+*result = derefaddrtmp(12)
+CALLUSED(14) = CALLUSED(14) + UNKNOWN
+CALLUSED(14) = *CALLUSED(14) + UNKNOWN
+CALLUSED(14) = result
+CALLUSED(14) = &NONLOCAL
+_14 = CALLUSED(14)
+_14 = NONLOCAL
+ESCAPED = result
+ESCAPED = _14
+ESCAPED = &NONLOCAL
+ESCAPED = pipe_7
+_18 = NONLOCAL
+ESCAPED = result
+ESCAPED = &NONLOCAL
+ESCAPED = pipe_7
+_19 = NONLOCAL
+_20 = _19
+_20 = _18
+derefaddrtmp(22) = &NULL
+*result = derefaddrtmp(22)
+ESCAPED = pipe_7
+_21 = *result
+ESCAPED = result
+
+Collapsing static cycles and doing variable substitution
+Building predecessor graph
+Detecting pointer and location equivalences
+
+
+// The constraint graph before var-substitution in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING"[label="ANYTHING = { 2 }"];
+"STRING";
+"ESCAPED"[label="ESCAPED = { 3 5 }"];
+"NONLOCAL"[label="NONLOCAL = { 4 5 }"];
+"STOREDANYTHING";
+"INTEGER"[label="INTEGER = { 2 }"];
+"command"[label="command = { 5 }"];
+"result"[label="result = { 5 }"];
+"popen";
+"pipe_7";
+"derefaddrtmp(12)"[label="derefaddrtmp(12) = { 1 }"];
+"__builtin_object_size";
+"CALLUSED(14)"[label="CALLUSED(14) = { 5 }"];
+"CALLCLOBBERED(15)";
+"_14";
+"*__fgets_chk";
+"_18";
+"*fgets";
+"_19";
+"_20";
+"derefaddrtmp(22)"[label="derefaddrtmp(22) = { 1 }"];
+"pclose";
+"_21";
+"removeNewLine.part.1";
+"*NULL";
+"*ANYTHING";
+"*STRING";
+"*STOREDANYTHING";
+"*INTEGER";
+"*command";
+"*result";
+"*popen";
+"*derefaddrtmp(12)";
+"*__builtin_object_size";
+"*CALLUSED(14)";
+"*CALLCLOBBERED(15)";
+"**__fgets_chk";
+"*_18";
+"**fgets";
+"*_19";
+"*_20";
+"*derefaddrtmp(22)";
+"*pclose";
+"*_21";
+"*removeNewLine.part.1";
+
+  // Edges in the constraint graph:
+"NONLOCAL" -> "ESCAPED";
+"command" -> "ESCAPED";
+"result" -> "ESCAPED";
+"pipe_7" -> "ESCAPED";
+"_14" -> "ESCAPED";
+"ESCAPED" -> "ESCAPED";
+"NONLOCAL" -> "pipe_7";
+"result" -> "CALLUSED(14)";
+"NONLOCAL" -> "_14";
+"CALLUSED(14)" -> "_14";
+"NONLOCAL" -> "_18";
+"NONLOCAL" -> "_19";
+"_18" -> "_20";
+"_19" -> "_20";
+"*result" -> "_21";
+"derefaddrtmp(12)" -> "*result";
+"derefaddrtmp(22)" -> "*result";
+}
+
+
+Rewriting constraints and unifying variables
+Uniting pointer but not location equivalent variables
+Finding indirect cycles
+
+
+// The constraint graph before solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = NONLOCAL\l"];
+"STOREDANYTHING";
+"INTEGER";
+"command" [label="\N\n_21 = *command\l*command = derefaddrtmp(12)\l"];
+"popen";
+"pipe_7";
+"derefaddrtmp(12)";
+"__builtin_object_size";
+"CALLUSED(14)" [label="\N\nCALLUSED(14) = CALLUSED(14) + UNKNOWN\lCALLUSED(14) = *CALLUSED(14) + UNKNOWN\l"];
+"CALLCLOBBERED(15)";
+"_14";
+"*__fgets_chk";
+"*fgets";
+"pclose";
+"_21";
+"removeNewLine.part.1";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "CALLUSED(14)";
+"command" -> "ESCAPED";
+"command" -> "CALLUSED(14)";
+"pipe_7" -> "ESCAPED";
+"pipe_7" -> "_14";
+"CALLUSED(14)" -> "_14";
+"_14" -> "ESCAPED";
+}
+
+
+Solving graph
+
+
+// The constraint graph after solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = pipe_7\l"];
+"STOREDANYTHING";
+"INTEGER";
+"command" [label="\N\n_21 = *command\l*command = derefaddrtmp(12)\l"];
+"popen";
+"pipe_7";
+"derefaddrtmp(12)";
+"__builtin_object_size";
+"CALLUSED(14)" [label="\N\nCALLUSED(14) = CALLUSED(14) + UNKNOWN\lCALLUSED(14) = *CALLUSED(14) + UNKNOWN\l"];
+"CALLCLOBBERED(15)";
+"_14";
+"*__fgets_chk";
+"*fgets";
+"pclose";
+"_21";
+"removeNewLine.part.1";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "CALLUSED(14)";
+"command" -> "ESCAPED";
+"command" -> "CALLUSED(14)";
+"pipe_7" -> "ESCAPED";
+"pipe_7" -> "CALLUSED(14)";
+"pipe_7" -> "_14";
+"pipe_7" -> "_21";
+"derefaddrtmp(12)" -> "ESCAPED";
+"CALLUSED(14)" -> "_14";
+"_14" -> "ESCAPED";
+}
+
+
+
+Points-to sets
+
+ANYTHING = { ANYTHING }
+ESCAPED = { NULL STRING ESCAPED NONLOCAL }
+NONLOCAL = { ESCAPED NONLOCAL } same as pipe_7
+STOREDANYTHING = { }
+INTEGER = { ANYTHING }
+command = { NONLOCAL }
+result = { NONLOCAL } same as command
+popen = { }
+pipe_7 = { ESCAPED NONLOCAL }
+derefaddrtmp(12) = { NULL }
+__builtin_object_size = { }
+CALLUSED(14) = { ESCAPED NONLOCAL }
+CALLCLOBBERED(15) = { }
+_14 = { ESCAPED NONLOCAL }
+*__fgets_chk = { }
+_18 = { ESCAPED NONLOCAL } same as pipe_7
+*fgets = { }
+_19 = { ESCAPED NONLOCAL } same as pipe_7
+_20 = { ESCAPED NONLOCAL } same as pipe_7
+derefaddrtmp(22) = { NULL } same as derefaddrtmp(12)
+pclose = { }
+_21 = { ESCAPED NONLOCAL }
+removeNewLine.part.1 = { }
+
+
+Alias information for runCommand
+
+Aliased symbols
+
+
+Call clobber information
+
+ESCAPED, points-to non-local, points-to NULL, points-to vars: { }
+
+Flow-insensitive points-to information
+
+command_5(D), points-to non-local, points-to NULL, points-to vars: { }
+pipe_7, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+result_8(D), points-to non-local, points-to NULL, points-to vars: { }
+_18, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+_19, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+_20, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+
+runCommand (const char * command, char * result)
+{
+  char * D.3516;
+  struct FILE * pipe;
+  long unsigned int _14;
+  char * _18;
+  char * _19;
+  char * _20;
+  char _21;
+
+  <bb 2> [0.00%]:
+  pipe_7 = popen (command_5(D), "r");
+  if (pipe_7 == 0B)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  *result_8(D) = 0;
+  goto <bb 11>; [0.00%]
+
+  <bb 4> [100.00%]:
+  _14 = __builtin_object_size (result_8(D), 1);
+  if (_14 != 18446744073709551615)
+    goto <bb 5>; [79.76%]
+  else
+    goto <bb 7>; [20.24%]
+
+  <bb 5> [37.99%]:
+  if (_14 <= 1023)
+    goto <bb 6>; [29.56%]
+  else
+    goto <bb 7>; [70.44%]
+
+  <bb 6> [11.23%]:
+  _18 = __fgets_chk_warn (result_8(D), _14, 1024, pipe_7);
+  goto <bb 8>; [100.00%]
+
+  <bb 7> [47.00%]:
+  _19 = __fgets_alias (result_8(D), 1024, pipe_7);
+
+  <bb 8> [100.00%]:
+  # _20 = PHI <_19(7), _18(6)>
+  if (_20 == 0B)
+    goto <bb 9>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 9> [0.00%]:
+  *result_8(D) = 0;
+
+  <bb 10> [0.00%]:
+  pclose (pipe_7);
+
+  <bb 11> [100.00%]:
+  _21 = MEM[(const char *)result_8(D)];
+  if (_21 != 0)
+    goto <bb 12>; [54.00%]
+  else
+    goto <bb 13>; [46.00%]
+
+  <bb 12> [54.00%]:
+  removeNewLine.part.1 (result_8(D));
+
+  <bb 13> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function readProcCpuInfo (readProcCpuInfo, funcdef_no=55, decl_uid=3344, cgraph_uid=55, symbol_order=55)
+
+Points-to analysis
+
+Constraints:
+
+ANYTHING = &ANYTHING
+ESCAPED = *ESCAPED
+ESCAPED = ESCAPED + UNKNOWN
+*ESCAPED = NONLOCAL
+NONLOCAL = &NONLOCAL
+NONLOCAL = &ESCAPED
+INTEGER = &ANYTHING
+model = &NONLOCAL
+cache = &NONLOCAL
+derefaddrtmp(10) = &NULL
+*cache = derefaddrtmp(10)
+_1 = *cache
+*model = _1
+_2 = *model
+cpu_MHz = _2
+_3 = cpu_MHz
+model_name = _3
+_4 = model_name
+vendor_id = _4
+ESCAPED = &STRING
+ESCAPED = &STRING
+info_73 = NONLOCAL
+CALLUSED(21) = CALLUSED(21) + UNKNOWN
+CALLUSED(21) = *CALLUSED(21) + UNKNOWN
+CALLUSED(21) = &buffer
+_5 = CALLUSED(21)
+_5 = NONLOCAL
+buffer_end_94 = &buffer
+CALLUSED(27) = CALLUSED(27) + UNKNOWN
+CALLUSED(27) = *CALLUSED(27) + UNKNOWN
+CALLUSED(27) = &buffer
+CALLUSED(27) = &STRING
+CALLUSED(27) = &NONLOCAL
+_6 = CALLUSED(27)
+_6 = NONLOCAL
+cpus_116 = cpus_49
+cpus_116 = &NONLOCAL
+CALLUSED(32) = CALLUSED(32) + UNKNOWN
+CALLUSED(32) = *CALLUSED(32) + UNKNOWN
+CALLUSED(32) = &buffer
+CALLUSED(32) = &STRING
+CALLUSED(32) = &NONLOCAL
+_7 = CALLUSED(32)
+_7 = NONLOCAL
+cp_113 = cp_40 + 8
+cp_40 = &buffer
+cp_40 = cp_113
+_112 = *cp_40
+_10 = _8
+_10 = _9
+_11 = *cp_40
+_122 = &vendor_id
+vendor_id = *cp_40 + UNKNOWN
+_182 = _122
+_149 = vendor_id
+ESCAPED = &vendor_id
+CALLUSED(46) = CALLUSED(46) + UNKNOWN
+CALLUSED(46) = *CALLUSED(46) + UNKNOWN
+CALLUSED(46) = &buffer
+CALLUSED(46) = &STRING
+CALLUSED(46) = &NONLOCAL
+_12 = CALLUSED(46)
+_12 = NONLOCAL
+cp_108 = cp_41 + 8
+cp_41 = &buffer
+cp_41 = cp_108
+_107 = *cp_41
+_15 = _13
+_15 = _14
+_16 = *cp_41
+_124 = &model_name
+model_name = *cp_41 + UNKNOWN
+_179 = _124
+_150 = model_name
+ESCAPED = &model_name
+CALLUSED(59) = CALLUSED(59) + UNKNOWN
+CALLUSED(59) = *CALLUSED(59) + UNKNOWN
+CALLUSED(59) = &buffer
+CALLUSED(59) = &STRING
+CALLUSED(59) = &NONLOCAL
+_17 = CALLUSED(59)
+_17 = NONLOCAL
+cp_103 = cp_42 + 8
+cp_42 = &buffer
+cp_42 = cp_103
+_102 = *cp_42
+_20 = _18
+_20 = _19
+_21 = *cp_42
+_126 = &cpu_MHz
+cpu_MHz = *cp_42 + UNKNOWN
+_176 = _126
+_151 = cpu_MHz
+ESCAPED = &cpu_MHz
+CALLUSED(72) = CALLUSED(72) + UNKNOWN
+CALLUSED(72) = *CALLUSED(72) + UNKNOWN
+CALLUSED(72) = &buffer
+CALLUSED(72) = &STRING
+CALLUSED(72) = &NONLOCAL
+_22 = CALLUSED(72)
+_22 = NONLOCAL
+cp_98 = cp_43 + 8
+cp_43 = &buffer
+cp_43 = cp_98
+_97 = *cp_43
+_25 = _23
+_25 = _24
+_26 = *cp_43
+CALLUSED(83) = CALLUSED(83) + UNKNOWN
+CALLUSED(83) = *CALLUSED(83) + UNKNOWN
+CALLUSED(83) = cache
+CALLUSED(83) = &NONLOCAL
+_127 = CALLUSED(83)
+_127 = NONLOCAL
+_128 = cache
+doubledereftmp(87) = *cp_43 + UNKNOWN
+*cache + UNKNOWN = doubledereftmp(87)
+_152 = *cache
+ESCAPED = cache
+cpus_49 = &NULL
+cpus_49 = cpus_116
+cpus_49 = cpus_49
+cpus_49 = cpus_49
+cpus_49 = cpus_49
+cpus_49 = cpus_49
+cpus_49 = cpus_49
+cpus_49 = cpus_49
+cpus_49 = cpus_49
+cpus_49 = cpus_49
+cpus_49 = cpus_49
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = info_73
+_134 = NONLOCAL
+CALLUSED(91) = CALLUSED(91) + UNKNOWN
+CALLUSED(91) = *CALLUSED(91) + UNKNOWN
+CALLUSED(91) = model
+CALLUSED(91) = &NONLOCAL
+_136 = CALLUSED(91)
+_136 = NONLOCAL
+_137 = model
+CALLUSED(95) = CALLUSED(95) + UNKNOWN
+CALLUSED(95) = *CALLUSED(95) + UNKNOWN
+CALLUSED(95) = model
+CALLUSED(95) = &NONLOCAL
+_138 = CALLUSED(95)
+_138 = NONLOCAL
+ESCAPED = model
+ESCAPED = &NONLOCAL
+ESCAPED = _138
+ESCAPED = &STRING
+ESCAPED = cpus_49
+_139 = NONLOCAL
+CALLUSED(100) = CALLUSED(100) + UNKNOWN
+CALLUSED(100) = *CALLUSED(100) + UNKNOWN
+CALLUSED(100) = model
+_28 = CALLUSED(100)
+_28 = NONLOCAL
+cp_77 = model + UNKNOWN
+_29 = vendor_id
+cp_78 = cp_77 + 8
+derefaddrtmp(106) = &NONLOCAL
+*cp_77 = derefaddrtmp(106)
+cp_44 = cp_77
+cp_44 = cp_78
+CALLUSED(108) = CALLUSED(108) + UNKNOWN
+CALLUSED(108) = *CALLUSED(108) + UNKNOWN
+CALLUSED(108) = cp_44
+CALLUSED(108) = &NONLOCAL
+_140 = CALLUSED(108)
+_140 = NONLOCAL
+_141 = cp_44
+*cp_44 + UNKNOWN = vendor_id
+CALLUSED(112) = CALLUSED(112) + UNKNOWN
+CALLUSED(112) = *CALLUSED(112) + UNKNOWN
+CALLUSED(112) = &vendor_id
+_31 = CALLUSED(112)
+_31 = NONLOCAL
+cp_81 = cp_44 + UNKNOWN
+cp_45 = cp_77
+cp_45 = cp_81
+_32 = model_name
+cp_82 = cp_45 + 8
+derefaddrtmp(119) = &NONLOCAL
+*cp_45 = derefaddrtmp(119)
+cp_46 = cp_45
+cp_46 = cp_82
+CALLUSED(121) = CALLUSED(121) + UNKNOWN
+CALLUSED(121) = *CALLUSED(121) + UNKNOWN
+CALLUSED(121) = cp_46
+CALLUSED(121) = &NONLOCAL
+_142 = CALLUSED(121)
+_142 = NONLOCAL
+_143 = cp_46
+*cp_46 + UNKNOWN = model_name
+CALLUSED(125) = CALLUSED(125) + UNKNOWN
+CALLUSED(125) = *CALLUSED(125) + UNKNOWN
+CALLUSED(125) = &model_name
+_34 = CALLUSED(125)
+_34 = NONLOCAL
+cp_85 = cp_46 + UNKNOWN
+cp_47 = cp_45
+cp_47 = cp_85
+_35 = cpu_MHz
+cp_86 = cp_47 + 8
+derefaddrtmp(132) = &NONLOCAL
+*cp_47 = derefaddrtmp(132)
+cp_48 = cp_47
+cp_48 = cp_86
+ESCAPED = &cpu_MHz
+ESCAPED = &NULL
+_148 = NONLOCAL
+f_88 = _148
+_38 = f_88
+_38 = &NONLOCAL
+i_89 = _38
+ESCAPED = &cpu_MHz
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = i_89
+_147 = NONLOCAL
+CALLUSED(140) = CALLUSED(140) + UNKNOWN
+CALLUSED(140) = *CALLUSED(140) + UNKNOWN
+CALLUSED(140) = cp_48
+CALLUSED(140) = &NONLOCAL
+_144 = CALLUSED(140)
+_144 = NONLOCAL
+_145 = cp_48
+*cp_48 + UNKNOWN = cpu_MHz
+CALLUSED(144) = CALLUSED(144) + UNKNOWN
+CALLUSED(144) = *CALLUSED(144) + UNKNOWN
+CALLUSED(144) = &cpu_MHz
+_39 = CALLUSED(144)
+_39 = NONLOCAL
+cp_92 = cp_48 + UNKNOWN
+ESCAPED = info_73
+
+Collapsing static cycles and doing variable substitution
+Building predecessor graph
+Detecting pointer and location equivalences
+
+
+// The constraint graph before var-substitution in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING"[label="ANYTHING = { 2 }"];
+"STRING";
+"ESCAPED"[label="ESCAPED = { 1 3 5 13 15 17 23 }"];
+"NONLOCAL"[label="NONLOCAL = { 4 5 }"];
+"STOREDANYTHING";
+"INTEGER"[label="INTEGER = { 2 }"];
+"model"[label="model = { 5 }"];
+"cache"[label="cache = { 5 }"];
+"derefaddrtmp(10)"[label="derefaddrtmp(10) = { 1 }"];
+"_1";
+"_2";
+"cpu_MHz";
+"_3";
+"model_name";
+"_4";
+"vendor_id";
+"fopen";
+"info_73";
+"strlen";
+"CALLUSED(21)"[label="CALLUSED(21) = { 23 }"];
+"CALLCLOBBERED(22)";
+"buffer";
+"_5";
+"buffer_end_94"[label="buffer_end_94 = { 23 }"];
+"strncmp";
+"CALLUSED(27)"[label="CALLUSED(27) = { 3 5 23 }"];
+"CALLCLOBBERED(28)";
+"_6";
+"cpus_49"[label="cpus_49 = { 1 5 }"];
+"CALLUSED(32)"[label="CALLUSED(32) = { 3 5 23 }"];
+"CALLCLOBBERED(33)";
+"_7";
+"cp_113";
+"cp_40"[label="cp_40 = { 23 }"];
+"_112";
+"_8";
+"_9";
+"_10";
+"_11";
+"_122"[label="_122 = { 17 }"];
+"_182";
+"_149";
+"removeNewLine.part.1";
+"CALLUSED(46)"[label="CALLUSED(46) = { 3 5 23 }"];
+"CALLCLOBBERED(47)";
+"_12";
+"cp_108";
+"cp_41"[label="cp_41 = { 23 }"];
+"_107";
+"_13";
+"_14";
+"_15";
+"_16";
+"_124"[label="_124 = { 15 }"];
+"_179";
+"_150";
+"CALLUSED(59)"[label="CALLUSED(59) = { 3 5 23 }"];
+"CALLCLOBBERED(60)";
+"_17";
+"cp_103";
+"cp_42"[label="cp_42 = { 23 }"];
+"_102";
+"_18";
+"_19";
+"_20";
+"_21";
+"_126"[label="_126 = { 13 }"];
+"_176";
+"_151";
+"CALLUSED(72)"[label="CALLUSED(72) = { 3 5 23 }"];
+"CALLCLOBBERED(73)";
+"_22";
+"cp_98";
+"cp_43"[label="cp_43 = { 23 }"];
+"_97";
+"_23";
+"_24";
+"_25";
+"_26";
+"__builtin_object_size";
+"CALLUSED(83)"[label="CALLUSED(83) = { 5 }"];
+"CALLCLOBBERED(84)";
+"_127";
+"_128";
+"doubledereftmp(87)";
+"_152";
+"*fgets";
+"_134";
+"CALLUSED(91)"[label="CALLUSED(91) = { 5 }"];
+"CALLCLOBBERED(92)";
+"_136";
+"_137";
+"CALLUSED(95)"[label="CALLUSED(95) = { 5 }"];
+"CALLCLOBBERED(96)";
+"_138";
+"__sprintf_chk";
+"_139";
+"CALLUSED(100)";
+"CALLCLOBBERED(101)";
+"_28";
+"cp_77";
+"_29";
+"cp_78";
+"derefaddrtmp(106)"[label="derefaddrtmp(106) = { 5 }"];
+"cp_44";
+"CALLUSED(108)"[label="CALLUSED(108) = { 5 }"];
+"CALLCLOBBERED(109)";
+"_140";
+"_141";
+"CALLUSED(112)"[label="CALLUSED(112) = { 17 }"];
+"CALLCLOBBERED(113)";
+"_31";
+"cp_81";
+"cp_45";
+"_32";
+"cp_82";
+"derefaddrtmp(119)"[label="derefaddrtmp(119) = { 5 }"];
+"cp_46";
+"CALLUSED(121)"[label="CALLUSED(121) = { 5 }"];
+"CALLCLOBBERED(122)";
+"_142";
+"_143";
+"CALLUSED(125)"[label="CALLUSED(125) = { 15 }"];
+"CALLCLOBBERED(126)";
+"_34";
+"cp_85";
+"cp_47";
+"_35";
+"cp_86";
+"derefaddrtmp(132)"[label="derefaddrtmp(132) = { 5 }"];
+"cp_48";
+"strtod";
+"_148";
+"f_88";
+"_38"[label="_38 = { 5 }"];
+"i_89";
+"_147";
+"CALLUSED(140)"[label="CALLUSED(140) = { 5 }"];
+"CALLCLOBBERED(141)";
+"_144";
+"_145";
+"CALLUSED(144)"[label="CALLUSED(144) = { 13 }"];
+"CALLCLOBBERED(145)";
+"_39";
+"cp_92";
+"fclose";
+"*NULL";
+"*ANYTHING";
+"*STRING";
+"*STOREDANYTHING";
+"*INTEGER";
+"*model";
+"*cache";
+"*derefaddrtmp(10)";
+"*_1";
+"*_2";
+"*cpu_MHz";
+"*_3";
+"*model_name";
+"*_4";
+"*vendor_id";
+"*fopen";
+"*strlen";
+"*CALLUSED(21)";
+"*CALLCLOBBERED(22)";
+"*buffer";
+"*_5";
+"*buffer_end_94";
+"*strncmp";
+"*CALLUSED(27)";
+"*CALLCLOBBERED(28)";
+"*_6";
+"*cpus_49";
+"*CALLUSED(32)";
+"*CALLCLOBBERED(33)";
+"*_7";
+"*cp_113";
+"*cp_40";
+"*_112";
+"*_8";
+"*_9";
+"*_10";
+"*_11";
+"*_122";
+"*_182";
+"*_149";
+"*removeNewLine.part.1";
+"*CALLUSED(46)";
+"*CALLCLOBBERED(47)";
+"*_12";
+"*cp_108";
+"*cp_41";
+"*_107";
+"*_13";
+"*_14";
+"*_15";
+"*_16";
+"*_124";
+"*_179";
+"*_150";
+"*CALLUSED(59)";
+"*CALLCLOBBERED(60)";
+"*_17";
+"*cp_103";
+"*cp_42";
+"*_102";
+"*_18";
+"*_19";
+"*_20";
+"*_21";
+"*_126";
+"*_176";
+"*_151";
+"*CALLUSED(72)";
+"*CALLCLOBBERED(73)";
+"*_22";
+"*cp_98";
+"*cp_43";
+"*_97";
+"*_23";
+"*_24";
+"*_25";
+"*_26";
+"*__builtin_object_size";
+"*CALLUSED(83)";
+"*CALLCLOBBERED(84)";
+"*_127";
+"*_128";
+"*doubledereftmp(87)";
+"*_152";
+"**fgets";
+"*_134";
+"*CALLUSED(91)";
+"*CALLCLOBBERED(92)";
+"*_136";
+"*_137";
+"*CALLUSED(95)";
+"*CALLCLOBBERED(96)";
+"*__sprintf_chk";
+"*_139";
+"*CALLUSED(100)";
+"*CALLCLOBBERED(101)";
+"*_28";
+"*cp_77";
+"*_29";
+"*cp_78";
+"*derefaddrtmp(106)";
+"*cp_44";
+"*CALLUSED(108)";
+"*CALLCLOBBERED(109)";
+"*_140";
+"*_141";
+"*CALLUSED(112)";
+"*CALLCLOBBERED(113)";
+"*_31";
+"*cp_81";
+"*cp_45";
+"*_32";
+"*cp_82";
+"*derefaddrtmp(119)";
+"*cp_46";
+"*CALLUSED(121)";
+"*CALLCLOBBERED(122)";
+"*_142";
+"*_143";
+"*CALLUSED(125)";
+"*CALLCLOBBERED(126)";
+"*_34";
+"*cp_85";
+"*cp_47";
+"*_35";
+"*cp_86";
+"*derefaddrtmp(132)";
+"*cp_48";
+"*strtod";
+"*_147";
+"*CALLUSED(140)";
+"*CALLCLOBBERED(141)";
+"*_144";
+"*_145";
+"*CALLUSED(144)";
+"*CALLCLOBBERED(145)";
+"*_39";
+"*cp_92";
+"*fclose";
+
+  // Edges in the constraint graph:
+"NONLOCAL" -> "ESCAPED";
+"model" -> "ESCAPED";
+"cache" -> "ESCAPED";
+"info_73" -> "ESCAPED";
+"cpus_49" -> "ESCAPED";
+"_138" -> "ESCAPED";
+"i_89" -> "ESCAPED";
+"ESCAPED" -> "ESCAPED";
+"*cache" -> "_1";
+"*model" -> "_2";
+"_2" -> "cpu_MHz";
+"cpu_MHz" -> "_3";
+"_3" -> "model_name";
+"model_name" -> "_4";
+"_4" -> "vendor_id";
+"NONLOCAL" -> "info_73";
+"NONLOCAL" -> "_5";
+"CALLUSED(21)" -> "_5";
+"NONLOCAL" -> "_6";
+"CALLUSED(27)" -> "_6";
+"cpus_49" -> "cpus_49";
+"cpus_49" -> "cpus_49";
+"NONLOCAL" -> "_7";
+"CALLUSED(32)" -> "_7";
+"cp_113" -> "cp_40";
+"*cp_40" -> "_112";
+"_8" -> "_10";
+"_9" -> "_10";
+"*cp_40" -> "_11";
+"_122" -> "_182";
+"vendor_id" -> "_149";
+"NONLOCAL" -> "_12";
+"CALLUSED(46)" -> "_12";
+"cp_108" -> "cp_41";
+"*cp_41" -> "_107";
+"_13" -> "_15";
+"_14" -> "_15";
+"*cp_41" -> "_16";
+"_124" -> "_179";
+"model_name" -> "_150";
+"NONLOCAL" -> "_17";
+"CALLUSED(59)" -> "_17";
+"cp_103" -> "cp_42";
+"*cp_42" -> "_102";
+"_18" -> "_20";
+"_19" -> "_20";
+"*cp_42" -> "_21";
+"_126" -> "_176";
+"cpu_MHz" -> "_151";
+"NONLOCAL" -> "_22";
+"CALLUSED(72)" -> "_22";
+"cp_98" -> "cp_43";
+"*cp_43" -> "_97";
+"_23" -> "_25";
+"_24" -> "_25";
+"*cp_43" -> "_26";
+"cache" -> "CALLUSED(83)";
+"NONLOCAL" -> "_127";
+"CALLUSED(83)" -> "_127";
+"cache" -> "_128";
+"*cache" -> "_152";
+"NONLOCAL" -> "_134";
+"model" -> "CALLUSED(91)";
+"NONLOCAL" -> "_136";
+"CALLUSED(91)" -> "_136";
+"model" -> "_137";
+"model" -> "CALLUSED(95)";
+"NONLOCAL" -> "_138";
+"CALLUSED(95)" -> "_138";
+"NONLOCAL" -> "_139";
+"model" -> "CALLUSED(100)";
+"NONLOCAL" -> "_28";
+"CALLUSED(100)" -> "_28";
+"vendor_id" -> "_29";
+"cp_77" -> "cp_44";
+"cp_78" -> "cp_44";
+"cp_44" -> "CALLUSED(108)";
+"NONLOCAL" -> "_140";
+"CALLUSED(108)" -> "_140";
+"cp_44" -> "_141";
+"NONLOCAL" -> "_31";
+"CALLUSED(112)" -> "_31";
+"cp_77" -> "cp_45";
+"cp_81" -> "cp_45";
+"model_name" -> "_32";
+"cp_45" -> "cp_46";
+"cp_82" -> "cp_46";
+"cp_46" -> "CALLUSED(121)";
+"NONLOCAL" -> "_142";
+"CALLUSED(121)" -> "_142";
+"cp_46" -> "_143";
+"NONLOCAL" -> "_34";
+"CALLUSED(125)" -> "_34";
+"cp_45" -> "cp_47";
+"cp_85" -> "cp_47";
+"cpu_MHz" -> "_35";
+"cp_47" -> "cp_48";
+"cp_86" -> "cp_48";
+"NONLOCAL" -> "_148";
+"_148" -> "f_88";
+"f_88" -> "_38";
+"_38" -> "i_89";
+"NONLOCAL" -> "_147";
+"cp_48" -> "CALLUSED(140)";
+"NONLOCAL" -> "_144";
+"CALLUSED(140)" -> "_144";
+"cp_48" -> "_145";
+"NONLOCAL" -> "_39";
+"CALLUSED(144)" -> "_39";
+"_1" -> "*model";
+"derefaddrtmp(10)" -> "*cache";
+"derefaddrtmp(106)" -> "*cp_77";
+"derefaddrtmp(119)" -> "*cp_45";
+"derefaddrtmp(132)" -> "*cp_47";
+}
+
+
+Rewriting constraints and unifying variables
+Uniting pointer but not location equivalent variables
+Finding indirect cycles
+
+
+// The constraint graph before solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = NONLOCAL\l"];
+"STOREDANYTHING";
+"INTEGER";
+"model" [label="\N\n_1 = *model\l_2 = *model\lcp_77 = model + UNKNOWN\l*model + UNKNOWN = doubledereftmp(87)\l*model = derefaddrtmp(10)\l*model = _1\l"];
+"derefaddrtmp(10)";
+"_1";
+"_2";
+"_3";
+"_4";
+"fopen";
+"info_73";
+"strlen";
+"CALLUSED(21)" [label="\N\nCALLUSED(21) = CALLUSED(21) + UNKNOWN\lCALLUSED(21) = *CALLUSED(21) + UNKNOWN\l"];
+"CALLCLOBBERED(22)";
+"buffer";
+"_5";
+"buffer_end_94";
+"strncmp";
+"CALLUSED(27)" [label="\N\nCALLUSED(27) = CALLUSED(27) + UNKNOWN\lCALLUSED(27) = *CALLUSED(27) + UNKNOWN\l"];
+"CALLCLOBBERED(28)";
+"_6";
+"cpus_116";
+"CALLUSED(32)" [label="\N\nCALLUSED(32) = CALLUSED(32) + UNKNOWN\lCALLUSED(32) = *CALLUSED(32) + UNKNOWN\l"];
+"CALLCLOBBERED(33)";
+"_7";
+"cp_113";
+"cp_40" [label="\N\nvendor_id = *cp_40 + UNKNOWN\lcp_113 = cp_40 + 8\l_112 = *cp_40\l"];
+"_112";
+"_8";
+"_9";
+"_10";
+"_122";
+"_149";
+"removeNewLine.part.1";
+"CALLUSED(46)" [label="\N\nCALLUSED(46) = CALLUSED(46) + UNKNOWN\lCALLUSED(46) = *CALLUSED(46) + UNKNOWN\l"];
+"CALLCLOBBERED(47)";
+"_12";
+"cp_108";
+"cp_41" [label="\N\nmodel_name = *cp_41 + UNKNOWN\lcp_108 = cp_41 + 8\l_107 = *cp_41\l"];
+"_107";
+"_13";
+"_14";
+"_15";
+"_124";
+"CALLUSED(59)" [label="\N\nCALLUSED(59) = CALLUSED(59) + UNKNOWN\lCALLUSED(59) = *CALLUSED(59) + UNKNOWN\l"];
+"CALLCLOBBERED(60)";
+"_17";
+"cp_103";
+"cp_42" [label="\N\ncpu_MHz = *cp_42 + UNKNOWN\lcp_103 = cp_42 + 8\l_102 = *cp_42\l"];
+"_102";
+"_18";
+"_19";
+"_20";
+"_126";
+"CALLUSED(72)" [label="\N\nCALLUSED(72) = CALLUSED(72) + UNKNOWN\lCALLUSED(72) = *CALLUSED(72) + UNKNOWN\l"];
+"CALLCLOBBERED(73)";
+"_22";
+"cp_98";
+"cp_43" [label="\N\ncp_98 = cp_43 + 8\l_97 = *cp_43\ldoubledereftmp(87) = *cp_43 + UNKNOWN\l"];
+"_97";
+"_23";
+"_24";
+"_25";
+"__builtin_object_size";
+"CALLUSED(83)" [label="\N\nCALLUSED(83) = CALLUSED(83) + UNKNOWN\lCALLUSED(83) = *CALLUSED(83) + UNKNOWN\l"];
+"CALLCLOBBERED(84)";
+"_127";
+"doubledereftmp(87)";
+"*fgets";
+"CALLUSED(91)" [label="\N\nCALLUSED(91) = CALLUSED(91) + UNKNOWN\lCALLUSED(91) = *CALLUSED(91) + UNKNOWN\l"];
+"CALLCLOBBERED(92)";
+"_136";
+"CALLUSED(95)" [label="\N\nCALLUSED(95) = CALLUSED(95) + UNKNOWN\lCALLUSED(95) = *CALLUSED(95) + UNKNOWN\l"];
+"CALLCLOBBERED(96)";
+"_138";
+"__sprintf_chk";
+"CALLUSED(100)" [label="\N\nCALLUSED(100) = CALLUSED(100) + UNKNOWN\lCALLUSED(100) = *CALLUSED(100) + UNKNOWN\l"];
+"CALLCLOBBERED(101)";
+"_28";
+"cp_77" [label="\N\ncp_78 = cp_77 + 8\l*cp_77 = model\l"];
+"cp_78";
+"cp_44" [label="\N\ncp_81 = cp_44 + UNKNOWN\l*cp_44 + UNKNOWN = vendor_id\l"];
+"CALLUSED(108)" [label="\N\nCALLUSED(108) = CALLUSED(108) + UNKNOWN\lCALLUSED(108) = *CALLUSED(108) + UNKNOWN\l"];
+"CALLCLOBBERED(109)";
+"_140";
+"CALLUSED(112)" [label="\N\nCALLUSED(112) = CALLUSED(112) + UNKNOWN\lCALLUSED(112) = *CALLUSED(112) + UNKNOWN\l"];
+"CALLCLOBBERED(113)";
+"_31";
+"cp_81";
+"cp_45" [label="\N\ncp_82 = cp_45 + 8\l*cp_45 = model\l"];
+"cp_82";
+"cp_46" [label="\N\ncp_85 = cp_46 + UNKNOWN\l*cp_46 + UNKNOWN = model_name\l"];
+"CALLUSED(121)" [label="\N\nCALLUSED(121) = CALLUSED(121) + UNKNOWN\lCALLUSED(121) = *CALLUSED(121) + UNKNOWN\l"];
+"CALLCLOBBERED(122)";
+"_142";
+"CALLUSED(125)" [label="\N\nCALLUSED(125) = CALLUSED(125) + UNKNOWN\lCALLUSED(125) = *CALLUSED(125) + UNKNOWN\l"];
+"CALLCLOBBERED(126)";
+"_34";
+"cp_85";
+"cp_47" [label="\N\ncp_86 = cp_47 + 8\l*cp_47 = model\l"];
+"cp_86";
+"cp_48" [label="\N\ncp_92 = cp_48 + UNKNOWN\l*cp_48 + UNKNOWN = cpu_MHz\l"];
+"strtod";
+"CALLUSED(140)" [label="\N\nCALLUSED(140) = CALLUSED(140) + UNKNOWN\lCALLUSED(140) = *CALLUSED(140) + UNKNOWN\l"];
+"CALLCLOBBERED(141)";
+"_144";
+"CALLUSED(144)" [label="\N\nCALLUSED(144) = CALLUSED(144) + UNKNOWN\lCALLUSED(144) = *CALLUSED(144) + UNKNOWN\l"];
+"CALLCLOBBERED(145)";
+"_39";
+"cp_92";
+"fclose";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "_3";
+"STOREDANYTHING" -> "_4";
+"STOREDANYTHING" -> "_149";
+"STOREDANYTHING" -> "CALLUSED(21)";
+"STOREDANYTHING" -> "buffer";
+"STOREDANYTHING" -> "CALLUSED(27)";
+"STOREDANYTHING" -> "CALLUSED(32)";
+"STOREDANYTHING" -> "cp_113";
+"STOREDANYTHING" -> "CALLUSED(46)";
+"STOREDANYTHING" -> "cp_108";
+"STOREDANYTHING" -> "CALLUSED(59)";
+"STOREDANYTHING" -> "cp_103";
+"STOREDANYTHING" -> "CALLUSED(72)";
+"STOREDANYTHING" -> "cp_98";
+"STOREDANYTHING" -> "CALLUSED(83)";
+"STOREDANYTHING" -> "doubledereftmp(87)";
+"STOREDANYTHING" -> "CALLUSED(91)";
+"STOREDANYTHING" -> "CALLUSED(95)";
+"STOREDANYTHING" -> "CALLUSED(100)";
+"STOREDANYTHING" -> "cp_77";
+"STOREDANYTHING" -> "cp_78";
+"STOREDANYTHING" -> "CALLUSED(108)";
+"STOREDANYTHING" -> "CALLUSED(112)";
+"STOREDANYTHING" -> "cp_81";
+"STOREDANYTHING" -> "cp_82";
+"STOREDANYTHING" -> "CALLUSED(121)";
+"STOREDANYTHING" -> "CALLUSED(125)";
+"STOREDANYTHING" -> "cp_85";
+"STOREDANYTHING" -> "cp_86";
+"STOREDANYTHING" -> "CALLUSED(140)";
+"STOREDANYTHING" -> "CALLUSED(144)";
+"STOREDANYTHING" -> "cp_92";
+"model" -> "ESCAPED";
+"model" -> "CALLUSED(83)";
+"model" -> "CALLUSED(91)";
+"model" -> "CALLUSED(95)";
+"model" -> "CALLUSED(100)";
+"_2" -> "_3";
+"_3" -> "_4";
+"_4" -> "_149";
+"info_73" -> "ESCAPED";
+"info_73" -> "_5";
+"info_73" -> "_6";
+"info_73" -> "_7";
+"info_73" -> "_12";
+"info_73" -> "_17";
+"info_73" -> "_22";
+"info_73" -> "_127";
+"info_73" -> "_136";
+"info_73" -> "_138";
+"info_73" -> "_28";
+"info_73" -> "_140";
+"info_73" -> "_31";
+"info_73" -> "_142";
+"info_73" -> "_34";
+"info_73" -> "_144";
+"info_73" -> "_39";
+"CALLUSED(21)" -> "_5";
+"CALLUSED(27)" -> "_6";
+"cpus_116" -> "ESCAPED";
+"CALLUSED(32)" -> "_7";
+"cp_113" -> "cp_40";
+"CALLUSED(46)" -> "_12";
+"cp_108" -> "cp_41";
+"CALLUSED(59)" -> "_17";
+"cp_103" -> "cp_42";
+"CALLUSED(72)" -> "_22";
+"cp_98" -> "cp_43";
+"CALLUSED(83)" -> "_127";
+"CALLUSED(91)" -> "_136";
+"CALLUSED(95)" -> "_138";
+"_138" -> "ESCAPED";
+"CALLUSED(100)" -> "_28";
+"cp_77" -> "cp_44";
+"cp_77" -> "cp_45";
+"cp_78" -> "cp_44";
+"cp_44" -> "CALLUSED(108)";
+"CALLUSED(108)" -> "_140";
+"CALLUSED(112)" -> "_31";
+"cp_81" -> "cp_45";
+"cp_45" -> "cp_46";
+"cp_45" -> "cp_47";
+"cp_82" -> "cp_46";
+"cp_46" -> "CALLUSED(121)";
+"CALLUSED(121)" -> "_142";
+"CALLUSED(125)" -> "_34";
+"cp_85" -> "cp_47";
+"cp_47" -> "cp_48";
+"cp_86" -> "cp_48";
+"cp_48" -> "CALLUSED(140)";
+"CALLUSED(140)" -> "_144";
+"CALLUSED(144)" -> "_39";
+}
+
+
+Solving graph
+
+
+// The constraint graph after solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = info_73\l"];
+"STOREDANYTHING";
+"INTEGER";
+"model" [label="\N\n_1 = *model\l_2 = *model\lcp_77 = model + UNKNOWN\l*model + UNKNOWN = doubledereftmp(87)\l*model = derefaddrtmp(10)\l*model = _1\l"];
+"derefaddrtmp(10)";
+"_1";
+"_2";
+"_3";
+"_4";
+"fopen";
+"info_73";
+"strlen";
+"CALLUSED(21)" [label="\N\nCALLUSED(21) = CALLUSED(21) + UNKNOWN\lCALLUSED(21) = *CALLUSED(21) + UNKNOWN\l"];
+"CALLCLOBBERED(22)";
+"buffer";
+"_5";
+"buffer_end_94";
+"strncmp";
+"CALLUSED(27)" [label="\N\nCALLUSED(27) = CALLUSED(27) + UNKNOWN\lCALLUSED(27) = *CALLUSED(27) + UNKNOWN\l"];
+"CALLCLOBBERED(28)";
+"_6";
+"cpus_116";
+"CALLUSED(32)" [label="\N\nCALLUSED(32) = CALLUSED(32) + UNKNOWN\lCALLUSED(32) = *CALLUSED(32) + UNKNOWN\l"];
+"CALLCLOBBERED(33)";
+"_7";
+"cp_113";
+"cp_40" [label="\N\n_149 = *cp_40 + UNKNOWN\lcp_113 = cp_40 + 8\l_112 = *cp_40\l"];
+"_112";
+"_8";
+"_9";
+"_10";
+"_122";
+"_149";
+"removeNewLine.part.1";
+"CALLUSED(46)" [label="\N\nCALLUSED(46) = CALLUSED(46) + UNKNOWN\lCALLUSED(46) = *CALLUSED(46) + UNKNOWN\l"];
+"CALLCLOBBERED(47)";
+"_12";
+"cp_108";
+"cp_41" [label="\N\n_4 = *cp_41 + UNKNOWN\lcp_108 = cp_41 + 8\l_107 = *cp_41\l"];
+"_107";
+"_13";
+"_14";
+"_15";
+"_124";
+"CALLUSED(59)" [label="\N\nCALLUSED(59) = CALLUSED(59) + UNKNOWN\lCALLUSED(59) = *CALLUSED(59) + UNKNOWN\l"];
+"CALLCLOBBERED(60)";
+"_17";
+"cp_103";
+"cp_42" [label="\N\n_3 = *cp_42 + UNKNOWN\lcp_103 = cp_42 + 8\l_102 = *cp_42\l"];
+"_102";
+"_18";
+"_19";
+"_20";
+"_126";
+"CALLUSED(72)" [label="\N\nCALLUSED(72) = CALLUSED(72) + UNKNOWN\lCALLUSED(72) = *CALLUSED(72) + UNKNOWN\l"];
+"CALLCLOBBERED(73)";
+"_22";
+"cp_98";
+"cp_43" [label="\N\ncp_98 = cp_43 + 8\l_97 = *cp_43\ldoubledereftmp(87) = *cp_43 + UNKNOWN\l"];
+"_97";
+"_23";
+"_24";
+"_25";
+"__builtin_object_size";
+"CALLUSED(83)" [label="\N\nCALLUSED(83) = CALLUSED(83) + UNKNOWN\lCALLUSED(83) = *CALLUSED(83) + UNKNOWN\l"];
+"CALLCLOBBERED(84)";
+"_127";
+"doubledereftmp(87)";
+"*fgets";
+"CALLUSED(91)" [label="\N\nCALLUSED(91) = CALLUSED(91) + UNKNOWN\lCALLUSED(91) = *CALLUSED(91) + UNKNOWN\l"];
+"CALLCLOBBERED(92)";
+"_136";
+"CALLUSED(95)" [label="\N\nCALLUSED(95) = CALLUSED(95) + UNKNOWN\lCALLUSED(95) = *CALLUSED(95) + UNKNOWN\l"];
+"CALLCLOBBERED(96)";
+"_138";
+"__sprintf_chk";
+"CALLUSED(100)" [label="\N\nCALLUSED(100) = CALLUSED(100) + UNKNOWN\lCALLUSED(100) = *CALLUSED(100) + UNKNOWN\l"];
+"CALLCLOBBERED(101)";
+"_28";
+"cp_77" [label="\N\ncp_78 = cp_77 + 8\l*cp_77 = model\l"];
+"cp_78";
+"cp_44" [label="\N\ncp_81 = cp_44 + UNKNOWN\l*cp_44 + UNKNOWN = _149\l"];
+"CALLUSED(108)" [label="\N\nCALLUSED(108) = CALLUSED(108) + UNKNOWN\lCALLUSED(108) = *CALLUSED(108) + UNKNOWN\l"];
+"CALLCLOBBERED(109)";
+"_140";
+"CALLUSED(112)" [label="\N\nCALLUSED(112) = CALLUSED(112) + UNKNOWN\lCALLUSED(112) = *CALLUSED(112) + UNKNOWN\l"];
+"CALLCLOBBERED(113)";
+"_31";
+"cp_81";
+"cp_45" [label="\N\ncp_82 = cp_45 + 8\l*cp_45 = model\l"];
+"cp_82";
+"cp_46" [label="\N\ncp_85 = cp_46 + UNKNOWN\l*cp_46 + UNKNOWN = _4\l"];
+"CALLUSED(121)" [label="\N\nCALLUSED(121) = CALLUSED(121) + UNKNOWN\lCALLUSED(121) = *CALLUSED(121) + UNKNOWN\l"];
+"CALLCLOBBERED(122)";
+"_142";
+"CALLUSED(125)" [label="\N\nCALLUSED(125) = CALLUSED(125) + UNKNOWN\lCALLUSED(125) = *CALLUSED(125) + UNKNOWN\l"];
+"CALLCLOBBERED(126)";
+"_34";
+"cp_85";
+"cp_47" [label="\N\ncp_86 = cp_47 + 8\l*cp_47 = model\l"];
+"cp_86";
+"cp_48" [label="\N\ncp_92 = cp_48 + UNKNOWN\l*cp_48 + UNKNOWN = _3\l"];
+"strtod";
+"CALLUSED(140)" [label="\N\nCALLUSED(140) = CALLUSED(140) + UNKNOWN\lCALLUSED(140) = *CALLUSED(140) + UNKNOWN\l"];
+"CALLCLOBBERED(141)";
+"_144";
+"CALLUSED(144)" [label="\N\nCALLUSED(144) = CALLUSED(144) + UNKNOWN\lCALLUSED(144) = *CALLUSED(144) + UNKNOWN\l"];
+"CALLCLOBBERED(145)";
+"_39";
+"cp_92";
+"fclose";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "_3";
+"STOREDANYTHING" -> "_4";
+"STOREDANYTHING" -> "_149";
+"STOREDANYTHING" -> "CALLUSED(21)";
+"STOREDANYTHING" -> "buffer";
+"STOREDANYTHING" -> "CALLUSED(27)";
+"STOREDANYTHING" -> "CALLUSED(32)";
+"STOREDANYTHING" -> "cp_113";
+"STOREDANYTHING" -> "CALLUSED(46)";
+"STOREDANYTHING" -> "cp_108";
+"STOREDANYTHING" -> "CALLUSED(59)";
+"STOREDANYTHING" -> "cp_103";
+"STOREDANYTHING" -> "CALLUSED(72)";
+"STOREDANYTHING" -> "cp_98";
+"STOREDANYTHING" -> "CALLUSED(83)";
+"STOREDANYTHING" -> "doubledereftmp(87)";
+"STOREDANYTHING" -> "CALLUSED(91)";
+"STOREDANYTHING" -> "CALLUSED(95)";
+"STOREDANYTHING" -> "CALLUSED(100)";
+"STOREDANYTHING" -> "cp_77";
+"STOREDANYTHING" -> "cp_78";
+"STOREDANYTHING" -> "CALLUSED(108)";
+"STOREDANYTHING" -> "CALLUSED(112)";
+"STOREDANYTHING" -> "cp_81";
+"STOREDANYTHING" -> "cp_82";
+"STOREDANYTHING" -> "CALLUSED(121)";
+"STOREDANYTHING" -> "CALLUSED(125)";
+"STOREDANYTHING" -> "cp_85";
+"STOREDANYTHING" -> "cp_86";
+"STOREDANYTHING" -> "CALLUSED(140)";
+"STOREDANYTHING" -> "CALLUSED(144)";
+"STOREDANYTHING" -> "cp_92";
+"model" -> "ESCAPED";
+"model" -> "CALLUSED(83)";
+"model" -> "CALLUSED(91)";
+"model" -> "CALLUSED(95)";
+"model" -> "CALLUSED(100)";
+"derefaddrtmp(10)" -> "ESCAPED";
+"_1" -> "ESCAPED";
+"_2" -> "_3";
+"_3" -> "ESCAPED";
+"_3" -> "_4";
+"_3" -> "CALLUSED(144)";
+"_4" -> "ESCAPED";
+"_4" -> "_149";
+"_4" -> "CALLUSED(125)";
+"info_73" -> "ESCAPED";
+"info_73" -> "_1";
+"info_73" -> "_2";
+"info_73" -> "_3";
+"info_73" -> "_4";
+"info_73" -> "CALLUSED(21)";
+"info_73" -> "buffer";
+"info_73" -> "_5";
+"info_73" -> "CALLUSED(27)";
+"info_73" -> "_6";
+"info_73" -> "CALLUSED(32)";
+"info_73" -> "_7";
+"info_73" -> "_149";
+"info_73" -> "CALLUSED(46)";
+"info_73" -> "_12";
+"info_73" -> "CALLUSED(59)";
+"info_73" -> "_17";
+"info_73" -> "CALLUSED(72)";
+"info_73" -> "_22";
+"info_73" -> "CALLUSED(83)";
+"info_73" -> "_127";
+"info_73" -> "CALLUSED(91)";
+"info_73" -> "_136";
+"info_73" -> "CALLUSED(95)";
+"info_73" -> "_138";
+"info_73" -> "CALLUSED(100)";
+"info_73" -> "_28";
+"info_73" -> "CALLUSED(108)";
+"info_73" -> "_140";
+"info_73" -> "CALLUSED(112)";
+"info_73" -> "_31";
+"info_73" -> "CALLUSED(121)";
+"info_73" -> "_142";
+"info_73" -> "CALLUSED(125)";
+"info_73" -> "_34";
+"info_73" -> "CALLUSED(140)";
+"info_73" -> "_144";
+"info_73" -> "CALLUSED(144)";
+"info_73" -> "_39";
+"CALLUSED(21)" -> "_5";
+"buffer" -> "ESCAPED";
+"buffer" -> "_3";
+"buffer" -> "_4";
+"buffer" -> "CALLUSED(21)";
+"buffer" -> "CALLUSED(27)";
+"buffer" -> "CALLUSED(32)";
+"buffer" -> "_112";
+"buffer" -> "_149";
+"buffer" -> "CALLUSED(46)";
+"buffer" -> "_107";
+"buffer" -> "CALLUSED(59)";
+"buffer" -> "_102";
+"buffer" -> "CALLUSED(72)";
+"buffer" -> "_97";
+"buffer" -> "doubledereftmp(87)";
+"CALLUSED(27)" -> "_6";
+"cpus_116" -> "ESCAPED";
+"CALLUSED(32)" -> "_7";
+"cp_113" -> "cp_40";
+"_149" -> "ESCAPED";
+"_149" -> "CALLUSED(112)";
+"CALLUSED(46)" -> "_12";
+"cp_108" -> "cp_41";
+"CALLUSED(59)" -> "_17";
+"cp_103" -> "cp_42";
+"CALLUSED(72)" -> "_22";
+"cp_98" -> "cp_43";
+"CALLUSED(83)" -> "_127";
+"doubledereftmp(87)" -> "ESCAPED";
+"CALLUSED(91)" -> "_136";
+"CALLUSED(95)" -> "_138";
+"_138" -> "ESCAPED";
+"CALLUSED(100)" -> "_28";
+"cp_77" -> "cp_44";
+"cp_77" -> "cp_45";
+"cp_78" -> "cp_44";
+"cp_44" -> "CALLUSED(108)";
+"CALLUSED(108)" -> "_140";
+"CALLUSED(112)" -> "_31";
+"cp_81" -> "cp_45";
+"cp_45" -> "cp_46";
+"cp_45" -> "cp_47";
+"cp_82" -> "cp_46";
+"cp_46" -> "CALLUSED(121)";
+"CALLUSED(121)" -> "_142";
+"CALLUSED(125)" -> "_34";
+"cp_85" -> "cp_47";
+"cp_47" -> "cp_48";
+"cp_86" -> "cp_48";
+"cp_48" -> "CALLUSED(140)";
+"CALLUSED(140)" -> "_144";
+"CALLUSED(144)" -> "_39";
+}
+
+
+
+Points-to sets
+
+ANYTHING = { ANYTHING }
+ESCAPED = { NULL STRING ESCAPED NONLOCAL cpu_MHz model_name vendor_id buffer }
+NONLOCAL = { ESCAPED NONLOCAL } same as info_73
+STOREDANYTHING = { }
+INTEGER = { ANYTHING }
+model = { NONLOCAL }
+cache = { NONLOCAL } same as model
+derefaddrtmp(10) = { NULL }
+_1 = { ESCAPED NONLOCAL }
+_2 = { ESCAPED NONLOCAL }
+cpu_MHz = { ESCAPED NONLOCAL } same as _3
+_3 = { ESCAPED NONLOCAL }
+model_name = { ESCAPED NONLOCAL } same as _4
+_4 = { ESCAPED NONLOCAL }
+vendor_id = { ESCAPED NONLOCAL } same as _149
+fopen = { }
+info_73 = { ESCAPED NONLOCAL }
+strlen = { }
+CALLUSED(21) = { ESCAPED NONLOCAL buffer }
+CALLCLOBBERED(22) = { }
+buffer = { ESCAPED NONLOCAL }
+_5 = { ESCAPED NONLOCAL buffer }
+buffer_end_94 = { buffer }
+strncmp = { }
+CALLUSED(27) = { STRING ESCAPED NONLOCAL buffer }
+CALLCLOBBERED(28) = { }
+_6 = { STRING ESCAPED NONLOCAL buffer }
+cpus_116 = { NULL NONLOCAL }
+cpus_49 = { NULL NONLOCAL } same as cpus_116
+CALLUSED(32) = { STRING ESCAPED NONLOCAL buffer }
+CALLCLOBBERED(33) = { }
+_7 = { STRING ESCAPED NONLOCAL buffer }
+cp_113 = { buffer }
+cp_40 = { buffer }
+_112 = { ESCAPED NONLOCAL }
+_8 = { }
+_9 = { }
+_10 = { }
+_11 = { ESCAPED NONLOCAL } same as _112
+_122 = { vendor_id }
+_182 = { vendor_id } same as _122
+_149 = { ESCAPED NONLOCAL }
+removeNewLine.part.1 = { }
+CALLUSED(46) = { STRING ESCAPED NONLOCAL buffer }
+CALLCLOBBERED(47) = { }
+_12 = { STRING ESCAPED NONLOCAL buffer }
+cp_108 = { buffer }
+cp_41 = { buffer }
+_107 = { ESCAPED NONLOCAL }
+_13 = { }
+_14 = { }
+_15 = { }
+_16 = { ESCAPED NONLOCAL } same as _107
+_124 = { model_name }
+_179 = { model_name } same as _124
+_150 = { ESCAPED NONLOCAL } same as _4
+CALLUSED(59) = { STRING ESCAPED NONLOCAL buffer }
+CALLCLOBBERED(60) = { }
+_17 = { STRING ESCAPED NONLOCAL buffer }
+cp_103 = { buffer }
+cp_42 = { buffer }
+_102 = { ESCAPED NONLOCAL }
+_18 = { }
+_19 = { }
+_20 = { }
+_21 = { ESCAPED NONLOCAL } same as _102
+_126 = { cpu_MHz }
+_176 = { cpu_MHz } same as _126
+_151 = { ESCAPED NONLOCAL } same as _3
+CALLUSED(72) = { STRING ESCAPED NONLOCAL buffer }
+CALLCLOBBERED(73) = { }
+_22 = { STRING ESCAPED NONLOCAL buffer }
+cp_98 = { buffer }
+cp_43 = { buffer }
+_97 = { ESCAPED NONLOCAL }
+_23 = { }
+_24 = { }
+_25 = { }
+_26 = { ESCAPED NONLOCAL } same as _97
+__builtin_object_size = { }
+CALLUSED(83) = { ESCAPED NONLOCAL }
+CALLCLOBBERED(84) = { }
+_127 = { ESCAPED NONLOCAL }
+_128 = { NONLOCAL } same as model
+doubledereftmp(87) = { ESCAPED NONLOCAL }
+_152 = { ESCAPED NONLOCAL } same as _1
+*fgets = { }
+_134 = { ESCAPED NONLOCAL } same as info_73
+CALLUSED(91) = { ESCAPED NONLOCAL }
+CALLCLOBBERED(92) = { }
+_136 = { ESCAPED NONLOCAL }
+_137 = { NONLOCAL } same as model
+CALLUSED(95) = { ESCAPED NONLOCAL }
+CALLCLOBBERED(96) = { }
+_138 = { ESCAPED NONLOCAL }
+__sprintf_chk = { }
+_139 = { ESCAPED NONLOCAL } same as info_73
+CALLUSED(100) = { ESCAPED NONLOCAL }
+CALLCLOBBERED(101) = { }
+_28 = { ESCAPED NONLOCAL }
+cp_77 = { NONLOCAL }
+_29 = { ESCAPED NONLOCAL } same as _149
+cp_78 = { NONLOCAL }
+derefaddrtmp(106) = { NONLOCAL } same as model
+cp_44 = { NONLOCAL }
+CALLUSED(108) = { ESCAPED NONLOCAL }
+CALLCLOBBERED(109) = { }
+_140 = { ESCAPED NONLOCAL }
+_141 = { NONLOCAL } same as cp_44
+CALLUSED(112) = { ESCAPED NONLOCAL vendor_id }
+CALLCLOBBERED(113) = { }
+_31 = { ESCAPED NONLOCAL vendor_id }
+cp_81 = { NONLOCAL }
+cp_45 = { NONLOCAL }
+_32 = { ESCAPED NONLOCAL } same as _4
+cp_82 = { NONLOCAL }
+derefaddrtmp(119) = { NONLOCAL } same as model
+cp_46 = { NONLOCAL }
+CALLUSED(121) = { ESCAPED NONLOCAL }
+CALLCLOBBERED(122) = { }
+_142 = { ESCAPED NONLOCAL }
+_143 = { NONLOCAL } same as cp_46
+CALLUSED(125) = { ESCAPED NONLOCAL model_name }
+CALLCLOBBERED(126) = { }
+_34 = { ESCAPED NONLOCAL model_name }
+cp_85 = { NONLOCAL }
+cp_47 = { NONLOCAL }
+_35 = { ESCAPED NONLOCAL } same as _3
+cp_86 = { NONLOCAL }
+derefaddrtmp(132) = { NONLOCAL } same as model
+cp_48 = { NONLOCAL }
+strtod = { }
+_148 = { ESCAPED NONLOCAL } same as info_73
+f_88 = { ESCAPED NONLOCAL } same as info_73
+_38 = { ESCAPED NONLOCAL } same as info_73
+i_89 = { ESCAPED NONLOCAL } same as info_73
+_147 = { ESCAPED NONLOCAL } same as info_73
+CALLUSED(140) = { ESCAPED NONLOCAL }
+CALLCLOBBERED(141) = { }
+_144 = { ESCAPED NONLOCAL }
+_145 = { NONLOCAL } same as cp_48
+CALLUSED(144) = { ESCAPED NONLOCAL cpu_MHz }
+CALLCLOBBERED(145) = { }
+_39 = { ESCAPED NONLOCAL cpu_MHz }
+cp_92 = { NONLOCAL }
+fclose = { }
+
+
+Alias information for readProcCpuInfo
+
+Aliased symbols
+
+cpu_MHz, UID D.3353, char[1024], is addressable
+model_name, UID D.3352, char[1024], is addressable
+vendor_id, UID D.3351, char[1024], is addressable
+buffer, UID D.3350, char[1024], is addressable
+
+Call clobber information
+
+ESCAPED, points-to non-local, points-to NULL, points-to vars: { D.3350 D.3351 D.3352 D.3353 } (escaped)
+
+Flow-insensitive points-to information
+
+cp_40, points-to NULL, points-to vars: { D.3350 } (escaped)
+cp_41, points-to NULL, points-to vars: { D.3350 } (escaped)
+cp_42, points-to NULL, points-to vars: { D.3350 } (escaped)
+cp_43, points-to NULL, points-to vars: { D.3350 } (escaped)
+cp_44, points-to non-local, points-to NULL, points-to vars: { }
+cp_45, points-to non-local, points-to NULL, points-to vars: { }
+cp_46, points-to non-local, points-to NULL, points-to vars: { }
+cp_47, points-to non-local, points-to NULL, points-to vars: { }
+cp_48, points-to non-local, points-to NULL, points-to vars: { }
+cache_65(D), points-to non-local, points-to NULL, points-to vars: { }
+model_67(D), points-to non-local, points-to NULL, points-to vars: { }
+info_73, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+cp_77, points-to non-local, points-to NULL, points-to vars: { }
+cp_78, points-to non-local, points-to NULL, points-to vars: { }
+cp_81, points-to non-local, points-to NULL, points-to vars: { }
+cp_82, points-to non-local, points-to NULL, points-to vars: { }
+cp_85, points-to non-local, points-to NULL, points-to vars: { }
+cp_86, points-to non-local, points-to NULL, points-to vars: { }
+cp_92, points-to non-local, points-to NULL, points-to vars: { }
+buffer_end_94, points-to NULL, points-to vars: { D.3350 } (escaped)
+cp_98, points-to NULL, points-to vars: { D.3350 } (escaped)
+cp_103, points-to NULL, points-to vars: { D.3350 } (escaped)
+cp_108, points-to NULL, points-to vars: { D.3350 } (escaped)
+cp_113, points-to NULL, points-to vars: { D.3350 } (escaped)
+_122, points-to NULL, points-to vars: { D.3351 } (escaped)
+_124, points-to NULL, points-to vars: { D.3352 } (escaped)
+_126, points-to NULL, points-to vars: { D.3353 } (escaped)
+_128, points-to non-local, points-to NULL, points-to vars: { }
+_134, points-to non-local, points-to escaped, points-to NULL, points-to vars: { }
+_137, points-to non-local, points-to NULL, points-to vars: { }
+_141, points-to non-local, points-to NULL, points-to vars: { }
+_143, points-to non-local, points-to NULL, points-to vars: { }
+_145, points-to non-local, points-to NULL, points-to vars: { }
+_176, points-to NULL, points-to vars: { D.3353 } (escaped)
+_179, points-to NULL, points-to vars: { D.3352 } (escaped)
+_182, points-to NULL, points-to vars: { D.3351 } (escaped)
+
+readProcCpuInfo (char * model, char * cache)
+{
+  double D.3554;
+  int D.3552;
+  char * D.3549;
+  char * D.3546;
+  char * D.3543;
+  int D.3540;
+  char * D.3537;
+  char * D.3534;
+  char * D.3530;
+  char * D.3527;
+  char * D.3524;
+  char * D.3521;
+  float f;
+  int i;
+  char cpu_MHz[1024];
+  char model_name[1024];
+  char vendor_id[1024];
+  char buffer[1024];
+  char * buffer_end;
+  int cpus;
+  char * cp;
+  struct FILE * info;
+  char _1;
+  char _2;
+  char _3;
+  char _4;
+  long unsigned int _5;
+  int _6;
+  int _7;
+  _Bool _8;
+  _Bool _9;
+  _Bool _10;
+  char _11;
+  int _12;
+  _Bool _13;
+  _Bool _14;
+  _Bool _15;
+  char _16;
+  int _17;
+  _Bool _18;
+  _Bool _19;
+  _Bool _20;
+  char _21;
+  int _22;
+  _Bool _23;
+  _Bool _24;
+  _Bool _25;
+  char _26;
+  long unsigned int _28;
+  char _29;
+  long unsigned int _31;
+  char _32;
+  long unsigned int _34;
+  char _35;
+  float _38;
+  long unsigned int _39;
+  char _97;
+  char _102;
+  char _107;
+  char _112;
+  char * _122;
+  char * _124;
+  char * _126;
+  long unsigned int _127;
+  char * _128;
+  char * _134;
+  long unsigned int _136;
+  char * _137;
+  long unsigned int _138;
+  int _139;
+  long unsigned int _140;
+  char * _141;
+  long unsigned int _142;
+  char * _143;
+  long unsigned int _144;
+  char * _145;
+  int _147;
+  double _148;
+  char _149;
+  char _150;
+  char _151;
+  char _152;
+
+  <bb 2> [0.00%]:
+  *cache_65(D) = 0;
+  _1 = *cache_65(D);
+  *model_67(D) = _1;
+  _2 = *model_67(D);
+  cpu_MHz[0] = _2;
+  _3 = cpu_MHz[0];
+  model_name[0] = _3;
+  _4 = model_name[0];
+  vendor_id[0] = _4;
+  info_73 = fopen ("/proc/cpuinfo", "r");
+  if (info_73 != 0B)
+    goto <bb 41>; [0.00%]
+  else
+    goto <bb 59>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _5 = strlen (&buffer);
+  buffer_end_94 = &buffer + _5;
+  _6 = strncmp (&buffer, "processor", 9);
+  if (_6 == 0)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  cpus_116 = cpus_49 + 1;
+  goto <bb 41>; [0.00%]
+
+  <bb 5> [0.00%]:
+  _7 = strncmp (&buffer, "vendor_id", 9);
+  if (_7 == 0)
+    goto <bb 7>; [0.00%]
+  else
+    goto <bb 14>; [0.00%]
+
+  <bb 6> [0.00%]:
+  cp_113 = cp_40 + 1;
+
+  <bb 7> [0.00%]:
+  # cp_40 = PHI <&MEM[(void *)&buffer + 9B](5), cp_113(6)>
+  if (cp_40 < buffer_end_94)
+    goto <bb 8>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 8> [0.00%]:
+  _112 = *cp_40;
+  _8 = _112 == 32;
+  _9 = _112 == 58;
+  _10 = _8 | _9;
+  if (_10 != 0)
+    goto <bb 6>; [0.00%]
+  else
+    goto <bb 9>; [0.00%]
+
+  <bb 9> [0.00%]:
+  _11 = *cp_40;
+  if (_11 == 9)
+    goto <bb 6>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 10> [0.00%]:
+  if (cp_40 < buffer_end_94)
+    goto <bb 11>; [0.00%]
+  else
+    goto <bb 12>; [0.00%]
+
+  <bb 11> [100.00%]:
+  _122 = __builtin___strcpy_chk (&vendor_id, cp_40, 1024);
+  _182 = _122;
+
+  <bb 12> [100.00%]:
+  _149 = MEM[(const char *)&vendor_id];
+  if (_149 != 0)
+    goto <bb 13>; [54.00%]
+  else
+    goto <bb 41>; [46.00%]
+
+  <bb 13> [54.00%]:
+  removeNewLine.part.1 (&vendor_id);
+  goto <bb 41>; [100.00%]
+
+  <bb 14> [0.00%]:
+  _12 = strncmp (&buffer, "model name", 10);
+  if (_12 == 0)
+    goto <bb 16>; [0.00%]
+  else
+    goto <bb 23>; [0.00%]
+
+  <bb 15> [0.00%]:
+  cp_108 = cp_41 + 1;
+
+  <bb 16> [0.00%]:
+  # cp_41 = PHI <&MEM[(void *)&buffer + 10B](14), cp_108(15)>
+  if (cp_41 < buffer_end_94)
+    goto <bb 17>; [0.00%]
+  else
+    goto <bb 19>; [0.00%]
+
+  <bb 17> [0.00%]:
+  _107 = *cp_41;
+  _13 = _107 == 32;
+  _14 = _107 == 58;
+  _15 = _13 | _14;
+  if (_15 != 0)
+    goto <bb 15>; [0.00%]
+  else
+    goto <bb 18>; [0.00%]
+
+  <bb 18> [0.00%]:
+  _16 = *cp_41;
+  if (_16 == 9)
+    goto <bb 15>; [0.00%]
+  else
+    goto <bb 19>; [0.00%]
+
+  <bb 19> [0.00%]:
+  if (cp_41 < buffer_end_94)
+    goto <bb 20>; [0.00%]
+  else
+    goto <bb 21>; [0.00%]
+
+  <bb 20> [100.00%]:
+  _124 = __builtin___strcpy_chk (&model_name, cp_41, 1024);
+  _179 = _124;
+
+  <bb 21> [100.00%]:
+  _150 = MEM[(const char *)&model_name];
+  if (_150 != 0)
+    goto <bb 22>; [54.00%]
+  else
+    goto <bb 41>; [46.00%]
+
+  <bb 22> [54.00%]:
+  removeNewLine.part.1 (&model_name);
+  goto <bb 41>; [100.00%]
+
+  <bb 23> [0.00%]:
+  _17 = strncmp (&buffer, "cpu MHz", 7);
+  if (_17 == 0)
+    goto <bb 25>; [0.00%]
+  else
+    goto <bb 32>; [0.00%]
+
+  <bb 24> [0.00%]:
+  cp_103 = cp_42 + 1;
+
+  <bb 25> [0.00%]:
+  # cp_42 = PHI <&MEM[(void *)&buffer + 7B](23), cp_103(24)>
+  if (cp_42 < buffer_end_94)
+    goto <bb 26>; [0.00%]
+  else
+    goto <bb 28>; [0.00%]
+
+  <bb 26> [0.00%]:
+  _102 = *cp_42;
+  _18 = _102 == 32;
+  _19 = _102 == 58;
+  _20 = _18 | _19;
+  if (_20 != 0)
+    goto <bb 24>; [0.00%]
+  else
+    goto <bb 27>; [0.00%]
+
+  <bb 27> [0.00%]:
+  _21 = *cp_42;
+  if (_21 == 9)
+    goto <bb 24>; [0.00%]
+  else
+    goto <bb 28>; [0.00%]
+
+  <bb 28> [0.00%]:
+  if (cp_42 < buffer_end_94)
+    goto <bb 29>; [0.00%]
+  else
+    goto <bb 30>; [0.00%]
+
+  <bb 29> [100.00%]:
+  _126 = __builtin___strcpy_chk (&cpu_MHz, cp_42, 1024);
+  _176 = _126;
+
+  <bb 30> [100.00%]:
+  _151 = MEM[(const char *)&cpu_MHz];
+  if (_151 != 0)
+    goto <bb 31>; [54.00%]
+  else
+    goto <bb 41>; [46.00%]
+
+  <bb 31> [54.00%]:
+  removeNewLine.part.1 (&cpu_MHz);
+  goto <bb 41>; [100.00%]
+
+  <bb 32> [0.00%]:
+  _22 = strncmp (&buffer, "cache size", 10);
+  if (_22 == 0)
+    goto <bb 34>; [0.00%]
+  else
+    goto <bb 41>; [0.00%]
+
+  <bb 33> [0.00%]:
+  cp_98 = cp_43 + 1;
+
+  <bb 34> [0.00%]:
+  # cp_43 = PHI <&MEM[(void *)&buffer + 10B](32), cp_98(33)>
+  if (cp_43 < buffer_end_94)
+    goto <bb 35>; [0.00%]
+  else
+    goto <bb 37>; [0.00%]
+
+  <bb 35> [0.00%]:
+  _97 = *cp_43;
+  _23 = _97 == 32;
+  _24 = _97 == 58;
+  _25 = _23 | _24;
+  if (_25 != 0)
+    goto <bb 33>; [0.00%]
+  else
+    goto <bb 36>; [0.00%]
+
+  <bb 36> [0.00%]:
+  _26 = *cp_43;
+  if (_26 == 9)
+    goto <bb 33>; [0.00%]
+  else
+    goto <bb 37>; [0.00%]
+
+  <bb 37> [0.00%]:
+  if (cp_43 < buffer_end_94)
+    goto <bb 38>; [0.00%]
+  else
+    goto <bb 39>; [0.00%]
+
+  <bb 38> [100.00%]:
+  _127 = __builtin_object_size (cache_65(D), 1);
+  _128 = __builtin___strcpy_chk (cache_65(D), cp_43, _127);
+
+  <bb 39> [100.00%]:
+  _152 = MEM[(const char *)cache_65(D)];
+  if (_152 != 0)
+    goto <bb 40>; [54.00%]
+  else
+    goto <bb 41>; [46.00%]
+
+  <bb 40> [54.00%]:
+  removeNewLine.part.1 (cache_65(D));
+
+  <bb 41> [100.00%]:
+  # cpus_49 = PHI <0(2), cpus_116(4), cpus_49(13), cpus_49(22), cpus_49(31), cpus_49(32), cpus_49(40), cpus_49(12), cpus_49(21), cpus_49(30), cpus_49(39)>
+  _134 = __fgets_alias (&buffer, 1024, info_73);
+  if (_134 != 0B)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 42>; [0.00%]
+
+  <bb 42> [0.00%]:
+  if (cpus_49 > 1)
+    goto <bb 43>; [0.00%]
+  else
+    goto <bb 46>; [0.00%]
+
+  <bb 43> [0.00%]:
+  if (cpus_49 == 2)
+    goto <bb 44>; [0.00%]
+  else
+    goto <bb 45>; [0.00%]
+
+  <bb 44> [100.00%]:
+  _136 = __builtin_object_size (model_67(D), 1);
+  _137 = __builtin___strcpy_chk (model_67(D), "Dual", _136);
+  goto <bb 46>; [100.00%]
+
+  <bb 45> [100.00%]:
+  _138 = __builtin_object_size (model_67(D), 1);
+  _139 = __builtin___sprintf_chk (model_67(D), 1, _138, "%d CPU", cpus_49);
+
+  <bb 46> [0.00%]:
+  _28 = strlen (model_67(D));
+  cp_77 = model_67(D) + _28;
+  _29 = vendor_id[0];
+  if (_29 != 0)
+    goto <bb 47>; [0.00%]
+  else
+    goto <bb 50>; [0.00%]
+
+  <bb 47> [0.00%]:
+  if (model_67(D) != cp_77)
+    goto <bb 48>; [0.00%]
+  else
+    goto <bb 49>; [0.00%]
+
+  <bb 48> [0.00%]:
+  cp_78 = cp_77 + 1;
+  *cp_77 = 32;
+
+  <bb 49> [100.00%]:
+  # cp_44 = PHI <cp_77(47), cp_78(48)>
+  _140 = __builtin_object_size (cp_44, 1);
+  _141 = __builtin___strcpy_chk (cp_44, &vendor_id, _140);
+  _31 = strlen (&vendor_id);
+  cp_81 = cp_44 + _31;
+
+  <bb 50> [0.00%]:
+  # cp_45 = PHI <cp_77(46), cp_81(49)>
+  _32 = model_name[0];
+  if (_32 != 0)
+    goto <bb 51>; [0.00%]
+  else
+    goto <bb 54>; [0.00%]
+
+  <bb 51> [0.00%]:
+  if (cp_45 != model_67(D))
+    goto <bb 52>; [0.00%]
+  else
+    goto <bb 53>; [0.00%]
+
+  <bb 52> [0.00%]:
+  cp_82 = cp_45 + 1;
+  *cp_45 = 32;
+
+  <bb 53> [100.00%]:
+  # cp_46 = PHI <cp_45(51), cp_82(52)>
+  _142 = __builtin_object_size (cp_46, 1);
+  _143 = __builtin___strcpy_chk (cp_46, &model_name, _142);
+  _34 = strlen (&model_name);
+  cp_85 = cp_46 + _34;
+
+  <bb 54> [0.00%]:
+  # cp_47 = PHI <cp_45(50), cp_85(53)>
+  _35 = cpu_MHz[0];
+  if (_35 != 0)
+    goto <bb 55>; [0.00%]
+  else
+    goto <bb 58>; [0.00%]
+
+  <bb 55> [0.00%]:
+  if (cp_47 != model_67(D))
+    goto <bb 56>; [0.00%]
+  else
+    goto <bb 57>; [0.00%]
+
+  <bb 56> [0.00%]:
+  cp_86 = cp_47 + 1;
+  *cp_47 = 32;
+
+  <bb 57> [100.00%]:
+  # cp_48 = PHI <cp_47(55), cp_86(56)>
+  _148 = strtod (&cpu_MHz, 0B);
+  f_88 = (float) _148;
+  _38 = f_88 + 5.0e-1;
+  i_89 = (int) _38;
+  _147 = __builtin___sprintf_chk (&cpu_MHz, 1, 1024, "%dMHz", i_89);
+  _144 = __builtin_object_size (cp_48, 1);
+  _145 = __builtin___strcpy_chk (cp_48, &cpu_MHz, _144);
+  _39 = strlen (&cpu_MHz);
+  cp_92 = cp_48 + _39;
+
+  <bb 58> [0.00%]:
+  fclose (info_73);
+
+  <bb 59> [0.00%]:
+  buffer ={v} {CLOBBER};
+  vendor_id ={v} {CLOBBER};
+  model_name ={v} {CLOBBER};
+  cpu_MHz ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function hardware (hardware, funcdef_no=56, decl_uid=3373, cgraph_uid=56, symbol_order=56)
+
+Points-to analysis
+
+Constraints:
+
+ANYTHING = &ANYTHING
+ESCAPED = *ESCAPED
+ESCAPED = ESCAPED + UNKNOWN
+*ESCAPED = NONLOCAL
+NONLOCAL = &NONLOCAL
+NONLOCAL = &ESCAPED
+INTEGER = &ANYTHING
+write_to_file = &NONLOCAL
+global_ofile = &NONLOCAL
+ESCAPED = &os_command
+ESCAPED = &os
+_1 = &os
+_1 = &NULL
+ESCAPED = &model
+ESCAPED = &cache
+model = &NULL
+cache = &NULL
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &model
+_27 = NONLOCAL
+ESCAPED = &buffer
+ESCAPED = write_to_file
+ESCAPED = global_ofile
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &cache
+_25 = NONLOCAL
+ESCAPED = &buffer
+ESCAPED = write_to_file
+ESCAPED = global_ofile
+ESCAPED = &buffer
+ESCAPED = &NONLOCAL
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = &os
+_23 = NONLOCAL
+ESCAPED = &buffer
+ESCAPED = write_to_file
+ESCAPED = global_ofile
+
+Collapsing static cycles and doing variable substitution
+Building predecessor graph
+Detecting pointer and location equivalences
+
+
+// The constraint graph before var-substitution in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING"[label="ANYTHING = { 2 }"];
+"STRING";
+"ESCAPED"[label="ESCAPED = { 3 5 10 12 15 16 18 }"];
+"NONLOCAL"[label="NONLOCAL = { 4 5 }"];
+"STOREDANYTHING";
+"INTEGER"[label="INTEGER = { 2 }"];
+"write_to_file"[label="write_to_file = { 5 }"];
+"global_ofile"[label="global_ofile = { 5 }"];
+"os_command";
+"runCommand";
+"os";
+"_1"[label="_1 = { 1 12 }"];
+"readProcCpuInfo";
+"model"[label="model = { 1 }"];
+"cache"[label="cache = { 1 }"];
+"__sprintf_chk";
+"buffer";
+"_27";
+"output_string";
+"_25";
+"_23";
+"*NULL";
+"*ANYTHING";
+"*STRING";
+"*ESCAPED";
+"*NONLOCAL";
+"*STOREDANYTHING";
+"*INTEGER";
+"*write_to_file";
+"*global_ofile";
+"*os_command";
+"*runCommand";
+"*os";
+"*_1";
+"*readProcCpuInfo";
+"*model";
+"*cache";
+"*__sprintf_chk";
+"*buffer";
+"*_27";
+"*output_string";
+"*_25";
+"*_23";
+
+  // Edges in the constraint graph:
+"write_to_file" -> "ESCAPED";
+"global_ofile" -> "ESCAPED";
+"*ESCAPED" -> "ESCAPED";
+"NONLOCAL" -> "_27";
+"NONLOCAL" -> "_25";
+"NONLOCAL" -> "_23";
+"NONLOCAL" -> "*ESCAPED";
+}
+
+
+Rewriting constraints and unifying variables
+Uniting pointer but not location equivalent variables
+Finding indirect cycles
+
+
+// The constraint graph before solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = NONLOCAL\l"];
+"STOREDANYTHING";
+"INTEGER";
+"write_to_file";
+"os_command";
+"runCommand";
+"os";
+"_1";
+"readProcCpuInfo";
+"model";
+"cache";
+"__sprintf_chk";
+"buffer";
+"_27";
+"output_string";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "os_command";
+"STOREDANYTHING" -> "os";
+"STOREDANYTHING" -> "model";
+"STOREDANYTHING" -> "cache";
+"STOREDANYTHING" -> "buffer";
+"write_to_file" -> "ESCAPED";
+}
+
+
+Solving graph
+
+
+// The constraint graph after solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = _27\l"];
+"STOREDANYTHING";
+"INTEGER";
+"write_to_file";
+"os_command";
+"runCommand";
+"os";
+"_1";
+"readProcCpuInfo";
+"model";
+"cache";
+"__sprintf_chk";
+"buffer";
+"_27";
+"output_string";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"STOREDANYTHING" -> "os_command";
+"STOREDANYTHING" -> "os";
+"STOREDANYTHING" -> "model";
+"STOREDANYTHING" -> "cache";
+"STOREDANYTHING" -> "buffer";
+"write_to_file" -> "ESCAPED";
+"os_command" -> "ESCAPED";
+"os" -> "ESCAPED";
+"model" -> "ESCAPED";
+"cache" -> "ESCAPED";
+"buffer" -> "ESCAPED";
+"_27" -> "ESCAPED";
+"_27" -> "os_command";
+"_27" -> "os";
+"_27" -> "model";
+"_27" -> "cache";
+"_27" -> "buffer";
+}
+
+
+
+Points-to sets
+
+ANYTHING = { ANYTHING }
+ESCAPED = { NULL STRING ESCAPED NONLOCAL os_command os model cache buffer }
+NONLOCAL = { ESCAPED NONLOCAL } same as _27
+STOREDANYTHING = { }
+INTEGER = { ANYTHING }
+write_to_file = { NONLOCAL }
+global_ofile = { NONLOCAL } same as write_to_file
+os_command = { ESCAPED NONLOCAL }
+runCommand = { }
+os = { ESCAPED NONLOCAL }
+_1 = { NULL os }
+readProcCpuInfo = { }
+model = { NULL ESCAPED NONLOCAL }
+cache = { NULL ESCAPED NONLOCAL }
+__sprintf_chk = { }
+buffer = { ESCAPED NONLOCAL }
+_27 = { ESCAPED NONLOCAL }
+output_string = { }
+_25 = { ESCAPED NONLOCAL } same as _27
+_23 = { ESCAPED NONLOCAL } same as _27
+
+
+Alias information for hardware
+
+Aliased symbols
+
+os_command, UID D.3379, char[12], is addressable
+cache, UID D.3378, char[1024], is addressable
+model, UID D.3377, char[1024], is addressable
+os, UID D.3376, char[1024], is addressable
+buffer, UID D.3375, char[1024], is addressable
+
+Call clobber information
+
+ESCAPED, points-to non-local, points-to NULL, points-to vars: { D.3375 D.3376 D.3377 D.3378 D.3379 } (escaped)
+
+Flow-insensitive points-to information
+
+_1, points-to NULL, points-to vars: { D.3376 } (escaped)
+global_ofile_11(D), points-to non-local, points-to NULL, points-to vars: { }
+
+hardware (const int write_to_file, struct FILE * global_ofile)
+{
+  int D.3568;
+  int D.3565;
+  int D.3562;
+  char os_command[12];
+  char cache[1024];
+  char model[1024];
+  char os[1024];
+  char buffer[1024];
+  char * _1;
+  int _23;
+  int _25;
+  int _27;
+
+  <bb 2> [0.00%]:
+  os_command = "uname -s -r";
+  runCommand (&os_command, &os);
+  _1 = strstr (&os, "Linux");
+  if (_1 != 0B)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  readProcCpuInfo (&model, &cache);
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  model[0] = 0;
+  cache[0] = 0;
+
+  <bb 5> [100.00%]:
+  _27 = __builtin___sprintf_chk (&buffer, 1, 1024, "CPU                 : %s\n", &model);
+  output_string (&buffer, write_to_file_10(D), global_ofile_11(D));
+  _25 = __builtin___sprintf_chk (&buffer, 1, 1024, "L2 Cache            : %s\n", &cache);
+  output_string (&buffer, write_to_file_10(D), global_ofile_11(D));
+  _23 = __builtin___sprintf_chk (&buffer, 1, 1024, "OS                  : %s\n", &os);
+  output_string (&buffer, write_to_file_10(D), global_ofile_11(D));
+  buffer ={v} {CLOBBER};
+  os ={v} {CLOBBER};
+  model ={v} {CLOBBER};
+  cache ={v} {CLOBBER};
+  os_command ={v} {CLOBBER};
+  return;
+
+}
+
+

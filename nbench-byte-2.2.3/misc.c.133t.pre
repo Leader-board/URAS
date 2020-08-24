@@ -1,0 +1,659 @@
+
+;; Function randwc (randwc, funcdef_no=23, decl_uid=2514, cgraph_uid=23, symbol_order=23)
+
+Points-to analysis
+
+Constraints:
+
+ANYTHING = &ANYTHING
+ESCAPED = *ESCAPED
+ESCAPED = ESCAPED + UNKNOWN
+*ESCAPED = NONLOCAL
+NONLOCAL = &NONLOCAL
+NONLOCAL = &ESCAPED
+INTEGER = &ANYTHING
+num = &NONLOCAL
+randw.2530 = NONLOCAL
+_4 = randw.2530
+_5 = _4
+_5 = &NONLOCAL
+_6 = randw.2530
+_7 = _6
+_7 = &NONLOCAL
+_8 = _5
+_8 = _7
+interm_9 = _8
+interm_9 = &NONLOCAL
+randw.2530 = _4
+ESCAPED = _4
+randw.2530 = interm_9
+ESCAPED = interm_9
+_3 = interm_9
+_3 = num
+ESCAPED = _3
+
+Collapsing static cycles and doing variable substitution
+Building predecessor graph
+Detecting pointer and location equivalences
+
+
+// The constraint graph before var-substitution in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING"[label="ANYTHING = { 2 }"];
+"STRING";
+"ESCAPED";
+"NONLOCAL"[label="NONLOCAL = { 4 5 }"];
+"STOREDANYTHING";
+"INTEGER"[label="INTEGER = { 2 }"];
+"num"[label="num = { 5 }"];
+"_4"[label="_4 = { 5 }"];
+"_3";
+"*NULL";
+"*ANYTHING";
+"*STRING";
+"*STOREDANYTHING";
+"*INTEGER";
+"*num";
+
+  // Edges in the constraint graph:
+"NONLOCAL" -> "ESCAPED";
+"_4" -> "ESCAPED";
+"_4" -> "ESCAPED";
+"_3" -> "ESCAPED";
+"ESCAPED" -> "ESCAPED";
+"NONLOCAL" -> "_4";
+"_4" -> "_4";
+"_4" -> "_4";
+"_4" -> "_4";
+"_4" -> "_4";
+"_4" -> "_4";
+"_4" -> "_4";
+"_4" -> "_4";
+"num" -> "_3";
+"_4" -> "_3";
+}
+
+
+Rewriting constraints and unifying variables
+Uniting pointer but not location equivalent variables
+Finding indirect cycles
+
+
+// The constraint graph before solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = NONLOCAL\l"];
+"STOREDANYTHING";
+"INTEGER";
+"num";
+"randw.2530";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"num" -> "randw.2530";
+"randw.2530" -> "ESCAPED";
+}
+
+
+Solving graph
+
+
+// The constraint graph after solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = randw.2530\l"];
+"STOREDANYTHING";
+"INTEGER";
+"num";
+"randw.2530";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"num" -> "randw.2530";
+"randw.2530" -> "ESCAPED";
+}
+
+
+
+Points-to sets
+
+ANYTHING = { ANYTHING }
+ESCAPED = { ESCAPED NONLOCAL }
+NONLOCAL = { ESCAPED NONLOCAL } same as randw.2530
+STOREDANYTHING = { }
+INTEGER = { ANYTHING }
+num = { NONLOCAL }
+_4 = { ESCAPED NONLOCAL } same as randw.2530
+randw.2530 = { ESCAPED NONLOCAL }
+_5 = { ESCAPED NONLOCAL } same as randw.2530
+_6 = { ESCAPED NONLOCAL } same as randw.2530
+_7 = { ESCAPED NONLOCAL } same as randw.2530
+_8 = { ESCAPED NONLOCAL } same as randw.2530
+interm_9 = { ESCAPED NONLOCAL } same as randw.2530
+_3 = { ESCAPED NONLOCAL } same as randw.2530
+
+
+Alias information for randwc
+
+Aliased symbols
+
+
+Call clobber information
+
+ESCAPED, points-to non-local, points-to vars: { }
+
+Flow-insensitive points-to information
+
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+randwc (int32 num)
+{
+  register int32 interm;
+  static int32 randw[2] = {13, 117};
+  int32 _3;
+  int _4;
+  int _5;
+  int _6;
+  int _7;
+  int _8;
+
+  <bb 2> [100.00%]:
+  _4 = randw[0];
+  _5 = _4 * 254754;
+  _6 = randw[1];
+  _7 = _6 * 529562;
+  _8 = _5 + _7;
+  interm_9 = _8 % 999563;
+  randw[1] = _4;
+  randw[0] = interm_9;
+  _3 = interm_9 % num_2(D);
+  return _3;
+
+}
+
+
+
+;; Function abs_randwc (abs_randwc, funcdef_no=24, decl_uid=2516, cgraph_uid=24, symbol_order=24)
+
+Points-to analysis
+
+Constraints:
+
+ANYTHING = &ANYTHING
+ESCAPED = *ESCAPED
+ESCAPED = ESCAPED + UNKNOWN
+*ESCAPED = NONLOCAL
+NONLOCAL = &NONLOCAL
+NONLOCAL = &ESCAPED
+INTEGER = &ANYTHING
+num = &NONLOCAL
+num.0_1 = num
+randw.2530 = NONLOCAL
+_7 = randw.2530
+_8 = _7
+_8 = &NONLOCAL
+_9 = randw.2530
+_10 = _9
+_10 = &NONLOCAL
+_11 = _8
+_11 = _10
+interm_12 = _11
+interm_12 = &NONLOCAL
+randw.2530 = _7
+ESCAPED = _7
+randw.2530 = interm_12
+ESCAPED = interm_12
+_13 = interm_12
+_13 = num.0_1
+temp_16 = _13
+_6 = temp_16
+ESCAPED = _6
+
+Collapsing static cycles and doing variable substitution
+Building predecessor graph
+Detecting pointer and location equivalences
+
+
+// The constraint graph before var-substitution in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING"[label="ANYTHING = { 2 }"];
+"STRING";
+"ESCAPED";
+"NONLOCAL"[label="NONLOCAL = { 4 5 }"];
+"STOREDANYTHING";
+"INTEGER"[label="INTEGER = { 2 }"];
+"num"[label="num = { 5 }"];
+"num.0_1";
+"_7"[label="_7 = { 5 }"];
+"_13";
+"temp_16";
+"_6";
+"*NULL";
+"*ANYTHING";
+"*STRING";
+"*STOREDANYTHING";
+"*INTEGER";
+"*num";
+"*num.0_1";
+
+  // Edges in the constraint graph:
+"NONLOCAL" -> "ESCAPED";
+"_7" -> "ESCAPED";
+"_7" -> "ESCAPED";
+"_6" -> "ESCAPED";
+"ESCAPED" -> "ESCAPED";
+"num" -> "num.0_1";
+"NONLOCAL" -> "_7";
+"_7" -> "_7";
+"_7" -> "_7";
+"_7" -> "_7";
+"_7" -> "_7";
+"_7" -> "_7";
+"_7" -> "_7";
+"_7" -> "_7";
+"num.0_1" -> "_13";
+"_7" -> "_13";
+"_13" -> "temp_16";
+"temp_16" -> "_6";
+}
+
+
+Rewriting constraints and unifying variables
+Uniting pointer but not location equivalent variables
+Finding indirect cycles
+
+
+// The constraint graph before solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = NONLOCAL\l"];
+"STOREDANYTHING";
+"INTEGER";
+"num";
+"randw.2530";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"num" -> "randw.2530";
+"randw.2530" -> "ESCAPED";
+}
+
+
+Solving graph
+
+
+// The constraint graph after solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = randw.2530\l"];
+"STOREDANYTHING";
+"INTEGER";
+"num";
+"randw.2530";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"num" -> "randw.2530";
+"randw.2530" -> "ESCAPED";
+}
+
+
+
+Points-to sets
+
+ANYTHING = { ANYTHING }
+ESCAPED = { ESCAPED NONLOCAL }
+NONLOCAL = { ESCAPED NONLOCAL } same as randw.2530
+STOREDANYTHING = { }
+INTEGER = { ANYTHING }
+num = { NONLOCAL }
+num.0_1 = { NONLOCAL } same as num
+_7 = { ESCAPED NONLOCAL } same as randw.2530
+randw.2530 = { ESCAPED NONLOCAL }
+_8 = { ESCAPED NONLOCAL } same as randw.2530
+_9 = { ESCAPED NONLOCAL } same as randw.2530
+_10 = { ESCAPED NONLOCAL } same as randw.2530
+_11 = { ESCAPED NONLOCAL } same as randw.2530
+interm_12 = { ESCAPED NONLOCAL } same as randw.2530
+_13 = { ESCAPED NONLOCAL } same as randw.2530
+temp_16 = { ESCAPED NONLOCAL } same as randw.2530
+_6 = { ESCAPED NONLOCAL } same as randw.2530
+
+
+Alias information for abs_randwc
+
+Aliased symbols
+
+
+Call clobber information
+
+ESCAPED, points-to non-local, points-to vars: { }
+
+Flow-insensitive points-to information
+
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+abs_randwc (u32 num)
+{
+  register int32 interm;
+  int32 temp;
+  int num.0_1;
+  u32 _6;
+  int _7;
+  int _8;
+  int _9;
+  int _10;
+  int _11;
+  int _13;
+
+  <bb 2> [100.00%]:
+  num.0_1 = (int) num_3(D);
+  _7 = randw[0];
+  _8 = _7 * 254754;
+  _9 = randw[1];
+  _10 = _9 * 529562;
+  _11 = _8 + _10;
+  interm_12 = _11 % 999563;
+  randw[1] = _7;
+  randw[0] = interm_12;
+  _13 = interm_12 % num.0_1;
+  temp_16 = ABS_EXPR <_13>;
+  _6 = (u32) temp_16;
+  return _6;
+
+}
+
+
+
+;; Function randnum (randnum, funcdef_no=25, decl_uid=2518, cgraph_uid=25, symbol_order=25)
+
+Points-to analysis
+
+Constraints:
+
+ANYTHING = &ANYTHING
+ESCAPED = *ESCAPED
+ESCAPED = ESCAPED + UNKNOWN
+*ESCAPED = NONLOCAL
+NONLOCAL = &NONLOCAL
+NONLOCAL = &ESCAPED
+INTEGER = &ANYTHING
+lngval = &NONLOCAL
+randw.2530 = NONLOCAL
+randw.2530 = &NONLOCAL
+ESCAPED = &NONLOCAL
+randw.2530 = &NONLOCAL
+ESCAPED = &NONLOCAL
+_1 = randw.2530
+_2 = _1
+_2 = &NONLOCAL
+_3 = randw.2530
+_4 = _3
+_4 = &NONLOCAL
+_5 = _2
+_5 = _4
+interm_11 = _5
+interm_11 = &NONLOCAL
+randw.2530 = _1
+ESCAPED = _1
+randw.2530 = interm_11
+ESCAPED = interm_11
+ESCAPED = interm_11
+
+Collapsing static cycles and doing variable substitution
+Building predecessor graph
+Detecting pointer and location equivalences
+
+
+// The constraint graph before var-substitution in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING"[label="ANYTHING = { 2 }"];
+"STRING";
+"ESCAPED"[label="ESCAPED = { 5 }"];
+"NONLOCAL"[label="NONLOCAL = { 4 5 }"];
+"STOREDANYTHING";
+"INTEGER"[label="INTEGER = { 2 }"];
+"lngval"[label="lngval = { 5 }"];
+"_1"[label="_1 = { 5 }"];
+"*NULL";
+"*ANYTHING";
+"*STRING";
+"*STOREDANYTHING";
+"*INTEGER";
+"*lngval";
+
+  // Edges in the constraint graph:
+"NONLOCAL" -> "ESCAPED";
+"_1" -> "ESCAPED";
+"_1" -> "ESCAPED";
+"ESCAPED" -> "ESCAPED";
+"NONLOCAL" -> "_1";
+"_1" -> "_1";
+"_1" -> "_1";
+"_1" -> "_1";
+"_1" -> "_1";
+"_1" -> "_1";
+"_1" -> "_1";
+"_1" -> "_1";
+}
+
+
+Rewriting constraints and unifying variables
+Uniting pointer but not location equivalent variables
+Finding indirect cycles
+
+
+// The constraint graph before solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = NONLOCAL\l"];
+"STOREDANYTHING";
+"INTEGER";
+"lngval";
+"randw.2530";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"randw.2530" -> "ESCAPED";
+}
+
+
+Solving graph
+
+
+// The constraint graph after solve-graph in dot format:
+strict digraph {
+  node [
+    shape = box
+  ]
+  edge [
+    fontsize = "12"
+  ]
+
+  // List of nodes and complex constraints in the constraint graph:
+"NULL";
+"ANYTHING";
+"STRING";
+"ESCAPED" [label="\N\nESCAPED = ESCAPED + UNKNOWN\lESCAPED = *ESCAPED\l*ESCAPED = randw.2530\l"];
+"STOREDANYTHING";
+"INTEGER";
+"lngval";
+"randw.2530";
+
+  // Edges in the constraint graph:
+"STOREDANYTHING" -> "ESCAPED";
+"randw.2530" -> "ESCAPED";
+}
+
+
+
+Points-to sets
+
+ANYTHING = { ANYTHING }
+ESCAPED = { ESCAPED NONLOCAL }
+NONLOCAL = { ESCAPED NONLOCAL } same as randw.2530
+STOREDANYTHING = { }
+INTEGER = { ANYTHING }
+lngval = { NONLOCAL }
+randw.2530 = { ESCAPED NONLOCAL }
+_1 = { ESCAPED NONLOCAL } same as randw.2530
+_2 = { ESCAPED NONLOCAL } same as randw.2530
+_3 = { ESCAPED NONLOCAL } same as randw.2530
+_4 = { ESCAPED NONLOCAL } same as randw.2530
+_5 = { ESCAPED NONLOCAL } same as randw.2530
+interm_11 = { ESCAPED NONLOCAL } same as randw.2530
+
+
+Alias information for randnum
+
+Aliased symbols
+
+
+Call clobber information
+
+ESCAPED, points-to non-local, points-to vars: { }
+
+Flow-insensitive points-to information
+
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 5 3 4
+;; 2 succs { 3 5 }
+;; 5 succs { 4 }
+;; 3 succs { 4 }
+;; 4 succs { 1 }
+randnum (int32 lngval)
+{
+  static int32 randw[2] = {13, 117};
+  register int32 interm;
+  int pretmp_19;
+  int prephitmp_20;
+  int _21;
+  int pretmp_23;
+  int _25;
+  int _27;
+  int _29;
+  int prephitmp_30;
+
+  <bb 2> [100.00%]:
+  if (lngval_7(D) != 0)
+    goto <bb 4>; [54.00%]
+  else
+    goto <bb 3>; [46.00%]
+
+  <bb 3> [46.00%]:
+  pretmp_19 = randw[0];
+  _21 = pretmp_19 * 254754;
+  pretmp_23 = randw[1];
+  _25 = pretmp_23 * 529562;
+  _27 = _21 + _25;
+  _29 = _27 % 999563;
+  goto <bb 5>; [100.00%]
+
+  <bb 4> [54.00%]:
+  randw[0] = 13;
+  randw[1] = 117;
+
+  <bb 5> [100.00%]:
+  # prephitmp_20 = PHI <pretmp_19(3), 13(4)>
+  # prephitmp_30 = PHI <_29(3), 298961(4)>
+  randw[1] = prephitmp_20;
+  randw[0] = prephitmp_30;
+  return prephitmp_30;
+
+}
+
+

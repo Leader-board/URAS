@@ -1,0 +1,730 @@
+
+;; Function hardware (hardware, funcdef_no=56, decl_uid=3373, cgraph_uid=56, symbol_order=56)
+
+can not prove finiteness of loop 1
+hardware (const int write_to_file, struct FILE * global_ofile)
+{
+  struct FILE * info;
+  char * cp;
+  int cpus;
+  char * buffer_end;
+  char buffer[1024];
+  char vendor_id[1024];
+  char model_name[1024];
+  char cpu_MHz[1024];
+  int i;
+  float f;
+  struct FILE * pipe;
+  char os_command[12];
+  char cache[1024];
+  char model[1024];
+  char os[1024];
+  char buffer[1024];
+  char * _1;
+  long unsigned int _5;
+  long unsigned int _11;
+  long unsigned int _13;
+  char _24;
+  char * _25;
+  char _27;
+  long unsigned int _28;
+  sizetype _29;
+  char * _30;
+  char _31;
+  long unsigned int _33;
+  int _35;
+  int _38;
+  char _41;
+  char _46;
+  int _47;
+  char _50;
+  char _55;
+  int _56;
+  char _59;
+  char _64;
+  int _65;
+  unsigned char _66;
+  char _68;
+  _Bool _73;
+  char _74;
+  char * _75;
+  _Bool _77;
+  long unsigned int _78;
+  long unsigned int _79;
+  char _81;
+  long unsigned int _85;
+  char _87;
+  long unsigned int _92;
+  char _94;
+  double _97;
+  float _99;
+  int _102;
+  long unsigned int _104;
+  sizetype _105;
+  char * _106;
+  char _107;
+  long unsigned int _108;
+  sizetype _109;
+  char * _110;
+  char _111;
+  long unsigned int _112;
+  sizetype _113;
+  char * _114;
+  char _115;
+  long unsigned int _116;
+  sizetype _117;
+  char * _118;
+  char _119;
+  char _182;
+  long unsigned int _185;
+  long unsigned int _187;
+  int _189;
+  unsigned char _190;
+  _Bool _192;
+  int _195;
+  unsigned char _196;
+  _Bool _198;
+  _Bool _199;
+  int _201;
+  unsigned char _202;
+  _Bool _204;
+  _Bool _205;
+  int _207;
+  unsigned char _210;
+  _Bool _211;
+  _Bool _214;
+  long unsigned int _222;
+  char _223;
+  long unsigned int _225;
+  long unsigned int _226;
+  long unsigned int _227;
+  _Bool _228;
+  char _232;
+  unsigned char _246;
+  int _249;
+  long unsigned int _250;
+  long unsigned int _251;
+  _Bool _252;
+  _Bool _253;
+  unsigned char _255;
+  int _258;
+  long unsigned int _259;
+  long unsigned int _260;
+  _Bool _261;
+  _Bool _262;
+  unsigned char _264;
+  int _267;
+  long unsigned int _268;
+  long unsigned int _269;
+  _Bool _270;
+  _Bool _271;
+
+  <bb 2> [31.42%]:
+  os_command = "uname -s -r";
+  pipe_22 = popen (&os_command, "r");
+  if (pipe_22 == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 4>; [70.00%]
+
+  <bb 3> [9.43%]:
+  MEM[(char *)&os] = 0;
+  goto <bb 9>; [100.00%]
+
+  <bb 4> [21.99%]:
+  _25 = __fgets_alias (&os, 1024, pipe_22);
+  if (_25 == 0B)
+    goto <bb 5>; [30.00%]
+  else
+    goto <bb 6>; [70.00%]
+
+  <bb 5> [6.60%]:
+  MEM[(char *)&os] = 0;
+
+  <bb 6> [21.99%]:
+  pclose (pipe_22);
+  _27 = MEM[(const char *)&os];
+  if (_27 != 0)
+    goto <bb 7>; [52.35%]
+  else
+    goto <bb 9>; [47.65%]
+
+  <bb 7> [11.51%]:
+  _28 = strlen (&os);
+  _29 = _28 + 18446744073709551615;
+  _30 = &os + _29;
+  _31 = *_30;
+  if (_31 == 10)
+    goto <bb 8>; [37.68%]
+  else
+    goto <bb 9>; [62.32%]
+
+  <bb 8> [4.34%]:
+  *_30 = 0;
+
+  <bb 9> [31.42%]:
+  _1 = strstr (&os, "Linux");
+  if (_1 != 0B)
+    goto <bb 10>; [49.47%]
+  else
+    goto <bb 90>; [50.53%]
+
+  <bb 10> [15.54%]:
+  MEM[(char *)&cache] = 0;
+  MEM[(char *)&model] = 0;
+  cpu_MHz[0] = 0;
+  model_name[0] = 0;
+  vendor_id[0] = 0;
+  info_32 = fopen ("/proc/cpuinfo", "r");
+  if (info_32 != 0B)
+    goto <bb 11>; [73.26%]
+  else
+    goto <bb 89>; [26.74%]
+
+  <bb 11> [11.38%]:
+  goto <bb 71>; [100.00%]
+
+  <bb 12> [64.52%]:
+  _33 = strlen (&buffer);
+  _35 = strncmp (&buffer, "processor", 9);
+  if (_35 == 0)
+    goto <bb 13>; [50.00%]
+  else
+    goto <bb 14>; [50.00%]
+
+  <bb 13> [32.26%]:
+  cpus_37 = cpus_36 + 1;
+  goto <bb 70>; [100.00%]
+
+  <bb 14> [32.26%]:
+  buffer_end_34 = &buffer + _33;
+  _38 = strncmp (&buffer, "vendor_id", 9);
+  if (_38 == 0)
+    goto <bb 15>; [34.00%]
+  else
+    goto <bb 28>; [66.00%]
+
+  <bb 15> [11.00%]:
+  if (&MEM[(void *)&buffer + 9B] < buffer_end_34)
+    goto <bb 16>; [92.50%]
+  else
+    goto <bb 25>; [7.50%]
+
+  <bb 16> [10.18%]:
+  _232 = MEM[(char *)&buffer + 9B];
+  _264 = (unsigned char) _232;
+  if (_264 > 58)
+    goto <bb 18>; [50.00%]
+  else
+    goto <bb 17>; [50.00%]
+
+  <bb 17> [10.18%]:
+  _267 = (int) _264;
+  _268 = 288230380446679552 >> _267;
+  _269 = _268 & 1;
+  _270 = _269 == 0;
+
+  <bb 18> [10.18%]:
+  # _271 = PHI <_270(17), 1(16)>
+  if (_271 != 0)
+    goto <bb 95>; [3.75%]
+  else
+    goto <bb 19>; [96.25%]
+
+  <bb 19> [9.80%]:
+
+  <bb 20> [89.03%]:
+  # cp_216 = PHI <cp_40(24), &MEM[(void *)&buffer + 9B](19)>
+  cp_40 = cp_216 + 1;
+  if (buffer_end_34 > cp_40)
+    goto <bb 21>; [92.50%]
+  else
+    goto <bb 25>; [7.50%]
+
+  <bb 21> [82.33%]:
+  _41 = *cp_40;
+  _255 = (unsigned char) _41;
+  if (_255 > 58)
+    goto <bb 23>; [50.00%]
+  else
+    goto <bb 22>; [50.00%]
+
+  <bb 22> [82.33%]:
+  _258 = (int) _255;
+  _259 = 288230380446679552 >> _258;
+  _260 = _259 & 1;
+  _261 = _260 == 0;
+
+  <bb 23> [82.33%]:
+  # _262 = PHI <_261(22), 1(21)>
+  if (_262 != 0)
+    goto <bb 95>; [3.75%]
+  else
+    goto <bb 24>; [96.25%]
+
+  <bb 24> [79.24%]:
+  goto <bb 20>; [100.00%]
+
+  <bb 25> [10.97%]:
+  _46 = MEM[(const char *)&vendor_id];
+  if (_46 != 0)
+    goto <bb 26>; [33.00%]
+  else
+    goto <bb 70>; [67.00%]
+
+  <bb 26> [3.62%]:
+  _104 = strlen (&vendor_id);
+  _105 = _104 + 18446744073709551615;
+  _106 = &vendor_id + _105;
+  _107 = *_106;
+  if (_107 == 10)
+    goto <bb 27>; [37.68%]
+  else
+    goto <bb 70>; [62.32%]
+
+  <bb 27> [1.36%]:
+  *_106 = 0;
+  goto <bb 70>; [100.00%]
+
+  <bb 28> [21.29%]:
+  _47 = strncmp (&buffer, "model name", 10);
+  if (_47 == 0)
+    goto <bb 29>; [34.00%]
+  else
+    goto <bb 42>; [66.00%]
+
+  <bb 29> [7.26%]:
+  if (&MEM[(void *)&buffer + 10B] < buffer_end_34)
+    goto <bb 30>; [92.50%]
+  else
+    goto <bb 39>; [7.50%]
+
+  <bb 30> [6.72%]:
+  _182 = MEM[(char *)&buffer + 10B];
+  _246 = (unsigned char) _182;
+  if (_246 > 58)
+    goto <bb 32>; [50.00%]
+  else
+    goto <bb 31>; [50.00%]
+
+  <bb 31> [6.72%]:
+  _249 = (int) _246;
+  _250 = 288230380446679552 >> _249;
+  _251 = _250 & 1;
+  _252 = _251 == 0;
+
+  <bb 32> [6.72%]:
+  # _253 = PHI <_252(31), 1(30)>
+  if (_253 != 0)
+    goto <bb 96>; [3.75%]
+  else
+    goto <bb 33>; [96.25%]
+
+  <bb 33> [6.47%]:
+
+  <bb 34> [58.76%]:
+  # cp_215 = PHI <cp_49(38), &MEM[(void *)&buffer + 10B](33)>
+  cp_49 = cp_215 + 1;
+  if (buffer_end_34 > cp_49)
+    goto <bb 35>; [92.50%]
+  else
+    goto <bb 39>; [7.50%]
+
+  <bb 35> [54.33%]:
+  _50 = *cp_49;
+  _190 = (unsigned char) _50;
+  if (_190 > 58)
+    goto <bb 37>; [50.00%]
+  else
+    goto <bb 36>; [50.00%]
+
+  <bb 36> [54.33%]:
+  _189 = (int) _190;
+  _13 = 288230380446679552 >> _189;
+  _11 = _13 & 1;
+  _73 = _11 == 0;
+
+  <bb 37> [54.33%]:
+  # _77 = PHI <_73(36), 1(35)>
+  if (_77 != 0)
+    goto <bb 96>; [3.75%]
+  else
+    goto <bb 38>; [96.25%]
+
+  <bb 38> [52.29%]:
+  goto <bb 34>; [100.00%]
+
+  <bb 39> [7.24%]:
+  _55 = MEM[(const char *)&model_name];
+  if (_55 != 0)
+    goto <bb 40>; [33.00%]
+  else
+    goto <bb 70>; [67.00%]
+
+  <bb 40> [2.39%]:
+  _108 = strlen (&model_name);
+  _109 = _108 + 18446744073709551615;
+  _110 = &model_name + _109;
+  _111 = *_110;
+  if (_111 == 10)
+    goto <bb 41>; [37.68%]
+  else
+    goto <bb 70>; [62.32%]
+
+  <bb 41> [0.90%]:
+  *_110 = 0;
+  goto <bb 70>; [100.00%]
+
+  <bb 42> [14.05%]:
+  _56 = strncmp (&buffer, "cpu MHz", 7);
+  if (_56 == 0)
+    goto <bb 43>; [34.00%]
+  else
+    goto <bb 56>; [66.00%]
+
+  <bb 43> [4.79%]:
+  if (&MEM[(void *)&buffer + 7B] < buffer_end_34)
+    goto <bb 44>; [92.50%]
+  else
+    goto <bb 53>; [7.50%]
+
+  <bb 44> [4.43%]:
+  _24 = MEM[(char *)&buffer + 7B];
+  _196 = (unsigned char) _24;
+  if (_196 > 58)
+    goto <bb 46>; [50.00%]
+  else
+    goto <bb 45>; [50.00%]
+
+  <bb 45> [4.43%]:
+  _195 = (int) _196;
+  _5 = 288230380446679552 >> _195;
+  _225 = _5 & 1;
+  _211 = _225 == 0;
+
+  <bb 46> [4.43%]:
+  # _192 = PHI <_211(45), 1(44)>
+  if (_192 != 0)
+    goto <bb 97>; [3.75%]
+  else
+    goto <bb 47>; [96.25%]
+
+  <bb 47> [4.26%]:
+
+  <bb 48> [38.78%]:
+  # cp_212 = PHI <cp_58(52), &MEM[(void *)&buffer + 7B](47)>
+  cp_58 = cp_212 + 1;
+  if (buffer_end_34 > cp_58)
+    goto <bb 49>; [92.50%]
+  else
+    goto <bb 53>; [7.50%]
+
+  <bb 49> [35.86%]:
+  _59 = *cp_58;
+  _202 = (unsigned char) _59;
+  if (_202 > 58)
+    goto <bb 51>; [50.00%]
+  else
+    goto <bb 50>; [50.00%]
+
+  <bb 50> [35.86%]:
+  _201 = (int) _202;
+  _185 = 288230380446679552 >> _201;
+  _226 = _185 & 1;
+  _205 = _226 == 0;
+
+  <bb 51> [35.86%]:
+  # _198 = PHI <_205(50), 1(49)>
+  if (_198 != 0)
+    goto <bb 97>; [3.75%]
+  else
+    goto <bb 52>; [96.25%]
+
+  <bb 52> [34.52%]:
+  goto <bb 48>; [100.00%]
+
+  <bb 53> [4.78%]:
+  _64 = MEM[(const char *)&cpu_MHz];
+  if (_64 != 0)
+    goto <bb 54>; [33.00%]
+  else
+    goto <bb 70>; [67.00%]
+
+  <bb 54> [1.58%]:
+  _112 = strlen (&cpu_MHz);
+  _113 = _112 + 18446744073709551615;
+  _114 = &cpu_MHz + _113;
+  _115 = *_114;
+  if (_115 == 10)
+    goto <bb 55>; [37.68%]
+  else
+    goto <bb 70>; [62.32%]
+
+  <bb 55> [0.59%]:
+  *_114 = 0;
+  goto <bb 70>; [100.00%]
+
+  <bb 56> [9.27%]:
+  _65 = strncmp (&buffer, "cache size", 10);
+  if (_65 == 0)
+    goto <bb 57>; [34.00%]
+  else
+    goto <bb 70>; [66.00%]
+
+  <bb 57> [3.16%]:
+  if (&MEM[(void *)&buffer + 10B] < buffer_end_34)
+    goto <bb 58>; [92.50%]
+  else
+    goto <bb 67>; [7.50%]
+
+  <bb 58> [2.92%]:
+  _223 = MEM[(char *)&buffer + 10B];
+  _210 = (unsigned char) _223;
+  if (_210 > 58)
+    goto <bb 60>; [50.00%]
+  else
+    goto <bb 59>; [50.00%]
+
+  <bb 59> [2.92%]:
+  _207 = (int) _210;
+  _187 = 288230380446679552 >> _207;
+  _227 = _187 & 1;
+  _199 = _227 == 0;
+
+  <bb 60> [2.92%]:
+  # _204 = PHI <_199(59), 1(58)>
+  if (_204 != 0)
+    goto <bb 98>; [3.75%]
+  else
+    goto <bb 61>; [96.25%]
+
+  <bb 61> [2.81%]:
+
+  <bb 62> [25.60%]:
+  # cp_193 = PHI <cp_67(66), &MEM[(void *)&buffer + 10B](61)>
+  cp_67 = cp_193 + 1;
+  if (buffer_end_34 > cp_67)
+    goto <bb 63>; [92.50%]
+  else
+    goto <bb 67>; [7.50%]
+
+  <bb 63> [23.67%]:
+  _68 = *cp_67;
+  _66 = (unsigned char) _68;
+  if (_66 > 58)
+    goto <bb 65>; [50.00%]
+  else
+    goto <bb 64>; [50.00%]
+
+  <bb 64> [23.67%]:
+  _102 = (int) _66;
+  _78 = 288230380446679552 >> _102;
+  _222 = _78 & 1;
+  _228 = _222 == 0;
+
+  <bb 65> [23.67%]:
+  # _214 = PHI <_228(64), 1(63)>
+  if (_214 != 0)
+    goto <bb 98>; [3.75%]
+  else
+    goto <bb 66>; [96.25%]
+
+  <bb 66> [22.78%]:
+  goto <bb 62>; [100.00%]
+
+  <bb 67> [3.15%]:
+  _74 = MEM[(const char *)&cache];
+  if (_74 != 0)
+    goto <bb 68>; [33.00%]
+  else
+    goto <bb 70>; [67.00%]
+
+  <bb 68> [1.04%]:
+  _116 = strlen (&cache);
+  _117 = _116 + 18446744073709551615;
+  _118 = &cache + _117;
+  _119 = *_118;
+  if (_119 == 10)
+    goto <bb 69>; [37.68%]
+  else
+    goto <bb 70>; [62.32%]
+
+  <bb 69> [0.39%]:
+  *_118 = 0;
+
+  <bb 70> [64.51%]:
+  # cpus_103 = PHI <cpus_36(25), cpus_37(13), cpus_36(27), cpus_36(39), cpus_36(41), cpus_36(53), cpus_36(55), cpus_36(56), cpus_36(67), cpus_36(69), cpus_36(26), cpus_36(40), cpus_36(54), cpus_36(68)>
+
+  <bb 71> [75.91%]:
+  # cpus_36 = PHI <cpus_103(70), 0(11)>
+  _75 = __fgets_alias (&buffer, 1024, info_32);
+  if (_75 != 0B)
+    goto <bb 12>; [85.00%]
+  else
+    goto <bb 72>; [15.00%]
+
+  <bb 72> [11.39%]:
+  # cpus_61 = PHI <cpus_36(71)>
+  if (cpus_61 > 1)
+    goto <bb 73>; [64.00%]
+  else
+    goto <bb 76>; [36.00%]
+
+  <bb 73> [7.29%]:
+  if (cpus_61 == 2)
+    goto <bb 74>; [34.00%]
+  else
+    goto <bb 75>; [66.00%]
+
+  <bb 74> [2.48%]:
+  __builtin_memcpy (&model, "Dual", 5);
+  goto <bb 76>; [100.00%]
+
+  <bb 75> [4.81%]:
+  __builtin___sprintf_chk (&model, 1, 1024, "%d CPU", cpus_61);
+
+  <bb 76> [11.39%]:
+  _79 = strlen (&model);
+  cp_80 = &model + _79;
+  _81 = vendor_id[0];
+  if (_81 != 0)
+    goto <bb 77>; [50.00%]
+  else
+    goto <bb 80>; [50.00%]
+
+  <bb 77> [5.69%]:
+  if (&model != cp_80)
+    goto <bb 78>; [70.00%]
+  else
+    goto <bb 79>; [30.00%]
+
+  <bb 78> [3.99%]:
+  cp_82 = cp_80 + 1;
+  *cp_80 = 32;
+
+  <bb 79> [5.69%]:
+  # cp_83 = PHI <&model(77), cp_82(78)>
+  __builtin_strcpy (cp_83, &vendor_id);
+  _85 = strlen (&vendor_id);
+  cp_86 = cp_83 + _85;
+
+  <bb 80> [11.39%]:
+  # cp_88 = PHI <cp_80(76), cp_86(79)>
+  _87 = model_name[0];
+  if (_87 != 0)
+    goto <bb 81>; [50.00%]
+  else
+    goto <bb 84>; [50.00%]
+
+  <bb 81> [5.69%]:
+  if (&model != cp_88)
+    goto <bb 82>; [70.00%]
+  else
+    goto <bb 83>; [30.00%]
+
+  <bb 82> [3.99%]:
+  cp_89 = cp_88 + 1;
+  *cp_88 = 32;
+
+  <bb 83> [5.69%]:
+  # cp_90 = PHI <&model(81), cp_89(82)>
+  __builtin_strcpy (cp_90, &model_name);
+  _92 = strlen (&model_name);
+  cp_93 = cp_90 + _92;
+
+  <bb 84> [11.39%]:
+  # cp_95 = PHI <cp_88(80), cp_93(83)>
+  _94 = cpu_MHz[0];
+  if (_94 != 0)
+    goto <bb 85>; [50.00%]
+  else
+    goto <bb 88>; [50.00%]
+
+  <bb 85> [5.69%]:
+  if (&model != cp_95)
+    goto <bb 86>; [70.00%]
+  else
+    goto <bb 87>; [30.00%]
+
+  <bb 86> [3.99%]:
+  cp_96 = cp_95 + 1;
+  *cp_95 = 32;
+
+  <bb 87> [5.69%]:
+  # cp_101 = PHI <&model(85), cp_96(86)>
+  _97 = strtod (&cpu_MHz, 0B);
+  f_98 = (float) _97;
+  _99 = f_98 + 5.0e-1;
+  i_100 = (int) _99;
+  __builtin___sprintf_chk (&cpu_MHz, 1, 1024, "%dMHz", i_100);
+  __builtin_strcpy (cp_101, &cpu_MHz);
+
+  <bb 88> [11.39%]:
+  fclose (info_32);
+
+  <bb 89> [15.54%]:
+  buffer ={v} {CLOBBER};
+  vendor_id ={v} {CLOBBER};
+  model_name ={v} {CLOBBER};
+  cpu_MHz ={v} {CLOBBER};
+  goto <bb 91>; [100.00%]
+
+  <bb 90> [15.88%]:
+  model[0] = 0;
+  cache[0] = 0;
+
+  <bb 91> [31.42%]:
+  __builtin___sprintf_chk (&buffer, 1, 1024, "CPU                 : %s\n", &model);
+  __printf_chk (1, "%s", &buffer);
+  if (write_to_file_9(D) != 0)
+    goto <bb 92>; [36.64%]
+  else
+    goto <bb 94>; [63.36%]
+
+  <bb 92> [11.51%]:
+  __builtin_fputs (&buffer, global_ofile_10(D));
+  __builtin___sprintf_chk (&buffer, 1, 1024, "L2 Cache            : %s\n", &cache);
+  __printf_chk (1, "%s", &buffer);
+  __builtin_fputs (&buffer, global_ofile_10(D));
+  __builtin___sprintf_chk (&buffer, 1, 1024, "OS                  : %s\n", &os);
+  __printf_chk (1, "%s", &buffer);
+  __builtin_fputs (&buffer, global_ofile_10(D));
+
+  <bb 93> [31.42%]:
+  buffer ={v} {CLOBBER};
+  os ={v} {CLOBBER};
+  model ={v} {CLOBBER};
+  cache ={v} {CLOBBER};
+  os_command ={v} {CLOBBER};
+  return;
+
+  <bb 94> [19.91%]:
+  __builtin___sprintf_chk (&buffer, 1, 1024, "L2 Cache            : %s\n", &cache);
+  __printf_chk (1, "%s", &buffer);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "OS                  : %s\n", &os);
+  __printf_chk (1, "%s", &buffer);
+  goto <bb 93>; [100.00%]
+
+  <bb 95> [3.62%]:
+  # cp_48 = PHI <&MEM[(void *)&buffer + 9B](18), cp_40(23)>
+  __builtin___strcpy_chk (&vendor_id, cp_48, 1024);
+  goto <bb 25>; [100.00%]
+
+  <bb 96> [2.39%]:
+  # cp_39 = PHI <&MEM[(void *)&buffer + 10B](32), cp_49(37)>
+  __builtin___strcpy_chk (&model_name, cp_39, 1024);
+  goto <bb 39>; [100.00%]
+
+  <bb 97> [1.58%]:
+  # cp_209 = PHI <&MEM[(void *)&buffer + 7B](46), cp_58(51)>
+  __builtin___strcpy_chk (&cpu_MHz, cp_209, 1024);
+  goto <bb 53>; [100.00%]
+
+  <bb 98> [1.04%]:
+  # cp_208 = PHI <&MEM[(void *)&buffer + 10B](60), cp_67(65)>
+  __builtin___strcpy_chk (&cache, cp_208, 1024);
+  goto <bb 67>; [100.00%]
+
+}
+
+

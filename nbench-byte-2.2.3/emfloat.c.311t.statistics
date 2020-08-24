@@ -1,0 +1,434 @@
+26 ssa "unused VAR_DECLs removed" "memmove" 1
+26 ssa "unused VAR_DECLs removed" "SetInternalFPFZero" 1
+26 ssa "unused VAR_DECLs removed" "Add16Bits" 1
+38 ccp "Constants propagated" "SetInternalFPFZero" 1
+38 ccp "Statements deleted" "SetInternalFPFZero" 1
+43 fre "SCC iterations == 3" "SetInternalFPFZero" 2
+55 release_ssa "SSA names released" "SetInternalFPFZero" 1
+55 release_ssa "SSA name holes removed" "SetInternalFPFZero" 1
+38 ccp "Constants propagated" "SetInternalFPFInfinity" 1
+38 ccp "Statements deleted" "SetInternalFPFInfinity" 1
+43 fre "SCC iterations == 3" "SetInternalFPFInfinity" 2
+55 release_ssa "SSA names released" "SetInternalFPFInfinity" 1
+55 release_ssa "SSA name holes removed" "SetInternalFPFInfinity" 1
+38 ccp "Constants propagated" "SetInternalFPFNaN" 1
+38 ccp "Statements deleted" "SetInternalFPFNaN" 1
+43 fre "SCC iterations == 3" "SetInternalFPFNaN" 2
+55 release_ssa "SSA names released" "SetInternalFPFNaN" 1
+55 release_ssa "SSA name holes removed" "SetInternalFPFNaN" 1
+38 ccp "Constants propagated" "IsMantissaZero" 2
+38 ccp "Statements deleted" "IsMantissaZero" 2
+43 fre "SCC iterations == 3" "IsMantissaZero" 2
+44 evrp "Incremental SSA update" "IsMantissaZero" 1
+55 release_ssa "SSA names released" "IsMantissaZero" 1
+55 release_ssa "SSA name holes removed" "IsMantissaZero" 1
+38 ccp "Constants propagated" "ShiftMantLeft1" 1
+38 ccp "Statements deleted" "ShiftMantLeft1" 1
+43 fre "SCC iterations == 3" "ShiftMantLeft1" 2
+43 fre "Eliminated" "ShiftMantLeft1" 3
+47 cddce "Statements deleted" "ShiftMantLeft1" 2
+55 release_ssa "unused VAR_DECLs removed" "ShiftMantLeft1" 1
+55 release_ssa "SSA names released" "ShiftMantLeft1" 6
+55 release_ssa "SSA name holes removed" "ShiftMantLeft1" 6
+38 ccp "Constants propagated" "ShiftMantRight1" 1
+38 ccp "Statements deleted" "ShiftMantRight1" 1
+43 fre "SCC iterations == 3" "ShiftMantRight1" 2
+43 fre "Eliminated" "ShiftMantRight1" 3
+47 cddce "Statements deleted" "ShiftMantRight1" 2
+55 release_ssa "unused VAR_DECLs removed" "ShiftMantRight1" 1
+55 release_ssa "SSA names released" "ShiftMantRight1" 6
+55 release_ssa "SSA name holes removed" "ShiftMantRight1" 6
+38 ccp "Constants propagated" "StickyShiftRightMant" 3
+38 ccp "Statements deleted" "StickyShiftRightMant" 3
+43 fre "SCC iterations == 2" "StickyShiftRightMant" 2
+43 fre "SCC iterations == 3" "StickyShiftRightMant" 5
+44 evrp "Incremental SSA update" "StickyShiftRightMant" 1
+47 cddce "Statements deleted" "StickyShiftRightMant" 2
+55 release_ssa "SSA names released" "StickyShiftRightMant" 12
+55 release_ssa "SSA name holes removed" "StickyShiftRightMant" 12
+35 einline "unused VAR_DECLs removed" "normalize" 2
+35 einline "Symbol to SSA rewrite" "normalize" 2
+38 ccp "Copies propagated" "normalize" 1
+38 ccp "Constants propagated" "normalize" 1
+38 ccp "Statements deleted" "normalize" 2
+43 fre "SCC iterations == 2" "normalize" 1
+43 fre "SCC iterations == 3" "normalize" 2
+55 release_ssa "SSA names released" "normalize" 8
+55 release_ssa "SSA name holes removed" "normalize" 8
+35 einline "unused VAR_DECLs removed" "denormalize" 2
+35 einline "Symbol to SSA rewrite" "denormalize" 2
+38 ccp "Copies propagated" "denormalize" 1
+38 ccp "Statements deleted" "denormalize" 2
+43 fre "SCC iterations == 2" "denormalize" 3
+43 fre "SCC iterations == 3" "denormalize" 4
+43 fre "Eliminated" "denormalize" 2
+44 evrp "Incremental SSA update" "denormalize" 1
+47 cddce "Statements deleted" "denormalize" 4
+55 release_ssa "unused VAR_DECLs removed" "denormalize" 3
+55 release_ssa "SSA names released" "denormalize" 13
+55 release_ssa "SSA name holes removed" "denormalize" 13
+35 einline "unused VAR_DECLs removed" "choose_nan" 3
+35 einline "Symbol to SSA rewrite" "choose_nan" 1
+38 ccp "Constants propagated" "choose_nan" 1
+38 ccp "Statements deleted" "choose_nan" 5
+43 fre "SCC iterations == 2" "choose_nan" 1
+43 fre "SCC iterations == 3" "choose_nan" 1
+43 fre "Eliminated" "choose_nan" 2
+54 fnsplit "Symbol to SSA rewrite" "choose_nan" 1
+55 release_ssa "unused VAR_DECLs removed" "choose_nan" 4
+55 release_ssa "SSA names released" "choose_nan" 16
+55 release_ssa "SSA name holes removed" "choose_nan" 16
+35 einline "unused VAR_DECLs removed" "Int32ToInternalFPF" 12
+35 einline "Symbol to SSA rewrite" "Int32ToInternalFPF" 1
+38 ccp "Constants propagated" "Int32ToInternalFPF" 1
+38 ccp "Statements deleted" "Int32ToInternalFPF" 1
+43 fre "SCC iterations == 2" "Int32ToInternalFPF" 3
+43 fre "SCC iterations == 3" "Int32ToInternalFPF" 2
+54 fnsplit "Symbol to SSA rewrite" "Int32ToInternalFPF" 1
+55 release_ssa "SSA names released" "Int32ToInternalFPF" 1
+55 release_ssa "SSA name holes removed" "Int32ToInternalFPF" 1
+43 fre "SCC iterations == 2" "RoundInternalFPF" 1
+54 fnsplit "Symbol to SSA rewrite" "RoundInternalFPF" 1
+55 release_ssa "SSA names released" "RoundInternalFPF" 6
+55 release_ssa "SSA name holes removed" "RoundInternalFPF" 6
+38 ccp "Copies propagated" "DivideInternalFPF" 4
+38 ccp "Constants propagated" "DivideInternalFPF" 8
+38 ccp "Statements deleted" "DivideInternalFPF" 14
+43 fre "SCC iterations == 2" "DivideInternalFPF" 15
+43 fre "SCC iterations == 3" "DivideInternalFPF" 34
+43 fre "Eliminated" "DivideInternalFPF" 10
+44 evrp "Incremental SSA update" "DivideInternalFPF" 1
+47 cddce "PHI nodes deleted" "DivideInternalFPF" 3
+47 cddce "Statements deleted" "DivideInternalFPF" 13
+54 fnsplit "Symbol to SSA rewrite" "DivideInternalFPF" 1
+55 release_ssa "unused VAR_DECLs removed" "DivideInternalFPF" 11
+55 release_ssa "SSA names released" "DivideInternalFPF" 78
+55 release_ssa "SSA name holes removed" "DivideInternalFPF" 78
+35 einline "unused VAR_DECLs removed" "SetupCPUEmFloatArrays" 34
+35 einline "Symbol to SSA rewrite" "SetupCPUEmFloatArrays" 2
+38 ccp "Constants propagated" "SetupCPUEmFloatArrays" 1
+38 ccp "Statements deleted" "SetupCPUEmFloatArrays" 1
+43 fre "SCC iterations == 3" "SetupCPUEmFloatArrays" 2
+43 fre "Eliminated" "SetupCPUEmFloatArrays" 1
+55 release_ssa "SSA names released" "SetupCPUEmFloatArrays" 2
+55 release_ssa "SSA name holes removed" "SetupCPUEmFloatArrays" 2
+38 ccp "Copies propagated" "AddSubInternalFPF" 6
+38 ccp "Constants propagated" "AddSubInternalFPF" 10
+38 ccp "Statements deleted" "AddSubInternalFPF" 20
+43 fre "SCC iterations == 2" "AddSubInternalFPF" 7
+43 fre "SCC iterations == 3" "AddSubInternalFPF" 12
+43 fre "Eliminated" "AddSubInternalFPF" 5
+44 evrp "Incremental SSA update" "AddSubInternalFPF" 1
+47 cddce "Statements deleted" "AddSubInternalFPF" 7
+55 release_ssa "unused VAR_DECLs removed" "AddSubInternalFPF" 12
+55 release_ssa "SSA names released" "AddSubInternalFPF" 74
+55 release_ssa "SSA name holes removed" "AddSubInternalFPF" 74
+35 einline "unused VAR_DECLs removed" "MultiplyInternalFPF" 30
+35 einline "Symbol to SSA rewrite" "MultiplyInternalFPF" 2
+38 ccp "Copies propagated" "MultiplyInternalFPF" 3
+38 ccp "Constants propagated" "MultiplyInternalFPF" 8
+38 ccp "Statements deleted" "MultiplyInternalFPF" 15
+43 fre "SCC iterations == 2" "MultiplyInternalFPF" 14
+43 fre "SCC iterations == 3" "MultiplyInternalFPF" 20
+43 fre "SCC iterations == 4" "MultiplyInternalFPF" 1
+43 fre "Eliminated" "MultiplyInternalFPF" 3
+44 evrp "Incremental SSA update" "MultiplyInternalFPF" 1
+47 cddce "PHI nodes deleted" "MultiplyInternalFPF" 1
+47 cddce "Statements deleted" "MultiplyInternalFPF" 8
+55 release_ssa "unused VAR_DECLs removed" "MultiplyInternalFPF" 10
+55 release_ssa "SSA names released" "MultiplyInternalFPF" 73
+55 release_ssa "SSA name holes removed" "MultiplyInternalFPF" 73
+35 einline "unused VAR_DECLs removed" "DoEmFloatIteration" 34
+35 einline "Symbol to SSA rewrite" "DoEmFloatIteration" 2
+38 ccp "Constants propagated" "DoEmFloatIteration" 1
+38 ccp "Statements deleted" "DoEmFloatIteration" 1
+43 fre "SCC iterations == 3" "DoEmFloatIteration" 2
+43 fre "SCC iterations == 4" "DoEmFloatIteration" 1
+43 fre "Eliminated" "DoEmFloatIteration" 8
+47 cddce "Statements deleted" "DoEmFloatIteration" 1
+55 release_ssa "SSA names released" "DoEmFloatIteration" 11
+55 release_ssa "SSA name holes removed" "DoEmFloatIteration" 11
+89 materialize-all-clones "Symbol to SSA rewrite" "(nofn)" 1
+97 ccp "Constants propagated" "DivideInternalFPF" 2
+97 ccp "Statements deleted" "DivideInternalFPF" 2
+99 cunrolli "Incremental SSA update" "DivideInternalFPF" 1
+106 fre "SCC iterations == 2" "DivideInternalFPF" 14
+106 fre "SCC iterations == 3" "DivideInternalFPF" 14
+106 fre "Eliminated" "DivideInternalFPF" 28
+108 thread "Jumps threaded" "DivideInternalFPF" 5
+109 vrp "Incremental SSA update" "DivideInternalFPF" 2
+109 vrp "Statements folded" "DivideInternalFPF" 8
+109 vrp "Constants propagated" "DivideInternalFPF" 8
+109 vrp "Jumps threaded" "DivideInternalFPF" 9
+109 vrp "Number of ASSERT_EXPR expressions inserted" "DivideInternalFPF" 54
+109 vrp "Statements deleted" "DivideInternalFPF" 10
+111 dce "PHI nodes deleted" "DivideInternalFPF" 9
+111 dce "Statements deleted" "DivideInternalFPF" 45
+115 copyprop "Copies propagated" "DivideInternalFPF" 5
+115 copyprop "Constants propagated" "DivideInternalFPF" 1
+115 copyprop "Statements deleted" "DivideInternalFPF" 6
+120 ch "Incremental SSA update" "DivideInternalFPF" 1
+122 sra "Scalarized aggregates" "DivideInternalFPF" 1
+122 sra "Modified expressions" "DivideInternalFPF" 16
+122 sra "Separate LHS and RHS handling" "DivideInternalFPF" 16
+122 sra "Scalar replacements created" "DivideInternalFPF" 4
+124 dom "Copies propagated" "DivideInternalFPF" 8
+124 dom "Constants propagated" "DivideInternalFPF" 2
+124 dom "Redundant expressions eliminated" "DivideInternalFPF" 1
+124 dom "Jumps threaded" "DivideInternalFPF" 11
+129 dce "Statements deleted" "DivideInternalFPF" 23
+136 lim "Incremental SSA update" "DivideInternalFPF" 1
+136 lim "Symbol to SSA rewrite" "DivideInternalFPF" 1
+139 pre "compute_antic iterations == 3" "DivideInternalFPF" 1
+139 pre "HOIST inserted" "DivideInternalFPF" 7
+139 pre "Insertions" "DivideInternalFPF" 53
+139 pre "New PHIs" "DivideInternalFPF" 9
+139 pre "Symbol to SSA rewrite" "DivideInternalFPF" 1
+139 pre "SCC iterations == 2" "DivideInternalFPF" 29
+139 pre "SCC iterations == 3" "DivideInternalFPF" 21
+139 pre "insert iterations == 3" "DivideInternalFPF" 1
+139 pre "Eliminated" "DivideInternalFPF" 51
+140 sink "Sunk statements" "DivideInternalFPF" 1
+144 dce "Statements deleted" "DivideInternalFPF" 3
+147 loopinit "Incremental SSA update" "DivideInternalFPF" 1
+167 cunroll "Incremental SSA update" "DivideInternalFPF" 1
+179 reassoc "Constants eliminated" "DivideInternalFPF" 9
+184 dom "Copies propagated" "DivideInternalFPF" 26
+184 dom "Constants propagated" "DivideInternalFPF" 120
+187 vrp "Incremental SSA update" "DivideInternalFPF" 2
+187 vrp "Jumps threaded" "DivideInternalFPF" 1
+187 vrp "Number of ASSERT_EXPR expressions inserted" "DivideInternalFPF" 63
+187 vrp "Statements deleted" "DivideInternalFPF" 106
+190 cddce "PHI nodes deleted" "DivideInternalFPF" 1
+190 cddce "Statements deleted" "DivideInternalFPF" 18
+197 dce "Statements deleted" "DivideInternalFPF" 35
+266 combine "two-insn combine" "DivideInternalFPF" 35
+84 inline "unused VAR_DECLs removed" "AddSubInternalFPF" 19
+84 inline "Symbol to SSA rewrite" "AddSubInternalFPF" 1
+97 ccp "Constants propagated" "AddSubInternalFPF" 4
+97 ccp "Statements deleted" "AddSubInternalFPF" 2
+99 cunrolli "Incremental SSA update" "AddSubInternalFPF" 1
+106 fre "SCC iterations == 2" "AddSubInternalFPF" 21
+106 fre "SCC iterations == 3" "AddSubInternalFPF" 20
+106 fre "Eliminated" "AddSubInternalFPF" 29
+108 thread "Incremental SSA update" "AddSubInternalFPF" 1
+109 vrp "Incremental SSA update" "AddSubInternalFPF" 1
+109 vrp "Incremental SSA update" "AddSubInternalFPF" 2
+109 vrp "Statements folded" "AddSubInternalFPF" 10
+109 vrp "Constants propagated" "AddSubInternalFPF" 8
+109 vrp "Jumps threaded" "AddSubInternalFPF" 11
+109 vrp "Number of ASSERT_EXPR expressions inserted" "AddSubInternalFPF" 47
+109 vrp "Statements deleted" "AddSubInternalFPF" 5
+111 dce "PHI nodes deleted" "AddSubInternalFPF" 17
+111 dce "Statements deleted" "AddSubInternalFPF" 16
+115 copyprop "Copies propagated" "AddSubInternalFPF" 5
+115 copyprop "Constants propagated" "AddSubInternalFPF" 6
+115 copyprop "Statements deleted" "AddSubInternalFPF" 11
+120 ch "Incremental SSA update" "AddSubInternalFPF" 1
+122 sra "Symbol to SSA rewrite" "AddSubInternalFPF" 1
+124 dom "Incremental SSA update" "AddSubInternalFPF" 1
+124 dom "Constants propagated" "AddSubInternalFPF" 1
+124 dom "Jumps threaded" "AddSubInternalFPF" 8
+129 dce "Statements deleted" "AddSubInternalFPF" 6
+136 lim "Incremental SSA update" "AddSubInternalFPF" 1
+136 lim "Symbol to SSA rewrite" "AddSubInternalFPF" 1
+139 pre "compute_antic iterations == 3" "AddSubInternalFPF" 1
+139 pre "HOIST inserted" "AddSubInternalFPF" 3
+139 pre "Insertions" "AddSubInternalFPF" 54
+139 pre "New PHIs" "AddSubInternalFPF" 21
+139 pre "Symbol to SSA rewrite" "AddSubInternalFPF" 1
+139 pre "SCC iterations == 2" "AddSubInternalFPF" 59
+139 pre "SCC iterations == 3" "AddSubInternalFPF" 28
+139 pre "insert iterations == 3" "AddSubInternalFPF" 1
+139 pre "Eliminated" "AddSubInternalFPF" 41
+140 sink "Sunk statements" "AddSubInternalFPF" 2
+144 dce "PHI nodes deleted" "AddSubInternalFPF" 10
+144 dce "Statements deleted" "AddSubInternalFPF" 27
+147 loopinit "Incremental SSA update" "AddSubInternalFPF" 1
+151 cddce "PHI nodes deleted" "AddSubInternalFPF" 1
+163 ifcvt "Incremental SSA update" "AddSubInternalFPF" 3
+165 dce "PHI nodes deleted" "AddSubInternalFPF" 3
+165 dce "Statements deleted" "AddSubInternalFPF" 3
+167 cunroll "Incremental SSA update" "AddSubInternalFPF" 1
+171 lim "Incremental SSA update" "AddSubInternalFPF" 1
+171 lim "Symbol to SSA rewrite" "AddSubInternalFPF" 1
+179 reassoc "Constants eliminated" "AddSubInternalFPF" 10
+181 split-paths "Incremental SSA update" "AddSubInternalFPF" 1
+184 dom "Copies propagated" "AddSubInternalFPF" 43
+184 dom "Constants propagated" "AddSubInternalFPF" 161
+184 dom "Redundant expressions eliminated" "AddSubInternalFPF" 11
+187 vrp "Incremental SSA update" "AddSubInternalFPF" 1
+187 vrp "Incremental SSA update" "AddSubInternalFPF" 2
+187 vrp "Statements folded" "AddSubInternalFPF" 5
+187 vrp "Number of ASSERT_EXPR expressions inserted" "AddSubInternalFPF" 53
+187 vrp "Statements deleted" "AddSubInternalFPF" 130
+190 cddce "PHI nodes deleted" "AddSubInternalFPF" 1
+190 cddce "Statements deleted" "AddSubInternalFPF" 39
+197 dce "Statements deleted" "AddSubInternalFPF" 23
+233 optimized "unused VAR_DECLs removed" "AddSubInternalFPF" 40
+266 combine "three-insn combine" "AddSubInternalFPF" 3
+266 combine "two-insn combine" "AddSubInternalFPF" 39
+84 inline "unused VAR_DECLs removed" "SetupCPUEmFloatArrays" 24
+84 inline "Symbol to SSA rewrite" "SetupCPUEmFloatArrays" 1
+97 ccp "Constants propagated" "SetupCPUEmFloatArrays" 3
+97 ccp "Statements deleted" "SetupCPUEmFloatArrays" 3
+99 cunrolli "Incremental SSA update" "SetupCPUEmFloatArrays" 1
+106 fre "SCC iterations == 3" "SetupCPUEmFloatArrays" 2
+106 fre "Eliminated" "SetupCPUEmFloatArrays" 12
+109 vrp "Incremental SSA update" "SetupCPUEmFloatArrays" 1
+109 vrp "Incremental SSA update" "SetupCPUEmFloatArrays" 1
+109 vrp "Jumps threaded" "SetupCPUEmFloatArrays" 1
+109 vrp "Number of ASSERT_EXPR expressions inserted" "SetupCPUEmFloatArrays" 13
+109 vrp "Statements deleted" "SetupCPUEmFloatArrays" 3
+111 dce "PHI nodes deleted" "SetupCPUEmFloatArrays" 5
+111 dce "Statements deleted" "SetupCPUEmFloatArrays" 9
+114 cselim "Symbol to SSA rewrite" "SetupCPUEmFloatArrays" 1
+120 ch "Incremental SSA update" "SetupCPUEmFloatArrays" 1
+124 dom "Incremental SSA update" "SetupCPUEmFloatArrays" 1
+124 dom "Copies propagated" "SetupCPUEmFloatArrays" 6
+124 dom "Redundant expressions eliminated" "SetupCPUEmFloatArrays" 6
+124 dom "Jumps threaded" "SetupCPUEmFloatArrays" 2
+129 dce "Statements deleted" "SetupCPUEmFloatArrays" 8
+136 lim "Incremental SSA update" "SetupCPUEmFloatArrays" 1
+136 lim "Symbol to SSA rewrite" "SetupCPUEmFloatArrays" 1
+139 pre "compute_antic iterations == 3" "SetupCPUEmFloatArrays" 1
+139 pre "Insertions" "SetupCPUEmFloatArrays" 19
+139 pre "New PHIs" "SetupCPUEmFloatArrays" 6
+139 pre "Symbol to SSA rewrite" "SetupCPUEmFloatArrays" 1
+139 pre "SCC iterations == 2" "SetupCPUEmFloatArrays" 22
+139 pre "SCC iterations == 3" "SetupCPUEmFloatArrays" 2
+139 pre "PA inserted" "SetupCPUEmFloatArrays" 6
+139 pre "insert iterations == 2" "SetupCPUEmFloatArrays" 1
+139 pre "Eliminated" "SetupCPUEmFloatArrays" 59
+144 dce "PHI nodes deleted" "SetupCPUEmFloatArrays" 4
+147 loopinit "Incremental SSA update" "SetupCPUEmFloatArrays" 1
+151 cddce "PHI nodes deleted" "SetupCPUEmFloatArrays" 1
+163 ifcvt "Incremental SSA update" "SetupCPUEmFloatArrays" 1
+165 dce "PHI nodes deleted" "SetupCPUEmFloatArrays" 1
+165 dce "Statements deleted" "SetupCPUEmFloatArrays" 1
+181 split-paths "Incremental SSA update" "SetupCPUEmFloatArrays" 1
+184 dom "Copies propagated" "SetupCPUEmFloatArrays" 14
+184 dom "Redundant expressions eliminated" "SetupCPUEmFloatArrays" 1
+187 vrp "Incremental SSA update" "SetupCPUEmFloatArrays" 2
+187 vrp "Statements folded" "SetupCPUEmFloatArrays" 2
+187 vrp "Constants propagated" "SetupCPUEmFloatArrays" 9
+187 vrp "Jumps threaded" "SetupCPUEmFloatArrays" 3
+187 vrp "Number of ASSERT_EXPR expressions inserted" "SetupCPUEmFloatArrays" 23
+187 vrp "Statements deleted" "SetupCPUEmFloatArrays" 25
+190 cddce "Statements deleted" "SetupCPUEmFloatArrays" 5
+233 optimized "unused VAR_DECLs removed" "SetupCPUEmFloatArrays" 37
+266 combine "two-insn combine" "SetupCPUEmFloatArrays" 7
+84 inline "unused VAR_DECLs removed" "DoEmFloatIteration" 6
+84 inline "Symbol to SSA rewrite" "DoEmFloatIteration" 1
+99 cunrolli "Incremental SSA update" "DoEmFloatIteration" 1
+106 fre "SCC iterations == 2" "DoEmFloatIteration" 1
+106 fre "SCC iterations == 3" "DoEmFloatIteration" 4
+106 fre "SCC iterations == 4" "DoEmFloatIteration" 1
+106 fre "Eliminated" "DoEmFloatIteration" 11
+108 thread "Jumps threaded" "DoEmFloatIteration" 1
+109 vrp "Incremental SSA update" "DoEmFloatIteration" 1
+109 vrp "Incremental SSA update" "DoEmFloatIteration" 1
+109 vrp "Statements folded" "DoEmFloatIteration" 7
+109 vrp "Constants propagated" "DoEmFloatIteration" 8
+109 vrp "Jumps threaded" "DoEmFloatIteration" 4
+109 vrp "Number of ASSERT_EXPR expressions inserted" "DoEmFloatIteration" 40
+109 vrp "Statements deleted" "DoEmFloatIteration" 6
+111 dce "PHI nodes deleted" "DoEmFloatIteration" 8
+111 dce "Statements deleted" "DoEmFloatIteration" 56
+114 cselim "Symbol to SSA rewrite" "DoEmFloatIteration" 1
+115 copyprop "Copies propagated" "DoEmFloatIteration" 4
+115 copyprop "Statements deleted" "DoEmFloatIteration" 4
+120 ch "Incremental SSA update" "DoEmFloatIteration" 1
+122 sra "Scalarized aggregates" "DoEmFloatIteration" 1
+122 sra "Modified expressions" "DoEmFloatIteration" 24
+122 sra "Separate LHS and RHS handling" "DoEmFloatIteration" 24
+122 sra "Scalar replacements created" "DoEmFloatIteration" 4
+124 dom "Incremental SSA update" "DoEmFloatIteration" 1
+124 dom "Copies propagated" "DoEmFloatIteration" 19
+124 dom "Constants propagated" "DoEmFloatIteration" 1
+124 dom "Jumps threaded" "DoEmFloatIteration" 4
+129 dce "Statements deleted" "DoEmFloatIteration" 28
+136 lim "Incremental SSA update" "DoEmFloatIteration" 1
+136 lim "Symbol to SSA rewrite" "DoEmFloatIteration" 1
+139 pre "compute_antic iterations == 3" "DoEmFloatIteration" 1
+139 pre "Insertions" "DoEmFloatIteration" 30
+139 pre "New PHIs" "DoEmFloatIteration" 11
+139 pre "Symbol to SSA rewrite" "DoEmFloatIteration" 1
+139 pre "SCC iterations == 2" "DoEmFloatIteration" 22
+139 pre "SCC iterations == 3" "DoEmFloatIteration" 12
+139 pre "insert iterations == 3" "DoEmFloatIteration" 1
+139 pre "Eliminated" "DoEmFloatIteration" 42
+140 sink "Sunk statements" "DoEmFloatIteration" 1
+144 dce "Statements deleted" "DoEmFloatIteration" 7
+147 loopinit "Incremental SSA update" "DoEmFloatIteration" 1
+151 cddce "PHI nodes deleted" "DoEmFloatIteration" 1
+163 ifcvt "Incremental SSA update" "DoEmFloatIteration" 1
+165 dce "PHI nodes deleted" "DoEmFloatIteration" 2
+165 dce "Statements deleted" "DoEmFloatIteration" 2
+171 lim "Incremental SSA update" "DoEmFloatIteration" 1
+171 lim "Symbol to SSA rewrite" "DoEmFloatIteration" 1
+181 split-paths "Incremental SSA update" "DoEmFloatIteration" 1
+184 dom "Copies propagated" "DoEmFloatIteration" 95
+184 dom "Constants propagated" "DoEmFloatIteration" 5
+184 dom "Redundant expressions eliminated" "DoEmFloatIteration" 59
+187 vrp "Incremental SSA update" "DoEmFloatIteration" 1
+187 vrp "Incremental SSA update" "DoEmFloatIteration" 2
+187 vrp "Statements folded" "DoEmFloatIteration" 1
+187 vrp "Jumps threaded" "DoEmFloatIteration" 2
+187 vrp "Number of ASSERT_EXPR expressions inserted" "DoEmFloatIteration" 35
+187 vrp "Statements deleted" "DoEmFloatIteration" 7
+190 cddce "PHI nodes deleted" "DoEmFloatIteration" 2
+190 cddce "Statements deleted" "DoEmFloatIteration" 73
+233 optimized "unused VAR_DECLs removed" "DoEmFloatIteration" 36
+266 combine "two-insn combine" "DoEmFloatIteration" 24
+283 gcse2 "insns deleted" "DoEmFloatIteration" 2
+283 gcse2 "copies inserted" "DoEmFloatIteration" 2
+84 inline "unused VAR_DECLs removed" "RoundInternalFPF" 22
+84 inline "Symbol to SSA rewrite" "RoundInternalFPF" 1
+99 cunrolli "Incremental SSA update" "RoundInternalFPF" 1
+106 fre "SCC iterations == 2" "RoundInternalFPF" 6
+106 fre "SCC iterations == 3" "RoundInternalFPF" 4
+106 fre "Eliminated" "RoundInternalFPF" 4
+108 thread "Incremental SSA update" "RoundInternalFPF" 1
+109 vrp "Incremental SSA update" "RoundInternalFPF" 1
+109 vrp "Incremental SSA update" "RoundInternalFPF" 2
+109 vrp "Statements folded" "RoundInternalFPF" 3
+109 vrp "Constants propagated" "RoundInternalFPF" 8
+109 vrp "Jumps threaded" "RoundInternalFPF" 4
+109 vrp "Number of ASSERT_EXPR expressions inserted" "RoundInternalFPF" 9
+109 vrp "Statements deleted" "RoundInternalFPF" 4
+111 dce "PHI nodes deleted" "RoundInternalFPF" 3
+111 dce "Statements deleted" "RoundInternalFPF" 3
+114 cselim "Symbol to SSA rewrite" "RoundInternalFPF" 1
+115 copyprop "Copies propagated" "RoundInternalFPF" 1
+115 copyprop "Statements deleted" "RoundInternalFPF" 1
+122 sra "Symbol to SSA rewrite" "RoundInternalFPF" 1
+124 dom "Incremental SSA update" "RoundInternalFPF" 1
+124 dom "Jumps threaded" "RoundInternalFPF" 3
+129 dce "Statements deleted" "RoundInternalFPF" 2
+139 pre "compute_antic iterations == 2" "RoundInternalFPF" 1
+139 pre "Insertions" "RoundInternalFPF" 6
+139 pre "New PHIs" "RoundInternalFPF" 3
+139 pre "Symbol to SSA rewrite" "RoundInternalFPF" 1
+139 pre "SCC iterations == 2" "RoundInternalFPF" 7
+139 pre "SCC iterations == 3" "RoundInternalFPF" 2
+139 pre "insert iterations == 3" "RoundInternalFPF" 1
+139 pre "Eliminated" "RoundInternalFPF" 3
+140 sink "Sunk statements" "RoundInternalFPF" 1
+144 dce "Statements deleted" "RoundInternalFPF" 3
+147 loopinit "Incremental SSA update" "RoundInternalFPF" 1
+167 cunroll "Incremental SSA update" "RoundInternalFPF" 1
+179 reassoc "Constants eliminated" "RoundInternalFPF" 1
+181 split-paths "Incremental SSA update" "RoundInternalFPF" 1
+184 dom "Copies propagated" "RoundInternalFPF" 2
+184 dom "Constants propagated" "RoundInternalFPF" 20
+187 vrp "Incremental SSA update" "RoundInternalFPF" 1
+187 vrp "Incremental SSA update" "RoundInternalFPF" 1
+187 vrp "Jumps threaded" "RoundInternalFPF" 1
+187 vrp "Number of ASSERT_EXPR expressions inserted" "RoundInternalFPF" 6
+187 vrp "Statements deleted" "RoundInternalFPF" 18
+190 cddce "PHI nodes deleted" "RoundInternalFPF" 1
+190 cddce "Statements deleted" "RoundInternalFPF" 2
+197 dce "Statements deleted" "RoundInternalFPF" 7
+233 optimized "unused VAR_DECLs removed" "RoundInternalFPF" 36
+266 combine "two-insn combine" "RoundInternalFPF" 5

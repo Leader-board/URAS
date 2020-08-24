@@ -1,0 +1,951 @@
+
+;; Function atoi (null)
+;; enabled by -tree-original
+
+
+{
+  return (int) strtol (__nptr, 0B, 10);
+}
+
+
+;; Function atol (null)
+;; enabled by -tree-original
+
+
+{
+  return strtol (__nptr, 0B, 10);
+}
+
+
+;; Function atoll (null)
+;; enabled by -tree-original
+
+
+{
+  return strtoll (__nptr, 0B, 10);
+}
+
+
+;; Function __bswap_32 (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_bswap32 (__bsx);
+}
+
+
+;; Function __bswap_64 (null)
+;; enabled by -tree-original
+
+
+{
+  return (__uint64_t) __builtin_bswap64 (__bsx);
+}
+
+
+;; Function __uint16_identity (null)
+;; enabled by -tree-original
+
+
+{
+  return __x;
+}
+
+
+;; Function __uint32_identity (null)
+;; enabled by -tree-original
+
+
+{
+  return __x;
+}
+
+
+;; Function __uint64_identity (null)
+;; enabled by -tree-original
+
+
+{
+  return __x;
+}
+
+
+;; Function gnu_dev_major (null)
+;; enabled by -tree-original
+
+
+{
+  unsigned int __major;
+
+    unsigned int __major;
+  __major = (unsigned int) ((long unsigned int) __dev >> 8) & 4095;
+  __major = (unsigned int) ((long unsigned int) __dev >> 32) & 4294963200 | __major;
+  return __major;
+}
+
+
+;; Function gnu_dev_minor (null)
+;; enabled by -tree-original
+
+
+{
+  unsigned int __minor;
+
+    unsigned int __minor;
+  __minor = (unsigned int) __dev & 255;
+  __minor = (unsigned int) ((long unsigned int) __dev >> 12) & 4294967040 | __minor;
+  return __minor;
+}
+
+
+;; Function gnu_dev_makedev (null)
+;; enabled by -tree-original
+
+
+{
+  __dev_t __dev;
+
+    __dev_t __dev;
+  __dev = (long unsigned int) __major << 8 & 1048320;
+  __dev = (long unsigned int) __major << 32 & 18446726481523507200 | (long unsigned int) __dev;
+  __dev = (long unsigned int) __minor & 255 | (long unsigned int) __dev;
+  __dev = (long unsigned int) __minor << 12 & 17592184995840 | (long unsigned int) __dev;
+  return __dev;
+}
+
+
+;; Function bsearch (null)
+;; enabled by -tree-original
+
+
+{
+  size_t __l;
+  size_t __u;
+  size_t __idx;
+  const void * __p;
+  int __comparison;
+
+    size_t __l;
+    size_t __u;
+    size_t __idx;
+    const void * __p;
+    int __comparison;
+  __l = 0;
+  __u = __nmemb;
+  goto <D.2301>;
+  <D.2300>:;
+  __idx = (__l + __u) / 2;
+  __p = __base + (sizetype) (__idx * __size);
+  __comparison = __compar (__key, __p);
+  if (__comparison < 0)
+    {
+      __u = __idx;
+    }
+  else
+    {
+      if (__comparison > 0)
+        {
+          __l = __idx + 1;
+        }
+      else
+        {
+          return (void *) __p;
+        }
+    }
+  <D.2301>:;
+  if (__l < __u) goto <D.2300>; else goto <D.2302>;
+  <D.2302>:;
+  return 0B;
+}
+
+
+;; Function atof (null)
+;; enabled by -tree-original
+
+
+{
+  return strtod (__nptr, 0B);
+}
+
+
+;; Function realpath (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __resolved, 1) != 18446744073709551615)
+    {
+      return __realpath_chk (__name, __resolved, __builtin_object_size ((const void *) __resolved, 1));
+    }
+  return __realpath_alias (__name, __resolved);
+}
+
+
+;; Function ptsname_r (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __buf, 1) != 18446744073709551615)
+    {
+      if (__builtin_constant_p (__buflen) == 0)
+        {
+          return __ptsname_r_chk (__fd, __buf, __buflen, __builtin_object_size ((const void *) __buf, 1));
+        }
+      if (__builtin_object_size ((const void *) __buf, 1) < (long unsigned int) __buflen)
+        {
+          return __ptsname_r_chk_warn (__fd, __buf, __buflen, __builtin_object_size ((const void *) __buf, 1));
+        }
+    }
+  return __ptsname_r_alias (__fd, __buf, __buflen);
+}
+
+
+;; Function wctomb (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __s, 1) != 18446744073709551615 && __builtin_object_size ((const void *) __s, 1) <= 15)
+    {
+      return __wctomb_chk (__s, __wchar, __builtin_object_size ((const void *) __s, 1));
+    }
+  return __wctomb_alias (__s, __wchar);
+}
+
+
+;; Function mbstowcs (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __dst, 1) != 18446744073709551615)
+    {
+      if (__builtin_constant_p (__len) == 0)
+        {
+          return __mbstowcs_chk (__dst, __src, __len, __builtin_object_size ((const void *) __dst, 1) / 4);
+        }
+      if (__builtin_object_size ((const void *) __dst, 1) / 4 < (long unsigned int) __len)
+        {
+          return __mbstowcs_chk_warn (__dst, __src, __len, __builtin_object_size ((const void *) __dst, 1) / 4);
+        }
+    }
+  return __mbstowcs_alias (__dst, __src, __len);
+}
+
+
+;; Function wcstombs (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __dst, 1) != 18446744073709551615)
+    {
+      if (__builtin_constant_p (__len) == 0)
+        {
+          return __wcstombs_chk (__dst, __src, __len, __builtin_object_size ((const void *) __dst, 1));
+        }
+      if (__builtin_object_size ((const void *) __dst, 1) < (long unsigned int) __len)
+        {
+          return __wcstombs_chk_warn (__dst, __src, __len, __builtin_object_size ((const void *) __dst, 1));
+        }
+    }
+  return __wcstombs_alias (__dst, __src, __len);
+}
+
+
+;; Function getchar (null)
+;; enabled by -tree-original
+
+
+{
+  return _IO_getc ((struct _IO_FILE *) stdin);
+}
+
+
+;; Function fgetc_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (__fp->_IO_read_ptr >= __fp->_IO_read_end, 0) != 0 ? __uflow ((struct _IO_FILE *) __fp) : (int) *(unsigned char *) __fp->_IO_read_ptr++ ;
+}
+
+
+;; Function getc_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (__fp->_IO_read_ptr >= __fp->_IO_read_end, 0) != 0 ? __uflow ((struct _IO_FILE *) __fp) : (int) *(unsigned char *) __fp->_IO_read_ptr++ ;
+}
+
+
+;; Function getchar_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (stdin->_IO_read_ptr >= stdin->_IO_read_end, 0) != 0 ? __uflow ((struct _IO_FILE *) stdin) : (int) *(unsigned char *) stdin->_IO_read_ptr++ ;
+}
+
+
+;; Function putchar (null)
+;; enabled by -tree-original
+
+
+{
+  return _IO_putc (__c, (struct _IO_FILE *) stdout);
+}
+
+
+;; Function fputc_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (__stream->_IO_write_ptr >= __stream->_IO_write_end, 0) != 0 ? __overflow ((struct _IO_FILE *) __stream, (int) (unsigned char) __c) : (int) (unsigned char) (*__stream->_IO_write_ptr++  = (char) __c);
+}
+
+
+;; Function putc_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (__stream->_IO_write_ptr >= __stream->_IO_write_end, 0) != 0 ? __overflow ((struct _IO_FILE *) __stream, (int) (unsigned char) __c) : (int) (unsigned char) (*__stream->_IO_write_ptr++  = (char) __c);
+}
+
+
+;; Function putchar_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin_expect (stdout->_IO_write_ptr >= stdout->_IO_write_end, 0) != 0 ? __overflow ((struct _IO_FILE *) stdout, (int) (unsigned char) __c) : (int) (unsigned char) (*stdout->_IO_write_ptr++  = (char) __c);
+}
+
+
+;; Function feof_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return (__stream->_flags & 16) != 0;
+}
+
+
+;; Function ferror_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  return (__stream->_flags & 32) != 0;
+}
+
+
+;; Function sprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___sprintf_chk (__s, 1, __builtin_object_size ((const void *) __s, 1), __fmt, __builtin_va_arg_pack ());
+}
+
+
+;; Function vsprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___vsprintf_chk (__s, 1, __builtin_object_size ((const void *) __s, 1), __fmt, __ap);
+}
+
+
+;; Function snprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___snprintf_chk (__s, __n, 1, __builtin_object_size ((const void *) __s, 1), __fmt, __builtin_va_arg_pack ());
+}
+
+
+;; Function vsnprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___vsnprintf_chk (__s, __n, 1, __builtin_object_size ((const void *) __s, 1), __fmt, __ap);
+}
+
+
+;; Function fprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __fprintf_chk (__stream, 1, __fmt, __builtin_va_arg_pack ());
+}
+
+
+;; Function printf (null)
+;; enabled by -tree-original
+
+
+{
+  return __printf_chk (1, __fmt, __builtin_va_arg_pack ());
+}
+
+
+;; Function vprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __vfprintf_chk ((struct FILE * restrict) stdout, 1, __fmt, __ap);
+}
+
+
+;; Function vfprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __vfprintf_chk (__stream, 1, __fmt, __ap);
+}
+
+
+;; Function dprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __dprintf_chk (__fd, 1, __fmt, __builtin_va_arg_pack ());
+}
+
+
+;; Function vdprintf (null)
+;; enabled by -tree-original
+
+
+{
+  return __vdprintf_chk (__fd, 1, __fmt, __ap);
+}
+
+
+;; Function fgets (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __s, 1) != 18446744073709551615)
+    {
+      if (__builtin_constant_p (__n) == 0 || __n <= 0)
+        {
+          return __fgets_chk (__s, __builtin_object_size ((const void *) __s, 1), __n, __stream);
+        }
+      if ((long unsigned int) __n > __builtin_object_size ((const void *) __s, 1))
+        {
+          return __fgets_chk_warn (__s, __builtin_object_size ((const void *) __s, 1), __n, __stream);
+        }
+    }
+  return __fgets_alias (__s, __n, __stream);
+}
+
+
+;; Function fread (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __ptr, 0) != 18446744073709551615)
+    {
+      if ((__builtin_constant_p (__size) == 0 || __builtin_constant_p (__n) == 0) || (__size | __n) > 4294967295)
+        {
+          return __fread_chk (__ptr, __builtin_object_size ((const void *) __ptr, 0), __size, __n, __stream);
+        }
+      if ((long unsigned int) (__size * __n) > __builtin_object_size ((const void *) __ptr, 0))
+        {
+          return __fread_chk_warn (__ptr, __builtin_object_size ((const void *) __ptr, 0), __size, __n, __stream);
+        }
+    }
+  return __fread_alias (__ptr, __size, __n, __stream);
+}
+
+
+;; Function fread_unlocked (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __ptr, 0) != 18446744073709551615)
+    {
+      if ((__builtin_constant_p (__size) == 0 || __builtin_constant_p (__n) == 0) || (__size | __n) > 4294967295)
+        {
+          return __fread_unlocked_chk (__ptr, __builtin_object_size ((const void *) __ptr, 0), __size, __n, __stream);
+        }
+      if ((long unsigned int) (__size * __n) > __builtin_object_size ((const void *) __ptr, 0))
+        {
+          return __fread_unlocked_chk_warn (__ptr, __builtin_object_size ((const void *) __ptr, 0), __size, __n, __stream);
+        }
+    }
+  if (((__builtin_constant_p (__size) != 0 && __builtin_constant_p (__n) != 0) && (__size | __n) <= 4294967295) && __size * __n <= 8)
+    {
+      {
+        size_t __cnt = __size * __n;
+        char * __cptr = (char *) __ptr;
+
+                size_t __cnt = __size * __n;
+                char * __cptr = (char *) __ptr;
+        if (__cnt == 0)
+          {
+            return 0;
+          }
+        goto <D.3084>;
+        <D.3083>:;
+        {
+          int __c = __builtin_expect (__stream->_IO_read_ptr >= __stream->_IO_read_end, 0) != 0 ? __uflow ((struct _IO_FILE *) __stream) : (int) *(unsigned char *) __stream->_IO_read_ptr++ ;
+
+                    int __c = __builtin_expect (__stream->_IO_read_ptr >= __stream->_IO_read_end, 0) != 0 ? __uflow ((struct _IO_FILE *) __stream) : (int) *(unsigned char *) __stream->_IO_read_ptr++ ;
+          if (__c == -1)
+            {
+              goto <D.3082>;
+            }
+          *__cptr++  = (char) __c;
+        }
+         --__cnt;
+        <D.3084>:;
+        if (__cnt != 0) goto <D.3083>; else goto <D.3082>;
+        <D.3082>:;
+        return (size_t) ((long unsigned int) ((long int) __cptr - (long int) __ptr) / (long unsigned int) __size);
+      }
+    }
+  return __fread_unlocked_alias (__ptr, __size, __n, __stream);
+}
+
+
+;; Function bcopy (null)
+;; enabled by -tree-original
+
+
+{
+  (void) __builtin___memmove_chk (__dest, __src, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function bzero (null)
+;; enabled by -tree-original
+
+
+{
+  (void) __builtin___memset_chk (__dest, 0, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function memcpy (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___memcpy_chk (__dest, __src, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function memmove (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___memmove_chk (__dest, __src, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function memset (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___memset_chk (__dest, __ch, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function explicit_bzero (null)
+;; enabled by -tree-original
+
+
+{
+  __explicit_bzero_chk (__dest, __len, __builtin_object_size ((const void *) __dest, 0));
+}
+
+
+;; Function strcpy (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___strcpy_chk (__dest, __src, __builtin_object_size ((const void *) __dest, 1));
+}
+
+
+;; Function strncpy (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___strncpy_chk (__dest, __src, __len, __builtin_object_size ((const void *) __dest, 1));
+}
+
+
+;; Function stpncpy (null)
+;; enabled by -tree-original
+
+
+{
+  if (__builtin_object_size ((const void *) __dest, 1) != 18446744073709551615 && (__builtin_constant_p (__n) == 0 || __builtin_object_size ((const void *) __dest, 1) < (long unsigned int) __n))
+    {
+      return __stpncpy_chk (__dest, __src, __n, __builtin_object_size ((const void *) __dest, 1));
+    }
+  return __stpncpy_alias (__dest, __src, __n);
+}
+
+
+;; Function strcat (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___strcat_chk (__dest, __src, __builtin_object_size ((const void *) __dest, 1));
+}
+
+
+;; Function strncat (null)
+;; enabled by -tree-original
+
+
+{
+  return __builtin___strncat_chk (__dest, __src, __len, __builtin_object_size ((const void *) __dest, 1));
+}
+
+
+;; Function AllocateMemory (null)
+;; enabled by -tree-original
+
+
+{
+  farvoid * returnval;
+  long unsigned int true_addr;
+  long unsigned int adj_addr;
+
+    farvoid * returnval;
+    long unsigned int true_addr;
+    long unsigned int adj_addr;
+  returnval = (farvoid *) malloc ((long unsigned int) ((long int) global_align * 2) + nbytes);
+  if (returnval == 0B)
+    {
+      *errorcode = 1;
+    }
+  else
+    {
+      *errorcode = 0;
+    }
+  adj_addr = true_addr = (long unsigned int) returnval;
+  if (global_align == 0)
+    {
+      if (AddMemArray (true_addr, adj_addr) != 0)
+        {
+          *errorcode = 2;
+        }
+      return returnval;
+    }
+  if (global_align == 1)
+    {
+      if ((true_addr & 1) == 0)
+        {
+          adj_addr++ ;
+        }
+    }
+  else
+    {
+      goto <D.3643>;
+      <D.3642>:;
+       ++adj_addr;
+      <D.3643>:;
+      if (adj_addr % (long unsigned int) global_align != 0) goto <D.3642>; else goto <D.3644>;
+      <D.3644>:;
+      if (adj_addr % (long unsigned int) (global_align * 2) == 0)
+        {
+          adj_addr = (long unsigned int) global_align + adj_addr;
+        }
+    }
+  returnval = (farvoid *) adj_addr;
+  if (AddMemArray (true_addr, adj_addr) != 0)
+    {
+      *errorcode = 2;
+    }
+  return returnval;
+}
+
+
+;; Function FreeMemory (null)
+;; enabled by -tree-original
+
+
+{
+  long unsigned int adj_addr;
+  long unsigned int true_addr;
+
+    long unsigned int adj_addr;
+    long unsigned int true_addr;
+  adj_addr = (long unsigned int) mempointer;
+  if (RemoveMemArray (adj_addr, &true_addr) != 0)
+    {
+      *errorcode = 3;
+      return;
+    }
+  mempointer = (farvoid *) true_addr;
+  free ((void *) mempointer);
+  *errorcode = 0;
+  return;
+}
+
+
+;; Function MoveMemory (null)
+;; enabled by -tree-original
+
+
+{
+  memmove ((void *) destination, (const void *) source, nbytes);
+}
+
+
+;; Function InitMemArray (null)
+;; enabled by -tree-original
+
+
+{
+  mem_array_ents = 0;
+  return;
+}
+
+
+;; Function AddMemArray (null)
+;; enabled by -tree-original
+
+
+{
+  if (mem_array_ents > 19)
+    {
+      return -1;
+    }
+  mem_array[0][mem_array_ents] = true_addr;
+  mem_array[1][mem_array_ents] = adj_addr;
+  mem_array_ents++ ;
+  return 0;
+}
+
+
+;; Function RemoveMemArray (null)
+;; enabled by -tree-original
+
+
+{
+  int i;
+  int j;
+
+    int i;
+    int j;
+  i = 0;
+  goto <D.3673>;
+  <D.3672>:;
+  if (mem_array[1][i] == adj_addr)
+    {
+      *true_addr = mem_array[0][i];
+      j = i;
+      goto <D.3670>;
+      <D.3669>:;
+      mem_array[0][j] = mem_array[0][j + 1];
+      mem_array[1][j] = mem_array[1][j + 1];
+      j++ ;
+      <D.3670>:;
+      if (j + 1 < mem_array_ents) goto <D.3669>; else goto <D.3671>;
+      <D.3671>:;
+      mem_array_ents-- ;
+      return 0;
+    }
+  i++ ;
+  <D.3673>:;
+  if (i < mem_array_ents) goto <D.3672>; else goto <D.3674>;
+  <D.3674>:;
+  return -1;
+}
+
+
+;; Function CreateFile (null)
+;; enabled by -tree-original
+
+
+{
+  struct FILE * fhandle;
+
+    struct FILE * fhandle;
+  fhandle = fopen ((const char * restrict) filename, (const char * restrict) "w");
+  if (fhandle == 0B)
+    {
+      *errorcode = 10;
+    }
+  else
+    {
+      *errorcode = 0;
+    }
+  fclose (fhandle);
+  return;
+}
+
+
+;; Function bmOpenFile (null)
+;; enabled by -tree-original
+
+
+{
+  struct FILE * fhandle;
+
+    struct FILE * fhandle;
+  fhandle = fopen ((const char * restrict) fname, (const char * restrict) "w+");
+  if (fhandle == 0B)
+    {
+      *errorcode = 13;
+    }
+  else
+    {
+      *errorcode = 0;
+    }
+  return fhandle;
+}
+
+
+;; Function CloseFile (null)
+;; enabled by -tree-original
+
+
+{
+  fclose (fhandle);
+  *errorcode = 0;
+  return;
+}
+
+
+;; Function readfile (null)
+;; enabled by -tree-original
+
+
+{
+  long int newoffset;
+  size_t nelems;
+  size_t readcode;
+
+    long int newoffset;
+    size_t nelems;
+    size_t readcode;
+  *errorcode = 0;
+  newoffset = (long int) fseek (fhandle, (long int) offset, 0);
+  if (newoffset == -1)
+    {
+      *errorcode = 14;
+      return;
+    }
+  nelems = nbytes & 65535;
+  readcode = fread (buffer, 1, nelems, fhandle);
+  if (readcode != nelems)
+    {
+      *errorcode = 11;
+    }
+  return;
+}
+
+
+;; Function writefile (null)
+;; enabled by -tree-original
+
+
+{
+  long int newoffset;
+  size_t nelems;
+  size_t writecode;
+
+    long int newoffset;
+    size_t nelems;
+    size_t writecode;
+  *errorcode = 0;
+  newoffset = (long int) fseek (fhandle, (long int) offset, 0);
+  if (newoffset == -1)
+    {
+      *errorcode = 14;
+      return;
+    }
+  nelems = nbytes & 65535;
+  writecode = fwrite ((const void * restrict) buffer, 1, nelems, fhandle);
+  if (writecode == nelems)
+    {
+      *errorcode = 12;
+    }
+  return;
+}
+
+
+;; Function ReportError (null)
+;; enabled by -tree-original
+
+
+{
+  printf ((const char * restrict) "ERROR CONDITION\nContext: %s\n", errorcontext);
+  printf ((const char * restrict) "Code: %d", errorcode);
+  return;
+}
+
+
+;; Function ErrorExit (null)
+;; enabled by -tree-original
+
+
+{
+  exit (1);
+}
+
+
+;; Function StartStopwatch (null)
+;; enabled by -tree-original
+
+
+{
+  return (long unsigned int) clock ();
+}
+
+
+;; Function StopStopwatch (null)
+;; enabled by -tree-original
+
+
+{
+  return (long unsigned int) clock () - startticks;
+}
+
+
+;; Function TicksToSecs (null)
+;; enabled by -tree-original
+
+
+{
+  return tickamount / 1000000;
+}
+
+
+;; Function TicksToFracSecs (null)
+;; enabled by -tree-original
+
+
+{
+  return (double) tickamount / 1.0e+6;
+}
+

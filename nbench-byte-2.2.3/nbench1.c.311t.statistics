@@ -1,0 +1,1370 @@
+26 ssa "unused VAR_DECLs removed" "bzero" 1
+26 ssa "unused VAR_DECLs removed" "second_assignments" 1
+26 ssa "unused VAR_DECLs removed" "inv" 1
+26 ssa "unused VAR_DECLs removed" "en_key_idea" 1
+26 ssa "unused VAR_DECLs removed" "SetCompBit" 2
+26 ssa "unused VAR_DECLs removed" "do_out_error" 1
+26 ssa "unused VAR_DECLs removed" "zero_changes" 1
+26 ssa "unused VAR_DECLs removed" "lubksb" 1
+26 ssa "unused VAR_DECLs removed" "LUFreeMem" 1
+26 ssa "unused VAR_DECLs removed" "DoHuffIteration" 1
+26 ssa "unused VAR_DECLs removed" "DoLUIteration" 1
+26 ssa "unused VAR_DECLs removed" "LoadNumArrayWithRand" 1
+26 ssa "unused VAR_DECLs removed" "LoadStringArray" 1
+26 ssa "unused VAR_DECLs removed" "DoBitfieldIteration" 1
+26 ssa "unused VAR_DECLs removed" "LoadAssign" 2
+26 ssa "unused VAR_DECLs removed" "randomize_wts" 1
+26 ssa "unused VAR_DECLs removed" "strsift" 1
+26 ssa "unused VAR_DECLs removed" "thefunction" 1
+26 ssa "unused VAR_DECLs removed" "TrapezoidIntegrate" 1
+26 ssa "unused VAR_DECLs removed" "DoFPUTransIteration" 2
+26 ssa "unused VAR_DECLs removed" "create_text_line" 1
+26 ssa "unused VAR_DECLs removed" "do_mid_forward" 1
+26 ssa "unused VAR_DECLs removed" "DoNumSort" 1
+26 ssa "unused VAR_DECLs removed" "DoStringSort" 1
+26 ssa "unused VAR_DECLs removed" "DoBitops" 1
+26 ssa "unused VAR_DECLs removed" "DoEmFloat" 1
+26 ssa "unused VAR_DECLs removed" "DoFourier" 1
+26 ssa "unused VAR_DECLs removed" "DoAssign" 1
+26 ssa "unused VAR_DECLs removed" "DoIDEA" 1
+26 ssa "unused VAR_DECLs removed" "DoHuffman" 1
+26 ssa "unused VAR_DECLs removed" "DoNNET" 1
+26 ssa "unused VAR_DECLs removed" "DoLU" 1
+38 ccp "Copies propagated" "NumSift" 1
+38 ccp "Statements deleted" "NumSift" 1
+43 fre "SCC iterations == 2" "NumSift" 1
+43 fre "SCC iterations == 3" "NumSift" 1
+43 fre "Eliminated" "NumSift" 12
+55 release_ssa "unused VAR_DECLs removed" "NumSift" 1
+55 release_ssa "SSA names released" "NumSift" 11
+55 release_ssa "SSA name holes removed" "NumSift" 11
+38 ccp "Copies propagated" "NumHeapSort" 2
+38 ccp "Statements deleted" "NumHeapSort" 2
+43 fre "SCC iterations == 3" "NumHeapSort" 4
+43 fre "Eliminated" "NumHeapSort" 2
+47 cddce "Statements deleted" "NumHeapSort" 1
+55 release_ssa "unused VAR_DECLs removed" "NumHeapSort" 1
+55 release_ssa "SSA names released" "NumHeapSort" 5
+55 release_ssa "SSA name holes removed" "NumHeapSort" 5
+43 fre "SCC iterations == 3" "ToggleBitRun" 3
+43 fre "Eliminated" "ToggleBitRun" 4
+55 release_ssa "SSA names released" "ToggleBitRun" 5
+55 release_ssa "SSA name holes removed" "ToggleBitRun" 5
+43 fre "SCC iterations == 3" "FlipBitRun" 3
+43 fre "Eliminated" "FlipBitRun" 2
+55 release_ssa "SSA names released" "FlipBitRun" 3
+55 release_ssa "SSA name holes removed" "FlipBitRun" 3
+38 ccp "Statements deleted" "CopyToAssign" 2
+38 ccp "Constants propagated" "CopyToAssign" 2
+43 fre "SCC iterations == 3" "CopyToAssign" 2
+43 fre "SCC iterations == 4" "CopyToAssign" 1
+43 fre "Eliminated" "CopyToAssign" 3
+55 release_ssa "SSA names released" "CopyToAssign" 7
+55 release_ssa "SSA name holes removed" "CopyToAssign" 7
+38 ccp "Statements deleted" "calc_minimum_costs" 8
+38 ccp "Constants propagated" "calc_minimum_costs" 8
+43 fre "SCC iterations == 3" "calc_minimum_costs" 6
+43 fre "SCC iterations == 4" "calc_minimum_costs" 2
+43 fre "Eliminated" "calc_minimum_costs" 18
+44 evrp "Incremental SSA update" "calc_minimum_costs" 1
+55 release_ssa "SSA names released" "calc_minimum_costs" 30
+55 release_ssa "SSA name holes removed" "calc_minimum_costs" 30
+38 ccp "Statements deleted" "first_assignments" 18
+38 ccp "Constants propagated" "first_assignments" 18
+43 fre "SCC iterations == 2" "first_assignments" 3
+43 fre "SCC iterations == 3" "first_assignments" 18
+43 fre "SCC iterations == 4" "first_assignments" 3
+43 fre "SCC iterations == 5" "first_assignments" 1
+43 fre "Eliminated" "first_assignments" 21
+44 evrp "Incremental SSA update" "first_assignments" 1
+55 release_ssa "SSA names released" "first_assignments" 50
+55 release_ssa "SSA name holes removed" "first_assignments" 50
+38 ccp "Statements deleted" "second_assignments" 19
+38 ccp "Constants propagated" "second_assignments" 18
+43 fre "SCC iterations == 2" "second_assignments" 1
+43 fre "SCC iterations == 3" "second_assignments" 17
+43 fre "SCC iterations == 4" "second_assignments" 4
+43 fre "SCC iterations == 5" "second_assignments" 1
+43 fre "Eliminated" "second_assignments" 10
+44 evrp "Incremental SSA update" "second_assignments" 1
+55 release_ssa "SSA names released" "second_assignments" 28
+55 release_ssa "SSA name holes removed" "second_assignments" 28
+43 fre "SCC iterations == 3" "Assignment" 1
+43 fre "SCC iterations == 2" "mul" 1
+54 fnsplit "Symbol to SSA rewrite" "mul" 1
+55 release_ssa "unused VAR_DECLs removed" "mul" 1
+55 release_ssa "SSA names released" "mul" 11
+55 release_ssa "SSA name holes removed" "mul" 11
+38 ccp "Copies propagated" "inv" 2
+38 ccp "Statements deleted" "inv" 3
+38 ccp "Constants propagated" "inv" 1
+43 fre "SCC iterations == 2" "inv" 1
+43 fre "SCC iterations == 3" "inv" 2
+43 fre "Eliminated" "inv" 1
+44 evrp "Incremental SSA update" "inv" 1
+54 fnsplit "Symbol to SSA rewrite" "inv" 1
+54 fnsplit "Symbol to SSA rewrite" "inv" 1
+55 release_ssa "unused VAR_DECLs removed" "inv" 4
+55 release_ssa "SSA names released" "inv" 21
+55 release_ssa "SSA name holes removed" "inv" 21
+38 ccp "Statements deleted" "en_key_idea" 2
+38 ccp "Constants propagated" "en_key_idea" 2
+43 fre "SCC iterations == 3" "en_key_idea" 7
+43 fre "Eliminated" "en_key_idea" 3
+44 evrp "Incremental SSA update" "en_key_idea" 1
+47 cddce "Statements deleted" "en_key_idea" 1
+54 fnsplit "Symbol to SSA rewrite" "en_key_idea" 1
+55 release_ssa "SSA names released" "en_key_idea" 5
+55 release_ssa "SSA name holes removed" "en_key_idea" 5
+38 ccp "Copies propagated" "de_key_idea" 54
+38 ccp "Statements deleted" "de_key_idea" 41
+38 ccp "Constants propagated" "de_key_idea" 8
+43 fre "SCC iterations == 2" "de_key_idea" 4
+43 fre "SCC iterations == 3" "de_key_idea" 8
+43 fre "Eliminated" "de_key_idea" 6
+44 evrp "Incremental SSA update" "de_key_idea" 1
+47 cddce "Statements deleted" "de_key_idea" 11
+55 release_ssa "unused VAR_DECLs removed" "de_key_idea" 12
+55 release_ssa "SSA names released" "de_key_idea" 73
+55 release_ssa "SSA name holes removed" "de_key_idea" 73
+35 einline "Symbol to SSA rewrite" "cipher_idea" 1
+38 ccp "Copies propagated" "cipher_idea" 71
+38 ccp "Statements deleted" "cipher_idea" 38
+38 ccp "Constants propagated" "cipher_idea" 1
+43 fre "SCC iterations == 2" "cipher_idea" 3
+43 fre "SCC iterations == 3" "cipher_idea" 3
+43 fre "Eliminated" "cipher_idea" 12
+44 evrp "Incremental SSA update" "cipher_idea" 1
+47 cddce "Statements deleted" "cipher_idea" 3
+55 release_ssa "unused VAR_DECLs removed" "cipher_idea" 18
+55 release_ssa "SSA names released" "cipher_idea" 58
+55 release_ssa "SSA name holes removed" "cipher_idea" 58
+35 einline "Symbol to SSA rewrite" "SetCompBit" 1
+43 fre "SCC iterations == 2" "SetCompBit" 1
+43 fre "Eliminated" "SetCompBit" 4
+55 release_ssa "SSA names released" "SetCompBit" 4
+55 release_ssa "SSA name holes removed" "SetCompBit" 4
+38 ccp "Copies propagated" "do_out_error" 1
+38 ccp "Statements deleted" "do_out_error" 4
+38 ccp "Constants propagated" "do_out_error" 3
+43 fre "SCC iterations == 3" "do_out_error" 4
+43 fre "Eliminated" "do_out_error" 2
+44 evrp "Incremental SSA update" "do_out_error" 1
+55 release_ssa "unused VAR_DECLs removed" "do_out_error" 1
+55 release_ssa "SSA names released" "do_out_error" 4
+55 release_ssa "SSA name holes removed" "do_out_error" 4
+38 ccp "Statements deleted" "worst_pass_error" 3
+38 ccp "Constants propagated" "worst_pass_error" 3
+43 fre "SCC iterations == 3" "worst_pass_error" 3
+43 fre "Eliminated" "worst_pass_error" 2
+44 evrp "Incremental SSA update" "worst_pass_error" 1
+55 release_ssa "SSA names released" "worst_pass_error" 2
+55 release_ssa "SSA name holes removed" "worst_pass_error" 2
+38 ccp "Statements deleted" "do_mid_error" 3
+38 ccp "Constants propagated" "do_mid_error" 3
+43 fre "SCC iterations == 3" "do_mid_error" 3
+43 fre "Eliminated" "do_mid_error" 1
+44 evrp "Incremental SSA update" "do_mid_error" 1
+55 release_ssa "SSA names released" "do_mid_error" 3
+55 release_ssa "SSA name holes removed" "do_mid_error" 3
+38 ccp "Statements deleted" "adjust_out_wts" 4
+38 ccp "Constants propagated" "adjust_out_wts" 4
+43 fre "SCC iterations == 3" "adjust_out_wts" 2
+43 fre "SCC iterations == 4" "adjust_out_wts" 1
+55 release_ssa "unused VAR_DECLs removed" "adjust_out_wts" 2
+55 release_ssa "SSA names released" "adjust_out_wts" 4
+55 release_ssa "SSA name holes removed" "adjust_out_wts" 4
+38 ccp "Statements deleted" "adjust_mid_wts" 4
+38 ccp "Constants propagated" "adjust_mid_wts" 4
+43 fre "SCC iterations == 3" "adjust_mid_wts" 2
+43 fre "SCC iterations == 4" "adjust_mid_wts" 1
+55 release_ssa "unused VAR_DECLs removed" "adjust_mid_wts" 2
+55 release_ssa "SSA names released" "adjust_mid_wts" 4
+55 release_ssa "SSA name holes removed" "adjust_mid_wts" 4
+38 ccp "Copies propagated" "do_back_pass" 1
+38 ccp "Statements deleted" "do_back_pass" 1
+43 fre "SCC iterations == 3" "do_back_pass" 3
+44 evrp "Incremental SSA update" "do_back_pass" 1
+55 release_ssa "SSA names released" "do_back_pass" 1
+55 release_ssa "SSA name holes removed" "do_back_pass" 1
+35 einline "Symbol to SSA rewrite" "move_wt_changes" 1
+38 ccp "Statements deleted" "move_wt_changes" 4
+38 ccp "Constants propagated" "move_wt_changes" 4
+43 fre "SCC iterations == 3" "move_wt_changes" 4
+43 fre "SCC iterations == 4" "move_wt_changes" 2
+55 release_ssa "SSA names released" "move_wt_changes" 4
+55 release_ssa "SSA name holes removed" "move_wt_changes" 4
+38 ccp "Copies propagated" "check_out_error" 1
+38 ccp "Statements deleted" "check_out_error" 7
+38 ccp "Constants propagated" "check_out_error" 6
+43 fre "SCC iterations == 2" "check_out_error" 3
+43 fre "SCC iterations == 3" "check_out_error" 6
+43 fre "Eliminated" "check_out_error" 4
+44 evrp "Incremental SSA update" "check_out_error" 1
+55 release_ssa "SSA names released" "check_out_error" 8
+55 release_ssa "SSA name holes removed" "check_out_error" 8
+35 einline "Symbol to SSA rewrite" "zero_changes" 1
+38 ccp "Statements deleted" "zero_changes" 4
+38 ccp "Constants propagated" "zero_changes" 4
+43 fre "SCC iterations == 3" "zero_changes" 4
+43 fre "SCC iterations == 4" "zero_changes" 2
+55 release_ssa "SSA names released" "zero_changes" 4
+55 release_ssa "SSA name holes removed" "zero_changes" 4
+38 ccp "Copies propagated" "ludcmp" 1
+38 ccp "Statements deleted" "ludcmp" 14
+38 ccp "Constants propagated" "ludcmp" 13
+43 fre "SCC iterations == 2" "ludcmp" 2
+43 fre "SCC iterations == 3" "ludcmp" 13
+43 fre "Eliminated" "ludcmp" 43
+44 evrp "Incremental SSA update" "ludcmp" 1
+55 release_ssa "unused VAR_DECLs removed" "ludcmp" 1
+55 release_ssa "SSA names released" "ludcmp" 54
+55 release_ssa "SSA name holes removed" "ludcmp" 54
+38 ccp "Copies propagated" "lubksb" 1
+38 ccp "Statements deleted" "lubksb" 3
+38 ccp "Constants propagated" "lubksb" 2
+43 fre "SCC iterations == 3" "lubksb" 7
+43 fre "Eliminated" "lubksb" 14
+55 release_ssa "SSA names released" "lubksb" 18
+55 release_ssa "SSA name holes removed" "lubksb" 18
+38 ccp "Statements deleted" "lusolve" 2
+38 ccp "Constants propagated" "lusolve" 2
+43 fre "SCC iterations == 2" "lusolve" 2
+55 release_ssa "SSA names released" "lusolve" 2
+55 release_ssa "SSA name holes removed" "lusolve" 2
+43 fre "SCC iterations == 2" "LUFreeMem" 2
+38 ccp "Statements deleted" "DoIDEAIteration" 3
+38 ccp "Constants propagated" "DoIDEAIteration" 3
+43 fre "SCC iterations == 3" "DoIDEAIteration" 3
+43 fre "SCC iterations == 4" "DoIDEAIteration" 1
+55 release_ssa "SSA names released" "DoIDEAIteration" 3
+55 release_ssa "SSA name holes removed" "DoIDEAIteration" 3
+38 ccp "Copies propagated" "DoHuffIteration" 1
+38 ccp "Statements deleted" "DoHuffIteration" 17
+38 ccp "Constants propagated" "DoHuffIteration" 16
+43 fre "SCC iterations == 2" "DoHuffIteration" 2
+43 fre "SCC iterations == 3" "DoHuffIteration" 17
+43 fre "SCC iterations == 4" "DoHuffIteration" 1
+43 fre "Eliminated" "DoHuffIteration" 75
+44 evrp "Incremental SSA update" "DoHuffIteration" 1
+47 cddce "PHI nodes deleted" "DoHuffIteration" 1
+47 cddce "Statements deleted" "DoHuffIteration" 1
+55 release_ssa "unused VAR_DECLs removed" "DoHuffIteration" 3
+55 release_ssa "SSA names released" "DoHuffIteration" 92
+55 release_ssa "SSA name holes removed" "DoHuffIteration" 92
+35 einline "unused VAR_DECLs removed" "DoLUIteration" 6
+35 einline "Symbol to SSA rewrite" "DoLUIteration" 1
+38 ccp "Statements deleted" "DoLUIteration" 4
+38 ccp "Constants propagated" "DoLUIteration" 4
+41 esra "Scalarized aggregates" "DoLUIteration" 1
+41 esra "Modified expressions" "DoLUIteration" 2
+41 esra "Separate LHS and RHS handling" "DoLUIteration" 2
+41 esra "Scalar replacements created" "DoLUIteration" 1
+43 fre "SCC iterations == 3" "DoLUIteration" 5
+43 fre "SCC iterations == 4" "DoLUIteration" 1
+43 fre "Eliminated" "DoLUIteration" 2
+47 cddce "Statements deleted" "DoLUIteration" 2
+55 release_ssa "unused VAR_DECLs removed" "DoLUIteration" 2
+55 release_ssa "SSA names released" "DoLUIteration" 9
+55 release_ssa "SSA name holes removed" "DoLUIteration" 9
+38 ccp "Copies propagated" "LoadNumArrayWithRand" 1
+38 ccp "Statements deleted" "LoadNumArrayWithRand" 3
+38 ccp "Constants propagated" "LoadNumArrayWithRand" 2
+41 esra "Symbol to SSA rewrite" "LoadNumArrayWithRand" 1
+43 fre "SCC iterations == 3" "LoadNumArrayWithRand" 5
+43 fre "SCC iterations == 4" "LoadNumArrayWithRand" 1
+43 fre "Eliminated" "LoadNumArrayWithRand" 4
+55 release_ssa "SSA names released" "LoadNumArrayWithRand" 7
+55 release_ssa "SSA name holes removed" "LoadNumArrayWithRand" 7
+38 ccp "Copies propagated" "DoNumSortIteration" 1
+38 ccp "Statements deleted" "DoNumSortIteration" 2
+38 ccp "Constants propagated" "DoNumSortIteration" 1
+43 fre "SCC iterations == 3" "DoNumSortIteration" 2
+55 release_ssa "SSA names released" "DoNumSortIteration" 2
+55 release_ssa "SSA name holes removed" "DoNumSortIteration" 2
+38 ccp "Copies propagated" "LoadStringArray" 3
+38 ccp "Statements deleted" "LoadStringArray" 13
+38 ccp "Constants propagated" "LoadStringArray" 10
+43 fre "SCC iterations == 2" "LoadStringArray" 1
+43 fre "SCC iterations == 3" "LoadStringArray" 11
+43 fre "SCC iterations == 4" "LoadStringArray" 2
+43 fre "Eliminated" "LoadStringArray" 6
+44 evrp "Incremental SSA update" "LoadStringArray" 1
+55 release_ssa "SSA names released" "LoadStringArray" 17
+55 release_ssa "SSA name holes removed" "LoadStringArray" 17
+38 ccp "Copies propagated" "DoBitfieldIteration" 1
+38 ccp "Statements deleted" "DoBitfieldIteration" 4
+38 ccp "Constants propagated" "DoBitfieldIteration" 3
+43 fre "SCC iterations == 3" "DoBitfieldIteration" 8
+43 fre "SCC iterations == 4" "DoBitfieldIteration" 1
+43 fre "Eliminated" "DoBitfieldIteration" 10
+55 release_ssa "SSA names released" "DoBitfieldIteration" 32
+55 release_ssa "SSA name holes removed" "DoBitfieldIteration" 32
+35 einline "unused VAR_DECLs removed" "LoadAssign" 5
+35 einline "Symbol to SSA rewrite" "LoadAssign" 1
+38 ccp "Statements deleted" "LoadAssign" 2
+38 ccp "Constants propagated" "LoadAssign" 2
+43 fre "SCC iterations == 3" "LoadAssign" 2
+43 fre "SCC iterations == 4" "LoadAssign" 1
+55 release_ssa "SSA names released" "LoadAssign" 4
+55 release_ssa "SSA name holes removed" "LoadAssign" 4
+38 ccp "Statements deleted" "LoadAssignArrayWithRand" 1
+38 ccp "Constants propagated" "LoadAssignArrayWithRand" 1
+41 esra "Scalarized aggregates" "LoadAssignArrayWithRand" 2
+41 esra "Modified expressions" "LoadAssignArrayWithRand" 7
+41 esra "Separate LHS and RHS handling" "LoadAssignArrayWithRand" 7
+41 esra "Scalar replacements created" "LoadAssignArrayWithRand" 2
+43 fre "SCC iterations == 2" "LoadAssignArrayWithRand" 1
+43 fre "SCC iterations == 3" "LoadAssignArrayWithRand" 4
+43 fre "SCC iterations == 5" "LoadAssignArrayWithRand" 1
+55 release_ssa "unused VAR_DECLs removed" "LoadAssignArrayWithRand" 3
+55 release_ssa "SSA names released" "LoadAssignArrayWithRand" 13
+55 release_ssa "SSA name holes removed" "LoadAssignArrayWithRand" 13
+35 einline "unused VAR_DECLs removed" "DoAssignIteration" 2
+35 einline "Symbol to SSA rewrite" "DoAssignIteration" 1
+38 ccp "Statements deleted" "DoAssignIteration" 1
+38 ccp "Constants propagated" "DoAssignIteration" 1
+41 esra "Symbol to SSA rewrite" "DoAssignIteration" 1
+41 esra "Scalarized aggregates" "DoAssignIteration" 1
+41 esra "Modified expressions" "DoAssignIteration" 4
+41 esra "Separate LHS and RHS handling" "DoAssignIteration" 4
+41 esra "Scalar replacements created" "DoAssignIteration" 1
+43 fre "SCC iterations == 3" "DoAssignIteration" 3
+55 release_ssa "unused VAR_DECLs removed" "DoAssignIteration" 1
+55 release_ssa "SSA names released" "DoAssignIteration" 7
+55 release_ssa "SSA name holes removed" "DoAssignIteration" 7
+38 ccp "Statements deleted" "randomize_wts" 4
+38 ccp "Constants propagated" "randomize_wts" 4
+41 esra "Symbol to SSA rewrite" "randomize_wts" 1
+43 fre "SCC iterations == 3" "randomize_wts" 4
+43 fre "SCC iterations == 4" "randomize_wts" 2
+55 release_ssa "SSA names released" "randomize_wts" 4
+55 release_ssa "SSA name holes removed" "randomize_wts" 4
+38 ccp "Statements deleted" "build_problem" 6
+38 ccp "Constants propagated" "build_problem" 6
+43 fre "SCC iterations == 2" "build_problem" 1
+43 fre "SCC iterations == 3" "build_problem" 6
+43 fre "Eliminated" "build_problem" 11
+44 evrp "Incremental SSA update" "build_problem" 1
+55 release_ssa "SSA names released" "build_problem" 16
+55 release_ssa "SSA name holes removed" "build_problem" 16
+43 fre "SCC iterations == 2" "stradjust" 1
+43 fre "SCC iterations == 3" "stradjust" 2
+43 fre "Eliminated" "stradjust" 22
+47 cddce "Statements deleted" "stradjust" 1
+55 release_ssa "SSA names released" "stradjust" 24
+55 release_ssa "SSA name holes removed" "stradjust" 24
+38 ccp "Statements deleted" "str_is_less" 4
+38 ccp "Constants propagated" "str_is_less" 4
+43 fre "SCC iterations == 2" "str_is_less" 2
+43 fre "Eliminated" "str_is_less" 24
+48 eipa_sra "Symbol to SSA rewrite" "str_is_less.isra.2" 1
+48 eipa_sra "Unused parameters deleted" "str_is_less.isra.2" 1
+55 release_ssa "unused VAR_DECLs removed" "str_is_less.isra.2" 1
+38 ccp "Copies propagated" "strsift" 1
+38 ccp "Statements deleted" "strsift" 1
+43 fre "SCC iterations == 2" "strsift" 1
+43 fre "SCC iterations == 3" "strsift" 1
+43 fre "Eliminated" "strsift" 14
+47 cddce "PHI nodes deleted" "strsift" 1
+55 release_ssa "SSA names released" "strsift" 16
+55 release_ssa "SSA name holes removed" "strsift" 16
+38 ccp "Copies propagated" "StrHeapSort" 1
+38 ccp "Statements deleted" "StrHeapSort" 1
+43 fre "SCC iterations == 3" "StrHeapSort" 4
+43 fre "Eliminated" "StrHeapSort" 6
+48 eipa_sra "Symbol to SSA rewrite" "StrHeapSort.isra.3" 1
+48 eipa_sra "Unused parameters deleted" "StrHeapSort.isra.3" 1
+55 release_ssa "unused VAR_DECLs removed" "StrHeapSort.isra.3" 1
+38 ccp "Copies propagated" "DoStringSortIteration" 3
+38 ccp "Statements deleted" "DoStringSortIteration" 4
+38 ccp "Constants propagated" "DoStringSortIteration" 1
+43 fre "SCC iterations == 3" "DoStringSortIteration" 3
+43 fre "Eliminated" "DoStringSortIteration" 1
+55 release_ssa "SSA names released" "DoStringSortIteration" 5
+55 release_ssa "SSA name holes removed" "DoStringSortIteration" 5
+38 ccp "Statements deleted" "thefunction" 1
+38 ccp "Constants propagated" "thefunction" 1
+43 fre "SCC iterations == 2" "thefunction" 2
+54 fnsplit "Symbol to SSA rewrite" "thefunction" 1
+55 release_ssa "SSA names released" "thefunction" 7
+55 release_ssa "SSA name holes removed" "thefunction" 7
+38 ccp "Copies propagated" "TrapezoidIntegrate" 2
+38 ccp "Statements deleted" "TrapezoidIntegrate" 2
+43 fre "SCC iterations == 2" "TrapezoidIntegrate" 2
+43 fre "SCC iterations == 3" "TrapezoidIntegrate" 4
+54 fnsplit "Symbol to SSA rewrite" "TrapezoidIntegrate" 1
+55 release_ssa "SSA names released" "TrapezoidIntegrate" 2
+55 release_ssa "SSA name holes removed" "TrapezoidIntegrate" 2
+38 ccp "Statements deleted" "DoFPUTransIteration" 2
+38 ccp "Constants propagated" "DoFPUTransIteration" 3
+43 fre "SCC iterations == 3" "DoFPUTransIteration" 2
+43 fre "Eliminated" "DoFPUTransIteration" 3
+55 release_ssa "unused VAR_DECLs removed" "DoFPUTransIteration" 1
+55 release_ssa "SSA names released" "DoFPUTransIteration" 5
+55 release_ssa "SSA name holes removed" "DoFPUTransIteration" 5
+38 ccp "Statements deleted" "create_text_line" 1
+38 ccp "Constants propagated" "create_text_line" 1
+43 fre "SCC iterations == 3" "create_text_line" 1
+43 fre "Eliminated" "create_text_line" 1
+55 release_ssa "SSA names released" "create_text_line" 2
+55 release_ssa "SSA name holes removed" "create_text_line" 2
+38 ccp "Copies propagated" "create_text_block" 2
+38 ccp "Statements deleted" "create_text_block" 2
+38 ccp "Constants propagated" "create_text_block" 1
+43 fre "SCC iterations == 3" "create_text_block" 1
+55 release_ssa "SSA names released" "create_text_block" 2
+55 release_ssa "SSA name holes removed" "create_text_block" 2
+38 ccp "Statements deleted" "read_data_file" 22
+38 ccp "Constants propagated" "read_data_file" 16
+43 fre "SCC iterations == 2" "read_data_file" 3
+43 fre "SCC iterations == 3" "read_data_file" 4
+47 cddce "Statements deleted" "read_data_file" 1
+55 release_ssa "unused VAR_DECLs removed" "read_data_file" 4
+55 release_ssa "SSA names released" "read_data_file" 31
+55 release_ssa "SSA name holes removed" "read_data_file" 31
+35 einline "unused VAR_DECLs removed" "do_mid_forward" 4
+35 einline "Symbol to SSA rewrite" "do_mid_forward" 1
+38 ccp "Statements deleted" "do_mid_forward" 3
+38 ccp "Constants propagated" "do_mid_forward" 3
+43 fre "SCC iterations == 3" "do_mid_forward" 3
+44 evrp "Incremental SSA update" "do_mid_forward" 1
+55 release_ssa "SSA names released" "do_mid_forward" 2
+55 release_ssa "SSA name holes removed" "do_mid_forward" 2
+38 ccp "Statements deleted" "do_out_forward" 3
+38 ccp "Constants propagated" "do_out_forward" 3
+43 fre "SCC iterations == 3" "do_out_forward" 3
+44 evrp "Incremental SSA update" "do_out_forward" 1
+55 release_ssa "SSA names released" "do_out_forward" 2
+55 release_ssa "SSA name holes removed" "do_out_forward" 2
+38 ccp "Statements deleted" "DoNNetIteration" 1
+38 ccp "Constants propagated" "DoNNetIteration" 1
+43 fre "SCC iterations == 3" "DoNNetIteration" 3
+55 release_ssa "SSA names released" "DoNNetIteration" 3
+55 release_ssa "SSA name holes removed" "DoNNetIteration" 3
+35 einline "unused VAR_DECLs removed" "DoNumSort" 1
+35 einline "Symbol to SSA rewrite" "DoNumSort" 1
+38 ccp "Copies propagated" "DoNumSort" 2
+38 ccp "Statements deleted" "DoNumSort" 6
+38 ccp "Constants propagated" "DoNumSort" 21
+43 fre "SCC iterations == 2" "DoNumSort" 3
+43 fre "SCC iterations == 3" "DoNumSort" 3
+43 fre "Eliminated" "DoNumSort" 2
+44 evrp "Incremental SSA update" "DoNumSort" 1
+55 release_ssa "unused VAR_DECLs removed" "DoNumSort" 3
+55 release_ssa "SSA names released" "DoNumSort" 9
+55 release_ssa "SSA name holes removed" "DoNumSort" 9
+35 einline "unused VAR_DECLs removed" "DoStringSort" 1
+35 einline "Symbol to SSA rewrite" "DoStringSort" 1
+38 ccp "Statements deleted" "DoStringSort" 4
+38 ccp "Constants propagated" "DoStringSort" 21
+43 fre "SCC iterations == 2" "DoStringSort" 3
+43 fre "SCC iterations == 3" "DoStringSort" 3
+43 fre "Eliminated" "DoStringSort" 2
+44 evrp "Incremental SSA update" "DoStringSort" 1
+55 release_ssa "unused VAR_DECLs removed" "DoStringSort" 2
+55 release_ssa "SSA names released" "DoStringSort" 6
+55 release_ssa "SSA name holes removed" "DoStringSort" 6
+38 ccp "Statements deleted" "DoBitops" 4
+38 ccp "Constants propagated" "DoBitops" 20
+43 fre "SCC iterations == 2" "DoBitops" 6
+43 fre "SCC iterations == 3" "DoBitops" 3
+43 fre "Eliminated" "DoBitops" 4
+44 evrp "Incremental SSA update" "DoBitops" 1
+55 release_ssa "unused VAR_DECLs removed" "DoBitops" 2
+55 release_ssa "SSA names released" "DoBitops" 6
+55 release_ssa "SSA name holes removed" "DoBitops" 6
+38 ccp "Statements deleted" "DoEmFloat" 6
+38 ccp "Constants propagated" "DoEmFloat" 22
+43 fre "SCC iterations == 2" "DoEmFloat" 6
+43 fre "SCC iterations == 3" "DoEmFloat" 4
+43 fre "Eliminated" "DoEmFloat" 3
+44 evrp "Incremental SSA update" "DoEmFloat" 1
+55 release_ssa "unused VAR_DECLs removed" "DoEmFloat" 3
+55 release_ssa "SSA names released" "DoEmFloat" 6
+55 release_ssa "SSA name holes removed" "DoEmFloat" 6
+35 einline "unused VAR_DECLs removed" "DoFourier" 1
+35 einline "Symbol to SSA rewrite" "DoFourier" 1
+38 ccp "Statements deleted" "DoFourier" 4
+38 ccp "Constants propagated" "DoFourier" 21
+43 fre "SCC iterations == 2" "DoFourier" 5
+43 fre "SCC iterations == 3" "DoFourier" 3
+43 fre "Eliminated" "DoFourier" 4
+44 evrp "Incremental SSA update" "DoFourier" 1
+55 release_ssa "unused VAR_DECLs removed" "DoFourier" 2
+55 release_ssa "SSA names released" "DoFourier" 6
+55 release_ssa "SSA name holes removed" "DoFourier" 6
+38 ccp "Statements deleted" "DoAssign" 4
+38 ccp "Constants propagated" "DoAssign" 17
+43 fre "SCC iterations == 2" "DoAssign" 3
+43 fre "SCC iterations == 3" "DoAssign" 3
+43 fre "Eliminated" "DoAssign" 2
+44 evrp "Incremental SSA update" "DoAssign" 1
+55 release_ssa "unused VAR_DECLs removed" "DoAssign" 2
+55 release_ssa "SSA names released" "DoAssign" 4
+55 release_ssa "SSA name holes removed" "DoAssign" 4
+38 ccp "Statements deleted" "DoIDEA" 7
+38 ccp "Constants propagated" "DoIDEA" 26
+43 fre "SCC iterations == 2" "DoIDEA" 5
+43 fre "SCC iterations == 3" "DoIDEA" 9
+43 fre "Eliminated" "DoIDEA" 5
+44 evrp "Incremental SSA update" "DoIDEA" 1
+55 release_ssa "unused VAR_DECLs removed" "DoIDEA" 2
+55 release_ssa "SSA names released" "DoIDEA" 7
+55 release_ssa "SSA name holes removed" "DoIDEA" 7
+38 ccp "Statements deleted" "DoHuffman" 4
+38 ccp "Constants propagated" "DoHuffman" 26
+43 fre "SCC iterations == 2" "DoHuffman" 6
+43 fre "SCC iterations == 3" "DoHuffman" 3
+43 fre "Eliminated" "DoHuffman" 5
+44 evrp "Incremental SSA update" "DoHuffman" 1
+55 release_ssa "unused VAR_DECLs removed" "DoHuffman" 2
+55 release_ssa "SSA names released" "DoHuffman" 5
+55 release_ssa "SSA name holes removed" "DoHuffman" 5
+38 ccp "Statements deleted" "DoNNET" 4
+38 ccp "Constants propagated" "DoNNET" 14
+43 fre "SCC iterations == 2" "DoNNET" 3
+43 fre "SCC iterations == 3" "DoNNET" 3
+44 evrp "Incremental SSA update" "DoNNET" 1
+55 release_ssa "unused VAR_DECLs removed" "DoNNET" 2
+38 ccp "Statements deleted" "DoLU" 7
+38 ccp "Constants propagated" "DoLU" 20
+41 esra "Scalarized aggregates" "DoLU" 1
+41 esra "Modified expressions" "DoLU" 2
+41 esra "Separate LHS and RHS handling" "DoLU" 2
+41 esra "Scalar replacements created" "DoLU" 1
+43 fre "SCC iterations == 2" "DoLU" 10
+43 fre "SCC iterations == 3" "DoLU" 4
+43 fre "Eliminated" "DoLU" 8
+44 evrp "Incremental SSA update" "DoLU" 1
+55 release_ssa "unused VAR_DECLs removed" "DoLU" 6
+55 release_ssa "SSA names released" "DoLU" 15
+55 release_ssa "SSA name holes removed" "DoLU" 15
+89 materialize-all-clones "Symbol to SSA rewrite" "(nofn)" 14
+97 ccp "Copies propagated" "Assignment" 5
+97 ccp "Statements deleted" "Assignment" 4
+106 fre "SCC iterations == 2" "Assignment" 8
+106 fre "SCC iterations == 3" "Assignment" 38
+106 fre "SCC iterations == 4" "Assignment" 4
+106 fre "SCC iterations == 5" "Assignment" 1
+106 fre "Eliminated" "Assignment" 9
+108 thread "Jumps threaded" "Assignment" 1
+109 vrp "Incremental SSA update" "Assignment" 2
+109 vrp "Statements folded" "Assignment" 32
+109 vrp "Jumps threaded" "Assignment" 36
+109 vrp "Number of ASSERT_EXPR expressions inserted" "Assignment" 60
+109 vrp "Statements deleted" "Assignment" 1
+111 dce "PHI nodes deleted" "Assignment" 52
+115 copyprop "Copies propagated" "Assignment" 29
+115 copyprop "Constants propagated" "Assignment" 17
+115 copyprop "Statements deleted" "Assignment" 37
+124 dom "Copies propagated" "Assignment" 15
+124 dom "Redundant expressions eliminated" "Assignment" 11
+129 dce "Statements deleted" "Assignment" 11
+139 pre "compute_antic iterations == 4" "Assignment" 1
+139 pre "Insertions" "Assignment" 71
+139 pre "Symbol to SSA rewrite" "Assignment" 1
+139 pre "SCC iterations == 2" "Assignment" 1
+139 pre "SCC iterations == 3" "Assignment" 43
+139 pre "insert iterations == 2" "Assignment" 1
+139 pre "Eliminated" "Assignment" 4
+140 sink "Sunk statements" "Assignment" 1
+144 dce "Statements deleted" "Assignment" 1
+147 loopinit "Incremental SSA update" "Assignment" 1
+151 cddce "PHI nodes deleted" "Assignment" 7
+152 ldist "Symbol to SSA rewrite" "Assignment" 1
+153 copyprop "Copies propagated" "Assignment" 4
+153 copyprop "Statements deleted" "Assignment" 4
+164 vect "Vectorized loops" "Assignment" 1
+165 dce "PHI nodes deleted" "Assignment" 4
+165 dce "Statements deleted" "Assignment" 7
+184 dom "Copies propagated" "Assignment" 57
+184 dom "Redundant expressions eliminated" "Assignment" 47
+187 vrp "Incremental SSA update" "Assignment" 2
+187 vrp "Statements folded" "Assignment" 1
+187 vrp "Constants propagated" "Assignment" 7
+187 vrp "Number of ASSERT_EXPR expressions inserted" "Assignment" 64
+187 vrp "Statements deleted" "Assignment" 8
+190 cddce "PHI nodes deleted" "Assignment" 2
+190 cddce "Statements deleted" "Assignment" 55
+197 dce "Statements deleted" "Assignment" 1
+266 combine "two-insn combine" "Assignment" 9
+84 inline "unused VAR_DECLs removed" "DoBitfieldIteration" 5
+84 inline "Symbol to SSA rewrite" "DoBitfieldIteration" 1
+106 fre "SCC iterations == 3" "DoBitfieldIteration" 8
+106 fre "SCC iterations == 4" "DoBitfieldIteration" 1
+108 thread "Incremental SSA update" "DoBitfieldIteration" 1
+109 vrp "Incremental SSA update" "DoBitfieldIteration" 1
+109 vrp "Incremental SSA update" "DoBitfieldIteration" 1
+109 vrp "Number of ASSERT_EXPR expressions inserted" "DoBitfieldIteration" 11
+120 ch "Incremental SSA update" "DoBitfieldIteration" 1
+124 dom "Jumps threaded" "DoBitfieldIteration" 2
+124 dom "Constants propagated" "DoBitfieldIteration" 1
+129 dce "Statements deleted" "DoBitfieldIteration" 1
+139 pre "compute_antic iterations == 3" "DoBitfieldIteration" 1
+139 pre "Insertions" "DoBitfieldIteration" 23
+139 pre "Symbol to SSA rewrite" "DoBitfieldIteration" 1
+139 pre "SCC iterations == 2" "DoBitfieldIteration" 4
+139 pre "SCC iterations == 3" "DoBitfieldIteration" 9
+139 pre "HOIST inserted" "DoBitfieldIteration" 5
+139 pre "insert iterations == 2" "DoBitfieldIteration" 1
+139 pre "Eliminated" "DoBitfieldIteration" 24
+184 dom "Copies propagated" "DoBitfieldIteration" 3
+184 dom "Redundant expressions eliminated" "DoBitfieldIteration" 3
+187 vrp "Incremental SSA update" "DoBitfieldIteration" 2
+187 vrp "Number of ASSERT_EXPR expressions inserted" "DoBitfieldIteration" 17
+190 cddce "Statements deleted" "DoBitfieldIteration" 4
+233 optimized "unused VAR_DECLs removed" "DoBitfieldIteration" 14
+266 combine "two-insn combine" "DoBitfieldIteration" 7
+84 inline "Symbol to SSA rewrite" "stradjust" 1
+106 fre "SCC iterations == 2" "stradjust" 1
+106 fre "SCC iterations == 3" "stradjust" 2
+109 vrp "Incremental SSA update" "stradjust" 1
+109 vrp "Statements folded" "stradjust" 2
+109 vrp "Number of ASSERT_EXPR expressions inserted" "stradjust" 6
+111 dce "Statements deleted" "stradjust" 1
+120 ch "Incremental SSA update" "stradjust" 1
+124 dom "Incremental SSA update" "stradjust" 1
+129 dce "Statements deleted" "stradjust" 1
+139 pre "compute_antic iterations == 3" "stradjust" 1
+139 pre "Insertions" "stradjust" 7
+139 pre "Symbol to SSA rewrite" "stradjust" 1
+139 pre "SCC iterations == 2" "stradjust" 2
+139 pre "SCC iterations == 3" "stradjust" 2
+139 pre "HOIST inserted" "stradjust" 4
+139 pre "insert iterations == 3" "stradjust" 1
+139 pre "Eliminated" "stradjust" 9
+140 sink "Sunk statements" "stradjust" 5
+148 unswitch "Incremental SSA update" "stradjust" 1
+151 cddce "PHI nodes deleted" "stradjust" 2
+164 vect "Vectorized loops" "stradjust" 2
+165 dce "PHI nodes deleted" "stradjust" 6
+165 dce "Statements deleted" "stradjust" 10
+167 cunroll "Incremental SSA update" "stradjust" 1
+184 dom "Copies propagated" "stradjust" 24
+184 dom "Redundant expressions eliminated" "stradjust" 18
+184 dom "Constants propagated" "stradjust" 2
+187 vrp "Incremental SSA update" "stradjust" 1
+187 vrp "Number of ASSERT_EXPR expressions inserted" "stradjust" 24
+187 vrp "Statements deleted" "stradjust" 4
+190 cddce "Statements deleted" "stradjust" 27
+233 optimized "unused VAR_DECLs removed" "stradjust" 3
+266 combine "two-insn combine" "stradjust" 19
+97 ccp "Copies propagated" "DoHuffIteration" 10
+97 ccp "Statements deleted" "DoHuffIteration" 5
+106 fre "SCC iterations == 2" "DoHuffIteration" 2
+106 fre "SCC iterations == 3" "DoHuffIteration" 17
+106 fre "SCC iterations == 4" "DoHuffIteration" 1
+106 fre "Eliminated" "DoHuffIteration" 4
+109 vrp "Incremental SSA update" "DoHuffIteration" 2
+109 vrp "Statements folded" "DoHuffIteration" 4
+109 vrp "Constants propagated" "DoHuffIteration" 2
+109 vrp "Jumps threaded" "DoHuffIteration" 5
+109 vrp "Number of ASSERT_EXPR expressions inserted" "DoHuffIteration" 29
+109 vrp "Statements deleted" "DoHuffIteration" 2
+111 dce "PHI nodes deleted" "DoHuffIteration" 7
+111 dce "Statements deleted" "DoHuffIteration" 1
+115 copyprop "Copies propagated" "DoHuffIteration" 16
+115 copyprop "Constants propagated" "DoHuffIteration" 5
+115 copyprop "Statements deleted" "DoHuffIteration" 15
+120 ch "Incremental SSA update" "DoHuffIteration" 1
+123 thread "Jumps threaded" "DoHuffIteration" 1
+124 dom "Copies propagated" "DoHuffIteration" 5
+124 dom "Redundant expressions eliminated" "DoHuffIteration" 3
+124 dom "Constants propagated" "DoHuffIteration" 5
+129 dce "Statements deleted" "DoHuffIteration" 6
+139 pre "compute_antic iterations == 3" "DoHuffIteration" 1
+139 pre "Insertions" "DoHuffIteration" 38
+139 pre "New PHIs" "DoHuffIteration" 1
+139 pre "Symbol to SSA rewrite" "DoHuffIteration" 1
+139 pre "SCC iterations == 2" "DoHuffIteration" 6
+139 pre "SCC iterations == 3" "DoHuffIteration" 18
+139 pre "HOIST inserted" "DoHuffIteration" 6
+139 pre "PA inserted" "DoHuffIteration" 4
+139 pre "insert iterations == 2" "DoHuffIteration" 1
+139 pre "Eliminated" "DoHuffIteration" 12
+144 dce "Statements deleted" "DoHuffIteration" 1
+147 loopinit "Incremental SSA update" "DoHuffIteration" 1
+151 cddce "PHI nodes deleted" "DoHuffIteration" 3
+163 ifcvt "Incremental SSA update" "DoHuffIteration" 5
+165 dce "PHI nodes deleted" "DoHuffIteration" 3
+165 dce "Statements deleted" "DoHuffIteration" 5
+184 dom "Copies propagated" "DoHuffIteration" 34
+184 dom "Redundant expressions eliminated" "DoHuffIteration" 23
+184 dom "Constants propagated" "DoHuffIteration" 4
+187 vrp "Incremental SSA update" "DoHuffIteration" 2
+187 vrp "Statements folded" "DoHuffIteration" 1
+187 vrp "Jumps threaded" "DoHuffIteration" 2
+187 vrp "Number of ASSERT_EXPR expressions inserted" "DoHuffIteration" 39
+187 vrp "Statements deleted" "DoHuffIteration" 3
+190 cddce "Statements deleted" "DoHuffIteration" 22
+233 optimized "unused VAR_DECLs removed" "DoHuffIteration" 9
+266 combine "three-insn combine" "DoHuffIteration" 1
+266 combine "two-insn combine" "DoHuffIteration" 33
+97 ccp "Copies propagated" "DoNNetIteration" 7
+97 ccp "Statements deleted" "DoNNetIteration" 6
+99 cunrolli "Incremental SSA update" "DoNNetIteration" 2
+106 fre "SCC iterations == 2" "DoNNetIteration" 27
+106 fre "SCC iterations == 3" "DoNNetIteration" 16
+106 fre "SCC iterations == 4" "DoNNetIteration" 1
+106 fre "Eliminated" "DoNNetIteration" 101
+108 thread "Jumps threaded" "DoNNetIteration" 11
+109 vrp "Incremental SSA update" "DoNNetIteration" 1
+109 vrp "Incremental SSA update" "DoNNetIteration" 2
+109 vrp "Statements folded" "DoNNetIteration" 40
+109 vrp "Constants propagated" "DoNNetIteration" 15
+109 vrp "Jumps threaded" "DoNNetIteration" 30
+109 vrp "Number of ASSERT_EXPR expressions inserted" "DoNNetIteration" 47
+109 vrp "Statements deleted" "DoNNetIteration" 22
+111 dce "PHI nodes deleted" "DoNNetIteration" 40
+114 cselim "Symbol to SSA rewrite" "DoNNetIteration" 1
+115 copyprop "Copies propagated" "DoNNetIteration" 49
+115 copyprop "Constants propagated" "DoNNetIteration" 8
+115 copyprop "Statements deleted" "DoNNetIteration" 20
+120 ch "Incremental SSA update" "DoNNetIteration" 1
+123 thread "Incremental SSA update" "DoNNetIteration" 1
+124 dom "Copies propagated" "DoNNetIteration" 2
+124 dom "Redundant expressions eliminated" "DoNNetIteration" 12
+124 dom "Jumps threaded" "DoNNetIteration" 11
+124 dom "Constants propagated" "DoNNetIteration" 1
+129 dce "Statements deleted" "DoNNetIteration" 4
+139 pre "compute_antic iterations == 3" "DoNNetIteration" 1
+139 pre "Insertions" "DoNNetIteration" 20
+139 pre "New PHIs" "DoNNetIteration" 5
+139 pre "Symbol to SSA rewrite" "DoNNetIteration" 1
+139 pre "SCC iterations == 2" "DoNNetIteration" 11
+139 pre "SCC iterations == 3" "DoNNetIteration" 17
+139 pre "HOIST inserted" "DoNNetIteration" 1
+139 pre "PA inserted" "DoNNetIteration" 1
+139 pre "insert iterations == 2" "DoNNetIteration" 1
+139 pre "Eliminated" "DoNNetIteration" 3
+144 dce "PHI nodes deleted" "DoNNetIteration" 1
+144 dce "Statements deleted" "DoNNetIteration" 3
+147 loopinit "Incremental SSA update" "DoNNetIteration" 1
+152 ldist "Symbol to SSA rewrite" "DoNNetIteration" 1
+153 copyprop "Copies propagated" "DoNNetIteration" 11
+153 copyprop "Statements deleted" "DoNNetIteration" 3
+164 vect "Vectorized loops" "DoNNetIteration" 1
+165 dce "PHI nodes deleted" "DoNNetIteration" 4
+165 dce "Statements deleted" "DoNNetIteration" 11
+181 split-paths "Incremental SSA update" "DoNNetIteration" 1
+183 thread "Jumps threaded" "DoNNetIteration" 3
+184 dom "Copies propagated" "DoNNetIteration" 174
+184 dom "Redundant expressions eliminated" "DoNNetIteration" 163
+184 dom "Constants propagated" "DoNNetIteration" 363
+186 thread "Jumps threaded" "DoNNetIteration" 1
+187 vrp "Incremental SSA update" "DoNNetIteration" 1
+187 vrp "Incremental SSA update" "DoNNetIteration" 2
+187 vrp "Statements folded" "DoNNetIteration" 1
+187 vrp "Constants propagated" "DoNNetIteration" 8
+187 vrp "Jumps threaded" "DoNNetIteration" 1
+187 vrp "Number of ASSERT_EXPR expressions inserted" "DoNNetIteration" 75
+187 vrp "Statements deleted" "DoNNetIteration" 144
+190 cddce "PHI nodes deleted" "DoNNetIteration" 1
+190 cddce "Statements deleted" "DoNNetIteration" 532
+233 optimized "unused VAR_DECLs removed" "DoNNetIteration" 3
+266 combine "three-insn combine" "DoNNetIteration" 1
+266 combine "two-insn combine" "DoNNetIteration" 29
+283 gcse2 "moves inserted" "DoNNetIteration" 1
+283 gcse2 "insns deleted" "DoNNetIteration" 13
+283 gcse2 "copies inserted" "DoNNetIteration" 4
+84 inline "unused VAR_DECLs removed" "lusolve.constprop" 4
+84 inline "Symbol to SSA rewrite" "lusolve.constprop" 1
+97 ccp "Copies propagated" "lusolve.constprop" 2
+97 ccp "Statements deleted" "lusolve.constprop" 5
+97 ccp "Constants propagated" "lusolve.constprop" 5
+106 fre "SCC iterations == 2" "lusolve.constprop" 6
+106 fre "SCC iterations == 3" "lusolve.constprop" 21
+106 fre "Eliminated" "lusolve.constprop" 3
+108 thread "Incremental SSA update" "lusolve.constprop" 1
+109 vrp "Incremental SSA update" "lusolve.constprop" 1
+109 vrp "Incremental SSA update" "lusolve.constprop" 2
+109 vrp "Statements folded" "lusolve.constprop" 7
+109 vrp "Constants propagated" "lusolve.constprop" 1
+109 vrp "Jumps threaded" "lusolve.constprop" 13
+109 vrp "Number of ASSERT_EXPR expressions inserted" "lusolve.constprop" 48
+111 dce "PHI nodes deleted" "lusolve.constprop" 22
+111 dce "Statements deleted" "lusolve.constprop" 1
+115 copyprop "Copies propagated" "lusolve.constprop" 10
+115 copyprop "Constants propagated" "lusolve.constprop" 8
+115 copyprop "Statements deleted" "lusolve.constprop" 13
+120 ch "Incremental SSA update" "lusolve.constprop" 1
+124 dom "Incremental SSA update" "lusolve.constprop" 1
+124 dom "Copies propagated" "lusolve.constprop" 7
+124 dom "Redundant expressions eliminated" "lusolve.constprop" 5
+124 dom "Jumps threaded" "lusolve.constprop" 4
+124 dom "Constants propagated" "lusolve.constprop" 1
+129 dce "Statements deleted" "lusolve.constprop" 6
+139 pre "compute_antic iterations == 3" "lusolve.constprop" 1
+139 pre "Insertions" "lusolve.constprop" 43
+139 pre "New PHIs" "lusolve.constprop" 1
+139 pre "Symbol to SSA rewrite" "lusolve.constprop" 1
+139 pre "SCC iterations == 2" "lusolve.constprop" 6
+139 pre "SCC iterations == 3" "lusolve.constprop" 20
+139 pre "HOIST inserted" "lusolve.constprop" 7
+139 pre "PA inserted" "lusolve.constprop" 1
+139 pre "insert iterations == 2" "lusolve.constprop" 1
+139 pre "Eliminated" "lusolve.constprop" 20
+147 loopinit "Incremental SSA update" "lusolve.constprop" 1
+163 ifcvt "Incremental SSA update" "lusolve.constprop" 1
+164 vect "Incremental SSA update" "lusolve.constprop" 1
+164 vect "Vectorized loops" "lusolve.constprop" 1
+165 dce "PHI nodes deleted" "lusolve.constprop" 4
+165 dce "Statements deleted" "lusolve.constprop" 5
+183 thread "Incremental SSA update" "lusolve.constprop" 1
+184 dom "Copies propagated" "lusolve.constprop" 67
+184 dom "Redundant expressions eliminated" "lusolve.constprop" 33
+186 thread "Incremental SSA update" "lusolve.constprop" 1
+187 vrp "Incremental SSA update" "lusolve.constprop" 1
+187 vrp "Incremental SSA update" "lusolve.constprop" 2
+187 vrp "Statements folded" "lusolve.constprop" 6
+187 vrp "Constants propagated" "lusolve.constprop" 7
+187 vrp "Number of ASSERT_EXPR expressions inserted" "lusolve.constprop" 52
+187 vrp "Statements deleted" "lusolve.constprop" 4
+190 cddce "Symbol to SSA rewrite" "lusolve.constprop" 1
+190 cddce "PHI nodes deleted" "lusolve.constprop" 2
+190 cddce "Statements deleted" "lusolve.constprop" 66
+197 dce "Statements deleted" "lusolve.constprop" 1
+233 optimized "unused VAR_DECLs removed" "lusolve.constprop" 81
+266 combine "two-insn combine" "lusolve.constprop" 27
+84 inline "unused VAR_DECLs removed" "DoFPUTransIteration" 9
+84 inline "Symbol to SSA rewrite" "DoFPUTransIteration" 2
+97 ccp "Statements folded" "DoFPUTransIteration" 3
+97 ccp "Copies propagated" "DoFPUTransIteration" 6
+97 ccp "Statements deleted" "DoFPUTransIteration" 36
+97 ccp "Constants propagated" "DoFPUTransIteration" 18
+106 fre "SCC iterations == 3" "DoFPUTransIteration" 10
+106 fre "Eliminated" "DoFPUTransIteration" 2
+109 vrp "Incremental SSA update" "DoFPUTransIteration" 1
+109 vrp "Incremental SSA update" "DoFPUTransIteration" 2
+109 vrp "Number of ASSERT_EXPR expressions inserted" "DoFPUTransIteration" 5
+115 copyprop "Copies propagated" "DoFPUTransIteration" 3
+115 copyprop "Statements deleted" "DoFPUTransIteration" 3
+120 ch "Incremental SSA update" "DoFPUTransIteration" 1
+124 dom "Incremental SSA update" "DoFPUTransIteration" 1
+124 dom "Copies propagated" "DoFPUTransIteration" 3
+124 dom "Constants propagated" "DoFPUTransIteration" 3
+129 dce "Statements deleted" "DoFPUTransIteration" 3
+133 sincos "sincos statements inserted" "DoFPUTransIteration" 2
+139 pre "compute_antic iterations == 3" "DoFPUTransIteration" 1
+139 pre "Insertions" "DoFPUTransIteration" 18
+139 pre "New PHIs" "DoFPUTransIteration" 1
+139 pre "Symbol to SSA rewrite" "DoFPUTransIteration" 1
+139 pre "SCC iterations == 2" "DoFPUTransIteration" 1
+139 pre "SCC iterations == 3" "DoFPUTransIteration" 10
+139 pre "insert iterations == 3" "DoFPUTransIteration" 1
+139 pre "Eliminated" "DoFPUTransIteration" 1
+144 dce "Statements deleted" "DoFPUTransIteration" 1
+147 loopinit "Incremental SSA update" "DoFPUTransIteration" 1
+151 cddce "PHI nodes deleted" "DoFPUTransIteration" 1
+165 dce "PHI nodes deleted" "DoFPUTransIteration" 3
+165 dce "Statements deleted" "DoFPUTransIteration" 3
+184 dom "Copies propagated" "DoFPUTransIteration" 3
+187 vrp "Incremental SSA update" "DoFPUTransIteration" 2
+187 vrp "Statements folded" "DoFPUTransIteration" 1
+187 vrp "Number of ASSERT_EXPR expressions inserted" "DoFPUTransIteration" 6
+233 optimized "unused VAR_DECLs removed" "DoFPUTransIteration" 13
+266 combine "two-insn combine" "DoFPUTransIteration" 4
+84 inline "unused VAR_DECLs removed" "cipher_idea" 72
+84 inline "Symbol to SSA rewrite" "cipher_idea" 1
+97 ccp "Copies propagated" "cipher_idea" 30
+97 ccp "Statements deleted" "cipher_idea" 31
+106 fre "SCC iterations == 2" "cipher_idea" 3
+106 fre "SCC iterations == 3" "cipher_idea" 3
+106 fre "Eliminated" "cipher_idea" 12
+109 vrp "Incremental SSA update" "cipher_idea" 2
+109 vrp "Number of ASSERT_EXPR expressions inserted" "cipher_idea" 21
+115 copyprop "Copies propagated" "cipher_idea" 14
+115 copyprop "Statements deleted" "cipher_idea" 9
+129 dce "Statements deleted" "cipher_idea" 6
+139 pre "compute_antic iterations == 3" "cipher_idea" 1
+139 pre "Insertions" "cipher_idea" 1
+139 pre "SCC iterations == 2" "cipher_idea" 2
+139 pre "SCC iterations == 3" "cipher_idea" 3
+139 pre "insert iterations == 2" "cipher_idea" 1
+140 sink "Sunk statements" "cipher_idea" 13
+147 loopinit "Incremental SSA update" "cipher_idea" 1
+163 ifcvt "Incremental SSA update" "cipher_idea" 1
+165 dce "PHI nodes deleted" "cipher_idea" 1
+165 dce "Statements deleted" "cipher_idea" 2
+184 dom "Copies propagated" "cipher_idea" 12
+187 vrp "Incremental SSA update" "cipher_idea" 2
+187 vrp "Number of ASSERT_EXPR expressions inserted" "cipher_idea" 19
+190 cddce "Statements deleted" "cipher_idea" 7
+233 optimized "unused VAR_DECLs removed" "cipher_idea" 21
+266 combine "three-insn combine" "cipher_idea" 4
+266 combine "two-insn combine" "cipher_idea" 5
+84 inline "Symbol to SSA rewrite" "DoNumSortIteration" 1
+97 ccp "Copies propagated" "DoNumSortIteration" 1
+97 ccp "Statements deleted" "DoNumSortIteration" 1
+106 fre "SCC iterations == 3" "DoNumSortIteration" 10
+106 fre "SCC iterations == 4" "DoNumSortIteration" 2
+109 vrp "Incremental SSA update" "DoNumSortIteration" 2
+109 vrp "Statements folded" "DoNumSortIteration" 1
+109 vrp "Number of ASSERT_EXPR expressions inserted" "DoNumSortIteration" 28
+115 copyprop "Copies propagated" "DoNumSortIteration" 5
+115 copyprop "Statements deleted" "DoNumSortIteration" 5
+120 ch "Incremental SSA update" "DoNumSortIteration" 1
+124 dom "Copies propagated" "DoNumSortIteration" 1
+124 dom "Redundant expressions eliminated" "DoNumSortIteration" 1
+124 dom "Jumps threaded" "DoNumSortIteration" 1
+124 dom "Constants propagated" "DoNumSortIteration" 2
+129 dce "Statements deleted" "DoNumSortIteration" 3
+139 pre "compute_antic iterations == 3" "DoNumSortIteration" 1
+139 pre "Insertions" "DoNumSortIteration" 22
+139 pre "New PHIs" "DoNumSortIteration" 6
+139 pre "Symbol to SSA rewrite" "DoNumSortIteration" 1
+139 pre "SCC iterations == 2" "DoNumSortIteration" 5
+139 pre "SCC iterations == 3" "DoNumSortIteration" 12
+139 pre "HOIST inserted" "DoNumSortIteration" 6
+139 pre "insert iterations == 2" "DoNumSortIteration" 1
+139 pre "Eliminated" "DoNumSortIteration" 13
+147 loopinit "Incremental SSA update" "DoNumSortIteration" 1
+164 vect "Incremental SSA update" "DoNumSortIteration" 1
+164 vect "Vectorized loops" "DoNumSortIteration" 1
+165 dce "PHI nodes deleted" "DoNumSortIteration" 4
+165 dce "Statements deleted" "DoNumSortIteration" 6
+167 cunroll "Incremental SSA update" "DoNumSortIteration" 1
+184 dom "Copies propagated" "DoNumSortIteration" 24
+184 dom "Redundant expressions eliminated" "DoNumSortIteration" 10
+187 vrp "Incremental SSA update" "DoNumSortIteration" 2
+187 vrp "Statements folded" "DoNumSortIteration" 2
+187 vrp "Jumps threaded" "DoNumSortIteration" 2
+187 vrp "Number of ASSERT_EXPR expressions inserted" "DoNumSortIteration" 54
+190 cddce "PHI nodes deleted" "DoNumSortIteration" 1
+190 cddce "Statements deleted" "DoNumSortIteration" 19
+197 dce "PHI nodes deleted" "DoNumSortIteration" 2
+197 dce "Statements deleted" "DoNumSortIteration" 6
+233 optimized "unused VAR_DECLs removed" "DoNumSortIteration" 7
+266 combine "two-insn combine" "DoNumSortIteration" 12
+84 inline "unused VAR_DECLs removed" "strsift" 9
+84 inline "Symbol to SSA rewrite" "strsift" 1
+106 fre "SCC iterations == 2" "strsift" 4
+106 fre "SCC iterations == 3" "strsift" 2
+106 fre "Eliminated" "strsift" 8
+108 thread "Jumps threaded" "strsift" 8
+109 vrp "Incremental SSA update" "strsift" 1
+109 vrp "Jumps threaded" "strsift" 4
+109 vrp "Number of ASSERT_EXPR expressions inserted" "strsift" 22
+109 vrp "Statements deleted" "strsift" 8
+115 copyprop "Copies propagated" "strsift" 4
+115 copyprop "Statements deleted" "strsift" 4
+124 dom "Incremental SSA update" "strsift" 1
+139 pre "compute_antic iterations == 2" "strsift" 1
+139 pre "Insertions" "strsift" 6
+139 pre "New PHIs" "strsift" 6
+139 pre "Symbol to SSA rewrite" "strsift" 1
+139 pre "SCC iterations == 2" "strsift" 2
+139 pre "SCC iterations == 3" "strsift" 2
+139 pre "HOIST inserted" "strsift" 6
+139 pre "insert iterations == 2" "strsift" 1
+139 pre "Eliminated" "strsift" 12
+144 dce "Statements deleted" "strsift" 1
+181 split-paths "Incremental SSA update" "strsift" 1
+187 vrp "Incremental SSA update" "strsift" 1
+187 vrp "Incremental SSA update" "strsift" 1
+187 vrp "Number of ASSERT_EXPR expressions inserted" "strsift" 26
+233 optimized "unused VAR_DECLs removed" "strsift" 4
+266 combine "two-insn combine" "strsift" 8
+84 inline "unused VAR_DECLs removed" "DoStringSortIteration" 8
+84 inline "Symbol to SSA rewrite" "DoStringSortIteration" 1
+97 ccp "Copies propagated" "DoStringSortIteration" 18
+97 ccp "Statements deleted" "DoStringSortIteration" 15
+97 ccp "Constants propagated" "DoStringSortIteration" 6
+106 fre "SCC iterations == 2" "DoStringSortIteration" 2
+106 fre "SCC iterations == 3" "DoStringSortIteration" 19
+106 fre "SCC iterations == 4" "DoStringSortIteration" 2
+106 fre "Eliminated" "DoStringSortIteration" 2
+108 thread "Incremental SSA update" "DoStringSortIteration" 1
+109 vrp "Incremental SSA update" "DoStringSortIteration" 1
+109 vrp "Incremental SSA update" "DoStringSortIteration" 2
+109 vrp "Statements folded" "DoStringSortIteration" 3
+109 vrp "Constants propagated" "DoStringSortIteration" 2
+109 vrp "Number of ASSERT_EXPR expressions inserted" "DoStringSortIteration" 23
+109 vrp "Statements deleted" "DoStringSortIteration" 2
+111 dce "Statements deleted" "DoStringSortIteration" 1
+115 copyprop "Copies propagated" "DoStringSortIteration" 15
+115 copyprop "Statements deleted" "DoStringSortIteration" 3
+120 ch "Incremental SSA update" "DoStringSortIteration" 1
+124 dom "Redundant expressions eliminated" "DoStringSortIteration" 1
+124 dom "Constants propagated" "DoStringSortIteration" 4
+129 dce "Statements deleted" "DoStringSortIteration" 4
+139 pre "compute_antic iterations == 3" "DoStringSortIteration" 1
+139 pre "Insertions" "DoStringSortIteration" 29
+139 pre "Symbol to SSA rewrite" "DoStringSortIteration" 1
+139 pre "SCC iterations == 2" "DoStringSortIteration" 8
+139 pre "SCC iterations == 3" "DoStringSortIteration" 21
+139 pre "HOIST inserted" "DoStringSortIteration" 4
+139 pre "insert iterations == 3" "DoStringSortIteration" 1
+139 pre "Eliminated" "DoStringSortIteration" 13
+147 loopinit "Incremental SSA update" "DoStringSortIteration" 1
+148 unswitch "Incremental SSA update" "DoStringSortIteration" 3
+151 cddce "PHI nodes deleted" "DoStringSortIteration" 10
+164 vect "Vectorized loops" "DoStringSortIteration" 2
+165 dce "PHI nodes deleted" "DoStringSortIteration" 6
+165 dce "Statements deleted" "DoStringSortIteration" 10
+167 cunroll "Incremental SSA update" "DoStringSortIteration" 1
+183 thread "Jumps threaded" "DoStringSortIteration" 2
+184 dom "Copies propagated" "DoStringSortIteration" 63
+184 dom "Redundant expressions eliminated" "DoStringSortIteration" 29
+184 dom "Jumps threaded" "DoStringSortIteration" 2
+187 vrp "Incremental SSA update" "DoStringSortIteration" 2
+187 vrp "Jumps threaded" "DoStringSortIteration" 1
+187 vrp "Number of ASSERT_EXPR expressions inserted" "DoStringSortIteration" 58
+187 vrp "Statements deleted" "DoStringSortIteration" 2
+190 cddce "PHI nodes deleted" "DoStringSortIteration" 2
+190 cddce "Statements deleted" "DoStringSortIteration" 40
+233 optimized "unused VAR_DECLs removed" "DoStringSortIteration" 2
+266 combine "three-insn combine" "DoStringSortIteration" 2
+266 combine "two-insn combine" "DoStringSortIteration" 21
+84 inline "unused VAR_DECLs removed" "DoNumSort" 12
+84 inline "Symbol to SSA rewrite" "DoNumSort" 2
+106 fre "SCC iterations == 2" "DoNumSort" 5
+106 fre "SCC iterations == 3" "DoNumSort" 3
+106 fre "Eliminated" "DoNumSort" 2
+109 vrp "Incremental SSA update" "DoNumSort" 2
+109 vrp "Number of ASSERT_EXPR expressions inserted" "DoNumSort" 2
+115 copyprop "Copies propagated" "DoNumSort" 2
+115 copyprop "Statements deleted" "DoNumSort" 2
+139 pre "compute_antic iterations == 3" "DoNumSort" 1
+139 pre "Insertions" "DoNumSort" 8
+139 pre "New PHIs" "DoNumSort" 4
+139 pre "SCC iterations == 2" "DoNumSort" 3
+139 pre "SCC iterations == 3" "DoNumSort" 3
+139 pre "HOIST inserted" "DoNumSort" 3
+139 pre "insert iterations == 3" "DoNumSort" 1
+139 pre "Eliminated" "DoNumSort" 4
+140 sink "Sunk statements" "DoNumSort" 1
+147 loopinit "Incremental SSA update" "DoNumSort" 1
+183 thread "Incremental SSA update" "DoNumSort" 1
+184 dom "Incremental SSA update" "DoNumSort" 1
+184 dom "Copies propagated" "DoNumSort" 2
+187 vrp "Incremental SSA update" "DoNumSort" 1
+187 vrp "Incremental SSA update" "DoNumSort" 2
+187 vrp "Number of ASSERT_EXPR expressions inserted" "DoNumSort" 2
+190 cddce "Symbol to SSA rewrite" "DoNumSort" 1
+233 optimized "unused VAR_DECLs removed" "DoNumSort" 22
+266 combine "two-insn combine" "DoNumSort" 1
+97 ccp "Copies propagated" "DoStringSort" 1
+97 ccp "Statements deleted" "DoStringSort" 1
+106 fre "SCC iterations == 2" "DoStringSort" 4
+106 fre "SCC iterations == 3" "DoStringSort" 3
+106 fre "Eliminated" "DoStringSort" 1
+109 vrp "Incremental SSA update" "DoStringSort" 2
+109 vrp "Number of ASSERT_EXPR expressions inserted" "DoStringSort" 2
+115 copyprop "Copies propagated" "DoStringSort" 2
+115 copyprop "Statements deleted" "DoStringSort" 2
+139 pre "compute_antic iterations == 3" "DoStringSort" 1
+139 pre "Insertions" "DoStringSort" 6
+139 pre "New PHIs" "DoStringSort" 2
+139 pre "SCC iterations == 2" "DoStringSort" 3
+139 pre "SCC iterations == 3" "DoStringSort" 3
+139 pre "HOIST inserted" "DoStringSort" 2
+139 pre "insert iterations == 2" "DoStringSort" 1
+139 pre "Eliminated" "DoStringSort" 4
+140 sink "Sunk statements" "DoStringSort" 1
+147 loopinit "Incremental SSA update" "DoStringSort" 1
+184 dom "Copies propagated" "DoStringSort" 2
+187 vrp "Incremental SSA update" "DoStringSort" 2
+187 vrp "Number of ASSERT_EXPR expressions inserted" "DoStringSort" 2
+266 combine "two-insn combine" "DoStringSort" 1
+97 ccp "Copies propagated" "DoBitops" 1
+97 ccp "Statements deleted" "DoBitops" 1
+106 fre "SCC iterations == 2" "DoBitops" 7
+106 fre "SCC iterations == 3" "DoBitops" 3
+106 fre "Eliminated" "DoBitops" 1
+109 vrp "Incremental SSA update" "DoBitops" 2
+109 vrp "Number of ASSERT_EXPR expressions inserted" "DoBitops" 4
+115 copyprop "Copies propagated" "DoBitops" 2
+115 copyprop "Statements deleted" "DoBitops" 2
+139 pre "compute_antic iterations == 3" "DoBitops" 1
+139 pre "Insertions" "DoBitops" 3
+139 pre "New PHIs" "DoBitops" 1
+139 pre "SCC iterations == 2" "DoBitops" 6
+139 pre "SCC iterations == 3" "DoBitops" 3
+139 pre "HOIST inserted" "DoBitops" 2
+139 pre "insert iterations == 2" "DoBitops" 1
+139 pre "Eliminated" "DoBitops" 5
+147 loopinit "Incremental SSA update" "DoBitops" 1
+181 split-paths "Incremental SSA update" "DoBitops" 1
+184 dom "Copies propagated" "DoBitops" 2
+187 vrp "Incremental SSA update" "DoBitops" 2
+187 vrp "Number of ASSERT_EXPR expressions inserted" "DoBitops" 4
+97 ccp "Statements deleted" "DoEmFloat" 2
+97 ccp "Constants propagated" "DoEmFloat" 2
+106 fre "SCC iterations == 2" "DoEmFloat" 9
+106 fre "SCC iterations == 3" "DoEmFloat" 4
+106 fre "Eliminated" "DoEmFloat" 3
+109 vrp "Incremental SSA update" "DoEmFloat" 2
+109 vrp "Constants propagated" "DoEmFloat" 1
+109 vrp "Jumps threaded" "DoEmFloat" 1
+109 vrp "Number of ASSERT_EXPR expressions inserted" "DoEmFloat" 4
+109 vrp "Statements deleted" "DoEmFloat" 1
+111 dce "PHI nodes deleted" "DoEmFloat" 2
+115 copyprop "Copies propagated" "DoEmFloat" 3
+115 copyprop "Constants propagated" "DoEmFloat" 1
+115 copyprop "Statements deleted" "DoEmFloat" 4
+139 pre "compute_antic iterations == 2" "DoEmFloat" 1
+139 pre "Insertions" "DoEmFloat" 4
+139 pre "New PHIs" "DoEmFloat" 3
+139 pre "SCC iterations == 2" "DoEmFloat" 6
+139 pre "SCC iterations == 3" "DoEmFloat" 4
+139 pre "insert iterations == 2" "DoEmFloat" 1
+139 pre "Eliminated" "DoEmFloat" 2
+147 loopinit "Incremental SSA update" "DoEmFloat" 1
+181 split-paths "Incremental SSA update" "DoEmFloat" 1
+184 dom "Copies propagated" "DoEmFloat" 3
+187 vrp "Incremental SSA update" "DoEmFloat" 2
+187 vrp "Jumps threaded" "DoEmFloat" 1
+187 vrp "Number of ASSERT_EXPR expressions inserted" "DoEmFloat" 6
+266 combine "two-insn combine" "DoEmFloat" 4
+97 ccp "Copies propagated" "DoFourier" 1
+97 ccp "Statements deleted" "DoFourier" 1
+106 fre "SCC iterations == 2" "DoFourier" 6
+106 fre "SCC iterations == 3" "DoFourier" 3
+106 fre "Eliminated" "DoFourier" 1
+109 vrp "Incremental SSA update" "DoFourier" 1
+109 vrp "Incremental SSA update" "DoFourier" 2
+109 vrp "Number of ASSERT_EXPR expressions inserted" "DoFourier" 4
+115 copyprop "Copies propagated" "DoFourier" 2
+115 copyprop "Statements deleted" "DoFourier" 2
+139 pre "compute_antic iterations == 2" "DoFourier" 1
+139 pre "Insertions" "DoFourier" 1
+139 pre "New PHIs" "DoFourier" 1
+139 pre "SCC iterations == 2" "DoFourier" 5
+139 pre "SCC iterations == 3" "DoFourier" 3
+139 pre "insert iterations == 2" "DoFourier" 1
+139 pre "Eliminated" "DoFourier" 1
+147 loopinit "Incremental SSA update" "DoFourier" 1
+184 dom "Copies propagated" "DoFourier" 2
+187 vrp "Incremental SSA update" "DoFourier" 1
+187 vrp "Incremental SSA update" "DoFourier" 2
+187 vrp "Number of ASSERT_EXPR expressions inserted" "DoFourier" 4
+97 ccp "Copies propagated" "DoAssign" 2
+97 ccp "Statements deleted" "DoAssign" 4
+106 fre "SCC iterations == 2" "DoAssign" 5
+106 fre "SCC iterations == 3" "DoAssign" 15
+106 fre "SCC iterations == 4" "DoAssign" 2
+106 fre "Eliminated" "DoAssign" 2
+109 vrp "Incremental SSA update" "DoAssign" 2
+109 vrp "Statements folded" "DoAssign" 8
+109 vrp "Jumps threaded" "DoAssign" 10
+109 vrp "Number of ASSERT_EXPR expressions inserted" "DoAssign" 20
+111 dce "PHI nodes deleted" "DoAssign" 20
+115 copyprop "Copies propagated" "DoAssign" 4
+115 copyprop "Constants propagated" "DoAssign" 2
+115 copyprop "Statements deleted" "DoAssign" 6
+120 ch "Incremental SSA update" "DoAssign" 1
+139 pre "compute_antic iterations == 3" "DoAssign" 1
+139 pre "Insertions" "DoAssign" 31
+139 pre "New PHIs" "DoAssign" 1
+139 pre "Symbol to SSA rewrite" "DoAssign" 1
+139 pre "SCC iterations == 2" "DoAssign" 3
+139 pre "SCC iterations == 3" "DoAssign" 17
+139 pre "insert iterations == 2" "DoAssign" 1
+139 pre "Eliminated" "DoAssign" 1
+147 loopinit "Incremental SSA update" "DoAssign" 1
+164 vect "Incremental SSA update" "DoAssign" 2
+164 vect "Vectorized loops" "DoAssign" 2
+165 dce "PHI nodes deleted" "DoAssign" 8
+165 dce "Statements deleted" "DoAssign" 8
+181 split-paths "Incremental SSA update" "DoAssign" 1
+184 dom "Copies propagated" "DoAssign" 34
+184 dom "Redundant expressions eliminated" "DoAssign" 20
+187 vrp "Incremental SSA update" "DoAssign" 2
+187 vrp "Statements folded" "DoAssign" 2
+187 vrp "Constants propagated" "DoAssign" 16
+187 vrp "Jumps threaded" "DoAssign" 2
+187 vrp "Number of ASSERT_EXPR expressions inserted" "DoAssign" 38
+187 vrp "Statements deleted" "DoAssign" 8
+190 cddce "PHI nodes deleted" "DoAssign" 4
+190 cddce "Statements deleted" "DoAssign" 36
+266 combine "two-insn combine" "DoAssign" 19
+283 gcse2 "moves inserted" "DoAssign" 1
+283 gcse2 "insns deleted" "DoAssign" 1
+283 gcse2 "copies inserted" "DoAssign" 1
+84 inline "unused VAR_DECLs removed" "DoIDEA" 10
+84 inline "Symbol to SSA rewrite" "DoIDEA" 1
+97 ccp "Copies propagated" "DoIDEA" 39
+97 ccp "Statements deleted" "DoIDEA" 35
+97 ccp "Constants propagated" "DoIDEA" 4
+106 fre "SCC iterations == 2" "DoIDEA" 14
+106 fre "SCC iterations == 3" "DoIDEA" 36
+106 fre "SCC iterations == 4" "DoIDEA" 2
+106 fre "Eliminated" "DoIDEA" 7
+109 vrp "Incremental SSA update" "DoIDEA" 1
+109 vrp "Incremental SSA update" "DoIDEA" 2
+109 vrp "Statements folded" "DoIDEA" 12
+109 vrp "Constants propagated" "DoIDEA" 2
+109 vrp "Jumps threaded" "DoIDEA" 6
+109 vrp "Number of ASSERT_EXPR expressions inserted" "DoIDEA" 54
+109 vrp "Statements deleted" "DoIDEA" 2
+111 dce "PHI nodes deleted" "DoIDEA" 12
+115 copyprop "Copies propagated" "DoIDEA" 20
+115 copyprop "Constants propagated" "DoIDEA" 7
+115 copyprop "Statements deleted" "DoIDEA" 17
+120 ch "Incremental SSA update" "DoIDEA" 1
+124 dom "Copies propagated" "DoIDEA" 1
+124 dom "Redundant expressions eliminated" "DoIDEA" 2
+124 dom "Jumps threaded" "DoIDEA" 4
+124 dom "Constants propagated" "DoIDEA" 3
+129 dce "Statements deleted" "DoIDEA" 3
+139 pre "compute_antic iterations == 3" "DoIDEA" 1
+139 pre "Insertions" "DoIDEA" 47
+139 pre "New PHIs" "DoIDEA" 5
+139 pre "Symbol to SSA rewrite" "DoIDEA" 1
+139 pre "SCC iterations == 2" "DoIDEA" 12
+139 pre "SCC iterations == 3" "DoIDEA" 38
+139 pre "PA inserted" "DoIDEA" 1
+139 pre "insert iterations == 2" "DoIDEA" 1
+139 pre "Eliminated" "DoIDEA" 2
+140 sink "Sunk statements" "DoIDEA" 12
+147 loopinit "Incremental SSA update" "DoIDEA" 1
+152 ldist "Symbol to SSA rewrite" "DoIDEA" 1
+165 dce "PHI nodes deleted" "DoIDEA" 2
+165 dce "Statements deleted" "DoIDEA" 2
+184 dom "Copies propagated" "DoIDEA" 23
+184 dom "Redundant expressions eliminated" "DoIDEA" 3
+184 dom "Constants propagated" "DoIDEA" 13
+187 vrp "Incremental SSA update" "DoIDEA" 1
+187 vrp "Incremental SSA update" "DoIDEA" 2
+187 vrp "Number of ASSERT_EXPR expressions inserted" "DoIDEA" 57
+187 vrp "Statements deleted" "DoIDEA" 3
+190 cddce "Statements deleted" "DoIDEA" 12
+194 widening_mul "divmod calls inserted" "DoIDEA" 12
+233 optimized "unused VAR_DECLs removed" "DoIDEA" 24
+266 combine "two-insn combine" "DoIDEA" 17
+84 inline "unused VAR_DECLs removed" "DoHuffman" 14
+84 inline "Symbol to SSA rewrite" "DoHuffman" 1
+97 ccp "Copies propagated" "DoHuffman" 1
+97 ccp "Statements deleted" "DoHuffman" 6
+97 ccp "Constants propagated" "DoHuffman" 3
+106 fre "SCC iterations == 2" "DoHuffman" 7
+106 fre "SCC iterations == 3" "DoHuffman" 4
+106 fre "Eliminated" "DoHuffman" 1
+109 vrp "Incremental SSA update" "DoHuffman" 1
+109 vrp "Incremental SSA update" "DoHuffman" 2
+109 vrp "Constants propagated" "DoHuffman" 1
+109 vrp "Number of ASSERT_EXPR expressions inserted" "DoHuffman" 14
+109 vrp "Statements deleted" "DoHuffman" 1
+111 dce "Statements deleted" "DoHuffman" 2
+115 copyprop "Copies propagated" "DoHuffman" 2
+115 copyprop "Constants propagated" "DoHuffman" 1
+115 copyprop "Statements deleted" "DoHuffman" 3
+120 ch "Incremental SSA update" "DoHuffman" 1
+124 dom "Incremental SSA update" "DoHuffman" 1
+124 dom "Copies propagated" "DoHuffman" 1
+124 dom "Redundant expressions eliminated" "DoHuffman" 2
+124 dom "Constants propagated" "DoHuffman" 1
+129 dce "Statements deleted" "DoHuffman" 2
+139 pre "compute_antic iterations == 3" "DoHuffman" 1
+139 pre "Insertions" "DoHuffman" 3
+139 pre "New PHIs" "DoHuffman" 4
+139 pre "SCC iterations == 2" "DoHuffman" 6
+139 pre "SCC iterations == 3" "DoHuffman" 4
+139 pre "insert iterations == 2" "DoHuffman" 1
+139 pre "Eliminated" "DoHuffman" 3
+147 loopinit "Incremental SSA update" "DoHuffman" 1
+184 dom "Copies propagated" "DoHuffman" 6
+184 dom "Jumps threaded" "DoHuffman" 1
+187 vrp "Incremental SSA update" "DoHuffman" 2
+187 vrp "Statements folded" "DoHuffman" 1
+187 vrp "Number of ASSERT_EXPR expressions inserted" "DoHuffman" 19
+190 cddce "Statements deleted" "DoHuffman" 2
+233 optimized "unused VAR_DECLs removed" "DoHuffman" 13
+266 combine "two-insn combine" "DoHuffman" 5
+283 gcse2 "moves inserted" "DoHuffman" 2
+283 gcse2 "insns deleted" "DoHuffman" 2
+283 gcse2 "copies inserted" "DoHuffman" 2
+84 inline "unused VAR_DECLs removed" "DoNNET" 3
+84 inline "Symbol to SSA rewrite" "DoNNET" 1
+97 ccp "Copies propagated" "DoNNET" 2
+97 ccp "Statements deleted" "DoNNET" 6
+97 ccp "Constants propagated" "DoNNET" 3
+106 fre "SCC iterations == 2" "DoNNET" 7
+106 fre "SCC iterations == 3" "DoNNET" 7
+106 fre "Eliminated" "DoNNET" 1
+108 thread "Jumps threaded" "DoNNET" 5
+109 vrp "Incremental SSA update" "DoNNET" 2
+109 vrp "Statements folded" "DoNNET" 1
+109 vrp "Constants propagated" "DoNNET" 2
+109 vrp "Jumps threaded" "DoNNET" 1
+109 vrp "Number of ASSERT_EXPR expressions inserted" "DoNNET" 6
+109 vrp "Statements deleted" "DoNNET" 7
+111 dce "PHI nodes deleted" "DoNNET" 2
+115 copyprop "Copies propagated" "DoNNET" 2
+115 copyprop "Constants propagated" "DoNNET" 2
+115 copyprop "Statements deleted" "DoNNET" 4
+120 ch "Incremental SSA update" "DoNNET" 1
+124 dom "Copies propagated" "DoNNET" 1
+124 dom "Redundant expressions eliminated" "DoNNET" 2
+124 dom "Jumps threaded" "DoNNET" 2
+124 dom "Constants propagated" "DoNNET" 2
+129 dce "Statements deleted" "DoNNET" 4
+139 pre "compute_antic iterations == 3" "DoNNET" 1
+139 pre "Insertions" "DoNNET" 1
+139 pre "Symbol to SSA rewrite" "DoNNET" 1
+139 pre "SCC iterations == 2" "DoNNET" 6
+139 pre "SCC iterations == 3" "DoNNET" 7
+139 pre "insert iterations == 2" "DoNNET" 1
+139 pre "Eliminated" "DoNNET" 2
+147 loopinit "Incremental SSA update" "DoNNET" 1
+181 split-paths "Incremental SSA update" "DoNNET" 1
+184 dom "Incremental SSA update" "DoNNET" 1
+184 dom "Copies propagated" "DoNNET" 9
+184 dom "Redundant expressions eliminated" "DoNNET" 7
+187 vrp "Incremental SSA update" "DoNNET" 2
+187 vrp "Number of ASSERT_EXPR expressions inserted" "DoNNET" 10
+190 cddce "Statements deleted" "DoNNET" 9
+266 combine "two-insn combine" "DoNNET" 2
+84 inline "Symbol to SSA rewrite" "DoLU" 1
+97 ccp "Copies propagated" "DoLU" 5
+97 ccp "Statements deleted" "DoLU" 12
+97 ccp "Constants propagated" "DoLU" 6
+106 fre "SCC iterations == 2" "DoLU" 18
+106 fre "SCC iterations == 3" "DoLU" 17
+106 fre "SCC iterations == 4" "DoLU" 1
+106 fre "Eliminated" "DoLU" 2
+108 thread "Incremental SSA update" "DoLU" 1
+109 vrp "Incremental SSA update" "DoLU" 1
+109 vrp "Incremental SSA update" "DoLU" 2
+109 vrp "Statements folded" "DoLU" 9
+109 vrp "Jumps threaded" "DoLU" 11
+109 vrp "Number of ASSERT_EXPR expressions inserted" "DoLU" 36
+111 dce "PHI nodes deleted" "DoLU" 24
+115 copyprop "Copies propagated" "DoLU" 11
+115 copyprop "Constants propagated" "DoLU" 3
+115 copyprop "Statements deleted" "DoLU" 10
+120 ch "Incremental SSA update" "DoLU" 1
+124 dom "Incremental SSA update" "DoLU" 1
+124 dom "Copies propagated" "DoLU" 2
+124 dom "Redundant expressions eliminated" "DoLU" 2
+124 dom "Jumps threaded" "DoLU" 2
+129 dce "Statements deleted" "DoLU" 2
+139 pre "compute_antic iterations == 3" "DoLU" 1
+139 pre "Insertions" "DoLU" 54
+139 pre "New PHIs" "DoLU" 3
+139 pre "SCC iterations == 2" "DoLU" 12
+139 pre "SCC iterations == 3" "DoLU" 18
+139 pre "insert iterations == 2" "DoLU" 1
+139 pre "Eliminated" "DoLU" 4
+147 loopinit "Incremental SSA update" "DoLU" 1
+164 vect "Incremental SSA update" "DoLU" 5
+164 vect "Vectorized loops" "DoLU" 5
+165 dce "PHI nodes deleted" "DoLU" 21
+165 dce "Statements deleted" "DoLU" 35
+184 dom "Copies propagated" "DoLU" 74
+184 dom "Redundant expressions eliminated" "DoLU" 24
+187 vrp "Incremental SSA update" "DoLU" 2
+187 vrp "Statements folded" "DoLU" 5
+187 vrp "Constants propagated" "DoLU" 35
+187 vrp "Jumps threaded" "DoLU" 1
+187 vrp "Number of ASSERT_EXPR expressions inserted" "DoLU" 70
+187 vrp "Statements deleted" "DoLU" 20
+190 cddce "PHI nodes deleted" "DoLU" 9
+190 cddce "Statements deleted" "DoLU" 65
+233 optimized "unused VAR_DECLs removed" "DoLU" 4
+266 combine "two-insn combine" "DoLU" 45
+283 gcse2 "moves inserted" "DoLU" 1
+283 gcse2 "insns deleted" "DoLU" 1
+283 gcse2 "copies inserted" "DoLU" 1

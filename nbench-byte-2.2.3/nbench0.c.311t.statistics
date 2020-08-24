@@ -1,0 +1,102 @@
+26 ssa "unused VAR_DECLs removed" "fprintf" 1
+26 ssa "unused VAR_DECLs removed" "printf" 1
+26 ssa "unused VAR_DECLs removed" "atoi" 1
+26 ssa "unused VAR_DECLs removed" "set_request_secs" 1
+26 ssa "unused VAR_DECLs removed" "bench_with_confidence" 1
+26 ssa "unused VAR_DECLs removed" "output_string" 2
+43 fre "Eliminated" "set_request_secs" 9
+55 release_ssa "SSA names released" "set_request_secs" 9
+55 release_ssa "SSA name holes removed" "set_request_secs" 9
+38 ccp "Constants propagated" "getscore" 1
+38 ccp "Statements deleted" "getscore" 1
+43 fre "SCC iterations == 2" "getscore" 1
+55 release_ssa "SSA names released" "getscore" 1
+55 release_ssa "SSA name holes removed" "getscore" 1
+38 ccp "Constants propagated" "bench_with_confidence" 2
+38 ccp "Statements deleted" "bench_with_confidence" 2
+43 fre "SCC iterations == 3" "bench_with_confidence" 2
+47 cddce "Statements deleted" "bench_with_confidence" 2
+48 eipa_sra "Symbol to SSA rewrite" "bench_with_confidence.isra.0" 1
+48 eipa_sra "Unused parameters deleted" "bench_with_confidence.isra.0" 2
+55 release_ssa "unused VAR_DECLs removed" "bench_with_confidence.isra.0" 3
+55 release_ssa "SSA names released" "bench_with_confidence.isra.0" 1
+55 release_ssa "SSA name holes removed" "bench_with_confidence.isra.0" 1
+38 ccp "Statements deleted" "output_string" 2
+43 fre "SCC iterations == 2" "output_string" 1
+54 fnsplit "Symbol to SSA rewrite" "output_string" 1
+55 release_ssa "unused VAR_DECLs removed" "output_string" 2
+55 release_ssa "SSA names released" "output_string" 7
+55 release_ssa "SSA name holes removed" "output_string" 7
+35 einline "unused VAR_DECLs removed" "show_stats" 3
+35 einline "Symbol to SSA rewrite" "show_stats" 1
+38 ccp "Constants propagated" "show_stats" 16
+38 ccp "Statements deleted" "show_stats" 32
+43 fre "SCC iterations == 2" "show_stats" 1
+54 fnsplit "Symbol to SSA rewrite" "show_stats" 1
+55 release_ssa "unused VAR_DECLs removed" "show_stats" 16
+55 release_ssa "SSA names released" "show_stats" 64
+55 release_ssa "SSA name holes removed" "show_stats" 64
+35 einline "unused VAR_DECLs removed" "main" 32
+35 einline "Symbol to SSA rewrite" "main" 1
+38 ccp "Copies propagated" "main" 1
+38 ccp "Statements folded" "main" 1
+38 ccp "Constants propagated" "main" 28
+38 ccp "Statements deleted" "main" 52
+40 ethread "Jumps threaded" "main" 1
+43 fre "SCC iterations == 2" "main" 5
+43 fre "SCC iterations == 3" "main" 9
+43 fre "Eliminated" "main" 3
+44 evrp "Incremental SSA update" "main" 1
+55 release_ssa "unused VAR_DECLs removed" "main" 24
+55 release_ssa "SSA names released" "main" 110
+55 release_ssa "SSA name holes removed" "main" 110
+84 inline "Symbol to SSA rewrite" "output_string" 1
+106 fre "SCC iterations == 2" "output_string" 1
+139 pre "compute_antic iterations == 2" "output_string" 1
+139 pre "SCC iterations == 2" "output_string" 1
+139 pre "insert iterations == 1" "output_string" 1
+84 inline "unused VAR_DECLs removed" "main" 3
+84 inline "Symbol to SSA rewrite" "main" 1
+106 fre "SCC iterations == 2" "main" 8
+106 fre "SCC iterations == 3" "main" 9
+106 fre "Eliminated" "main" 5
+109 vrp "Incremental SSA update" "main" 2
+109 vrp "Statements folded" "main" 1
+109 vrp "Jumps threaded" "main" 1
+109 vrp "Number of ASSERT_EXPR expressions inserted" "main" 21
+111 dce "PHI nodes deleted" "main" 2
+115 copyprop "Copies propagated" "main" 5
+115 copyprop "Statements deleted" "main" 5
+120 ch "Incremental SSA update" "main" 1
+124 dom "Copies propagated" "main" 6
+124 dom "Redundant expressions eliminated" "main" 1
+129 dce "Statements deleted" "main" 7
+132 ccp "Statements deleted" "main" 1
+139 pre "compute_antic iterations == 3" "main" 1
+139 pre "PA inserted" "main" 1
+139 pre "Insertions" "main" 5
+139 pre "New PHIs" "main" 2
+139 pre "Symbol to SSA rewrite" "main" 1
+139 pre "SCC iterations == 2" "main" 4
+139 pre "SCC iterations == 3" "main" 9
+139 pre "HOIST inserted" "main" 2
+139 pre "insert iterations == 2" "main" 1
+139 pre "Eliminated" "main" 7
+144 dce "Statements deleted" "main" 1
+147 loopinit "Incremental SSA update" "main" 1
+164 vect "Vectorized loops" "main" 1
+165 dce "PHI nodes deleted" "main" 4
+165 dce "Statements deleted" "main" 2
+167 cunroll "Incremental SSA update" "main" 1
+183 thread "Jumps threaded" "main" 1
+184 dom "Copies propagated" "main" 20
+184 dom "Constants propagated" "main" 8
+184 dom "Redundant expressions eliminated" "main" 2
+187 vrp "Incremental SSA update" "main" 2
+187 vrp "Statements folded" "main" 1
+187 vrp "Number of ASSERT_EXPR expressions inserted" "main" 5
+187 vrp "Statements deleted" "main" 9
+190 cddce "Statements deleted" "main" 10
+197 dce "Statements deleted" "main" 2
+266 combine "three-insn combine" "main" 2
+266 combine "two-insn combine" "main" 31

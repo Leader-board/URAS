@@ -1,0 +1,8794 @@
+
+;; Function printf (printf, funcdef_no=15, decl_uid=798, cgraph_uid=15, symbol_order=15)
+
+Function found to be nothrow: printf
+__attribute__((__artificial__, __gnu_inline__, __always_inline__))
+printf (const char * restrict __fmt)
+{
+  int _4;
+
+  <bb 2> [0.00%]:
+  _4 = __printf_chk (1, __fmt_2(D), __builtin_va_arg_pack ());
+  return _4;
+
+}
+
+
+
+;; Function bzero (bzero, funcdef_no=42, decl_uid=720, cgraph_uid=42, symbol_order=42)
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__, __leaf__, __nothrow__))
+bzero (void * __dest, size_t __len)
+{
+  long unsigned int _1;
+
+  <bb 2> [0.00%]:
+  _1 = __builtin_object_size (__dest_3(D), 0);
+  __builtin___memset_chk (__dest_3(D), 0, __len_4(D), _1);
+  return;
+
+}
+
+
+
+;; Function NumSift (NumSift, funcdef_no=56, decl_uid=4506, cgraph_uid=56, symbol_order=81)
+
+Function found to be nothrow: NumSift
+NumSift (farlong * array, long unsigned int i, long unsigned int j)
+{
+  long int temp;
+  long unsigned int k;
+  long unsigned int _1;
+  farlong * _2;
+  long int _3;
+  sizetype _4;
+  sizetype _5;
+  farlong * _6;
+  long int _7;
+  long unsigned int _8;
+  farlong * _9;
+  long int _10;
+  long unsigned int _11;
+  farlong * _12;
+  long int _13;
+  long unsigned int _14;
+  farlong * _15;
+  long unsigned int _16;
+  farlong * _17;
+  long unsigned int _18;
+  farlong * _19;
+  long int _20;
+  long unsigned int _21;
+  farlong * _22;
+  long unsigned int _23;
+
+  <bb 2> [0.00%]:
+  goto <bb 9>; [0.00%]
+
+  <bb 3> [0.00%]:
+  k_30 = i_24 * 2;
+  if (k_30 < j_29(D))
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _1 = k_30 * 8;
+  _2 = array_31(D) + _1;
+  _3 = *_2;
+  _4 = k_30 + 1;
+  _5 = _4 * 8;
+  _6 = array_31(D) + _5;
+  _7 = *_6;
+  if (_3 < _7)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  k_32 = k_30 + 1;
+
+  <bb 6> [0.00%]:
+  # k_25 = PHI <k_30(3), k_30(4), k_32(5)>
+  _8 = i_24 * 8;
+  _9 = array_31(D) + _8;
+  _10 = *_9;
+  _11 = k_25 * 8;
+  _12 = array_31(D) + _11;
+  _13 = *_12;
+  if (_10 < _13)
+    goto <bb 7>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 7> [0.00%]:
+  _14 = k_25 * 8;
+  _15 = array_31(D) + _14;
+  temp_34 = *_15;
+  _16 = i_24 * 8;
+  _17 = array_31(D) + _16;
+  _18 = k_25 * 8;
+  _19 = array_31(D) + _18;
+  _20 = *_17;
+  *_19 = _20;
+  _21 = i_24 * 8;
+  _22 = array_31(D) + _21;
+  *_22 = temp_34;
+  i_37 = k_25;
+  goto <bb 9>; [0.00%]
+
+  <bb 8> [0.00%]:
+  i_33 = j_29(D) + 1;
+
+  <bb 9> [0.00%]:
+  # i_24 = PHI <i_27(D)(2), i_37(7), i_33(8)>
+  _23 = i_24 * 2;
+  if (j_29(D) >= _23)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 10> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function NumHeapSort (NumHeapSort, funcdef_no=55, decl_uid=4502, cgraph_uid=55, symbol_order=80)
+
+Function found to be nothrow: NumHeapSort
+NumHeapSort (farlong * array, long unsigned int bottom, long unsigned int top)
+{
+  long unsigned int i;
+  long unsigned int temp;
+  long int _1;
+  long unsigned int _2;
+  farlong * _3;
+  long int _4;
+  long unsigned int _5;
+  farlong * _6;
+  long int temp.13_7;
+
+  <bb 2> [0.00%]:
+  i_13 = top_12(D) / 2;
+  goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  NumSift (array_16(D), i_8, top_12(D));
+  i_24 = i_8 + 18446744073709551615;
+
+  <bb 4> [0.00%]:
+  # i_8 = PHI <i_13(2), i_24(3)>
+  if (i_8 != 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 5> [0.00%]:
+  i_15 = top_12(D);
+  goto <bb 7>; [0.00%]
+
+  <bb 6> [0.00%]:
+  NumSift (array_16(D), bottom_17(D), i_9);
+  _1 = *array_16(D);
+  temp_19 = (long unsigned int) _1;
+  _2 = i_9 * 8;
+  _3 = array_16(D) + _2;
+  _4 = *_3;
+  *array_16(D) = _4;
+  _5 = i_9 * 8;
+  _6 = array_16(D) + _5;
+  temp.13_7 = (long int) temp_19;
+  *_6 = temp.13_7;
+  i_22 = i_9 + 18446744073709551615;
+
+  <bb 7> [0.00%]:
+  # i_9 = PHI <i_15(5), i_22(6)>
+  if (i_9 != 0)
+    goto <bb 6>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function ToggleBitRun (ToggleBitRun, funcdef_no=66, decl_uid=4553, cgraph_uid=66, symbol_order=91)
+
+Function found to be nothrow: ToggleBitRun
+ToggleBitRun (farulong * bitmap, long unsigned int bit_addr, long unsigned int nbits, unsigned int val)
+{
+  long unsigned int bitnumb;
+  long unsigned int bindex;
+  long unsigned int _1;
+  farulong * _2;
+  long unsigned int _3;
+  unsigned int _4;
+  long int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  farulong * _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  farulong * _11;
+  long unsigned int _12;
+  unsigned int _13;
+  long int _14;
+  long int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  farulong * _18;
+  long unsigned int _19;
+  long unsigned int nbits.48_20;
+
+  <bb 2> [0.00%]:
+  goto <bb 7>; [0.00%]
+
+  <bb 3> [0.00%]:
+  bindex_29 = bit_addr_21 >> 6;
+  bitnumb_30 = bit_addr_21 & 63;
+  if (val_31(D) != 0)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _1 = bindex_29 * 8;
+  _2 = bitmap_32(D) + _1;
+  _3 = *_2;
+  _4 = (unsigned int) bitnumb_30;
+  _5 = 1 << _4;
+  _6 = (long unsigned int) _5;
+  _7 = bindex_29 * 8;
+  _8 = bitmap_32(D) + _7;
+  _9 = _3 | _6;
+  *_8 = _9;
+  goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  _10 = bindex_29 * 8;
+  _11 = bitmap_32(D) + _10;
+  _12 = *_11;
+  _13 = (unsigned int) bitnumb_30;
+  _14 = 1 << _13;
+  _15 = ~_14;
+  _16 = (long unsigned int) _15;
+  _17 = bindex_29 * 8;
+  _18 = bitmap_32(D) + _17;
+  _19 = _12 & _16;
+  *_18 = _19;
+
+  <bb 6> [0.00%]:
+  bit_addr_35 = bit_addr_21 + 1;
+
+  <bb 7> [0.00%]:
+  # bit_addr_21 = PHI <bit_addr_25(D)(2), bit_addr_35(6)>
+  # nbits_22 = PHI <nbits_26(D)(2), nbits_28(6)>
+  nbits.48_20 = nbits_22;
+  nbits_28 = nbits.48_20 + 18446744073709551615;
+  if (nbits.48_20 != 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function FlipBitRun (FlipBitRun, funcdef_no=67, decl_uid=4557, cgraph_uid=67, symbol_order=92)
+
+Function found to be nothrow: FlipBitRun
+FlipBitRun (farulong * bitmap, long unsigned int bit_addr, long unsigned int nbits)
+{
+  long unsigned int bitnumb;
+  long unsigned int bindex;
+  long unsigned int _1;
+  farulong * _2;
+  long unsigned int _3;
+  unsigned int _4;
+  long int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  farulong * _8;
+  long unsigned int _9;
+  long unsigned int nbits.49_10;
+
+  <bb 2> [0.00%]:
+  goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  bindex_18 = bit_addr_11 >> 6;
+  bitnumb_19 = bit_addr_11 & 63;
+  _1 = bindex_18 * 8;
+  _2 = bitmap_20(D) + _1;
+  _3 = *_2;
+  _4 = (unsigned int) bitnumb_19;
+  _5 = 1 << _4;
+  _6 = (long unsigned int) _5;
+  _7 = bindex_18 * 8;
+  _8 = bitmap_20(D) + _7;
+  _9 = _3 ^ _6;
+  *_8 = _9;
+  bit_addr_22 = bit_addr_11 + 1;
+
+  <bb 4> [0.00%]:
+  # bit_addr_11 = PHI <bit_addr_14(D)(2), bit_addr_22(3)>
+  # nbits_12 = PHI <nbits_15(D)(2), nbits_17(3)>
+  nbits.49_10 = nbits_12;
+  nbits_17 = nbits.49_10 + 18446744073709551615;
+  if (nbits.49_10 != 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 5> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function CopyToAssign (CopyToAssign, funcdef_no=77, decl_uid=4611, cgraph_uid=77, symbol_order=102)
+
+Function found to be nothrow: CopyToAssign
+CopyToAssign (farlong[101] * arrayfrom, farlong[101] * arrayto)
+{
+  short unsigned int j;
+  short unsigned int i;
+  long unsigned int _1;
+  long unsigned int _2;
+  farlong[101] * _3;
+  int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  farlong[101] * _7;
+  int _8;
+  long int _9;
+  short unsigned int j.73_10;
+  short unsigned int i.74_11;
+
+  <bb 2> [0.00%]:
+  i_16 = 0;
+  goto <bb 7>; [0.00%]
+
+  <bb 3> [0.00%]:
+  j_18 = 0;
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _1 = (long unsigned int) i_12;
+  _2 = _1 * 808;
+  _3 = arrayfrom_20(D) + _2;
+  _4 = (int) j_13;
+  _5 = (long unsigned int) i_12;
+  _6 = _5 * 808;
+  _7 = arrayto_21(D) + _6;
+  _8 = (int) j_13;
+  _9 = *_3[_4];
+  *_7[_8] = _9;
+  j.73_10 = j_13;
+  j_23 = j.73_10 + 1;
+
+  <bb 5> [0.00%]:
+  # j_13 = PHI <j_18(3), j_23(4)>
+  if (j_13 <= 100)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 6> [0.00%]:
+  i.74_11 = i_12;
+  i_19 = i.74_11 + 1;
+
+  <bb 7> [0.00%]:
+  # i_12 = PHI <i_16(2), i_19(6)>
+  if (i_12 <= 100)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function calc_minimum_costs (calc_minimum_costs, funcdef_no=79, decl_uid=4615, cgraph_uid=79, symbol_order=104)
+
+Function found to be nothrow: calc_minimum_costs
+calc_minimum_costs (long int[101] * tableau)
+{
+  long int currentmin;
+  short unsigned int j;
+  short unsigned int i;
+  long unsigned int _1;
+  long unsigned int _2;
+  long int[101] * _3;
+  int _4;
+  long int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long int[101] * _8;
+  int _9;
+  short unsigned int j.75_10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long int[101] * _13;
+  int _14;
+  long int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long int[101] * _18;
+  int _19;
+  long int _20;
+  short unsigned int j.76_21;
+  short unsigned int i.77_22;
+  long unsigned int _23;
+  long unsigned int _24;
+  long int[101] * _25;
+  int _26;
+  long int _27;
+  long unsigned int _28;
+  long unsigned int _29;
+  long int[101] * _30;
+  int _31;
+  short unsigned int i.78_32;
+  long unsigned int _33;
+  long unsigned int _34;
+  long int[101] * _35;
+  int _36;
+  long int _37;
+  long unsigned int _38;
+  long unsigned int _39;
+  long int[101] * _40;
+  int _41;
+  long int _42;
+  short unsigned int i.79_43;
+  short unsigned int j.80_44;
+
+  <bb 2> [0.00%]:
+  i_60 = 0;
+  goto <bb 12>; [0.00%]
+
+  <bb 3> [0.00%]:
+  currentmin_72 = 9223372036854775807;
+  j_73 = 0;
+  goto <bb 7>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _1 = (long unsigned int) i_45;
+  _2 = _1 * 808;
+  _3 = tableau_66(D) + _2;
+  _4 = (int) j_48;
+  _5 = *_3[_4];
+  if (currentmin_52 > _5)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  _6 = (long unsigned int) i_45;
+  _7 = _6 * 808;
+  _8 = tableau_66(D) + _7;
+  _9 = (int) j_48;
+  currentmin_78 = *_8[_9];
+
+  <bb 6> [0.00%]:
+  # currentmin_51 = PHI <currentmin_52(4), currentmin_78(5)>
+  j.75_10 = j_48;
+  j_79 = j.75_10 + 1;
+
+  <bb 7> [0.00%]:
+  # j_48 = PHI <j_73(3), j_79(6)>
+  # currentmin_52 = PHI <currentmin_72(3), currentmin_51(6)>
+  if (j_48 <= 100)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  j_74 = 0;
+  goto <bb 10>; [0.00%]
+
+  <bb 9> [0.00%]:
+  _11 = (long unsigned int) i_45;
+  _12 = _11 * 808;
+  _13 = tableau_66(D) + _12;
+  _14 = (int) j_49;
+  _15 = *_13[_14];
+  _16 = (long unsigned int) i_45;
+  _17 = _16 * 808;
+  _18 = tableau_66(D) + _17;
+  _19 = (int) j_49;
+  _20 = _15 - currentmin_52;
+  *_18[_19] = _20;
+  j.76_21 = j_49;
+  j_77 = j.76_21 + 1;
+
+  <bb 10> [0.00%]:
+  # j_49 = PHI <j_74(8), j_77(9)>
+  if (j_49 <= 100)
+    goto <bb 9>; [0.00%]
+  else
+    goto <bb 11>; [0.00%]
+
+  <bb 11> [0.00%]:
+  i.77_22 = i_45;
+  i_75 = i.77_22 + 1;
+
+  <bb 12> [0.00%]:
+  # i_45 = PHI <i_60(2), i_75(11)>
+  if (i_45 <= 100)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 13>; [0.00%]
+
+  <bb 13> [0.00%]:
+  j_62 = 0;
+  goto <bb 24>; [0.00%]
+
+  <bb 14> [0.00%]:
+  currentmin_63 = 9223372036854775807;
+  i_64 = 0;
+  goto <bb 18>; [0.00%]
+
+  <bb 15> [0.00%]:
+  _23 = (long unsigned int) i_46;
+  _24 = _23 * 808;
+  _25 = tableau_66(D) + _24;
+  _26 = (int) j_50;
+  _27 = *_25[_26];
+  if (currentmin_54 > _27)
+    goto <bb 16>; [0.00%]
+  else
+    goto <bb 17>; [0.00%]
+
+  <bb 16> [0.00%]:
+  _28 = (long unsigned int) i_46;
+  _29 = _28 * 808;
+  _30 = tableau_66(D) + _29;
+  _31 = (int) j_50;
+  currentmin_70 = *_30[_31];
+
+  <bb 17> [0.00%]:
+  # currentmin_53 = PHI <currentmin_54(15), currentmin_70(16)>
+  i.78_32 = i_46;
+  i_71 = i.78_32 + 1;
+
+  <bb 18> [0.00%]:
+  # i_46 = PHI <i_64(14), i_71(17)>
+  # currentmin_54 = PHI <currentmin_63(14), currentmin_53(17)>
+  if (i_46 <= 100)
+    goto <bb 15>; [0.00%]
+  else
+    goto <bb 19>; [0.00%]
+
+  <bb 19> [0.00%]:
+  if (currentmin_54 != 0)
+    goto <bb 20>; [0.00%]
+  else
+    goto <bb 23>; [0.00%]
+
+  <bb 20> [0.00%]:
+  i_65 = 0;
+  goto <bb 22>; [0.00%]
+
+  <bb 21> [0.00%]:
+  _33 = (long unsigned int) i_47;
+  _34 = _33 * 808;
+  _35 = tableau_66(D) + _34;
+  _36 = (int) j_50;
+  _37 = *_35[_36];
+  _38 = (long unsigned int) i_47;
+  _39 = _38 * 808;
+  _40 = tableau_66(D) + _39;
+  _41 = (int) j_50;
+  _42 = _37 - currentmin_54;
+  *_40[_41] = _42;
+  i.79_43 = i_47;
+  i_68 = i.79_43 + 1;
+
+  <bb 22> [0.00%]:
+  # i_47 = PHI <i_65(20), i_68(21)>
+  if (i_47 <= 100)
+    goto <bb 21>; [0.00%]
+  else
+    goto <bb 23>; [0.00%]
+
+  <bb 23> [0.00%]:
+  j.80_44 = j_50;
+  j_69 = j.80_44 + 1;
+
+  <bb 24> [0.00%]:
+  # j_50 = PHI <j_62(13), j_69(23)>
+  if (j_50 <= 100)
+    goto <bb 14>; [0.00%]
+  else
+    goto <bb 25>; [0.00%]
+
+  <bb 25> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function first_assignments (first_assignments, funcdef_no=80, decl_uid=4618, cgraph_uid=80, symbol_order=105)
+
+Function found to be nothrow: first_assignments
+first_assignments (long int[101] * tableau, short int[101] * assignedtableau)
+{
+  int selected;
+  short unsigned int numzeros;
+  short unsigned int totnumassigns;
+  short unsigned int numassigns;
+  short unsigned int k;
+  short unsigned int j;
+  short unsigned int i;
+  long unsigned int _1;
+  long unsigned int _2;
+  short int[101] * _3;
+  int _4;
+  short unsigned int j.83_5;
+  short unsigned int i.84_6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long int[101] * _9;
+  int _10;
+  long int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  short int[101] * _14;
+  int _15;
+  short int _16;
+  short unsigned int numzeros.85_17;
+  short unsigned int j.86_18;
+  short unsigned int numassigns.87_19;
+  short unsigned int totnumassigns.88_20;
+  long unsigned int _21;
+  long unsigned int _22;
+  short int[101] * _23;
+  long unsigned int _24;
+  long unsigned int _25;
+  long int[101] * _26;
+  long int _27;
+  long unsigned int _28;
+  long unsigned int _29;
+  short int[101] * _30;
+  short unsigned int k.89_31;
+  short unsigned int i.90_32;
+  long unsigned int _33;
+  long unsigned int _34;
+  long int[101] * _35;
+  int _36;
+  long int _37;
+  long unsigned int _38;
+  long unsigned int _39;
+  short int[101] * _40;
+  int _41;
+  short int _42;
+  short unsigned int numzeros.91_43;
+  short unsigned int i.92_44;
+  short unsigned int numassigns.93_45;
+  short unsigned int totnumassigns.94_46;
+  long unsigned int _47;
+  long unsigned int _48;
+  short int[101] * _49;
+  int _50;
+  long unsigned int _51;
+  long unsigned int _52;
+  long int[101] * _53;
+  int _54;
+  long int _55;
+  long unsigned int _56;
+  long unsigned int _57;
+  short int[101] * _58;
+  int _59;
+  short unsigned int k.95_60;
+  short unsigned int j.96_61;
+  long unsigned int _62;
+  long unsigned int _63;
+  long int[101] * _64;
+  int _65;
+  long int _66;
+  long unsigned int _67;
+  long unsigned int _68;
+  short int[101] * _69;
+  int _70;
+  short int _71;
+  short unsigned int j.97_72;
+  long unsigned int _73;
+  long unsigned int _74;
+  short int[101] * _75;
+  short unsigned int totnumassigns.98_76;
+  int _77;
+  long unsigned int _78;
+  long unsigned int _79;
+  long int[101] * _80;
+  int _81;
+  long int _82;
+  long unsigned int _83;
+  long unsigned int _84;
+  short int[101] * _85;
+  int _86;
+  short unsigned int k.99_87;
+  long unsigned int _88;
+  long unsigned int _89;
+  long int[101] * _90;
+  long int _91;
+  long unsigned int _92;
+  long unsigned int _93;
+  short int[101] * _94;
+  short unsigned int k.100_95;
+  short unsigned int i.101_96;
+  int _132;
+  int _159;
+  int _175;
+
+  <bb 2> [0.00%]:
+  selected_151 = 0;
+  i_152 = 0;
+  goto <bb 7>; [0.00%]
+
+  <bb 3> [0.00%]:
+  j_200 = 0;
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _1 = (long unsigned int) i_97;
+  _2 = _1 * 202;
+  _3 = assignedtableau_163(D) + _2;
+  _4 = (int) j_101;
+  *_3[_4] = 0;
+  j.83_5 = j_101;
+  j_203 = j.83_5 + 1;
+
+  <bb 5> [0.00%]:
+  # j_101 = PHI <j_200(3), j_203(4)>
+  if (j_101 <= 100)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 6> [0.00%]:
+  i.84_6 = i_97;
+  i_201 = i.84_6 + 1;
+
+  <bb 7> [0.00%]:
+  # i_97 = PHI <i_152(2), i_201(6)>
+  if (i_97 <= 100)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  totnumassigns_154 = 0;
+
+  <bb 9> [0.00%]:
+  # totnumassigns_113 = PHI <totnumassigns_154(8), totnumassigns_117(41)>
+  # selected_124 = PHI <selected_151(8), selected_130(41)>
+  numassigns_155 = 0;
+  i_156 = 0;
+  goto <bb 24>; [0.00%]
+
+  <bb 10> [0.00%]:
+  numzeros_188 = 0;
+  j_189 = 0;
+  goto <bb 15>; [0.00%]
+
+  <bb 11> [0.00%]:
+  _7 = (long unsigned int) i_98;
+  _8 = _7 * 808;
+  _9 = tableau_162(D) + _8;
+  _10 = (int) j_102;
+  _11 = *_9[_10];
+  if (_11 == 0)
+    goto <bb 12>; [0.00%]
+  else
+    goto <bb 14>; [0.00%]
+
+  <bb 12> [0.00%]:
+  _12 = (long unsigned int) i_98;
+  _13 = _12 * 202;
+  _14 = assignedtableau_163(D) + _13;
+  _15 = (int) j_102;
+  _16 = *_14[_15];
+  if (_16 == 0)
+    goto <bb 13>; [0.00%]
+  else
+    goto <bb 14>; [0.00%]
+
+  <bb 13> [0.00%]:
+  numzeros.85_17 = numzeros_121;
+  numzeros_197 = numzeros.85_17 + 1;
+  selected_198 = (int) j_102;
+
+  <bb 14> [0.00%]:
+  # numzeros_120 = PHI <numzeros_121(11), numzeros_121(12), numzeros_197(13)>
+  # selected_125 = PHI <selected_126(11), selected_126(12), selected_198(13)>
+  j.86_18 = j_102;
+  j_199 = j.86_18 + 1;
+
+  <bb 15> [0.00%]:
+  # j_102 = PHI <j_189(10), j_199(14)>
+  # numzeros_121 = PHI <numzeros_188(10), numzeros_120(14)>
+  # selected_126 = PHI <selected_127(10), selected_125(14)>
+  if (j_102 <= 100)
+    goto <bb 11>; [0.00%]
+  else
+    goto <bb 16>; [0.00%]
+
+  <bb 16> [0.00%]:
+  if (numzeros_121 == 1)
+    goto <bb 17>; [0.00%]
+  else
+    goto <bb 23>; [0.00%]
+
+  <bb 17> [0.00%]:
+  numassigns.87_19 = numassigns_110;
+  numassigns_190 = numassigns.87_19 + 1;
+  totnumassigns.88_20 = totnumassigns_115;
+  totnumassigns_191 = totnumassigns.88_20 + 1;
+  _21 = (long unsigned int) i_98;
+  _22 = _21 * 202;
+  _23 = assignedtableau_163(D) + _22;
+  *_23[selected_126] = 1;
+  k_193 = 0;
+  goto <bb 22>; [0.00%]
+
+  <bb 18> [0.00%]:
+  if (k_105 != i_98)
+    goto <bb 19>; [0.00%]
+  else
+    goto <bb 21>; [0.00%]
+
+  <bb 19> [0.00%]:
+  _24 = (long unsigned int) k_105;
+  _25 = _24 * 808;
+  _26 = tableau_162(D) + _25;
+  _27 = *_26[selected_126];
+  if (_27 == 0)
+    goto <bb 20>; [0.00%]
+  else
+    goto <bb 21>; [0.00%]
+
+  <bb 20> [0.00%]:
+  _28 = (long unsigned int) k_105;
+  _29 = _28 * 202;
+  _30 = assignedtableau_163(D) + _29;
+  *_30[selected_126] = 2;
+
+  <bb 21> [0.00%]:
+  k.89_31 = k_105;
+  k_195 = k.89_31 + 1;
+
+  <bb 22> [0.00%]:
+  # k_105 = PHI <k_193(17), k_195(21)>
+  if (k_105 <= 100)
+    goto <bb 18>; [0.00%]
+  else
+    goto <bb 23>; [0.00%]
+
+  <bb 23> [0.00%]:
+  # numassigns_109 = PHI <numassigns_110(16), numassigns_190(22)>
+  # totnumassigns_114 = PHI <totnumassigns_115(16), totnumassigns_191(22)>
+  i.90_32 = i_98;
+  i_196 = i.90_32 + 1;
+
+  <bb 24> [0.00%]:
+  # i_98 = PHI <i_156(9), i_196(23)>
+  # numassigns_110 = PHI <numassigns_155(9), numassigns_109(23)>
+  # totnumassigns_115 = PHI <totnumassigns_113(9), totnumassigns_114(23)>
+  # selected_127 = PHI <selected_124(9), selected_126(23)>
+  if (i_98 <= 100)
+    goto <bb 10>; [0.00%]
+  else
+    goto <bb 25>; [0.00%]
+
+  <bb 25> [0.00%]:
+  j_157 = 0;
+  goto <bb 40>; [0.00%]
+
+  <bb 26> [0.00%]:
+  numzeros_176 = 0;
+  i_177 = 0;
+  goto <bb 31>; [0.00%]
+
+  <bb 27> [0.00%]:
+  _33 = (long unsigned int) i_99;
+  _34 = _33 * 808;
+  _35 = tableau_162(D) + _34;
+  _36 = (int) j_103;
+  _37 = *_35[_36];
+  if (_37 == 0)
+    goto <bb 28>; [0.00%]
+  else
+    goto <bb 30>; [0.00%]
+
+  <bb 28> [0.00%]:
+  _38 = (long unsigned int) i_99;
+  _39 = _38 * 202;
+  _40 = assignedtableau_163(D) + _39;
+  _41 = (int) j_103;
+  _42 = *_40[_41];
+  if (_42 == 0)
+    goto <bb 29>; [0.00%]
+  else
+    goto <bb 30>; [0.00%]
+
+  <bb 29> [0.00%]:
+  numzeros.91_43 = numzeros_123;
+  numzeros_185 = numzeros.91_43 + 1;
+  selected_186 = (int) i_99;
+
+  <bb 30> [0.00%]:
+  # numzeros_122 = PHI <numzeros_123(27), numzeros_123(28), numzeros_185(29)>
+  # selected_128 = PHI <selected_129(27), selected_129(28), selected_186(29)>
+  i.92_44 = i_99;
+  i_187 = i.92_44 + 1;
+
+  <bb 31> [0.00%]:
+  # i_99 = PHI <i_177(26), i_187(30)>
+  # numzeros_123 = PHI <numzeros_176(26), numzeros_122(30)>
+  # selected_129 = PHI <selected_130(26), selected_128(30)>
+  if (i_99 <= 100)
+    goto <bb 27>; [0.00%]
+  else
+    goto <bb 32>; [0.00%]
+
+  <bb 32> [0.00%]:
+  if (numzeros_123 == 1)
+    goto <bb 33>; [0.00%]
+  else
+    goto <bb 39>; [0.00%]
+
+  <bb 33> [0.00%]:
+  numassigns.93_45 = numassigns_112;
+  numassigns_178 = numassigns.93_45 + 1;
+  totnumassigns.94_46 = totnumassigns_117;
+  totnumassigns_179 = totnumassigns.94_46 + 1;
+  _47 = (long unsigned int) selected_129;
+  _48 = _47 * 202;
+  _49 = assignedtableau_163(D) + _48;
+  _50 = (int) j_103;
+  *_49[_50] = 1;
+  k_181 = 0;
+  goto <bb 38>; [0.00%]
+
+  <bb 34> [0.00%]:
+  if (k_106 != j_103)
+    goto <bb 35>; [0.00%]
+  else
+    goto <bb 37>; [0.00%]
+
+  <bb 35> [0.00%]:
+  _51 = (long unsigned int) selected_129;
+  _52 = _51 * 808;
+  _53 = tableau_162(D) + _52;
+  _54 = (int) k_106;
+  _55 = *_53[_54];
+  if (_55 == 0)
+    goto <bb 36>; [0.00%]
+  else
+    goto <bb 37>; [0.00%]
+
+  <bb 36> [0.00%]:
+  _56 = (long unsigned int) selected_129;
+  _57 = _56 * 202;
+  _58 = assignedtableau_163(D) + _57;
+  _59 = (int) k_106;
+  *_58[_59] = 2;
+
+  <bb 37> [0.00%]:
+  k.95_60 = k_106;
+  k_183 = k.95_60 + 1;
+
+  <bb 38> [0.00%]:
+  # k_106 = PHI <k_181(33), k_183(37)>
+  if (k_106 <= 100)
+    goto <bb 34>; [0.00%]
+  else
+    goto <bb 39>; [0.00%]
+
+  <bb 39> [0.00%]:
+  # numassigns_111 = PHI <numassigns_112(32), numassigns_178(38)>
+  # totnumassigns_116 = PHI <totnumassigns_117(32), totnumassigns_179(38)>
+  j.96_61 = j_103;
+  j_184 = j.96_61 + 1;
+
+  <bb 40> [0.00%]:
+  # j_103 = PHI <j_157(25), j_184(39)>
+  # numassigns_112 = PHI <numassigns_110(25), numassigns_111(39)>
+  # totnumassigns_117 = PHI <totnumassigns_115(25), totnumassigns_116(39)>
+  # selected_130 = PHI <selected_127(25), selected_129(39)>
+  if (j_103 <= 100)
+    goto <bb 26>; [0.00%]
+  else
+    goto <bb 41>; [0.00%]
+
+  <bb 41> [0.00%]:
+  if (numassigns_112 != 0)
+    goto <bb 9>; [0.00%]
+  else
+    goto <bb 42>; [0.00%]
+
+  <bb 42> [0.00%]:
+  if (totnumassigns_117 == 101)
+    goto <bb 43>; [0.00%]
+  else
+    goto <bb 44>; [0.00%]
+
+  <bb 43> [0.00%]:
+  _175 = (int) totnumassigns_117;
+  goto <bb 67>; [0.00%]
+
+  <bb 44> [0.00%]:
+  i_158 = 0;
+  goto <bb 65>; [0.00%]
+
+  <bb 45> [0.00%]:
+  selected_160 = -1;
+  j_161 = 0;
+  goto <bb 50>; [0.00%]
+
+  <bb 46> [0.00%]:
+  _62 = (long unsigned int) i_100;
+  _63 = _62 * 808;
+  _64 = tableau_162(D) + _63;
+  _65 = (int) j_104;
+  _66 = *_64[_65];
+  if (_66 == 0)
+    goto <bb 47>; [0.00%]
+  else
+    goto <bb 49>; [0.00%]
+
+  <bb 47> [0.00%]:
+  _67 = (long unsigned int) i_100;
+  _68 = _67 * 202;
+  _69 = assignedtableau_163(D) + _68;
+  _70 = (int) j_104;
+  _71 = *_69[_70];
+  if (_71 == 0)
+    goto <bb 48>; [0.00%]
+  else
+    goto <bb 49>; [0.00%]
+
+  <bb 48> [0.00%]:
+  selected_164 = (int) j_104;
+  goto <bb 51>; [0.00%]
+
+  <bb 49> [0.00%]:
+  j.97_72 = j_104;
+  j_165 = j.97_72 + 1;
+
+  <bb 50> [0.00%]:
+  # j_104 = PHI <j_161(45), j_165(49)>
+  if (j_104 <= 100)
+    goto <bb 46>; [0.00%]
+  else
+    goto <bb 51>; [0.00%]
+
+  <bb 51> [0.00%]:
+  # selected_131 = PHI <selected_164(48), selected_160(50)>
+  if (selected_131 != -1)
+    goto <bb 52>; [0.00%]
+  else
+    goto <bb 64>; [0.00%]
+
+  <bb 52> [0.00%]:
+  _73 = (long unsigned int) i_100;
+  _74 = _73 * 202;
+  _75 = assignedtableau_163(D) + _74;
+  *_75[selected_131] = 1;
+  totnumassigns.98_76 = totnumassigns_119;
+  totnumassigns_167 = totnumassigns.98_76 + 1;
+  k_168 = 0;
+  goto <bb 57>; [0.00%]
+
+  <bb 53> [0.00%]:
+  _77 = (int) k_107;
+  if (selected_131 != _77)
+    goto <bb 54>; [0.00%]
+  else
+    goto <bb 56>; [0.00%]
+
+  <bb 54> [0.00%]:
+  _78 = (long unsigned int) i_100;
+  _79 = _78 * 808;
+  _80 = tableau_162(D) + _79;
+  _81 = (int) k_107;
+  _82 = *_80[_81];
+  if (_82 == 0)
+    goto <bb 55>; [0.00%]
+  else
+    goto <bb 56>; [0.00%]
+
+  <bb 55> [0.00%]:
+  _83 = (long unsigned int) i_100;
+  _84 = _83 * 202;
+  _85 = assignedtableau_163(D) + _84;
+  _86 = (int) k_107;
+  *_85[_86] = 2;
+
+  <bb 56> [0.00%]:
+  k.99_87 = k_107;
+  k_173 = k.99_87 + 1;
+
+  <bb 57> [0.00%]:
+  # k_107 = PHI <k_168(52), k_173(56)>
+  if (k_107 <= 100)
+    goto <bb 53>; [0.00%]
+  else
+    goto <bb 58>; [0.00%]
+
+  <bb 58> [0.00%]:
+  k_169 = 0;
+  goto <bb 63>; [0.00%]
+
+  <bb 59> [0.00%]:
+  if (k_108 != i_100)
+    goto <bb 60>; [0.00%]
+  else
+    goto <bb 62>; [0.00%]
+
+  <bb 60> [0.00%]:
+  _88 = (long unsigned int) k_108;
+  _89 = _88 * 808;
+  _90 = tableau_162(D) + _89;
+  _91 = *_90[selected_131];
+  if (_91 == 0)
+    goto <bb 61>; [0.00%]
+  else
+    goto <bb 62>; [0.00%]
+
+  <bb 61> [0.00%]:
+  _92 = (long unsigned int) k_108;
+  _93 = _92 * 202;
+  _94 = assignedtableau_163(D) + _93;
+  *_94[selected_131] = 2;
+
+  <bb 62> [0.00%]:
+  k.100_95 = k_108;
+  k_171 = k.100_95 + 1;
+
+  <bb 63> [0.00%]:
+  # k_108 = PHI <k_169(58), k_171(62)>
+  if (k_108 <= 100)
+    goto <bb 59>; [0.00%]
+  else
+    goto <bb 64>; [0.00%]
+
+  <bb 64> [0.00%]:
+  # totnumassigns_118 = PHI <totnumassigns_119(51), totnumassigns_167(63)>
+  i.101_96 = i_100;
+  i_174 = i.101_96 + 1;
+
+  <bb 65> [0.00%]:
+  # i_100 = PHI <i_158(44), i_174(64)>
+  # totnumassigns_119 = PHI <totnumassigns_117(44), totnumassigns_118(64)>
+  if (i_100 <= 100)
+    goto <bb 45>; [0.00%]
+  else
+    goto <bb 66>; [0.00%]
+
+  <bb 66> [0.00%]:
+  _159 = (int) totnumassigns_119;
+
+  <bb 67> [0.00%]:
+  # _132 = PHI <_175(43), _159(66)>
+  return _132;
+
+}
+
+
+
+;; Function second_assignments (second_assignments, funcdef_no=81, decl_uid=4621, cgraph_uid=81, symbol_order=106)
+
+Function found to be nothrow: second_assignments
+second_assignments (long int[101] * tableau, short int[101] * assignedtableau)
+{
+  short unsigned int newrows;
+  short unsigned int numassigns;
+  long int smallest;
+  short int linescol[101];
+  short int linesrow[101];
+  int j;
+  int i;
+  long unsigned int _1;
+  long unsigned int _2;
+  short int[101] * _3;
+  short int _4;
+  short unsigned int numassigns.81_5;
+  short int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long int[101] * _9;
+  long int _10;
+  short int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  short int[101] * _14;
+  short int _15;
+  short int _16;
+  short unsigned int newrows.82_17;
+  short int _18;
+  short int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long int[101] * _22;
+  long int _23;
+  long unsigned int _24;
+  long unsigned int _25;
+  long int[101] * _26;
+  short int _27;
+  short int _28;
+  long unsigned int _29;
+  long unsigned int _30;
+  long int[101] * _31;
+  long int _32;
+  long unsigned int _33;
+  long unsigned int _34;
+  long int[101] * _35;
+  long int _36;
+  short int _37;
+  short int _38;
+  long unsigned int _39;
+  long unsigned int _40;
+  long int[101] * _41;
+  long int _42;
+  long unsigned int _43;
+  long unsigned int _44;
+  long int[101] * _45;
+  long int _46;
+
+  <bb 2> [0.00%]:
+  i_91 = 0;
+  goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  linesrow[i_47] = 0;
+  i_136 = i_47 + 1;
+
+  <bb 4> [0.00%]:
+  # i_47 = PHI <i_91(2), i_136(3)>
+  if (i_47 <= 100)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 5> [0.00%]:
+  i_93 = 0;
+  goto <bb 7>; [0.00%]
+
+  <bb 6> [0.00%]:
+  linescol[i_48] = 0;
+  i_134 = i_48 + 1;
+
+  <bb 7> [0.00%]:
+  # i_48 = PHI <i_93(5), i_134(6)>
+  if (i_48 <= 100)
+    goto <bb 6>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  i_94 = 0;
+  goto <bb 17>; [0.00%]
+
+  <bb 9> [0.00%]:
+  numassigns_127 = 0;
+  j_128 = 0;
+  goto <bb 13>; [0.00%]
+
+  <bb 10> [0.00%]:
+  _1 = (long unsigned int) i_49;
+  _2 = _1 * 202;
+  _3 = assignedtableau_118(D) + _2;
+  _4 = *_3[j_55];
+  if (_4 == 1)
+    goto <bb 11>; [0.00%]
+  else
+    goto <bb 12>; [0.00%]
+
+  <bb 11> [0.00%]:
+  numassigns.81_5 = numassigns_127;
+  numassigns_130 = numassigns.81_5 + 1;
+  goto <bb 14>; [0.00%]
+
+  <bb 12> [0.00%]:
+  j_129 = j_55 + 1;
+
+  <bb 13> [0.00%]:
+  # j_55 = PHI <j_128(9), j_129(12)>
+  if (j_55 <= 100)
+    goto <bb 10>; [0.00%]
+  else
+    goto <bb 14>; [0.00%]
+
+  <bb 14> [0.00%]:
+  # numassigns_65 = PHI <numassigns_130(11), numassigns_127(13)>
+  if (numassigns_65 == 0)
+    goto <bb 15>; [0.00%]
+  else
+    goto <bb 16>; [0.00%]
+
+  <bb 15> [0.00%]:
+  linesrow[i_49] = 1;
+
+  <bb 16> [0.00%]:
+  i_132 = i_49 + 1;
+
+  <bb 17> [0.00%]:
+  # i_49 = PHI <i_94(8), i_132(16)>
+  if (i_49 <= 100)
+    goto <bb 9>; [0.00%]
+  else
+    goto <bb 18>; [0.00%]
+
+  <bb 18> [0.00%]:
+  newrows_95 = 0;
+  i_96 = 0;
+  goto <bb 26>; [0.00%]
+
+  <bb 19> [0.00%]:
+  _6 = linesrow[i_50];
+  if (_6 == 1)
+    goto <bb 20>; [0.00%]
+  else
+    goto <bb 25>; [0.00%]
+
+  <bb 20> [0.00%]:
+  j_123 = 0;
+  goto <bb 24>; [0.00%]
+
+  <bb 21> [0.00%]:
+  _7 = (long unsigned int) i_50;
+  _8 = _7 * 808;
+  _9 = tableau_105(D) + _8;
+  _10 = *_9[j_56];
+  if (_10 == 0)
+    goto <bb 22>; [0.00%]
+  else
+    goto <bb 23>; [0.00%]
+
+  <bb 22> [0.00%]:
+  linescol[j_56] = 1;
+
+  <bb 23> [0.00%]:
+  j_125 = j_56 + 1;
+
+  <bb 24> [0.00%]:
+  # j_56 = PHI <j_123(20), j_125(23)>
+  if (j_56 <= 100)
+    goto <bb 21>; [0.00%]
+  else
+    goto <bb 25>; [0.00%]
+
+  <bb 25> [0.00%]:
+  i_126 = i_50 + 1;
+
+  <bb 26> [0.00%]:
+  # i_50 = PHI <i_96(18), i_126(25)>
+  if (i_50 <= 100)
+    goto <bb 19>; [0.00%]
+  else
+    goto <bb 27>; [0.00%]
+
+  <bb 27> [0.00%]:
+  j_97 = 0;
+  goto <bb 36>; [0.00%]
+
+  <bb 28> [0.00%]:
+  _11 = linescol[j_57];
+  if (_11 == 1)
+    goto <bb 29>; [0.00%]
+  else
+    goto <bb 35>; [0.00%]
+
+  <bb 29> [0.00%]:
+  i_117 = 0;
+  goto <bb 34>; [0.00%]
+
+  <bb 30> [0.00%]:
+  _12 = (long unsigned int) i_51;
+  _13 = _12 * 202;
+  _14 = assignedtableau_118(D) + _13;
+  _15 = *_14[j_57];
+  if (_15 == 1)
+    goto <bb 31>; [0.00%]
+  else
+    goto <bb 33>; [0.00%]
+
+  <bb 31> [0.00%]:
+  _16 = linesrow[i_51];
+  if (_16 != 1)
+    goto <bb 32>; [0.00%]
+  else
+    goto <bb 33>; [0.00%]
+
+  <bb 32> [0.00%]:
+  linesrow[i_51] = 1;
+  newrows.82_17 = newrows_67;
+  newrows_120 = newrows.82_17 + 1;
+
+  <bb 33> [0.00%]:
+  # newrows_66 = PHI <newrows_67(30), newrows_67(31), newrows_120(32)>
+  i_121 = i_51 + 1;
+
+  <bb 34> [0.00%]:
+  # i_51 = PHI <i_117(29), i_121(33)>
+  # newrows_67 = PHI <newrows_69(29), newrows_66(33)>
+  if (i_51 <= 100)
+    goto <bb 30>; [0.00%]
+  else
+    goto <bb 35>; [0.00%]
+
+  <bb 35> [0.00%]:
+  # newrows_68 = PHI <newrows_69(28), newrows_67(34)>
+  j_122 = j_57 + 1;
+
+  <bb 36> [0.00%]:
+  # j_57 = PHI <j_97(27), j_122(35)>
+  # newrows_69 = PHI <newrows_95(27), newrows_68(35)>
+  if (j_57 <= 100)
+    goto <bb 28>; [0.00%]
+  else
+    goto <bb 37>; [0.00%]
+
+  <bb 37> [0.00%]:
+  if (newrows_69 != 0)
+    goto <bb 18>; [0.00%]
+  else
+    goto <bb 38>; [0.00%]
+
+  <bb 38> [0.00%]:
+  smallest_98 = 9223372036854775807;
+  i_99 = 0;
+  goto <bb 47>; [0.00%]
+
+  <bb 39> [0.00%]:
+  _18 = linesrow[i_52];
+  if (_18 != 0)
+    goto <bb 40>; [0.00%]
+  else
+    goto <bb 46>; [0.00%]
+
+  <bb 40> [0.00%]:
+  j_113 = 0;
+  goto <bb 45>; [0.00%]
+
+  <bb 41> [0.00%]:
+  _19 = linescol[j_58];
+  if (_19 != 1)
+    goto <bb 42>; [0.00%]
+  else
+    goto <bb 44>; [0.00%]
+
+  <bb 42> [0.00%]:
+  _20 = (long unsigned int) i_52;
+  _21 = _20 * 808;
+  _22 = tableau_105(D) + _21;
+  _23 = *_22[j_58];
+  if (smallest_62 > _23)
+    goto <bb 43>; [0.00%]
+  else
+    goto <bb 44>; [0.00%]
+
+  <bb 43> [0.00%]:
+  _24 = (long unsigned int) i_52;
+  _25 = _24 * 808;
+  _26 = tableau_105(D) + _25;
+  smallest_114 = *_26[j_58];
+
+  <bb 44> [0.00%]:
+  # smallest_61 = PHI <smallest_62(41), smallest_62(42), smallest_114(43)>
+  j_115 = j_58 + 1;
+
+  <bb 45> [0.00%]:
+  # j_58 = PHI <j_113(40), j_115(44)>
+  # smallest_62 = PHI <smallest_64(40), smallest_61(44)>
+  if (j_58 <= 100)
+    goto <bb 41>; [0.00%]
+  else
+    goto <bb 46>; [0.00%]
+
+  <bb 46> [0.00%]:
+  # smallest_63 = PHI <smallest_64(39), smallest_62(45)>
+  i_116 = i_52 + 1;
+
+  <bb 47> [0.00%]:
+  # i_52 = PHI <i_99(38), i_116(46)>
+  # smallest_64 = PHI <smallest_98(38), smallest_63(46)>
+  if (i_52 <= 100)
+    goto <bb 39>; [0.00%]
+  else
+    goto <bb 48>; [0.00%]
+
+  <bb 48> [0.00%]:
+  i_100 = 0;
+  goto <bb 56>; [0.00%]
+
+  <bb 49> [0.00%]:
+  _27 = linesrow[i_53];
+  if (_27 != 0)
+    goto <bb 50>; [0.00%]
+  else
+    goto <bb 55>; [0.00%]
+
+  <bb 50> [0.00%]:
+  j_109 = 0;
+  goto <bb 54>; [0.00%]
+
+  <bb 51> [0.00%]:
+  _28 = linescol[j_59];
+  if (_28 != 1)
+    goto <bb 52>; [0.00%]
+  else
+    goto <bb 53>; [0.00%]
+
+  <bb 52> [0.00%]:
+  _29 = (long unsigned int) i_53;
+  _30 = _29 * 808;
+  _31 = tableau_105(D) + _30;
+  _32 = *_31[j_59];
+  _33 = (long unsigned int) i_53;
+  _34 = _33 * 808;
+  _35 = tableau_105(D) + _34;
+  _36 = _32 - smallest_64;
+  *_35[j_59] = _36;
+
+  <bb 53> [0.00%]:
+  j_111 = j_59 + 1;
+
+  <bb 54> [0.00%]:
+  # j_59 = PHI <j_109(50), j_111(53)>
+  if (j_59 <= 100)
+    goto <bb 51>; [0.00%]
+  else
+    goto <bb 55>; [0.00%]
+
+  <bb 55> [0.00%]:
+  i_112 = i_53 + 1;
+
+  <bb 56> [0.00%]:
+  # i_53 = PHI <i_100(48), i_112(55)>
+  if (i_53 <= 100)
+    goto <bb 49>; [0.00%]
+  else
+    goto <bb 57>; [0.00%]
+
+  <bb 57> [0.00%]:
+  i_101 = 0;
+  goto <bb 65>; [0.00%]
+
+  <bb 58> [0.00%]:
+  _37 = linesrow[i_54];
+  if (_37 == 0)
+    goto <bb 59>; [0.00%]
+  else
+    goto <bb 64>; [0.00%]
+
+  <bb 59> [0.00%]:
+  j_104 = 0;
+  goto <bb 63>; [0.00%]
+
+  <bb 60> [0.00%]:
+  _38 = linescol[j_60];
+  if (_38 == 1)
+    goto <bb 61>; [0.00%]
+  else
+    goto <bb 62>; [0.00%]
+
+  <bb 61> [0.00%]:
+  _39 = (long unsigned int) i_54;
+  _40 = _39 * 808;
+  _41 = tableau_105(D) + _40;
+  _42 = *_41[j_60];
+  _43 = (long unsigned int) i_54;
+  _44 = _43 * 808;
+  _45 = tableau_105(D) + _44;
+  _46 = smallest_64 + _42;
+  *_45[j_60] = _46;
+
+  <bb 62> [0.00%]:
+  j_107 = j_60 + 1;
+
+  <bb 63> [0.00%]:
+  # j_60 = PHI <j_104(59), j_107(62)>
+  if (j_60 <= 100)
+    goto <bb 60>; [0.00%]
+  else
+    goto <bb 64>; [0.00%]
+
+  <bb 64> [0.00%]:
+  i_108 = i_54 + 1;
+
+  <bb 65> [0.00%]:
+  # i_54 = PHI <i_101(57), i_108(64)>
+  if (i_54 <= 100)
+    goto <bb 58>; [0.00%]
+  else
+    goto <bb 66>; [0.00%]
+
+  <bb 66> [0.00%]:
+  linesrow ={v} {CLOBBER};
+  linescol ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function Assignment (Assignment, funcdef_no=78, decl_uid=4613, cgraph_uid=78, symbol_order=103)
+
+Function found to be nothrow: Assignment
+Assignment (farlong[101] * arraybase)
+{
+  short int assignedtableau[101][101];
+  int _1;
+
+  <bb 2> [0.00%]:
+  calc_minimum_costs (arraybase_4(D));
+  goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  second_assignments (arraybase_4(D), &assignedtableau);
+
+  <bb 4> [0.00%]:
+  _1 = first_assignments (arraybase_4(D), &assignedtableau);
+  if (_1 != 101)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 5> [0.00%]:
+  assignedtableau ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function mul (mul, funcdef_no=84, decl_uid=4635, cgraph_uid=84, symbol_order=109)
+
+Function found to be nothrow: mul
+mul (u16 a, u16 b)
+{
+  register u32 p;
+  int _1;
+  int _2;
+  int _3;
+  unsigned int _4;
+  short unsigned int _5;
+  _Bool _6;
+  short unsigned int _7;
+  u16 _8;
+  u16 _11;
+  u16 _12;
+  u16 _16;
+
+  <bb 2> [0.00%]:
+  if (a_9(D) != 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 3> [0.00%]:
+  if (b_10(D) != 0)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _1 = (int) a_9(D);
+  _2 = (int) b_10(D);
+  _3 = _1 * _2;
+  p_13 = (u32) _3;
+  b_14 = (u16) p_13;
+  _4 = p_13 >> 16;
+  a_15 = (u16) _4;
+  _5 = b_14 - a_15;
+  _6 = b_14 < a_15;
+  _7 = (short unsigned int) _6;
+  _16 = _5 + _7;
+  goto <bb 7>; [0.00%]
+
+  <bb 5> [0.00%]:
+  _12 = 1 - a_9(D);
+  goto <bb 7>; [0.00%]
+
+  <bb 6> [0.00%]:
+  _11 = 1 - b_10(D);
+
+  <bb 7> [0.00%]:
+  # _8 = PHI <_16(4), _12(5), _11(6)>
+  return _8;
+
+}
+
+
+
+;; Function inv (inv, funcdef_no=85, decl_uid=4637, cgraph_uid=85, symbol_order=110)
+
+Function found to be nothrow: inv
+inv (u16 x)
+{
+  u16 y;
+  u16 q;
+  u16 t1;
+  u16 t0;
+  int _1;
+  int _2;
+  int _3;
+  int _4;
+  short unsigned int _5;
+  short unsigned int _6;
+  u16 _11;
+  u16 _22;
+  u16 _23;
+  u16 _24;
+  u16 _25;
+
+  <bb 2> [0.00%]:
+  if (x_12(D) <= 1)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _25 = x_12(D);
+  goto <bb 11>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _1 = (int) x_12(D);
+  _2 = 65537 / _1;
+  t1_13 = (u16) _2;
+  _3 = (int) x_12(D);
+  _4 = 65537 % _3;
+  y_14 = (u16) _4;
+  if (y_14 == 1)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  _24 = 1 - t1_13;
+  goto <bb 11>; [0.00%]
+
+  <bb 6> [0.00%]:
+  t0_15 = 1;
+
+  <bb 7> [0.00%]:
+  # x_7 = PHI <x_12(D)(6), x_17(9)>
+  # t0_8 = PHI <t0_15(6), t0_18(9)>
+  # t1_9 = PHI <t1_13(6), t1_21(9)>
+  # y_10 = PHI <y_14(6), y_20(9)>
+  q_16 = x_7 / y_10;
+  x_17 = x_7 % y_10;
+  _5 = q_16 * t1_9;
+  t0_18 = t0_8 + _5;
+  if (x_17 == 1)
+    goto <bb 8>; [0.00%]
+  else
+    goto <bb 9>; [0.00%]
+
+  <bb 8> [0.00%]:
+  _23 = t0_18;
+  goto <bb 11>; [0.00%]
+
+  <bb 9> [0.00%]:
+  q_19 = y_10 / x_17;
+  y_20 = y_10 % x_17;
+  _6 = q_19 * t0_18;
+  t1_21 = t1_9 + _6;
+  if (y_20 != 1)
+    goto <bb 7>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 10> [0.00%]:
+  _22 = 1 - t1_21;
+
+  <bb 11> [0.00%]:
+  # _11 = PHI <_25(3), _24(5), _23(8), _22(10)>
+  return _11;
+
+}
+
+
+
+;; Function en_key_idea (en_key_idea, funcdef_no=86, decl_uid=4640, cgraph_uid=86, symbol_order=111)
+
+Function found to be nothrow: en_key_idea
+en_key_idea (u16 * userkey, u16 * Z)
+{
+  int j;
+  int i;
+  u16 * userkey.109_1;
+  long unsigned int _2;
+  long unsigned int _3;
+  u16 * _4;
+  short unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  u16 * _9;
+  short unsigned int _10;
+  int _11;
+  int _12;
+  signed short _13;
+  int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  u16 * _18;
+  short unsigned int _19;
+  short unsigned int _20;
+  signed short _21;
+  signed short _22;
+  sizetype _23;
+  sizetype _24;
+  sizetype _25;
+  u16 * _26;
+  short unsigned int _27;
+  long unsigned int _28;
+  long unsigned int _29;
+  long unsigned int _30;
+
+  <bb 2> [0.00%]:
+  j_38 = 0;
+  goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  userkey.109_1 = userkey_31;
+  userkey_48 = userkey.109_1 + 2;
+  _2 = (long unsigned int) j_34;
+  _3 = _2 * 2;
+  _4 = Z_42(D) + _3;
+  _5 = *userkey.109_1;
+  *_4 = _5;
+  j_50 = j_34 + 1;
+
+  <bb 4> [0.00%]:
+  # userkey_31 = PHI <userkey_39(D)(2), userkey_48(3)>
+  # j_34 = PHI <j_38(2), j_50(3)>
+  if (j_34 <= 7)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 5> [0.00%]:
+  i_41 = 0;
+  goto <bb 7>; [0.00%]
+
+  <bb 6> [0.00%]:
+  i_43 = i_33 + 1;
+  _6 = (long unsigned int) i_43;
+  _7 = _6 & 7;
+  _8 = _7 * 2;
+  _9 = Z_32 + _8;
+  _10 = *_9;
+  _11 = (int) _10;
+  _12 = _11 << 9;
+  _13 = (signed short) _12;
+  _14 = i_43 + 1;
+  _15 = (long unsigned int) _14;
+  _16 = _15 & 7;
+  _17 = _16 * 2;
+  _18 = Z_32 + _17;
+  _19 = *_18;
+  _20 = _19 >> 7;
+  _21 = (signed short) _20;
+  _22 = _13 | _21;
+  _23 = (sizetype) i_43;
+  _24 = _23 + 7;
+  _25 = _24 * 2;
+  _26 = Z_32 + _25;
+  _27 = (short unsigned int) _22;
+  *_26 = _27;
+  _28 = (long unsigned int) i_43;
+  _29 = _28 & 8;
+  _30 = _29 * 2;
+  Z_45 = Z_32 + _30;
+  i_46 = i_43 & 7;
+  j_47 = j_35 + 1;
+
+  <bb 7> [0.00%]:
+  # Z_32 = PHI <Z_42(D)(5), Z_45(6)>
+  # i_33 = PHI <i_41(5), i_46(6)>
+  # j_35 = PHI <j_34(5), j_47(6)>
+  if (j_35 <= 51)
+    goto <bb 6>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function de_key_idea (de_key_idea, funcdef_no=87, decl_uid=4643, cgraph_uid=87, symbol_order=112)
+
+Function found to be nothrow: de_key_idea
+de_key_idea (u16 * Z, u16 * DK)
+{
+  u16 * p;
+  u16 t3;
+  u16 t2;
+  u16 t1;
+  int j;
+  u16 TT[52];
+  u16 * Z.110_1;
+  short unsigned int _2;
+  int _3;
+  u16 * Z.111_4;
+  short unsigned int _5;
+  u16 * Z.112_6;
+  short unsigned int _7;
+  u16 * Z.113_8;
+  short unsigned int _9;
+  int _10;
+  short unsigned int _11;
+  u16 * Z.114_12;
+  u16 * Z.115_13;
+  short unsigned int _14;
+  u16 * Z.116_15;
+  short unsigned int _16;
+  int _17;
+  u16 * Z.117_18;
+  short unsigned int _19;
+  u16 * Z.118_20;
+  short unsigned int _21;
+  u16 * Z.119_22;
+  short unsigned int _23;
+  int _24;
+  short unsigned int _25;
+  u16 * Z.120_26;
+  u16 * Z.121_27;
+  short unsigned int _28;
+  u16 * Z.122_29;
+  short unsigned int _30;
+  int _31;
+  u16 * Z.123_32;
+  short unsigned int _33;
+  u16 * Z.124_34;
+  short unsigned int _35;
+  u16 * Z.125_36;
+  short unsigned int _37;
+  int _38;
+  short unsigned int _39;
+  u16 * DK.126_40;
+  short unsigned int _41;
+  u16 * p.127_42;
+
+  <bb 2> [0.00%]:
+  p_51 = &TT + 104;
+  Z.110_1 = Z_52(D);
+  Z_53 = Z.110_1 + 2;
+  _2 = *Z.110_1;
+  _3 = (int) _2;
+  t1_56 = inv (_3);
+  Z.111_4 = Z_53;
+  Z_57 = Z.111_4 + 2;
+  _5 = *Z.111_4;
+  t2_58 = -_5;
+  Z.112_6 = Z_57;
+  Z_59 = Z.112_6 + 2;
+  _7 = *Z.112_6;
+  t3_60 = -_7;
+  Z.113_8 = Z_59;
+  Z_61 = Z.113_8 + 2;
+  _9 = *Z.113_8;
+  _10 = (int) _9;
+  p_62 = p_51 + 18446744073709551614;
+  _11 = inv (_10);
+  *p_62 = _11;
+  p_65 = p_62 + 18446744073709551614;
+  *p_65 = t3_60;
+  p_67 = p_65 + 18446744073709551614;
+  *p_67 = t2_58;
+  p_69 = p_67 + 18446744073709551614;
+  *p_69 = t1_56;
+  j_71 = 1;
+  goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  Z.114_12 = Z_43;
+  Z_105 = Z.114_12 + 2;
+  t1_106 = *Z.114_12;
+  Z.115_13 = Z_105;
+  Z_107 = Z.115_13 + 2;
+  p_108 = p_47 + 18446744073709551614;
+  _14 = *Z.115_13;
+  *p_108 = _14;
+  p_110 = p_108 + 18446744073709551614;
+  *p_110 = t1_106;
+  Z.116_15 = Z_107;
+  Z_112 = Z.116_15 + 2;
+  _16 = *Z.116_15;
+  _17 = (int) _16;
+  t1_114 = inv (_17);
+  Z.117_18 = Z_112;
+  Z_115 = Z.117_18 + 2;
+  _19 = *Z.117_18;
+  t2_116 = -_19;
+  Z.118_20 = Z_115;
+  Z_117 = Z.118_20 + 2;
+  _21 = *Z.118_20;
+  t3_118 = -_21;
+  Z.119_22 = Z_117;
+  Z_119 = Z.119_22 + 2;
+  _23 = *Z.119_22;
+  _24 = (int) _23;
+  p_120 = p_110 + 18446744073709551614;
+  _25 = inv (_24);
+  *p_120 = _25;
+  p_123 = p_120 + 18446744073709551614;
+  *p_123 = t2_116;
+  p_125 = p_123 + 18446744073709551614;
+  *p_125 = t3_118;
+  p_127 = p_125 + 18446744073709551614;
+  *p_127 = t1_114;
+  j_129 = j_45 + 1;
+
+  <bb 4> [0.00%]:
+  # Z_43 = PHI <Z_61(2), Z_119(3)>
+  # j_45 = PHI <j_71(2), j_129(3)>
+  # p_47 = PHI <p_69(2), p_127(3)>
+  if (j_45 <= 7)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 5> [0.00%]:
+  Z.120_26 = Z_43;
+  Z_72 = Z.120_26 + 2;
+  t1_73 = *Z.120_26;
+  Z.121_27 = Z_72;
+  Z_74 = Z.121_27 + 2;
+  p_75 = p_47 + 18446744073709551614;
+  _28 = *Z.121_27;
+  *p_75 = _28;
+  p_77 = p_75 + 18446744073709551614;
+  *p_77 = t1_73;
+  Z.122_29 = Z_74;
+  Z_79 = Z.122_29 + 2;
+  _30 = *Z.122_29;
+  _31 = (int) _30;
+  t1_81 = inv (_31);
+  Z.123_32 = Z_79;
+  Z_82 = Z.123_32 + 2;
+  _33 = *Z.123_32;
+  t2_83 = -_33;
+  Z.124_34 = Z_82;
+  Z_84 = Z.124_34 + 2;
+  _35 = *Z.124_34;
+  t3_85 = -_35;
+  Z.125_36 = Z_84;
+  Z_86 = Z.125_36 + 2;
+  _37 = *Z.125_36;
+  _38 = (int) _37;
+  p_87 = p_77 + 18446744073709551614;
+  _39 = inv (_38);
+  *p_87 = _39;
+  p_90 = p_87 + 18446744073709551614;
+  *p_90 = t3_85;
+  p_92 = p_90 + 18446744073709551614;
+  *p_92 = t2_83;
+  p_94 = p_92 + 18446744073709551614;
+  *p_94 = t1_81;
+  j_96 = 0;
+  p_97 = &TT;
+  goto <bb 7>; [0.00%]
+
+  <bb 6> [0.00%]:
+  DK.126_40 = DK_44;
+  DK_100 = DK.126_40 + 2;
+  _41 = *p_48;
+  *DK.126_40 = _41;
+  p.127_42 = p_48;
+  p_102 = p.127_42 + 2;
+  *p.127_42 = 0;
+  j_104 = j_46 + 1;
+
+  <bb 7> [0.00%]:
+  # DK_44 = PHI <DK_98(D)(5), DK_100(6)>
+  # j_46 = PHI <j_96(5), j_104(6)>
+  # p_48 = PHI <p_97(5), p_102(6)>
+  if (j_46 <= 51)
+    goto <bb 6>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  TT ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function cipher_idea (cipher_idea, funcdef_no=88, decl_uid=4647, cgraph_uid=88, symbol_order=113)
+
+Function found to be nothrow: cipher_idea
+cipher_idea (u16 * in, u16 * out, u16 * Z)
+{
+  int r;
+  register u16 t2;
+  register u16 t1;
+  register u16 x4;
+  register u16 x3;
+  register u16 x2;
+  register u16 x1;
+  u16 * in.128_1;
+  u16 * in.129_2;
+  u16 * in.130_3;
+  u16 * Z.131_4;
+  short unsigned int _5;
+  int _6;
+  int _7;
+  u16 * Z.132_8;
+  u16 * Z.133_9;
+  u16 * Z.134_10;
+  short unsigned int _11;
+  int _12;
+  int _13;
+  u16 * Z.135_14;
+  short unsigned int _15;
+  int _16;
+  int _17;
+  short unsigned int _18;
+  u16 * Z.136_19;
+  short unsigned int _20;
+  int _21;
+  int _22;
+  u16 * Z.137_23;
+  short unsigned int _24;
+  int _25;
+  int _26;
+  u16 * out.138_27;
+  u16 * Z.139_28;
+  short unsigned int _29;
+  u16 * out.140_30;
+  short unsigned int _31;
+  u16 * Z.141_32;
+  short unsigned int _33;
+  u16 * out.142_34;
+  short unsigned int _35;
+  short unsigned int _36;
+  int _37;
+  int _38;
+  short unsigned int _61;
+  short unsigned int _64;
+
+  <bb 2> [0.00%]:
+  r_46 = 8;
+  in.128_1 = in_47(D);
+  in_48 = in.128_1 + 2;
+  x1_50 = *in.128_1;
+  in.129_2 = in_48;
+  in_51 = in.129_2 + 2;
+  x2_52 = *in.129_2;
+  in.130_3 = in_51;
+  in_53 = in.130_3 + 2;
+  x3_54 = *in.130_3;
+  x4_55 = *in_53;
+
+  <bb 3> [0.00%]:
+  # Z_39 = PHI <Z_56(D)(2), Z_74(3)>
+  # x1_40 = PHI <x1_50(2), x1_78(3)>
+  # x2_41 = PHI <x2_52(2), x2_81(3)>
+  # x3_42 = PHI <x3_54(2), x3_82(3)>
+  # x4_43 = PHI <x4_55(2), x4_79(3)>
+  # r_44 = PHI <r_46(2), r_83(3)>
+  Z.131_4 = Z_39;
+  Z_57 = Z.131_4 + 2;
+  _5 = *Z.131_4;
+  _6 = (int) _5;
+  _7 = (int) x1_40;
+  x1_59 = mul (_7, _6);
+  Z.132_8 = Z_57;
+  Z_60 = Z.132_8 + 2;
+  _61 = *Z.132_8;
+  x2_62 = _61 + x2_41;
+  Z.133_9 = Z_60;
+  Z_63 = Z.133_9 + 2;
+  _64 = *Z.133_9;
+  x3_65 = _64 + x3_42;
+  Z.134_10 = Z_63;
+  Z_66 = Z.134_10 + 2;
+  _11 = *Z.134_10;
+  _12 = (int) _11;
+  _13 = (int) x4_43;
+  x4_68 = mul (_13, _12);
+  t2_69 = x1_59 ^ x3_65;
+  Z.135_14 = Z_66;
+  Z_70 = Z.135_14 + 2;
+  _15 = *Z.135_14;
+  _16 = (int) _15;
+  _17 = (int) t2_69;
+  t2_72 = mul (_17, _16);
+  _18 = x2_62 ^ x4_68;
+  t1_73 = t2_72 + _18;
+  Z.136_19 = Z_70;
+  Z_74 = Z.136_19 + 2;
+  _20 = *Z.136_19;
+  _21 = (int) _20;
+  _22 = (int) t1_73;
+  t1_76 = mul (_22, _21);
+  t2_77 = t1_76 + t2_72;
+  x1_78 = x1_59 ^ t1_76;
+  x4_79 = x4_68 ^ t2_77;
+  t2_80 = t2_77 ^ x2_62;
+  x2_81 = x3_65 ^ t1_76;
+  x3_82 = t2_80;
+  r_83 = r_44 + -1;
+  if (r_83 != 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 4> [0.00%]:
+  Z.137_23 = Z_74;
+  Z_84 = Z.137_23 + 2;
+  _24 = *Z.137_23;
+  _25 = (int) _24;
+  _26 = (int) x1_78;
+  x1_86 = mul (_26, _25);
+  out.138_27 = out_87(D);
+  out_88 = out.138_27 + 2;
+  *out.138_27 = x1_86;
+  Z.139_28 = Z_84;
+  Z_90 = Z.139_28 + 2;
+  _29 = *Z.139_28;
+  out.140_30 = out_88;
+  out_91 = out.140_30 + 2;
+  _31 = x3_82 + _29;
+  *out.140_30 = _31;
+  Z.141_32 = Z_90;
+  Z_93 = Z.141_32 + 2;
+  _33 = *Z.141_32;
+  out.142_34 = out_91;
+  out_94 = out.142_34 + 2;
+  _35 = x2_81 + _33;
+  *out.142_34 = _35;
+  _36 = *Z_93;
+  _37 = (int) _36;
+  _38 = (int) x4_79;
+  x4_97 = mul (_38, _37);
+  *out_94 = x4_97;
+  return;
+
+}
+
+
+
+;; Function SetCompBit (SetCompBit, funcdef_no=93, decl_uid=4675, cgraph_uid=93, symbol_order=118)
+
+Function found to be nothrow: SetCompBit
+SetCompBit (u8 * comparray, u32 bitoffset, char bitchar)
+{
+  int bitnumb;
+  u32 byteoffset;
+  int bitoffset.165_1;
+  sizetype _2;
+  u8 * _3;
+  unsigned char _4;
+  signed char _5;
+  int _6;
+  signed char _7;
+  signed char _8;
+  sizetype _9;
+  u8 * _10;
+  unsigned char _11;
+  sizetype _12;
+  u8 * _13;
+  unsigned char _14;
+  signed char _15;
+  int _16;
+  signed char _17;
+  signed char _18;
+  signed char _19;
+  sizetype _20;
+  u8 * _21;
+  unsigned char _22;
+
+  <bb 2> [0.00%]:
+  byteoffset_25 = bitoffset_24(D) >> 3;
+  bitoffset.165_1 = (int) bitoffset_24(D);
+  bitnumb_26 = bitoffset.165_1 & 7;
+  if (bitchar_27(D) == 49)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _2 = (sizetype) byteoffset_25;
+  _3 = comparray_28(D) + _2;
+  _4 = *_3;
+  _5 = (signed char) _4;
+  _6 = 1 << bitnumb_26;
+  _7 = (signed char) _6;
+  _8 = _5 | _7;
+  _9 = (sizetype) byteoffset_25;
+  _10 = comparray_28(D) + _9;
+  _11 = (unsigned char) _8;
+  *_10 = _11;
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _12 = (sizetype) byteoffset_25;
+  _13 = comparray_28(D) + _12;
+  _14 = *_13;
+  _15 = (signed char) _14;
+  _16 = 1 << bitnumb_26;
+  _17 = (signed char) _16;
+  _18 = ~_17;
+  _19 = _15 & _18;
+  _20 = (sizetype) byteoffset_25;
+  _21 = comparray_28(D) + _20;
+  _22 = (unsigned char) _19;
+  *_21 = _22;
+
+  <bb 5> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function GetCompBit (GetCompBit, funcdef_no=94, decl_uid=4678, cgraph_uid=94, symbol_order=119)
+
+Function found to be nothrow: GetCompBit
+GetCompBit (u8 * comparray, u32 bitoffset)
+{
+  int bitnumb;
+  u32 byteoffset;
+  int bitoffset.166_1;
+  int _2;
+  sizetype _3;
+  u8 * _4;
+  unsigned char _5;
+  int _6;
+  int _12;
+
+  <bb 2> [0.00%]:
+  byteoffset_8 = bitoffset_7(D) >> 3;
+  bitoffset.166_1 = (int) bitoffset_7(D);
+  bitnumb_9 = bitoffset.166_1 & 7;
+  _2 = 1 << bitnumb_9;
+  _3 = (sizetype) byteoffset_8;
+  _4 = comparray_10(D) + _3;
+  _5 = *_4;
+  _6 = (int) _5;
+  _12 = _2 & _6;
+  return _12;
+
+}
+
+
+
+;; Function do_out_error (do_out_error, funcdef_no=100, decl_uid=4712, cgraph_uid=100, symbol_order=125)
+
+Function found to be nothrow: do_out_error
+do_out_error (int patt)
+{
+  double sum;
+  double tot_error;
+  double error;
+  int neurode;
+  double _1;
+  double _2;
+  double _3;
+  double _4;
+  double _5;
+
+  <bb 2> [0.00%]:
+  tot_error_12 = 0.0;
+  sum_13 = 0.0;
+  neurode_14 = 0;
+  goto <bb 9>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _1 = out_pats[patt_16(D)][neurode_6];
+  _2 = out_out[neurode_6];
+  _3 = _1 - _2;
+  out_error[neurode_6] = _3;
+  error_20 = out_error[neurode_6];
+  if (error_20 < 0.0)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 4> [0.00%]:
+  sum_23 = sum_10 - error_20;
+  _4 = -error_20;
+  if (tot_error_8 < _4)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 5> [0.00%]:
+  tot_error_24 = -error_20;
+  goto <bb 8>; [0.00%]
+
+  <bb 6> [0.00%]:
+  sum_21 = sum_10 + error_20;
+  if (error_20 > tot_error_8)
+    goto <bb 7>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 7> [0.00%]:
+  tot_error_22 = error_20;
+
+  <bb 8> [0.00%]:
+  # tot_error_7 = PHI <tot_error_24(5), tot_error_8(6), tot_error_22(7), tot_error_8(4)>
+  # sum_9 = PHI <sum_23(5), sum_21(6), sum_21(7), sum_23(4)>
+  neurode_25 = neurode_6 + 1;
+
+  <bb 9> [0.00%]:
+  # neurode_6 = PHI <neurode_14(2), neurode_25(8)>
+  # tot_error_8 = PHI <tot_error_12(2), tot_error_7(8)>
+  # sum_10 = PHI <sum_13(2), sum_9(8)>
+  if (neurode_6 <= 7)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 10> [0.00%]:
+  _5 = sum_10 * 1.25e-1;
+  avg_out_error[patt_16(D)] = _5;
+  tot_out_error[patt_16(D)] = tot_error_8;
+  return;
+
+}
+
+
+
+;; Function worst_pass_error (worst_pass_error, funcdef_no=101, decl_uid=4713, cgraph_uid=101, symbol_order=126)
+
+Function found to be nothrow: worst_pass_error
+worst_pass_error ()
+{
+  int i;
+  double sum;
+  double error;
+  double _1;
+  double _2;
+  int numpats.193_3;
+  int numpats.194_4;
+  double _5;
+  double _6;
+
+  <bb 2> [0.00%]:
+  error_11 = 0.0;
+  sum_12 = 0.0;
+  i_13 = 0;
+  goto <bb 6>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _1 = tot_out_error[i_10];
+  if (error_8 < _1)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  error_17 = tot_out_error[i_10];
+
+  <bb 5> [0.00%]:
+  # error_7 = PHI <error_8(3), error_17(4)>
+  _2 = avg_out_error[i_10];
+  sum_18 = sum_9 + _2;
+  i_19 = i_10 + 1;
+
+  <bb 6> [0.00%]:
+  # error_8 = PHI <error_11(2), error_7(5)>
+  # sum_9 = PHI <sum_12(2), sum_18(5)>
+  # i_10 = PHI <i_13(2), i_19(5)>
+  numpats.193_3 = numpats;
+  if (i_10 < numpats.193_3)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 7>; [0.00%]
+
+  <bb 7> [0.00%]:
+  worst_error = error_8;
+  numpats.194_4 = numpats;
+  _5 = (double) numpats.194_4;
+  _6 = sum_9 / _5;
+  average_error = _6;
+  return;
+
+}
+
+
+
+;; Function do_mid_error (do_mid_error, funcdef_no=102, decl_uid=4714, cgraph_uid=102, symbol_order=127)
+
+Function found to be nothrow: do_mid_error
+do_mid_error ()
+{
+  int i;
+  int neurode;
+  double sum;
+  double _1;
+  double _2;
+  double _3;
+  double _4;
+  double _5;
+  double _6;
+  double _7;
+  double _8;
+
+  <bb 2> [0.00%]:
+  neurode_13 = 0;
+  goto <bb 7>; [0.00%]
+
+  <bb 3> [0.00%]:
+  sum_15 = 0.0;
+  i_16 = 0;
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _1 = out_wts[i_11][neurode_10];
+  _2 = out_error[i_11];
+  _3 = _1 * _2;
+  sum_19 = sum_9 + _3;
+  i_20 = i_11 + 1;
+
+  <bb 5> [0.00%]:
+  # sum_9 = PHI <sum_15(3), sum_19(4)>
+  # i_11 = PHI <i_16(3), i_20(4)>
+  if (i_11 <= 7)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 6> [0.00%]:
+  _4 = mid_out[neurode_10];
+  _5 = mid_out[neurode_10];
+  _6 = 1.0e+0 - _5;
+  _7 = _4 * _6;
+  _8 = sum_9 * _7;
+  mid_error[neurode_10] = _8;
+  neurode_18 = neurode_10 + 1;
+
+  <bb 7> [0.00%]:
+  # neurode_10 = PHI <neurode_13(2), neurode_18(6)>
+  if (neurode_10 <= 7)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function adjust_out_wts (adjust_out_wts, funcdef_no=103, decl_uid=4715, cgraph_uid=103, symbol_order=128)
+
+Function found to be nothrow: adjust_out_wts
+adjust_out_wts ()
+{
+  double alph;
+  double delta;
+  double learn;
+  int neurode;
+  int weight;
+  double _1;
+  double _2;
+  double _3;
+  double _4;
+  double _5;
+  double _6;
+  double _7;
+  double _8;
+  double _9;
+
+  <bb 2> [0.00%]:
+  learn_14 = 8.99999999999999966693309261245303787291049957275390625e-2;
+  alph_15 = 8.99999999999999966693309261245303787291049957275390625e-2;
+  neurode_16 = 0;
+  goto <bb 7>; [0.00%]
+
+  <bb 3> [0.00%]:
+  weight_18 = 0;
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _1 = out_error[neurode_11];
+  _2 = learn_14 * _1;
+  _3 = mid_out[weight_10];
+  delta_20 = _2 * _3;
+  _4 = out_wt_change[neurode_11][weight_10];
+  _5 = alph_15 * _4;
+  delta_21 = delta_20 + _5;
+  _6 = out_wts[neurode_11][weight_10];
+  _7 = delta_21 + _6;
+  out_wts[neurode_11][weight_10] = _7;
+  _8 = out_wt_cum_change[neurode_11][weight_10];
+  _9 = delta_21 + _8;
+  out_wt_cum_change[neurode_11][weight_10] = _9;
+  weight_24 = weight_10 + 1;
+
+  <bb 5> [0.00%]:
+  # weight_10 = PHI <weight_18(3), weight_24(4)>
+  if (weight_10 <= 7)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 6> [0.00%]:
+  neurode_19 = neurode_11 + 1;
+
+  <bb 7> [0.00%]:
+  # neurode_11 = PHI <neurode_16(2), neurode_19(6)>
+  if (neurode_11 <= 7)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function adjust_mid_wts (adjust_mid_wts, funcdef_no=104, decl_uid=4716, cgraph_uid=104, symbol_order=129)
+
+Function found to be nothrow: adjust_mid_wts
+adjust_mid_wts (int patt)
+{
+  double delta;
+  double alph;
+  double learn;
+  int neurode;
+  int weight;
+  double _1;
+  double _2;
+  double _3;
+  double _4;
+  double _5;
+  double _6;
+  double _7;
+  double _8;
+  double _9;
+
+  <bb 2> [0.00%]:
+  learn_14 = 8.99999999999999966693309261245303787291049957275390625e-2;
+  alph_15 = 8.99999999999999966693309261245303787291049957275390625e-2;
+  neurode_16 = 0;
+  goto <bb 7>; [0.00%]
+
+  <bb 3> [0.00%]:
+  weight_18 = 0;
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _1 = mid_error[neurode_11];
+  _2 = learn_14 * _1;
+  _3 = in_pats[patt_20(D)][weight_10];
+  delta_21 = _2 * _3;
+  _4 = mid_wt_change[neurode_11][weight_10];
+  _5 = alph_15 * _4;
+  delta_22 = delta_21 + _5;
+  _6 = mid_wts[neurode_11][weight_10];
+  _7 = delta_22 + _6;
+  mid_wts[neurode_11][weight_10] = _7;
+  _8 = mid_wt_cum_change[neurode_11][weight_10];
+  _9 = delta_22 + _8;
+  mid_wt_cum_change[neurode_11][weight_10] = _9;
+  weight_25 = weight_10 + 1;
+
+  <bb 5> [0.00%]:
+  # weight_10 = PHI <weight_18(3), weight_25(4)>
+  if (weight_10 <= 34)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 6> [0.00%]:
+  neurode_19 = neurode_11 + 1;
+
+  <bb 7> [0.00%]:
+  # neurode_11 = PHI <neurode_16(2), neurode_19(6)>
+  if (neurode_11 <= 7)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function do_back_pass (do_back_pass, funcdef_no=105, decl_uid=4718, cgraph_uid=105, symbol_order=130)
+
+Function found to be nothrow: do_back_pass
+do_back_pass (int patt)
+{
+  <bb 2> [0.00%]:
+  do_out_error (patt_2(D));
+  do_mid_error ();
+  adjust_out_wts ();
+  adjust_mid_wts (patt_2(D));
+  return;
+
+}
+
+
+
+;; Function move_wt_changes (move_wt_changes, funcdef_no=106, decl_uid=4719, cgraph_uid=106, symbol_order=131)
+
+Function found to be nothrow: move_wt_changes
+move_wt_changes ()
+{
+  int j;
+  int i;
+  double _1;
+  double _2;
+
+  <bb 2> [0.00%]:
+  i_11 = 0;
+  goto <bb 7>; [0.00%]
+
+  <bb 3> [0.00%]:
+  j_19 = 0;
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _1 = mid_wt_cum_change[i_3][j_5];
+  mid_wt_change[i_3][j_5] = _1;
+  mid_wt_cum_change[i_3][j_5] = 0.0;
+  j_23 = j_5 + 1;
+
+  <bb 5> [0.00%]:
+  # j_5 = PHI <j_19(3), j_23(4)>
+  if (j_5 <= 34)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 6> [0.00%]:
+  i_20 = i_3 + 1;
+
+  <bb 7> [0.00%]:
+  # i_3 = PHI <i_11(2), i_20(6)>
+  if (i_3 <= 7)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  i_13 = 0;
+  goto <bb 13>; [0.00%]
+
+  <bb 9> [0.00%]:
+  j_14 = 0;
+  goto <bb 11>; [0.00%]
+
+  <bb 10> [0.00%]:
+  _2 = out_wt_cum_change[i_4][j_6];
+  out_wt_change[i_4][j_6] = _2;
+  out_wt_cum_change[i_4][j_6] = 0.0;
+  j_18 = j_6 + 1;
+
+  <bb 11> [0.00%]:
+  # j_6 = PHI <j_14(9), j_18(10)>
+  if (j_6 <= 7)
+    goto <bb 10>; [0.00%]
+  else
+    goto <bb 12>; [0.00%]
+
+  <bb 12> [0.00%]:
+  i_15 = i_4 + 1;
+
+  <bb 13> [0.00%]:
+  # i_4 = PHI <i_13(8), i_15(12)>
+  if (i_4 <= 7)
+    goto <bb 9>; [0.00%]
+  else
+    goto <bb 14>; [0.00%]
+
+  <bb 14> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function check_out_error (check_out_error, funcdef_no=107, decl_uid=4720, cgraph_uid=107, symbol_order=132)
+
+Function found to be nothrow: check_out_error
+check_out_error ()
+{
+  int error;
+  int i;
+  int result;
+  double worst_error.191_1;
+  double _2;
+  int numpats.192_3;
+  int _16;
+
+  <bb 2> [0.00%]:
+  result_10 = 1;
+  error_11 = 0;
+  worst_pass_error ();
+  i_14 = 0;
+  goto <bb 8>; [0.00%]
+
+  <bb 3> [0.00%]:
+  worst_error.191_1 = worst_error;
+  if (worst_error.191_1 >= 1.000000000000000055511151231257827021181583404541015625e-1)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  result_17 = 0;
+
+  <bb 5> [0.00%]:
+  # result_4 = PHI <result_5(3), result_17(4)>
+  _2 = tot_out_error[i_7];
+  if (_2 >= 1.6e+1)
+    goto <bb 6>; [0.00%]
+  else
+    goto <bb 7>; [0.00%]
+
+  <bb 6> [0.00%]:
+  error_18 = 1;
+
+  <bb 7> [0.00%]:
+  # error_8 = PHI <error_9(5), error_18(6)>
+  i_19 = i_7 + 1;
+
+  <bb 8> [0.00%]:
+  # result_5 = PHI <result_10(2), result_4(7)>
+  # i_7 = PHI <i_14(2), i_19(7)>
+  # error_9 = PHI <error_11(2), error_8(7)>
+  numpats.192_3 = numpats;
+  if (i_7 < numpats.192_3)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 9>; [0.00%]
+
+  <bb 9> [0.00%]:
+  if (error_9 == 1)
+    goto <bb 10>; [0.00%]
+  else
+    goto <bb 11>; [0.00%]
+
+  <bb 10> [0.00%]:
+  result_15 = -1;
+
+  <bb 11> [0.00%]:
+  # result_6 = PHI <result_5(9), result_15(10)>
+  _16 = result_6;
+  return _16;
+
+}
+
+
+
+;; Function zero_changes (zero_changes, funcdef_no=108, decl_uid=4721, cgraph_uid=108, symbol_order=133)
+
+Function found to be nothrow: zero_changes
+zero_changes ()
+{
+  int j;
+  int i;
+
+  <bb 2> [0.00%]:
+  i_9 = 0;
+  goto <bb 7>; [0.00%]
+
+  <bb 3> [0.00%]:
+  j_17 = 0;
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  mid_wt_change[i_1][j_3] = 0.0;
+  mid_wt_cum_change[i_1][j_3] = 0.0;
+  j_21 = j_3 + 1;
+
+  <bb 5> [0.00%]:
+  # j_3 = PHI <j_17(3), j_21(4)>
+  if (j_3 <= 34)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 6> [0.00%]:
+  i_18 = i_1 + 1;
+
+  <bb 7> [0.00%]:
+  # i_1 = PHI <i_9(2), i_18(6)>
+  if (i_1 <= 7)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  i_11 = 0;
+  goto <bb 13>; [0.00%]
+
+  <bb 9> [0.00%]:
+  j_12 = 0;
+  goto <bb 11>; [0.00%]
+
+  <bb 10> [0.00%]:
+  out_wt_change[i_2][j_4] = 0.0;
+  out_wt_cum_change[i_2][j_4] = 0.0;
+  j_16 = j_4 + 1;
+
+  <bb 11> [0.00%]:
+  # j_4 = PHI <j_12(9), j_16(10)>
+  if (j_4 <= 7)
+    goto <bb 10>; [0.00%]
+  else
+    goto <bb 12>; [0.00%]
+
+  <bb 12> [0.00%]:
+  i_13 = i_2 + 1;
+
+  <bb 13> [0.00%]:
+  # i_2 = PHI <i_11(8), i_13(12)>
+  if (i_2 <= 7)
+    goto <bb 9>; [0.00%]
+  else
+    goto <bb 14>; [0.00%]
+
+  <bb 14> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function ludcmp (ludcmp, funcdef_no=115, decl_uid=4752, cgraph_uid=115, symbol_order=140)
+
+Function found to be nothrow: ludcmp
+ludcmp (double[101] * a, int n, int * indx, int * d)
+{
+  double tiny;
+  int imax;
+  int k;
+  int j;
+  int i;
+  double dum;
+  double sum;
+  double big;
+  long unsigned int _1;
+  long unsigned int _2;
+  double[101] * _3;
+  double _4;
+  double _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  double[101] * _8;
+  double _9;
+  fardouble * LUtempvv.215_10;
+  long unsigned int _11;
+  long unsigned int _12;
+  fardouble * _13;
+  double _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  double[101] * _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  double[101] * _20;
+  double _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  double[101] * _24;
+  double _25;
+  double _26;
+  long unsigned int _27;
+  long unsigned int _28;
+  double[101] * _29;
+  long unsigned int _30;
+  long unsigned int _31;
+  double[101] * _32;
+  long unsigned int _33;
+  long unsigned int _34;
+  double[101] * _35;
+  double _36;
+  long unsigned int _37;
+  long unsigned int _38;
+  double[101] * _39;
+  double _40;
+  double _41;
+  long unsigned int _42;
+  long unsigned int _43;
+  double[101] * _44;
+  fardouble * LUtempvv.216_45;
+  long unsigned int _46;
+  long unsigned int _47;
+  fardouble * _48;
+  double _49;
+  double _50;
+  long unsigned int _51;
+  long unsigned int _52;
+  double[101] * _53;
+  long unsigned int _54;
+  long unsigned int _55;
+  double[101] * _56;
+  long unsigned int _57;
+  long unsigned int _58;
+  double[101] * _59;
+  double _60;
+  long unsigned int _61;
+  long unsigned int _62;
+  double[101] * _63;
+  int _64;
+  int _65;
+  fardouble * LUtempvv.217_66;
+  long unsigned int _67;
+  long unsigned int _68;
+  fardouble * _69;
+  fardouble * LUtempvv.218_70;
+  long unsigned int _71;
+  long unsigned int _72;
+  fardouble * _73;
+  fardouble * LUtempvv.219_74;
+  long unsigned int _75;
+  long unsigned int _76;
+  fardouble * _77;
+  double _78;
+  fardouble * LUtempvv.220_79;
+  long unsigned int _80;
+  long unsigned int _81;
+  fardouble * _82;
+  long unsigned int _83;
+  long unsigned int _84;
+  int * _85;
+  long unsigned int _86;
+  long unsigned int _87;
+  double[101] * _88;
+  double _89;
+  long unsigned int _90;
+  long unsigned int _91;
+  double[101] * _92;
+  int _93;
+  long unsigned int _94;
+  long unsigned int _95;
+  double[101] * _96;
+  double _97;
+  long unsigned int _98;
+  long unsigned int _99;
+  double[101] * _100;
+  double _101;
+  long unsigned int _102;
+  long unsigned int _103;
+  double[101] * _104;
+  double _105;
+  int _126;
+  int _146;
+  int _187;
+
+  <bb 2> [0.00%]:
+  imax_138 = 0;
+  tiny_139 = 9.99999999999999945153271454209571651729503702787392447108e-21;
+  *d_141(D) = 1;
+  i_143 = 0;
+  goto <bb 11>; [0.00%]
+
+  <bb 3> [0.00%]:
+  big_183 = 0.0;
+  j_184 = 0;
+  goto <bb 7>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _1 = (long unsigned int) i_114;
+  _2 = _1 * 808;
+  _3 = a_148(D) + _2;
+  _4 = *_3[j_118];
+  _5 = ABS_EXPR <_4>;
+  if (big_107 < _5)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  _6 = (long unsigned int) i_114;
+  _7 = _6 * 808;
+  _8 = a_148(D) + _7;
+  _9 = *_8[j_118];
+  big_188 = ABS_EXPR <_9>;
+
+  <bb 6> [0.00%]:
+  # big_106 = PHI <big_107(4), big_188(5)>
+  j_189 = j_118 + 1;
+
+  <bb 7> [0.00%]:
+  # big_107 = PHI <big_183(3), big_106(6)>
+  # j_118 = PHI <j_184(3), j_189(6)>
+  if (j_118 < n_144(D))
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  if (big_107 == 0.0)
+    goto <bb 9>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 9> [0.00%]:
+  _187 = 0;
+  goto <bb 44>; [0.00%]
+
+  <bb 10> [0.00%]:
+  LUtempvv.215_10 = LUtempvv;
+  _11 = (long unsigned int) i_114;
+  _12 = _11 * 8;
+  _13 = LUtempvv.215_10 + _12;
+  _14 = 1.0e+0 / big_107;
+  *_13 = _14;
+  i_186 = i_114 + 1;
+
+  <bb 11> [0.00%]:
+  # i_114 = PHI <i_143(2), i_186(10)>
+  if (i_114 < n_144(D))
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 12>; [0.00%]
+
+  <bb 12> [0.00%]:
+  j_145 = 0;
+  goto <bb 42>; [0.00%]
+
+  <bb 13> [0.00%]:
+  if (j_119 != 0)
+    goto <bb 14>; [0.00%]
+  else
+    goto <bb 21>; [0.00%]
+
+  <bb 14> [0.00%]:
+  i_147 = 0;
+  goto <bb 20>; [0.00%]
+
+  <bb 15> [0.00%]:
+  _15 = (long unsigned int) i_115;
+  _16 = _15 * 808;
+  _17 = a_148(D) + _16;
+  sum_149 = *_17[j_119];
+  if (i_115 != 0)
+    goto <bb 16>; [0.00%]
+  else
+    goto <bb 19>; [0.00%]
+
+  <bb 16> [0.00%]:
+  k_150 = 0;
+  goto <bb 18>; [0.00%]
+
+  <bb 17> [0.00%]:
+  _18 = (long unsigned int) i_115;
+  _19 = _18 * 808;
+  _20 = a_148(D) + _19;
+  _21 = *_20[k_120];
+  _22 = (long unsigned int) k_120;
+  _23 = _22 * 808;
+  _24 = a_148(D) + _23;
+  _25 = *_24[j_119];
+  _26 = _21 * _25;
+  sum_151 = sum_110 - _26;
+  k_152 = k_120 + 1;
+
+  <bb 18> [0.00%]:
+  # sum_110 = PHI <sum_149(16), sum_151(17)>
+  # k_120 = PHI <k_150(16), k_152(17)>
+  if (k_120 < i_115)
+    goto <bb 17>; [0.00%]
+  else
+    goto <bb 19>; [0.00%]
+
+  <bb 19> [0.00%]:
+  # sum_111 = PHI <sum_149(15), sum_110(18)>
+  _27 = (long unsigned int) i_115;
+  _28 = _27 * 808;
+  _29 = a_148(D) + _28;
+  *_29[j_119] = sum_111;
+  i_154 = i_115 + 1;
+
+  <bb 20> [0.00%]:
+  # i_115 = PHI <i_147(14), i_154(19)>
+  if (i_115 < j_119)
+    goto <bb 15>; [0.00%]
+  else
+    goto <bb 21>; [0.00%]
+
+  <bb 21> [0.00%]:
+  big_155 = 0.0;
+  i_156 = j_119;
+  goto <bb 29>; [0.00%]
+
+  <bb 22> [0.00%]:
+  _30 = (long unsigned int) i_116;
+  _31 = _30 * 808;
+  _32 = a_148(D) + _31;
+  sum_174 = *_32[j_119];
+  if (j_119 != 0)
+    goto <bb 23>; [0.00%]
+  else
+    goto <bb 26>; [0.00%]
+
+  <bb 23> [0.00%]:
+  k_175 = 0;
+  goto <bb 25>; [0.00%]
+
+  <bb 24> [0.00%]:
+  _33 = (long unsigned int) i_116;
+  _34 = _33 * 808;
+  _35 = a_148(D) + _34;
+  _36 = *_35[k_121];
+  _37 = (long unsigned int) k_121;
+  _38 = _37 * 808;
+  _39 = a_148(D) + _38;
+  _40 = *_39[j_119];
+  _41 = _36 * _40;
+  sum_176 = sum_112 - _41;
+  k_177 = k_121 + 1;
+
+  <bb 25> [0.00%]:
+  # sum_112 = PHI <sum_174(23), sum_176(24)>
+  # k_121 = PHI <k_175(23), k_177(24)>
+  if (k_121 < j_119)
+    goto <bb 24>; [0.00%]
+  else
+    goto <bb 26>; [0.00%]
+
+  <bb 26> [0.00%]:
+  # sum_113 = PHI <sum_174(22), sum_112(25)>
+  _42 = (long unsigned int) i_116;
+  _43 = _42 * 808;
+  _44 = a_148(D) + _43;
+  *_44[j_119] = sum_113;
+  LUtempvv.216_45 = LUtempvv;
+  _46 = (long unsigned int) i_116;
+  _47 = _46 * 8;
+  _48 = LUtempvv.216_45 + _47;
+  _49 = *_48;
+  _50 = ABS_EXPR <sum_113>;
+  dum_179 = _49 * _50;
+  if (dum_179 >= big_109)
+    goto <bb 27>; [0.00%]
+  else
+    goto <bb 28>; [0.00%]
+
+  <bb 27> [0.00%]:
+  big_180 = dum_179;
+  imax_181 = i_116;
+
+  <bb 28> [0.00%]:
+  # big_108 = PHI <big_109(26), big_180(27)>
+  # imax_123 = PHI <imax_124(26), imax_181(27)>
+  i_182 = i_116 + 1;
+
+  <bb 29> [0.00%]:
+  # big_109 = PHI <big_155(21), big_108(28)>
+  # i_116 = PHI <i_156(21), i_182(28)>
+  # imax_124 = PHI <imax_125(21), imax_123(28)>
+  if (i_116 < n_144(D))
+    goto <bb 22>; [0.00%]
+  else
+    goto <bb 30>; [0.00%]
+
+  <bb 30> [0.00%]:
+  if (j_119 != imax_124)
+    goto <bb 31>; [0.00%]
+  else
+    goto <bb 35>; [0.00%]
+
+  <bb 31> [0.00%]:
+  k_157 = 0;
+  goto <bb 33>; [0.00%]
+
+  <bb 32> [0.00%]:
+  _51 = (long unsigned int) imax_124;
+  _52 = _51 * 808;
+  _53 = a_148(D) + _52;
+  dum_162 = *_53[k_122];
+  _54 = (long unsigned int) j_119;
+  _55 = _54 * 808;
+  _56 = a_148(D) + _55;
+  _57 = (long unsigned int) imax_124;
+  _58 = _57 * 808;
+  _59 = a_148(D) + _58;
+  _60 = *_56[k_122];
+  *_59[k_122] = _60;
+  _61 = (long unsigned int) j_119;
+  _62 = _61 * 808;
+  _63 = a_148(D) + _62;
+  *_63[k_122] = dum_162;
+  k_165 = k_122 + 1;
+
+  <bb 33> [0.00%]:
+  # k_122 = PHI <k_157(31), k_165(32)>
+  if (k_122 < n_144(D))
+    goto <bb 32>; [0.00%]
+  else
+    goto <bb 34>; [0.00%]
+
+  <bb 34> [0.00%]:
+  _64 = *d_141(D);
+  _65 = -_64;
+  *d_141(D) = _65;
+  LUtempvv.217_66 = LUtempvv;
+  _67 = (long unsigned int) imax_124;
+  _68 = _67 * 8;
+  _69 = LUtempvv.217_66 + _68;
+  dum_159 = *_69;
+  LUtempvv.218_70 = LUtempvv;
+  _71 = (long unsigned int) j_119;
+  _72 = _71 * 8;
+  _73 = LUtempvv.218_70 + _72;
+  LUtempvv.219_74 = LUtempvv;
+  _75 = (long unsigned int) imax_124;
+  _76 = _75 * 8;
+  _77 = LUtempvv.219_74 + _76;
+  _78 = *_73;
+  *_77 = _78;
+  LUtempvv.220_79 = LUtempvv;
+  _80 = (long unsigned int) j_119;
+  _81 = _80 * 8;
+  _82 = LUtempvv.220_79 + _81;
+  *_82 = dum_159;
+
+  <bb 35> [0.00%]:
+  _83 = (long unsigned int) j_119;
+  _84 = _83 * 4;
+  _85 = indx_166(D) + _84;
+  *_85 = imax_124;
+  _86 = (long unsigned int) j_119;
+  _87 = _86 * 808;
+  _88 = a_148(D) + _87;
+  _89 = *_88[j_119];
+  if (_89 == 0.0)
+    goto <bb 36>; [0.00%]
+  else
+    goto <bb 37>; [0.00%]
+
+  <bb 36> [0.00%]:
+  _90 = (long unsigned int) j_119;
+  _91 = _90 * 808;
+  _92 = a_148(D) + _91;
+  *_92[j_119] = tiny_139;
+
+  <bb 37> [0.00%]:
+  _93 = n_144(D) + -1;
+  if (j_119 != _93)
+    goto <bb 38>; [0.00%]
+  else
+    goto <bb 41>; [0.00%]
+
+  <bb 38> [0.00%]:
+  _94 = (long unsigned int) j_119;
+  _95 = _94 * 808;
+  _96 = a_148(D) + _95;
+  _97 = *_96[j_119];
+  dum_169 = 1.0e+0 / _97;
+  i_170 = j_119 + 1;
+  goto <bb 40>; [0.00%]
+
+  <bb 39> [0.00%]:
+  _98 = (long unsigned int) i_117;
+  _99 = _98 * 808;
+  _100 = a_148(D) + _99;
+  _101 = *_100[j_119];
+  _102 = (long unsigned int) i_117;
+  _103 = _102 * 808;
+  _104 = a_148(D) + _103;
+  _105 = dum_169 * _101;
+  *_104[j_119] = _105;
+  i_172 = i_117 + 1;
+
+  <bb 40> [0.00%]:
+  # i_117 = PHI <i_170(38), i_172(39)>
+  if (i_117 < n_144(D))
+    goto <bb 39>; [0.00%]
+  else
+    goto <bb 41>; [0.00%]
+
+  <bb 41> [0.00%]:
+  j_173 = j_119 + 1;
+
+  <bb 42> [0.00%]:
+  # j_119 = PHI <j_145(12), j_173(41)>
+  # imax_125 = PHI <imax_138(12), imax_124(41)>
+  if (j_119 < n_144(D))
+    goto <bb 13>; [0.00%]
+  else
+    goto <bb 43>; [0.00%]
+
+  <bb 43> [0.00%]:
+  _146 = 1;
+
+  <bb 44> [0.00%]:
+  # _126 = PHI <_187(9), _146(43)>
+  return _126;
+
+}
+
+
+
+;; Function lubksb (lubksb, funcdef_no=116, decl_uid=4757, cgraph_uid=116, symbol_order=141)
+
+Function found to be nothrow: lubksb
+lubksb (double[101] * a, int n, int * indx, double * b)
+{
+  double sum;
+  int ii;
+  int ip;
+  int j;
+  int i;
+  long unsigned int _1;
+  long unsigned int _2;
+  int * _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  double * _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  double * _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  double * _12;
+  double _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  double[101] * _16;
+  double _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  double * _20;
+  double _21;
+  double _22;
+  long unsigned int _23;
+  long unsigned int _24;
+  double * _25;
+  long unsigned int _26;
+  long unsigned int _27;
+  double * _28;
+  int _29;
+  long unsigned int _30;
+  long unsigned int _31;
+  double[101] * _32;
+  double _33;
+  long unsigned int _34;
+  long unsigned int _35;
+  double * _36;
+  double _37;
+  double _38;
+  long unsigned int _39;
+  long unsigned int _40;
+  double[101] * _41;
+  double _42;
+  long unsigned int _43;
+  long unsigned int _44;
+  double * _45;
+  double _46;
+
+  <bb 2> [0.00%]:
+  ii_59 = -1;
+  i_60 = 0;
+  goto <bb 10>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _1 = (long unsigned int) i_47;
+  _2 = _1 * 4;
+  _3 = indx_72(D) + _2;
+  ip_73 = *_3;
+  _4 = (long unsigned int) ip_73;
+  _5 = _4 * 8;
+  _6 = b_64(D) + _5;
+  sum_74 = *_6;
+  _7 = (long unsigned int) i_47;
+  _8 = _7 * 8;
+  _9 = b_64(D) + _8;
+  _10 = (long unsigned int) ip_73;
+  _11 = _10 * 8;
+  _12 = b_64(D) + _11;
+  _13 = *_9;
+  *_12 = _13;
+  if (ii_52 != -1)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 7>; [0.00%]
+
+  <bb 4> [0.00%]:
+  j_77 = ii_52;
+  goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  _14 = (long unsigned int) i_47;
+  _15 = _14 * 808;
+  _16 = a_67(D) + _15;
+  _17 = *_16[j_49];
+  _18 = (long unsigned int) j_49;
+  _19 = _18 * 8;
+  _20 = b_64(D) + _19;
+  _21 = *_20;
+  _22 = _17 * _21;
+  sum_78 = sum_53 - _22;
+  j_79 = j_49 + 1;
+
+  <bb 6> [0.00%]:
+  # j_49 = PHI <j_77(4), j_79(5)>
+  # sum_53 = PHI <sum_74(4), sum_78(5)>
+  if (j_49 < i_47)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 9>; [0.00%]
+
+  <bb 7> [0.00%]:
+  if (sum_74 != 0.0)
+    goto <bb 8>; [0.00%]
+  else
+    goto <bb 9>; [0.00%]
+
+  <bb 8> [0.00%]:
+  ii_76 = i_47;
+
+  <bb 9> [0.00%]:
+  # ii_51 = PHI <ii_52(6), ii_52(7), ii_76(8)>
+  # sum_54 = PHI <sum_53(6), sum_74(7), sum_74(8)>
+  _23 = (long unsigned int) i_47;
+  _24 = _23 * 8;
+  _25 = b_64(D) + _24;
+  *_25 = sum_54;
+  i_81 = i_47 + 1;
+
+  <bb 10> [0.00%]:
+  # i_47 = PHI <i_60(2), i_81(9)>
+  # ii_52 = PHI <ii_59(2), ii_51(9)>
+  if (i_47 < n_62(D))
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 11>; [0.00%]
+
+  <bb 11> [0.00%]:
+  i_63 = n_62(D) + -1;
+  goto <bb 17>; [0.00%]
+
+  <bb 12> [0.00%]:
+  _26 = (long unsigned int) i_48;
+  _27 = _26 * 8;
+  _28 = b_64(D) + _27;
+  sum_65 = *_28;
+  _29 = n_62(D) + -1;
+  if (i_48 != _29)
+    goto <bb 13>; [0.00%]
+  else
+    goto <bb 16>; [0.00%]
+
+  <bb 13> [0.00%]:
+  j_66 = i_48 + 1;
+  goto <bb 15>; [0.00%]
+
+  <bb 14> [0.00%]:
+  _30 = (long unsigned int) i_48;
+  _31 = _30 * 808;
+  _32 = a_67(D) + _31;
+  _33 = *_32[j_50];
+  _34 = (long unsigned int) j_50;
+  _35 = _34 * 8;
+  _36 = b_64(D) + _35;
+  _37 = *_36;
+  _38 = _33 * _37;
+  sum_68 = sum_55 - _38;
+  j_69 = j_50 + 1;
+
+  <bb 15> [0.00%]:
+  # j_50 = PHI <j_66(13), j_69(14)>
+  # sum_55 = PHI <sum_65(13), sum_68(14)>
+  if (j_50 < n_62(D))
+    goto <bb 14>; [0.00%]
+  else
+    goto <bb 16>; [0.00%]
+
+  <bb 16> [0.00%]:
+  # sum_56 = PHI <sum_65(12), sum_55(15)>
+  _39 = (long unsigned int) i_48;
+  _40 = _39 * 808;
+  _41 = a_67(D) + _40;
+  _42 = *_41[i_48];
+  _43 = (long unsigned int) i_48;
+  _44 = _43 * 8;
+  _45 = b_64(D) + _44;
+  _46 = sum_56 / _42;
+  *_45 = _46;
+  i_71 = i_48 + -1;
+
+  <bb 17> [0.00%]:
+  # i_48 = PHI <i_63(11), i_71(16)>
+  if (i_48 >= 0)
+    goto <bb 12>; [0.00%]
+  else
+    goto <bb 18>; [0.00%]
+
+  <bb 18> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function lusolve (lusolve, funcdef_no=117, decl_uid=4761, cgraph_uid=117, symbol_order=142)
+
+Function found to be nothrow: lusolve
+lusolve (double[101] * a, int n, double * b)
+{
+  int d;
+  int indx[101];
+  int _1;
+  int _2;
+  int _10;
+  int _11;
+
+  <bb 2> [0.00%]:
+  _1 = ludcmp (a_5(D), n_6(D), &indx, &d);
+  if (_1 == 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _11 = 0;
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  lubksb (a_5(D), n_6(D), &indx, b_8(D));
+  _10 = 1;
+
+  <bb 5> [0.00%]:
+  # _2 = PHI <_11(3), _10(4)>
+  indx ={v} {CLOBBER};
+  d ={v} {CLOBBER};
+  return _2;
+
+}
+
+
+
+;; Function LUFreeMem (LUFreeMem, funcdef_no=112, decl_uid=4737, cgraph_uid=112, symbol_order=137)
+
+Function found to be nothrow: LUFreeMem
+LUFreeMem (fardouble * a, fardouble * b, fardouble * abase, fardouble * bbase)
+{
+  int systemerror;
+  fardouble * LUtempvv.221_1;
+
+  <bb 2> [0.00%]:
+  FreeMemory (a_5(D), &systemerror);
+  FreeMemory (b_7(D), &systemerror);
+  LUtempvv.221_1 = LUtempvv;
+  FreeMemory (LUtempvv.221_1, &systemerror);
+  if (abase_10(D) != 0B)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  FreeMemory (abase_10(D), &systemerror);
+
+  <bb 4> [0.00%]:
+  if (bbase_12(D) != 0B)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  FreeMemory (bbase_12(D), &systemerror);
+
+  <bb 6> [0.00%]:
+  systemerror ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function DoIDEAIteration (DoIDEAIteration, funcdef_no=83, decl_uid=4632, cgraph_uid=83, symbol_order=108)
+
+Function found to be nothrow: DoIDEAIteration
+DoIDEAIteration (faruchar * plain1, faruchar * crypt1, faruchar * plain2, long unsigned int arraysize, long unsigned int nloops, u16 * Z, u16 * DK)
+{
+  long unsigned int elapsed;
+  register long unsigned int j;
+  register long unsigned int i;
+  faruchar * _1;
+  faruchar * _2;
+  faruchar * _3;
+  faruchar * _4;
+  long unsigned int _17;
+
+  <bb 2> [0.00%]:
+  elapsed_13 = StartStopwatch ();
+  i_14 = 0;
+  goto <bb 10>; [0.00%]
+
+  <bb 3> [0.00%]:
+  j_18 = 0;
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _1 = crypt1_23(D) + j_6;
+  _2 = plain1_27(D) + j_6;
+  cipher_idea (_2, _1, Z_28(D));
+  j_30 = j_6 + 8;
+
+  <bb 5> [0.00%]:
+  # j_6 = PHI <j_18(3), j_30(4)>
+  if (j_6 < arraysize_19(D))
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 6> [0.00%]:
+  j_20 = 0;
+  goto <bb 8>; [0.00%]
+
+  <bb 7> [0.00%]:
+  _3 = plain2_22(D) + j_7;
+  _4 = crypt1_23(D) + j_7;
+  cipher_idea (_4, _3, DK_24(D));
+  j_26 = j_7 + 8;
+
+  <bb 8> [0.00%]:
+  # j_7 = PHI <j_20(6), j_26(7)>
+  if (j_7 < arraysize_19(D))
+    goto <bb 7>; [0.00%]
+  else
+    goto <bb 9>; [0.00%]
+
+  <bb 9> [0.00%]:
+  i_21 = i_5 + 1;
+
+  <bb 10> [0.00%]:
+  # i_5 = PHI <i_14(2), i_21(9)>
+  if (i_5 < nloops_15(D))
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 11>; [0.00%]
+
+  <bb 11> [0.00%]:
+  _17 = StopStopwatch (elapsed_13);
+  return _17;
+
+}
+
+
+
+;; Function DoHuffIteration (DoHuffIteration, funcdef_no=92, decl_uid=4671, cgraph_uid=92, symbol_order=117)
+
+Function found to be nothrow: DoHuffIteration
+DoHuffIteration (farchar * plaintext, farchar * comparray, farchar * decomparray, long unsigned int arraysize, long unsigned int nloops, struct huff_node * hufftree)
+{
+  long unsigned int elapsed;
+  char bitstring[30];
+  int c;
+  long int bitstringlen;
+  long int maxbitoffset;
+  long int textoffset;
+  long int bitoffset;
+  int lowidx2;
+  int lowidx1;
+  float lowfreq2;
+  float lowfreq1;
+  int root;
+  long int j;
+  int i;
+  long unsigned int _1;
+  long unsigned int _2;
+  struct huff_node * _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  struct huff_node * _6;
+  unsigned char _7;
+  sizetype j.159_8;
+  farchar * _9;
+  char _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  struct huff_node * _13;
+  float _14;
+  sizetype j.160_15;
+  farchar * _16;
+  char _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  struct huff_node * _20;
+  float _21;
+  long unsigned int j.161_22;
+  long unsigned int _23;
+  long unsigned int _24;
+  struct huff_node * _25;
+  float _26;
+  long unsigned int _27;
+  long unsigned int _28;
+  struct huff_node * _29;
+  float _30;
+  float _31;
+  long unsigned int _32;
+  long unsigned int _33;
+  struct huff_node * _34;
+  float _35;
+  struct huff_node * _36;
+  long unsigned int _37;
+  long unsigned int _38;
+  struct huff_node * _39;
+  float _40;
+  long unsigned int _41;
+  long unsigned int _42;
+  struct huff_node * _43;
+  long unsigned int _44;
+  long unsigned int _45;
+  struct huff_node * _46;
+  long unsigned int _47;
+  long unsigned int _48;
+  struct huff_node * _49;
+  int _50;
+  long unsigned int _51;
+  long unsigned int _52;
+  struct huff_node * _53;
+  int _54;
+  long unsigned int _55;
+  long unsigned int _56;
+  struct huff_node * _57;
+  int _58;
+  long unsigned int _59;
+  long unsigned int _60;
+  struct huff_node * _61;
+  float _62;
+  long unsigned int _63;
+  long unsigned int _64;
+  struct huff_node * _65;
+  long unsigned int _66;
+  long unsigned int _67;
+  struct huff_node * _68;
+  int _69;
+  long unsigned int _70;
+  long unsigned int _71;
+  struct huff_node * _72;
+  float _73;
+  long unsigned int _74;
+  long unsigned int _75;
+  struct huff_node * _76;
+  long unsigned int _77;
+  long unsigned int _78;
+  struct huff_node * _79;
+  long unsigned int _80;
+  long unsigned int _81;
+  struct huff_node * _82;
+  long unsigned int _83;
+  long unsigned int _84;
+  struct huff_node * _85;
+  float _86;
+  long unsigned int _87;
+  long unsigned int _88;
+  struct huff_node * _89;
+  long unsigned int _90;
+  long unsigned int _91;
+  struct huff_node * _92;
+  long unsigned int _93;
+  long unsigned int _94;
+  struct huff_node * _95;
+  sizetype _96;
+  farchar * _97;
+  char _98;
+  long unsigned int _99;
+  long unsigned int _100;
+  struct huff_node * _101;
+  int _102;
+  long unsigned int _103;
+  long unsigned int _104;
+  struct huff_node * _105;
+  int _106;
+  long unsigned int _107;
+  long unsigned int _108;
+  struct huff_node * _109;
+  long unsigned int _110;
+  long unsigned int _111;
+  struct huff_node * _112;
+  int _113;
+  char _114;
+  int _115;
+  unsigned int _116;
+  long int bitstringlen.162_117;
+  long unsigned int _118;
+  unsigned int _119;
+  int _120;
+  long unsigned int _121;
+  long unsigned int _122;
+  struct huff_node * _123;
+  long unsigned int _124;
+  long unsigned int _125;
+  struct huff_node * _126;
+  long unsigned int _127;
+  long unsigned int _128;
+  struct huff_node * _129;
+  int _130;
+  long unsigned int _131;
+  long unsigned int _132;
+  struct huff_node * _133;
+  unsigned char _134;
+  sizetype textoffset.163_135;
+  farchar * _136;
+  char _137;
+  long unsigned int nloops.164_138;
+  long unsigned int _186;
+
+  <bb 2> [0.00%]:
+  elapsed_182 = StartStopwatch ();
+  goto <bb 56>; [0.00%]
+
+  <bb 3> [0.00%]:
+  i_188 = 0;
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _1 = (long unsigned int) i_140;
+  _2 = _1 * 20;
+  _3 = hufftree_192(D) + _2;
+  _3->freq = 0.0;
+  _4 = (long unsigned int) i_140;
+  _5 = _4 * 20;
+  _6 = hufftree_192(D) + _5;
+  _7 = (unsigned char) i_140;
+  _6->c = _7;
+  i_251 = i_140 + 1;
+
+  <bb 5> [0.00%]:
+  # i_140 = PHI <i_188(3), i_251(4)>
+  if (i_140 <= 255)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 6> [0.00%]:
+  j_189 = 0;
+  goto <bb 8>; [0.00%]
+
+  <bb 7> [0.00%]:
+  j.159_8 = (sizetype) j_148;
+  _9 = plaintext_226(D) + j.159_8;
+  _10 = *_9;
+  _11 = (long unsigned int) _10;
+  _12 = _11 * 20;
+  _13 = hufftree_192(D) + _12;
+  _14 = _13->freq;
+  j.160_15 = (sizetype) j_148;
+  _16 = plaintext_226(D) + j.160_15;
+  _17 = *_16;
+  _18 = (long unsigned int) _17;
+  _19 = _18 * 20;
+  _20 = hufftree_192(D) + _19;
+  _21 = _14 + 1.0e+0;
+  _20->freq = _21;
+  j_248 = j_148 + 1;
+
+  <bb 8> [0.00%]:
+  # j_148 = PHI <j_189(6), j_248(7)>
+  j.161_22 = (long unsigned int) j_148;
+  if (arraysize_190(D) > j.161_22)
+    goto <bb 7>; [0.00%]
+  else
+    goto <bb 9>; [0.00%]
+
+  <bb 9> [0.00%]:
+  i_191 = 0;
+  goto <bb 13>; [0.00%]
+
+  <bb 10> [0.00%]:
+  _23 = (long unsigned int) i_141;
+  _24 = _23 * 20;
+  _25 = hufftree_192(D) + _24;
+  _26 = _25->freq;
+  if (_26 != 0.0)
+    goto <bb 11>; [0.00%]
+  else
+    goto <bb 12>; [0.00%]
+
+  <bb 11> [0.00%]:
+  _27 = (long unsigned int) i_141;
+  _28 = _27 * 20;
+  _29 = hufftree_192(D) + _28;
+  _30 = _29->freq;
+  _31 = (float) arraysize_190(D);
+  _32 = (long unsigned int) i_141;
+  _33 = _32 * 20;
+  _34 = hufftree_192(D) + _33;
+  _35 = _30 / _31;
+  _34->freq = _35;
+
+  <bb 12> [0.00%]:
+  i_246 = i_141 + 1;
+
+  <bb 13> [0.00%]:
+  # i_141 = PHI <i_191(9), i_246(12)>
+  if (i_141 <= 255)
+    goto <bb 10>; [0.00%]
+  else
+    goto <bb 14>; [0.00%]
+
+  <bb 14> [0.00%]:
+  _36 = hufftree_192(D) + 5120;
+  bzero (_36, 5120);
+  i_194 = 0;
+  goto <bb 19>; [0.00%]
+
+  <bb 15> [0.00%]:
+  _37 = (long unsigned int) i_142;
+  _38 = _37 * 20;
+  _39 = hufftree_192(D) + _38;
+  _40 = _39->freq;
+  if (_40 == 0.0)
+    goto <bb 16>; [0.00%]
+  else
+    goto <bb 17>; [0.00%]
+
+  <bb 16> [0.00%]:
+  _41 = (long unsigned int) i_142;
+  _42 = _41 * 20;
+  _43 = hufftree_192(D) + _42;
+  _43->parent = 32000;
+  goto <bb 18>; [0.00%]
+
+  <bb 17> [0.00%]:
+  _44 = (long unsigned int) i_142;
+  _45 = _44 * 20;
+  _46 = hufftree_192(D) + _45;
+  _46->right = -1;
+  _47 = (long unsigned int) i_142;
+  _48 = _47 * 20;
+  _49 = hufftree_192(D) + _48;
+  _50 = _46->right;
+  _49->left = _50;
+  _51 = (long unsigned int) i_142;
+  _52 = _51 * 20;
+  _53 = hufftree_192(D) + _52;
+  _54 = _49->left;
+  _53->parent = _54;
+
+  <bb 18> [0.00%]:
+  i_244 = i_142 + 1;
+
+  <bb 19> [0.00%]:
+  # i_142 = PHI <i_194(14), i_244(18)>
+  if (i_142 <= 511)
+    goto <bb 15>; [0.00%]
+  else
+    goto <bb 20>; [0.00%]
+
+  <bb 20> [0.00%]:
+  root_195 = 255;
+
+  <bb 21> [0.00%]:
+  # root_149 = PHI <root_195(20), root_202(36)>
+  lowfreq1_196 = 2.0e+0;
+  lowfreq2_197 = 2.0e+0;
+  lowidx1_198 = -1;
+  lowidx2_199 = -1;
+  i_200 = 0;
+  goto <bb 26>; [0.00%]
+
+  <bb 22> [0.00%]:
+  _55 = (long unsigned int) i_143;
+  _56 = _55 * 20;
+  _57 = hufftree_192(D) + _56;
+  _58 = _57->parent;
+  if (_58 < 0)
+    goto <bb 23>; [0.00%]
+  else
+    goto <bb 25>; [0.00%]
+
+  <bb 23> [0.00%]:
+  _59 = (long unsigned int) i_143;
+  _60 = _59 * 20;
+  _61 = hufftree_192(D) + _60;
+  _62 = _61->freq;
+  if (lowfreq1_151 > _62)
+    goto <bb 24>; [0.00%]
+  else
+    goto <bb 25>; [0.00%]
+
+  <bb 24> [0.00%]:
+  _63 = (long unsigned int) i_143;
+  _64 = _63 * 20;
+  _65 = hufftree_192(D) + _64;
+  lowfreq1_237 = _65->freq;
+  lowidx1_238 = i_143;
+
+  <bb 25> [0.00%]:
+  # lowfreq1_150 = PHI <lowfreq1_151(22), lowfreq1_151(23), lowfreq1_237(24)>
+  # lowidx1_154 = PHI <lowidx1_155(22), lowidx1_155(23), lowidx1_238(24)>
+  i_239 = i_143 + 1;
+
+  <bb 26> [0.00%]:
+  # i_143 = PHI <i_200(21), i_239(25)>
+  # lowfreq1_151 = PHI <lowfreq1_196(21), lowfreq1_150(25)>
+  # lowidx1_155 = PHI <lowidx1_198(21), lowidx1_154(25)>
+  if (i_143 <= root_149)
+    goto <bb 22>; [0.00%]
+  else
+    goto <bb 27>; [0.00%]
+
+  <bb 27> [0.00%]:
+  if (lowidx1_155 == -1)
+    goto <bb 37>; [0.00%]
+  else
+    goto <bb 28>; [0.00%]
+
+  <bb 28> [0.00%]:
+  i_201 = 0;
+  goto <bb 34>; [0.00%]
+
+  <bb 29> [0.00%]:
+  _66 = (long unsigned int) i_144;
+  _67 = _66 * 20;
+  _68 = hufftree_192(D) + _67;
+  _69 = _68->parent;
+  if (_69 < 0)
+    goto <bb 30>; [0.00%]
+  else
+    goto <bb 33>; [0.00%]
+
+  <bb 30> [0.00%]:
+  if (i_144 != lowidx1_155)
+    goto <bb 31>; [0.00%]
+  else
+    goto <bb 33>; [0.00%]
+
+  <bb 31> [0.00%]:
+  _70 = (long unsigned int) i_144;
+  _71 = _70 * 20;
+  _72 = hufftree_192(D) + _71;
+  _73 = _72->freq;
+  if (lowfreq2_153 > _73)
+    goto <bb 32>; [0.00%]
+  else
+    goto <bb 33>; [0.00%]
+
+  <bb 32> [0.00%]:
+  _74 = (long unsigned int) i_144;
+  _75 = _74 * 20;
+  _76 = hufftree_192(D) + _75;
+  lowfreq2_209 = _76->freq;
+  lowidx2_210 = i_144;
+
+  <bb 33> [0.00%]:
+  # lowfreq2_152 = PHI <lowfreq2_153(29), lowfreq2_153(30), lowfreq2_153(31), lowfreq2_209(32)>
+  # lowidx2_156 = PHI <lowidx2_157(29), lowidx2_157(30), lowidx2_157(31), lowidx2_210(32)>
+  i_211 = i_144 + 1;
+
+  <bb 34> [0.00%]:
+  # i_144 = PHI <i_201(28), i_211(33)>
+  # lowfreq2_153 = PHI <lowfreq2_197(28), lowfreq2_152(33)>
+  # lowidx2_157 = PHI <lowidx2_199(28), lowidx2_156(33)>
+  if (i_144 <= root_149)
+    goto <bb 29>; [0.00%]
+  else
+    goto <bb 35>; [0.00%]
+
+  <bb 35> [0.00%]:
+  if (lowidx2_157 == -1)
+    goto <bb 37>; [0.00%]
+  else
+    goto <bb 36>; [0.00%]
+
+  <bb 36> [0.00%]:
+  root_202 = root_149 + 1;
+  _77 = (long unsigned int) lowidx1_155;
+  _78 = _77 * 20;
+  _79 = hufftree_192(D) + _78;
+  _79->parent = root_202;
+  _80 = (long unsigned int) lowidx2_157;
+  _81 = _80 * 20;
+  _82 = hufftree_192(D) + _81;
+  _82->parent = root_202;
+  _83 = (long unsigned int) root_202;
+  _84 = _83 * 20;
+  _85 = hufftree_192(D) + _84;
+  _86 = lowfreq1_151 + lowfreq2_153;
+  _85->freq = _86;
+  _87 = (long unsigned int) root_202;
+  _88 = _87 * 20;
+  _89 = hufftree_192(D) + _88;
+  _89->left = lowidx1_155;
+  _90 = (long unsigned int) root_202;
+  _91 = _90 * 20;
+  _92 = hufftree_192(D) + _91;
+  _92->right = lowidx2_157;
+  _93 = (long unsigned int) root_202;
+  _94 = _93 * 20;
+  _95 = hufftree_192(D) + _94;
+  _95->parent = -2;
+  goto <bb 21>; [0.00%]
+
+  <bb 37> [0.00%]:
+  bitoffset_212 = 0;
+  i_213 = 0;
+  goto <bb 47>; [0.00%]
+
+  <bb 38> [0.00%]:
+  _96 = (sizetype) i_145;
+  _97 = plaintext_226(D) + _96;
+  _98 = *_97;
+  c_227 = (int) _98;
+  bitstringlen_228 = 0;
+  goto <bb 43>; [0.00%]
+
+  <bb 39> [0.00%]:
+  _99 = (long unsigned int) c_165;
+  _100 = _99 * 20;
+  _101 = hufftree_192(D) + _100;
+  _102 = _101->parent;
+  _103 = (long unsigned int) _102;
+  _104 = _103 * 20;
+  _105 = hufftree_192(D) + _104;
+  _106 = _105->left;
+  if (c_165 == _106)
+    goto <bb 40>; [0.00%]
+  else
+    goto <bb 41>; [0.00%]
+
+  <bb 40> [0.00%]:
+  bitstring[bitstringlen_163] = 48;
+  goto <bb 42>; [0.00%]
+
+  <bb 41> [0.00%]:
+  bitstring[bitstringlen_163] = 49;
+
+  <bb 42> [0.00%]:
+  _107 = (long unsigned int) c_165;
+  _108 = _107 * 20;
+  _109 = hufftree_192(D) + _108;
+  c_235 = _109->parent;
+  bitstringlen_236 = bitstringlen_163 + 1;
+
+  <bb 43> [0.00%]:
+  # bitstringlen_163 = PHI <bitstringlen_228(38), bitstringlen_236(42)>
+  # c_165 = PHI <c_227(38), c_235(42)>
+  _110 = (long unsigned int) c_165;
+  _111 = _110 * 20;
+  _112 = hufftree_192(D) + _111;
+  _113 = _112->parent;
+  if (_113 != -2)
+    goto <bb 39>; [0.00%]
+  else
+    goto <bb 45>; [0.00%]
+
+  <bb 44> [0.00%]:
+  _114 = bitstring[bitstringlen_229];
+  _115 = (int) _114;
+  _116 = (unsigned int) bitoffset_158;
+  SetCompBit (comparray_221(D), _116, _115);
+  bitoffset_232 = bitoffset_158 + 1;
+
+  <bb 45> [0.00%]:
+  # bitoffset_158 = PHI <bitoffset_159(43), bitoffset_232(44)>
+  # bitstringlen_164 = PHI <bitstringlen_163(43), bitstringlen_229(44)>
+  bitstringlen.162_117 = bitstringlen_164;
+  bitstringlen_229 = bitstringlen.162_117 + -1;
+  if (bitstringlen.162_117 != 0)
+    goto <bb 44>; [0.00%]
+  else
+    goto <bb 46>; [0.00%]
+
+  <bb 46> [0.00%]:
+  i_230 = i_145 + 1;
+
+  <bb 47> [0.00%]:
+  # i_145 = PHI <i_213(37), i_230(46)>
+  # bitoffset_159 = PHI <bitoffset_212(37), bitoffset_158(46)>
+  _118 = (long unsigned int) i_145;
+  if (arraysize_190(D) > _118)
+    goto <bb 38>; [0.00%]
+  else
+    goto <bb 48>; [0.00%]
+
+  <bb 48> [0.00%]:
+  maxbitoffset_214 = bitoffset_159;
+  bitoffset_215 = 0;
+  textoffset_216 = 0;
+
+  <bb 49> [0.00%]:
+  # bitoffset_160 = PHI <bitoffset_215(48), bitoffset_161(55)>
+  # textoffset_162 = PHI <textoffset_216(48), textoffset_220(55)>
+  i_217 = root_149;
+  goto <bb 54>; [0.00%]
+
+  <bb 50> [0.00%]:
+  _119 = (unsigned int) bitoffset_161;
+  _120 = GetCompBit (comparray_221(D), _119);
+  if (_120 == 0)
+    goto <bb 51>; [0.00%]
+  else
+    goto <bb 52>; [0.00%]
+
+  <bb 51> [0.00%]:
+  _121 = (long unsigned int) i_147;
+  _122 = _121 * 20;
+  _123 = hufftree_192(D) + _122;
+  i_224 = _123->left;
+  goto <bb 53>; [0.00%]
+
+  <bb 52> [0.00%]:
+  _124 = (long unsigned int) i_147;
+  _125 = _124 * 20;
+  _126 = hufftree_192(D) + _125;
+  i_223 = _126->right;
+
+  <bb 53> [0.00%]:
+  # i_146 = PHI <i_224(51), i_223(52)>
+  bitoffset_225 = bitoffset_161 + 1;
+
+  <bb 54> [0.00%]:
+  # i_147 = PHI <i_217(49), i_146(53)>
+  # bitoffset_161 = PHI <bitoffset_160(49), bitoffset_225(53)>
+  _127 = (long unsigned int) i_147;
+  _128 = _127 * 20;
+  _129 = hufftree_192(D) + _128;
+  _130 = _129->left;
+  if (_130 != -1)
+    goto <bb 50>; [0.00%]
+  else
+    goto <bb 55>; [0.00%]
+
+  <bb 55> [0.00%]:
+  _131 = (long unsigned int) i_147;
+  _132 = _131 * 20;
+  _133 = hufftree_192(D) + _132;
+  _134 = _133->c;
+  textoffset.163_135 = (sizetype) textoffset_162;
+  _136 = decomparray_218(D) + textoffset.163_135;
+  _137 = (char) _134;
+  *_136 = _137;
+  textoffset_220 = textoffset_162 + 1;
+  if (bitoffset_161 < maxbitoffset_214)
+    goto <bb 49>; [0.00%]
+  else
+    goto <bb 56>; [0.00%]
+
+  <bb 56> [0.00%]:
+  # nloops_139 = PHI <nloops_183(D)(2), nloops_184(55)>
+  nloops.164_138 = nloops_139;
+  nloops_184 = nloops.164_138 + 18446744073709551615;
+  if (nloops.164_138 != 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 57>; [0.00%]
+
+  <bb 57> [0.00%]:
+  _186 = StopStopwatch (elapsed_182);
+  bitstring ={v} {CLOBBER};
+  return _186;
+
+}
+
+
+
+;; Function DoLUIteration (DoLUIteration, funcdef_no=113, decl_uid=4743, cgraph_uid=113, symbol_order=138)
+
+Function found to be nothrow: DoLUIteration
+DoLUIteration (fardouble * a, fardouble * b, fardouble * abase, fardouble * bbase, long unsigned int numarrays)
+{
+  long unsigned int i;
+  long unsigned int j;
+  long unsigned int elapsed;
+  struct LUdblptr ptra;
+  fardouble * locbbase;
+  fardouble * locabase;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  fardouble * _4;
+  long unsigned int _5;
+  fardouble * _6;
+  double _7;
+  long unsigned int _8;
+  fardouble * _9;
+  long unsigned int _10;
+  fardouble * _11;
+  double _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  fardouble[<unknown>][101] * _15;
+  long unsigned int _31;
+
+  <bb 2> [0.00%]:
+  j_24 = 0;
+  goto <bb 10>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _1 = j_16 * 81608;
+  locabase_40 = abase_33(D) + _1;
+  _2 = j_16 * 808;
+  locbbase_41 = bbase_35(D) + _2;
+  i_42 = 0;
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _3 = i_17 * 8;
+  _4 = a_48(D) + _3;
+  _5 = i_17 * 8;
+  _6 = locabase_40 + _5;
+  _7 = *_4;
+  *_6 = _7;
+  i_50 = i_17 + 1;
+
+  <bb 5> [0.00%]:
+  # i_17 = PHI <i_42(3), i_50(4)>
+  if (i_17 <= 10200)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 6> [0.00%]:
+  i_43 = 0;
+  goto <bb 8>; [0.00%]
+
+  <bb 7> [0.00%]:
+  _8 = i_18 * 8;
+  _9 = b_45(D) + _8;
+  _10 = i_18 * 8;
+  _11 = locbbase_41 + _10;
+  _12 = *_9;
+  *_11 = _12;
+  i_47 = i_18 + 1;
+
+  <bb 8> [0.00%]:
+  # i_18 = PHI <i_43(6), i_47(7)>
+  if (i_18 <= 100)
+    goto <bb 7>; [0.00%]
+  else
+    goto <bb 9>; [0.00%]
+
+  <bb 9> [0.00%]:
+  j_44 = j_16 + 1;
+
+  <bb 10> [0.00%]:
+  # j_16 = PHI <j_24(2), j_44(9)>
+  if (j_16 < numarrays_26(D))
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 11>; [0.00%]
+
+  <bb 11> [0.00%]:
+  elapsed_28 = StartStopwatch ();
+  i_29 = 0;
+  goto <bb 13>; [0.00%]
+
+  <bb 12> [0.00%]:
+  _13 = i_19 * 81608;
+  locabase_34 = abase_33(D) + _13;
+  _14 = i_19 * 808;
+  locbbase_36 = bbase_35(D) + _14;
+  ptra.ptrs.p = locabase_34;
+  _15 = ptra.ptrs.ap;
+  lusolve (_15, 101, locbbase_36);
+  i_39 = i_19 + 1;
+
+  <bb 13> [0.00%]:
+  # i_19 = PHI <i_29(11), i_39(12)>
+  if (i_19 < numarrays_26(D))
+    goto <bb 12>; [0.00%]
+  else
+    goto <bb 14>; [0.00%]
+
+  <bb 14> [0.00%]:
+  _31 = StopStopwatch (elapsed_28);
+  ptra ={v} {CLOBBER};
+  return _31;
+
+}
+
+
+
+;; Function LoadNumArrayWithRand (LoadNumArrayWithRand, funcdef_no=54, decl_uid=4498, cgraph_uid=54, symbol_order=79)
+
+Function found to be nothrow: LoadNumArrayWithRand
+LoadNumArrayWithRand (farlong * array, long unsigned int arraysize, unsigned int numarrays)
+{
+  farlong * darray;
+  long int i;
+  int _1;
+  long unsigned int i.8_2;
+  long unsigned int _3;
+  farlong * _4;
+  long int _5;
+  long unsigned int i.9_6;
+  long unsigned int _7;
+  long unsigned int i.10_8;
+  long unsigned int _9;
+  farlong * _10;
+  long unsigned int i.11_11;
+  long unsigned int _12;
+  farlong * _13;
+  long int _14;
+  long unsigned int i.12_15;
+
+  <bb 2> [0.00%]:
+  randnum (13);
+  i_25 = 0;
+  goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _1 = randnum (0);
+  i.8_2 = (long unsigned int) i_17;
+  _3 = i.8_2 * 8;
+  _4 = array_27(D) + _3;
+  _5 = (long int) _1;
+  *_4 = _5;
+  i_37 = i_17 + 1;
+
+  <bb 4> [0.00%]:
+  # i_17 = PHI <i_25(2), i_37(3)>
+  i.9_6 = (long unsigned int) i_17;
+  if (arraysize_26(D) > i.9_6)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 5> [0.00%]:
+  darray_28 = array_27(D);
+  goto <bb 9>; [0.00%]
+
+  <bb 6> [0.00%]:
+  _7 = arraysize_26(D) * 8;
+  darray_31 = darray_19 + _7;
+  i_32 = 0;
+  goto <bb 8>; [0.00%]
+
+  <bb 7> [0.00%]:
+  i.10_8 = (long unsigned int) i_18;
+  _9 = i.10_8 * 8;
+  _10 = array_27(D) + _9;
+  i.11_11 = (long unsigned int) i_18;
+  _12 = i.11_11 * 8;
+  _13 = darray_31 + _12;
+  _14 = *_10;
+  *_13 = _14;
+  i_34 = i_18 + 1;
+
+  <bb 8> [0.00%]:
+  # i_18 = PHI <i_32(6), i_34(7)>
+  i.12_15 = (long unsigned int) i_18;
+  if (arraysize_26(D) > i.12_15)
+    goto <bb 7>; [0.00%]
+  else
+    goto <bb 9>; [0.00%]
+
+  <bb 9> [0.00%]:
+  # numarrays_16 = PHI <numarrays_29(D)(5), numarrays_30(8)>
+  # darray_19 = PHI <darray_28(5), darray_31(8)>
+  numarrays_30 = numarrays_16 + 4294967295;
+  if (numarrays_30 != 0)
+    goto <bb 6>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 10> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function DoNumSortIteration (DoNumSortIteration, funcdef_no=53, decl_uid=4494, cgraph_uid=53, symbol_order=78)
+
+Function found to be nothrow: DoNumSortIteration
+DoNumSortIteration (farlong * arraybase, long unsigned int arraysize, unsigned int numarrays)
+{
+  long unsigned int i;
+  long unsigned int elapsed;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  farlong * _4;
+  long unsigned int _5;
+  long unsigned int _18;
+
+  <bb 2> [0.00%]:
+  LoadNumArrayWithRand (arraybase_9(D), arraysize_10(D), numarrays_11(D));
+  elapsed_14 = StartStopwatch ();
+  i_15 = 0;
+  goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _1 = arraysize_10(D) + 18446744073709551615;
+  _2 = i_6 * arraysize_10(D);
+  _3 = _2 * 8;
+  _4 = arraybase_9(D) + _3;
+  NumHeapSort (_4, 0, _1);
+  i_20 = i_6 + 1;
+
+  <bb 4> [0.00%]:
+  # i_6 = PHI <i_15(2), i_20(3)>
+  _5 = (long unsigned int) numarrays_11(D);
+  if (i_6 < _5)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 5> [0.00%]:
+  elapsed_17 = StopStopwatch (elapsed_14);
+  _18 = elapsed_17;
+  return _18;
+
+}
+
+
+
+;; Function LoadStringArray (LoadStringArray, funcdef_no=59, decl_uid=4517, cgraph_uid=59, symbol_order=84)
+
+Function found to be nothrow: LoadStringArray
+LoadStringArray (faruchar * strarray, unsigned int numarrays, long unsigned int * nstrings, long unsigned int arraysize)
+{
+  int systemerror;
+  unsigned int l;
+  unsigned int k;
+  long unsigned int j;
+  unsigned char i;
+  unsigned char stringlength;
+  int fullflag;
+  long unsigned int curroffset;
+  farulong * tempobase;
+  farulong * optrarray;
+  faruchar * tempsbase;
+  unsigned int _1;
+  unsigned char _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  unsigned char _6;
+  unsigned char _7;
+  unsigned char _8;
+  faruchar * _9;
+  unsigned int _10;
+  faruchar * _11;
+  unsigned char _12;
+  unsigned char i.25_13;
+  long unsigned int _14;
+  long unsigned int _15;
+  sizetype _16;
+  sizetype _17;
+  faruchar * _18;
+  sizetype _19;
+  faruchar * _20;
+  unsigned char _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  long unsigned int _24;
+  long unsigned int _25;
+  long unsigned int _26;
+  int systemerror.26_27;
+  int systemerror.27_28;
+  long unsigned int _29;
+  farulong * _30;
+  faruchar * _31;
+  unsigned char _32;
+  long unsigned int _33;
+  long unsigned int _34;
+  long unsigned int _35;
+  long unsigned int _36;
+  long unsigned int _37;
+  long unsigned int _38;
+  long unsigned int _39;
+  farulong * _40;
+  long unsigned int _41;
+  long unsigned int _42;
+  farulong * _43;
+  long unsigned int _44;
+  long unsigned int _45;
+  long unsigned int _46;
+  farulong * _97;
+
+  <bb 2> [0.00%]:
+  randnum (13);
+  *nstrings_71(D) = 0;
+  curroffset_73 = 0;
+  fullflag_74 = 0;
+
+  <bb 3> [0.00%]:
+  # curroffset_49 = PHI <curroffset_73(2), curroffset_50(8)>
+  # fullflag_52 = PHI <fullflag_74(2), fullflag_53(8)>
+  _1 = abs_randwc (76);
+  _2 = (unsigned char) _1;
+  stringlength_76 = _2 + 1;
+  _3 = (long unsigned int) stringlength_76;
+  _4 = curroffset_49 + _3;
+  _5 = _4 + 1;
+  if (arraysize_77(D) <= _5)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _6 = (unsigned char) arraysize_77(D);
+  _7 = (unsigned char) curroffset_49;
+  _8 = _6 - _7;
+  stringlength_78 = _8 + 255;
+  fullflag_79 = 1;
+
+  <bb 5> [0.00%]:
+  # fullflag_53 = PHI <fullflag_52(3), fullflag_79(4)>
+  # stringlength_54 = PHI <stringlength_76(3), stringlength_78(4)>
+  _9 = strarray_80(D) + curroffset_49;
+  *_9 = stringlength_54;
+  curroffset_82 = curroffset_49 + 1;
+  i_83 = 0;
+  goto <bb 7>; [0.00%]
+
+  <bb 6> [0.00%]:
+  _10 = abs_randwc (254);
+  _11 = strarray_80(D) + curroffset_50;
+  _12 = (unsigned char) _10;
+  *_11 = _12;
+  curroffset_114 = curroffset_50 + 1;
+  i.25_13 = i_55;
+  i_115 = i.25_13 + 1;
+
+  <bb 7> [0.00%]:
+  # curroffset_50 = PHI <curroffset_82(5), curroffset_114(6)>
+  # i_55 = PHI <i_83(5), i_115(6)>
+  if (i_55 < stringlength_54)
+    goto <bb 6>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  _14 = *nstrings_71(D);
+  _15 = _14 + 1;
+  *nstrings_71(D) = _15;
+  if (fullflag_53 == 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 9>; [0.00%]
+
+  <bb 9> [0.00%]:
+  k_85 = 1;
+  tempsbase_86 = strarray_80(D);
+  goto <bb 14>; [0.00%]
+
+  <bb 10> [0.00%]:
+  _16 = arraysize_77(D) + 100;
+  tempsbase_107 = tempsbase_47 + _16;
+  l_108 = 0;
+  goto <bb 12>; [0.00%]
+
+  <bb 11> [0.00%]:
+  _17 = (sizetype) l_59;
+  _18 = strarray_80(D) + _17;
+  _19 = (sizetype) l_59;
+  _20 = tempsbase_107 + _19;
+  _21 = *_18;
+  *_20 = _21;
+  l_111 = l_59 + 1;
+
+  <bb 12> [0.00%]:
+  # l_59 = PHI <l_108(10), l_111(11)>
+  _22 = (long unsigned int) l_59;
+  if (arraysize_77(D) > _22)
+    goto <bb 11>; [0.00%]
+  else
+    goto <bb 13>; [0.00%]
+
+  <bb 13> [0.00%]:
+  k_109 = k_57 + 1;
+
+  <bb 14> [0.00%]:
+  # tempsbase_47 = PHI <tempsbase_86(9), tempsbase_107(13)>
+  # k_57 = PHI <k_85(9), k_109(13)>
+  if (k_57 < numarrays_87(D))
+    goto <bb 10>; [0.00%]
+  else
+    goto <bb 15>; [0.00%]
+
+  <bb 15> [0.00%]:
+  _23 = *nstrings_71(D);
+  _24 = (long unsigned int) numarrays_87(D);
+  _25 = _23 * _24;
+  _26 = _25 * 8;
+  optrarray_89 = AllocateMemory (_26, &systemerror);
+  systemerror.26_27 = systemerror;
+  if (systemerror.26_27 != 0)
+    goto <bb 16>; [0.00%]
+  else
+    goto <bb 17>; [0.00%]
+
+  <bb 16> [0.00%]:
+  systemerror.27_28 = systemerror;
+  ReportError ("CPU:Stringsort", systemerror.27_28);
+  FreeMemory (strarray_80(D), &systemerror);
+  ErrorExit ();
+
+  <bb 17> [0.00%]:
+  curroffset_93 = 0;
+  j_94 = 0;
+  goto <bb 19>; [0.00%]
+
+  <bb 18> [0.00%]:
+  _29 = j_56 * 8;
+  _30 = optrarray_89 + _29;
+  *_30 = curroffset_51;
+  _31 = strarray_80(D) + curroffset_51;
+  _32 = *_31;
+  _33 = (long unsigned int) _32;
+  _34 = curroffset_51 + _33;
+  curroffset_105 = _34 + 1;
+  j_106 = j_56 + 1;
+
+  <bb 19> [0.00%]:
+  # curroffset_51 = PHI <curroffset_93(17), curroffset_105(18)>
+  # j_56 = PHI <j_94(17), j_106(18)>
+  _35 = *nstrings_71(D);
+  if (j_56 < _35)
+    goto <bb 18>; [0.00%]
+  else
+    goto <bb 20>; [0.00%]
+
+  <bb 20> [0.00%]:
+  k_95 = 1;
+  tempobase_96 = optrarray_89;
+  goto <bb 25>; [0.00%]
+
+  <bb 21> [0.00%]:
+  _36 = *nstrings_71(D);
+  _37 = _36 * 8;
+  tempobase_99 = tempobase_48 + _37;
+  l_100 = 0;
+  goto <bb 23>; [0.00%]
+
+  <bb 22> [0.00%]:
+  _38 = (long unsigned int) l_60;
+  _39 = _38 * 8;
+  _40 = optrarray_89 + _39;
+  _41 = (long unsigned int) l_60;
+  _42 = _41 * 8;
+  _43 = tempobase_99 + _42;
+  _44 = *_40;
+  *_43 = _44;
+  l_103 = l_60 + 1;
+
+  <bb 23> [0.00%]:
+  # l_60 = PHI <l_100(21), l_103(22)>
+  _45 = (long unsigned int) l_60;
+  _46 = *nstrings_71(D);
+  if (_45 < _46)
+    goto <bb 22>; [0.00%]
+  else
+    goto <bb 24>; [0.00%]
+
+  <bb 24> [0.00%]:
+  k_101 = k_58 + 1;
+
+  <bb 25> [0.00%]:
+  # tempobase_48 = PHI <tempobase_96(20), tempobase_99(24)>
+  # k_58 = PHI <k_95(20), k_101(24)>
+  if (k_58 < numarrays_87(D))
+    goto <bb 21>; [0.00%]
+  else
+    goto <bb 26>; [0.00%]
+
+  <bb 26> [0.00%]:
+  _97 = optrarray_89;
+  systemerror ={v} {CLOBBER};
+  return _97;
+
+}
+
+
+
+;; Function DoBitfieldIteration (DoBitfieldIteration, funcdef_no=65, decl_uid=4548, cgraph_uid=65, symbol_order=90)
+
+Function found to be nothrow: DoBitfieldIteration
+DoBitfieldIteration (farulong * bitarraybase, farulong * bitoparraybase, long int bitoparraysize, long unsigned int * nbitops)
+{
+  long unsigned int elapsed;
+  long unsigned int bitoffset;
+  long int i;
+  long unsigned int i.38_1;
+  long unsigned int _2;
+  farulong * _3;
+  long unsigned int _4;
+  long unsigned int i.39_5;
+  unsigned int _6;
+  long unsigned int i.40_7;
+  long unsigned int _8;
+  farulong * _9;
+  unsigned int _10;
+  unsigned int _11;
+  unsigned int _12;
+  long unsigned int i.41_13;
+  long unsigned int _14;
+  sizetype _15;
+  farulong * _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long int _20;
+  long unsigned int i.42_21;
+  long unsigned int _22;
+  sizetype _23;
+  farulong * _24;
+  long unsigned int _25;
+  long unsigned int i.43_26;
+  long unsigned int _27;
+  farulong * _28;
+  long unsigned int _29;
+  long unsigned int i.44_30;
+  long unsigned int _31;
+  sizetype _32;
+  farulong * _33;
+  long unsigned int _34;
+  long unsigned int i.45_35;
+  long unsigned int _36;
+  farulong * _37;
+  long unsigned int _38;
+  long unsigned int i.46_39;
+  long unsigned int _40;
+  sizetype _41;
+  farulong * _42;
+  long unsigned int _43;
+  long unsigned int i.47_44;
+  long unsigned int _45;
+  farulong * _46;
+  long unsigned int _47;
+  long unsigned int _67;
+  long unsigned int _79;
+
+  <bb 2> [0.00%]:
+  *nbitops_56(D) = 0;
+  randnum (13);
+  i_59 = 0;
+  goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  i.38_1 = (long unsigned int) i_48;
+  _2 = i.38_1 * 8;
+  _3 = bitarraybase_69(D) + _2;
+  *_3 = 6148914691236517205;
+  i_83 = i_48 + 1;
+
+  <bb 4> [0.00%]:
+  # i_48 = PHI <i_59(2), i_83(3)>
+  _4 = global_bitopstruct.bitfieldarraysize;
+  i.39_5 = (long unsigned int) i_48;
+  if (_4 > i.39_5)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 5> [0.00%]:
+  randnum (13);
+  i_61 = 0;
+  goto <bb 7>; [0.00%]
+
+  <bb 6> [0.00%]:
+  _6 = abs_randwc (262140);
+  bitoffset_75 = (long unsigned int) _6;
+  i.40_7 = (long unsigned int) i_49;
+  _8 = i.40_7 * 16;
+  _9 = bitoparraybase_68(D) + _8;
+  *_9 = bitoffset_75;
+  _10 = (unsigned int) bitoffset_75;
+  _11 = 262140 - _10;
+  _12 = abs_randwc (_11);
+  i.41_13 = (long unsigned int) i_49;
+  _14 = i.41_13 * 16;
+  _15 = _14 + 8;
+  _16 = bitoparraybase_68(D) + _15;
+  _17 = (long unsigned int) _12;
+  *_16 = _17;
+  _79 = *_16;
+  _18 = *nbitops_56(D);
+  _19 = _79 + _18;
+  *nbitops_56(D) = _19;
+  i_81 = i_49 + 1;
+
+  <bb 7> [0.00%]:
+  # i_49 = PHI <i_61(5), i_81(6)>
+  if (i_49 < bitoparraysize_62(D))
+    goto <bb 6>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  elapsed_64 = StartStopwatch ();
+  i_65 = 0;
+  goto <bb 14>; [0.00%]
+
+  <bb 9> [0.00%]:
+  _20 = i_50 % 3;
+  switch (_20) <default: <L10> [0.00%], case 0: <L7> [0.00%], case 1: <L8> [0.00%], case 2: <L9> [0.00%]>
+
+<L7> [0.00%]:
+  i.42_21 = (long unsigned int) i_50;
+  _22 = i.42_21 * 16;
+  _23 = _22 + 8;
+  _24 = bitoparraybase_68(D) + _23;
+  _25 = *_24;
+  i.43_26 = (long unsigned int) i_50;
+  _27 = i.43_26 * 16;
+  _28 = bitoparraybase_68(D) + _27;
+  _29 = *_28;
+  ToggleBitRun (bitarraybase_69(D), _29, _25, 1);
+  goto <bb 13> (<L10>); [0.00%]
+
+<L8> [0.00%]:
+  i.44_30 = (long unsigned int) i_50;
+  _31 = i.44_30 * 16;
+  _32 = _31 + 8;
+  _33 = bitoparraybase_68(D) + _32;
+  _34 = *_33;
+  i.45_35 = (long unsigned int) i_50;
+  _36 = i.45_35 * 16;
+  _37 = bitoparraybase_68(D) + _36;
+  _38 = *_37;
+  ToggleBitRun (bitarraybase_69(D), _38, _34, 0);
+  goto <bb 13> (<L10>); [0.00%]
+
+<L9> [0.00%]:
+  i.46_39 = (long unsigned int) i_50;
+  _40 = i.46_39 * 16;
+  _41 = _40 + 8;
+  _42 = bitoparraybase_68(D) + _41;
+  _43 = *_42;
+  i.47_44 = (long unsigned int) i_50;
+  _45 = i.47_44 * 16;
+  _46 = bitoparraybase_68(D) + _45;
+  _47 = *_46;
+  FlipBitRun (bitarraybase_69(D), _47, _43);
+
+<L10> [0.00%]:
+  i_73 = i_50 + 1;
+
+  <bb 14> [0.00%]:
+  # i_50 = PHI <i_65(8), i_73(13)>
+  if (i_50 < bitoparraysize_62(D))
+    goto <bb 9>; [0.00%]
+  else
+    goto <bb 15>; [0.00%]
+
+  <bb 15> [0.00%]:
+  _67 = StopStopwatch (elapsed_64);
+  return _67;
+
+}
+
+
+
+;; Function LoadAssign (LoadAssign, funcdef_no=76, decl_uid=4608, cgraph_uid=76, symbol_order=101)
+
+Function found to be nothrow: LoadAssign
+LoadAssign (farlong[101] * arraybase)
+{
+  short unsigned int j;
+  short unsigned int i;
+  unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  farlong[101] * _4;
+  int _5;
+  long int _6;
+  short unsigned int j.71_7;
+  short unsigned int i.72_8;
+
+  <bb 2> [0.00%]:
+  randnum (13);
+  i_15 = 0;
+  goto <bb 7>; [0.00%]
+
+  <bb 3> [0.00%]:
+  j_16 = 0;
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _1 = abs_randwc (5000000);
+  _2 = (long unsigned int) i_9;
+  _3 = _2 * 808;
+  _4 = arraybase_19(D) + _3;
+  _5 = (int) j_10;
+  _6 = (long int) _1;
+  *_4[_5] = _6;
+  j.71_7 = j_10;
+  j_21 = j.71_7 + 1;
+
+  <bb 5> [0.00%]:
+  # j_10 = PHI <j_16(3), j_21(4)>
+  if (j_10 <= 100)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 6> [0.00%]:
+  i.72_8 = i_9;
+  i_17 = i.72_8 + 1;
+
+  <bb 7> [0.00%]:
+  # i_9 = PHI <i_15(2), i_17(6)>
+  if (i_9 <= 100)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function LoadAssignArrayWithRand (LoadAssignArrayWithRand, funcdef_no=75, decl_uid=4606, cgraph_uid=75, symbol_order=100)
+
+Function found to be nothrow: LoadAssignArrayWithRand
+LoadAssignArrayWithRand (farlong * arraybase, long unsigned int numarrays)
+{
+  long unsigned int i;
+  struct longptr abase1;
+  struct longptr abase;
+  long int[101][101] * _1;
+  long int * _2;
+  long int * _3;
+  long int[101][101] * _4;
+  long int[101][101] * _5;
+
+  <bb 2> [0.00%]:
+  abase.ptrs.p = arraybase_10(D);
+  abase1.ptrs.p = arraybase_10(D);
+  _1 = abase.ptrs.ap;
+  LoadAssign (_1);
+  if (numarrays_14(D) > 1)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 3> [0.00%]:
+  i_15 = 1;
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _2 = abase1.ptrs.p;
+  _3 = _2 + 81608;
+  abase1.ptrs.p = _3;
+  _4 = abase1.ptrs.ap;
+  _5 = abase.ptrs.ap;
+  CopyToAssign (_5, _4);
+  i_18 = i_6 + 1;
+
+  <bb 5> [0.00%]:
+  # i_6 = PHI <i_15(3), i_18(4)>
+  if (i_6 < numarrays_14(D))
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 6> [0.00%]:
+  abase ={v} {CLOBBER};
+  abase1 ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function DoAssignIteration (DoAssignIteration, funcdef_no=74, decl_uid=4603, cgraph_uid=74, symbol_order=99)
+
+Function found to be nothrow: DoAssignIteration
+DoAssignIteration (farlong * arraybase, long unsigned int numarrays)
+{
+  long unsigned int i;
+  long unsigned int elapsed;
+  struct longptr abase;
+  long int[101][101] * _1;
+  long int * _2;
+  long int * _3;
+  long unsigned int _15;
+
+  <bb 2> [0.00%]:
+  abase.ptrs.p = arraybase_7(D);
+  LoadAssignArrayWithRand (arraybase_7(D), numarrays_9(D));
+  elapsed_12 = StartStopwatch ();
+  i_13 = 0;
+  goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _1 = abase.ptrs.ap;
+  Assignment (_1);
+  _2 = abase.ptrs.p;
+  _3 = _2 + 81608;
+  abase.ptrs.p = _3;
+  i_19 = i_4 + 1;
+
+  <bb 4> [0.00%]:
+  # i_4 = PHI <i_13(2), i_19(3)>
+  if (i_4 < numarrays_9(D))
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 5> [0.00%]:
+  _15 = StopStopwatch (elapsed_12);
+  abase ={v} {CLOBBER};
+  return _15;
+
+}
+
+
+
+;; Function randomize_wts (randomize_wts, funcdef_no=109, decl_uid=4722, cgraph_uid=109, symbol_order=134)
+
+Function found to be nothrow: randomize_wts
+randomize_wts ()
+{
+  double value;
+  int i;
+  int neurode;
+  unsigned int _1;
+  double _2;
+  double _3;
+  unsigned int _4;
+  double _5;
+  double _6;
+
+  <bb 2> [0.00%]:
+  neurode_15 = 0;
+  goto <bb 7>; [0.00%]
+
+  <bb 3> [0.00%]:
+  i_25 = 0;
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _1 = abs_randwc (100000);
+  value_28 = (double) _1;
+  _2 = value_28 / 1.0e+5;
+  value_29 = _2 - 5.0e-1;
+  _3 = value_29 * 5.0e-1;
+  mid_wts[neurode_7][i_9] = _3;
+  i_31 = i_9 + 1;
+
+  <bb 5> [0.00%]:
+  # i_9 = PHI <i_25(3), i_31(4)>
+  if (i_9 <= 34)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 6> [0.00%]:
+  neurode_26 = neurode_7 + 1;
+
+  <bb 7> [0.00%]:
+  # neurode_7 = PHI <neurode_15(2), neurode_26(6)>
+  if (neurode_7 <= 7)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  neurode_17 = 0;
+  goto <bb 13>; [0.00%]
+
+  <bb 9> [0.00%]:
+  i_18 = 0;
+  goto <bb 11>; [0.00%]
+
+  <bb 10> [0.00%]:
+  _4 = abs_randwc (100000);
+  value_21 = (double) _4;
+  _5 = value_21 / 1.0e+4;
+  value_22 = _5 - 5.0e-1;
+  _6 = value_22 * 5.0e-1;
+  out_wts[neurode_8][i_10] = _6;
+  i_24 = i_10 + 1;
+
+  <bb 11> [0.00%]:
+  # i_10 = PHI <i_18(9), i_24(10)>
+  if (i_10 <= 7)
+    goto <bb 10>; [0.00%]
+  else
+    goto <bb 12>; [0.00%]
+
+  <bb 12> [0.00%]:
+  neurode_19 = neurode_8 + 1;
+
+  <bb 13> [0.00%]:
+  # neurode_8 = PHI <neurode_17(8), neurode_19(12)>
+  if (neurode_8 <= 7)
+    goto <bb 9>; [0.00%]
+  else
+    goto <bb 14>; [0.00%]
+
+  <bb 14> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function build_problem (build_problem, funcdef_no=114, decl_uid=4747, cgraph_uid=114, symbol_order=139)
+
+Function found to be nothrow: build_problem
+build_problem (double[101] * a, int n, double * b)
+{
+  double rcon;
+  long int k1;
+  long int k;
+  long int j;
+  long int i;
+  unsigned int _1;
+  unsigned int _2;
+  long unsigned int i.204_3;
+  long unsigned int _4;
+  double * _5;
+  double _6;
+  unsigned int _7;
+  unsigned int _8;
+  long unsigned int i.205_9;
+  long unsigned int _10;
+  double[101] * _11;
+  double _12;
+  long unsigned int i.206_13;
+  long unsigned int _14;
+  double[101] * _15;
+  long int _16;
+  long int _17;
+  unsigned int n.207_18;
+  unsigned int _19;
+  unsigned int n.208_20;
+  unsigned int _21;
+  long unsigned int k.209_22;
+  long unsigned int _23;
+  double[101] * _24;
+  double _25;
+  long unsigned int k1.210_26;
+  long unsigned int _27;
+  double[101] * _28;
+  double _29;
+  double _30;
+  long unsigned int k.211_31;
+  long unsigned int _32;
+  double[101] * _33;
+  double _34;
+  long int _35;
+  long unsigned int k.212_36;
+  long unsigned int _37;
+  double * _38;
+  double _39;
+  long unsigned int k1.213_40;
+  long unsigned int _41;
+  double * _42;
+  double _43;
+  double _44;
+  long unsigned int k.214_45;
+  long unsigned int _46;
+  double * _47;
+  double _48;
+  int _49;
+  long int _50;
+
+  <bb 2> [0.00%]:
+  randnum (13);
+  i_64 = 0;
+  goto <bb 10>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _1 = abs_randwc (100);
+  _2 = _1 + 1;
+  i.204_3 = (long unsigned int) i_51;
+  _4 = i.204_3 * 8;
+  _5 = b_74(D) + _4;
+  _6 = (double) _2;
+  *_5 = _6;
+  j_82 = 0;
+  goto <bb 8>; [0.00%]
+
+  <bb 4> [0.00%]:
+  if (i_51 == j_53)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  _7 = abs_randwc (1000);
+  _8 = _7 + 1;
+  i.205_9 = (long unsigned int) i_51;
+  _10 = i.205_9 * 808;
+  _11 = a_76(D) + _10;
+  _12 = (double) _8;
+  *_11[j_53] = _12;
+  goto <bb 7>; [0.00%]
+
+  <bb 6> [0.00%]:
+  i.206_13 = (long unsigned int) i_51;
+  _14 = i.206_13 * 808;
+  _15 = a_76(D) + _14;
+  *_15[j_53] = 0.0;
+
+  <bb 7> [0.00%]:
+  j_87 = j_53 + 1;
+
+  <bb 8> [0.00%]:
+  # j_53 = PHI <j_82(3), j_87(7)>
+  _16 = (long int) n_65(D);
+  if (j_53 < _16)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 9>; [0.00%]
+
+  <bb 9> [0.00%]:
+  i_83 = i_51 + 1;
+
+  <bb 10> [0.00%]:
+  # i_51 = PHI <i_64(2), i_83(9)>
+  _17 = (long int) n_65(D);
+  if (i_51 < _17)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 11>; [0.00%]
+
+  <bb 11> [0.00%]:
+  i_66 = 0;
+  goto <bb 21>; [0.00%]
+
+  <bb 12> [0.00%]:
+  n.207_18 = (unsigned int) n_65(D);
+  _19 = abs_randwc (n.207_18);
+  k_68 = (long int) _19;
+  n.208_20 = (unsigned int) n_65(D);
+  _21 = abs_randwc (n.208_20);
+  k1_70 = (long int) _21;
+  if (k_68 != k1_70)
+    goto <bb 13>; [0.00%]
+  else
+    goto <bb 20>; [0.00%]
+
+  <bb 13> [0.00%]:
+  if (k_68 < k1_70)
+    goto <bb 14>; [0.00%]
+  else
+    goto <bb 15>; [0.00%]
+
+  <bb 14> [0.00%]:
+  rcon_72 = 1.0e+0;
+  goto <bb 16>; [0.00%]
+
+  <bb 15> [0.00%]:
+  rcon_71 = -1.0e+0;
+
+  <bb 16> [0.00%]:
+  # rcon_55 = PHI <rcon_72(14), rcon_71(15)>
+  j_73 = 0;
+  goto <bb 18>; [0.00%]
+
+  <bb 17> [0.00%]:
+  k.209_22 = (long unsigned int) k_68;
+  _23 = k.209_22 * 808;
+  _24 = a_76(D) + _23;
+  _25 = *_24[j_54];
+  k1.210_26 = (long unsigned int) k1_70;
+  _27 = k1.210_26 * 808;
+  _28 = a_76(D) + _27;
+  _29 = *_28[j_54];
+  _30 = rcon_55 * _29;
+  k.211_31 = (long unsigned int) k_68;
+  _32 = k.211_31 * 808;
+  _33 = a_76(D) + _32;
+  _34 = _25 + _30;
+  *_33[j_54] = _34;
+  j_78 = j_54 + 1;
+
+  <bb 18> [0.00%]:
+  # j_54 = PHI <j_73(16), j_78(17)>
+  _35 = (long int) n_65(D);
+  if (j_54 < _35)
+    goto <bb 17>; [0.00%]
+  else
+    goto <bb 19>; [0.00%]
+
+  <bb 19> [0.00%]:
+  k.212_36 = (long unsigned int) k_68;
+  _37 = k.212_36 * 8;
+  _38 = b_74(D) + _37;
+  _39 = *_38;
+  k1.213_40 = (long unsigned int) k1_70;
+  _41 = k1.213_40 * 8;
+  _42 = b_74(D) + _41;
+  _43 = *_42;
+  _44 = rcon_55 * _43;
+  k.214_45 = (long unsigned int) k_68;
+  _46 = k.214_45 * 8;
+  _47 = b_74(D) + _46;
+  _48 = _39 + _44;
+  *_47 = _48;
+
+  <bb 20> [0.00%]:
+  i_79 = i_52 + 1;
+
+  <bb 21> [0.00%]:
+  # i_52 = PHI <i_66(11), i_79(20)>
+  _49 = n_65(D) * 8;
+  _50 = (long int) _49;
+  if (i_52 < _50)
+    goto <bb 12>; [0.00%]
+  else
+    goto <bb 22>; [0.00%]
+
+  <bb 22> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function stradjust (stradjust, funcdef_no=60, decl_uid=4523, cgraph_uid=60, symbol_order=85)
+
+Function found to be nothrow: stradjust
+stradjust (farulong * optrarray, faruchar * strarray, long unsigned int nstrings, long unsigned int i, unsigned char l)
+{
+  unsigned char adjamount;
+  int direction;
+  long unsigned int j;
+  long unsigned int nbytes;
+  int _1;
+  long unsigned int _2;
+  farulong * _3;
+  long unsigned int _4;
+  faruchar * _5;
+  unsigned char _6;
+  int _7;
+  int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  farulong * _11;
+  long unsigned int _12;
+  faruchar * _13;
+  long unsigned int _14;
+  sizetype _15;
+  farulong * _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  sizetype _19;
+  farulong * _20;
+  long unsigned int _21;
+  faruchar * _22;
+  unsigned char _23;
+  long unsigned int _24;
+  long unsigned int _25;
+  sizetype _26;
+  sizetype _27;
+  farulong * _28;
+  long unsigned int _29;
+  long unsigned int _30;
+  long unsigned int _31;
+  sizetype _32;
+  sizetype _33;
+  farulong * _34;
+  long unsigned int _35;
+  faruchar * _36;
+  long unsigned int _37;
+  farulong * _38;
+  long unsigned int _39;
+  sizetype _40;
+  sizetype _41;
+  sizetype _42;
+  faruchar * _43;
+  long unsigned int _44;
+  farulong * _45;
+  long unsigned int _46;
+  long unsigned int _47;
+  long unsigned int _48;
+  farulong * _49;
+  long unsigned int _50;
+  long unsigned int _51;
+  farulong * _52;
+  long unsigned int _53;
+  long unsigned int _54;
+  long unsigned int _55;
+  farulong * _56;
+  long unsigned int _57;
+  long unsigned int _58;
+  farulong * _59;
+  long unsigned int _60;
+  faruchar * _61;
+
+  <bb 2> [0.00%]:
+  _1 = (int) l_66(D);
+  _2 = i_67(D) * 8;
+  _3 = optrarray_68(D) + _2;
+  _4 = *_3;
+  _5 = strarray_70(D) + _4;
+  _6 = *_5;
+  _7 = (int) _6;
+  direction_71 = _1 - _7;
+  _8 = ABS_EXPR <direction_71>;
+  adjamount_72 = (unsigned char) _8;
+  _9 = nstrings_73(D) + 18446744073709551615;
+  if (i_67(D) == _9)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _10 = i_67(D) * 8;
+  _11 = optrarray_68(D) + _10;
+  _12 = *_11;
+  _13 = strarray_70(D) + _12;
+  *_13 = l_66(D);
+  goto <bb 11>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _14 = nstrings_73(D) * 8;
+  _15 = _14 + 18446744073709551608;
+  _16 = optrarray_68(D) + _15;
+  _17 = *_16;
+  _18 = nstrings_73(D) * 8;
+  _19 = _18 + 18446744073709551608;
+  _20 = optrarray_68(D) + _19;
+  _21 = *_20;
+  _22 = strarray_70(D) + _21;
+  _23 = *_22;
+  _24 = (long unsigned int) _23;
+  _25 = _17 + _24;
+  _26 = i_67(D) + 1;
+  _27 = _26 * 8;
+  _28 = optrarray_68(D) + _27;
+  _29 = *_28;
+  _30 = -_29;
+  _31 = _25 + _30;
+  nbytes_74 = _31 + 1;
+  _32 = i_67(D) + 1;
+  _33 = _32 * 8;
+  _34 = optrarray_68(D) + _33;
+  _35 = *_34;
+  _36 = strarray_70(D) + _35;
+  _37 = i_67(D) * 8;
+  _38 = optrarray_68(D) + _37;
+  _39 = *_38;
+  _40 = (sizetype) l_66(D);
+  _41 = _39 + _40;
+  _42 = _41 + 1;
+  _43 = strarray_70(D) + _42;
+  MoveMemory (_43, _36, nbytes_74);
+  j_76 = i_67(D) + 1;
+  goto <bb 9>; [0.00%]
+
+  <bb 5> [0.00%]:
+  if (direction_71 < 0)
+    goto <bb 6>; [0.00%]
+  else
+    goto <bb 7>; [0.00%]
+
+  <bb 6> [0.00%]:
+  _44 = j_62 * 8;
+  _45 = optrarray_68(D) + _44;
+  _46 = *_45;
+  _47 = (long unsigned int) adjamount_72;
+  _48 = j_62 * 8;
+  _49 = optrarray_68(D) + _48;
+  _50 = _46 - _47;
+  *_49 = _50;
+  goto <bb 8>; [0.00%]
+
+  <bb 7> [0.00%]:
+  _51 = j_62 * 8;
+  _52 = optrarray_68(D) + _51;
+  _53 = *_52;
+  _54 = (long unsigned int) adjamount_72;
+  _55 = j_62 * 8;
+  _56 = optrarray_68(D) + _55;
+  _57 = _53 + _54;
+  *_56 = _57;
+
+  <bb 8> [0.00%]:
+  j_80 = j_62 + 1;
+
+  <bb 9> [0.00%]:
+  # j_62 = PHI <j_76(4), j_80(8)>
+  if (j_62 < nstrings_73(D))
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 10> [0.00%]:
+  _58 = i_67(D) * 8;
+  _59 = optrarray_68(D) + _58;
+  _60 = *_59;
+  _61 = strarray_70(D) + _60;
+  *_61 = l_66(D);
+
+  <bb 11> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function str_is_less (str_is_less, funcdef_no=62, decl_uid=4535, cgraph_uid=62, symbol_order=87)
+
+Function found to be nothrow: str_is_less
+str_is_less (farulong * optrarray, faruchar * strarray, long unsigned int numstrings, long unsigned int a, long unsigned int b)
+{
+  int slen;
+  long unsigned int _1;
+  farulong * _2;
+  long unsigned int _3;
+  faruchar * _4;
+  unsigned char _5;
+  long unsigned int _6;
+  farulong * _7;
+  long unsigned int _8;
+  faruchar * _9;
+  unsigned char _10;
+  int _11;
+  long unsigned int _12;
+  farulong * _13;
+  long unsigned int _14;
+  faruchar * _15;
+  unsigned char _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  farulong * _19;
+  long unsigned int _20;
+  faruchar * _21;
+  long unsigned int _22;
+  farulong * _23;
+  long unsigned int _24;
+  faruchar * _25;
+  long unsigned int _26;
+  farulong * _27;
+  long unsigned int _28;
+  faruchar * _29;
+  unsigned char _30;
+  long unsigned int _31;
+  farulong * _32;
+  long unsigned int _33;
+  faruchar * _34;
+  unsigned char _35;
+  int _37;
+  int _46;
+  int _47;
+  int _48;
+  int _49;
+
+  <bb 2> [0.00%]:
+  _1 = a_38(D) * 8;
+  _2 = optrarray_39(D) + _1;
+  _3 = *_2;
+  _4 = strarray_41(D) + _3;
+  _5 = *_4;
+  slen_42 = (int) _5;
+  _6 = b_43(D) * 8;
+  _7 = optrarray_39(D) + _6;
+  _8 = *_7;
+  _9 = strarray_41(D) + _8;
+  _10 = *_9;
+  _11 = (int) _10;
+  if (slen_42 > _11)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _12 = b_43(D) * 8;
+  _13 = optrarray_39(D) + _12;
+  _14 = *_13;
+  _15 = strarray_41(D) + _14;
+  _16 = *_15;
+  slen_44 = (int) _16;
+
+  <bb 4> [0.00%]:
+  # slen_36 = PHI <slen_42(2), slen_44(3)>
+  _17 = (long unsigned int) slen_36;
+  _18 = b_43(D) * 8;
+  _19 = optrarray_39(D) + _18;
+  _20 = *_19;
+  _21 = strarray_41(D) + _20;
+  _22 = a_38(D) * 8;
+  _23 = optrarray_39(D) + _22;
+  _24 = *_23;
+  _25 = strarray_41(D) + _24;
+  slen_45 = strncmp (_25, _21, _17);
+  if (slen_45 == 0)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 5> [0.00%]:
+  _26 = a_38(D) * 8;
+  _27 = optrarray_39(D) + _26;
+  _28 = *_27;
+  _29 = strarray_41(D) + _28;
+  _30 = *_29;
+  _31 = b_43(D) * 8;
+  _32 = optrarray_39(D) + _31;
+  _33 = *_32;
+  _34 = strarray_41(D) + _33;
+  _35 = *_34;
+  if (_30 > _35)
+    goto <bb 6>; [0.00%]
+  else
+    goto <bb 7>; [0.00%]
+
+  <bb 6> [0.00%]:
+  _49 = 1;
+  goto <bb 11>; [0.00%]
+
+  <bb 7> [0.00%]:
+  _48 = 0;
+  goto <bb 11>; [0.00%]
+
+  <bb 8> [0.00%]:
+  if (slen_45 < 0)
+    goto <bb 9>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 9> [0.00%]:
+  _47 = 1;
+  goto <bb 11>; [0.00%]
+
+  <bb 10> [0.00%]:
+  _46 = 0;
+
+  <bb 11> [0.00%]:
+  # _37 = PHI <_49(6), _48(7), _47(9), _46(10)>
+  return _37;
+
+}
+
+
+
+;; Function strsift (strsift, funcdef_no=63, decl_uid=4541, cgraph_uid=63, symbol_order=88)
+
+Function found to be nothrow: strsift
+strsift (farulong * optrarray, faruchar * strarray, long unsigned int numstrings, long unsigned int i, long unsigned int j)
+{
+  unsigned char tlen;
+  unsigned char temp[80];
+  long unsigned int k;
+  long unsigned int _1;
+  int _2;
+  int _3;
+  long unsigned int _4;
+  farulong * _5;
+  long unsigned int _6;
+  faruchar * _7;
+  int _8;
+  int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  farulong * _12;
+  long unsigned int _13;
+  faruchar * _14;
+  long unsigned int _15;
+  farulong * _16;
+  long unsigned int _17;
+  faruchar * _18;
+  int _19;
+  int _20;
+  int _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  farulong * _24;
+  long unsigned int _25;
+  faruchar * _26;
+  long unsigned int _27;
+  farulong * _28;
+  long unsigned int _29;
+  faruchar * _30;
+  int _31;
+  int _32;
+  int _33;
+  long unsigned int _34;
+  long unsigned int _35;
+  farulong * _36;
+  long unsigned int _37;
+  faruchar * _38;
+  long unsigned int _39;
+
+  <bb 2> [0.00%]:
+  goto <bb 9>; [0.00%]
+
+  <bb 3> [0.00%]:
+  k_48 = i_40 * 2;
+  if (k_48 < j_46(D))
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _1 = k_48 + 1;
+  _2 = str_is_less (optrarray_49(D), strarray_50(D), numstrings_51(D), k_48, _1);
+  if (_2 != 0)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  k_53 = k_48 + 1;
+
+  <bb 6> [0.00%]:
+  # k_41 = PHI <k_48(3), k_48(4), k_53(5)>
+  _3 = str_is_less (optrarray_49(D), strarray_50(D), numstrings_51(D), i_40, k_41);
+  if (_3 != 0)
+    goto <bb 7>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 7> [0.00%]:
+  _4 = k_41 * 8;
+  _5 = optrarray_49(D) + _4;
+  _6 = *_5;
+  _7 = strarray_50(D) + _6;
+  tlen_56 = *_7;
+  _8 = (int) tlen_56;
+  _9 = _8 + 1;
+  _10 = (long unsigned int) _9;
+  _11 = k_41 * 8;
+  _12 = optrarray_49(D) + _11;
+  _13 = *_12;
+  _14 = strarray_50(D) + _13;
+  MoveMemory (&temp[0], _14, _10);
+  _15 = i_40 * 8;
+  _16 = optrarray_49(D) + _15;
+  _17 = *_16;
+  _18 = strarray_50(D) + _17;
+  tlen_58 = *_18;
+  _19 = (int) tlen_58;
+  stradjust (optrarray_49(D), strarray_50(D), numstrings_51(D), k_41, _19);
+  _20 = (int) tlen_58;
+  _21 = _20 + 1;
+  _22 = (long unsigned int) _21;
+  _23 = i_40 * 8;
+  _24 = optrarray_49(D) + _23;
+  _25 = *_24;
+  _26 = strarray_50(D) + _25;
+  _27 = k_41 * 8;
+  _28 = optrarray_49(D) + _27;
+  _29 = *_28;
+  _30 = strarray_50(D) + _29;
+  MoveMemory (_30, _26, _22);
+  tlen_61 = temp[0];
+  _31 = (int) tlen_61;
+  stradjust (optrarray_49(D), strarray_50(D), numstrings_51(D), i_40, _31);
+  _32 = (int) tlen_61;
+  _33 = _32 + 1;
+  _34 = (long unsigned int) _33;
+  _35 = i_40 * 8;
+  _36 = optrarray_49(D) + _35;
+  _37 = *_36;
+  _38 = strarray_50(D) + _37;
+  MoveMemory (_38, &temp[0], _34);
+  i_64 = k_41;
+  goto <bb 9>; [0.00%]
+
+  <bb 8> [0.00%]:
+  i_55 = j_46(D) + 1;
+
+  <bb 9> [0.00%]:
+  # i_40 = PHI <i_44(D)(2), i_64(7), i_55(8)>
+  _39 = i_40 * 2;
+  if (j_46(D) >= _39)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 10> [0.00%]:
+  temp ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function StrHeapSort (StrHeapSort, funcdef_no=61, decl_uid=4529, cgraph_uid=61, symbol_order=86)
+
+Function found to be nothrow: StrHeapSort
+StrHeapSort (farulong * optrarray, faruchar * strarray, long unsigned int numstrings, long unsigned int bottom, long unsigned int top)
+{
+  long unsigned int i;
+  unsigned char tlen;
+  unsigned char temp[80];
+  int _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  farulong * _5;
+  long unsigned int _6;
+  faruchar * _7;
+  int _8;
+  int _9;
+  int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  farulong * _13;
+  long unsigned int _14;
+  faruchar * _15;
+  int _16;
+  int _17;
+  int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  farulong * _21;
+  long unsigned int _22;
+  faruchar * _23;
+
+  <bb 2> [0.00%]:
+  i_29 = top_28(D) / 2;
+  goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  strsift (optrarray_33(D), strarray_34(D), numstrings_35(D), i_24, top_28(D));
+  i_47 = i_24 + 18446744073709551615;
+
+  <bb 4> [0.00%]:
+  # i_24 = PHI <i_29(2), i_47(3)>
+  if (i_24 != 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 5> [0.00%]:
+  i_31 = top_28(D);
+  goto <bb 7>; [0.00%]
+
+  <bb 6> [0.00%]:
+  strsift (optrarray_33(D), strarray_34(D), numstrings_35(D), 0, i_25);
+  tlen_37 = *strarray_34(D);
+  _1 = (int) tlen_37;
+  _2 = _1 + 1;
+  _3 = (long unsigned int) _2;
+  MoveMemory (&temp[0], strarray_34(D), _3);
+  _4 = i_25 * 8;
+  _5 = optrarray_33(D) + _4;
+  _6 = *_5;
+  _7 = strarray_34(D) + _6;
+  tlen_39 = *_7;
+  _8 = (int) tlen_39;
+  stradjust (optrarray_33(D), strarray_34(D), numstrings_35(D), 0, _8);
+  _9 = (int) tlen_39;
+  _10 = _9 + 1;
+  _11 = (long unsigned int) _10;
+  _12 = i_25 * 8;
+  _13 = optrarray_33(D) + _12;
+  _14 = *_13;
+  _15 = strarray_34(D) + _14;
+  MoveMemory (strarray_34(D), _15, _11);
+  tlen_42 = temp[0];
+  _16 = (int) tlen_42;
+  stradjust (optrarray_33(D), strarray_34(D), numstrings_35(D), i_25, _16);
+  _17 = (int) tlen_42;
+  _18 = _17 + 1;
+  _19 = (long unsigned int) _18;
+  _20 = i_25 * 8;
+  _21 = optrarray_33(D) + _20;
+  _22 = *_21;
+  _23 = strarray_34(D) + _22;
+  MoveMemory (_23, &temp[0], _19);
+  i_45 = i_25 + 18446744073709551615;
+
+  <bb 7> [0.00%]:
+  # i_25 = PHI <i_31(5), i_45(6)>
+  if (i_25 != 0)
+    goto <bb 6>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  temp ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function DoStringSortIteration (DoStringSortIteration, funcdef_no=58, decl_uid=4512, cgraph_uid=58, symbol_order=83)
+
+Function found to be nothrow: DoStringSortIteration
+DoStringSortIteration (faruchar * arraybase, unsigned int numarrays, long unsigned int arraysize)
+{
+  faruchar * tempsbase;
+  farulong * tempobase;
+  unsigned int i;
+  int syserror;
+  long unsigned int nstrings;
+  long unsigned int elapsed;
+  farulong * optrarray;
+  long unsigned int nstrings.22_1;
+  long unsigned int _2;
+  long unsigned int nstrings.23_3;
+  long unsigned int nstrings.24_4;
+  long unsigned int _5;
+  sizetype _6;
+  long unsigned int _25;
+
+  <bb 2> [0.00%]:
+  optrarray_16 = LoadStringArray (arraybase_12(D), numarrays_13(D), &nstrings, arraysize_14(D));
+  tempobase_17 = optrarray_16;
+  tempsbase_18 = arraybase_12(D);
+  elapsed_20 = StartStopwatch ();
+  i_21 = 0;
+  goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  nstrings.22_1 = nstrings;
+  _2 = nstrings.22_1 + 18446744073709551615;
+  nstrings.23_3 = nstrings;
+  StrHeapSort (tempobase_8, tempsbase_9, nstrings.23_3, 0, _2);
+  nstrings.24_4 = nstrings;
+  _5 = nstrings.24_4 * 8;
+  tempobase_29 = tempobase_8 + _5;
+  _6 = arraysize_14(D) + 100;
+  tempsbase_30 = tempsbase_9 + _6;
+  i_31 = i_7 + 1;
+
+  <bb 4> [0.00%]:
+  # i_7 = PHI <i_21(2), i_31(3)>
+  # tempobase_8 = PHI <tempobase_17(2), tempobase_29(3)>
+  # tempsbase_9 = PHI <tempsbase_18(2), tempsbase_30(3)>
+  if (i_7 < numarrays_13(D))
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 5> [0.00%]:
+  elapsed_23 = StopStopwatch (elapsed_20);
+  FreeMemory (optrarray_16, &syserror);
+  _25 = elapsed_23;
+  nstrings ={v} {CLOBBER};
+  syserror ={v} {CLOBBER};
+  return _25;
+
+}
+
+
+
+;; Function thefunction (thefunction, funcdef_no=72, decl_uid=4592, cgraph_uid=72, symbol_order=97)
+
+Function found to be nothrow: thefunction
+thefunction (double x, double omegan, int select)
+{
+  double _1;
+  double _2;
+  double _3;
+  double _4;
+  double _5;
+  double _6;
+  double _7;
+  double _8;
+  double _9;
+  double _10;
+  double _17;
+  double _19;
+  double _21;
+  double _22;
+
+  <bb 2> [0.00%]:
+  switch (select_12(D)) <default: <L3> [0.00%], case 0: <L0> [0.00%], case 1: <L1> [0.00%], case 2: <L2> [0.00%]>
+
+<L0> [0.00%]:
+  _1 = x_13(D) + 1.0e+0;
+  _21 = pow (_1, x_13(D));
+  goto <bb 7>; [0.00%]
+
+<L1> [0.00%]:
+  _2 = x_13(D) + 1.0e+0;
+  _3 = pow (_2, x_13(D));
+  _4 = omegan_16(D) * x_13(D);
+  _5 = cos (_4);
+  _19 = _3 * _5;
+  goto <bb 7>; [0.00%]
+
+<L2> [0.00%]:
+  _6 = x_13(D) + 1.0e+0;
+  _7 = pow (_6, x_13(D));
+  _8 = omegan_16(D) * x_13(D);
+  _9 = sin (_8);
+  _17 = _7 * _9;
+  goto <bb 7>; [0.00%]
+
+<L3> [0.00%]:
+  _22 = 0.0;
+
+  <bb 7> [0.00%]:
+  # _10 = PHI <_21(3), _19(4), _17(5), _22(6)>
+  return _10;
+
+}
+
+
+
+;; Function TrapezoidIntegrate (TrapezoidIntegrate, funcdef_no=71, decl_uid=4588, cgraph_uid=71, symbol_order=96)
+
+Function found to be nothrow: TrapezoidIntegrate
+TrapezoidIntegrate (double x0, double x1, int nsteps, double omegan, int select)
+{
+  double rvalue;
+  double dx;
+  double x;
+  double _1;
+  double _2;
+  double _3;
+  double _4;
+  double _5;
+  double _6;
+  double _27;
+  double _31;
+
+  <bb 2> [0.00%]:
+  x_14 = x0_13(D);
+  _1 = x1_15(D) - x0_13(D);
+  _2 = (double) nsteps_16(D);
+  dx_17 = _1 / _2;
+  _3 = thefunction (x0_13(D), omegan_19(D), select_20(D));
+  rvalue_22 = _3 * 5.0e-1;
+  if (nsteps_16(D) != 1)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 3> [0.00%]:
+  nsteps_23 = nsteps_16(D) + -1;
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  x_25 = x_8 + dx_17;
+  _27 = thefunction (x_25, omegan_19(D), select_20(D));
+  rvalue_28 = _27 + rvalue_9;
+
+  <bb 5> [0.00%]:
+  # nsteps_7 = PHI <nsteps_23(3), nsteps_24(4)>
+  # x_8 = PHI <x_14(3), x_25(4)>
+  # rvalue_9 = PHI <rvalue_22(3), rvalue_28(4)>
+  nsteps_24 = nsteps_7 + -1;
+  if (nsteps_24 != 0)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 6> [0.00%]:
+  # rvalue_10 = PHI <rvalue_22(2), rvalue_9(5)>
+  _4 = thefunction (x1_15(D), omegan_19(D), select_20(D));
+  _5 = _4 * 5.0e-1;
+  _6 = rvalue_10 + _5;
+  rvalue_30 = dx_17 * _6;
+  _31 = rvalue_30;
+  return _31;
+
+}
+
+
+
+;; Function DoFPUTransIteration (DoFPUTransIteration, funcdef_no=70, decl_uid=4582, cgraph_uid=70, symbol_order=95)
+
+Function found to be nothrow: DoFPUTransIteration
+DoFPUTransIteration (fardouble * abase, fardouble * bbase, long unsigned int arraysize)
+{
+  long unsigned int elapsed;
+  long unsigned int i;
+  double omega;
+  double _1;
+  double _2;
+  double _3;
+  double _4;
+  long unsigned int _5;
+  fardouble * _6;
+  double _7;
+  double _8;
+  double _9;
+  long unsigned int _10;
+  fardouble * _11;
+  double _12;
+  long unsigned int _25;
+
+  <bb 2> [0.00%]:
+  elapsed_17 = StartStopwatch ();
+  _1 = TrapezoidIntegrate (0.0, 2.0e+0, 200, 0.0, 0);
+  _2 = _1 * 5.0e-1;
+  *abase_19(D) = _2;
+  omega_21 = 3.141592653589793115997963468544185161590576171875e+0;
+  i_22 = 1;
+  goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _3 = (double) i_13;
+  _4 = omega_21 * _3;
+  _5 = i_13 * 8;
+  _6 = abase_19(D) + _5;
+  _7 = TrapezoidIntegrate (0.0, 2.0e+0, 200, _4, 1);
+  *_6 = _7;
+  _8 = (double) i_13;
+  _9 = omega_21 * _8;
+  _10 = i_13 * 8;
+  _11 = bbase_28(D) + _10;
+  _12 = TrapezoidIntegrate (0.0, 2.0e+0, 200, _9, 2);
+  *_11 = _12;
+  i_31 = i_13 + 1;
+
+  <bb 4> [0.00%]:
+  # i_13 = PHI <i_22(2), i_31(3)>
+  if (i_13 < arraysize_23(D))
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 5> [0.00%]:
+  _25 = StopStopwatch (elapsed_17);
+  return _25;
+
+}
+
+
+
+;; Function create_text_line (create_text_line, funcdef_no=90, decl_uid=4660, cgraph_uid=90, symbol_order=115)
+
+Function found to be nothrow: create_text_line
+create_text_line (farchar * dt, long int nchars)
+{
+  farchar * wordptr;
+  char myword[40];
+  long int tomove;
+  long int charssofar;
+  unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long int _6;
+  long int _7;
+  long unsigned int tomove.157_8;
+  sizetype tomove.158_9;
+
+  <bb 2> [0.00%]:
+  charssofar_14 = 0;
+
+  <bb 3> [0.00%]:
+  # dt_10 = PHI <dt_15(D)(2), dt_26(5)>
+  # charssofar_11 = PHI <charssofar_14(2), charssofar_25(5)>
+  _1 = abs_randwc (50);
+  wordptr_18 = wordcatarray[_1];
+  _2 = strlen (wordptr_18);
+  _3 = _2 + 1;
+  MoveMemory (&myword, wordptr_18, _3);
+  _4 = strlen (&myword);
+  _5 = _4 + 1;
+  tomove_20 = (long int) _5;
+  _6 = tomove_20 + -1;
+  myword[_6] = 32;
+  _7 = tomove_20 + charssofar_11;
+  if (nchars_22(D) < _7)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  tomove_23 = nchars_22(D) - charssofar_11;
+
+  <bb 5> [0.00%]:
+  # tomove_12 = PHI <tomove_20(3), tomove_23(4)>
+  tomove.157_8 = (long unsigned int) tomove_12;
+  MoveMemory (dt_10, &myword, tomove.157_8);
+  charssofar_25 = charssofar_11 + tomove_12;
+  tomove.158_9 = (sizetype) tomove_12;
+  dt_26 = dt_10 + tomove.158_9;
+  if (charssofar_25 < nchars_22(D))
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 6> [0.00%]:
+  myword ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function create_text_block (create_text_block, funcdef_no=91, decl_uid=4664, cgraph_uid=91, symbol_order=116)
+
+Function found to be nothrow: create_text_block
+create_text_block (farchar * tb, long unsigned int tblen, short unsigned int maxlinlen)
+{
+  long unsigned int linelen;
+  long unsigned int bytessofar;
+  int _1;
+  int _2;
+  unsigned int _3;
+  unsigned int _4;
+  unsigned int _5;
+  long unsigned int _6;
+  long int linelen.155_7;
+  sizetype _8;
+  farchar * tb.156_9;
+
+  <bb 2> [0.00%]:
+  bytessofar_15 = 0;
+
+  <bb 3> [0.00%]:
+  # tb_10 = PHI <tb_16(D)(2), tb_25(7)>
+  # bytessofar_11 = PHI <bytessofar_15(2), bytessofar_27(7)>
+  _1 = (int) maxlinlen_18(D);
+  _2 = _1 + -6;
+  _3 = (unsigned int) _2;
+  _4 = abs_randwc (_3);
+  _5 = _4 + 6;
+  linelen_20 = (long unsigned int) _5;
+  _6 = linelen_20 + bytessofar_11;
+  if (tblen_21(D) < _6)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  linelen_22 = tblen_21(D) - bytessofar_11;
+
+  <bb 5> [0.00%]:
+  # linelen_12 = PHI <linelen_20(3), linelen_22(4)>
+  if (linelen_12 > 1)
+    goto <bb 6>; [0.00%]
+  else
+    goto <bb 7>; [0.00%]
+
+  <bb 6> [0.00%]:
+  linelen.155_7 = (long int) linelen_12;
+  create_text_line (tb_10, linelen.155_7);
+
+  <bb 7> [0.00%]:
+  _8 = linelen_12 + 18446744073709551615;
+  tb_24 = tb_10 + _8;
+  tb.156_9 = tb_24;
+  tb_25 = tb.156_9 + 1;
+  *tb.156_9 = 10;
+  bytessofar_27 = bytessofar_11 + linelen_12;
+  if (bytessofar_27 < tblen_21(D))
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function read_data_file (read_data_file, funcdef_no=110, decl_uid=4723, cgraph_uid=110, symbol_order=135)
+
+Function found to be nothrow: read_data_file
+read_data_file ()
+{
+  int val8;
+  int val7;
+  int val6;
+  int val5;
+  int val4;
+  int val3;
+  int val2;
+  int val1;
+  int vals_read;
+  int row;
+  int i;
+  int element;
+  int patt;
+  int youtsize;
+  int yinsize;
+  int xinsize;
+  struct FILE * infile;
+  char * inpath.168_1;
+  int numpats.169_2;
+  int xinsize.170_3;
+  int val1.171_4;
+  double _5;
+  int val2.172_6;
+  double _7;
+  int val3.173_8;
+  double _9;
+  int val4.174_10;
+  double _11;
+  int val5.175_12;
+  double _13;
+  int yinsize.176_14;
+  double _15;
+  double _16;
+  int val1.177_17;
+  double _18;
+  int val2.178_19;
+  double _20;
+  int val3.179_21;
+  double _22;
+  int val4.180_23;
+  double _24;
+  int val5.181_25;
+  double _26;
+  int val6.182_27;
+  double _28;
+  int val7.183_29;
+  double _30;
+  int val8.184_31;
+  double _32;
+  int numpats.185_33;
+  int _37;
+  int _55;
+  int _97;
+  int _99;
+  int _101;
+  int _103;
+
+  <bb 2> [0.00%]:
+  inpath.168_1 = inpath;
+  infile_47 = fopen (inpath.168_1, "r");
+  if (infile_47 == 0B)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  printf ("\n CPU:NNET--error in opening file!");
+  _103 = -1;
+  goto <bb 26>; [0.00%]
+
+  <bb 4> [0.00%]:
+  vals_read_49 = fscanf (infile_47, "%d  %d  %d", &xinsize, &yinsize, &youtsize);
+  if (vals_read_49 != 3)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  printf ("\n CPU:NNET -- Should read 3 items in line one; did read %d", vals_read_49);
+  _101 = -1;
+  goto <bb 26>; [0.00%]
+
+  <bb 6> [0.00%]:
+  vals_read_51 = fscanf (infile_47, "%d", &numpats);
+  if (vals_read_51 != 1)
+    goto <bb 7>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 7> [0.00%]:
+  printf ("\n CPU:NNET -- Should read 1 item in line 2; did read %d", vals_read_51);
+  _99 = -1;
+  goto <bb 26>; [0.00%]
+
+  <bb 8> [0.00%]:
+  numpats.169_2 = numpats;
+  if (numpats.169_2 > 10)
+    goto <bb 9>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 9> [0.00%]:
+  numpats = 10;
+
+  <bb 10> [0.00%]:
+  patt_53 = 0;
+  goto <bb 24>; [0.00%]
+
+  <bb 11> [0.00%]:
+  element_56 = 0;
+  row_57 = 0;
+  goto <bb 15>; [0.00%]
+
+  <bb 12> [0.00%]:
+  vals_read_83 = fscanf (infile_47, "%d  %d  %d  %d  %d", &val1, &val2, &val3, &val4, &val5);
+  if (vals_read_83 != 5)
+    goto <bb 13>; [0.00%]
+  else
+    goto <bb 14>; [0.00%]
+
+  <bb 13> [0.00%]:
+  printf ("\n CPU:NNET -- failure in reading input!");
+  _97 = -1;
+  goto <bb 26>; [0.00%]
+
+  <bb 14> [0.00%]:
+  xinsize.170_3 = xinsize;
+  element_84 = row_36 * xinsize.170_3;
+  val1.171_4 = val1;
+  _5 = (double) val1.171_4;
+  in_pats[patt_34][element_84] = _5;
+  element_86 = element_84 + 1;
+  val2.172_6 = val2;
+  _7 = (double) val2.172_6;
+  in_pats[patt_34][element_86] = _7;
+  element_88 = element_86 + 1;
+  val3.173_8 = val3;
+  _9 = (double) val3.173_8;
+  in_pats[patt_34][element_88] = _9;
+  element_90 = element_88 + 1;
+  val4.174_10 = val4;
+  _11 = (double) val4.174_10;
+  in_pats[patt_34][element_90] = _11;
+  element_92 = element_90 + 1;
+  val5.175_12 = val5;
+  _13 = (double) val5.175_12;
+  in_pats[patt_34][element_92] = _13;
+  element_94 = element_92 + 1;
+  row_95 = row_36 + 1;
+
+  <bb 15> [0.00%]:
+  # row_36 = PHI <row_57(11), row_95(14)>
+  yinsize.176_14 = yinsize;
+  if (row_36 < yinsize.176_14)
+    goto <bb 12>; [0.00%]
+  else
+    goto <bb 16>; [0.00%]
+
+  <bb 16> [0.00%]:
+  i_58 = 0;
+  goto <bb 22>; [0.00%]
+
+  <bb 17> [0.00%]:
+  _15 = in_pats[patt_34][i_35];
+  if (_15 >= 9.0000000000000002220446049250313080847263336181640625e-1)
+    goto <bb 18>; [0.00%]
+  else
+    goto <bb 19>; [0.00%]
+
+  <bb 18> [0.00%]:
+  in_pats[patt_34][i_35] = 9.0000000000000002220446049250313080847263336181640625e-1;
+
+  <bb 19> [0.00%]:
+  _16 = in_pats[patt_34][i_35];
+  if (_16 <= 1.000000000000000055511151231257827021181583404541015625e-1)
+    goto <bb 20>; [0.00%]
+  else
+    goto <bb 21>; [0.00%]
+
+  <bb 20> [0.00%]:
+  in_pats[patt_34][i_35] = 1.000000000000000055511151231257827021181583404541015625e-1;
+
+  <bb 21> [0.00%]:
+  i_81 = i_35 + 1;
+
+  <bb 22> [0.00%]:
+  # i_35 = PHI <i_58(16), i_81(21)>
+  if (i_35 <= 34)
+    goto <bb 17>; [0.00%]
+  else
+    goto <bb 23>; [0.00%]
+
+  <bb 23> [0.00%]:
+  element_59 = 0;
+  vals_read_61 = fscanf (infile_47, "%d  %d  %d  %d  %d  %d  %d  %d", &val1, &val2, &val3, &val4, &val5, &val6, &val7, &val8);
+  val1.177_17 = val1;
+  _18 = (double) val1.177_17;
+  out_pats[patt_34][element_59] = _18;
+  element_63 = element_59 + 1;
+  val2.178_19 = val2;
+  _20 = (double) val2.178_19;
+  out_pats[patt_34][element_63] = _20;
+  element_65 = element_63 + 1;
+  val3.179_21 = val3;
+  _22 = (double) val3.179_21;
+  out_pats[patt_34][element_65] = _22;
+  element_67 = element_65 + 1;
+  val4.180_23 = val4;
+  _24 = (double) val4.180_23;
+  out_pats[patt_34][element_67] = _24;
+  element_69 = element_67 + 1;
+  val5.181_25 = val5;
+  _26 = (double) val5.181_25;
+  out_pats[patt_34][element_69] = _26;
+  element_71 = element_69 + 1;
+  val6.182_27 = val6;
+  _28 = (double) val6.182_27;
+  out_pats[patt_34][element_71] = _28;
+  element_73 = element_71 + 1;
+  val7.183_29 = val7;
+  _30 = (double) val7.183_29;
+  out_pats[patt_34][element_73] = _30;
+  element_75 = element_73 + 1;
+  val8.184_31 = val8;
+  _32 = (double) val8.184_31;
+  out_pats[patt_34][element_75] = _32;
+  element_77 = element_75 + 1;
+  patt_78 = patt_34 + 1;
+
+  <bb 24> [0.00%]:
+  # patt_34 = PHI <patt_53(10), patt_78(23)>
+  numpats.185_33 = numpats;
+  if (patt_34 < numpats.185_33)
+    goto <bb 11>; [0.00%]
+  else
+    goto <bb 25>; [0.00%]
+
+  <bb 25> [0.00%]:
+  fclose (infile_47);
+  _55 = 0;
+
+  <bb 26> [0.00%]:
+  # _37 = PHI <_103(3), _101(5), _99(7), _97(13), _55(25)>
+  xinsize ={v} {CLOBBER};
+  yinsize ={v} {CLOBBER};
+  youtsize ={v} {CLOBBER};
+  val1 ={v} {CLOBBER};
+  val2 ={v} {CLOBBER};
+  val3 ={v} {CLOBBER};
+  val4 ={v} {CLOBBER};
+  val5 ={v} {CLOBBER};
+  val6 ={v} {CLOBBER};
+  val7 ={v} {CLOBBER};
+  val8 ={v} {CLOBBER};
+  return _37;
+
+}
+
+
+
+;; Function do_mid_forward (do_mid_forward, funcdef_no=97, decl_uid=4705, cgraph_uid=97, symbol_order=122)
+
+Function found to be nothrow: do_mid_forward
+do_mid_forward (int patt)
+{
+  int i;
+  int neurode;
+  double sum;
+  double _1;
+  double _2;
+  double _3;
+  double _4;
+  double _5;
+  double _6;
+
+  <bb 2> [0.00%]:
+  neurode_11 = 0;
+  goto <bb 7>; [0.00%]
+
+  <bb 3> [0.00%]:
+  sum_13 = 0.0;
+  i_14 = 0;
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _1 = mid_wts[neurode_8][i_9];
+  _2 = in_pats[patt_19(D)][i_9];
+  _3 = _1 * _2;
+  sum_20 = sum_7 + _3;
+  i_21 = i_9 + 1;
+
+  <bb 5> [0.00%]:
+  # sum_7 = PHI <sum_13(3), sum_20(4)>
+  # i_9 = PHI <i_14(3), i_21(4)>
+  if (i_9 <= 34)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 6> [0.00%]:
+  _4 = -sum_7;
+  _5 = exp (_4);
+  _6 = _5 + 1.0e+0;
+  sum_16 = 1.0e+0 / _6;
+  mid_out[neurode_8] = sum_16;
+  neurode_18 = neurode_8 + 1;
+
+  <bb 7> [0.00%]:
+  # neurode_8 = PHI <neurode_11(2), neurode_18(6)>
+  if (neurode_8 <= 7)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function do_out_forward (do_out_forward, funcdef_no=98, decl_uid=4706, cgraph_uid=98, symbol_order=123)
+
+Function found to be nothrow: do_out_forward
+do_out_forward ()
+{
+  int i;
+  int neurode;
+  double sum;
+  double _1;
+  double _2;
+  double _3;
+  double _4;
+  double _5;
+  double _6;
+
+  <bb 2> [0.00%]:
+  neurode_11 = 0;
+  goto <bb 7>; [0.00%]
+
+  <bb 3> [0.00%]:
+  sum_13 = 0.0;
+  i_14 = 0;
+  goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _1 = out_wts[neurode_8][i_9];
+  _2 = mid_out[i_9];
+  _3 = _1 * _2;
+  sum_19 = sum_7 + _3;
+  i_20 = i_9 + 1;
+
+  <bb 5> [0.00%]:
+  # sum_7 = PHI <sum_13(3), sum_19(4)>
+  # i_9 = PHI <i_14(3), i_20(4)>
+  if (i_9 <= 7)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 6> [0.00%]:
+  _4 = -sum_7;
+  _5 = exp (_4);
+  _6 = _5 + 1.0e+0;
+  sum_16 = 1.0e+0 / _6;
+  out_out[neurode_8] = sum_16;
+  neurode_18 = neurode_8 + 1;
+
+  <bb 7> [0.00%]:
+  # neurode_8 = PHI <neurode_11(2), neurode_18(6)>
+  if (neurode_8 <= 7)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function do_forward_pass (do_forward_pass, funcdef_no=99, decl_uid=4710, cgraph_uid=99, symbol_order=124)
+
+Function found to be nothrow: do_forward_pass
+do_forward_pass (int patt)
+{
+  <bb 2> [0.00%]:
+  do_mid_forward (patt_2(D));
+  do_out_forward ();
+  return;
+
+}
+
+
+
+;; Function DoNNetIteration (DoNNetIteration, funcdef_no=96, decl_uid=4703, cgraph_uid=96, symbol_order=121)
+
+Function found to be nothrow: DoNNetIteration
+DoNNetIteration (long unsigned int nloops)
+{
+  int patt;
+  long unsigned int elapsed;
+  int iteration_count.186_1;
+  int _2;
+  int numpats.187_3;
+  int numpasses.188_4;
+  int _5;
+  int _6;
+  int learned.189_7;
+  long unsigned int nloops.190_8;
+  long unsigned int _20;
+
+  <bb 2> [0.00%]:
+  elapsed_16 = StartStopwatch ();
+  goto <bb 9>; [0.00%]
+
+  <bb 3> [0.00%]:
+  randomize_wts ();
+  zero_changes ();
+  iteration_count = 1;
+  learned = 0;
+  numpasses = 0;
+  goto <bb 8>; [0.00%]
+
+  <bb 4> [0.00%]:
+  patt_26 = 0;
+  goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  worst_error = 0.0;
+  move_wt_changes ();
+  do_forward_pass (patt_10);
+  do_back_pass (patt_10);
+  iteration_count.186_1 = iteration_count;
+  _2 = iteration_count.186_1 + 1;
+  iteration_count = _2;
+  patt_35 = patt_10 + 1;
+
+  <bb 6> [0.00%]:
+  # patt_10 = PHI <patt_26(4), patt_35(5)>
+  numpats.187_3 = numpats;
+  if (patt_10 < numpats.187_3)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 7>; [0.00%]
+
+  <bb 7> [0.00%]:
+  numpasses.188_4 = numpasses;
+  _5 = numpasses.188_4 + 1;
+  numpasses = _5;
+  _6 = check_out_error ();
+  learned = _6;
+
+  <bb 8> [0.00%]:
+  learned.189_7 = learned;
+  if (learned.189_7 == 0)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 9>; [0.00%]
+
+  <bb 9> [0.00%]:
+  # nloops_9 = PHI <nloops_17(D)(2), nloops_18(8)>
+  nloops.190_8 = nloops_9;
+  nloops_18 = nloops.190_8 + 18446744073709551615;
+  if (nloops.190_8 != 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 10> [0.00%]:
+  _20 = StopStopwatch (elapsed_16);
+  return _20;
+
+}
+
+
+
+;; Function DoNumSort (DoNumSort, funcdef_no=52, decl_uid=4490, cgraph_uid=52, symbol_order=77)
+
+Function found to be nothrow: DoNumSort
+DoNumSort ()
+{
+  int systemerror;
+  char * errorcontext;
+  double iterations;
+  long int accumtime;
+  farlong * arraybase;
+  struct SortStruct * numsortstruct;
+  int _1;
+  short unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  int systemerror.0_7;
+  int systemerror.1_8;
+  short unsigned int _9;
+  unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int global_min_ticks.2_13;
+  short unsigned int _14;
+  short unsigned int _15;
+  short unsigned int _16;
+  short unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  int systemerror.3_22;
+  int systemerror.4_23;
+  short unsigned int _24;
+  unsigned int _25;
+  long unsigned int _26;
+  long unsigned int accumtime.5_27;
+  long unsigned int _28;
+  long unsigned int accumtime.6_29;
+  long unsigned int _30;
+  long unsigned int _31;
+  short unsigned int _32;
+  double _33;
+  double _34;
+  long unsigned int accumtime.7_35;
+  double _36;
+  double _37;
+  int _38;
+  long unsigned int _69;
+
+  <bb 2> [0.00%]:
+  numsortstruct_47 = &global_numsortstruct;
+  errorcontext_48 = "CPU:Numeric Sort";
+  _1 = numsortstruct_47->adjust;
+  if (_1 == 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 9>; [0.00%]
+
+  <bb 3> [0.00%]:
+  numsortstruct_47->numarrays = 1;
+
+  <bb 4> [0.00%]:
+  _2 = numsortstruct_47->numarrays;
+  _3 = (long unsigned int) _2;
+  _4 = numsortstruct_47->arraysize;
+  _5 = _3 * _4;
+  _6 = _5 * 8;
+  arraybase_57 = AllocateMemory (_6, &systemerror);
+  systemerror.0_7 = systemerror;
+  if (systemerror.0_7 != 0)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  systemerror.1_8 = systemerror;
+  ReportError (errorcontext_48, systemerror.1_8);
+  FreeMemory (arraybase_57, &systemerror);
+  ErrorExit ();
+
+  <bb 6> [0.00%]:
+  _9 = numsortstruct_47->numarrays;
+  _10 = (unsigned int) _9;
+  _11 = numsortstruct_47->arraysize;
+  _12 = DoNumSortIteration (arraybase_57, _11, _10);
+  global_min_ticks.2_13 = global_min_ticks;
+  if (_12 > global_min_ticks.2_13)
+    goto <bb 11>; [0.00%]
+  else
+    goto <bb 7>; [0.00%]
+
+  <bb 7> [0.00%]:
+  FreeMemory (arraybase_57, &systemerror);
+  _14 = numsortstruct_47->numarrays;
+  _15 = _14;
+  _16 = _15 + 1;
+  numsortstruct_47->numarrays = _16;
+  if (_15 > 10000)
+    goto <bb 8>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 8> [0.00%]:
+  printf ("CPU:NSORT -- NUMNUMARRAYS hit.\n");
+  ErrorExit ();
+  goto <bb 4>; [0.00%]
+
+  <bb 9> [0.00%]:
+  _17 = numsortstruct_47->numarrays;
+  _18 = (long unsigned int) _17;
+  _19 = numsortstruct_47->arraysize;
+  _20 = _18 * _19;
+  _21 = _20 * 8;
+  arraybase_51 = AllocateMemory (_21, &systemerror);
+  systemerror.3_22 = systemerror;
+  if (systemerror.3_22 != 0)
+    goto <bb 10>; [0.00%]
+  else
+    goto <bb 11>; [0.00%]
+
+  <bb 10> [0.00%]:
+  systemerror.4_23 = systemerror;
+  ReportError (errorcontext_48, systemerror.4_23);
+  FreeMemory (arraybase_51, &systemerror);
+  ErrorExit ();
+
+  <bb 11> [0.00%]:
+  # arraybase_39 = PHI <arraybase_57(6), arraybase_51(9), arraybase_51(10)>
+  accumtime_66 = 0;
+  iterations_67 = 0.0;
+
+  <bb 12> [0.00%]:
+  # accumtime_40 = PHI <accumtime_66(11), accumtime_70(12)>
+  # iterations_41 = PHI <iterations_67(11), iterations_71(12)>
+  _24 = numsortstruct_47->numarrays;
+  _25 = (unsigned int) _24;
+  _26 = numsortstruct_47->arraysize;
+  _69 = DoNumSortIteration (arraybase_39, _26, _25);
+  accumtime.5_27 = (long unsigned int) accumtime_40;
+  _28 = _69 + accumtime.5_27;
+  accumtime_70 = (long int) _28;
+  iterations_71 = iterations_41 + 1.0e+0;
+  accumtime.6_29 = (long unsigned int) accumtime_70;
+  _30 = TicksToSecs (accumtime.6_29);
+  _31 = numsortstruct_47->request_secs;
+  if (_30 < _31)
+    goto <bb 12>; [0.00%]
+  else
+    goto <bb 13>; [0.00%]
+
+  <bb 13> [0.00%]:
+  FreeMemory (arraybase_39, &systemerror);
+  _32 = numsortstruct_47->numarrays;
+  _33 = (double) _32;
+  _34 = iterations_71 * _33;
+  accumtime.7_35 = (long unsigned int) accumtime_70;
+  _36 = TicksToFracSecs (accumtime.7_35);
+  _37 = _34 / _36;
+  numsortstruct_47->sortspersec = _37;
+  _38 = numsortstruct_47->adjust;
+  if (_38 == 0)
+    goto <bb 14>; [0.00%]
+  else
+    goto <bb 15>; [0.00%]
+
+  <bb 14> [0.00%]:
+  numsortstruct_47->adjust = 1;
+
+  <bb 15> [0.00%]:
+  systemerror ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function DoStringSort (DoStringSort, funcdef_no=57, decl_uid=4508, cgraph_uid=57, symbol_order=82)
+
+Function found to be nothrow: DoStringSort
+DoStringSort ()
+{
+  int systemerror;
+  char * errorcontext;
+  double iterations;
+  long int accumtime;
+  faruchar * arraybase;
+  struct SortStruct * strsortstruct;
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  short unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  int systemerror.14_7;
+  int systemerror.15_8;
+  long unsigned int _9;
+  short unsigned int _10;
+  unsigned int _11;
+  long unsigned int _12;
+  long unsigned int global_min_ticks.16_13;
+  short unsigned int _14;
+  short unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  short unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  int systemerror.17_21;
+  int systemerror.18_22;
+  long unsigned int _23;
+  short unsigned int _24;
+  unsigned int _25;
+  long unsigned int accumtime.19_26;
+  long unsigned int _27;
+  short unsigned int _28;
+  double _29;
+  long unsigned int accumtime.20_30;
+  long unsigned int _31;
+  long unsigned int _32;
+  long unsigned int accumtime.21_33;
+  double _34;
+  double _35;
+  int _36;
+  long unsigned int _63;
+
+  <bb 2> [0.00%]:
+  strsortstruct_45 = &global_strsortstruct;
+  errorcontext_46 = "CPU:String Sort";
+  _1 = strsortstruct_45->adjust;
+  if (_1 == 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 3> [0.00%]:
+  strsortstruct_45->numarrays = 1;
+
+  <bb 4> [0.00%]:
+  _2 = strsortstruct_45->arraysize;
+  _3 = _2 + 100;
+  _4 = strsortstruct_45->numarrays;
+  _5 = (long unsigned int) _4;
+  _6 = _3 * _5;
+  arraybase_54 = AllocateMemory (_6, &systemerror);
+  systemerror.14_7 = systemerror;
+  if (systemerror.14_7 != 0)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  systemerror.15_8 = systemerror;
+  ReportError (errorcontext_46, systemerror.15_8);
+  ErrorExit ();
+
+  <bb 6> [0.00%]:
+  _9 = strsortstruct_45->arraysize;
+  _10 = strsortstruct_45->numarrays;
+  _11 = (unsigned int) _10;
+  _12 = DoStringSortIteration (arraybase_54, _11, _9);
+  global_min_ticks.16_13 = global_min_ticks;
+  if (_12 > global_min_ticks.16_13)
+    goto <bb 10>; [0.00%]
+  else
+    goto <bb 7>; [0.00%]
+
+  <bb 7> [0.00%]:
+  FreeMemory (arraybase_54, &systemerror);
+  _14 = strsortstruct_45->numarrays;
+  _15 = _14 + 1;
+  strsortstruct_45->numarrays = _15;
+  goto <bb 4>; [0.00%]
+
+  <bb 8> [0.00%]:
+  _16 = strsortstruct_45->arraysize;
+  _17 = _16 + 100;
+  _18 = strsortstruct_45->numarrays;
+  _19 = (long unsigned int) _18;
+  _20 = _17 * _19;
+  arraybase_49 = AllocateMemory (_20, &systemerror);
+  systemerror.17_21 = systemerror;
+  if (systemerror.17_21 != 0)
+    goto <bb 9>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 9> [0.00%]:
+  systemerror.18_22 = systemerror;
+  ReportError (errorcontext_46, systemerror.18_22);
+  ErrorExit ();
+
+  <bb 10> [0.00%]:
+  # arraybase_37 = PHI <arraybase_54(6), arraybase_49(8), arraybase_49(9)>
+  accumtime_60 = 0;
+  iterations_61 = 0.0;
+
+  <bb 11> [0.00%]:
+  # accumtime_38 = PHI <accumtime_60(10), accumtime_64(11)>
+  # iterations_39 = PHI <iterations_61(10), iterations_65(11)>
+  _23 = strsortstruct_45->arraysize;
+  _24 = strsortstruct_45->numarrays;
+  _25 = (unsigned int) _24;
+  _63 = DoStringSortIteration (arraybase_37, _25, _23);
+  accumtime.19_26 = (long unsigned int) accumtime_38;
+  _27 = _63 + accumtime.19_26;
+  accumtime_64 = (long int) _27;
+  _28 = strsortstruct_45->numarrays;
+  _29 = (double) _28;
+  iterations_65 = iterations_39 + _29;
+  accumtime.20_30 = (long unsigned int) accumtime_64;
+  _31 = TicksToSecs (accumtime.20_30);
+  _32 = strsortstruct_45->request_secs;
+  if (_31 < _32)
+    goto <bb 11>; [0.00%]
+  else
+    goto <bb 12>; [0.00%]
+
+  <bb 12> [0.00%]:
+  FreeMemory (arraybase_37, &systemerror);
+  accumtime.21_33 = (long unsigned int) accumtime_64;
+  _34 = TicksToFracSecs (accumtime.21_33);
+  _35 = iterations_65 / _34;
+  strsortstruct_45->sortspersec = _35;
+  _36 = strsortstruct_45->adjust;
+  if (_36 == 0)
+    goto <bb 13>; [0.00%]
+  else
+    goto <bb 14>; [0.00%]
+
+  <bb 13> [0.00%]:
+  strsortstruct_45->adjust = 1;
+
+  <bb 14> [0.00%]:
+  systemerror ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function DoBitops (DoBitops, funcdef_no=64, decl_uid=4543, cgraph_uid=64, symbol_order=89)
+
+Function found to be nothrow: DoBitops
+DoBitops ()
+{
+  int ticks;
+  int systemerror;
+  char * errorcontext;
+  double iterations;
+  long unsigned int accumtime;
+  long unsigned int nbitops;
+  farulong * bitoparraybase;
+  farulong * bitarraybase;
+  struct BitOpStruct * locbitopstruct;
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  int systemerror.28_4;
+  int systemerror.29_5;
+  long unsigned int _6;
+  long unsigned int _7;
+  int systemerror.30_8;
+  int systemerror.31_9;
+  long unsigned int _10;
+  long int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int global_min_ticks.32_14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  int systemerror.33_19;
+  int systemerror.34_20;
+  long unsigned int _21;
+  long unsigned int _22;
+  int systemerror.35_23;
+  int systemerror.36_24;
+  long unsigned int _25;
+  long int _26;
+  long unsigned int nbitops.37_27;
+  double _28;
+  long unsigned int _29;
+  long unsigned int _30;
+  double _31;
+  double _32;
+  int _33;
+  long unsigned int _74;
+
+  <bb 2> [0.00%]:
+  locbitopstruct_45 = &global_bitopstruct;
+  errorcontext_46 = "CPU:Bitfields";
+  _1 = locbitopstruct_45->adjust;
+  if (_1 == 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _2 = locbitopstruct_45->bitfieldarraysize;
+  _3 = _2 * 8;
+  bitarraybase_58 = AllocateMemory (_3, &systemerror);
+  systemerror.28_4 = systemerror;
+  if (systemerror.28_4 != 0)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  systemerror.29_5 = systemerror;
+  ReportError (errorcontext_46, systemerror.29_5);
+  ErrorExit ();
+
+  <bb 5> [0.00%]:
+  locbitopstruct_45->bitoparraysize = 30;
+
+  <bb 6> [0.00%]:
+  _6 = locbitopstruct_45->bitoparraysize;
+  _7 = _6 * 16;
+  bitoparraybase_63 = AllocateMemory (_7, &systemerror);
+  systemerror.30_8 = systemerror;
+  if (systemerror.30_8 != 0)
+    goto <bb 7>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 7> [0.00%]:
+  systemerror.31_9 = systemerror;
+  ReportError (errorcontext_46, systemerror.31_9);
+  FreeMemory (bitarraybase_58, &systemerror);
+  ErrorExit ();
+
+  <bb 8> [0.00%]:
+  _10 = locbitopstruct_45->bitoparraysize;
+  _11 = (long int) _10;
+  _12 = DoBitfieldIteration (bitarraybase_58, bitoparraybase_63, _11, &nbitops);
+  ticks_68 = (int) _12;
+  _13 = (long unsigned int) ticks_68;
+  global_min_ticks.32_14 = global_min_ticks;
+  if (_13 > global_min_ticks.32_14)
+    goto <bb 14>; [0.00%]
+  else
+    goto <bb 9>; [0.00%]
+
+  <bb 9> [0.00%]:
+  FreeMemory (bitoparraybase_63, &systemerror);
+  _15 = locbitopstruct_45->bitoparraysize;
+  _16 = _15 + 100;
+  locbitopstruct_45->bitoparraysize = _16;
+  goto <bb 6>; [0.00%]
+
+  <bb 10> [0.00%]:
+  _17 = locbitopstruct_45->bitfieldarraysize;
+  _18 = _17 * 8;
+  bitarraybase_49 = AllocateMemory (_18, &systemerror);
+  systemerror.33_19 = systemerror;
+  if (systemerror.33_19 != 0)
+    goto <bb 11>; [0.00%]
+  else
+    goto <bb 12>; [0.00%]
+
+  <bb 11> [0.00%]:
+  systemerror.34_20 = systemerror;
+  ReportError (errorcontext_46, systemerror.34_20);
+  ErrorExit ();
+
+  <bb 12> [0.00%]:
+  _21 = locbitopstruct_45->bitoparraysize;
+  _22 = _21 * 16;
+  bitoparraybase_53 = AllocateMemory (_22, &systemerror);
+  systemerror.35_23 = systemerror;
+  if (systemerror.35_23 != 0)
+    goto <bb 13>; [0.00%]
+  else
+    goto <bb 14>; [0.00%]
+
+  <bb 13> [0.00%]:
+  systemerror.36_24 = systemerror;
+  ReportError (errorcontext_46, systemerror.36_24);
+  FreeMemory (bitarraybase_49, &systemerror);
+  ErrorExit ();
+
+  <bb 14> [0.00%]:
+  # bitarraybase_34 = PHI <bitarraybase_58(8), bitarraybase_49(12), bitarraybase_49(13)>
+  # bitoparraybase_35 = PHI <bitoparraybase_63(8), bitoparraybase_53(12), bitoparraybase_53(13)>
+  accumtime_71 = 0;
+  iterations_72 = 0.0;
+
+  <bb 15> [0.00%]:
+  # accumtime_36 = PHI <accumtime_71(14), accumtime_75(15)>
+  # iterations_37 = PHI <iterations_72(14), iterations_76(15)>
+  _25 = locbitopstruct_45->bitoparraysize;
+  _26 = (long int) _25;
+  _74 = DoBitfieldIteration (bitarraybase_34, bitoparraybase_35, _26, &nbitops);
+  accumtime_75 = _74 + accumtime_36;
+  nbitops.37_27 = nbitops;
+  _28 = (double) nbitops.37_27;
+  iterations_76 = iterations_37 + _28;
+  _29 = TicksToSecs (accumtime_75);
+  _30 = locbitopstruct_45->request_secs;
+  if (_29 < _30)
+    goto <bb 15>; [0.00%]
+  else
+    goto <bb 16>; [0.00%]
+
+  <bb 16> [0.00%]:
+  FreeMemory (bitarraybase_34, &systemerror);
+  FreeMemory (bitoparraybase_35, &systemerror);
+  _31 = TicksToFracSecs (accumtime_75);
+  _32 = iterations_76 / _31;
+  locbitopstruct_45->bitopspersec = _32;
+  _33 = locbitopstruct_45->adjust;
+  if (_33 == 0)
+    goto <bb 17>; [0.00%]
+  else
+    goto <bb 18>; [0.00%]
+
+  <bb 17> [0.00%]:
+  locbitopstruct_45->adjust = 1;
+
+  <bb 18> [0.00%]:
+  nbitops ={v} {CLOBBER};
+  systemerror ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function DoEmFloat (DoEmFloat, funcdef_no=68, decl_uid=4565, cgraph_uid=68, symbol_order=93)
+
+Function found to be nothrow: DoEmFloat
+DoEmFloat ()
+{
+  long unsigned int loops;
+  int systemerror;
+  char * errorcontext;
+  long unsigned int tickcount;
+  double iterations;
+  long unsigned int accumtime;
+  struct InternalFPF * cbase;
+  struct InternalFPF * bbase;
+  struct InternalFPF * abase;
+  struct EmFloatStruct * locemfloatstruct;
+  long unsigned int _1;
+  long unsigned int _2;
+  int systemerror.50_3;
+  int systemerror.51_4;
+  long unsigned int _5;
+  long unsigned int _6;
+  int systemerror.52_7;
+  int systemerror.53_8;
+  long unsigned int _9;
+  long unsigned int _10;
+  int systemerror.54_11;
+  int systemerror.55_12;
+  long unsigned int _13;
+  int _14;
+  long unsigned int _15;
+  long unsigned int global_min_ticks.56_16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  double _23;
+  double _24;
+  double _25;
+  double _26;
+  int _27;
+  long unsigned int _72;
+
+  <bb 2> [0.00%]:
+  locemfloatstruct_39 = &global_emfloatstruct;
+  errorcontext_40 = "CPU:Floating Emulation";
+  _1 = locemfloatstruct_39->arraysize;
+  _2 = _1 * 12;
+  abase_43 = AllocateMemory (_2, &systemerror);
+  systemerror.50_3 = systemerror;
+  if (systemerror.50_3 != 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  systemerror.51_4 = systemerror;
+  ReportError (errorcontext_40, systemerror.51_4);
+  ErrorExit ();
+
+  <bb 4> [0.00%]:
+  _5 = locemfloatstruct_39->arraysize;
+  _6 = _5 * 12;
+  bbase_47 = AllocateMemory (_6, &systemerror);
+  systemerror.52_7 = systemerror;
+  if (systemerror.52_7 != 0)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  systemerror.53_8 = systemerror;
+  ReportError (errorcontext_40, systemerror.53_8);
+  FreeMemory (abase_43, &systemerror);
+  ErrorExit ();
+
+  <bb 6> [0.00%]:
+  _9 = locemfloatstruct_39->arraysize;
+  _10 = _9 * 12;
+  cbase_52 = AllocateMemory (_10, &systemerror);
+  systemerror.54_11 = systemerror;
+  if (systemerror.54_11 != 0)
+    goto <bb 7>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 7> [0.00%]:
+  systemerror.55_12 = systemerror;
+  ReportError (errorcontext_40, systemerror.55_12);
+  FreeMemory (abase_43, &systemerror);
+  FreeMemory (bbase_47, &systemerror);
+  ErrorExit ();
+
+  <bb 8> [0.00%]:
+  _13 = locemfloatstruct_39->arraysize;
+  SetupCPUEmFloatArrays (abase_43, bbase_47, cbase_52, _13);
+  _14 = locemfloatstruct_39->adjust;
+  if (_14 == 0)
+    goto <bb 9>; [0.00%]
+  else
+    goto <bb 14>; [0.00%]
+
+  <bb 9> [0.00%]:
+  locemfloatstruct_39->loops = 0;
+  loops_59 = 1;
+  goto <bb 13>; [0.00%]
+
+  <bb 10> [0.00%]:
+  _15 = locemfloatstruct_39->arraysize;
+  tickcount_61 = DoEmFloatIteration (abase_43, bbase_47, cbase_52, _15, loops_30);
+  global_min_ticks.56_16 = global_min_ticks;
+  if (tickcount_61 > global_min_ticks.56_16)
+    goto <bb 11>; [0.00%]
+  else
+    goto <bb 12>; [0.00%]
+
+  <bb 11> [0.00%]:
+  locemfloatstruct_39->loops = loops_30;
+  goto <bb 14>; [0.00%]
+
+  <bb 12> [0.00%]:
+  loops_62 = loops_30 * 2;
+
+  <bb 13> [0.00%]:
+  # loops_30 = PHI <loops_59(9), loops_62(12)>
+  if (loops_30 <= 499999)
+    goto <bb 10>; [0.00%]
+  else
+    goto <bb 14>; [0.00%]
+
+  <bb 14> [0.00%]:
+  _17 = locemfloatstruct_39->loops;
+  if (_17 == 0)
+    goto <bb 15>; [0.00%]
+  else
+    goto <bb 16>; [0.00%]
+
+  <bb 15> [0.00%]:
+  printf ("CPU:EMFPU -- CMPUEMFLOATLOOPMAX limit hit\n");
+  FreeMemory (abase_43, &systemerror);
+  FreeMemory (bbase_47, &systemerror);
+  FreeMemory (cbase_52, &systemerror);
+  ErrorExit ();
+
+  <bb 16> [0.00%]:
+  accumtime_69 = 0;
+  iterations_70 = 0.0;
+
+  <bb 17> [0.00%]:
+  # accumtime_28 = PHI <accumtime_69(16), accumtime_73(17)>
+  # iterations_29 = PHI <iterations_70(16), iterations_74(17)>
+  _18 = locemfloatstruct_39->loops;
+  _19 = locemfloatstruct_39->arraysize;
+  _72 = DoEmFloatIteration (abase_43, bbase_47, cbase_52, _19, _18);
+  accumtime_73 = _72 + accumtime_28;
+  iterations_74 = iterations_29 + 1.0e+0;
+  _20 = TicksToSecs (accumtime_73);
+  _21 = locemfloatstruct_39->request_secs;
+  if (_20 < _21)
+    goto <bb 17>; [0.00%]
+  else
+    goto <bb 18>; [0.00%]
+
+  <bb 18> [0.00%]:
+  FreeMemory (abase_43, &systemerror);
+  FreeMemory (bbase_47, &systemerror);
+  FreeMemory (cbase_52, &systemerror);
+  _22 = locemfloatstruct_39->loops;
+  _23 = (double) _22;
+  _24 = iterations_74 * _23;
+  _25 = TicksToFracSecs (accumtime_73);
+  _26 = _24 / _25;
+  locemfloatstruct_39->emflops = _26;
+  _27 = locemfloatstruct_39->adjust;
+  if (_27 == 0)
+    goto <bb 19>; [0.00%]
+  else
+    goto <bb 20>; [0.00%]
+
+  <bb 19> [0.00%]:
+  locemfloatstruct_39->adjust = 1;
+
+  <bb 20> [0.00%]:
+  systemerror ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function DoFourier (DoFourier, funcdef_no=69, decl_uid=4578, cgraph_uid=69, symbol_order=94)
+
+Function found to be nothrow: DoFourier
+DoFourier ()
+{
+  int systemerror;
+  char * errorcontext;
+  double iterations;
+  long unsigned int accumtime;
+  fardouble * bbase;
+  fardouble * abase;
+  struct FourierStruct * locfourierstruct;
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  int systemerror.57_4;
+  int systemerror.58_5;
+  long unsigned int _6;
+  long unsigned int _7;
+  int systemerror.59_8;
+  int systemerror.60_9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int global_min_ticks.61_12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  int systemerror.62_17;
+  int systemerror.63_18;
+  long unsigned int _19;
+  long unsigned int _20;
+  int systemerror.64_21;
+  int systemerror.65_22;
+  long unsigned int _23;
+  long unsigned int _24;
+  double _25;
+  double _26;
+  double _27;
+  long unsigned int _28;
+  long unsigned int _29;
+  double _30;
+  double _31;
+  int _32;
+  long unsigned int _73;
+
+  <bb 2> [0.00%]:
+  locfourierstruct_44 = &global_fourierstruct;
+  errorcontext_45 = "FPU:Transcendental";
+  _1 = locfourierstruct_44->adjust;
+  if (_1 == 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 3> [0.00%]:
+  locfourierstruct_44->arraysize = 100;
+
+  <bb 4> [0.00%]:
+  _2 = locfourierstruct_44->arraysize;
+  _3 = _2 * 8;
+  abase_58 = AllocateMemory (_3, &systemerror);
+  systemerror.57_4 = systemerror;
+  if (systemerror.57_4 != 0)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  systemerror.58_5 = systemerror;
+  ReportError (errorcontext_45, systemerror.58_5);
+  ErrorExit ();
+
+  <bb 6> [0.00%]:
+  _6 = locfourierstruct_44->arraysize;
+  _7 = _6 * 8;
+  bbase_62 = AllocateMemory (_7, &systemerror);
+  systemerror.59_8 = systemerror;
+  if (systemerror.59_8 != 0)
+    goto <bb 7>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 7> [0.00%]:
+  systemerror.60_9 = systemerror;
+  ReportError (errorcontext_45, systemerror.60_9);
+  FreeMemory (abase_58, &systemerror);
+  ErrorExit ();
+
+  <bb 8> [0.00%]:
+  _10 = locfourierstruct_44->arraysize;
+  _11 = DoFPUTransIteration (abase_58, bbase_62, _10);
+  global_min_ticks.61_12 = global_min_ticks;
+  if (_11 > global_min_ticks.61_12)
+    goto <bb 14>; [0.00%]
+  else
+    goto <bb 9>; [0.00%]
+
+  <bb 9> [0.00%]:
+  FreeMemory (abase_58, &systemerror);
+  FreeMemory (bbase_62, &systemerror);
+  _13 = locfourierstruct_44->arraysize;
+  _14 = _13 + 50;
+  locfourierstruct_44->arraysize = _14;
+  goto <bb 4>; [0.00%]
+
+  <bb 10> [0.00%]:
+  _15 = locfourierstruct_44->arraysize;
+  _16 = _15 * 8;
+  abase_48 = AllocateMemory (_16, &systemerror);
+  systemerror.62_17 = systemerror;
+  if (systemerror.62_17 != 0)
+    goto <bb 11>; [0.00%]
+  else
+    goto <bb 12>; [0.00%]
+
+  <bb 11> [0.00%]:
+  systemerror.63_18 = systemerror;
+  ReportError (errorcontext_45, systemerror.63_18);
+  ErrorExit ();
+
+  <bb 12> [0.00%]:
+  _19 = locfourierstruct_44->arraysize;
+  _20 = _19 * 8;
+  bbase_52 = AllocateMemory (_20, &systemerror);
+  systemerror.64_21 = systemerror;
+  if (systemerror.64_21 != 0)
+    goto <bb 13>; [0.00%]
+  else
+    goto <bb 14>; [0.00%]
+
+  <bb 13> [0.00%]:
+  systemerror.65_22 = systemerror;
+  ReportError (errorcontext_45, systemerror.65_22);
+  FreeMemory (abase_48, &systemerror);
+  ErrorExit ();
+
+  <bb 14> [0.00%]:
+  # abase_33 = PHI <abase_58(8), abase_48(12), abase_48(13)>
+  # bbase_34 = PHI <bbase_62(8), bbase_52(12), bbase_52(13)>
+  accumtime_70 = 0;
+  iterations_71 = 0.0;
+
+  <bb 15> [0.00%]:
+  # accumtime_35 = PHI <accumtime_70(14), accumtime_74(15)>
+  # iterations_36 = PHI <iterations_71(14), iterations_75(15)>
+  _23 = locfourierstruct_44->arraysize;
+  _73 = DoFPUTransIteration (abase_33, bbase_34, _23);
+  accumtime_74 = _73 + accumtime_35;
+  _24 = locfourierstruct_44->arraysize;
+  _25 = (double) _24;
+  _26 = _25 * 2.0e+0;
+  _27 = _26 - 1.0e+0;
+  iterations_75 = iterations_36 + _27;
+  _28 = TicksToSecs (accumtime_74);
+  _29 = locfourierstruct_44->request_secs;
+  if (_28 < _29)
+    goto <bb 15>; [0.00%]
+  else
+    goto <bb 16>; [0.00%]
+
+  <bb 16> [0.00%]:
+  FreeMemory (abase_33, &systemerror);
+  FreeMemory (bbase_34, &systemerror);
+  _30 = TicksToFracSecs (accumtime_74);
+  _31 = iterations_75 / _30;
+  locfourierstruct_44->fflops = _31;
+  _32 = locfourierstruct_44->adjust;
+  if (_32 == 0)
+    goto <bb 17>; [0.00%]
+  else
+    goto <bb 18>; [0.00%]
+
+  <bb 17> [0.00%]:
+  locfourierstruct_44->adjust = 1;
+
+  <bb 18> [0.00%]:
+  systemerror ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function DoAssign (DoAssign, funcdef_no=73, decl_uid=4600, cgraph_uid=73, symbol_order=98)
+
+Function found to be nothrow: DoAssign
+DoAssign ()
+{
+  double iterations;
+  long unsigned int accumtime;
+  int systemerror;
+  char * errorcontext;
+  farlong * arraybase;
+  struct AssignStruct * locassignstruct;
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  int systemerror.66_4;
+  int systemerror.67_5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int global_min_ticks.68_8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  int systemerror.69_13;
+  int systemerror.70_14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  double _19;
+  double _20;
+  double _21;
+  double _22;
+  int _23;
+  long unsigned int _52;
+
+  <bb 2> [0.00%]:
+  locassignstruct_32 = &global_assignstruct;
+  errorcontext_33 = "CPU:Assignment";
+  _1 = locassignstruct_32->adjust;
+  if (_1 == 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 3> [0.00%]:
+  locassignstruct_32->numarrays = 1;
+
+  <bb 4> [0.00%]:
+  _2 = locassignstruct_32->numarrays;
+  _3 = _2 * 81608;
+  arraybase_42 = AllocateMemory (_3, &systemerror);
+  systemerror.66_4 = systemerror;
+  if (systemerror.66_4 != 0)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  systemerror.67_5 = systemerror;
+  ReportError (errorcontext_33, systemerror.67_5);
+  FreeMemory (arraybase_42, &systemerror);
+  ErrorExit ();
+
+  <bb 6> [0.00%]:
+  _6 = locassignstruct_32->numarrays;
+  _7 = DoAssignIteration (arraybase_42, _6);
+  global_min_ticks.68_8 = global_min_ticks;
+  if (_7 > global_min_ticks.68_8)
+    goto <bb 10>; [0.00%]
+  else
+    goto <bb 7>; [0.00%]
+
+  <bb 7> [0.00%]:
+  FreeMemory (arraybase_42, &systemerror);
+  _9 = locassignstruct_32->numarrays;
+  _10 = _9 + 1;
+  locassignstruct_32->numarrays = _10;
+  goto <bb 4>; [0.00%]
+
+  <bb 8> [0.00%]:
+  _11 = locassignstruct_32->numarrays;
+  _12 = _11 * 81608;
+  arraybase_36 = AllocateMemory (_12, &systemerror);
+  systemerror.69_13 = systemerror;
+  if (systemerror.69_13 != 0)
+    goto <bb 9>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 9> [0.00%]:
+  systemerror.70_14 = systemerror;
+  ReportError (errorcontext_33, systemerror.70_14);
+  FreeMemory (arraybase_36, &systemerror);
+  ErrorExit ();
+
+  <bb 10> [0.00%]:
+  # arraybase_24 = PHI <arraybase_42(6), arraybase_36(8), arraybase_36(9)>
+  accumtime_49 = 0;
+  iterations_50 = 0.0;
+
+  <bb 11> [0.00%]:
+  # accumtime_25 = PHI <accumtime_49(10), accumtime_53(11)>
+  # iterations_26 = PHI <iterations_50(10), iterations_54(11)>
+  _15 = locassignstruct_32->numarrays;
+  _52 = DoAssignIteration (arraybase_24, _15);
+  accumtime_53 = _52 + accumtime_25;
+  iterations_54 = iterations_26 + 1.0e+0;
+  _16 = TicksToSecs (accumtime_53);
+  _17 = locassignstruct_32->request_secs;
+  if (_16 < _17)
+    goto <bb 11>; [0.00%]
+  else
+    goto <bb 12>; [0.00%]
+
+  <bb 12> [0.00%]:
+  FreeMemory (arraybase_24, &systemerror);
+  _18 = locassignstruct_32->numarrays;
+  _19 = (double) _18;
+  _20 = iterations_54 * _19;
+  _21 = TicksToFracSecs (accumtime_53);
+  _22 = _20 / _21;
+  locassignstruct_32->iterspersec = _22;
+  _23 = locassignstruct_32->adjust;
+  if (_23 == 0)
+    goto <bb 13>; [0.00%]
+  else
+    goto <bb 14>; [0.00%]
+
+  <bb 13> [0.00%]:
+  locassignstruct_32->adjust = 1;
+
+  <bb 14> [0.00%]:
+  systemerror ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function DoIDEA (DoIDEA, funcdef_no=82, decl_uid=4624, cgraph_uid=82, symbol_order=107)
+
+Function found to be nothrow: DoIDEA
+DoIDEA ()
+{
+  faruchar * plain2;
+  faruchar * crypt1;
+  faruchar * plain1;
+  int systemerror;
+  char * errorcontext;
+  double iterations;
+  long unsigned int accumtime;
+  u16 userkey[8];
+  u16 DK[52];
+  u16 Z[52];
+  int i;
+  struct IDEAStruct * locideastruct;
+  unsigned int _1;
+  short unsigned int _2;
+  long unsigned int _3;
+  int systemerror.102_4;
+  int systemerror.103_5;
+  long unsigned int _6;
+  int systemerror.104_7;
+  int systemerror.105_8;
+  long unsigned int _9;
+  int systemerror.106_10;
+  int systemerror.107_11;
+  unsigned int _12;
+  sizetype _13;
+  faruchar * _14;
+  unsigned char _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int global_min_ticks.108_22;
+  long unsigned int _23;
+  long unsigned int _24;
+  long unsigned int _25;
+  long unsigned int _26;
+  long unsigned int _27;
+  long unsigned int _28;
+  double _29;
+  long unsigned int _30;
+  long unsigned int _31;
+  double _32;
+  double _33;
+  int _34;
+  long unsigned int _80;
+
+  <bb 2> [0.00%]:
+  locideastruct_50 = &global_ideastruct;
+  errorcontext_51 = "CPU:IDEA";
+  randnum (3);
+  i_54 = 0;
+  goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  _1 = abs_randwc (60000);
+  _2 = (short unsigned int) _1;
+  userkey[i_35] = _2;
+  i_101 = i_35 + 1;
+
+  <bb 4> [0.00%]:
+  # i_35 = PHI <i_54(2), i_101(3)>
+  if (i_35 <= 7)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 5> [0.00%]:
+  i_55 = 0;
+  goto <bb 7>; [0.00%]
+
+  <bb 6> [0.00%]:
+  Z[i_36] = 0;
+  i_98 = i_36 + 1;
+
+  <bb 7> [0.00%]:
+  # i_36 = PHI <i_55(5), i_98(6)>
+  if (i_36 <= 51)
+    goto <bb 6>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  en_key_idea (&userkey, &Z);
+  de_key_idea (&Z, &DK);
+  _3 = locideastruct_50->arraysize;
+  plain1_59 = AllocateMemory (_3, &systemerror);
+  systemerror.102_4 = systemerror;
+  if (systemerror.102_4 != 0)
+    goto <bb 9>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 9> [0.00%]:
+  systemerror.103_5 = systemerror;
+  ReportError (errorcontext_51, systemerror.103_5);
+  ErrorExit ();
+
+  <bb 10> [0.00%]:
+  _6 = locideastruct_50->arraysize;
+  crypt1_63 = AllocateMemory (_6, &systemerror);
+  systemerror.104_7 = systemerror;
+  if (systemerror.104_7 != 0)
+    goto <bb 11>; [0.00%]
+  else
+    goto <bb 12>; [0.00%]
+
+  <bb 11> [0.00%]:
+  systemerror.105_8 = systemerror;
+  ReportError (errorcontext_51, systemerror.105_8);
+  FreeMemory (plain1_59, &systemerror);
+  ErrorExit ();
+
+  <bb 12> [0.00%]:
+  _9 = locideastruct_50->arraysize;
+  plain2_68 = AllocateMemory (_9, &systemerror);
+  systemerror.106_10 = systemerror;
+  if (systemerror.106_10 != 0)
+    goto <bb 13>; [0.00%]
+  else
+    goto <bb 14>; [0.00%]
+
+  <bb 13> [0.00%]:
+  systemerror.107_11 = systemerror;
+  ReportError (errorcontext_51, systemerror.107_11);
+  FreeMemory (plain1_59, &systemerror);
+  FreeMemory (crypt1_63, &systemerror);
+  ErrorExit ();
+
+  <bb 14> [0.00%]:
+  i_73 = 0;
+  goto <bb 16>; [0.00%]
+
+  <bb 15> [0.00%]:
+  _12 = abs_randwc (255);
+  _13 = (sizetype) i_37;
+  _14 = plain1_59 + _13;
+  _15 = (unsigned char) _12;
+  *_14 = _15;
+  i_96 = i_37 + 1;
+
+  <bb 16> [0.00%]:
+  # i_37 = PHI <i_73(14), i_96(15)>
+  _16 = (long unsigned int) i_37;
+  _17 = locideastruct_50->arraysize;
+  if (_16 < _17)
+    goto <bb 15>; [0.00%]
+  else
+    goto <bb 17>; [0.00%]
+
+  <bb 17> [0.00%]:
+  _18 = locideastruct_50->adjust;
+  if (_18 == 0)
+    goto <bb 18>; [0.00%]
+  else
+    goto <bb 22>; [0.00%]
+
+  <bb 18> [0.00%]:
+  locideastruct_50->loops = 100;
+  goto <bb 21>; [0.00%]
+
+  <bb 19> [0.00%]:
+  _19 = locideastruct_50->loops;
+  _20 = locideastruct_50->arraysize;
+  _21 = DoIDEAIteration (plain1_59, crypt1_63, plain2_68, _20, _19, &Z, &DK);
+  global_min_ticks.108_22 = global_min_ticks;
+  if (_21 > global_min_ticks.108_22)
+    goto <bb 22>; [0.00%]
+  else
+    goto <bb 20>; [0.00%]
+
+  <bb 20> [0.00%]:
+  _23 = locideastruct_50->loops;
+  _24 = _23 + 10;
+  locideastruct_50->loops = _24;
+
+  <bb 21> [0.00%]:
+  _25 = locideastruct_50->loops;
+  if (_25 <= 499999)
+    goto <bb 19>; [0.00%]
+  else
+    goto <bb 22>; [0.00%]
+
+  <bb 22> [0.00%]:
+  accumtime_77 = 0;
+  iterations_78 = 0.0;
+
+  <bb 23> [0.00%]:
+  # accumtime_38 = PHI <accumtime_77(22), accumtime_81(23)>
+  # iterations_39 = PHI <iterations_78(22), iterations_82(23)>
+  _26 = locideastruct_50->loops;
+  _27 = locideastruct_50->arraysize;
+  _80 = DoIDEAIteration (plain1_59, crypt1_63, plain2_68, _27, _26, &Z, &DK);
+  accumtime_81 = _80 + accumtime_38;
+  _28 = locideastruct_50->loops;
+  _29 = (double) _28;
+  iterations_82 = iterations_39 + _29;
+  _30 = TicksToSecs (accumtime_81);
+  _31 = locideastruct_50->request_secs;
+  if (_30 < _31)
+    goto <bb 23>; [0.00%]
+  else
+    goto <bb 24>; [0.00%]
+
+  <bb 24> [0.00%]:
+  FreeMemory (plain1_59, &systemerror);
+  FreeMemory (crypt1_63, &systemerror);
+  FreeMemory (plain2_68, &systemerror);
+  _32 = TicksToFracSecs (accumtime_81);
+  _33 = iterations_82 / _32;
+  locideastruct_50->iterspersec = _33;
+  _34 = locideastruct_50->adjust;
+  if (_34 == 0)
+    goto <bb 25>; [0.00%]
+  else
+    goto <bb 26>; [0.00%]
+
+  <bb 25> [0.00%]:
+  locideastruct_50->adjust = 1;
+
+  <bb 26> [0.00%]:
+  Z ={v} {CLOBBER};
+  DK ={v} {CLOBBER};
+  userkey ={v} {CLOBBER};
+  systemerror ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function DoHuffman (DoHuffman, funcdef_no=89, decl_uid=4657, cgraph_uid=89, symbol_order=114)
+
+Function found to be nothrow: DoHuffman
+DoHuffman ()
+{
+  farchar * plaintext;
+  farchar * decomparray;
+  farchar * comparray;
+  double iterations;
+  long unsigned int accumtime;
+  int systemerror;
+  char * errorcontext;
+  struct HuffStruct * lochuffstruct;
+  long unsigned int _1;
+  int systemerror.143_2;
+  int systemerror.144_3;
+  long unsigned int _4;
+  int systemerror.145_5;
+  int systemerror.146_6;
+  long unsigned int _7;
+  int systemerror.147_8;
+  int systemerror.148_9;
+  farvoid * _10;
+  int systemerror.149_11;
+  int systemerror.150_12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  sizetype _16;
+  farchar * _17;
+  long unsigned int _18;
+  long int _19;
+  int _20;
+  struct huff_node * hufftree.151_21;
+  long unsigned int _22;
+  long unsigned int _23;
+  long unsigned int _24;
+  long unsigned int global_min_ticks.152_25;
+  long unsigned int _26;
+  long unsigned int _27;
+  long unsigned int _28;
+  struct huff_node * hufftree.153_29;
+  long unsigned int _30;
+  long unsigned int _31;
+  long unsigned int _32;
+  double _33;
+  long unsigned int _34;
+  long unsigned int _35;
+  struct huff_node * hufftree.154_36;
+  double _37;
+  double _38;
+  int _39;
+  long unsigned int _85;
+
+  <bb 2> [0.00%]:
+  lochuffstruct_50 = &global_huffstruct;
+  errorcontext_51 = "CPU:Huffman";
+  _1 = lochuffstruct_50->arraysize;
+  plaintext_54 = AllocateMemory (_1, &systemerror);
+  systemerror.143_2 = systemerror;
+  if (systemerror.143_2 != 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  systemerror.144_3 = systemerror;
+  ReportError (errorcontext_51, systemerror.144_3);
+  ErrorExit ();
+
+  <bb 4> [0.00%]:
+  _4 = lochuffstruct_50->arraysize;
+  comparray_58 = AllocateMemory (_4, &systemerror);
+  systemerror.145_5 = systemerror;
+  if (systemerror.145_5 != 0)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  systemerror.146_6 = systemerror;
+  ReportError (errorcontext_51, systemerror.146_6);
+  FreeMemory (plaintext_54, &systemerror);
+  ErrorExit ();
+
+  <bb 6> [0.00%]:
+  _7 = lochuffstruct_50->arraysize;
+  decomparray_63 = AllocateMemory (_7, &systemerror);
+  systemerror.147_8 = systemerror;
+  if (systemerror.147_8 != 0)
+    goto <bb 7>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 7> [0.00%]:
+  systemerror.148_9 = systemerror;
+  ReportError (errorcontext_51, systemerror.148_9);
+  FreeMemory (plaintext_54, &systemerror);
+  FreeMemory (comparray_58, &systemerror);
+  ErrorExit ();
+
+  <bb 8> [0.00%]:
+  _10 = AllocateMemory (10240, &systemerror);
+  hufftree = _10;
+  systemerror.149_11 = systemerror;
+  if (systemerror.149_11 != 0)
+    goto <bb 9>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 9> [0.00%]:
+  systemerror.150_12 = systemerror;
+  ReportError (errorcontext_51, systemerror.150_12);
+  FreeMemory (plaintext_54, &systemerror);
+  FreeMemory (comparray_58, &systemerror);
+  FreeMemory (decomparray_63, &systemerror);
+  ErrorExit ();
+
+  <bb 10> [0.00%]:
+  randnum (13);
+  _13 = lochuffstruct_50->arraysize;
+  _14 = _13 + 18446744073709551615;
+  create_text_block (plaintext_54, _14, 500);
+  _15 = lochuffstruct_50->arraysize;
+  _16 = _15 + 18446744073709551615;
+  _17 = plaintext_54 + _16;
+  *_17 = 0;
+  _18 = lochuffstruct_50->arraysize;
+  _19 = (long int) _18;
+  plaintextlen = _19;
+  _20 = lochuffstruct_50->adjust;
+  if (_20 == 0)
+    goto <bb 11>; [0.00%]
+  else
+    goto <bb 15>; [0.00%]
+
+  <bb 11> [0.00%]:
+  lochuffstruct_50->loops = 100;
+  goto <bb 14>; [0.00%]
+
+  <bb 12> [0.00%]:
+  hufftree.151_21 = hufftree;
+  _22 = lochuffstruct_50->loops;
+  _23 = lochuffstruct_50->arraysize;
+  _24 = DoHuffIteration (plaintext_54, comparray_58, decomparray_63, _23, _22, hufftree.151_21);
+  global_min_ticks.152_25 = global_min_ticks;
+  if (_24 > global_min_ticks.152_25)
+    goto <bb 15>; [0.00%]
+  else
+    goto <bb 13>; [0.00%]
+
+  <bb 13> [0.00%]:
+  _26 = lochuffstruct_50->loops;
+  _27 = _26 + 10;
+  lochuffstruct_50->loops = _27;
+
+  <bb 14> [0.00%]:
+  _28 = lochuffstruct_50->loops;
+  if (_28 <= 499999)
+    goto <bb 12>; [0.00%]
+  else
+    goto <bb 15>; [0.00%]
+
+  <bb 15> [0.00%]:
+  accumtime_82 = 0;
+  iterations_83 = 0.0;
+
+  <bb 16> [0.00%]:
+  # accumtime_40 = PHI <accumtime_82(15), accumtime_86(16)>
+  # iterations_41 = PHI <iterations_83(15), iterations_87(16)>
+  hufftree.153_29 = hufftree;
+  _30 = lochuffstruct_50->loops;
+  _31 = lochuffstruct_50->arraysize;
+  _85 = DoHuffIteration (plaintext_54, comparray_58, decomparray_63, _31, _30, hufftree.153_29);
+  accumtime_86 = _85 + accumtime_40;
+  _32 = lochuffstruct_50->loops;
+  _33 = (double) _32;
+  iterations_87 = iterations_41 + _33;
+  _34 = TicksToSecs (accumtime_86);
+  _35 = lochuffstruct_50->request_secs;
+  if (_34 < _35)
+    goto <bb 16>; [0.00%]
+  else
+    goto <bb 17>; [0.00%]
+
+  <bb 17> [0.00%]:
+  FreeMemory (plaintext_54, &systemerror);
+  FreeMemory (comparray_58, &systemerror);
+  FreeMemory (decomparray_63, &systemerror);
+  hufftree.154_36 = hufftree;
+  FreeMemory (hufftree.154_36, &systemerror);
+  _37 = TicksToFracSecs (accumtime_86);
+  _38 = iterations_87 / _37;
+  lochuffstruct_50->iterspersec = _38;
+  _39 = lochuffstruct_50->adjust;
+  if (_39 == 0)
+    goto <bb 18>; [0.00%]
+  else
+    goto <bb 19>; [0.00%]
+
+  <bb 18> [0.00%]:
+  lochuffstruct_50->adjust = 1;
+
+  <bb 19> [0.00%]:
+  systemerror ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function DoNNET (DoNNET, funcdef_no=95, decl_uid=4701, cgraph_uid=95, symbol_order=120)
+
+Function found to be nothrow: DoNNET
+DoNNET ()
+{
+  double iterations;
+  long unsigned int accumtime;
+  char * errorcontext;
+  struct NNetStruct * locnnetstruct;
+  int _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int global_min_ticks.167_5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  double _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  double _14;
+  double _15;
+  int _16;
+  long unsigned int _38;
+
+  <bb 2> [0.00%]:
+  locnnetstruct_24 = &global_nnetstruct;
+  errorcontext_25 = "CPU:NNET";
+  randnum (3);
+  _1 = read_data_file ();
+  if (_1 != 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  ErrorExit ();
+
+  <bb 4> [0.00%]:
+  _2 = locnnetstruct_24->adjust;
+  if (_2 == 0)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 9>; [0.00%]
+
+  <bb 5> [0.00%]:
+  locnnetstruct_24->loops = 1;
+  goto <bb 8>; [0.00%]
+
+  <bb 6> [0.00%]:
+  randnum (3);
+  _3 = locnnetstruct_24->loops;
+  _4 = DoNNetIteration (_3);
+  global_min_ticks.167_5 = global_min_ticks;
+  if (_4 > global_min_ticks.167_5)
+    goto <bb 9>; [0.00%]
+  else
+    goto <bb 7>; [0.00%]
+
+  <bb 7> [0.00%]:
+  _6 = locnnetstruct_24->loops;
+  _7 = _6 + 1;
+  locnnetstruct_24->loops = _7;
+
+  <bb 8> [0.00%]:
+  _8 = locnnetstruct_24->loops;
+  if (_8 <= 499999)
+    goto <bb 6>; [0.00%]
+  else
+    goto <bb 9>; [0.00%]
+
+  <bb 9> [0.00%]:
+  accumtime_34 = 0;
+  iterations_35 = 0.0;
+
+  <bb 10> [0.00%]:
+  # accumtime_17 = PHI <accumtime_34(9), accumtime_39(10)>
+  # iterations_18 = PHI <iterations_35(9), iterations_40(10)>
+  randnum (3);
+  _9 = locnnetstruct_24->loops;
+  _38 = DoNNetIteration (_9);
+  accumtime_39 = _38 + accumtime_17;
+  _10 = locnnetstruct_24->loops;
+  _11 = (double) _10;
+  iterations_40 = iterations_18 + _11;
+  _12 = TicksToSecs (accumtime_39);
+  _13 = locnnetstruct_24->request_secs;
+  if (_12 < _13)
+    goto <bb 10>; [0.00%]
+  else
+    goto <bb 11>; [0.00%]
+
+  <bb 11> [0.00%]:
+  _14 = TicksToFracSecs (accumtime_39);
+  _15 = iterations_40 / _14;
+  locnnetstruct_24->iterspersec = _15;
+  _16 = locnnetstruct_24->adjust;
+  if (_16 == 0)
+    goto <bb 12>; [0.00%]
+  else
+    goto <bb 13>; [0.00%]
+
+  <bb 12> [0.00%]:
+  locnnetstruct_24->adjust = 1;
+
+  <bb 13> [0.00%]:
+  return;
+
+}
+
+
+
+;; Function DoLU (DoLU, funcdef_no=111, decl_uid=4732, cgraph_uid=111, symbol_order=136)
+
+Function found to be nothrow: DoLU
+DoLU ()
+{
+  double iterations;
+  long unsigned int accumtime;
+  int i;
+  int n;
+  struct LUdblptr ptra;
+  fardouble * bbase;
+  fardouble * abase;
+  fardouble * b;
+  fardouble * a;
+  int systemerror;
+  char * errorcontext;
+  struct LUStruct * loclustruct;
+  farvoid * _1;
+  fardouble[<unknown>][101] * _2;
+  int _3;
+  int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  int systemerror.195_7;
+  int systemerror.196_8;
+  int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  int systemerror.197_12;
+  int systemerror.198_13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int global_min_ticks.199_16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  int systemerror.200_21;
+  int systemerror.201_22;
+  long unsigned int _23;
+  long unsigned int _24;
+  int systemerror.202_25;
+  int systemerror.203_26;
+  long unsigned int _27;
+  long unsigned int _28;
+  double _29;
+  long unsigned int _30;
+  long unsigned int _31;
+  double _32;
+  double _33;
+  int _34;
+  long unsigned int _99;
+
+  <bb 2> [0.00%]:
+  loclustruct_52 = &global_lustruct;
+  errorcontext_53 = "FPU:LU";
+  a_56 = AllocateMemory (81608, &systemerror);
+  b_58 = AllocateMemory (808, &systemerror);
+  n_59 = 101;
+  _1 = AllocateMemory (808, &systemerror);
+  LUtempvv = _1;
+  ptra.ptrs.p = a_56;
+  _2 = ptra.ptrs.ap;
+  build_problem (_2, n_59, b_58);
+  _3 = loclustruct_52->adjust;
+  if (_3 == 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 14>; [0.00%]
+
+  <bb 3> [0.00%]:
+  loclustruct_52->numarrays = 0;
+  i_75 = 1;
+  goto <bb 11>; [0.00%]
+
+  <bb 4> [0.00%]:
+  _4 = i_41 + 1;
+  _5 = (long unsigned int) _4;
+  _6 = _5 * 81608;
+  abase_79 = AllocateMemory (_6, &systemerror);
+  systemerror.195_7 = systemerror;
+  if (systemerror.195_7 != 0)
+    goto <bb 5>; [0.00%]
+  else
+    goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  systemerror.196_8 = systemerror;
+  ReportError (errorcontext_53, systemerror.196_8);
+  LUFreeMem (a_56, b_58, 0B, 0B);
+  ErrorExit ();
+
+  <bb 6> [0.00%]:
+  _9 = i_41 + 1;
+  _10 = (long unsigned int) _9;
+  _11 = _10 * 808;
+  bbase_84 = AllocateMemory (_11, &systemerror);
+  systemerror.197_12 = systemerror;
+  if (systemerror.197_12 != 0)
+    goto <bb 7>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 7> [0.00%]:
+  systemerror.198_13 = systemerror;
+  ReportError (errorcontext_53, systemerror.198_13);
+  LUFreeMem (a_56, b_58, abase_79, 0B);
+  ErrorExit ();
+
+  <bb 8> [0.00%]:
+  _14 = (long unsigned int) i_41;
+  _15 = DoLUIteration (a_56, b_58, abase_79, bbase_84, _14);
+  global_min_ticks.199_16 = global_min_ticks;
+  if (_15 > global_min_ticks.199_16)
+    goto <bb 9>; [0.00%]
+  else
+    goto <bb 10>; [0.00%]
+
+  <bb 9> [0.00%]:
+  _17 = (long unsigned int) i_41;
+  loclustruct_52->numarrays = _17;
+  goto <bb 12>; [0.00%]
+
+  <bb 10> [0.00%]:
+  FreeMemory (abase_79, &systemerror);
+  FreeMemory (bbase_84, &systemerror);
+  i_91 = i_41 + 1;
+
+  <bb 11> [0.00%]:
+  # abase_35 = PHI <abase_76(D)(3), abase_79(10)>
+  # bbase_38 = PHI <bbase_77(D)(3), bbase_84(10)>
+  # i_41 = PHI <i_75(3), i_91(10)>
+  if (i_41 <= 10000)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 12>; [0.00%]
+
+  <bb 12> [0.00%]:
+  # abase_36 = PHI <abase_79(9), abase_35(11)>
+  # bbase_39 = PHI <bbase_84(9), bbase_38(11)>
+  _18 = loclustruct_52->numarrays;
+  if (_18 == 0)
+    goto <bb 13>; [0.00%]
+  else
+    goto <bb 18>; [0.00%]
+
+  <bb 13> [0.00%]:
+  printf ("FPU:LU -- Array limit reached\n");
+  LUFreeMem (a_56, b_58, abase_36, bbase_39);
+  ErrorExit ();
+  goto <bb 18>; [0.00%]
+
+  <bb 14> [0.00%]:
+  _19 = loclustruct_52->numarrays;
+  _20 = _19 * 81608;
+  abase_65 = AllocateMemory (_20, &systemerror);
+  systemerror.200_21 = systemerror;
+  if (systemerror.200_21 != 0)
+    goto <bb 15>; [0.00%]
+  else
+    goto <bb 16>; [0.00%]
+
+  <bb 15> [0.00%]:
+  systemerror.201_22 = systemerror;
+  ReportError (errorcontext_53, systemerror.201_22);
+  LUFreeMem (a_56, b_58, 0B, 0B);
+  ErrorExit ();
+
+  <bb 16> [0.00%]:
+  _23 = loclustruct_52->numarrays;
+  _24 = _23 * 808;
+  bbase_70 = AllocateMemory (_24, &systemerror);
+  systemerror.202_25 = systemerror;
+  if (systemerror.202_25 != 0)
+    goto <bb 17>; [0.00%]
+  else
+    goto <bb 18>; [0.00%]
+
+  <bb 17> [0.00%]:
+  systemerror.203_26 = systemerror;
+  ReportError (errorcontext_53, systemerror.203_26);
+  LUFreeMem (a_56, b_58, abase_65, 0B);
+  ErrorExit ();
+
+  <bb 18> [0.00%]:
+  # abase_37 = PHI <abase_36(13), abase_65(16), abase_65(17), abase_36(12)>
+  # bbase_40 = PHI <bbase_39(13), bbase_70(16), bbase_70(17), bbase_39(12)>
+  accumtime_96 = 0;
+  iterations_97 = 0.0;
+
+  <bb 19> [0.00%]:
+  # accumtime_42 = PHI <accumtime_96(18), accumtime_100(19)>
+  # iterations_43 = PHI <iterations_97(18), iterations_101(19)>
+  _27 = loclustruct_52->numarrays;
+  _99 = DoLUIteration (a_56, b_58, abase_37, bbase_40, _27);
+  accumtime_100 = _99 + accumtime_42;
+  _28 = loclustruct_52->numarrays;
+  _29 = (double) _28;
+  iterations_101 = iterations_43 + _29;
+  _30 = TicksToSecs (accumtime_100);
+  _31 = loclustruct_52->request_secs;
+  if (_30 < _31)
+    goto <bb 19>; [0.00%]
+  else
+    goto <bb 20>; [0.00%]
+
+  <bb 20> [0.00%]:
+  _32 = TicksToFracSecs (accumtime_100);
+  _33 = iterations_101 / _32;
+  loclustruct_52->iterspersec = _33;
+  _34 = loclustruct_52->adjust;
+  if (_34 == 0)
+    goto <bb 21>; [0.00%]
+  else
+    goto <bb 22>; [0.00%]
+
+  <bb 21> [0.00%]:
+  loclustruct_52->adjust = 1;
+
+  <bb 22> [0.00%]:
+  LUFreeMem (a_56, b_58, abase_37, bbase_40);
+  systemerror ={v} {CLOBBER};
+  ptra ={v} {CLOBBER};
+  return;
+
+}
+
+

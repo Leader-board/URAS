@@ -1,0 +1,1259 @@
+
+;; Function sprintf (sprintf, funcdef_no=10, decl_uid=814, cgraph_uid=10, symbol_order=10)
+
+
+Analyzing function body size: sprintf
+
+Inline summary for sprintf/10 always_inline inlinable
+  self time:       17
+  global time:     0
+  self size:       9
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq:1000 size: 6 time: 15 callee size: 0 stack: 0
+       op1 is compile time invariant
+    __builtin_object_size/115 function body not available
+      loop depth: 0 freq:1000 size: 0 time:  0 callee size: 0 stack: 0
+       op1 is compile time invariant
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__, __leaf__, __nothrow__))
+sprintf (char * restrict __s, const char * restrict __fmt)
+{
+  long unsigned int _1;
+  int _6;
+
+  <bb 2> [100.00%]:
+  _1 = __builtin_object_size (__s_3(D), 1);
+  _6 = __builtin___sprintf_chk (__s_3(D), 1, _1, __fmt_4(D), __builtin_va_arg_pack ());
+  return _6;
+
+}
+
+
+
+;; Function fprintf (fprintf, funcdef_no=14, decl_uid=776, cgraph_uid=14, symbol_order=14)
+
+
+Analyzing function body size: fprintf
+
+Inline summary for fprintf/14 always_inline inlinable
+  self time:       16
+  global time:     0
+  self size:       8
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+    __fprintf_chk/118 function body not available
+      loop depth: 0 freq:1000 size: 5 time: 14 callee size: 0 stack: 0
+       op1 is compile time invariant
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__))
+fprintf (struct FILE * restrict __stream, const char * restrict __fmt)
+{
+  int _5;
+
+  <bb 2> [100.00%]:
+  _5 = __fprintf_chk (__stream_2(D), 1, __fmt_3(D), __builtin_va_arg_pack ());
+  return _5;
+
+}
+
+
+
+;; Function printf (printf, funcdef_no=15, decl_uid=798, cgraph_uid=15, symbol_order=15)
+
+
+Analyzing function body size: printf
+
+Inline summary for printf/15 always_inline inlinable
+  self time:       15
+  global time:     0
+  self size:       7
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+    __printf_chk/117 function body not available
+      loop depth: 0 freq:1000 size: 4 time: 13 callee size: 0 stack: 0
+       op0 is compile time invariant
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__))
+printf (const char * restrict __fmt)
+{
+  int _4;
+
+  <bb 2> [100.00%]:
+  _4 = __printf_chk (1, __fmt_2(D), __builtin_va_arg_pack ());
+  return _4;
+
+}
+
+
+
+;; Function atoi (atoi, funcdef_no=23, decl_uid=2467, cgraph_uid=23, symbol_order=23)
+
+
+Analyzing function body size: atoi
+
+Inline summary for atoi/23 always_inline inlinable
+  self time:       16
+  global time:     0
+  self size:       8
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+    strtol/114 function body not available
+      loop depth: 0 freq:1000 size: 5 time: 14 callee size: 0 stack: 0
+       op1 is compile time invariant
+       op2 is compile time invariant
+
+__attribute__((__gnu_inline__, __pure__, __leaf__, __nothrow__))
+atoi (const char * __nptr)
+{
+  long int _1;
+  int _5;
+
+  <bb 2> [100.00%]:
+  _1 = strtol (__nptr_3(D), 0B, 10);
+  _5 = (int) _1;
+  return _5;
+
+}
+
+
+
+;; Function set_request_secs (set_request_secs, funcdef_no=60, decl_uid=4712, cgraph_uid=60, symbol_order=92)
+
+
+Analyzing function body size: set_request_secs
+
+Inline summary for set_request_secs/92 inlinable
+  self time:       13
+  global time:     0
+  self size:       14
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:11.000000, time:11.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+
+set_request_secs ()
+{
+  long unsigned int global_min_seconds.20_1;
+
+  <bb 2> [100.00%]:
+  global_min_seconds.20_1 = global_min_seconds;
+  global_numsortstruct.request_secs = global_min_seconds.20_1;
+  global_strsortstruct.request_secs = global_min_seconds.20_1;
+  global_bitopstruct.request_secs = global_min_seconds.20_1;
+  global_emfloatstruct.request_secs = global_min_seconds.20_1;
+  global_fourierstruct.request_secs = global_min_seconds.20_1;
+  global_assignstruct.request_secs = global_min_seconds.20_1;
+  global_ideastruct.request_secs = global_min_seconds.20_1;
+  global_huffstruct.request_secs = global_min_seconds.20_1;
+  global_nnetstruct.request_secs = global_min_seconds.20_1;
+  global_lustruct.request_secs = global_min_seconds.20_1;
+  return;
+
+}
+
+
+
+;; Function getscore (getscore, funcdef_no=63, decl_uid=4725, cgraph_uid=63, symbol_order=95)
+
+
+Analyzing function body size: getscore
+   fp_expression set
+
+Inline summary for getscore/95 inlinable fp_expression
+  self time:       9
+  global time:     0
+  self size:       35
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000, predicate:(true)
+    size:3.000000, time:1.998000, predicate:(not inlined)
+    size:22.000000, time:6.000000, predicate:(op0 changed)
+    size:1.000000, time:0.090000, predicate:(op0 == 9)
+    size:1.000000, time:0.090000, predicate:(op0 == 8)
+    size:1.000000, time:0.090000, predicate:(op0 == 7)
+    size:1.000000, time:0.090000, predicate:(op0 == 6)
+    size:1.000000, time:0.090000, predicate:(op0 == 5)
+    size:1.000000, time:0.090000, predicate:(op0 == 4)
+    size:1.000000, time:0.090000, predicate:(op0 == 3)
+    size:1.000000, time:0.090000, predicate:(op0 == 2)
+    size:1.000000, time:0.090000, predicate:(op0 == 1)
+    size:1.000000, time:0.090000, predicate:(op0 == 0)
+  calls:
+
+getscore (int fid)
+{
+  double _1;
+  double _4;
+  double _5;
+  double _6;
+  double _7;
+  double _8;
+  double _9;
+  double _10;
+  double _11;
+  double _12;
+  double _13;
+
+  <bb 2> [100.00%]:
+  switch (fid_2(D)) <default: <L12> [9.09%], case 0: <L0> [9.09%], case 1: <L1> [9.09%], case 2: <L2> [9.09%], case 3: <L3> [9.09%], case 4: <L4> [9.09%], case 5: <L5> [9.09%], case 6: <L6> [9.09%], case 7: <L7> [9.09%], case 8: <L8> [9.09%], case 9: <L9> [9.09%]>
+
+<L0> [9.09%]:
+  _13 = global_numsortstruct.sortspersec;
+  goto <bb 13> (<L12>); [100.00%]
+
+<L1> [9.09%]:
+  _12 = global_strsortstruct.sortspersec;
+  goto <bb 13> (<L12>); [100.00%]
+
+<L2> [9.09%]:
+  _11 = global_bitopstruct.bitopspersec;
+  goto <bb 13> (<L12>); [100.00%]
+
+<L3> [9.09%]:
+  _10 = global_emfloatstruct.emflops;
+  goto <bb 13> (<L12>); [100.00%]
+
+<L4> [9.09%]:
+  _9 = global_fourierstruct.fflops;
+  goto <bb 13> (<L12>); [100.00%]
+
+<L5> [9.09%]:
+  _8 = global_assignstruct.iterspersec;
+  goto <bb 13> (<L12>); [100.00%]
+
+<L6> [9.09%]:
+  _7 = global_ideastruct.iterspersec;
+  goto <bb 13> (<L12>); [100.00%]
+
+<L7> [9.09%]:
+  _6 = global_huffstruct.iterspersec;
+  goto <bb 13> (<L12>); [100.00%]
+
+<L8> [9.09%]:
+  _5 = global_nnetstruct.iterspersec;
+  goto <bb 13> (<L12>); [100.00%]
+
+<L9> [9.09%]:
+  _4 = global_lustruct.iterspersec;
+
+  # _1 = PHI <_13(3), _12(4), _11(5), _10(6), _9(7), _8(8), _7(9), _6(10), _5(11), _4(12), 0.0(2)>
+<L12> [99.99%]:
+  return _1;
+
+}
+
+
+
+;; Function bench_with_confidence.isra.0 (bench_with_confidence.isra.0, funcdef_no=66, decl_uid=5001, cgraph_uid=0, symbol_order=119)
+
+
+Analyzing function body size: bench_with_confidence.isra.0
+
+Inline summary for bench_with_confidence.isra.0/119 inlinable
+  self time:       23
+  global time:     0
+  self size:       10
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:3.500000, time:5.500000, predicate:(true)
+    size:3.500000, time:2.500000, predicate:(not inlined)
+  calls:
+    indirect call loop depth: 1 freq:1000 size: 3 time: 15
+
+bench_with_confidence.isra.0 (int fid, long unsigned int * numtries)
+{
+  int i;
+  void (*<T8d0>) (void) _2;
+
+  <bb 6> [50.00%]:
+
+  <bb 2> [50.00%]:
+  goto <bb 4>; [100.00%]
+
+  <bb 3> [50.00%]:
+  _2 = funcpointer[fid_1(D)];
+  _2 ();
+
+  <bb 4> [100.00%]:
+  # i_3 = PHI <0(2), 1(3)>
+  if (i_3 <= 0)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 5>; [50.00%]
+
+  <bb 5> [50.00%]:
+  *numtries_4(D) = 5;
+  return 0;
+
+}
+
+
+
+;; Function output_string (output_string, funcdef_no=64, decl_uid=4727, cgraph_uid=64, symbol_order=96)
+
+
+Analyzing function body size: output_string
+
+Inline summary for output_string/96 inlinable
+  self time:       22
+  global time:     0
+  self size:       12
+  global size:     0
+  min size:       40
+  self stack:      0
+  global stack:    0
+    size:3.000000, time:3.000000, predicate:(true)
+    size:3.000000, time:2.000000, predicate:(not inlined)
+  calls:
+    output_string.part.1/120 function not considered for inlining
+      loop depth: 0 freq: 366 size: 2 time: 11 callee size: 3 stack: 0
+    __printf_chk/117 function body not available
+      loop depth: 0 freq:1000 size: 4 time: 13 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+
+output_string (char * buffer)
+{
+  int write_to_file.30_1;
+
+  <bb 2> [100.00%]:
+  __printf_chk (1, "%s", buffer_3(D));
+  write_to_file.30_1 = write_to_file;
+  if (write_to_file.30_1 != 0)
+    goto <bb 3>; [36.64%]
+  else
+    goto <bb 4>; [63.36%]
+
+  <bb 3> [36.64%]:
+  output_string.part.1 (buffer_3(D));
+
+  <bb 4> [100.00%]:
+  return;
+
+}
+
+
+
+;; Function show_stats (show_stats, funcdef_no=65, decl_uid=4729, cgraph_uid=65, symbol_order=97)
+
+
+Analyzing function body size: show_stats
+
+Inline summary for show_stats/97 inlinable
+  self time:       47
+  global time:     0
+  self size:       169
+  global size:     0
+  min size:       0
+  self stack:      80
+  global stack:    80
+    size:0.000000, time:0.000000, predicate:(true)
+    size:3.000000, time:1.998000, predicate:(not inlined)
+    size:22.000000, time:6.000000, predicate:(op0 changed)
+    size:1.000000, time:0.090000, predicate:(op0 == 9)
+    size:1.000000, time:0.090000, predicate:(op0 == 8)
+    size:2.000000, time:0.180000, predicate:(op0 == 7)
+    size:2.000000, time:0.180000, predicate:(op0 == 6)
+    size:1.000000, time:0.090000, predicate:(op0 == 5)
+    size:1.000000, time:0.090000, predicate:(op0 == 4)
+    size:2.000000, time:0.180000, predicate:(op0 == 3)
+    size:2.000000, time:0.180000, predicate:(op0 == 2)
+    size:2.000000, time:0.180000, predicate:(op0 == 1)
+    size:2.000000, time:0.180000, predicate:(op0 == 0)
+  calls:
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:  90 size: 2 time: 11 callee size: 6 stack: 0 predicate: (op0 == 9)
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq:  90 size: 6 time: 15 callee size: 0 stack: 0 predicate: (op0 == 9)
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:  90 size: 2 time: 11 callee size: 6 stack: 0 predicate: (op0 == 8)
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq:  90 size: 6 time: 15 callee size: 0 stack: 0 predicate: (op0 == 8)
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:  90 size: 2 time: 11 callee size: 6 stack: 0 predicate: (op0 == 7)
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq:  90 size: 6 time: 15 callee size: 0 stack: 0 predicate: (op0 == 7)
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:  90 size: 2 time: 11 callee size: 6 stack: 0 predicate: (op0 == 7)
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq:  90 size: 6 time: 15 callee size: 0 stack: 0 predicate: (op0 == 7)
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:  90 size: 2 time: 11 callee size: 6 stack: 0 predicate: (op0 == 6)
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq:  90 size: 6 time: 15 callee size: 0 stack: 0 predicate: (op0 == 6)
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:  90 size: 2 time: 11 callee size: 6 stack: 0 predicate: (op0 == 6)
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq:  90 size: 6 time: 15 callee size: 0 stack: 0 predicate: (op0 == 6)
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:  90 size: 2 time: 11 callee size: 6 stack: 0 predicate: (op0 == 5)
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq:  90 size: 6 time: 15 callee size: 0 stack: 0 predicate: (op0 == 5)
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:  90 size: 2 time: 11 callee size: 6 stack: 0 predicate: (op0 == 4)
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq:  90 size: 6 time: 15 callee size: 0 stack: 0 predicate: (op0 == 4)
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:  90 size: 2 time: 11 callee size: 6 stack: 0 predicate: (op0 == 3)
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq:  90 size: 6 time: 15 callee size: 0 stack: 0 predicate: (op0 == 3)
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:  90 size: 2 time: 11 callee size: 6 stack: 0 predicate: (op0 == 3)
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq:  90 size: 6 time: 15 callee size: 0 stack: 0 predicate: (op0 == 3)
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:  90 size: 2 time: 11 callee size: 6 stack: 0 predicate: (op0 == 2)
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq:  90 size: 6 time: 15 callee size: 0 stack: 0 predicate: (op0 == 2)
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:  90 size: 2 time: 11 callee size: 6 stack: 0 predicate: (op0 == 2)
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq:  90 size: 6 time: 15 callee size: 0 stack: 0 predicate: (op0 == 2)
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:  90 size: 2 time: 11 callee size: 6 stack: 0 predicate: (op0 == 1)
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq:  90 size: 6 time: 15 callee size: 0 stack: 0 predicate: (op0 == 1)
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:  90 size: 2 time: 11 callee size: 6 stack: 0 predicate: (op0 == 1)
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq:  90 size: 6 time: 15 callee size: 0 stack: 0 predicate: (op0 == 1)
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:  90 size: 2 time: 11 callee size: 6 stack: 0 predicate: (op0 == 0)
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq:  90 size: 6 time: 15 callee size: 0 stack: 0 predicate: (op0 == 0)
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:  90 size: 2 time: 11 callee size: 6 stack: 0 predicate: (op0 == 0)
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq:  90 size: 6 time: 15 callee size: 0 stack: 0 predicate: (op0 == 0)
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+
+show_stats (int bid)
+{
+  char buffer[80];
+  short unsigned int _1;
+  int _2;
+  long unsigned int _3;
+  short unsigned int _4;
+  int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+
+  <bb 2> [100.00%]:
+  switch (bid_20(D)) <default: <L14> [9.09%], case 0: <L0> [9.09%], case 1: <L1> [9.09%], case 2: <L2> [9.09%], case 3: <L3> [9.09%], case 4: <L4> [9.09%], case 5: <L5> [9.09%], case 6: <L6> [9.09%], case 7: <L7> [9.09%], case 8: <L8> [9.09%], case 9: <L9> [9.09%]>
+
+<L0> [9.09%]:
+  _1 = global_numsortstruct.numarrays;
+  _2 = (int) _1;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of arrays: %d\n", _2);
+  output_string (&buffer);
+  _3 = global_numsortstruct.arraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %ld\n", _3);
+  output_string (&buffer);
+  goto <bb 13> (<L14>); [100.00%]
+
+<L1> [9.09%]:
+  _4 = global_strsortstruct.numarrays;
+  _5 = (int) _4;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of arrays: %d\n", _5);
+  output_string (&buffer);
+  _6 = global_strsortstruct.arraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %ld\n", _6);
+  output_string (&buffer);
+  goto <bb 13> (<L14>); [100.00%]
+
+<L2> [9.09%]:
+  _7 = global_bitopstruct.bitoparraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Operations array size: %ld\n", _7);
+  output_string (&buffer);
+  _8 = global_bitopstruct.bitfieldarraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Bitfield array size: %ld\n", _8);
+  output_string (&buffer);
+  goto <bb 13> (<L14>); [100.00%]
+
+<L3> [9.09%]:
+  _9 = global_emfloatstruct.loops;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of loops: %lu\n", _9);
+  output_string (&buffer);
+  _10 = global_emfloatstruct.arraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %lu\n", _10);
+  output_string (&buffer);
+  goto <bb 13> (<L14>); [100.00%]
+
+<L4> [9.09%]:
+  _11 = global_fourierstruct.arraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of coefficients: %lu\n", _11);
+  output_string (&buffer);
+  goto <bb 13> (<L14>); [100.00%]
+
+<L5> [9.09%]:
+  _12 = global_assignstruct.numarrays;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of arrays: %lu\n", _12);
+  output_string (&buffer);
+  goto <bb 13> (<L14>); [100.00%]
+
+<L6> [9.09%]:
+  _13 = global_ideastruct.arraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %lu\n", _13);
+  output_string (&buffer);
+  _14 = global_ideastruct.loops;
+  __builtin___sprintf_chk (&buffer, 1, 80, " Number of loops: %lu\n", _14);
+  output_string (&buffer);
+  goto <bb 13> (<L14>); [100.00%]
+
+<L7> [9.09%]:
+  _15 = global_huffstruct.arraysize;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %lu\n", _15);
+  output_string (&buffer);
+  _16 = global_huffstruct.loops;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of loops: %lu\n", _16);
+  output_string (&buffer);
+  goto <bb 13> (<L14>); [100.00%]
+
+<L8> [9.09%]:
+  _17 = global_nnetstruct.loops;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of loops: %lu\n", _17);
+  output_string (&buffer);
+  goto <bb 13> (<L14>); [100.00%]
+
+<L9> [9.09%]:
+  _18 = global_lustruct.numarrays;
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of arrays: %lu\n", _18);
+  output_string (&buffer);
+
+<L14> [99.99%]:
+  buffer ={v} {CLOBBER};
+  return;
+
+}
+
+
+
+;; Function main (main, funcdef_no=54, decl_uid=4760, cgraph_uid=54, symbol_order=86) (executed once)
+
+
+Analyzing function body size: main
+   fp_expression set
+
+Inline summary for main/86 inlinable fp_expression
+  self time:       695
+  global time:     0
+  self size:       329
+  global size:     0
+  min size:       1488
+  self stack:      8
+  global stack:    8
+    size:97.000000, time:240.009000, predicate:(true)
+    size:2.000000, time:0.000000, predicate:(not inlined)
+    size:2.000000, time:2.000000, predicate:(op0 changed)
+    size:0.500000, time:0.101000, predicate:(op0 == 2) && (not inlined)
+    size:1.500000, time:0.303000, predicate:(op0 == 2)
+  calls:
+    exit/113 function body not available
+      loop depth: 0 freq:1000 size: 2 time: 11 callee size: 0 stack: 0
+       op0 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq: 330 size: 6 time: 15 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    pow/111 function body not available
+      loop depth: 0 freq: 330 size: 4 time: 13 callee size: 0 stack: 0
+       op1 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq: 330 size: 6 time: 15 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    pow/111 function body not available
+      loop depth: 0 freq: 330 size: 4 time: 13 callee size: 0 stack: 0
+       op1 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq: 330 size: 6 time: 15 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    pow/111 function body not available
+      loop depth: 0 freq: 330 size: 4 time: 13 callee size: 0 stack: 0
+       op1 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin_memcpy/157 function body not available
+      loop depth: 0 freq: 330 size: 4 time: 13 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin_memcpy/157 function body not available
+      loop depth: 0 freq: 330 size: 4 time: 13 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+    hardware/112 function body not available
+      loop depth: 0 freq: 330 size: 3 time: 12 callee size: 0 stack: 0
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq: 330 size: 6 time: 15 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    pow/111 function body not available
+      loop depth: 0 freq: 330 size: 4 time: 13 callee size: 0 stack: 0
+       op1 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq: 330 size: 6 time: 15 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    pow/111 function body not available
+      loop depth: 0 freq: 330 size: 4 time: 13 callee size: 0 stack: 0
+       op1 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 1 freq: 617 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 1 freq: 617 size: 6 time: 15 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    show_stats/97 function not considered for inlining
+      loop depth: 1 freq: 617 size: 2 time: 11 callee size:84 stack:80
+    output_string/96 function not considered for inlining
+      loop depth: 1 freq: 617 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 1 freq: 617 size: 6 time: 15 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+       op4 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 1 freq: 203 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 1 freq: 203 size: 6 time: 15 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 1 freq: 617 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 1 freq: 617 size: 6 time: 15 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 1 freq:1870 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 1 freq:1870 size: 8 time: 17 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+       op4 change 53.470000% of time
+    output_string/96 function not considered for inlining
+      loop depth: 1 freq:1870 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 1 freq:1870 size: 6 time: 15 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:1000 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:1000 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:1000 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin_memcpy/157 function body not available
+      loop depth: 0 freq: 330 size: 4 time: 13 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin_memcpy/157 function body not available
+      loop depth: 0 freq: 330 size: 4 time: 13 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin_memcpy/157 function body not available
+      loop depth: 0 freq: 330 size: 4 time: 13 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin_memcpy/157 function body not available
+      loop depth: 0 freq: 330 size: 4 time: 13 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin_memcpy/157 function body not available
+      loop depth: 0 freq: 330 size: 4 time: 13 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq: 330 size:13 time: 22 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+       op4 is compile time invariant
+       op5 is compile time invariant
+       op6 is compile time invariant
+       op7 is compile time invariant
+       op8 is compile time invariant
+       op9 is compile time invariant
+       op10 is compile time invariant
+       op11 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    __builtin___sprintf_chk/116 function body not available
+      loop depth: 0 freq: 330 size: 6 time: 15 callee size: 0 stack: 0
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    asctime/110 function body not available
+      loop depth: 0 freq: 330 size: 3 time: 12 callee size: 0 stack: 0
+    localtime/109 function body not available
+      loop depth: 0 freq: 330 size: 3 time: 12 callee size: 0 stack: 0
+       op0 is compile time invariant
+    time/108 function body not available
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 0 stack: 0
+       op0 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq: 330 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:1000 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:1000 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    output_string/96 function not considered for inlining
+      loop depth: 0 freq:1000 size: 2 time: 11 callee size: 6 stack: 0
+       op0 is compile time invariant
+    strtol/114 function body not available
+      loop depth: 0 freq: 202 size: 5 time: 14 callee size: 0 stack: 0 predicate: (op0 == 2)
+       op1 is compile time invariant
+       op2 is compile time invariant
+    indirect call loop depth: 1 freq:1870 size: 3 time: 15
+
+main (int argc, char * * argv)
+{
+  double fpindex;
+  double intindex;
+  double lx_fpindex;
+  double lx_intindex;
+  double lx_memindex;
+  double bstdev;
+  double bmean;
+  struct tm * loctime;
+  time_t time_and_date;
+  int i;
+  char * _1;
+  int global_allstats.0_2;
+  char * _3;
+  int _4;
+  char * _5;
+  double _6;
+  double _7;
+  double _8;
+  double _9;
+  _Bool _10;
+  _Bool _11;
+  _Bool _12;
+  double _13;
+  double _14;
+  double _15;
+  double _16;
+  double _17;
+  double _18;
+  _Bool _19;
+  _Bool _20;
+  _Bool _21;
+  unsigned int i.7_22;
+  unsigned int _23;
+  double _24;
+  double _25;
+  double _26;
+  double _27;
+  int global_allstats.10_28;
+  double _29;
+  double _30;
+  char * _31;
+  int testnum.16_32;
+  int global_custrun.17_33;
+  double _34;
+  double _35;
+  struct FILE * global_ofile.18_36;
+  int write_to_file.19_37;
+  double _38;
+  double _39;
+  double _40;
+  long int _149;
+  int _150;
+  void (*<T8d0>) (void) _153;
+
+  <bb 2> [9.09%]:
+  global_min_ticks = 60;
+  global_min_seconds = 5;
+  global_allstats = 0;
+  global_custrun = 0;
+  global_align = 8;
+  write_to_file = 0;
+  mem_array_ents = 0;
+  goto <bb 4>; [100.00%]
+
+  <bb 3> [90.91%]:
+  tests_to_do[i_41] = 1;
+  i_148 = i_41 + 1;
+
+  <bb 4> [100.00%]:
+  # i_41 = PHI <0(2), i_148(3)>
+  if (i_41 <= 9)
+    goto <bb 3>; [90.91%]
+  else
+    goto <bb 5>; [9.09%]
+
+  <bb 5> [9.09%]:
+  global_numsortstruct.request_secs = 5;
+  global_strsortstruct.request_secs = 5;
+  global_bitopstruct.request_secs = 5;
+  global_emfloatstruct.request_secs = 5;
+  global_fourierstruct.request_secs = 5;
+  global_assignstruct.request_secs = 5;
+  global_ideastruct.request_secs = 5;
+  global_huffstruct.request_secs = 5;
+  global_nnetstruct.request_secs = 5;
+  global_lustruct.request_secs = 5;
+  global_numsortstruct.adjust = 0;
+  global_numsortstruct.arraysize = 8111;
+  global_strsortstruct.adjust = 0;
+  global_strsortstruct.arraysize = 8111;
+  global_bitopstruct.adjust = 0;
+  global_bitopstruct.bitfieldarraysize = 16384;
+  global_emfloatstruct.adjust = 0;
+  global_emfloatstruct.arraysize = 3000;
+  global_fourierstruct.adjust = 0;
+  global_assignstruct.adjust = 0;
+  global_ideastruct.adjust = 0;
+  global_ideastruct.arraysize = 4000;
+  global_huffstruct.adjust = 0;
+  global_huffstruct.arraysize = 5000;
+  global_nnetstruct.adjust = 0;
+  global_lustruct.adjust = 0;
+  if (argc_90(D) == 2)
+    goto <bb 6>; [20.24%]
+  else
+    goto <bb 7>; [79.76%]
+
+  <bb 6> [1.84%]:
+  _1 = MEM[(char * *)argv_91(D) + 8B];
+  _149 = strtol (_1, 0B, 10);
+  _150 = (int) _149;
+  testnum = _150;
+
+  <bb 7> [9.09%]:
+  output_string ("\nBYTEmark* Native Mode Benchmark ver. 2 (10/95)\n");
+  output_string ("Index-split by Andrew D. Balsa (11/97)\n");
+  output_string ("Linux/Unix* port by Uwe F. Mayer (12/96,11/97)\n");
+  global_allstats.0_2 = global_allstats;
+  if (global_allstats.0_2 != 0)
+    goto <bb 8>; [33.00%]
+  else
+    goto <bb 9>; [67.00%]
+
+  <bb 8> [3.00%]:
+  output_string ("\n");
+  output_string ("============================== ALL STATISTICS ===============================\n");
+  time (&time_and_date);
+  loctime_100 = localtime (&time_and_date);
+  _3 = asctime (loctime_100);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "**Date and time of benchmark run: %s", _3);
+  output_string (&buffer);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "**Sizeof: char:%u short:%u int:%u long:%u u8:%u u16:%u u32:%u int32:%u\n", 1, 2, 4, 8, 1, 2, 4, 4);
+  output_string (&buffer);
+  __builtin_memcpy (&buffer, "**System used for compilation:\n", 32);
+  output_string (&buffer);
+  __builtin_memcpy (&buffer, "**Linux elvenado 4.15.0-112-generic #113-Ubuntu SMP Thu Jul 9 23:41:39 UTC 2020 \n", 82);
+  output_string (&buffer);
+  __builtin_memcpy (&buffer, "**C compiler: gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) \n", 64);
+  output_string (&buffer);
+  __builtin_memcpy (&buffer, "**libc: libc-2.27.so\n", 22);
+  output_string (&buffer);
+  __builtin_memcpy (&buffer, "**Date of compilation: Mon 24 Aug 10:41:27 BST 2020\n", 53);
+  output_string (&buffer);
+  output_string ("=============================================================================\n");
+
+  <bb 9> [9.09%]:
+  output_string ("\nTEST                : Iterations/sec.  : Old Index   : New Index\n");
+  output_string ("                    :                  : Pentium 90* : AMD K6/233*\n");
+  output_string ("--------------------:------------------:-------------:------------\n");
+  i_113 = testnum;
+  goto <bb 23>; [100.00%]
+
+  <bb 10> [51.51%]:
+  _4 = tests_to_do[i_42];
+  if (_4 != 0)
+    goto <bb 11>; [33.00%]
+  else
+    goto <bb 22>; [67.00%]
+
+  <bb 11> [17.00%]:
+  _5 = ftestnames[i_42];
+  __builtin___sprintf_chk (&buffer, 1, 1024, "%s    :", _5);
+  output_string (&buffer);
+  _153 = funcpointer[i_42];
+  _153 ();
+  _6 = lx_bindex[i_42];
+  _7 = bmean_187(D) / _6;
+  _8 = bindex[i_42];
+  _9 = bmean_187(D) / _8;
+  __builtin___sprintf_chk (&buffer, 1, 1024, " %15.5g  :  %9.2f  :  %9.2f\n", bmean_187(D), _9, _7);
+  output_string (&buffer);
+  _10 = i_42 == 4;
+  _11 = i_42 == 8;
+  _12 = _10 | _11;
+  if (_12 != 0)
+    goto <bb 13>; [50.00%]
+  else
+    goto <bb 12>; [50.00%]
+
+  <bb 12> [8.50%]:
+  if (i_42 == 9)
+    goto <bb 13>; [34.00%]
+  else
+    goto <bb 14>; [66.00%]
+
+  <bb 13> [11.39%]:
+  _13 = bindex[i_42];
+  _14 = bmean_187(D) / _13;
+  fpindex_139 = _14 * fpindex_57;
+  _15 = lx_bindex[i_42];
+  _16 = bmean_187(D) / _15;
+  lx_fpindex_140 = _16 * lx_fpindex_51;
+  goto <bb 18>; [100.00%]
+
+  <bb 14> [5.61%]:
+  _17 = bindex[i_42];
+  _18 = bmean_187(D) / _17;
+  intindex_136 = _18 * intindex_54;
+  _19 = i_42 == 0;
+  _20 = i_42 == 3;
+  _21 = _19 | _20;
+  if (_21 != 0)
+    goto <bb 16>; [50.00%]
+  else
+    goto <bb 15>; [50.00%]
+
+  <bb 15> [2.80%]:
+  i.7_22 = (unsigned int) i_42;
+  _23 = i.7_22 + 4294967290;
+  if (_23 <= 1)
+    goto <bb 16>; [36.00%]
+  else
+    goto <bb 17>; [64.00%]
+
+  <bb 16> [3.81%]:
+  _24 = lx_bindex[i_42];
+  _25 = bmean_187(D) / _24;
+  lx_intindex_138 = _25 * lx_intindex_48;
+  goto <bb 18>; [100.00%]
+
+  <bb 17> [1.80%]:
+  _26 = lx_bindex[i_42];
+  _27 = bmean_187(D) / _26;
+  lx_memindex_137 = _27 * lx_memindex_45;
+
+  <bb 18> [17.00%]:
+  # lx_memindex_43 = PHI <lx_memindex_45(13), lx_memindex_45(16), lx_memindex_137(17)>
+  # lx_intindex_46 = PHI <lx_intindex_48(13), lx_intindex_138(16), lx_intindex_48(17)>
+  # lx_fpindex_49 = PHI <lx_fpindex_140(13), lx_fpindex_51(16), lx_fpindex_51(17)>
+  # intindex_52 = PHI <intindex_54(13), intindex_136(16), intindex_136(17)>
+  # fpindex_55 = PHI <fpindex_139(13), fpindex_57(16), fpindex_57(17)>
+  global_allstats.10_28 = global_allstats;
+  if (global_allstats.10_28 != 0)
+    goto <bb 19>; [33.00%]
+  else
+    goto <bb 22>; [67.00%]
+
+  <bb 19> [5.61%]:
+  __builtin___sprintf_chk (&buffer, 1, 1024, "  Absolute standard deviation: %g\n", bstdev_188(D));
+  output_string (&buffer);
+  if (bmean_187(D) > 1.00000000000000001999189980260288361964776078853415942018e-100)
+    goto <bb 20>; [33.00%]
+  else
+    goto <bb 21>; [67.00%]
+
+  <bb 20> [1.85%]:
+  _29 = bstdev_188(D) * 1.0e+2;
+  _30 = _29 / bmean_187(D);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "  Relative standard deviation: %g %%\n", _30);
+  output_string (&buffer);
+
+  <bb 21> [5.61%]:
+  __builtin___sprintf_chk (&buffer, 1, 1024, "  Number of runs: %lu\n", 5);
+  output_string (&buffer);
+  show_stats (i_42);
+  _31 = ftestnames[i_42];
+  __builtin___sprintf_chk (&buffer, 1, 1024, "Done with %s\n\n", _31);
+  output_string (&buffer);
+
+  <bb 22> [51.51%]:
+  # lx_memindex_44 = PHI <lx_memindex_45(10), lx_memindex_43(18), lx_memindex_43(21)>
+  # lx_intindex_47 = PHI <lx_intindex_48(10), lx_intindex_46(18), lx_intindex_46(21)>
+  # lx_fpindex_50 = PHI <lx_fpindex_51(10), lx_fpindex_49(18), lx_fpindex_49(21)>
+  # intindex_53 = PHI <intindex_54(10), intindex_52(18), intindex_52(21)>
+  # fpindex_56 = PHI <fpindex_57(10), fpindex_55(18), fpindex_55(21)>
+  i_146 = i_42 + 1;
+
+  <bb 23> [60.60%]:
+  # i_42 = PHI <i_113(9), i_146(22)>
+  # lx_memindex_45 = PHI <1.0e+0(9), lx_memindex_44(22)>
+  # lx_intindex_48 = PHI <1.0e+0(9), lx_intindex_47(22)>
+  # lx_fpindex_51 = PHI <1.0e+0(9), lx_fpindex_50(22)>
+  # intindex_54 = PHI <1.0e+0(9), intindex_53(22)>
+  # fpindex_57 = PHI <1.0e+0(9), fpindex_56(22)>
+  testnum.16_32 = testnum;
+  if (testnum.16_32 >= i_42)
+    goto <bb 10>; [85.00%]
+  else
+    goto <bb 24>; [15.00%]
+
+  <bb 24> [9.09%]:
+  # lx_memindex_61 = PHI <lx_memindex_45(23)>
+  # lx_intindex_134 = PHI <lx_intindex_48(23)>
+  # lx_fpindex_154 = PHI <lx_fpindex_51(23)>
+  # intindex_152 = PHI <intindex_54(23)>
+  # fpindex_151 = PHI <fpindex_57(23)>
+  global_custrun.17_33 = global_custrun;
+  if (global_custrun.17_33 == 0)
+    goto <bb 25>; [33.00%]
+  else
+    goto <bb 26>; [67.00%]
+
+  <bb 25> [3.00%]:
+  output_string ("==========================ORIGINAL BYTEMARK RESULTS==========================\n");
+  _34 = pow (intindex_152, 1.428570000000000117523768494720570743083953857421875e-1);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "INTEGER INDEX       : %.3f\n", _34);
+  output_string (&buffer);
+  _35 = pow (fpindex_151, 3.3333000000000001517008740847813896834850311279296875e-1);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "FLOATING-POINT INDEX: %.3f\n", _35);
+  output_string (&buffer);
+  output_string ("Baseline (MSDOS*)   : Pentium* 90, 256 KB L2-cache, Watcom* compiler 10.0\n");
+  output_string ("==============================LINUX DATA BELOW===============================\n");
+  global_ofile.18_36 = global_ofile;
+  write_to_file.19_37 = write_to_file;
+  hardware (write_to_file.19_37, global_ofile.18_36);
+  __builtin_memcpy (&buffer, "C compiler          : gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) \n", 72);
+  output_string (&buffer);
+  __builtin_memcpy (&buffer, "libc                : libc-2.27.so\n", 36);
+  output_string (&buffer);
+  _38 = pow (lx_memindex_61, 3.33333333299999978738270556277711875736713409423828125e-1);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "MEMORY INDEX        : %.3f\n", _38);
+  output_string (&buffer);
+  _39 = pow (lx_intindex_134, 2.5e-1);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "INTEGER INDEX       : %.3f\n", _39);
+  output_string (&buffer);
+  _40 = pow (lx_fpindex_154, 3.33333333299999978738270556277711875736713409423828125e-1);
+  __builtin___sprintf_chk (&buffer, 1, 1024, "FLOATING-POINT INDEX: %.3f\n", _40);
+  output_string (&buffer);
+  output_string ("Baseline (LINUX)    : AMD K6/233*, 512 KB L2-cache, gcc 2.7.2.3, libc-5.4.38\n");
+  output_string ("* Trademarks are property of their respective holder.\n");
+
+  <bb 26> [9.09%]:
+  exit (0);
+
+}
+
+

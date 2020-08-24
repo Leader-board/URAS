@@ -1,0 +1,138 @@
+
+;; Function randnum (randnum, funcdef_no=25, decl_uid=2518, cgraph_uid=25, symbol_order=25)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4
+;; 2 succs { 3 4 }
+;; 3 succs { 4 }
+;; 4 succs { 1 }
+randnum (int32 lngval)
+{
+  static int32 randw[2] = {13, 117};
+  register int32 interm;
+  int _1;
+  int _2;
+  int _3;
+  int _4;
+  int _5;
+  int _6;
+
+  <bb 2> [0.00%]:
+  if (lngval_8(D) != 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  randw[0] = 13;
+  randw[1] = 117;
+
+  <bb 4> [0.00%]:
+  _1 = randw[0];
+  _2 = _1 * 254754;
+  _3 = randw[1];
+  _4 = _3 * 529562;
+  _5 = _2 + _4;
+  interm_12 = _5 % 999563;
+  _6 = randw[0];
+  randw[1] = _6;
+  randw[0] = interm_12;
+  return interm_12;
+
+}
+
+
+
+;; Function randwc (randwc, funcdef_no=23, decl_uid=2514, cgraph_uid=23, symbol_order=23)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+randwc (int32 num)
+{
+  register int32 interm;
+  int32 D.2548;
+  static int32 randw[2] = {13, 117};
+  int32 _5;
+  int _6;
+  int _7;
+  int _8;
+  int _9;
+  int _10;
+
+  <bb 2> [100.00%]:
+  _6 = randw[0];
+  _7 = _6 * 254754;
+  _8 = randw[1];
+  _9 = _8 * 529562;
+  _10 = _7 + _9;
+  interm_11 = _10 % 999563;
+  randw[1] = _6;
+  randw[0] = interm_11;
+  _5 = interm_11 % num_4(D);
+  return _5;
+
+}
+
+
+
+;; Function abs_randwc (abs_randwc, funcdef_no=24, decl_uid=2516, cgraph_uid=24, symbol_order=24)
+
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4
+;; 2 succs { 3 4 }
+;; 3 succs { 4 }
+;; 4 succs { 1 }
+abs_randwc (u32 num)
+{
+  register int32 interm;
+  int32 D.2552;
+  int32 temp;
+  int num.0_1;
+  u32 _8;
+  int _9;
+  int _10;
+  int _11;
+  int _12;
+  int _13;
+  int _15;
+
+  <bb 2> [100.00%]:
+  num.0_1 = (int) num_3(D);
+  _9 = randw[0];
+  _10 = _9 * 254754;
+  _11 = randw[1];
+  _12 = _11 * 529562;
+  _13 = _10 + _12;
+  interm_14 = _13 % 999563;
+  randw[1] = _9;
+  randw[0] = interm_14;
+  _15 = interm_14 % num.0_1;
+  if (_15 < 0)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 4>; [0.00%]
+
+  <bb 3> [0.00%]:
+  temp_7 = -_15;
+
+  <bb 4> [0.00%]:
+  # temp_2 = PHI <_15(2), temp_7(3)>
+  _8 = (u32) temp_2;
+  return _8;
+
+}
+
+

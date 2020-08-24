@@ -1,0 +1,39 @@
+26 ssa "unused VAR_DECLs removed" "randwc" 1
+26 ssa "unused VAR_DECLs removed" "abs_randwc" 1
+38 ccp "Copies propagated" "randnum" 1
+38 ccp "Statements deleted" "randnum" 1
+43 fre "SCC iterations == 2" "randnum" 1
+43 fre "Eliminated" "randnum" 1
+55 release_ssa "SSA names released" "randnum" 2
+55 release_ssa "SSA name holes removed" "randnum" 2
+38 ccp "Copies propagated" "randwc" 1
+38 ccp "Statements deleted" "randwc" 2
+55 release_ssa "unused VAR_DECLs removed" "randwc" 1
+55 release_ssa "SSA names released" "randwc" 3
+55 release_ssa "SSA name holes removed" "randwc" 3
+35 einline "unused VAR_DECLs removed" "abs_randwc" 1
+35 einline "Symbol to SSA rewrite" "abs_randwc" 1
+38 ccp "Copies propagated" "abs_randwc" 3
+38 ccp "Statements deleted" "abs_randwc" 2
+43 fre "SCC iterations == 2" "abs_randwc" 1
+55 release_ssa "unused VAR_DECLs removed" "abs_randwc" 1
+55 release_ssa "SSA names released" "abs_randwc" 3
+55 release_ssa "SSA name holes removed" "abs_randwc" 3
+139 pre "compute_antic iterations == 2" "randwc" 1
+139 pre "insert iterations == 1" "randwc" 1
+266 combine "two-insn combine" "randwc" 1
+106 fre "SCC iterations == 2" "abs_randwc" 1
+109 vrp "Incremental SSA update" "abs_randwc" 1
+109 vrp "Number of ASSERT_EXPR expressions inserted" "abs_randwc" 2
+139 pre "compute_antic iterations == 2" "abs_randwc" 1
+139 pre "insert iterations == 1" "abs_randwc" 1
+266 combine "two-insn combine" "abs_randwc" 1
+106 fre "SCC iterations == 2" "randnum" 1
+139 pre "compute_antic iterations == 2" "randnum" 1
+139 pre "Insertions" "randnum" 6
+139 pre "New PHIs" "randnum" 6
+139 pre "SCC iterations == 2" "randnum" 1
+139 pre "insert iterations == 2" "randnum" 1
+139 pre "Eliminated" "randnum" 6
+190 cddce "PHI nodes deleted" "randnum" 1
+266 combine "two-insn combine" "randnum" 1
