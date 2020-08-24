@@ -1,0 +1,290 @@
+PARENT: Child's exit code is: 0
+
+	Total Energy:	141.174 J
+	Average Power:	25.6225 W
+	Time:	5.50978 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	141.365 J
+	Average Power:	25.6569 W
+	Time:	5.50981 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	141.466 J
+	Average Power:	25.6761 W
+	Time:	5.50964 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	141.342 J
+	Average Power:	25.6799 W
+	Time:	5.504 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	141.441 J
+	Average Power:	25.6712 W
+	Time:	5.50969 sec
+PARENT: Child's exit code is: 0
+
+	Total Energy:	139.116 J
+	Average Power:	26.2007 W
+	Time:	5.30962 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	139.277 J
+	Average Power:	26.2316 W
+	Time:	5.30949 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	139.293 J
+	Average Power:	26.2347 W
+	Time:	5.30951 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	139.147 J
+	Average Power:	26.235 W
+	Time:	5.30385 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	139.264 J
+	Average Power:	26.2289 W
+	Time:	5.30954 sec
+PARENT: Child's exit code is: 0
+
+	Total Energy:	129.271 J
+	Average Power:	25.3005 W
+	Time:	5.10943 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	129.416 J
+	Average Power:	25.3288 W
+	Time:	5.10942 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	129.478 J
+	Average Power:	25.3413 W
+	Time:	5.10938 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	129.413 J
+	Average Power:	25.3285 W
+	Time:	5.1094 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	129.405 J
+	Average Power:	25.3265 W
+	Time:	5.10947 sec
+PARENT: Child's exit code is: 0
+
+	Total Energy:	132.947 J
+	Average Power:	26.0193 W
+	Time:	5.10955 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	133.092 J
+	Average Power:	26.048 W
+	Time:	5.10949 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	133.115 J
+	Average Power:	26.0524 W
+	Time:	5.10949 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	133.1 J
+	Average Power:	26.0496 W
+	Time:	5.10949 sec
+PARENT: Child's exit code is: 0
+
+	Total Energy:	133.102 J
+	Average Power:	26.0496 W
+	Time:	5.10955 sec
+PARENT: Child's exit code is: 0
+
+	Total Energy:	131.624 J
+	Average Power:	25.7607 W
+	Time:	5.10948 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	131.714 J
+	Average Power:	25.7785 W
+	Time:	5.10947 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	131.79 J
+	Average Power:	25.7936 W
+	Time:	5.10942 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	131.706 J
+	Average Power:	25.7768 W
+	Time:	5.10949 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	131.766 J
+	Average Power:	25.7883 W
+	Time:	5.10952 sec
+PARENT: Child's exit code is: 0
+
+	Total Energy:	130.342 J
+	Average Power:	25.5095 W
+	Time:	5.10957 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	130.497 J
+	Average Power:	25.5404 W
+	Time:	5.10945 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	130.552 J
+	Average Power:	25.551 W
+	Time:	5.10946 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	130.545 J
+	Average Power:	25.5496 W
+	Time:	5.10947 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	130.581 J
+	Average Power:	25.5565 W
+	Time:	5.1095 sec
+PARENT: Child's exit code is: 0
+
+	Total Energy:	131.024 J
+	Average Power:	25.6438 W
+	Time:	5.10938 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	131.133 J
+	Average Power:	25.6654 W
+	Time:	5.10933 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	131.212 J
+	Average Power:	25.6808 W
+	Time:	5.10934 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	131.18 J
+	Average Power:	25.6747 W
+	Time:	5.10932 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	131.215 J
+	Average Power:	25.6814 W
+	Time:	5.10935 sec
+PARENT: Child's exit code is: 0
+
+	Total Energy:	131.727 J
+	Average Power:	25.7809 W
+	Time:	5.10947 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	131.782 J
+	Average Power:	25.7918 W
+	Time:	5.10946 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	131.698 J
+	Average Power:	25.8054 W
+	Time:	5.10353 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	131.867 J
+	Average Power:	25.809 W
+	Time:	5.10933 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	131.803 J
+	Average Power:	25.7959 W
+	Time:	5.10944 sec
+PARENT: Child's exit code is: 0
+
+	Total Energy:	133.869 J
+	Average Power:	26.2002 W
+	Time:	5.10947 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	133.919 J
+	Average Power:	26.2107 W
+	Time:	5.10935 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	133.904 J
+	Average Power:	26.2077 W
+	Time:	5.10933 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	133.916 J
+	Average Power:	26.2098 W
+	Time:	5.10939 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	133.895 J
+	Average Power:	26.2057 W
+	Time:	5.10938 sec
+PARENT: Child's exit code is: 0
+
+	Total Energy:	134.717 J
+	Average Power:	26.366 W
+	Time:	5.1095 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	134.657 J
+	Average Power:	26.3549 W
+	Time:	5.10937 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	134.207 J
+	Average Power:	26.2959 W
+	Time:	5.10373 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	134.55 J
+	Average Power:	26.3338 W
+	Time:	5.10941 sec
+
+PARENT: Child's exit code is: 0
+
+	Total Energy:	134.386 J
+	Average Power:	26.3018 W
+	Time:	5.1094 sec
+
