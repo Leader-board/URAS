@@ -10,16 +10,16 @@
 **                             **
 ** Included in this source     **
 ** file:                       **
-**  Numeric Heapsort           **
-**  String Heapsort            **
-**  Bitfield test              **
+**  Numeric Heapsort (around O(n log n), n + n log n assuming that we do it for all elements)          **
+**  String Heapsort  (around O(n log n), n + n log n assuming that we do it for all elements)         **
+**  Bitfield test    (around O(log n log n) as it appears as we are running a bitmask (that's log n on length) log n times)          **
 **  Floating point emulation   **
-**  Fourier coefficients       **
-**  Assignment algorithm       **
+**  Fourier coefficients // O(n log n) optimally, but this is closer to n^2 as I don't see any sorting      **
+**  Assignment algorithm  (O(n) as all I see are random numbers being added)     **
 **  IDEA Encyption             **
-**  Huffman compression        **
+**  Huffman compression (best = O(n log n))        **
 **  Back prop. neural net      **
-**  LU Decomposition           **
+**  LU Decomposition   (O(mn))        **
 **    (linear equations)       **
 ** ----------                  **
 ** Rick Grehan, BYTE Magazine  **
@@ -60,6 +60,7 @@
 #include <string.h>
 #include <strings.h>
 #include <math.h>
+#include <time.h> // for time measurement
 #include "nmglobal.h"
 #include "nbench1.h"
 #include "wordcat.h"
