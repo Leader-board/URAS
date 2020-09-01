@@ -1,0 +1,39 @@
+        -:    0:Source:/usr/include/x86_64-linux-gnu/bits/strings_fortified.h
+        -:    0:Graph:nbench1.gcno
+        -:    0:Data:nbench1.gcda
+        -:    0:Runs:5
+        -:    0:Programs:1
+        -:    1:/* Fortify macros for strings.h functions.
+        -:    2:   Copyright (C) 2017-2018 Free Software Foundation, Inc.
+        -:    3:   This file is part of the GNU C Library.
+        -:    4:
+        -:    5:   The GNU C Library is free software; you can redistribute it and/or
+        -:    6:   modify it under the terms of the GNU Lesser General Public
+        -:    7:   License as published by the Free Software Foundation; either
+        -:    8:   version 2.1 of the License, or (at your option) any later version.
+        -:    9:
+        -:   10:   The GNU C Library is distributed in the hope that it will be useful,
+        -:   11:   but WITHOUT ANY WARRANTY; without even the implied warranty of
+        -:   12:   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+        -:   13:   Lesser General Public License for more details.
+        -:   14:
+        -:   15:   You should have received a copy of the GNU Lesser General Public
+        -:   16:   License along with the GNU C Library; if not, see
+        -:   17:   <http://www.gnu.org/licenses/>.  */
+        -:   18:
+        -:   19:#ifndef __STRINGS_FORTIFIED
+        -:   20:# define __STRINGS_FORTIFIED 1
+        -:   21:
+        -:   22:__fortify_function void
+        -:   23:__NTH (bcopy (const void *__src, void *__dest, size_t __len))
+        -:   24:{
+        -:   25:  (void) __builtin___memmove_chk (__dest, __src, __len, __bos0 (__dest));
+        -:   26:}
+        -:   27:
+        -:   28:__fortify_function void
+        -:   29:__NTH (bzero (void *__dest, size_t __len))
+        -:   30:{
+    #####:   31:  (void) __builtin___memset_chk (__dest, '\0', __len, __bos0 (__dest));
+        -:   32:}
+        -:   33:
+        -:   34:#endif
