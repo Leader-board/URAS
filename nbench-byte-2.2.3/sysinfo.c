@@ -6,5 +6,5 @@ sprintf(buffer,"**C compiler: gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) \n
 output_string(buffer);
 sprintf(buffer,"**libc: libc-2.27.so\n");
 output_string(buffer);
-sprintf(buffer,"**Date of compilation: Mon 24 Aug 10:41:27 BST 2020\n");
+sprintf(buffer,"**Date of compilation: Tue  1 Sep 10:47:14 BST 2020\n");
 output_string(buffer);
