@@ -22,7 +22,7 @@ default: nbench
 CC = gcc
 
 # generic options for gcc
-CFLAGS = -fprofile-arcs -ftest-coverage -g -s -static -Wall -O3 -fdump-tree-cfg
+CFLAGS = -pg -fprofile-arcs -ftest-coverage -g -s -static -Wall -O3 -fdump-tree-cfg
 
 # if your gcc lets you do it, then try this one
 #CFLAGS = -s -static -Wall -O3 -fomit-frame-pointer -funroll-loops
