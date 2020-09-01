@@ -22,7 +22,7 @@ default: nbench
 CC = gcc
 
 # generic options for gcc
-CFLAGS = -fdump-tree-vcg -s -static -Wall -O3
+CFLAGS = -fdump-tree-vcg -g -s -static -Wall -O3
 
 # if your gcc lets you do it, then try this one
 #CFLAGS = -s -static -Wall -O3 -fomit-frame-pointer -funroll-loops
