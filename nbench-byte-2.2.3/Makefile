@@ -22,7 +22,7 @@ default: nbench
 CC = gcc
 
 # generic options for gcc
-CFLAGS = -pg -s -static -Wall -O3
+CFLAGS = -fdump-tree-vcg -s -static -Wall -O3
 
 # if your gcc lets you do it, then try this one
 #CFLAGS = -s -static -Wall -O3 -fomit-frame-pointer -funroll-loops
@@ -141,7 +141,7 @@ sysspec.o: sysspec.h sysspec.c nmglobal.h pointer.h Makefile
 nbench: emfloat.o misc.o nbench0.o nbench1.o sysspec.o hardware.o
 	$(CC) $(MACHINE) $(DEFINES) $(CFLAGS) $(LINKFLAGS)\
 		emfloat.o misc.o nbench0.o nbench1.o sysspec.o hardware.o\
-		-o nbench -lm -pg
+		-o nbench -lm
 
 ##########################################################################
 
