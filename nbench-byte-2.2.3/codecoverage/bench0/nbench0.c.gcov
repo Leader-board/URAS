@@ -1,0 +1,1188 @@
+        -:    0:Source:nbench0.c
+        -:    0:Graph:nbench0.gcno
+        -:    0:Data:nbench0.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:
+        -:    2:/*
+        -:    3:** nbench0.c
+        -:    4:*/
+        -:    5:
+        -:    6:/*******************************************
+        -:    7:**             BYTEmark (tm)              **
+        -:    8:** BYTE MAGAZINE'S NATIVE MODE BENCHMARKS **
+        -:    9:**           FOR CPU/FPU                  **
+        -:   10:**             ver 2.0                    **
+        -:   11:**       Rick Grehan, BYTE Magazine       **
+        -:   12:********************************************
+        -:   13:** NOTE: These benchmarks do NOT check for the presence
+        -:   14:** of an FPU.  You have to find that out manually.
+        -:   15:**
+        -:   16:** REVISION HISTORY FOR BENCHMARKS
+        -:   17:**  9/94 -- First beta. --RG
+        -:   18:**  12/94 -- Bug discovered in some of the integer routines
+        -:   19:**    (IDEA, Huffman,...).  Routines were not accurately counting
+        -:   20:**    the number of loops.  Fixed. --RG (Thanks to Steve A.)
+        -:   21:**  12/94 -- Added routines to calculate and display index
+        -:   22:**    values. Indexes based on DELL XPS 90 (90 MHz Pentium).
+        -:   23:**  1/95 -- Added Mac time manager routines for more accurate
+        -:   24:**    timing on Macintosh (said to be good to 20 usecs) -- RG
+        -:   25:**  1/95 -- Re-did all the #defines so they made more
+        -:   26:**    sense.  See NMGLOBAL.H -- RG
+        -:   27:**  3/95 -- Fixed memory leak in LU decomposition.  Did not
+        -:   28:**    invalidate previous results, just made it easier to run.--RG
+        -:   29:**  3/95 -- Added TOOLHELP.DLL timing routine to Windows timer. --RG
+        -:   30:**  10/95 -- Added memory array & alignment; moved memory
+        -:   31:**      allocation out of LU Decomposition -- RG
+        -:   32:**
+        -:   33:** DISCLAIMER
+        -:   34:** The source, executable, and documentation files that comprise
+        -:   35:** the BYTEmark benchmarks are made available on an "as is" basis.
+        -:   36:** This means that we at BYTE Magazine have made every reasonable
+        -:   37:** effort to verify that the there are no errors in the source and
+        -:   38:** executable code.  We cannot, however, guarantee that the programs
+        -:   39:** are error-free.  Consequently, McGraw-HIll and BYTE Magazine make
+        -:   40:** no claims in regard to the fitness of the source code, executable
+        -:   41:** code, and documentation of the BYTEmark.
+        -:   42:**  Furthermore, BYTE Magazine, McGraw-Hill, and all employees
+        -:   43:** of McGraw-Hill cannot be held responsible for any damages resulting
+        -:   44:** from the use of this code or the results obtained from using
+        -:   45:** this code.
+        -:   46:*/
+        -:   47:
+        -:   48:#include <stdio.h>
+        -:   49:#include <stdlib.h>
+        -:   50:#include <ctype.h>
+        -:   51:#include <string.h>
+        -:   52:#include <time.h>
+        -:   53:#include <math.h>
+        -:   54:#include "nmglobal.h"
+        -:   55:#include "nbench0.h"
+        -:   56:#include "hardware.h"
+        -:   57:
+        -:   58:int testnum = 0; // (testnum + 1)th benchmark. We run only one test
+        -:   59:
+        -:   60:/*************
+        -:   61:**** main ****
+        -:   62:*************/
+        -:   63:#ifdef MAC
+        -:   64:void main(void)
+        -:   65:#else
+        1:   66:int main(int argc, char *argv[])
+        -:   67:#endif
+        -:   68:{
+        -:   69:int i;                  /* Index */
+        -:   70:time_t time_and_date;   /* Self-explanatory */
+        -:   71:struct tm *loctime;
+        -:   72:double bmean;           /* Benchmark mean */
+        -:   73:double bstdev;          /* Benchmark stdev */
+        -:   74:double lx_memindex;     /* Linux memory index (mainly integer operations)*/
+        -:   75:double lx_intindex;     /* Linux integer index */
+        -:   76:double lx_fpindex;      /* Linux floating-point index */
+        -:   77:double intindex;        /* Integer index */
+        -:   78:double fpindex;         /* Floating-point index */
+        -:   79:ulong bnumrun;          /* # of runs */
+        -:   80:
+        -:   81:#ifdef MAC
+        -:   82:        MaxApplZone();
+        -:   83:#endif
+        -:   84:
+        -:   85:#ifdef MACTIMEMGR
+        -:   86:/* Set up high res timer */
+        -:   87:MacHSTdelay=600*1000*1000;      /* Delay is 10 minutes */
+        -:   88:
+        -:   89:memset((char *)&myTMTask,0,sizeof(TMTask));
+        -:   90:
+        -:   91:/* Prime and remove the task, calculating overhead */
+        -:   92:PrimeTime((QElemPtr)&myTMTask,-MacHSTdelay);
+        -:   93:RmvTime((QElemPtr)&myTMTask);
+        -:   94:MacHSTohead=MacHSTdelay+myTMTask.tmCount;
+        -:   95:#endif
+        -:   96:
+        -:   97:#ifdef WIN31TIMER
+        -:   98:/* Set up the size of the timer info structure */
+        -:   99:win31tinfo.dwSize=(DWORD)sizeof(TIMERINFO);
+        -:  100:/* Load library */
+        -:  101:if((hThlp=LoadLibrary("TOOLHELP.DLL"))<32)
+        -:  102:{       printf("Error loading TOOLHELP\n");
+        -:  103:        exit(0);
+        -:  104:}
+        -:  105:if(!(lpfn=GetProcAddress(hThlp,"TimerCount")))
+        -:  106:{       printf("TOOLHELP error\n");
+        -:  107:        exit(0);
+        -:  108:}
+        -:  109:#endif
+        -:  110:
+        -:  111:/*
+        -:  112:** Set global parameters to default.
+        -:  113:*/
+        1:  114:global_min_ticks=MINIMUM_TICKS;
+        1:  115:global_min_seconds=MINIMUM_SECONDS;
+        1:  116:global_allstats=0;
+        1:  117:global_custrun=0;
+        1:  118:global_align=8;
+        1:  119:write_to_file=0;
+        1:  120:lx_memindex=(double)1.0;        /* set for geometric mean computations */
+        1:  121:lx_intindex=(double)1.0;
+        1:  122:lx_fpindex=(double)1.0;
+        1:  123:intindex=(double)1.0;
+        1:  124:fpindex=(double)1.0;
+        1:  125:mem_array_ents=0;               /* Nothing in mem array */
+        -:  126:
+        -:  127:/*
+        -:  128:** We presume all tests will be run unless told
+        -:  129:** otherwise
+        -:  130:*/
+       11:  131:for(i=0;i<NUMTESTS;i++)
+       10:  132:        tests_to_do[i]=1;
+        -:  133:
+        -:  134:/*
+        -:  135:** Initialize test data structures to default
+        -:  136:** values.
+        -:  137:*/
+        -:  138:set_request_secs();     /* Set all request_secs fields */
+        1:  139:global_numsortstruct.adjust=0;
+        1:  140:global_numsortstruct.arraysize=NUMARRAYSIZE;
+        -:  141:
+        1:  142:global_strsortstruct.adjust=0;
+        1:  143:global_strsortstruct.arraysize=STRINGARRAYSIZE;
+        -:  144:
+        1:  145:global_bitopstruct.adjust=0;
+        1:  146:global_bitopstruct.bitfieldarraysize=BITFARRAYSIZE;
+        -:  147:
+        1:  148:global_emfloatstruct.adjust=0;
+        1:  149:global_emfloatstruct.arraysize=EMFARRAYSIZE;
+        -:  150:
+        1:  151:global_fourierstruct.adjust=0;
+        -:  152:
+        1:  153:global_assignstruct.adjust=0;
+        -:  154:
+        1:  155:global_ideastruct.adjust=0;
+        1:  156:global_ideastruct.arraysize=IDEAARRAYSIZE;
+        -:  157:
+        1:  158:global_huffstruct.adjust=0;
+        1:  159:global_huffstruct.arraysize=HUFFARRAYSIZE;
+        -:  160:
+        1:  161:global_nnetstruct.adjust=0;
+        -:  162:
+        1:  163:global_lustruct.adjust=0;
+        -:  164:
+        -:  165:/*
+        -:  166:** For Macintosh -- read the command line.
+        -:  167:*/
+        -:  168:#ifdef MAC
+        -:  169:UCommandLine();
+        -:  170:#endif
+        -:  171:
+        -:  172:/*
+        -:  173:** Handle any command-line arguments.
+        -:  174:*/
+        1:  175:if(argc == 2)
+        -:  176:{
+        -:  177:// use the first argument as the test number (up to 9)
+        2:  178:testnum = atoi(argv[1]);
+        -:  179:}
+        -:  180:        // for(i=1;i<argc;i++)
+        -:  181:        //         if(parse_arg(argv[i])==-1)
+        -:  182:        //         {       display_help(argv[0]);
+        -:  183:        //                 exit(0);
+        -:  184:        //         }
+        -:  185:
+        -:  186:/*
+        -:  187:** Output header
+        -:  188:*/
+        -:  189:#ifdef LINUX
+        1:  190:output_string("\nBYTEmark* Native Mode Benchmark ver. 2 (10/95)\n");
+        1:  191:output_string("Index-split by Andrew D. Balsa (11/97)\n");
+        1:  192:output_string("Linux/Unix* port by Uwe F. Mayer (12/96,11/97)\n");
+        -:  193:#else
+        -:  194:output_string("BBBBBB   YYY   Y  TTTTTTT  EEEEEEE\n");
+        -:  195:output_string("BBB   B  YYY   Y    TTT    EEE\n");
+        -:  196:output_string("BBB   B  YYY   Y    TTT    EEE\n");
+        -:  197:output_string("BBBBBB    YYY Y     TTT    EEEEEEE\n");
+        -:  198:output_string("BBB   B    YYY      TTT    EEE\n");
+        -:  199:output_string("BBB   B    YYY      TTT    EEE\n");
+        -:  200:output_string("BBBBBB     YYY      TTT    EEEEEEE\n\n");
+        -:  201:output_string("\nBYTEmark (tm) Native Mode Benchmark ver. 2 (10/95)\n");
+        -:  202:#endif
+        -:  203:/*
+        -:  204:** See if the user wants all stats.  Output heading info
+        -:  205:** if so.
+        -:  206:*/
+        1:  207:if(global_allstats)
+        -:  208:{
+    #####:  209:                output_string("\n");
+    #####:  210:                output_string("============================== ALL STATISTICS ===============================\n");
+    #####:  211:        time(&time_and_date);
+    #####:  212:        loctime=localtime(&time_and_date);
+    #####:  213:        sprintf(buffer,"**Date and time of benchmark run: %s",asctime(loctime));
+    #####:  214:        output_string(buffer);
+    #####:  215:        sprintf(buffer,"**Sizeof: char:%u short:%u int:%u long:%u u8:%u u16:%u u32:%u int32:%u\n",
+        -:  216:                (unsigned int)sizeof(char),
+        -:  217:                (unsigned int)sizeof(short),
+        -:  218:                (unsigned int)sizeof(int),
+        -:  219:                (unsigned int)sizeof(long),
+        -:  220:                (unsigned int)sizeof(u8),
+        -:  221:                (unsigned int)sizeof(u16),
+        -:  222:                (unsigned int)sizeof(u32),
+        -:  223:                (unsigned int)sizeof(int32));
+    #####:  224:        output_string(buffer);
+        -:  225:#ifdef LINUX
+        -:  226:#include "sysinfo.c"
+        -:  227:#else
+        -:  228:        sprintf(buffer,"**%s\n",sysname);
+        -:  229:        output_string(buffer);
+        -:  230:        sprintf(buffer,"**%s\n",compilername);
+        -:  231:        output_string(buffer);
+        -:  232:        sprintf(buffer,"**%s\n",compilerversion);
+        -:  233:        output_string(buffer);
+        -:  234:#endif
+    #####:  235:                output_string("=============================================================================\n");
+        -:  236:}
+        -:  237:
+        -:  238:/*
+        -:  239:** Execute the tests.
+        -:  240:*/
+        -:  241:#ifdef LINUX
+        1:  242:output_string("\nTEST                : Iterations/sec.  : Old Index   : New Index\n");
+        1:  243:output_string("                    :                  : Pentium 90* : AMD K6/233*\n");
+        1:  244:output_string("--------------------:------------------:-------------:------------\n");
+        -:  245:#endif
+        -:  246:
+        2:  247:for(i=testnum;i<(testnum + 1);i++) // default i < NUMTESTS
+        -:  248:{
+        1:  249:        if(tests_to_do[i])
+        2:  250:        {       sprintf(buffer,"%s    :",ftestnames[i]);
+        1:  251:                                output_string(buffer);
+        2:  252:                if (0!=bench_with_confidence(i,
+        -:  253:                        &bmean,
+        -:  254:                        &bstdev,
+        -:  255:                        &bnumrun)){
+        -:  256:		  output_string("\n** WARNING: The current test result is NOT 95 % statistically certain.\n");
+        -:  257:		  output_string("** WARNING: The variation among the individual results is too large.\n");
+        -:  258:		  output_string("                    :");
+        -:  259:		}
+        -:  260:#ifdef LINUX
+        3:  261:                sprintf(buffer," %15.5g  :  %9.2f  :  %9.2f\n",
+        2:  262:                        bmean,bmean/bindex[i],bmean/lx_bindex[i]);
+        -:  263:#else
+        -:  264:		sprintf(buffer,"  Iterations/sec.: %13.2f  Index: %6.2f\n",
+        -:  265:                        bmean,bmean/bindex[i]);
+        -:  266:#endif
+        1:  267:                output_string(buffer);
+        -:  268:		/*
+        -:  269:		** Gather integer or FP indexes
+        -:  270:		*/
+        1:  271:		if((i==4)||(i==8)||(i==9)){
+        -:  272:		  /* FP index */
+    #####:  273:		  fpindex=fpindex*(bmean/bindex[i]);
+        -:  274:		  /* Linux FP index */
+    #####:  275:		  lx_fpindex=lx_fpindex*(bmean/lx_bindex[i]);
+        -:  276:		}
+        -:  277:		else{
+        -:  278:		  /* Integer index */
+        1:  279:		  intindex=intindex*(bmean/bindex[i]);
+        1:  280:		  if((i==0)||(i==3)||(i==6)||(i==7))
+        -:  281:		    /* Linux integer index */
+        1:  282:		    lx_intindex=lx_intindex*(bmean/lx_bindex[i]);
+        -:  283:		  else
+        -:  284:		    /* Linux memory index */
+    #####:  285:		    lx_memindex=lx_memindex*(bmean/lx_bindex[i]);
+        -:  286:		}
+        -:  287:
+        1:  288:                if(global_allstats)
+        -:  289:                {
+    #####:  290:                        sprintf(buffer,"  Absolute standard deviation: %g\n",bstdev);
+    #####:  291:                        output_string(buffer);
+    #####:  292:			if (bmean>(double)1e-100){
+        -:  293:			  /* avoid division by zero */
+    #####:  294:			  sprintf(buffer,"  Relative standard deviation: %g %%\n",
+    #####:  295:				  (double)100*bstdev/bmean);
+    #####:  296:			  output_string(buffer);
+        -:  297:			}
+    #####:  298:                        sprintf(buffer,"  Number of runs: %lu\n",bnumrun);
+    #####:  299:                        output_string(buffer);
+    #####:  300:                        show_stats(i);
+    #####:  301:                        sprintf(buffer,"Done with %s\n\n",ftestnames[i]);
+    #####:  302:                        output_string(buffer);
+        -:  303:                }
+        -:  304:        }
+        -:  305:}
+        -:  306:/* printf("...done...\n"); */
+        -:  307:
+        -:  308:/*
+        -:  309:** Output the total indexes
+        -:  310:*/
+        1:  311:if(global_custrun==0)
+        -:  312:{
+        1:  313:        output_string("==========================ORIGINAL BYTEMARK RESULTS==========================\n");
+        2:  314:        sprintf(buffer,"INTEGER INDEX       : %.3f\n",
+        -:  315:                       pow(intindex,(double).142857));
+        1:  316:        output_string(buffer);
+        2:  317:        sprintf(buffer,"FLOATING-POINT INDEX: %.3f\n",
+        -:  318:                        pow(fpindex,(double).33333));
+        1:  319:        output_string(buffer);
+        1:  320:        output_string("Baseline (MSDOS*)   : Pentium* 90, 256 KB L2-cache, Watcom* compiler 10.0\n");
+        -:  321:#ifdef LINUX
+        1:  322:        output_string("==============================LINUX DATA BELOW===============================\n");
+        1:  323:	hardware(write_to_file, global_ofile);
+        -:  324:#include "sysinfoc.c"
+        2:  325:        sprintf(buffer,"MEMORY INDEX        : %.3f\n",
+        -:  326:                       pow(lx_memindex,(double).3333333333));
+        1:  327:        output_string(buffer);
+        2:  328:        sprintf(buffer,"INTEGER INDEX       : %.3f\n",
+        -:  329:                       pow(lx_intindex,(double).25));
+        1:  330:        output_string(buffer);
+        2:  331:        sprintf(buffer,"FLOATING-POINT INDEX: %.3f\n",
+        -:  332:                        pow(lx_fpindex,(double).3333333333));
+        1:  333:        output_string(buffer);
+        1:  334:        output_string("Baseline (LINUX)    : AMD K6/233*, 512 KB L2-cache, gcc 2.7.2.3, libc-5.4.38\n");
+        -:  335:#endif
+        1:  336:output_string("* Trademarks are property of their respective holder.\n");
+        -:  337:}
+        -:  338:
+        1:  339:exit(0);
+        -:  340:}
+        -:  341:
+        -:  342:/**************
+        -:  343:** parse_arg **
+        -:  344:***************
+        -:  345:** Given a pointer to a string, we assume that's an argument.
+        -:  346:** Parse that argument and act accordingly.
+        -:  347:** Return 0 if ok, else return -1.
+        -:  348:*/
+        -:  349:static int parse_arg(char *argptr)
+        -:  350:{
+        -:  351:int i;          /* Index */
+        -:  352:FILE *cfile;    /* Command file identifier */
+        -:  353:
+        -:  354:/*
+        -:  355:** First character has got to be a hyphen.
+        -:  356:*/
+        -:  357:if(*argptr++!='-') return(-1);
+        -:  358:
+        -:  359:/*
+        -:  360:** Convert the rest of the argument to upper case
+        -:  361:** so there's little chance of confusion.
+        -:  362:*/
+        -:  363:for(i=0;i<strlen(argptr);i++)
+        -:  364:        argptr[i]=(char)toupper((int)argptr[i]);
+        -:  365:
+        -:  366:/*
+        -:  367:** Next character picks the action.
+        -:  368:*/
+        -:  369:switch(*argptr++)
+        -:  370:{
+        -:  371:        case '?':       return(-1);     /* Will display help */
+        -:  372:
+        -:  373:        case 'V': global_allstats=1; return(0); /* verbose mode */
+        -:  374:
+        -:  375:        case 'C':                       /* Command file name */
+        -:  376:                /*
+        -:  377:                ** First try to open the file for reading.
+        -:  378:                */
+        -:  379:                cfile=fopen(argptr,"r");
+        -:  380:                if(cfile==(FILE *)NULL)
+        -:  381:                {       printf("**Error opening file: %s\n",argptr);
+        -:  382:                        return(-1);
+        -:  383:                }
+        -:  384:                read_comfile(cfile);    /* Read commands */
+        -:  385:                fclose(cfile);
+        -:  386:                break;
+        -:  387:        default:
+        -:  388:                return(-1);
+        -:  389:}
+        -:  390:return(0);
+        -:  391:}
+        -:  392:
+        -:  393:/*******************
+        -:  394:** display_help() **
+        -:  395:********************
+        -:  396:** Display a help message showing argument requirements and such.
+        -:  397:** Exit when you're done...I mean, REALLY exit.
+        -:  398:*/
+        -:  399:void display_help(char *progname)
+        -:  400:{
+        -:  401:        printf("Usage: %s [-v] [-c<FILE>]\n",progname);
+        -:  402:        printf(" -v = verbose\n");
+        -:  403:        printf(" -c = input parameters thru command file <FILE>\n");
+        -:  404:        exit(0);
+        -:  405:}
+        -:  406:
+        -:  407:
+        -:  408:/*****************
+        -:  409:** read_comfile **
+        -:  410:******************
+        -:  411:** Read the command file.  Set global parameters as
+        -:  412:** specified.  This routine assumes that the command file
+        -:  413:** is already open.
+        -:  414:*/
+        -:  415:static void read_comfile(FILE *cfile)
+        -:  416:{
+        -:  417:char inbuf[40];
+        -:  418:char *eptr;             /* Offset to "=" sign */
+        -:  419:int i;                  /* Index */
+        -:  420:
+        -:  421:/*
+        -:  422:** Sit in a big loop, reading a line from the file at each
+        -:  423:** pass.  Terminate on EOF.
+        -:  424:*/
+        -:  425:while(fgets(inbuf,39,cfile)!=(char *)NULL)
+        -:  426:{
+        -:  427:        /* Overwrite the CR character */
+        -:  428:        if(strlen(inbuf)>0)
+        -:  429:                inbuf[strlen(inbuf)-1]='\0';
+        -:  430:
+        -:  431:        /*
+        -:  432:        ** Parse up to the "=" sign.  If we don't find an
+        -:  433:        ** "=", then flag an error.
+        -:  434:        */
+        -:  435:        if((eptr=strchr(inbuf,(int)'='))==(char *)NULL)
+        -:  436:        {       printf("**COMMAND FILE ERROR at LINE:\n %s\n",
+        -:  437:                        inbuf);
+        -:  438:                goto skipswitch;        /* A GOTO!!!! */
+        -:  439:        }
+        -:  440:
+        -:  441:        /*
+        -:  442:        ** Insert a null where the "=" was, then convert
+        -:  443:        ** the substring to uppercase.  That will enable
+        -:  444:        ** us to perform the match.
+        -:  445:        */
+        -:  446:        *eptr++='\0';
+        -:  447:        strtoupper((char *)&inbuf[0]);
+        -:  448:        i=MAXPARAM;
+        -:  449:        do {
+        -:  450:                if(strcmp(inbuf,paramnames[i])==0)
+        -:  451:                        break;
+        -:  452:        } while(--i>=0);
+        -:  453:
+        -:  454:        if(i<0)
+        -:  455:        {       printf("**COMMAND FILE ERROR -- UNKNOWN PARAM: %s",
+        -:  456:                        inbuf);
+        -:  457:                goto skipswitch;
+        -:  458:        }
+        -:  459:
+        -:  460:        /*
+        -:  461:        ** Advance eptr to the next field...which should be
+        -:  462:        ** the value assigned to the parameter.
+        -:  463:        */
+        -:  464:        switch(i)
+        -:  465:        {
+        -:  466:                case PF_GMTICKS:        /* GLOBALMINTICKS */
+        -:  467:                        global_min_ticks=(ulong)atol(eptr);
+        -:  468:                        break;
+        -:  469:
+        -:  470:                case PF_MINSECONDS:     /* MINSECONDS */
+        -:  471:                        global_min_seconds=(ulong)atol(eptr);
+        -:  472:                        set_request_secs();
+        -:  473:                        break;
+        -:  474:
+        -:  475:                case PF_ALLSTATS:       /* ALLSTATS */
+        -:  476:                        global_allstats=getflag(eptr);
+        -:  477:                        break;
+        -:  478:
+        -:  479:                case PF_OUTFILE:        /* OUTFILE */
+        -:  480:                        strcpy(global_ofile_name,eptr);
+        -:  481:                        global_ofile=fopen(global_ofile_name,"a");
+        -:  482:                        /*
+        -:  483:                        ** Open the output file.
+        -:  484:                        */
+        -:  485:                        if(global_ofile==(FILE *)NULL)
+        -:  486:                        {       printf("**Error opening output file: %s\n",
+        -:  487:                                        global_ofile_name);
+        -:  488:                                ErrorExit();
+        -:  489:                        }
+        -:  490:                        write_to_file=-1;
+        -:  491:                        break;
+        -:  492:
+        -:  493:                case PF_CUSTOMRUN:      /* CUSTOMRUN */
+        -:  494:                        global_custrun=getflag(eptr);
+        -:  495:                        for(i=0;i<NUMTESTS;i++)
+        -:  496:                                tests_to_do[i]=1-global_custrun;
+        -:  497:                        break;
+        -:  498:
+        -:  499:                case PF_DONUM:          /* DONUMSORT */
+        -:  500:                        tests_to_do[TF_NUMSORT]=getflag(eptr);
+        -:  501:                        break;
+        -:  502:
+        -:  503:                case PF_NUMNUMA:        /* NUMNUMARRAYS */
+        -:  504:                        global_numsortstruct.numarrays=
+        -:  505:                                (ushort)atoi(eptr);
+        -:  506:                        global_numsortstruct.adjust=1;
+        -:  507:                        break;
+        -:  508:
+        -:  509:                case PF_NUMASIZE:       /* NUMARRAYSIZE */
+        -:  510:                        global_numsortstruct.arraysize=
+        -:  511:                                (ulong)atol(eptr);
+        -:  512:                        break;
+        -:  513:
+        -:  514:                case PF_NUMMINS:        /* NUMMINSECONDS */
+        -:  515:                        global_numsortstruct.request_secs=
+        -:  516:                                (ulong)atol(eptr);
+        -:  517:                        break;
+        -:  518:
+        -:  519:                case PF_DOSTR:          /* DOSTRINGSORT */
+        -:  520:                        tests_to_do[TF_SSORT]=getflag(eptr);
+        -:  521:                        break;
+        -:  522:
+        -:  523:                case PF_STRASIZE:       /* STRARRAYSIZE */
+        -:  524:                        global_strsortstruct.arraysize=
+        -:  525:                                (ulong)atol(eptr);
+        -:  526:                        break;
+        -:  527:
+        -:  528:                case PF_NUMSTRA:        /* NUMSTRARRAYS */
+        -:  529:                        global_strsortstruct.numarrays=
+        -:  530:                                (ushort)atoi(eptr);
+        -:  531:                        global_strsortstruct.adjust=1;
+        -:  532:                        break;
+        -:  533:
+        -:  534:                case PF_STRMINS:        /* STRMINSECONDS */
+        -:  535:                        global_strsortstruct.request_secs=
+        -:  536:                                (ulong)atol(eptr);
+        -:  537:                        break;
+        -:  538:
+        -:  539:                case PF_DOBITF: /* DOBITFIELD */
+        -:  540:                        tests_to_do[TF_BITOP]=getflag(eptr);
+        -:  541:                        break;
+        -:  542:
+        -:  543:                case PF_NUMBITOPS:      /* NUMBITOPS */
+        -:  544:                        global_bitopstruct.bitoparraysize=
+        -:  545:                                (ulong)atol(eptr);
+        -:  546:                        global_bitopstruct.adjust=1;
+        -:  547:                        break;
+        -:  548:
+        -:  549:                case PF_BITFSIZE:       /* BITFIELDSIZE */
+        -:  550:                        global_bitopstruct.bitfieldarraysize=
+        -:  551:                                (ulong)atol(eptr);
+        -:  552:                        break;
+        -:  553:
+        -:  554:                case PF_BITMINS:        /* BITMINSECONDS */
+        -:  555:                        global_bitopstruct.request_secs=
+        -:  556:                                (ulong)atol(eptr);
+        -:  557:                        break;
+        -:  558:
+        -:  559:                case PF_DOEMF:          /* DOEMF */
+        -:  560:                        tests_to_do[TF_FPEMU]=getflag(eptr);
+        -:  561:                        break;
+        -:  562:
+        -:  563:                case PF_EMFASIZE:       /* EMFARRAYSIZE */
+        -:  564:                        global_emfloatstruct.arraysize=
+        -:  565:                                (ulong)atol(eptr);
+        -:  566:                        break;
+        -:  567:
+        -:  568:                case PF_EMFLOOPS:       /* EMFLOOPS */
+        -:  569:                        global_emfloatstruct.loops=
+        -:  570:                                (ulong)atol(eptr);
+        -:  571:                        break;
+        -:  572:
+        -:  573:                case PF_EMFMINS:        /* EMFMINSECOND */
+        -:  574:                        global_emfloatstruct.request_secs=
+        -:  575:                                (ulong)atol(eptr);
+        -:  576:                        break;
+        -:  577:
+        -:  578:                case PF_DOFOUR: /* DOFOUR */
+        -:  579:                        tests_to_do[TF_FFPU]=getflag(eptr);
+        -:  580:                        break;
+        -:  581:
+        -:  582:                case PF_FOURASIZE:      /* FOURASIZE */
+        -:  583:                        global_fourierstruct.arraysize=
+        -:  584:                                (ulong)atol(eptr);
+        -:  585:                        global_fourierstruct.adjust=1;
+        -:  586:                        break;
+        -:  587:
+        -:  588:                case PF_FOURMINS:       /* FOURMINSECONDS */
+        -:  589:                        global_fourierstruct.request_secs=
+        -:  590:                                (ulong)atol(eptr);
+        -:  591:                        break;
+        -:  592:
+        -:  593:                case PF_DOASSIGN:       /* DOASSIGN */
+        -:  594:                        tests_to_do[TF_ASSIGN]=getflag(eptr);
+        -:  595:                        break;
+        -:  596:
+        -:  597:                case PF_AARRAYS:        /* ASSIGNARRAYS */
+        -:  598:                        global_assignstruct.numarrays=
+        -:  599:                                (ulong)atol(eptr);
+        -:  600:                        break;
+        -:  601:
+        -:  602:                case PF_ASSIGNMINS:     /* ASSIGNMINSECONDS */
+        -:  603:                        global_assignstruct.request_secs=
+        -:  604:                                (ulong)atol(eptr);
+        -:  605:                        break;
+        -:  606:
+        -:  607:                case PF_DOIDEA: /* DOIDEA */
+        -:  608:                        tests_to_do[TF_IDEA]=getflag(eptr);
+        -:  609:                        break;
+        -:  610:
+        -:  611:                case PF_IDEAASIZE:      /* IDEAARRAYSIZE */
+        -:  612:                        global_ideastruct.arraysize=
+        -:  613:                                (ulong)atol(eptr);
+        -:  614:                        break;
+        -:  615:
+        -:  616:                case PF_IDEALOOPS:      /* IDEALOOPS */
+        -:  617:                        global_ideastruct.loops=
+        -:  618:                                (ulong)atol(eptr);
+        -:  619:                        break;
+        -:  620:
+        -:  621:                case PF_IDEAMINS:       /* IDEAMINSECONDS */
+        -:  622:                        global_ideastruct.request_secs=
+        -:  623:                                (ulong)atol(eptr);
+        -:  624:                        break;
+        -:  625:
+        -:  626:                case PF_DOHUFF: /* DOHUFF */
+        -:  627:                        tests_to_do[TF_HUFF]=getflag(eptr);
+        -:  628:                        break;
+        -:  629:
+        -:  630:                case PF_HUFFASIZE:      /* HUFFARRAYSIZE */
+        -:  631:                        global_huffstruct.arraysize=
+        -:  632:                                (ulong)atol(eptr);
+        -:  633:                        break;
+        -:  634:
+        -:  635:                case PF_HUFFLOOPS:      /* HUFFLOOPS */
+        -:  636:                        global_huffstruct.loops=
+        -:  637:                                (ulong)atol(eptr);
+        -:  638:                        global_huffstruct.adjust=1;
+        -:  639:                        break;
+        -:  640:
+        -:  641:                case PF_HUFFMINS:       /* HUFFMINSECONDS */
+        -:  642:                        global_huffstruct.request_secs=
+        -:  643:                                (ulong)atol(eptr);
+        -:  644:                        break;
+        -:  645:
+        -:  646:                case PF_DONNET: /* DONNET */
+        -:  647:                        tests_to_do[TF_NNET]=getflag(eptr);
+        -:  648:                        break;
+        -:  649:
+        -:  650:                case PF_NNETLOOPS:      /* NNETLOOPS */
+        -:  651:                        global_nnetstruct.loops=
+        -:  652:                                (ulong)atol(eptr);
+        -:  653:                        global_nnetstruct.adjust=1;
+        -:  654:                        break;
+        -:  655:
+        -:  656:                case PF_NNETMINS:       /* NNETMINSECONDS */
+        -:  657:                        global_nnetstruct.request_secs=
+        -:  658:                                (ulong)atol(eptr);
+        -:  659:                        break;
+        -:  660:
+        -:  661:                case PF_DOLU:           /* DOLU */
+        -:  662:                        tests_to_do[TF_LU]=getflag(eptr);
+        -:  663:                        break;
+        -:  664:
+        -:  665:                case PF_LUNARRAYS:      /* LUNUMARRAYS */
+        -:  666:                        global_lustruct.numarrays=
+        -:  667:                                (ulong)atol(eptr);
+        -:  668:                        global_lustruct.adjust=1;
+        -:  669:                        break;
+        -:  670:
+        -:  671:                case PF_LUMINS: /* LUMINSECONDS */
+        -:  672:                        global_lustruct.request_secs=
+        -:  673:                                (ulong)atol(eptr);
+        -:  674:                        break;
+        -:  675:
+        -:  676:                                case PF_ALIGN:          /* ALIGN */
+        -:  677:                                                global_align=atoi(eptr);
+        -:  678:                                                break;
+        -:  679:        }
+        -:  680:skipswitch:
+        -:  681:        continue;
+        -:  682:}       /* End while */
+        -:  683:
+        -:  684:return;
+        -:  685:}
+        -:  686:
+        -:  687:/************
+        -:  688:** getflag **
+        -:  689:*************
+        -:  690:** Return 1 if cptr points to "T"; 0 otherwise.
+        -:  691:*/
+        -:  692:static int getflag(char *cptr)
+        -:  693:{
+        -:  694:        if(toupper((int)*cptr)=='T') return(1);
+        -:  695:return(0);
+        -:  696:}
+        -:  697:
+        -:  698:/***************
+        -:  699:** strtoupper **
+        -:  700:****************
+        -:  701:** Convert's a string to upper case.  The string is presumed
+        -:  702:** to consist only of alphabetic characters, and to be terminated
+        -:  703:** with a null.
+        -:  704:*/
+        -:  705:static void strtoupper(char *s)
+        -:  706:{
+        -:  707:
+        -:  708:do {
+        -:  709:/*
+        -:  710:** Oddly enough, the following line did not work under THINK C.
+        -:  711:** So, I modified it....hmmmm. --RG
+        -:  712:        *s++=(char)toupper((int)*s);
+        -:  713:*/
+        -:  714:        *s=(char)toupper((int)*s);
+        -:  715:        s++;
+        -:  716:} while(*s!=(char)'\0');
+        -:  717:return;
+        -:  718:}
+        -:  719:
+        -:  720:/*********************
+        -:  721:** set_request_secs **
+        -:  722:**********************
+        -:  723:** Set everyone's "request_secs" entry to whatever
+        -:  724:** value is in global_min_secs.  This is done
+        -:  725:** at the beginning, and possibly later if the
+        -:  726:** user redefines global_min_secs in the command file.
+        -:  727:*/
+        -:  728:static void set_request_secs(void)
+        -:  729:{
+        -:  730:
+        1:  731:global_numsortstruct.request_secs=global_min_seconds;
+        1:  732:global_strsortstruct.request_secs=global_min_seconds;
+        1:  733:global_bitopstruct.request_secs=global_min_seconds;
+        1:  734:global_emfloatstruct.request_secs=global_min_seconds;
+        1:  735:global_fourierstruct.request_secs=global_min_seconds;
+        1:  736:global_assignstruct.request_secs=global_min_seconds;
+        1:  737:global_ideastruct.request_secs=global_min_seconds;
+        1:  738:global_huffstruct.request_secs=global_min_seconds;
+        1:  739:global_nnetstruct.request_secs=global_min_seconds;
+        1:  740:global_lustruct.request_secs=global_min_seconds;
+        -:  741:
+        -:  742:return;
+        -:  743:}
+        -:  744:
+        -:  745:
+        -:  746:/**************************
+        -:  747:** bench_with_confidence **
+        -:  748:***************************
+        -:  749:** Given a benchmark id that indicates a function, this routine
+        -:  750:** repeatedly calls that benchmark, seeking to collect and replace
+        -:  751:** scores to get 5 that meet the confidence criteria.
+        -:  752:**
+        -:  753:** The above is mathematically questionable, as the statistical theory
+        -:  754:** depends on independent observations, and if we exchange data points
+        -:  755:** depending on what we already have then this certainly violates
+        -:  756:** independence of the observations. Hence I changed this so that at
+        -:  757:** most 30 observations are done, but none are deleted as we go
+        -:  758:** along. We simply do more runs and hope to get a big enough sample
+        -:  759:** size so that things stabilize. Uwe F. Mayer
+        -:  760:**
+        -:  761:** Return 0 if ok, -1 if failure.  Returns mean
+        -:  762:** and std. deviation of results if successful.
+        -:  763:*/
+        -:  764:static int bench_with_confidence(int fid,       /* Function id */
+        -:  765:        double *mean,                   /* Mean of scores */
+        -:  766:        double *stdev,                  /* Standard deviation */
+        -:  767:        ulong *numtries)                /* # of attempts */
+        -:  768:{
+        -:  769:double myscores[30];            /* Need at least 5 scores, use at most 30 */
+        -:  770:double c_half_interval;         /* Confidence half interval */
+        -:  771:int i;                          /* Index */
+        -:  772:/* double newscore; */          /* For improving confidence interval */
+        -:  773:
+        -:  774:/*
+        -:  775:** Get first 5 scores.  Then begin confidence testing.
+        -:  776:*/
+        1:  777:for (i=0;i<1;i++)
+        1:  778:{       (*funcpointer[fid])();
+        -:  779:        myscores[i]=getscore(fid);
+        -:  780:#ifdef DEBUG
+        -:  781:	printf("score # %d = %g\n", i, myscores[i]);
+        -:  782:#endif
+        -:  783:}
+        1:  784:*numtries=5;            /* Show 5 attempts */
+        -:  785:
+        -:  786:/*
+        -:  787:** The system allows a maximum of 30 tries before it gives
+        -:  788:** up.  Since we've done 5 already, we'll allow 25 more.
+        -:  789:*/
+        -:  790:
+        -:  791:/*
+        -:  792:** Enter loop to test for confidence criteria.
+        -:  793:*/
+        -:  794:
+        -:  795://while(1)
+        -:  796://{
+        -:  797://        /*
+        -:  798://        ** Calculate confidence. Should always return 0.
+        -:  799://        */
+        -:  800://        if (0!=calc_confidence(myscores,
+        -:  801://		*numtries,
+        -:  802://                &c_half_interval,
+        -:  803://                mean,
+        -:  804://                stdev)) return(-1);
+        -:  805://
+        -:  806://        /*
+        -:  807://        ** Is the length of the half interval 5% or less of mean?
+        -:  808://        ** If so, we can go home.  Otherwise, we have to continue.
+        -:  809://        */
+        -:  810://        if(c_half_interval/ (*mean) <= (double)0.05)
+        -:  811://                break;
+        -:  812://
+        -:  813://#ifdef OLDCODE
+        -:  814://#undef OLDCODE
+        -:  815://#endif
+        -:  816://#ifdef OLDCODE
+        -:  817:///* this code is no longer valid, we now do not replace but add new scores */
+        -:  818:///* Uwe F. Mayer */
+        -:  819://	      /*
+        -:  820://	      ** Go get a new score and see if it
+        -:  821://	      ** improves existing scores.
+        -:  822://	      */
+        -:  823://	      do {
+        -:  824://		      if(*numtries==10)
+        -:  825://			      return(-1);
+        -:  826://		      (*funcpointer[fid])();
+        -:  827://		      *numtries+=1;
+        -:  828://		      newscore=getscore(fid);
+        -:  829://	      } while(seek_confidence(myscores,&newscore,
+        -:  830://		      &c_half_interval,mean,stdev)==0);
+        -:  831://#endif
+        -:  832://	/* We now simply add a new test run and hope that the runs
+        -:  833://           finally stabilize, Uwe F. Mayer */
+        -:  834://	if(*numtries==30) return(-1);
+        -:  835://	(*funcpointer[fid])();
+        -:  836://	myscores[*numtries]=getscore(fid);
+        -:  837://#ifdef DEBUG
+        -:  838://	printf("score # %ld = %g\n", *numtries, myscores[*numtries]);
+        -:  839://#endif
+        -:  840://	*numtries+=1;
+        -:  841://}
+        -:  842://
+        -:  843://
+        -:  844:return(0);
+        -:  845:}
+        -:  846:
+        -:  847:#ifdef OLDCODE
+        -:  848:/* this procecdure is no longer needed, Uwe F. Mayer */
+        -:  849:  /********************
+        -:  850:  ** seek_confidence **
+        -:  851:  *********************
+        -:  852:  ** Pass this routine an array of 5 scores PLUS a new score.
+        -:  853:  ** This routine tries the new score in place of each of
+        -:  854:  ** the other five scores to determine if the new score,
+        -:  855:  ** when replacing one of the others, improves the confidence
+        -:  856:  ** half-interval.
+        -:  857:  ** Return 0 if failure.  Original 5 scores unchanged.
+        -:  858:  ** Return -1 if success.  Also returns new half-interval,
+        -:  859:  ** mean, and standard deviation of the sample.
+        -:  860:  */
+        -:  861:  static int seek_confidence( double scores[5],
+        -:  862:  		double *newscore,
+        -:  863:  		double *c_half_interval,
+        -:  864:  		double *smean,
+        -:  865:  		double *sdev)
+        -:  866:  {
+        -:  867:  double sdev_to_beat;    /* Original sdev to be beaten */
+        -:  868:  double temp;            /* For doing a swap */
+        -:  869:  int is_beaten;          /* Indicates original was beaten */
+        -:  870:  int i;                  /* Index */
+        -:  871:
+        -:  872:  /*
+        -:  873:  ** First calculate original standard deviation
+        -:  874:  */
+        -:  875:  calc_confidence(scores,c_half_interval,smean,sdev);
+        -:  876:  sdev_to_beat=*sdev;
+        -:  877:  is_beaten=-1;
+        -:  878:
+        -:  879:  /*
+        -:  880:  ** Try to beat original score.  We'll come out of this
+        -:  881:  ** loop with a flag.
+        -:  882:  */
+        -:  883:  for(i=0;i<5;i++)
+        -:  884:  {
+        -:  885:  	temp=scores[i];
+        -:  886:  	scores[i]=*newscore;
+        -:  887:  	calc_confidence(scores,c_half_interval,smean,sdev);
+        -:  888:  	scores[i]=temp;
+        -:  889:  	if(sdev_to_beat>*sdev)
+        -:  890:  	{       is_beaten=i;
+        -:  891:  		sdev_to_beat=*sdev;
+        -:  892:  	}
+        -:  893:  }
+        -:  894:
+        -:  895:  if(is_beaten!=-1)
+        -:  896:  {       scores[is_beaten]=*newscore;
+        -:  897:  	return(-1);
+        -:  898:  }
+        -:  899:  return(0);
+        -:  900:  }
+        -:  901:#endif
+        -:  902:
+        -:  903:/********************
+        -:  904:** calc_confidence **
+        -:  905:*********************
+        -:  906:** Given a set of numtries scores, calculate the confidence
+        -:  907:** half-interval.  We'll also return the sample mean and sample
+        -:  908:** standard deviation.
+        -:  909:** NOTE: This routines presumes a confidence of 95% and
+        -:  910:** a confidence coefficient of .95
+        -:  911:** returns 0 if there is an error, otherwise -1
+        -:  912:*/
+        -:  913:static int calc_confidence(double scores[], /* Array of scores */
+        -:  914:		int num_scores,             /* number of scores in array */
+        -:  915:                double *c_half_interval,    /* Confidence half-int */
+        -:  916:                double *smean,              /* Standard mean */
+        -:  917:                double *sdev)               /* Sample stand dev */
+        -:  918:{
+        -:  919:/* Here is a list of the student-t distribution up to 29 degrees of
+        -:  920:   freedom. The value at 0 is bogus, as there is no value for zero
+        -:  921:   degrees of freedom. */
+        -:  922:double student_t[30]={0.0 , 12.706 , 4.303 , 3.182 , 2.776 , 2.571 ,
+        -:  923:                             2.447 , 2.365 , 2.306 , 2.262 , 2.228 ,
+        -:  924:                             2.201 , 2.179 , 2.160 , 2.145 , 2.131 ,
+        -:  925:                             2.120 , 2.110 , 2.101 , 2.093 , 2.086 ,
+        -:  926:                             2.080 , 2.074 , 2.069 , 2.064 , 2.060 ,
+        -:  927:		             2.056 , 2.052 , 2.048 , 2.045 };
+        -:  928:int i;          /* Index */
+        -:  929:if ((num_scores<2) || (num_scores>30)) {
+        -:  930:  output_string("Internal error: calc_confidence called with an illegal number of scores\n");
+        -:  931:  return(-1);
+        -:  932:}
+        -:  933:/*
+        -:  934:** First calculate mean.
+        -:  935:*/
+        -:  936:*smean=(double)0.0;
+        -:  937:for(i=0;i<num_scores;i++){
+        -:  938:  *smean+=scores[i];
+        -:  939:}
+        -:  940:*smean/=(double)num_scores;
+        -:  941:
+        -:  942:/* Get standard deviation */
+        -:  943:*sdev=(double)0.0;
+        -:  944:for(i=0;i<num_scores;i++) {
+        -:  945:  *sdev+=(scores[i]-(*smean))*(scores[i]-(*smean));
+        -:  946:}
+        -:  947:*sdev/=(double)(num_scores-1);
+        -:  948:*sdev=sqrt(*sdev);
+        -:  949:
+        -:  950:/* Now calculate the length of the confidence half-interval.  For a
+        -:  951:** confidence level of 95% our confidence coefficient gives us a
+        -:  952:** multiplying factor of the upper .025 quartile of a t distribution
+        -:  953:** with num_scores-1 degrees of freedom, and dividing by sqrt(number of
+        -:  954:** observations). See any introduction to statistics.
+        -:  955:*/
+        -:  956:*c_half_interval=student_t[num_scores-1] * (*sdev) / sqrt((double)num_scores);
+        -:  957:return(0);
+        -:  958:}
+        -:  959:
+        -:  960:/*************
+        -:  961:** getscore **
+        -:  962:**************
+        -:  963:** Return the score for a particular benchmark.
+        -:  964:*/
+        -:  965:static double getscore(int fid)
+        -:  966:{
+        -:  967:
+        -:  968:/*
+        -:  969:** Fid tells us the function.  This is really a matter of
+        -:  970:** doing the proper coercion.
+        -:  971:*/
+        -:  972:switch(fid)
+        -:  973:{
+        -:  974:        case TF_NUMSORT:
+        -:  975:                return(global_numsortstruct.sortspersec);
+        -:  976:        case TF_SSORT:
+        -:  977:                return(global_strsortstruct.sortspersec);
+        -:  978:        case TF_BITOP:
+        -:  979:                return(global_bitopstruct.bitopspersec);
+        -:  980:        case TF_FPEMU:
+        -:  981:                return(global_emfloatstruct.emflops);
+        -:  982:        case TF_FFPU:
+        -:  983:                return(global_fourierstruct.fflops);
+        -:  984:        case TF_ASSIGN:
+        -:  985:                return(global_assignstruct.iterspersec);
+        -:  986:        case TF_IDEA:
+        -:  987:                return(global_ideastruct.iterspersec);
+        -:  988:        case TF_HUFF:
+        -:  989:                return(global_huffstruct.iterspersec);
+        -:  990:        case TF_NNET:
+        -:  991:                return(global_nnetstruct.iterspersec);
+        -:  992:        case TF_LU:
+        -:  993:                return(global_lustruct.iterspersec);
+        -:  994:}
+        -:  995:return((double)0.0);
+        -:  996:}
+        -:  997:
+        -:  998:/******************
+        -:  999:** output_string **
+        -: 1000:*******************
+        -: 1001:** Displays a string on the screen.  Also, if the flag
+        -: 1002:** write_to_file is set, outputs the string to the output file.
+        -: 1003:** Note, this routine presumes that you've included a carriage
+        -: 1004:** return at the end of the buffer.
+        -: 1005:*/
+       20: 1006:static void output_string(char *buffer)
+        -: 1007:{
+        -: 1008:
+       20: 1009:printf("%s",buffer);
+       20: 1010:if(write_to_file!=0)
+    #####: 1011:        fprintf(global_ofile,"%s",buffer);
+       20: 1012:return;
+        -: 1013:}
+        -: 1014:
+        -: 1015:/***************
+        -: 1016:** show_stats **
+        -: 1017:****************
+        -: 1018:** This routine displays statistics for a particular benchmark.
+        -: 1019:** The benchmark is identified by its id.
+        -: 1020:*/
+    #####: 1021:static void show_stats (int bid)
+        -: 1022:{
+        -: 1023:char buffer[80];        /* Display buffer */
+        -: 1024:
+    #####: 1025:switch(bid)
+        -: 1026:{
+    #####: 1027:        case TF_NUMSORT:                /* Numeric sort */
+    #####: 1028:                sprintf(buffer,"  Number of arrays: %d\n",
+    #####: 1029:                        global_numsortstruct.numarrays);
+    #####: 1030:                output_string(buffer);
+    #####: 1031:                sprintf(buffer,"  Array size: %ld\n",
+        -: 1032:                        global_numsortstruct.arraysize);
+    #####: 1033:                output_string(buffer);
+    #####: 1034:                break;
+        -: 1035:
+    #####: 1036:        case TF_SSORT:          /* String sort */
+    #####: 1037:                sprintf(buffer,"  Number of arrays: %d\n",
+    #####: 1038:                        global_strsortstruct.numarrays);
+    #####: 1039:                output_string(buffer);
+    #####: 1040:                sprintf(buffer,"  Array size: %ld\n",
+        -: 1041:                        global_strsortstruct.arraysize);
+    #####: 1042:                output_string(buffer);
+    #####: 1043:                break;
+        -: 1044:
+    #####: 1045:        case TF_BITOP:          /* Bitmap operation */
+    #####: 1046:                sprintf(buffer,"  Operations array size: %ld\n",
+        -: 1047:                        global_bitopstruct.bitoparraysize);
+    #####: 1048:                output_string(buffer);
+    #####: 1049:                sprintf(buffer,"  Bitfield array size: %ld\n",
+        -: 1050:                        global_bitopstruct.bitfieldarraysize);
+    #####: 1051:                output_string(buffer);
+    #####: 1052:                break;
+        -: 1053:
+    #####: 1054:        case TF_FPEMU:          /* Floating-point emulation */
+    #####: 1055:                sprintf(buffer,"  Number of loops: %lu\n",
+        -: 1056:                        global_emfloatstruct.loops);
+    #####: 1057:                output_string(buffer);
+    #####: 1058:                sprintf(buffer,"  Array size: %lu\n",
+        -: 1059:                        global_emfloatstruct.arraysize);
+    #####: 1060:                output_string(buffer);
+    #####: 1061:                break;
+        -: 1062:
+    #####: 1063:        case TF_FFPU:           /* Fourier test */
+    #####: 1064:                sprintf(buffer,"  Number of coefficients: %lu\n",
+        -: 1065:                        global_fourierstruct.arraysize);
+    #####: 1066:                output_string(buffer);
+    #####: 1067:                break;
+        -: 1068:
+    #####: 1069:        case TF_ASSIGN:
+    #####: 1070:                sprintf(buffer,"  Number of arrays: %lu\n",
+        -: 1071:                        global_assignstruct.numarrays);
+    #####: 1072:                output_string(buffer);
+    #####: 1073:                break;
+        -: 1074:
+    #####: 1075:        case TF_IDEA:
+    #####: 1076:                sprintf(buffer,"  Array size: %lu\n",
+        -: 1077:                        global_ideastruct.arraysize);
+    #####: 1078:                output_string(buffer);
+    #####: 1079:                sprintf(buffer," Number of loops: %lu\n",
+        -: 1080:                        global_ideastruct.loops);
+    #####: 1081:                output_string(buffer);
+    #####: 1082:                break;
+        -: 1083:
+    #####: 1084:        case TF_HUFF:
+    #####: 1085:                sprintf(buffer,"  Array size: %lu\n",
+        -: 1086:                        global_huffstruct.arraysize);
+    #####: 1087:                output_string(buffer);
+    #####: 1088:                sprintf(buffer,"  Number of loops: %lu\n",
+        -: 1089:                        global_huffstruct.loops);
+    #####: 1090:                output_string(buffer);
+    #####: 1091:                break;
+        -: 1092:
+    #####: 1093:        case TF_NNET:
+    #####: 1094:                sprintf(buffer,"  Number of loops: %lu\n",
+        -: 1095:                        global_nnetstruct.loops);
+    #####: 1096:                output_string(buffer);
+    #####: 1097:                break;
+        -: 1098:
+    #####: 1099:        case TF_LU:
+    #####: 1100:                sprintf(buffer,"  Number of arrays: %lu\n",
+        -: 1101:                        global_lustruct.numarrays);
+    #####: 1102:                output_string(buffer);
+    #####: 1103:                break;
+        -: 1104:}
+    #####: 1105:return;
+        -: 1106:}
+        -: 1107:
+        -: 1108:/*
+        -: 1109:** Following code added for Mac stuff, so that we can emulate command
+        -: 1110:** lines.
+        -: 1111:*/
+        -: 1112:
+        -: 1113:#ifdef MAC
+        -: 1114:
+        -: 1115:/*****************
+        -: 1116:** UCommandLine **
+        -: 1117:******************
+        -: 1118:** Reads in a command line, and sets up argc and argv appropriately.
+        -: 1119:** Note that this routine uses gets() to read in the line.  This means
+        -: 1120:** you'd better not enter more than 128 characters on a command line, or
+        -: 1121:** things will overflow, and oh boy...
+        -: 1122:*/
+        -: 1123:void UCommandLine(void)
+        -: 1124:{
+        -: 1125:printf("Enter command line\n:");
+        -: 1126:gets((char *)Uargbuff);
+        -: 1127:UParse();
+        -: 1128:return;
+        -: 1129:}
+        -: 1130:
+        -: 1131:/***********
+        -: 1132:** UParse **
+        -: 1133:************
+        -: 1134:** Parse the pseudo command-line.  This code appeared as part of the
+        -: 1135:** Small-C library in Dr. Dobb's ToolBook of C.
+        -: 1136:** It expects the following globals:
+        -: 1137:** argc = arg count
+        -: 1138:** argv = Pointer to array of char pointers
+        -: 1139:** Uargbuff = Character array that holds the arguments.  Should be 129 bytes long.
+        -: 1140:** Udummy1 = This is a 2-byte buffer that holds a "*", and acts as the first
+        -: 1141:**  argument in the argument list.  This maintains compatibility with other
+        -: 1142:**  C's, though it does not provide access to the executable filename.
+        -: 1143:** This routine allows for up to 20 individual command-line arguments.
+        -: 1144:** Also note that this routine does NOT allow for redirection.
+        -: 1145:*/
+        -: 1146:void UParse(void)
+        -: 1147:{
+        -: 1148:unsigned char *ptr;
+        -: 1149:
+        -: 1150:argc=0;         /* Start arg count */
+        -: 1151:Udummy[0]='*';  /* Set dummy first argument */
+        -: 1152:Udummy[1]='\0';
+        -: 1153:argv[argc++]=(char *)Udummy;
+        -: 1154:
+        -: 1155:ptr=Uargbuff;           /* Start pointer */
+        -: 1156:while(*ptr)
+        -: 1157:{
+        -: 1158:        if(isspace(*ptr))
+        -: 1159:        {       ++ptr;
+        -: 1160:                continue;
+        -: 1161:        }
+        -: 1162:        if(argc<20) argv[argc++]=(char *)ptr;
+        -: 1163:        ptr=UField(ptr);
+        -: 1164:}
+        -: 1165:return;
+        -: 1166:}
+        -: 1167:/***********
+        -: 1168:** UField **
+        -: 1169:************
+        -: 1170:** Isolate the next command-line field.
+        -: 1171:*/
+        -: 1172:unsigned char *UField(unsigned char *ptr)
+        -: 1173:{
+        -: 1174:while(*ptr)
+        -: 1175:{       if(isspace(*ptr))
+        -: 1176:        {       *ptr=(unsigned char)NULL;
+        -: 1177:                return(++ptr);
+        -: 1178:        }
+        -: 1179:        ++ptr;
+        -: 1180:}
+        -: 1181:return(ptr);
+        -: 1182:}
+        -: 1183:#endif

@@ -1,0 +1,15 @@
+        -:    0:Source:sysinfo.c
+        -:    0:Graph:nbench0.gcno
+        -:    0:Data:nbench0.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+    #####:    1:sprintf(buffer,"**System used for compilation:\n");
+    #####:    2:output_string(buffer);
+    #####:    3:sprintf(buffer,"**Linux elvenado 4.15.0-112-generic #113-Ubuntu SMP Thu Jul 9 23:41:39 UTC 2020 \n");
+    #####:    4:output_string(buffer);
+    #####:    5:sprintf(buffer,"**C compiler: gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) \n");
+    #####:    6:output_string(buffer);
+    #####:    7:sprintf(buffer,"**libc: libc-2.27.so\n");
+    #####:    8:output_string(buffer);
+    #####:    9:sprintf(buffer,"**Date of compilation: Tue  1 Sep 10:47:14 BST 2020\n");
+    #####:   10:output_string(buffer);
