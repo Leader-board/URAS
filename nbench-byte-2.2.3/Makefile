@@ -141,7 +141,7 @@ sysspec.o: sysspec.h sysspec.c nmglobal.h pointer.h Makefile
 nbench: emfloat.o misc.o nbench0.o nbench1.o sysspec.o hardware.o
 	$(CC) $(MACHINE) $(DEFINES) $(CFLAGS) $(LINKFLAGS)\
 		emfloat.o misc.o nbench0.o nbench1.o sysspec.o hardware.o\
-		-o nbench -lm
+		-o nbench -lm -pg
 
 ##########################################################################
 
