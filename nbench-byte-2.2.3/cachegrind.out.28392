@@ -1,0 +1,9 @@
+desc: I1 cache:         32768 B, 64 B, 8-way associative
+desc: D1 cache:         32768 B, 64 B, 8-way associative
+desc: LL cache:         6291456 B, 64 B, 12-way associative
+cmd: ./nbench 8
+events: Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw 
+fl=???
+fn=???
+0 780330766 1592 1284 223989926 15543 467 117619884 584 398
+summary: 780330766 1592 1284 223989926 15543 467 117619884 584 398
