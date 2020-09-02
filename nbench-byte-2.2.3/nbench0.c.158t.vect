@@ -639,8 +639,8 @@ main (int argc, char * * argv)
   PROF_edge_counter_226 = PROF_edge_counter_225 + 1;
   __gcov0.main[18] = PROF_edge_counter_226;
   # DEBUG __s => &buffer
-  # DEBUG __fmt => "**Date of compilation: Wed  2 Sep 11:13:52 BST 2020\n"
-  __builtin_memcpy (&buffer, "**Date of compilation: Wed  2 Sep 11:13:52 BST 2020\n", 53);
+  # DEBUG __fmt => "**Date of compilation: Wed  2 Sep 11:30:00 BST 2020\n"
+  __builtin_memcpy (&buffer, "**Date of compilation: Wed  2 Sep 11:30:00 BST 2020\n", 53);
   # DEBUG __s => NULL
   # DEBUG __fmt => NULL
   output_string (&buffer);

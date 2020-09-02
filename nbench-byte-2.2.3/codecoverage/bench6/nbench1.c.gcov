@@ -2245,7 +2245,7 @@
         -: 2240:** Perform IDEA encryption.  Note that we time encryption & decryption
         -: 2241:** time as being a single loop.
         -: 2242:*/
-    #####: 2243:void DoIDEA(void)
+        1: 2243:void DoIDEA(void)
         -: 2244:{
         -: 2245:IDEAStruct *locideastruct;      /* Loc pointer to global structure */
         -: 2246:int i;
@@ -2262,33 +2262,33 @@
         -: 2257:/*
         -: 2258:** Link to global data
         -: 2259:*/
-    #####: 2260:locideastruct=&global_ideastruct;
+        1: 2260:locideastruct=&global_ideastruct;
         -: 2261:
         -: 2262:/*
         -: 2263:** Set error context
         -: 2264:*/
-    #####: 2265:errorcontext="CPU:IDEA";
+        1: 2265:errorcontext="CPU:IDEA";
         -: 2266:
         -: 2267:/*
         -: 2268:** Re-init random-number generator.
         -: 2269:*/
         -: 2270:/* randnum(3L); */
-    #####: 2271:randnum((int32)3);
+        1: 2271:randnum((int32)3);
         -: 2272:
         -: 2273:/*
         -: 2274:** Build an encryption/decryption key
         -: 2275:*/
-    #####: 2276:for (i=0;i<8;i++)
+        9: 2276:for (i=0;i<8;i++)
         -: 2277:        /* userkey[i]=(u16)(abs_randwc(60000L) & 0xFFFF); */
-    #####: 2278:	userkey[i]=(u16)(abs_randwc((int32)60000) & 0xFFFF);
-    #####: 2279:for(i=0;i<KEYLEN;i++)
-    #####: 2280:	Z[i]=0;
+        8: 2278:	userkey[i]=(u16)(abs_randwc((int32)60000) & 0xFFFF);
+       52: 2279:for(i=0;i<KEYLEN;i++)
+       52: 2280:	Z[i]=0;
         -: 2281:
         -: 2282:/*
         -: 2283:** Compute encryption/decryption subkeys
         -: 2284:*/
-    #####: 2285:en_key_idea(userkey,Z);
-    #####: 2286:de_key_idea(Z,DK);
+        1: 2285:en_key_idea(userkey,Z);
+        1: 2286:de_key_idea(Z,DK);
         -: 2287:
         -: 2288:/*
         -: 2289:** Allocate memory for buffers.  We'll make 3, called plain1,
@@ -2297,23 +2297,23 @@
         -: 2292:** So, plain1 and plain2 should match.
         -: 2293:** Also, fill up plain1 with sample text.
         -: 2294:*/
-    #####: 2295:plain1=(faruchar *)AllocateMemory(locideastruct->arraysize,&systemerror);
-    #####: 2296:if(systemerror)
+        1: 2295:plain1=(faruchar *)AllocateMemory(locideastruct->arraysize,&systemerror);
+        1: 2296:if(systemerror)
         -: 2297:{
     #####: 2298:	ReportError(errorcontext,systemerror);
     #####: 2299:	ErrorExit();
         -: 2300:}
         -: 2301:
-    #####: 2302:crypt1=(faruchar *)AllocateMemory(locideastruct->arraysize,&systemerror);
-    #####: 2303:if(systemerror)
+        1: 2302:crypt1=(faruchar *)AllocateMemory(locideastruct->arraysize,&systemerror);
+        1: 2303:if(systemerror)
         -: 2304:{
     #####: 2305:	ReportError(errorcontext,systemerror);
     #####: 2306:	FreeMemory((farvoid *)plain1,&systemerror);
     #####: 2307:	ErrorExit();
         -: 2308:}
         -: 2309:
-    #####: 2310:plain2=(faruchar *)AllocateMemory(locideastruct->arraysize,&systemerror);
-    #####: 2311:if(systemerror)
+        1: 2310:plain2=(faruchar *)AllocateMemory(locideastruct->arraysize,&systemerror);
+        1: 2311:if(systemerror)
         -: 2312:{
     #####: 2313:	ReportError(errorcontext,systemerror);
     #####: 2314:	FreeMemory((farvoid *)plain1,&systemerror);
@@ -2324,26 +2324,26 @@
         -: 2319:** Note that we build the "plaintext" by simply loading
         -: 2320:** the array up with random numbers.
         -: 2321:*/
-    #####: 2322:for(i=0;i<locideastruct->arraysize;i++)
-    #####: 2323:	plain1[i]=(uchar)(abs_randwc(255) & 0xFF);
+     4000: 2322:for(i=0;i<locideastruct->arraysize;i++)
+     4000: 2323:	plain1[i]=(uchar)(abs_randwc(255) & 0xFF);
         -: 2324:
         -: 2325:/*
         -: 2326:** See if we need to perform self adjustment loop.
         -: 2327:*/
-    #####: 2328:if(locideastruct->adjust==0)
+        1: 2328:if(locideastruct->adjust==0)
         -: 2329:{
         -: 2330:	/*
         -: 2331:	** Do self-adjustment.  This involves initializing the
         -: 2332:	** # of loops and increasing the loop count until we
         -: 2333:	** get a number of loops that we can use.
         -: 2334:	*/
-    #####: 2335:	for(locideastruct->loops=100L;
-    #####: 2336:	  locideastruct->loops<MAXIDEALOOPS;
+        2: 2335:	for(locideastruct->loops=100L;
+        1: 2336:	  locideastruct->loops<MAXIDEALOOPS;
     #####: 2337:	  locideastruct->loops+=10L)
-    #####: 2338:		if(DoIDEAIteration(plain1,crypt1,plain2,
+        2: 2338:		if(DoIDEAIteration(plain1,crypt1,plain2,
         -: 2339:		  locideastruct->arraysize,
         -: 2340:		  locideastruct->loops,
-    #####: 2341:		  Z,DK)>global_min_ticks) break;
+        1: 2341:		  Z,DK)>global_min_ticks) break;
         -: 2342:}
         -: 2343:
         -: 2344:/*
@@ -2353,25 +2353,25 @@
         -: 2348:iterations=(double)0.0;
         -: 2349:
         -: 2350:do {
-    #####: 2351:	accumtime+=DoIDEAIteration(plain1,crypt1,plain2,
+      566: 2351:	accumtime+=DoIDEAIteration(plain1,crypt1,plain2,
         -: 2352:		locideastruct->arraysize,
         -: 2353:		locideastruct->loops,Z,DK);
-    #####: 2354:	iterations+=(double)locideastruct->loops;
-    #####: 2355:} while(TicksToSecs(accumtime)<locideastruct->request_secs);
+      566: 2354:	iterations+=(double)locideastruct->loops;
+      566: 2355:} while(TicksToSecs(accumtime)<locideastruct->request_secs);
         -: 2356:
         -: 2357:/*
         -: 2358:** Clean up, calculate results, and go home.  Be sure to
         -: 2359:** show that we don't have to rerun adjustment code.
         -: 2360:*/
-    #####: 2361:FreeMemory((farvoid *)plain1,&systemerror);
-    #####: 2362:FreeMemory((farvoid *)crypt1,&systemerror);
-    #####: 2363:FreeMemory((farvoid *)plain2,&systemerror);
-    #####: 2364:locideastruct->iterspersec=iterations / TicksToFracSecs(accumtime);
+        1: 2361:FreeMemory((farvoid *)plain1,&systemerror);
+        1: 2362:FreeMemory((farvoid *)crypt1,&systemerror);
+        1: 2363:FreeMemory((farvoid *)plain2,&systemerror);
+        1: 2364:locideastruct->iterspersec=iterations / TicksToFracSecs(accumtime);
         -: 2365:
-    #####: 2366:if(locideastruct->adjust==0)
-    #####: 2367:	locideastruct->adjust=1;
+        1: 2366:if(locideastruct->adjust==0)
+        1: 2367:	locideastruct->adjust=1;
         -: 2368:
-    #####: 2369:return;
+        1: 2369:return;
         -: 2370:
         -: 2371:}
         -: 2372:
@@ -2382,7 +2382,7 @@
         -: 2377:** Actually, a single iteration is one encryption and one
         -: 2378:** decryption.
         -: 2379:*/
-    #####: 2380:static ulong DoIDEAIteration(faruchar *plain1,
+      567: 2380:static ulong DoIDEAIteration(faruchar *plain1,
         -: 2381:			faruchar *crypt1,
         -: 2382:			faruchar *plain2,
         -: 2383:			ulong arraysize,
@@ -2400,18 +2400,18 @@
         -: 2395:/*
         -: 2396:** Start the stopwatch.
         -: 2397:*/
-    #####: 2398:elapsed=StartStopwatch();
+      567: 2398:elapsed=StartStopwatch();
         -: 2399:
         -: 2400:/*
         -: 2401:** Do everything for nloops.
         -: 2402:*/
-    #####: 2403:for(i=0;i<nloops;i++)
+    57267: 2403:for(i=0;i<nloops;i++)
         -: 2404:{
-    #####: 2405:	for(j=0;j<arraysize;j+=(sizeof(u16)*4))
-    #####: 2406:		cipher_idea((u16 *)(plain1+j),(u16 *)(crypt1+j),Z);       /* Encrypt */
+ 28350000: 2405:	for(j=0;j<arraysize;j+=(sizeof(u16)*4))
+ 28350000: 2406:		cipher_idea((u16 *)(plain1+j),(u16 *)(crypt1+j),Z);       /* Encrypt */
         -: 2407:
-    #####: 2408:	for(j=0;j<arraysize;j+=(sizeof(u16)*4))
-    #####: 2409:		cipher_idea((u16 *)(crypt1+j),(u16 *)(plain2+j),DK);      /* Decrypt */
+ 28350000: 2408:	for(j=0;j<arraysize;j+=(sizeof(u16)*4))
+ 28350000: 2409:		cipher_idea((u16 *)(crypt1+j),(u16 *)(plain2+j),DK);      /* Decrypt */
         -: 2410:}
         -: 2411:
         -: 2412:#ifdef DEBUG
@@ -2426,7 +2426,7 @@
         -: 2421:/*
         -: 2422:** Get elapsed time.
         -: 2423:*/
-    #####: 2424:return(StopStopwatch(elapsed));
+      567: 2424:return(StopStopwatch(elapsed));
         -: 2425:}
         -: 2426:
         -: 2427:/********
@@ -2439,18 +2439,18 @@
         -: 2434:static u16 mul(register u16 a, register u16 b)
         -: 2435:{
         -: 2436:register u32 p;
-    #####: 2437:if(a)
-    #####: 2438:{       if(b)
-    #####: 2439:	{       p=(u32)(a*b);
-    #####: 2440:		b=low16(p);
-    #####: 2441:		a=(u16)(p>>16);
-    #####: 2442:		return(b-a+(b<a));
+1927800000: 2437:if(a)
+1927743300: 2438:{       if(b)
+1927743300: 2439:	{       p=(u32)(a*b);
+1927743300: 2440:		b=low16(p);
+1927743300: 2441:		a=(u16)(p>>16);
+1927743300: 2442:		return(b-a+(b<a));
         -: 2443:	}
         -: 2444:	else
     #####: 2445:		return(1-a);
         -: 2446:}
         -: 2447:else
-    #####: 2448:	return(1-b);
+    56700: 2448:	return(1-b);
         -: 2449:}
         -: 2450:
         -: 2451:/********
@@ -2461,28 +2461,28 @@
         -: 2456:** to avoid swapping the meaning of the registers.  And
         -: 2457:** some subtracts are changed to adds.
         -: 2458:*/
-    #####: 2459:static u16 inv(u16 x)
+       18: 2459:static u16 inv(u16 x)
         -: 2460:{
         -: 2461:u16 t0, t1;
         -: 2462:u16 q, y;
         -: 2463:
-    #####: 2464:if(x<=1)
+       18: 2464:if(x<=1)
         -: 2465:	return(x);      /* 0 and 1 are self-inverse */
-    #####: 2466:t1=0x10001 / x;
-    #####: 2467:y=0x10001 % x;
-    #####: 2468:if(y==1)
+       18: 2466:t1=0x10001 / x;
+       18: 2467:y=0x10001 % x;
+       18: 2468:if(y==1)
     #####: 2469:	return(low16(1-t1));
         -: 2470:t0=1;
         -: 2471:do {
-    #####: 2472:	q=x/y;
-    #####: 2473:	x=x%y;
-    #####: 2474:	t0+=q*t1;
-    #####: 2475:	if(x==1) return(t0);
-    #####: 2476:	q=y/x;
-    #####: 2477:	y=y%x;
-    #####: 2478:	t1+=q*t0;
-    #####: 2479:} while(y!=1);
-    #####: 2480:return(low16(1-t1));
+       80: 2472:	q=x/y;
+       80: 2473:	x=x%y;
+       80: 2474:	t0+=q*t1;
+       80: 2475:	if(x==1) return(t0);
+       72: 2476:	q=y/x;
+       72: 2477:	y=y%x;
+       72: 2478:	t1+=q*t0;
+       72: 2479:} while(y!=1);
+       10: 2480:return(low16(1-t1));
         -: 2481:}
         -: 2482:
         -: 2483:/****************
@@ -2490,22 +2490,22 @@
         -: 2485:*****************
         -: 2486:** Compute IDEA encryption subkeys Z
         -: 2487:*/
-    #####: 2488:static void en_key_idea(u16 *userkey, u16 *Z)
+        1: 2488:static void en_key_idea(u16 *userkey, u16 *Z)
         -: 2489:{
         -: 2490:int i,j;
         -: 2491:
         -: 2492:/*
         -: 2493:** shifts
         -: 2494:*/
-    #####: 2495:for(j=0;j<8;j++)
-    #####: 2496:	Z[j]=*userkey++;
-    #####: 2497:for(i=0;j<KEYLEN;j++)
-    #####: 2498:{       i++;
-    #####: 2499:	Z[i+7]=(Z[i&7]<<9)| (Z[(i+1) & 7] >> 7);
-    #####: 2500:	Z+=i&8;
-    #####: 2501:	i&=7;
+        9: 2495:for(j=0;j<8;j++)
+        8: 2496:	Z[j]=*userkey++;
+       44: 2497:for(i=0;j<KEYLEN;j++)
+       44: 2498:{       i++;
+       44: 2499:	Z[i+7]=(Z[i&7]<<9)| (Z[(i+1) & 7] >> 7);
+       44: 2500:	Z+=i&8;
+       44: 2501:	i&=7;
         -: 2502:}
-    #####: 2503:return;
+        1: 2503:return;
         -: 2504:}
         -: 2505:
         -: 2506:/****************
@@ -2514,53 +2514,53 @@
         -: 2509:** Compute IDEA decryption subkeys DK from encryption
         -: 2510:** subkeys Z.
         -: 2511:*/
-    #####: 2512:static void de_key_idea(IDEAkey Z, IDEAkey DK)
+        1: 2512:static void de_key_idea(IDEAkey Z, IDEAkey DK)
         -: 2513:{
         -: 2514:IDEAkey TT;
         -: 2515:int j;
         -: 2516:u16 t1, t2, t3;
         -: 2517:u16 *p;
-    #####: 2518:p=(u16 *)(TT+KEYLEN);
+        1: 2518:p=(u16 *)(TT+KEYLEN);
         -: 2519:
-    #####: 2520:t1=inv(*Z++);
-    #####: 2521:t2=-*Z++;
-    #####: 2522:t3=-*Z++;
-    #####: 2523:*--p=inv(*Z++);
-    #####: 2524:*--p=t3;
-    #####: 2525:*--p=t2;
-    #####: 2526:*--p=t1;
+        1: 2520:t1=inv(*Z++);
+        1: 2521:t2=-*Z++;
+        1: 2522:t3=-*Z++;
+        1: 2523:*--p=inv(*Z++);
+        1: 2524:*--p=t3;
+        1: 2525:*--p=t2;
+        1: 2526:*--p=t1;
         -: 2527:
-    #####: 2528:for(j=1;j<ROUNDS;j++)
-    #####: 2529:{       t1=*Z++;
-    #####: 2530:	*--p=*Z++;
-    #####: 2531:	*--p=t1;
-    #####: 2532:	t1=inv(*Z++);
-    #####: 2533:	t2=-*Z++;
-    #####: 2534:	t3=-*Z++;
-    #####: 2535:	*--p=inv(*Z++);
-    #####: 2536:	*--p=t2;
-    #####: 2537:	*--p=t3;
-    #####: 2538:	*--p=t1;
+        8: 2528:for(j=1;j<ROUNDS;j++)
+        7: 2529:{       t1=*Z++;
+        7: 2530:	*--p=*Z++;
+        7: 2531:	*--p=t1;
+        7: 2532:	t1=inv(*Z++);
+        7: 2533:	t2=-*Z++;
+        7: 2534:	t3=-*Z++;
+        7: 2535:	*--p=inv(*Z++);
+        7: 2536:	*--p=t2;
+        7: 2537:	*--p=t3;
+        7: 2538:	*--p=t1;
         -: 2539:}
-    #####: 2540:t1=*Z++;
-    #####: 2541:*--p=*Z++;
-    #####: 2542:*--p=t1;
-    #####: 2543:t1=inv(*Z++);
-    #####: 2544:t2=-*Z++;
-    #####: 2545:t3=-*Z++;
-    #####: 2546:*--p=inv(*Z++);
-    #####: 2547:*--p=t3;
-    #####: 2548:*--p=t2;
-    #####: 2549:*--p=t1;
+        1: 2540:t1=*Z++;
+        1: 2541:*--p=*Z++;
+        1: 2542:*--p=t1;
+        1: 2543:t1=inv(*Z++);
+        1: 2544:t2=-*Z++;
+        1: 2545:t3=-*Z++;
+        1: 2546:*--p=inv(*Z++);
+        1: 2547:*--p=t3;
+        1: 2548:*--p=t2;
+        1: 2549:*--p=t1;
         -: 2550:/*
         -: 2551:** Copy and destroy temp copy
         -: 2552:*/
-    #####: 2553:for(j=0,p=TT;j<KEYLEN;j++)
-    #####: 2554:{       *DK++=*p;
-    #####: 2555:	*p++=0;
+       53: 2553:for(j=0,p=TT;j<KEYLEN;j++)
+       52: 2554:{       *DK++=*p;
+       52: 2555:	*p++=0;
         -: 2556:}
         -: 2557:
-    #####: 2558:return;
+        1: 2558:return;
         -: 2559:}
         -: 2560:
         -: 2561:/*
@@ -2577,46 +2577,46 @@
         -: 2572:*****************
         -: 2573:** IDEA encryption/decryption algorithm.
         -: 2574:*/
-    #####: 2575:static void cipher_idea(u16 in[4],
+ 56700000: 2575:static void cipher_idea(u16 in[4],
         -: 2576:		u16 out[4],
         -: 2577:		register IDEAkey Z)
         -: 2578:{
         -: 2579:register u16 x1, x2, x3, x4, t1, t2;
         -: 2580:/* register u16 t16;
         -: 2581:register u16 t32; */
-    #####: 2582:int r=ROUNDS;
+ 56700000: 2582:int r=ROUNDS;
         -: 2583:
-    #####: 2584:x1=*in++;
-    #####: 2585:x2=*in++;
-    #####: 2586:x3=*in++;
-    #####: 2587:x4=*in;
+ 56700000: 2584:x1=*in++;
+ 56700000: 2585:x2=*in++;
+ 56700000: 2586:x3=*in++;
+ 56700000: 2587:x4=*in;
         -: 2588:
         -: 2589:do {
-    #####: 2590:	MUL(x1,*Z++);
-    #####: 2591:	x2+=*Z++;
-    #####: 2592:	x3+=*Z++;
-    #####: 2593:	MUL(x4,*Z++);
+907200000: 2590:	MUL(x1,*Z++);
+453600000: 2591:	x2+=*Z++;
+453600000: 2592:	x3+=*Z++;
+907200000: 2593:	MUL(x4,*Z++);
         -: 2594:
-    #####: 2595:	t2=x1^x3;
-    #####: 2596:	MUL(t2,*Z++);
-    #####: 2597:	t1=t2+(x2^x4);
-    #####: 2598:	MUL(t1,*Z++);
-    #####: 2599:	t2=t1+t2;
+453600000: 2595:	t2=x1^x3;
+907200000: 2596:	MUL(t2,*Z++);
+453600000: 2597:	t1=t2+(x2^x4);
+907200000: 2598:	MUL(t1,*Z++);
+453600000: 2599:	t2=t1+t2;
         -: 2600:
-    #####: 2601:	x1^=t1;
-    #####: 2602:	x4^=t2;
+453600000: 2601:	x1^=t1;
+453600000: 2602:	x4^=t2;
         -: 2603:
-    #####: 2604:	t2^=x2;
-    #####: 2605:	x2=x3^t1;
-    #####: 2606:	x3=t2;
-    #####: 2607:} while(--r);
-    #####: 2608:MUL(x1,*Z++);
-    #####: 2609:*out++=x1;
-    #####: 2610:*out++=x3+*Z++;
-    #####: 2611:*out++=x2+*Z++;
-    #####: 2612:MUL(x4,*Z);
-    #####: 2613:*out=x4;
-    #####: 2614:return;
+453600000: 2604:	t2^=x2;
+453600000: 2605:	x2=x3^t1;
+453600000: 2606:	x3=t2;
+453600000: 2607:} while(--r);
+113400000: 2608:MUL(x1,*Z++);
+ 56700000: 2609:*out++=x1;
+ 56700000: 2610:*out++=x3+*Z++;
+ 56700000: 2611:*out++=x2+*Z++;
+113400000: 2612:MUL(x4,*Z);
+ 56700000: 2613:*out=x4;
+ 56700000: 2614:return;
         -: 2615:}
         -: 2616:
         -: 2617:/************************
@@ -3933,7 +3933,7 @@
         -: 3928:**********
         -: 3929:** Perform the LU decomposition benchmark.
         -: 3930:*/
-        1: 3931:void DoLU(void)
+    #####: 3931:void DoLU(void)
         -: 3932:{
         -: 3933:LUStruct *loclustruct;  /* Local pointer to global data */
         -: 3934:char *errorcontext;
@@ -3951,12 +3951,12 @@
         -: 3946:/*
         -: 3947:** Link to global data
         -: 3948:*/
-        1: 3949:loclustruct=&global_lustruct;
+    #####: 3949:loclustruct=&global_lustruct;
         -: 3950:
         -: 3951:/*
         -: 3952:** Set error context.
         -: 3953:*/
-        1: 3954:errorcontext="FPU:LU";
+    #####: 3954:errorcontext="FPU:LU";
         -: 3955:
         -: 3956:/*
         -: 3957:** Our first step is to build a "solvable" problem.  This
@@ -3964,53 +3964,53 @@
         -: 3959:** derived from. (I.E., we'll simply copy these arrays
         -: 3960:** into the others.
         -: 3961:*/
-        1: 3962:a=(fardouble *)AllocateMemory(sizeof(double) * LUARRAYCOLS * LUARRAYROWS,
+    #####: 3962:a=(fardouble *)AllocateMemory(sizeof(double) * LUARRAYCOLS * LUARRAYROWS,
         -: 3963:		&systemerror);
-        1: 3964:b=(fardouble *)AllocateMemory(sizeof(double) * LUARRAYROWS,
+    #####: 3964:b=(fardouble *)AllocateMemory(sizeof(double) * LUARRAYROWS,
         -: 3965:		&systemerror);
-        1: 3966:n=LUARRAYROWS;
+    #####: 3966:n=LUARRAYROWS;
         -: 3967:
         -: 3968:/*
         -: 3969:** We need to allocate a temp vector that is used by the LU
         -: 3970:** algorithm.  This removes the allocation routine from the
         -: 3971:** timing.
         -: 3972:*/
-        1: 3973:LUtempvv=(fardouble *)AllocateMemory(sizeof(double)*LUARRAYROWS,
+    #####: 3973:LUtempvv=(fardouble *)AllocateMemory(sizeof(double)*LUARRAYROWS,
         -: 3974:	&systemerror);
         -: 3975:
         -: 3976:/*
         -: 3977:** Build a problem to be solved.
         -: 3978:*/
-        1: 3979:ptra.ptrs.p=a;                  /* Gotta coerce linear array to 2D array */
-        1: 3980:build_problem(*ptra.ptrs.ap,n,b);
+    #####: 3979:ptra.ptrs.p=a;                  /* Gotta coerce linear array to 2D array */
+    #####: 3980:build_problem(*ptra.ptrs.ap,n,b);
         -: 3981:
         -: 3982:/*
         -: 3983:** Now that we have a problem built, see if we need to do
         -: 3984:** auto-adjust.  If so, repeatedly call the DoLUIteration routine,
         -: 3985:** increasing the number of solutions per iteration as you go.
         -: 3986:*/
-        1: 3987:if(loclustruct->adjust==0)
+    #####: 3987:if(loclustruct->adjust==0)
         -: 3988:{
-        1: 3989:	loclustruct->numarrays=0;
-        1: 3990:	for(i=1;i<=MAXLUARRAYS;i++)
+    #####: 3989:	loclustruct->numarrays=0;
+    #####: 3990:	for(i=1;i<=MAXLUARRAYS;i++)
         -: 3991:	{
-        1: 3992:		abase=(fardouble *)AllocateMemory(sizeof(double) *
-        1: 3993:			LUARRAYCOLS*LUARRAYROWS*(i+1),&systemerror);
-        1: 3994:		if(systemerror)
+    #####: 3992:		abase=(fardouble *)AllocateMemory(sizeof(double) *
+    #####: 3993:			LUARRAYCOLS*LUARRAYROWS*(i+1),&systemerror);
+    #####: 3994:		if(systemerror)
     #####: 3995:		{       ReportError(errorcontext,systemerror);
     #####: 3996:			LUFreeMem(a,b,(fardouble *)NULL,(fardouble *)NULL);
     #####: 3997:			ErrorExit();
         -: 3998:		}
-        1: 3999:		bbase=(fardouble *)AllocateMemory(sizeof(double) *
+    #####: 3999:		bbase=(fardouble *)AllocateMemory(sizeof(double) *
         -: 4000:			LUARRAYROWS*(i+1),&systemerror);
-        1: 4001:		if(systemerror)
+    #####: 4001:		if(systemerror)
     #####: 4002:		{       ReportError(errorcontext,systemerror);
     #####: 4003:			LUFreeMem(a,b,abase,(fardouble *)NULL);
     #####: 4004:			ErrorExit();
         -: 4005:		}
-        1: 4006:		if(DoLUIteration(a,b,abase,bbase,i)>global_min_ticks)
-        1: 4007:		{       loclustruct->numarrays=i;
-        1: 4008:			break;
+    #####: 4006:		if(DoLUIteration(a,b,abase,bbase,i)>global_min_ticks)
+    #####: 4007:		{       loclustruct->numarrays=i;
+    #####: 4008:			break;
         -: 4009:		}
         -: 4010:		/*
         -: 4011:		** Not enough arrays...free them all and try again
@@ -4021,7 +4021,7 @@
         -: 4016:	/*
         -: 4017:	** Were we able to do it?
         -: 4018:	*/
-        1: 4019:	if(loclustruct->numarrays==0)
+    #####: 4019:	if(loclustruct->numarrays==0)
     #####: 4020:	{       printf("FPU:LU -- Array limit reached\n");
     #####: 4021:		LUFreeMem(a,b,abase,bbase);
     #####: 4022:		ErrorExit();
@@ -4052,26 +4052,26 @@
         -: 4047:/*
         -: 4048:** All's well if we get here.  Do the test.
         -: 4049:*/
-        1: 4050:accumtime=0L;
-        1: 4051:iterations=(double)0.0;
+    #####: 4050:accumtime=0L;
+    #####: 4051:iterations=(double)0.0;
         -: 4052:
         -: 4053:do {
-    12157: 4054:	accumtime+=DoLUIteration(a,b,abase,bbase,
+    #####: 4054:	accumtime+=DoLUIteration(a,b,abase,bbase,
         -: 4055:		loclustruct->numarrays);
-    12157: 4056:	iterations+=(double)loclustruct->numarrays;
-    12157: 4057:} while(TicksToSecs(accumtime)<loclustruct->request_secs);
+    #####: 4056:	iterations+=(double)loclustruct->numarrays;
+    #####: 4057:} while(TicksToSecs(accumtime)<loclustruct->request_secs);
         -: 4058:
         -: 4059:/*
         -: 4060:** Clean up, calculate results, and go home.  Be sure to
         -: 4061:** show that we don't have to rerun adjustment code.
         -: 4062:*/
-        1: 4063:loclustruct->iterspersec=iterations / TicksToFracSecs(accumtime);
+    #####: 4063:loclustruct->iterspersec=iterations / TicksToFracSecs(accumtime);
         -: 4064:
-        1: 4065:if(loclustruct->adjust==0)
-        1: 4066:	loclustruct->adjust=1;
+    #####: 4065:if(loclustruct->adjust==0)
+    #####: 4066:	loclustruct->adjust=1;
         -: 4067:
-        1: 4068:LUFreeMem(a,b,abase,bbase);
-        1: 4069:return;
+    #####: 4068:LUFreeMem(a,b,abase,bbase);
+    #####: 4069:return;
         -: 4070:}
         -: 4071:
         -: 4072:/**************
@@ -4079,18 +4079,18 @@
         -: 4074:***************
         -: 4075:** Release memory associated with LU benchmark.
         -: 4076:*/
-        1: 4077:static void LUFreeMem(fardouble *a, fardouble *b,
+    #####: 4077:static void LUFreeMem(fardouble *a, fardouble *b,
         -: 4078:			fardouble *abase,fardouble *bbase)
         -: 4079:{
         -: 4080:int systemerror;
         -: 4081:
-        1: 4082:FreeMemory((farvoid *)a,&systemerror);
-        1: 4083:FreeMemory((farvoid *)b,&systemerror);
-        1: 4084:FreeMemory((farvoid *)LUtempvv,&systemerror);
+    #####: 4082:FreeMemory((farvoid *)a,&systemerror);
+    #####: 4083:FreeMemory((farvoid *)b,&systemerror);
+    #####: 4084:FreeMemory((farvoid *)LUtempvv,&systemerror);
         -: 4085:
-        1: 4086:if(abase!=(fardouble *)NULL) FreeMemory((farvoid *)abase,&systemerror);
-        1: 4087:if(bbase!=(fardouble *)NULL) FreeMemory((farvoid *)bbase,&systemerror);
-        1: 4088:return;
+    #####: 4086:if(abase!=(fardouble *)NULL) FreeMemory((farvoid *)abase,&systemerror);
+    #####: 4087:if(bbase!=(fardouble *)NULL) FreeMemory((farvoid *)bbase,&systemerror);
+    #####: 4088:return;
         -: 4089:}
         -: 4090:
         -: 4091:/******************
@@ -4100,7 +4100,7 @@
         -: 4095:** An iteration refers to the repeated solution of several
         -: 4096:** identical matrices.
         -: 4097:*/
-    12158: 4098:static ulong DoLUIteration(fardouble *a,fardouble *b,
+    #####: 4098:static ulong DoLUIteration(fardouble *a,fardouble *b,
         -: 4099:		fardouble *abase, fardouble *bbase,
         -: 4100:		ulong numarrays)
         -: 4101:{
@@ -4115,27 +4115,27 @@
         -: 4110:** Move the seed arrays (a & b) into the destination
         -: 4111:** arrays;
         -: 4112:*/
-    24316: 4113:for(j=0;j<numarrays;j++)
-    12158: 4114:{       locabase=abase+j*LUARRAYROWS*LUARRAYCOLS;
-    12158: 4115:	locbbase=bbase+j*LUARRAYROWS;
-124035916: 4116:	for(i=0;i<LUARRAYROWS*LUARRAYCOLS;i++)
-124023758: 4117:		*(locabase+i)=*(a+i);
-  1227958: 4118:	for(i=0;i<LUARRAYROWS;i++)
-  1227958: 4119:		*(locbbase+i)=*(b+i);
+    #####: 4113:for(j=0;j<numarrays;j++)
+    #####: 4114:{       locabase=abase+j*LUARRAYROWS*LUARRAYCOLS;
+    #####: 4115:	locbbase=bbase+j*LUARRAYROWS;
+    #####: 4116:	for(i=0;i<LUARRAYROWS*LUARRAYCOLS;i++)
+    #####: 4117:		*(locabase+i)=*(a+i);
+    #####: 4118:	for(i=0;i<LUARRAYROWS;i++)
+    #####: 4119:		*(locbbase+i)=*(b+i);
         -: 4120:}
         -: 4121:
         -: 4122:/*
         -: 4123:** Do test...begin timing.
         -: 4124:*/
-    12158: 4125:elapsed=StartStopwatch();
-    24316: 4126:for(i=0;i<numarrays;i++)
-    12158: 4127:{       locabase=abase+i*LUARRAYROWS*LUARRAYCOLS;
-    12158: 4128:	locbbase=bbase+i*LUARRAYROWS;
-    12158: 4129:	ptra.ptrs.p=locabase;
-    12158: 4130:	lusolve(*ptra.ptrs.ap,LUARRAYROWS,locbbase);
+    #####: 4125:elapsed=StartStopwatch();
+    #####: 4126:for(i=0;i<numarrays;i++)
+    #####: 4127:{       locabase=abase+i*LUARRAYROWS*LUARRAYCOLS;
+    #####: 4128:	locbbase=bbase+i*LUARRAYROWS;
+    #####: 4129:	ptra.ptrs.p=locabase;
+    #####: 4130:	lusolve(*ptra.ptrs.ap,LUARRAYROWS,locbbase);
         -: 4131:}
         -: 4132:
-    12158: 4133:return(StopStopwatch(elapsed));
+    #####: 4133:return(StopStopwatch(elapsed));
         -: 4134:}
         -: 4135:
         -: 4136:/******************
@@ -4149,7 +4149,7 @@
         -: 4144:** row by a random number and (b) adding one randomly-selected
         -: 4145:** row to another.
         -: 4146:*/
-        1: 4147:static void build_problem(double a[][LUARRAYCOLS],
+    #####: 4147:static void build_problem(double a[][LUARRAYCOLS],
         -: 4148:		int n,
         -: 4149:		double b[LUARRAYROWS])
         -: 4150:{
@@ -4160,22 +4160,22 @@
         -: 4155:** Reset random number generator
         -: 4156:*/
         -: 4157:/* randnum(13L); */
-        1: 4158:randnum((int32)13);
+    #####: 4158:randnum((int32)13);
         -: 4159:
         -: 4160:/*
         -: 4161:** Build an identity matrix.
         -: 4162:** We'll also use this as a chance to load the solution
         -: 4163:** vector.
         -: 4164:*/
-      102: 4165:for(i=0;i<n;i++)
+    #####: 4165:for(i=0;i<n;i++)
         -: 4166:{       /* b[i]=(double)(abs_randwc(100L)+1L); */
-      101: 4167:	b[i]=(double)(abs_randwc((int32)100)+(int32)1);
-    10302: 4168:	for(j=0;j<n;j++)
-    10201: 4169:		if(i==j)
+    #####: 4167:	b[i]=(double)(abs_randwc((int32)100)+(int32)1);
+    #####: 4168:	for(j=0;j<n;j++)
+    #####: 4169:		if(i==j)
         -: 4170:		        /* a[i][j]=(double)(abs_randwc(1000L)+1L); */
-      101: 4171:			a[i][j]=(double)(abs_randwc((int32)1000)+(int32)1);
+    #####: 4171:			a[i][j]=(double)(abs_randwc((int32)1000)+(int32)1);
         -: 4172:		else
-    10100: 4173:			a[i][j]=(double)0.0;
+    #####: 4173:			a[i][j]=(double)0.0;
         -: 4174:}
         -: 4175:
         -: 4176:#ifdef DEBUG
@@ -4198,7 +4198,7 @@
         -: 4193:** a description of the scrambling process.
         -: 4194:*/
         -: 4195:
-      808: 4196:for(i=0;i<8*n;i++)
+    #####: 4196:for(i=0;i<8*n;i++)
         -: 4197:{
         -: 4198:	/*
         -: 4199:	** Pick a row and a random constant.  Multiply
@@ -4217,19 +4217,19 @@
         -: 4212:	*/
         -: 4213:        /* k=abs_randwc((long)n); */
         -: 4214:        /* k1=abs_randwc((long)n); */
-      808: 4215:	k=abs_randwc((int32)n);
-      808: 4216:	k1=abs_randwc((int32)n);
-      808: 4217:	if(k!=k1)
+    #####: 4215:	k=abs_randwc((int32)n);
+    #####: 4216:	k1=abs_randwc((int32)n);
+    #####: 4217:	if(k!=k1)
         -: 4218:	{
-      798: 4219:		if(k<k1) rcon=(double)1.0;
-      405: 4220:			else rcon=(double)-1.0;
-    81396: 4221:		for(j=0;j<n;j++)
-    80598: 4222:			a[k][j]+=a[k1][j]*rcon;;
-      798: 4223:		b[k]+=b[k1]*rcon;
+    #####: 4219:		if(k<k1) rcon=(double)1.0;
+    #####: 4220:			else rcon=(double)-1.0;
+    #####: 4221:		for(j=0;j<n;j++)
+    #####: 4222:			a[k][j]+=a[k1][j]*rcon;;
+    #####: 4223:		b[k]+=b[k1]*rcon;
         -: 4224:	}
         -: 4225:}
         -: 4226:
-        1: 4227:return;
+    #####: 4227:return;
         -: 4228:}
         -: 4229:
         -: 4230:
@@ -4261,7 +4261,7 @@
         -: 4256:** respectively.
         -: 4257:** Returns 0 if matrix singular, else returns 1.
         -: 4258:*/
-    12158: 4259:static int ludcmp(double a[][LUARRAYCOLS],
+    #####: 4259:static int ludcmp(double a[][LUARRAYCOLS],
         -: 4260:		int n,
         -: 4261:		int indx[],
         -: 4262:		int *d)
@@ -4271,73 +4271,73 @@
         -: 4266:double sum;
         -: 4267:double dum;     /* Holds dummy value */
         -: 4268:int i,j,k;      /* Indexes */
-    12158: 4269:int imax=0;     /* Holds max index value */
+    #####: 4269:int imax=0;     /* Holds max index value */
         -: 4270:double tiny;    /* A really small number */
         -: 4271:
-    12158: 4272:tiny=(double)1.0e-20;
+    #####: 4272:tiny=(double)1.0e-20;
         -: 4273:
-    12158: 4274:*d=1;           /* No interchanges yet */
+    #####: 4274:*d=1;           /* No interchanges yet */
         -: 4275:
-  1240116: 4276:for(i=0;i<n;i++)
+    #####: 4276:for(i=0;i<n;i++)
         -: 4277:{       big=(double)0.0;
-124023758: 4278:	for(j=0;j<n;j++)
-124023758: 4279:		if((double)fabs(a[i][j]) > big)
-  6468056: 4280:			big=fabs(a[i][j]);
+    #####: 4278:	for(j=0;j<n;j++)
+    #####: 4279:		if((double)fabs(a[i][j]) > big)
+    #####: 4280:			big=fabs(a[i][j]);
         -: 4281:	/* Bail out on singular matrix */
-  1227958: 4282:	if(big==(double)0.0) return(0);
-  1227958: 4283:	LUtempvv[i]=1.0/big;
+    #####: 4282:	if(big==(double)0.0) return(0);
+    #####: 4283:	LUtempvv[i]=1.0/big;
         -: 4284:}
         -: 4285:
         -: 4286:/*
         -: 4287:** Crout's algorithm...loop over columns.
         -: 4288:*/
-  1227958: 4289:for(j=0;j<n;j++)
-  1227958: 4290:{       if(j!=0)
- 61397900: 4291:		for(i=0;i<j;i++)
- 61397900: 4292:		{       sum=a[i][j];
- 61397900: 4293:			if(i!=0)
-2026130700: 4294:				for(k=0;k<i;k++)
-2026130700: 4295:					sum-=(a[i][k]*a[k][j]);
- 61397900: 4296:			a[i][j]=sum;
+    #####: 4289:for(j=0;j<n;j++)
+    #####: 4290:{       if(j!=0)
+    #####: 4291:		for(i=0;i<j;i++)
+    #####: 4292:		{       sum=a[i][j];
+    #####: 4293:			if(i!=0)
+    #####: 4294:				for(k=0;k<i;k++)
+    #####: 4295:					sum-=(a[i][k]*a[k][j]);
+    #####: 4296:			a[i][j]=sum;
         -: 4297:		}
         -: 4298:	big=(double)0.0;
- 62625858: 4299:	for(i=j;i<n;i++)
- 62625858: 4300:	{       sum=a[i][j];
- 62625858: 4301:		if(j!=0)
-2087528600: 4302:			for(k=0;k<j;k++)
-2087528600: 4303:				sum-=a[i][k]*a[k][j];
- 62625858: 4304:		a[i][j]=sum;
- 62625858: 4305:		dum=LUtempvv[i]*fabs(sum);
- 62625858: 4306:		if(dum>=big)
-  4923990: 4307:		{       big=dum;
-  4923990: 4308:			imax=i;
+    #####: 4299:	for(i=j;i<n;i++)
+    #####: 4300:	{       sum=a[i][j];
+    #####: 4301:		if(j!=0)
+    #####: 4302:			for(k=0;k<j;k++)
+    #####: 4303:				sum-=a[i][k]*a[k][j];
+    #####: 4304:		a[i][j]=sum;
+    #####: 4305:		dum=LUtempvv[i]*fabs(sum);
+    #####: 4306:		if(dum>=big)
+    #####: 4307:		{       big=dum;
+    #####: 4308:			imax=i;
         -: 4309:		}
         -: 4310:	}
-  1227958: 4311:	if(j!=imax)             /* Interchange rows if necessary */
-117883968: 4312:	{       for(k=0;k<n;k++)
-117883968: 4313:		{       dum=a[imax][k];
-117883968: 4314:			a[imax][k]=a[j][k];
-117883968: 4315:			a[j][k]=dum;
+    #####: 4311:	if(j!=imax)             /* Interchange rows if necessary */
+    #####: 4312:	{       for(k=0;k<n;k++)
+    #####: 4313:		{       dum=a[imax][k];
+    #####: 4314:			a[imax][k]=a[j][k];
+    #####: 4315:			a[j][k]=dum;
         -: 4316:		}
-  1167168: 4317:		*d=-*d;         /* Change parity of d */
-  1167168: 4318:		dum=LUtempvv[imax];
-  1167168: 4319:		LUtempvv[imax]=LUtempvv[j]; /* Don't forget scale factor */
-  1167168: 4320:		LUtempvv[j]=dum;
+    #####: 4317:		*d=-*d;         /* Change parity of d */
+    #####: 4318:		dum=LUtempvv[imax];
+    #####: 4319:		LUtempvv[imax]=LUtempvv[j]; /* Don't forget scale factor */
+    #####: 4320:		LUtempvv[j]=dum;
         -: 4321:	}
-  1227958: 4322:	indx[j]=imax;
+    #####: 4322:	indx[j]=imax;
         -: 4323:	/*
         -: 4324:	** If the pivot element is zero, the matrix is singular
         -: 4325:	** (at least as far as the precision of the machine
         -: 4326:	** is concerned.)  We'll take the original author's
         -: 4327:	** recommendation and replace 0.0 with "tiny".
         -: 4328:	*/
-  1227958: 4329:	if(a[j][j]==(double)0.0)
+    #####: 4329:	if(a[j][j]==(double)0.0)
     #####: 4330:		a[j][j]=tiny;
         -: 4331:
-  1227958: 4332:	if(j!=(n-1))
-  1215800: 4333:	{       dum=1.0/a[j][j];
- 62613700: 4334:		for(i=j+1;i<n;i++)
- 61397900: 4335:			a[i][j]=a[i][j]*dum;
+    #####: 4332:	if(j!=(n-1))
+    #####: 4333:	{       dum=1.0/a[j][j];
+    #####: 4334:		for(i=j+1;i<n;i++)
+    #####: 4335:			a[i][j]=a[i][j]*dum;
         -: 4336:	}
         -: 4337:}
         -: 4338:
@@ -4360,7 +4360,7 @@
         -: 4355:** begin with many zero elements, so it is efficient for use in
         -: 4356:** matrix inversion.
         -: 4357:*/
-    12158: 4358:static void lubksb( double a[][LUARRAYCOLS],
+    #####: 4358:static void lubksb( double a[][LUARRAYCOLS],
         -: 4359:		int n,
         -: 4360:		int indx[LUARRAYROWS],
         -: 4361:		double b[LUARRAYROWS])
@@ -4377,35 +4377,35 @@
         -: 4372:** We now do the forward substitution. The only wrinkle
         -: 4373:** is to unscramble the permutation as we go.
         -: 4374:*/
-    12158: 4375:ii=-1;
-  1240116: 4376:for(i=0;i<n;i++)
-  1227958: 4377:{       ip=indx[i];
-  1227958: 4378:	sum=b[ip];
-  1227958: 4379:	b[ip]=b[i];
-  1227958: 4380:	if(ii!=-1)
- 61397900: 4381:		for(j=ii;j<i;j++)
- 61397900: 4382:			sum=sum-a[i][j]*b[j];
+    #####: 4375:ii=-1;
+    #####: 4376:for(i=0;i<n;i++)
+    #####: 4377:{       ip=indx[i];
+    #####: 4378:	sum=b[ip];
+    #####: 4379:	b[ip]=b[i];
+    #####: 4380:	if(ii!=-1)
+    #####: 4381:		for(j=ii;j<i;j++)
+    #####: 4382:			sum=sum-a[i][j]*b[j];
         -: 4383:	else
         -: 4384:		/*
         -: 4385:		** If a nonzero element is encountered, we have
         -: 4386:		** to do the sums in the loop above.
         -: 4387:		*/
-    12158: 4388:		if(sum!=(double)0.0)
-    12158: 4389:			ii=i;
-  1227958: 4390:	b[i]=sum;
+    #####: 4388:		if(sum!=(double)0.0)
+    #####: 4389:			ii=i;
+    #####: 4390:	b[i]=sum;
         -: 4391:}
         -: 4392:/*
         -: 4393:** Do backsubstitution
         -: 4394:*/
-  1240116: 4395:for(i=(n-1);i>=0;i--)
+    #####: 4395:for(i=(n-1);i>=0;i--)
         -: 4396:{
-  1227958: 4397:	sum=b[i];
-  1227958: 4398:	if(i!=(n-1))
- 62613700: 4399:		for(j=(i+1);j<n;j++)
- 61397900: 4400:			sum=sum-a[i][j]*b[j];
-  1227958: 4401:	b[i]=sum/a[i][i];
+    #####: 4397:	sum=b[i];
+    #####: 4398:	if(i!=(n-1))
+    #####: 4399:		for(j=(i+1);j<n;j++)
+    #####: 4400:			sum=sum-a[i][j]*b[j];
+    #####: 4401:	b[i]=sum/a[i][i];
         -: 4402:}
-    12158: 4403:return;
+    #####: 4403:return;
         -: 4404:}
         -: 4405:
         -: 4406:/************
@@ -4415,7 +4415,7 @@
         -: 4410:** Original matrix A will be destroyed by this operation.
         -: 4411:** Returns 0 if matrix is singular, 1 otherwise.
         -: 4412:*/
-    12158: 4413:static int lusolve(double a[][LUARRAYCOLS],
+    #####: 4413:static int lusolve(double a[][LUARRAYCOLS],
         -: 4414:		int n,
         -: 4415:		double b[LUARRAYROWS])
         -: 4416:{
@@ -4425,10 +4425,10 @@
         -: 4420:int i,j;
         -: 4421:#endif
         -: 4422:
-    12158: 4423:if(ludcmp(a,n,indx,&d)==0) return(0);
+    #####: 4423:if(ludcmp(a,n,indx,&d)==0) return(0);
         -: 4424:
         -: 4425:/* Matrix not singular -- proceed */
-    12158: 4426:lubksb(a,n,indx,b);
+    #####: 4426:lubksb(a,n,indx,b);
         -: 4427:
         -: 4428:#ifdef DEBUG
         -: 4429:printf("Solution:\n");
@@ -4447,5 +4447,5 @@
         -: 4442:printf("\n");
         -: 4443:#endif
         -: 4444:
-    12158: 4445:return(1);
+    #####: 4445:return(1);
         -: 4446:}
