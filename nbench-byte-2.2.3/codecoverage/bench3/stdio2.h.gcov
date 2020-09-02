@@ -1,6 +1,6 @@
         -:    0:Source:/usr/include/x86_64-linux-gnu/bits/stdio2.h
-        -:    0:Graph:nbench1.gcno
-        -:    0:Data:nbench1.gcda
+        -:    0:Graph:emfloat.gcno
+        -:    0:Data:emfloat.gcda
         -:    0:Runs:1
         -:    0:Programs:1
         -:    1:/* Checking macros for stdio functions.

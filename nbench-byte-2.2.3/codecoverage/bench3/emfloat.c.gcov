@@ -1,0 +1,1348 @@
+        -:    0:Source:emfloat.c
+        -:    0:Graph:emfloat.gcno
+        -:    0:Data:emfloat.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/*
+        -:    2:** emfloat.c
+        -:    3:** Source for emulated floating-point routines.
+        -:    4:** BYTEmark (tm)
+        -:    5:** BYTE's Native Mode Benchmarks
+        -:    6:** Rick Grehan, BYTE Magazine.
+        -:    7:**
+        -:    8:** Created:
+        -:    9:** Last update: 3/95
+        -:   10:**
+        -:   11:** DISCLAIMER
+        -:   12:** The source, executable, and documentation files that comprise
+        -:   13:** the BYTEmark benchmarks are made available on an "as is" basis.
+        -:   14:** This means that we at BYTE Magazine have made every reasonable
+        -:   15:** effort to verify that the there are no errors in the source and
+        -:   16:** executable code.  We cannot, however, guarantee that the programs
+        -:   17:** are error-free.  Consequently, McGraw-HIll and BYTE Magazine make
+        -:   18:** no claims in regard to the fitness of the source code, executable
+        -:   19:** code, and documentation of the BYTEmark.
+        -:   20:**  Furthermore, BYTE Magazine, McGraw-Hill, and all employees
+        -:   21:** of McGraw-Hill cannot be held responsible for any damages resulting
+        -:   22:** from the use of this code or the results obtained from using
+        -:   23:** this code.
+        -:   24:*/
+        -:   25:
+        -:   26:
+        -:   27:#include <stdio.h>
+        -:   28:#include <string.h>
+        -:   29:#include "nmglobal.h"
+        -:   30:#include "emfloat.h"
+        -:   31:
+        -:   32:/*
+        -:   33:** Floating-point emulator.
+        -:   34:** These routines are only "sort of" IEEE-compliant.  All work is
+        -:   35:** done using an internal representation.  Also, the routines do
+        -:   36:** not check for many of the exceptions that might occur.
+        -:   37:** Still, the external formats produced are IEEE-compatible,
+        -:   38:** with the restriction that they presume a low-endian machine
+        -:   39:** (though the endianism will not effect the performance).
+        -:   40:**
+        -:   41:** Some code here was based on work done by Steve Snelgrove of
+        -:   42:** Orem, UT.  Other code comes from routines presented in
+        -:   43:** the long-ago book: "Microprocessor Programming for
+        -:   44:** Computer Hobbyists" by Neill Graham.
+        -:   45:*/
+        -:   46:
+        -:   47:/**************************
+        -:   48:** SetupCPUEmFloatArrays **
+        -:   49:***************************
+        -:   50:** Set up the arrays that will be used in the emulated
+        -:   51:** floating-point tests.
+        -:   52:** This is done by loading abase and bbase elements with
+        -:   53:** random numbers.  We use our long-to-floating point
+        -:   54:** routine to set them up.
+        -:   55:** NOTE: We really don't need the pointer to cbase...cbase
+        -:   56:** is overwritten in the benchmark.
+        -:   57:*/
+        1:   58:void SetupCPUEmFloatArrays(InternalFPF *abase,
+        -:   59:                InternalFPF *bbase,
+        -:   60:                InternalFPF *cbase,
+        -:   61:                ulong arraysize)
+        -:   62:{
+        -:   63:ulong i;
+        -:   64:InternalFPF locFPF1,locFPF2;
+        -:   65:/*
+        -:   66:** Reset random number generator so things repeat. Inserted by Uwe F. Mayer.
+        -:   67:*/
+        -:   68:extern int32 randnum(int32 lngval);
+        1:   69:randnum((int32)13);
+        -:   70:
+     3001:   71:for(i=0;i<arraysize;i++)
+        -:   72:{/*       LongToInternalFPF(randwc(50000L),&locFPF1); */
+     3000:   73:        Int32ToInternalFPF(randwc((int32)50000),&locFPF1);
+        -:   74: /*       LongToInternalFPF(randwc(50000L)+1L,&locFPF2); */
+     3000:   75:        Int32ToInternalFPF(randwc((int32)50000)+(int32)1,&locFPF2);
+     3000:   76:        DivideInternalFPF(&locFPF1,&locFPF2,abase+i);
+        -:   77: /*       LongToInternalFPF(randwc(50000L)+1L,&locFPF2); */
+     3000:   78:        Int32ToInternalFPF(randwc((int32)50000)+(int32)1,&locFPF2);
+     3000:   79:        DivideInternalFPF(&locFPF1,&locFPF2,bbase+i);
+        -:   80:}
+        1:   81:return;
+        -:   82:}
+        -:   83:
+        -:   84:/***********************
+        -:   85:** DoEmFloatIteration **
+        -:   86:************************
+        -:   87:** Perform an iteration of the emulated floating-point
+        -:   88:** benchmark.  Note that "an iteration" can involve multiple
+        -:   89:** loops through the benchmark.
+        -:   90:*/
+     1168:   91:ulong DoEmFloatIteration(InternalFPF *abase,
+        -:   92:                InternalFPF *bbase,
+        -:   93:                InternalFPF *cbase,
+        -:   94:                ulong arraysize, ulong loops)
+        -:   95:{
+        -:   96:ulong elapsed;          /* For the stopwatch */
+        -:   97:static uchar jtable[16] = {0,0,0,0,1,1,1,1,2,2,2,2,2,3,3,3};
+        -:   98:ulong i;
+        -:   99:#ifdef DEBUG
+        -:  100:int number_of_loops;
+        -:  101:#endif
+        -:  102:/*
+        -:  103:** Begin timing
+        -:  104:*/
+     1168:  105:elapsed=StartStopwatch();
+        -:  106:#ifdef DEBUG
+        -:  107:number_of_loops=loops-1; /* the index of the first loop we run */
+        -:  108:#endif
+        -:  109:
+        -:  110:/*
+        -:  111:** Each pass through the array performs operations in
+        -:  112:** the followingratios:
+        -:  113:**   4 adds, 4 subtracts, 5 multiplies, 3 divides
+        -:  114:** (adds and subtracts being nearly the same operation)
+        -:  115:*/
+     3504:  116:while(loops--)
+        -:  117:{
+  3504000:  118:        for(i=0;i<arraysize;i++)
+  3504000:  119:                switch(jtable[i % 16])
+        -:  120:                {
+   878336:  121:                        case 0: /* Add */
+   878336:  122:                                AddSubInternalFPF(0,abase+i,
+        -:  123:                                  bbase+i,
+   878336:  124:                                  cbase+i);
+   878336:  125:                                break;
+   878336:  126:                        case 1: /* Subtract */
+   878336:  127:                                AddSubInternalFPF(1,abase+i,
+        -:  128:                                  bbase+i,
+   878336:  129:                                  cbase+i);
+   878336:  130:                                break;
+  1092080:  131:                        case 2: /* Multiply */
+  1092080:  132:                                MultiplyInternalFPF(abase+i,
+        -:  133:                                  bbase+i,
+  1092080:  134:                                  cbase+i);
+  1092080:  135:                                break;
+   655248:  136:                        case 3: /* Divide */
+   655248:  137:                                DivideInternalFPF(abase+i,
+        -:  138:                                  bbase+i,
+   655248:  139:                                  cbase+i);
+   655248:  140:                                break;
+        -:  141:                }
+        -:  142:#ifdef DEBUG
+        -:  143:{
+        -:  144:  ulong j[8];   /* we test 8 entries */
+        -:  145:  int k;
+        -:  146:  ulong i;
+        -:  147:  char buffer[1024];
+        -:  148:  if (number_of_loops==loops) /* the first loop */
+        -:  149:    {
+        -:  150:      j[0]=(ulong)2;
+        -:  151:      j[1]=(ulong)6;
+        -:  152:      j[2]=(ulong)10;
+        -:  153:      j[3]=(ulong)14;
+        -:  154:      j[4]=(ulong)(arraysize-14);
+        -:  155:      j[5]=(ulong)(arraysize-10);
+        -:  156:      j[6]=(ulong)(arraysize-6);
+        -:  157:      j[7]=(ulong)(arraysize-2);
+        -:  158:      for(k=0;k<8;k++){
+        -:  159:	i=j[k];
+        -:  160:	InternalFPFToString(buffer,abase+i);
+        -:  161:	printf("%6ld: (%s) ",i,buffer);
+        -:  162:	switch(jtable[i % 16])
+        -:  163:	  {
+        -:  164:	  case 0: strcpy(buffer,"+"); break;
+        -:  165:	  case 1: strcpy(buffer,"-"); break;
+        -:  166:	  case 2: strcpy(buffer,"*"); break;
+        -:  167:	  case 3: strcpy(buffer,"/"); break;
+        -:  168:	  }
+        -:  169:	printf("%s ",buffer);
+        -:  170:	InternalFPFToString(buffer,bbase+i);
+        -:  171:	printf("(%s) = ",buffer);
+        -:  172:	InternalFPFToString(buffer,cbase+i);
+        -:  173:	printf("%s\n",buffer);
+        -:  174:      }
+        -:  175:    }
+        -:  176:}
+        -:  177:#endif
+        -:  178:}
+     1168:  179:return(StopStopwatch(elapsed));
+        -:  180:}
+        -:  181:
+        -:  182:/***********************
+        -:  183:** SetInternalFPFZero **
+        -:  184:************************
+        -:  185:** Set an internal floating-point-format number to zero.
+        -:  186:** sign determines the sign of the zero.
+        -:  187:*/
+        -:  188:static void SetInternalFPFZero(InternalFPF *dest,
+        -:  189:                        uchar sign)
+        -:  190:{
+        -:  191:int i;          /* Index */
+        -:  192:
+    #####:  193:dest->type=IFPF_IS_ZERO;
+    #####:  194:dest->sign=sign;
+    #####:  195:dest->exp=MIN_EXP;
+    #####:  196:for(i=0;i<INTERNAL_FPF_PRECISION;i++)
+    #####:  197:        dest->mantissa[i]=0;
+        -:  198:return;
+        -:  199:}
+        -:  200:
+        -:  201:/***************************
+        -:  202:** SetInternalFPFInfinity **
+        -:  203:****************************
+        -:  204:** Set an internal floating-point-format number to infinity.
+        -:  205:** This can happen if the exponent exceeds MAX_EXP.
+        -:  206:** As above, sign picks the sign of infinity.
+        -:  207:*/
+        -:  208:static void SetInternalFPFInfinity(InternalFPF *dest,
+        -:  209:                        uchar sign)
+        -:  210:{
+        -:  211:int i;          /* Index */
+        -:  212:
+    #####:  213:dest->type=IFPF_IS_INFINITY;
+    #####:  214:dest->sign=sign;
+    #####:  215:dest->exp=MIN_EXP;
+    #####:  216:for(i=0;i<INTERNAL_FPF_PRECISION;i++)
+    #####:  217:        dest->mantissa[i]=0;
+        -:  218:return;
+        -:  219:}
+        -:  220:
+        -:  221:/**********************
+        -:  222:** SetInternalFPFNaN **
+        -:  223:***********************
+        -:  224:** Set an internal floating-point-format number to Nan
+        -:  225:** (not a number).  Note that we "emulate" an 80x87 as far
+        -:  226:** as the mantissa bits go.
+        -:  227:*/
+        -:  228:static void SetInternalFPFNaN(InternalFPF *dest)
+        -:  229:{
+        -:  230:int i;          /* Index */
+        -:  231:
+    #####:  232:dest->type=IFPF_IS_NAN;
+    #####:  233:dest->exp=MAX_EXP;
+    #####:  234:dest->sign=1;
+    #####:  235:dest->mantissa[0]=0x4000;
+    #####:  236:for(i=1;i<INTERNAL_FPF_PRECISION;i++)
+    #####:  237:        dest->mantissa[i]=0;
+        -:  238:
+        -:  239:return;
+        -:  240:}
+        -:  241:
+        -:  242:/*******************
+        -:  243:** IsMantissaZero **
+        -:  244:********************
+        -:  245:** Pass this routine a pointer to an internal floating point format
+        -:  246:** number's mantissa.  It checks for an all-zero mantissa.
+        -:  247:** Returns 0 if it is NOT all zeros, !=0 otherwise.
+        -:  248:*/
+        -:  249:static int IsMantissaZero(u16 *mant)
+        -:  250:{
+        -:  251:int i;          /* Index */
+        -:  252:int n;          /* Return value */
+        -:  253:
+  6809920:  254:n=0;
+ 42786240:  255:for(i=0;i<INTERNAL_FPF_PRECISION;i++)
+ 35976320:  256:        n|=mant[i];
+        -:  257:
+        -:  258:return(!n);
+        -:  259:}
+        -:  260:
+        -:  261:/**************
+        -:  262:** Add16Bits **
+        -:  263:***************
+        -:  264:** Add b, c, and carry.  Retult in a.  New carry in carry.
+        -:  265:*/
+        -:  266:static void Add16Bits(u16 *carry,
+        -:  267:                u16 *a,
+        -:  268:                u16 b,
+        -:  269:                u16 c)
+        -:  270:{
+        -:  271:u32 accum;              /* Accumulator */
+        -:  272:
+        -:  273:/*
+        -:  274:** Do the work in the 32-bit accumulator so we can return
+        -:  275:** the carry.
+        -:  276:*/
+138412672:  277:accum=(u32)b;
+138412672:  278:accum+=(u32)c;
+138412672:  279:accum+=(u32)*carry;
+138412672:  280:*carry=(u16)((accum & 0x00010000) ? 1 : 0);     /* New carry */
+138412672:  281:*a=(u16)(accum & 0xFFFF);       /* Result is lo 16 bits */
+        -:  282:return;
+        -:  283:}
+        -:  284:
+        -:  285:/**************
+        -:  286:** Sub16Bits **
+        -:  287:***************
+        -:  288:** Additive inverse of above.
+        -:  289:*/
+        -:  290:static void Sub16Bits(u16 *borrow,
+        -:  291:                u16 *a,
+        -:  292:                u16 b,
+        -:  293:                u16 c)
+        -:  294:{
+        -:  295:u32 accum;              /* Accumulator */
+        -:  296:
+ 89837304:  297:accum=(u32)b;
+ 89837304:  298:accum-=(u32)c;
+ 89837304:  299:accum-=(u32)*borrow;
+ 89837304:  300:*borrow=(u32)((accum & 0x00010000) ? 1 : 0);    /* New borrow */
+ 89837304:  301:*a=(u16)(accum & 0xFFFF);
+        -:  302:return;
+        -:  303:}
+        -:  304:
+        -:  305:/*******************
+        -:  306:** ShiftMantLeft1 **
+        -:  307:********************
+        -:  308:** Shift a vector of 16-bit numbers left 1 bit.  Also provides
+        -:  309:** a carry bit, which is shifted in at the beginning, and
+        -:  310:** shifted out at the end.
+        -:  311:*/
+        -:  312:static void ShiftMantLeft1(u16 *carry,
+        -:  313:                        u16 *mantissa)
+        -:  314:{
+        -:  315:int i;          /* Index */
+        -:  316:int new_carry;
+        -:  317:u16 accum;      /* Temporary holding placed */
+        -:  318:
+1107129113:  319:for(i=INTERNAL_FPF_PRECISION-1;i>=0;i--)
+1021464068:  320:{       accum=mantissa[i];
+1021464068:  321:        new_carry=accum & 0x8000;       /* Get new carry */
+1021464068:  322:        accum=accum<<1;                 /* Do the shift */
+1021464068:  323:        if(*carry)
+200845869:  324:                accum|=1;               /* Insert previous carry */
+1021464068:  325:        *carry=new_carry;
+1021464068:  326:        mantissa[i]=accum;              /* Return shifted value */
+        -:  327:}
+        -:  328:return;
+        -:  329:}
+        -:  330:
+        -:  331:/********************
+        -:  332:** ShiftMantRight1 **
+        -:  333:*********************
+        -:  334:** Shift a mantissa right by 1 bit.  Provides carry, as
+        -:  335:** above
+        -:  336:*/
+        -:  337:static void ShiftMantRight1(u16 *carry,
+        -:  338:                        u16 *mantissa)
+        -:  339:{
+        -:  340:int i;          /* Index */
+        -:  341:int new_carry;
+        -:  342:u16 accum;
+        -:  343:
+921576528:  344:for(i=0;i<INTERNAL_FPF_PRECISION;i++)
+851210368:  345:{       accum=mantissa[i];
+851210368:  346:        new_carry=accum & 1;            /* Get new carry */
+851210368:  347:        accum=accum>>1;
+851210368:  348:        if(*carry)
+246439824:  349:                accum|=0x8000;
+851210368:  350:        *carry=new_carry;
+851210368:  351:        mantissa[i]=accum;
+        -:  352:}
+        -:  353:return;
+        -:  354:}
+        -:  355:
+        -:  356:
+        -:  357:/*****************************
+        -:  358:** StickyShiftMantRight **
+        -:  359:******************************
+        -:  360:** This is a shift right of the mantissa with a "sticky bit".
+        -:  361:** I.E., if a carry of 1 is shifted out of the least significant
+        -:  362:** bit, the least significant bit is set to 1.
+        -:  363:*/
+  1301152:  364:static void StickyShiftRightMant(InternalFPF *ptr,
+        -:  365:                        int amount)
+        -:  366:{
+        -:  367:int i;          /* Index */
+        -:  368:u16 carry;      /* Self-explanatory */
+        -:  369:u16 *mantissa;
+        -:  370:
+  1301152:  371:mantissa=ptr->mantissa;
+        -:  372:
+  1301152:  373:if(ptr->type!=IFPF_IS_ZERO)     /* Don't bother shifting a zero */
+        -:  374:{
+        -:  375:        /*
+        -:  376:        ** If the amount of shifting will shift everyting
+        -:  377:        ** out of existence, then just clear the whole mantissa
+        -:  378:        ** and set the lowmost bit to 1.
+        -:  379:        */
+  1301152:  380:        if(amount>=INTERNAL_FPF_PRECISION * 16)
+        -:  381:        {
+    #####:  382:                for(i=0;i<INTERNAL_FPF_PRECISION-1;i++)
+    #####:  383:                        mantissa[i]=0;
+    #####:  384:                mantissa[INTERNAL_FPF_PRECISION-1]=1;
+        -:  385:        }
+        -:  386:        else
+  2650192:  387:                for(i=0;i<amount;i++)
+        -:  388:                {
+        -:  389:                        carry=0;
+  2650192:  390:                        ShiftMantRight1(&carry,mantissa);
+  2650192:  391:                        if(carry)
+   246448:  392:                                mantissa[INTERNAL_FPF_PRECISION-1] |= 1;
+        -:  393:                }
+        -:  394:}
+  1301152:  395:return;
+        -:  396:}
+        -:  397:
+        -:  398:
+        -:  399:/**************************************************
+        -:  400:**         POST ARITHMETIC PROCESSING            **
+        -:  401:**  (NORMALIZE, ROUND, OVERFLOW, AND UNDERFLOW)  **
+        -:  402:**************************************************/
+        -:  403:
+        -:  404:/**************
+        -:  405:** normalize **
+        -:  406:***************
+        -:  407:** Normalize an internal-representation number.  Normalization
+        -:  408:** discards empty most-significant bits.
+        -:  409:*/
+   894344:  410:static void normalize(InternalFPF *ptr)
+        -:  411:{
+        -:  412:u16     carry;
+        -:  413:
+        -:  414:/*
+        -:  415:** As long as there's a highmost 0 bit, shift the significand
+        -:  416:** left 1 bit.  Each time you do this, though, you've
+        -:  417:** gotta decrement the exponent.
+        -:  418:*/
+  3139359:  419:while ((ptr->mantissa[0] & 0x8000) == 0)
+        -:  420:{
+  1350671:  421:        carry = 0;
+  2701342:  422:        ShiftMantLeft1(&carry, ptr->mantissa);
+  1350671:  423:        ptr->exp--;
+        -:  424:}
+   894344:  425:return;
+        -:  426:}
+        -:  427:
+        -:  428:/****************
+        -:  429:** denormalize **
+        -:  430:*****************
+        -:  431:** Denormalize an internal-representation number.  This means
+        -:  432:** shifting it right until its exponent is equivalent to
+        -:  433:** minimum_exponent. (You have to do this often in order
+        -:  434:** to perform additions and subtractions).
+        -:  435:*/
+  3510000:  436:static void denormalize(InternalFPF *ptr,
+        -:  437:                int minimum_exponent)
+        -:  438:{
+        -:  439:long exponent_difference;
+        -:  440:
+  7020000:  441:if (IsMantissaZero(ptr->mantissa))
+        -:  442:{
+        -:  443:        printf("Error:  zero significand in denormalize\n");
+        -:  444:}
+        -:  445:
+  3510000:  446:exponent_difference = ptr->exp-minimum_exponent;
+  3510000:  447:if (exponent_difference < 0)
+        -:  448:{
+        -:  449:        /*
+        -:  450:        ** The number is subnormal
+        -:  451:        */
+    #####:  452:        exponent_difference = -exponent_difference;
+    #####:  453:        if (exponent_difference >= (INTERNAL_FPF_PRECISION * 16))
+        -:  454:        {
+        -:  455:                /* Underflow */
+    #####:  456:                SetInternalFPFZero(ptr, ptr->sign);
+        -:  457:        }
+        -:  458:        else
+        -:  459:        {
+    #####:  460:                ptr->exp+=exponent_difference;
+    #####:  461:                StickyShiftRightMant(ptr, exponent_difference);
+        -:  462:        }
+        -:  463:}
+  3510000:  464:return;
+        -:  465:}
+        -:  466:
+        -:  467:
+        -:  468:/*********************
+        -:  469:** RoundInternalFPF **
+        -:  470:**********************
+        -:  471:** Round an internal-representation number.
+        -:  472:** The kind of rounding we do here is simplest...referred to as
+        -:  473:** "chop".  "Extraneous" rightmost bits are simply hacked off.
+        -:  474:*/
+  3510000:  475:void RoundInternalFPF(InternalFPF *ptr)
+        -:  476:{
+        -:  477:/* int i; */
+        -:  478:
+  3510000:  479:if (ptr->type == IFPF_IS_NORMAL ||
+        -:  480:        ptr->type == IFPF_IS_SUBNORMAL)
+        -:  481:{
+  3510000:  482:        denormalize(ptr, MIN_EXP);
+  3510000:  483:        if (ptr->type != IFPF_IS_ZERO)
+        -:  484:        {
+        -:  485:
+        -:  486:                /* clear the extraneous bits */
+  3510000:  487:                ptr->mantissa[3] &= 0xfff8;
+        -:  488:/*              for (i=4; i<INTERNAL_FPF_PRECISION; i++)
+        -:  489:                {
+        -:  490:                        ptr->mantissa[i] = 0;
+        -:  491:                }
+        -:  492:*/
+        -:  493:                /*
+        -:  494:                ** Check for overflow
+        -:  495:                */
+        -:  496:/*              Does not do anything as ptr->exp is a short and MAX_EXP=37268
+        -:  497:		if (ptr->exp > MAX_EXP)
+        -:  498:                {
+        -:  499:                        SetInternalFPFInfinity(ptr, ptr->sign);
+        -:  500:                }
+        -:  501:*/
+        -:  502:        }
+        -:  503:}
+  3510000:  504:return;
+        -:  505:}
+        -:  506:
+        -:  507:/*******************************************************
+        -:  508:**  ARITHMETIC OPERATIONS ON INTERNAL REPRESENTATION  **
+        -:  509:*******************************************************/
+        -:  510:
+        -:  511:/***************
+        -:  512:** choose_nan **
+        -:  513:****************
+        -:  514:** Called by routines that are forced to perform math on
+        -:  515:** a pair of NaN's.  This routine "selects" which NaN is
+        -:  516:** to be returned.
+        -:  517:*/
+    #####:  518:static void choose_nan(InternalFPF *x,
+        -:  519:                InternalFPF *y,
+        -:  520:                InternalFPF *z,
+        -:  521:                int intel_flag)
+        -:  522:{
+        -:  523:int i;
+        -:  524:
+        -:  525:/*
+        -:  526:** Compare the two mantissas,
+        -:  527:** return the larger.  Note that we will be emulating
+        -:  528:** an 80387 in this operation.
+        -:  529:*/
+    #####:  530:for (i=0; i<INTERNAL_FPF_PRECISION; i++)
+        -:  531:{
+    #####:  532:        if (x->mantissa[i] > y->mantissa[i])
+        -:  533:        {
+        -:  534:                memmove((void *)x,(void *)z,sizeof(InternalFPF));
+        -:  535:                return;
+        -:  536:        }
+    #####:  537:        if (x->mantissa[i] < y->mantissa[i])
+        -:  538:        {
+        -:  539:                memmove((void *)y,(void *)z,sizeof(InternalFPF));
+        -:  540:                return;
+        -:  541:        }
+        -:  542:}
+        -:  543:
+        -:  544:/*
+        -:  545:** They are equal
+        -:  546:*/
+    #####:  547:if (!intel_flag)
+        -:  548:        /* if the operation is addition */
+        -:  549:        memmove((void *)x,(void *)z,sizeof(InternalFPF));
+        -:  550:else
+        -:  551:        /* if the operation is multiplication */
+        -:  552:        memmove((void *)y,(void *)z,sizeof(InternalFPF));
+        -:  553:return;
+        -:  554:}
+        -:  555:
+        -:  556:
+        -:  557:/**********************
+        -:  558:** AddSubInternalFPF **
+        -:  559:***********************
+        -:  560:** Adding or subtracting internal-representation numbers.
+        -:  561:** Internal-representation numbers pointed to by x and y are
+        -:  562:** added/subtracted and the result returned in z.
+        -:  563:*/
+  1756672:  564:static void AddSubInternalFPF(uchar operation,
+        -:  565:                InternalFPF *x,
+        -:  566:                InternalFPF *y,
+        -:  567:                InternalFPF *z)
+        -:  568:{
+        -:  569:int exponent_difference;
+        -:  570:u16 borrow;
+        -:  571:u16 carry;
+        -:  572:int i;
+        -:  573:InternalFPF locx,locy;  /* Needed since we alter them */
+        -:  574:
+        -:  575:/*
+        -:  576:** Following big switch statement handles the
+        -:  577:** various combinations of operand types.
+        -:  578:*/
+  1756672:  579:switch ((x->type * IFPF_TYPE_COUNT) + y->type)
+        -:  580:{
+    #####:  581:case ZERO_ZERO:
+    #####:  582:        memmove((void *)x,(void *)z,sizeof(InternalFPF));
+    #####:  583:        if (x->sign ^ y->sign ^ operation)
+        -:  584:        {
+    #####:  585:                z->sign = 0; /* positive */
+        -:  586:        }
+        -:  587:        break;
+        -:  588:
+    #####:  589:case NAN_ZERO:
+        -:  590:case NAN_SUBNORMAL:
+        -:  591:case NAN_NORMAL:
+        -:  592:case NAN_INFINITY:
+        -:  593:case SUBNORMAL_ZERO:
+        -:  594:case NORMAL_ZERO:
+        -:  595:case INFINITY_ZERO:
+        -:  596:case INFINITY_SUBNORMAL:
+        -:  597:case INFINITY_NORMAL:
+        -:  598:        memmove((void *)x,(void *)z,sizeof(InternalFPF));
+        -:  599:        break;
+        -:  600:
+        -:  601:
+    #####:  602:case ZERO_NAN:
+        -:  603:case SUBNORMAL_NAN:
+        -:  604:case NORMAL_NAN:
+        -:  605:case INFINITY_NAN:
+        -:  606:        memmove((void *)y,(void *)z,sizeof(InternalFPF));
+        -:  607:        break;
+        -:  608:
+    #####:  609:case ZERO_SUBNORMAL:
+        -:  610:case ZERO_NORMAL:
+        -:  611:case ZERO_INFINITY:
+        -:  612:case SUBNORMAL_INFINITY:
+        -:  613:case NORMAL_INFINITY:
+    #####:  614:        memmove((void *)y,(void *)z,sizeof(InternalFPF));
+    #####:  615:        z->sign ^= operation;
+    #####:  616:        break;
+        -:  617:
+  1756672:  618:case SUBNORMAL_SUBNORMAL:
+        -:  619:case SUBNORMAL_NORMAL:
+        -:  620:case NORMAL_SUBNORMAL:
+        -:  621:case NORMAL_NORMAL:
+        -:  622:        /*
+        -:  623:        ** Copy x and y to locals, since we may have
+        -:  624:        ** to alter them.
+        -:  625:        */
+  1756672:  626:        memmove((void *)&locx,(void *)x,sizeof(InternalFPF));
+  1756672:  627:        memmove((void *)&locy,(void *)y,sizeof(InternalFPF));
+        -:  628:
+        -:  629:        /* compute sum/difference */
+  1756672:  630:        exponent_difference = locx.exp-locy.exp;
+  1756672:  631:        if (exponent_difference == 0)
+        -:  632:        {
+        -:  633:                /*
+        -:  634:                ** locx.exp == locy.exp
+        -:  635:                ** so, no shifting required
+        -:  636:                */
+   455520:  637:                if (locx.type == IFPF_IS_SUBNORMAL ||
+        -:  638:                  locy.type == IFPF_IS_SUBNORMAL)
+    #####:  639:                        z->type = IFPF_IS_SUBNORMAL;
+        -:  640:                else
+   455520:  641:                        z->type = IFPF_IS_NORMAL;
+        -:  642:
+        -:  643:                /*
+        -:  644:                ** Assume that locx.mantissa > locy.mantissa
+        -:  645:                */
+   455520:  646:                z->sign = locx.sign;
+   455520:  647:                z->exp= locx.exp;
+        -:  648:        }
+        -:  649:        else
+  1301152:  650:                if (exponent_difference > 0)
+        -:  651:                {
+        -:  652:                        /*
+        -:  653:                        ** locx.exp > locy.exp
+        -:  654:                        */
+   655248:  655:                        StickyShiftRightMant(&locy,
+        -:  656:                                 exponent_difference);
+   655248:  657:                        z->type = locx.type;
+   655248:  658:                        z->sign = locx.sign;
+   655248:  659:                        z->exp = locx.exp;
+        -:  660:                }
+        -:  661:                else    /* if (exponent_difference < 0) */
+        -:  662:                {
+        -:  663:                        /*
+        -:  664:                        ** locx.exp < locy.exp
+        -:  665:                        */
+   645904:  666:                        StickyShiftRightMant(&locx,
+        -:  667:                                -exponent_difference);
+   645904:  668:                        z->type = locy.type;
+   645904:  669:                        z->sign = locy.sign ^ operation;
+   645904:  670:                        z->exp = locy.exp;
+        -:  671:                }
+        -:  672:
+  1756672:  673:                if (locx.sign ^ locy.sign ^ operation)
+        -:  674:                {
+        -:  675:                        /*
+        -:  676:                        ** Signs are different, subtract mantissas
+        -:  677:                        */
+        -:  678:                        borrow = 0;
+  3541376:  679:                        for (i=(INTERNAL_FPF_PRECISION-1); i>=0; i--)
+  7082752:  680:                                Sub16Bits(&borrow,
+        -:  681:                                        &z->mantissa[i],
+  3541376:  682:                                        locx.mantissa[i],
+  3541376:  683:                                        locy.mantissa[i]);
+        -:  684:
+   885344:  685:                        if (borrow)
+        -:  686:                        {
+        -:  687:                                /* The y->mantissa was larger than the
+        -:  688:                                ** x->mantissa leaving a negative
+        -:  689:                                ** result.  Change the result back to
+        -:  690:                                ** an unsigned number and flip the
+        -:  691:                                ** sign flag.
+        -:  692:                                */
+   427488:  693:                                z->sign = locy.sign ^ operation;
+   427488:  694:                                borrow = 0;
+  2137440:  695:                                for (i=(INTERNAL_FPF_PRECISION-1); i>=0; i--)
+        -:  696:                                {
+  3419904:  697:                                        Sub16Bits(&borrow,
+        -:  698:                                                &z->mantissa[i],
+        -:  699:                                                0,
+  1709952:  700:                                                z->mantissa[i]);
+        -:  701:                                }
+        -:  702:                        }
+        -:  703:                        else
+        -:  704:                        {
+        -:  705:                                /* The assumption made above
+        -:  706:                                ** (i.e. x->mantissa >= y->mantissa)
+        -:  707:                                ** was correct.  Therefore, do nothing.
+        -:  708:                                ** z->sign = x->sign;
+        -:  709:                                */
+        -:  710:                        }
+        -:  711:
+  1770688:  712:                        if (IsMantissaZero(z->mantissa))
+        -:  713:                        {
+    #####:  714:                                z->type = IFPF_IS_ZERO;
+    #####:  715:                                z->sign = 0; /* positive */
+        -:  716:                        }
+        -:  717:                        else
+   885344:  718:                                if (locx.type == IFPF_IS_NORMAL ||
+    #####:  719:                                         locy.type == IFPF_IS_NORMAL)
+        -:  720:                                {
+   885344:  721:                                        normalize(z);
+        -:  722:                                }
+        -:  723:                }
+        -:  724:                else
+        -:  725:                {
+        -:  726:                        /* signs are the same, add mantissas */
+        -:  727:                        carry = 0;
+  3485312:  728:                        for (i=(INTERNAL_FPF_PRECISION-1); i>=0; i--)
+        -:  729:                        {
+  6970624:  730:                                Add16Bits(&carry,
+        -:  731:                                        &z->mantissa[i],
+  3485312:  732:                                        locx.mantissa[i],
+  3485312:  733:                                        locy.mantissa[i]);
+        -:  734:                        }
+        -:  735:
+   871328:  736:                        if (carry)
+        -:  737:                        {
+   473040:  738:                                z->exp++;
+   473040:  739:                                carry=0;
+   946080:  740:                                ShiftMantRight1(&carry,z->mantissa);
+   473040:  741:                                z->mantissa[0] |= 0x8000;
+   473040:  742:                                z->type = IFPF_IS_NORMAL;
+        -:  743:                        }
+        -:  744:                        else
+   398288:  745:                                if (z->mantissa[0] & 0x8000)
+   398288:  746:                                        z->type = IFPF_IS_NORMAL;
+        -:  747:        }
+        -:  748:        break;
+        -:  749:
+    #####:  750:case INFINITY_INFINITY:
+        -:  751:        SetInternalFPFNaN(z);
+        -:  752:        break;
+        -:  753:
+    #####:  754:case NAN_NAN:
+    #####:  755:        choose_nan(x, y, z, 1);
+    #####:  756:        break;
+        -:  757:}
+        -:  758:
+        -:  759:/*
+        -:  760:** All the math is done; time to round.
+        -:  761:*/
+  1756672:  762:RoundInternalFPF(z);
+  1756672:  763:return;
+        -:  764:}
+        -:  765:
+        -:  766:
+        -:  767:/************************
+        -:  768:** MultiplyInternalFPF **
+        -:  769:*************************
+        -:  770:** Two internal-representation numbers x and y are multiplied; the
+        -:  771:** result is returned in z.
+        -:  772:*/
+  1092080:  773:static void MultiplyInternalFPF(InternalFPF *x,
+        -:  774:                        InternalFPF *y,
+        -:  775:                        InternalFPF *z)
+        -:  776:{
+        -:  777:int i;
+        -:  778:int j;
+        -:  779:u16 carry;
+        -:  780:u16 extra_bits[INTERNAL_FPF_PRECISION];
+        -:  781:InternalFPF locy;       /* Needed since this will be altered */
+        -:  782:/*
+        -:  783:** As in the preceding function, this large switch
+        -:  784:** statement selects among the many combinations
+        -:  785:** of operands.
+        -:  786:*/
+  1092080:  787:switch ((x->type * IFPF_TYPE_COUNT) + y->type)
+        -:  788:{
+    #####:  789:case INFINITY_SUBNORMAL:
+        -:  790:case INFINITY_NORMAL:
+        -:  791:case INFINITY_INFINITY:
+        -:  792:case ZERO_ZERO:
+        -:  793:case ZERO_SUBNORMAL:
+        -:  794:case ZERO_NORMAL:
+    #####:  795:        memmove((void *)x,(void *)z,sizeof(InternalFPF));
+    #####:  796:        z->sign ^= y->sign;
+    #####:  797:        break;
+        -:  798:
+    #####:  799:case SUBNORMAL_INFINITY:
+        -:  800:case NORMAL_INFINITY:
+        -:  801:case SUBNORMAL_ZERO:
+        -:  802:case NORMAL_ZERO:
+    #####:  803:        memmove((void *)y,(void *)z,sizeof(InternalFPF));
+    #####:  804:        z->sign ^= x->sign;
+    #####:  805:        break;
+        -:  806:
+    #####:  807:case ZERO_INFINITY:
+        -:  808:case INFINITY_ZERO:
+        -:  809:        SetInternalFPFNaN(z);
+        -:  810:        break;
+        -:  811:
+    #####:  812:case NAN_ZERO:
+        -:  813:case NAN_SUBNORMAL:
+        -:  814:case NAN_NORMAL:
+        -:  815:case NAN_INFINITY:
+        -:  816:        memmove((void *)x,(void *)z,sizeof(InternalFPF));
+        -:  817:        break;
+        -:  818:
+    #####:  819:case ZERO_NAN:
+        -:  820:case SUBNORMAL_NAN:
+        -:  821:case NORMAL_NAN:
+        -:  822:case INFINITY_NAN:
+        -:  823:        memmove((void *)y,(void *)z,sizeof(InternalFPF));
+        -:  824:        break;
+        -:  825:
+        -:  826:
+  1092080:  827:case SUBNORMAL_SUBNORMAL:
+        -:  828:case SUBNORMAL_NORMAL:
+        -:  829:case NORMAL_SUBNORMAL:
+        -:  830:case NORMAL_NORMAL:
+        -:  831:        /*
+        -:  832:        ** Make a local copy of the y number, since we will be
+        -:  833:        ** altering it in the process of multiplying.
+        -:  834:        */
+  1092080:  835:        memmove((void *)&locy,(void *)y,sizeof(InternalFPF));
+        -:  836:
+        -:  837:        /*
+        -:  838:        ** Check for unnormal zero arguments
+        -:  839:        */
+  3276240:  840:        if (IsMantissaZero(x->mantissa) || IsMantissaZero(y->mantissa))
+        -:  841:                SetInternalFPFInfinity(z, 0);
+        -:  842:
+        -:  843:        /*
+        -:  844:        ** Initialize the result
+        -:  845:        */
+  2184160:  846:        if (x->type == IFPF_IS_SUBNORMAL ||
+  1092080:  847:            y->type == IFPF_IS_SUBNORMAL)
+    #####:  848:                z->type = IFPF_IS_SUBNORMAL;
+        -:  849:        else
+  1092080:  850:                z->type = IFPF_IS_NORMAL;
+        -:  851:
+  1092080:  852:        z->sign = x->sign ^ y->sign;
+  1092080:  853:        z->exp = x->exp + y->exp ;
+  5460400:  854:        for (i=0; i<INTERNAL_FPF_PRECISION; i++)
+        -:  855:        {
+  4368320:  856:                z->mantissa[i] = 0;
+  4368320:  857:                extra_bits[i] = 0;
+        -:  858:        }
+        -:  859:
+ 69893120:  860:        for (i=0; i<(INTERNAL_FPF_PRECISION*16); i++)
+        -:  861:        {
+        -:  862:                /*
+        -:  863:                ** Get rightmost bit of the multiplier
+        -:  864:                */
+        -:  865:                carry = 0;
+ 69893120:  866:                ShiftMantRight1(&carry, locy.mantissa);
+ 69893120:  867:                if (carry)
+        -:  868:                {
+        -:  869:                        /*
+        -:  870:                        ** Add the multiplicand to the product
+        -:  871:                        */
+        -:  872:                        carry = 0;
+134927360:  873:                        for (j=(INTERNAL_FPF_PRECISION-1); j>=0; j--)
+269854720:  874:                                Add16Bits(&carry,
+        -:  875:                                        &z->mantissa[j],
+134927360:  876:                                        z->mantissa[j],
+134927360:  877:                                        x->mantissa[j]);
+        -:  878:                }
+        -:  879:                else
+        -:  880:                {
+        -:  881:                        carry = 0;
+        -:  882:                }
+        -:  883:
+        -:  884:                /*
+        -:  885:                ** Shift the product right.  Overflow bits get
+        -:  886:                ** shifted into extra_bits.  We'll use it later
+        -:  887:                ** to help with the "sticky" bit.
+        -:  888:                */
+ 69893120:  889:                ShiftMantRight1(&carry, z->mantissa);
+ 69893120:  890:                ShiftMantRight1(&carry, extra_bits);
+        -:  891:        }
+        -:  892:
+        -:  893:        /*
+        -:  894:        ** Normalize
+        -:  895:        ** Note that we use a "special" normalization routine
+        -:  896:        ** because we need to use the extra bits. (These are
+        -:  897:        ** bits that may have been shifted off the bottom that
+        -:  898:        ** we want to reclaim...if we can.
+        -:  899:        */
+  1628192:  900:        while ((z->mantissa[0] & 0x8000) == 0)
+        -:  901:        {
+        -:  902:                carry = 0;
+   536112:  903:                ShiftMantLeft1(&carry, extra_bits);
+  1072224:  904:                ShiftMantLeft1(&carry, z->mantissa);
+   536112:  905:                z->exp--;
+        -:  906:        }
+        -:  907:
+        -:  908:        /*
+        -:  909:        ** Set the sticky bit if any bits set in extra bits.
+        -:  910:        */
+  1092080:  911:        if (IsMantissaZero(extra_bits))
+        -:  912:        {
+     1168:  913:                z->mantissa[INTERNAL_FPF_PRECISION-1] |= 1;
+        -:  914:        }
+        -:  915:        break;
+        -:  916:
+    #####:  917:case NAN_NAN:
+    #####:  918:        choose_nan(x, y, z, 0);
+    #####:  919:        break;
+        -:  920:}
+        -:  921:
+        -:  922:/*
+        -:  923:** All math done...do rounding.
+        -:  924:*/
+  1092080:  925:RoundInternalFPF(z);
+  1092080:  926:return;
+        -:  927:}
+        -:  928:
+        -:  929:
+        -:  930:/**********************
+        -:  931:** DivideInternalFPF **
+        -:  932:***********************
+        -:  933:** Divide internal FPF number x by y.  Return result in z.
+        -:  934:*/
+   661248:  935:static void DivideInternalFPF(InternalFPF *x,
+        -:  936:                        InternalFPF *y,
+        -:  937:                        InternalFPF *z)
+        -:  938:{
+        -:  939:int i;
+        -:  940:int j;
+        -:  941:u16 carry;
+        -:  942:u16 extra_bits[INTERNAL_FPF_PRECISION];
+        -:  943:InternalFPF locx;       /* Local for x number */
+        -:  944:
+        -:  945:/*
+        -:  946:** As with preceding function, the following switch
+        -:  947:** statement selects among the various possible
+        -:  948:** operands.
+        -:  949:*/
+   661248:  950:switch ((x->type * IFPF_TYPE_COUNT) + y->type)
+        -:  951:{
+    #####:  952:case ZERO_ZERO:
+        -:  953:case INFINITY_INFINITY:
+        -:  954:        SetInternalFPFNaN(z);
+        -:  955:        break;
+        -:  956:
+    #####:  957:case ZERO_SUBNORMAL:
+        -:  958:case ZERO_NORMAL:
+    #####:  959:        if (IsMantissaZero(y->mantissa))
+        -:  960:        {
+        -:  961:                SetInternalFPFNaN(z);
+        -:  962:                break;
+        -:  963:        }
+        -:  964:
+        -:  965:case ZERO_INFINITY:
+        -:  966:case SUBNORMAL_INFINITY:
+        -:  967:case NORMAL_INFINITY:
+    #####:  968:        SetInternalFPFZero(z, x->sign ^ y->sign);
+        -:  969:        break;
+        -:  970:
+    #####:  971:case SUBNORMAL_ZERO:
+        -:  972:case NORMAL_ZERO:
+    #####:  973:        if (IsMantissaZero(x->mantissa))
+        -:  974:        {
+        -:  975:                SetInternalFPFNaN(z);
+        -:  976:                break;
+        -:  977:        }
+        -:  978:
+        -:  979:case INFINITY_ZERO:
+        -:  980:case INFINITY_SUBNORMAL:
+        -:  981:case INFINITY_NORMAL:
+    #####:  982:        SetInternalFPFInfinity(z, 0);
+    #####:  983:        z->sign = x->sign ^ y->sign;
+    #####:  984:        break;
+        -:  985:
+    #####:  986:case NAN_ZERO:
+        -:  987:case NAN_SUBNORMAL:
+        -:  988:case NAN_NORMAL:
+        -:  989:case NAN_INFINITY:
+        -:  990:        memmove((void *)x,(void *)z,sizeof(InternalFPF));
+        -:  991:        break;
+        -:  992:
+    #####:  993:case ZERO_NAN:
+        -:  994:case SUBNORMAL_NAN:
+        -:  995:case NORMAL_NAN:
+        -:  996:case INFINITY_NAN:
+        -:  997:        memmove((void *)y,(void *)z,sizeof(InternalFPF));
+        -:  998:        break;
+        -:  999:
+   661248: 1000:case SUBNORMAL_SUBNORMAL:
+        -: 1001:case NORMAL_SUBNORMAL:
+        -: 1002:case SUBNORMAL_NORMAL:
+        -: 1003:case NORMAL_NORMAL:
+        -: 1004:        /*
+        -: 1005:        ** Make local copy of x number, since we'll be
+        -: 1006:        ** altering it in the process of dividing.
+        -: 1007:        */
+   661248: 1008:        memmove((void *)&locx,(void *)x,sizeof(InternalFPF));
+        -: 1009:
+        -: 1010:        /*
+        -: 1011:        ** Check for unnormal zero arguments
+        -: 1012:        */
+   661248: 1013:        if (IsMantissaZero(locx.mantissa))
+        -: 1014:        {
+    #####: 1015:                if (IsMantissaZero(y->mantissa))
+        -: 1016:                        SetInternalFPFNaN(z);
+        -: 1017:                else
+        -: 1018:                        SetInternalFPFZero(z, 0);
+        -: 1019:                break;
+        -: 1020:        }
+  1322496: 1021:        if (IsMantissaZero(y->mantissa))
+        -: 1022:        {
+        -: 1023:                SetInternalFPFInfinity(z, 0);
+        -: 1024:                break;
+        -: 1025:        }
+        -: 1026:
+        -: 1027:        /*
+        -: 1028:        ** Initialize the result
+        -: 1029:        */
+   661248: 1030:        z->type = x->type;
+   661248: 1031:        z->sign = x->sign ^ y->sign;
+   661248: 1032:        z->exp = x->exp - y->exp +
+        -: 1033:                        ((INTERNAL_FPF_PRECISION * 16 * 2));
+  3306240: 1034:        for (i=0; i<INTERNAL_FPF_PRECISION; i++)
+        -: 1035:        {
+  2644992: 1036:                z->mantissa[i] = 0;
+  2644992: 1037:                extra_bits[i] = 0;
+        -: 1038:        }
+        -: 1039:
+ 84975622: 1040:        while ((z->mantissa[0] & 0x8000) == 0)
+        -: 1041:        {
+        -: 1042:                carry = 0;
+        -: 1043:                ShiftMantLeft1(&carry, locx.mantissa);
+ 84314374: 1044:                ShiftMantLeft1(&carry, extra_bits);
+        -: 1045:
+        -: 1046:                /*
+        -: 1047:                ** Time to subtract yet?
+        -: 1048:                */
+ 84314374: 1049:                if (carry == 0)
+     9392: 1050:                        for (j=0; j<INTERNAL_FPF_PRECISION; j++)
+        -: 1051:                        {
+ 72850408: 1052:                                if (y->mantissa[j] > extra_bits[j])
+        -: 1053:                                {
+        -: 1054:                                        carry = 0;
+        -: 1055:                                        goto no_subtract;
+        -: 1056:                                }
+  9682528: 1057:                                if (y->mantissa[j] < extra_bits[j])
+        -: 1058:                                        break;
+        -: 1059:                        }
+        -: 1060:                /*
+        -: 1061:                ** Divisor (y) <= dividend (x), subtract
+        -: 1062:                */
+        -: 1063:                carry = 0;
+ 84585976: 1064:                for (j=(INTERNAL_FPF_PRECISION-1); j>=0; j--)
+169171952: 1065:                        Sub16Bits(&carry,
+        -: 1066:                                &extra_bits[j],
+ 84585976: 1067:                                extra_bits[j],
+ 84585976: 1068:                                y->mantissa[j]);
+        -: 1069:                carry = 1;      /* 1 shifted into quotient */
+ 84314374: 1070:        no_subtract:
+168628748: 1071:                ShiftMantLeft1(&carry, z->mantissa);
+ 84314374: 1072:                z->exp--;
+        -: 1073:        }
+        -: 1074:        break;
+        -: 1075:
+    #####: 1076:case NAN_NAN:
+    #####: 1077:        choose_nan(x, y, z, 0);
+    #####: 1078:        break;
+        -: 1079:}
+        -: 1080:
+        -: 1081:/*
+        -: 1082:** Math complete...do rounding
+        -: 1083:*/
+   661248: 1084:RoundInternalFPF(z);
+   661248: 1085:}
+        -: 1086:
+        -: 1087:/**********************
+        -: 1088:** LongToInternalFPF **
+        -: 1089:** Int32ToInternalFPF **
+        -: 1090:***********************
+        -: 1091:** Convert a signed (long) 32-bit integer into an internal FPF number.
+        -: 1092:*/
+        -: 1093:/* static void LongToInternalFPF(long mylong, */
+     9000: 1094:static void Int32ToInternalFPF(int32 mylong,
+        -: 1095:                InternalFPF *dest)
+        -: 1096:{
+        -: 1097:int i;          /* Index */
+        -: 1098:u16 myword;     /* Used to hold converted stuff */
+        -: 1099:/*
+        -: 1100:** Save the sign and get the absolute value.  This will help us
+        -: 1101:** with 64-bit machines, since we use only the lower 32
+        -: 1102:** bits just in case. (No longer necessary after we use int32.)
+        -: 1103:*/
+        -: 1104:/* if(mylong<0L) */
+     9000: 1105:if(mylong<(int32)0)
+     4507: 1106:{       dest->sign=1;
+     4507: 1107:        mylong=(int32)0-mylong;
+        -: 1108:}
+        -: 1109:else
+     4493: 1110:        dest->sign=0;
+        -: 1111:/*
+        -: 1112:** Prepare the destination floating point number
+        -: 1113:*/
+     9000: 1114:dest->type=IFPF_IS_NORMAL;
+    45000: 1115:for(i=0;i<INTERNAL_FPF_PRECISION;i++)
+    36000: 1116:        dest->mantissa[i]=0;
+        -: 1117:
+        -: 1118:/*
+        -: 1119:** See if we've got a zero.  If so, make the resultant FP
+        -: 1120:** number a true zero and go home.
+        -: 1121:*/
+     9000: 1122:if(mylong==0)
+    #####: 1123:{       dest->type=IFPF_IS_ZERO;
+    #####: 1124:        dest->exp=0;
+    #####: 1125:        return;
+        -: 1126:}
+        -: 1127:
+        -: 1128:/*
+        -: 1129:** Not a true zero.  Set the exponent to 32 (internal FPFs have
+        -: 1130:** no bias) and load the low and high words into their proper
+        -: 1131:** locations in the mantissa.  Then normalize.  The action of
+        -: 1132:** normalizing slides the mantissa bits into place and sets
+        -: 1133:** up the exponent properly.
+        -: 1134:*/
+     9000: 1135:dest->exp=32;
+     9000: 1136:myword=(u16)((mylong >> 16) & 0xFFFFL);
+     9000: 1137:dest->mantissa[0]=myword;
+     9000: 1138:myword=(u16)(mylong & 0xFFFFL);
+     9000: 1139:dest->mantissa[1]=myword;
+     9000: 1140:normalize(dest);
+     9000: 1141:return;
+        -: 1142:}
+        -: 1143:
+        -: 1144:#ifdef DEBUG
+        -: 1145:/************************
+        -: 1146:** InternalFPFToString **
+        -: 1147:*************************
+        -: 1148:** FOR DEBUG PURPOSES
+        -: 1149:** This routine converts an internal floating point representation
+        -: 1150:** number to a string.  Used in debugging the package.
+        -: 1151:** Returns length of converted number.
+        -: 1152:** NOTE: dest must point to a buffer big enough to hold the
+        -: 1153:**  result.  Also, this routine does append a null (an effect
+        -: 1154:**  of using the sprintf() function).  It also returns
+        -: 1155:**  a length count.
+        -: 1156:** NOTE: This routine returns 5 significant digits.  Thats
+        -: 1157:**  about all I feel safe with, given the method of
+        -: 1158:**  conversion.  It should be more than enough for programmers
+        -: 1159:**  to determine whether the package is properly ported.
+        -: 1160:*/
+        -: 1161:static int InternalFPFToString(char *dest,
+        -: 1162:                InternalFPF *src)
+        -: 1163:{
+        -: 1164:InternalFPF locFPFNum;          /* Local for src (will be altered) */
+        -: 1165:InternalFPF IFPF10;             /* Floating-point 10 */
+        -: 1166:InternalFPF IFPFComp;           /* For doing comparisons */
+        -: 1167:int msign;                      /* Holding for mantissa sign */
+        -: 1168:int expcount;                   /* Exponent counter */
+        -: 1169:int ccount;                     /* Character counter */
+        -: 1170:int i,j,k;                      /* Index */
+        -: 1171:u16 carryaccum;                 /* Carry accumulator */
+        -: 1172:u16 mycarry;                    /* Local for carry */
+        -: 1173:
+        -: 1174:/*
+        -: 1175:** Check first for the simple things...Nan, Infinity, Zero.
+        -: 1176:** If found, copy the proper string in and go home.
+        -: 1177:*/
+        -: 1178:switch(src->type)
+        -: 1179:{
+        -: 1180:        case IFPF_IS_NAN:
+        -: 1181:                memcpy(dest,"NaN",3);
+        -: 1182:                return(3);
+        -: 1183:
+        -: 1184:        case IFPF_IS_INFINITY:
+        -: 1185:                if(src->sign==0)
+        -: 1186:                        memcpy(dest,"+Inf",4);
+        -: 1187:                else
+        -: 1188:                        memcpy(dest,"-Inf",4);
+        -: 1189:                return(4);
+        -: 1190:
+        -: 1191:        case IFPF_IS_ZERO:
+        -: 1192:                if(src->sign==0)
+        -: 1193:                        memcpy(dest,"+0",2);
+        -: 1194:                else
+        -: 1195:                        memcpy(dest,"-0",2);
+        -: 1196:                return(2);
+        -: 1197:}
+        -: 1198:
+        -: 1199:/*
+        -: 1200:** Move the internal number into our local holding area, since
+        -: 1201:** we'll be altering it to print it out.
+        -: 1202:*/
+        -: 1203:memcpy((void *)&locFPFNum,(void *)src,sizeof(InternalFPF));
+        -: 1204:
+        -: 1205:/*
+        -: 1206:** Set up a floating-point 10...which we'll use a lot in a minute.
+        -: 1207:*/
+        -: 1208:/* LongToInternalFPF(10L,&IFPF10); */
+        -: 1209:Int32ToInternalFPF((int32)10,&IFPF10);
+        -: 1210:
+        -: 1211:/*
+        -: 1212:** Save the mantissa sign and make it positive.
+        -: 1213:*/
+        -: 1214:msign=src->sign;
+        -: 1215:
+        -: 1216:/* src->sign=0 */ /* bug, fixed Nov. 13, 1997 */
+        -: 1217:(&locFPFNum)->sign=0;
+        -: 1218:
+        -: 1219:expcount=0;             /* Init exponent counter */
+        -: 1220:
+        -: 1221:/*
+        -: 1222:** See if the number is less than 10.  If so, multiply
+        -: 1223:** the number repeatedly by 10 until it's not.   For each
+        -: 1224:** multiplication, decrement a counter so we can keep track
+        -: 1225:** of the exponent.
+        -: 1226:*/
+        -: 1227:
+        -: 1228:while(1)
+        -: 1229:{       AddSubInternalFPF(1,&locFPFNum,&IFPF10,&IFPFComp);
+        -: 1230:        if(IFPFComp.sign==0) break;
+        -: 1231:        MultiplyInternalFPF(&locFPFNum,&IFPF10,&IFPFComp);
+        -: 1232:        expcount--;
+        -: 1233:        memcpy((void *)&locFPFNum,(void *)&IFPFComp,sizeof(InternalFPF));
+        -: 1234:}
+        -: 1235:/*
+        -: 1236:** Do the reverse of the above.  As long as the number is
+        -: 1237:** greater than or equal to 10, divide it by 10.  Increment the
+        -: 1238:** exponent counter for each multiplication.
+        -: 1239:*/
+        -: 1240:
+        -: 1241:while(1)
+        -: 1242:{
+        -: 1243:        AddSubInternalFPF(1,&locFPFNum,&IFPF10,&IFPFComp);
+        -: 1244:        if(IFPFComp.sign!=0) break;
+        -: 1245:        DivideInternalFPF(&locFPFNum,&IFPF10,&IFPFComp);
+        -: 1246:        expcount++;
+        -: 1247:        memcpy((void *)&locFPFNum,(void *)&IFPFComp,sizeof(InternalFPF));
+        -: 1248:}
+        -: 1249:
+        -: 1250:/*
+        -: 1251:** About time to start storing things.  First, store the
+        -: 1252:** mantissa sign.
+        -: 1253:*/
+        -: 1254:ccount=1;               /* Init character counter */
+        -: 1255:if(msign==0)
+        -: 1256:        *dest++='+';
+        -: 1257:else
+        -: 1258:        *dest++='-';
+        -: 1259:
+        -: 1260:/*
+        -: 1261:** At this point we know that the number is in the range
+        -: 1262:** 10 > n >=1.  We need to "strip digits" out of the
+        -: 1263:** mantissa.  We do this by treating the mantissa as
+        -: 1264:** an integer and multiplying by 10. (Not a floating-point
+        -: 1265:** 10, but an integer 10.  Since this is debug code and we
+        -: 1266:** could care less about speed, we'll do it the stupid
+        -: 1267:** way and simply add the number to itself 10 times.
+        -: 1268:** Anything that makes it to the left of the implied binary point
+        -: 1269:** gets stripped off and emitted.  We'll do this for
+        -: 1270:** 5 significant digits (which should be enough to
+        -: 1271:** verify things).
+        -: 1272:*/
+        -: 1273:/*
+        -: 1274:** Re-position radix point
+        -: 1275:*/
+        -: 1276:carryaccum=0;
+        -: 1277:while(locFPFNum.exp>0)
+        -: 1278:{
+        -: 1279:        mycarry=0;
+        -: 1280:        ShiftMantLeft1(&mycarry,locFPFNum.mantissa);
+        -: 1281:        carryaccum=(carryaccum<<1);
+        -: 1282:        if(mycarry) carryaccum++;
+        -: 1283:        locFPFNum.exp--;
+        -: 1284:}
+        -: 1285:
+        -: 1286:while(locFPFNum.exp<0)
+        -: 1287:{
+        -: 1288:        mycarry=0;
+        -: 1289:        ShiftMantRight1(&mycarry,locFPFNum.mantissa);
+        -: 1290:        locFPFNum.exp++;
+        -: 1291:}
+        -: 1292:
+        -: 1293:for(i=0;i<6;i++)
+        -: 1294:        if(i==1)
+        -: 1295:        {       /* Emit decimal point */
+        -: 1296:                *dest++='.';
+        -: 1297:                ccount++;
+        -: 1298:        }
+        -: 1299:        else
+        -: 1300:        {       /* Emit a digit */
+        -: 1301:                *dest++=('0'+carryaccum);
+        -: 1302:                ccount++;
+        -: 1303:
+        -: 1304:                carryaccum=0;
+        -: 1305:                memcpy((void *)&IFPF10,
+        -: 1306:                        (void *)&locFPFNum,
+        -: 1307:                        sizeof(InternalFPF));
+        -: 1308:
+        -: 1309:                /* Do multiply via repeated adds */
+        -: 1310:                for(j=0;j<9;j++)
+        -: 1311:                {
+        -: 1312:                        mycarry=0;
+        -: 1313:                        for(k=(INTERNAL_FPF_PRECISION-1);k>=0;k--)
+        -: 1314:                                Add16Bits(&mycarry,&(IFPFComp.mantissa[k]),
+        -: 1315:                                        locFPFNum.mantissa[k],
+        -: 1316:                                        IFPF10.mantissa[k]);
+        -: 1317:                        carryaccum+=mycarry ? 1 : 0;
+        -: 1318:                        memcpy((void *)&locFPFNum,
+        -: 1319:                                (void *)&IFPFComp,
+        -: 1320:                                sizeof(InternalFPF));
+        -: 1321:                }
+        -: 1322:        }
+        -: 1323:
+        -: 1324:/*
+        -: 1325:** Now move the 'E', the exponent sign, and the exponent
+        -: 1326:** into the string.
+        -: 1327:*/
+        -: 1328:*dest++='E';
+        -: 1329:
+        -: 1330:/* sprint is supposed to return an integer, but it caused problems on SunOS
+        -: 1331: * with the native cc. Hence we force it.
+        -: 1332: * Uwe F. Mayer
+        -: 1333: */
+        -: 1334:ccount+=(int)sprintf(dest,"%4d",expcount);
+        -: 1335:
+        -: 1336:/*
+        -: 1337:** All done, go home.
+        -: 1338:*/
+        -: 1339:return(ccount);
+        -: 1340:
+        -: 1341:}
+        -: 1342:
+        -: 1343:#endif
