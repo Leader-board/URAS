@@ -1,14 +1,16 @@
 
 ;; Function main (main, funcdef_no=54, decl_uid=4760, cgraph_uid=54, symbol_order=86) (executed once)
 
-Removing basic block 66
-Merging blocks 2 and 70
+Removing basic block 75
+Merging blocks 2 and 79
 main (int argc, char * * argv)
 {
-  vector(4) int * vectp_tests_to_do.49;
-  vector(4) int * vectp_tests_to_do.48;
-  unsigned int tmp.47;
-  int tmp.46;
+  vector(4) int * vectp_tests_to_do.53;
+  vector(4) int * vectp_tests_to_do.52;
+  unsigned int tmp.51;
+  int tmp.50;
+  _Bool __gcov0.main_I_lsm.48;
+  long int __gcov0.main_I_lsm.47;
   char buffer[80];
   double fpindex;
   double intindex;
@@ -29,18 +31,13 @@ main (int argc, char * * argv)
   double _7;
   double _8;
   double _9;
-  _Bool _10;
-  double pretmp_12;
-  unsigned int ivtmp_13;
   double _14;
   double _16;
-  unsigned int ivtmp_17;
   double _18;
-  int prephitmp_19;
-  int pretmp_20;
-  double pretmp_21;
-  int pretmp_22;
-  int prephitmp_23;
+  _Bool _19;
+  _Bool _20;
+  _Bool _21;
+  unsigned int _23;
   double _25;
   double _27;
   int global_allstats.10_28;
@@ -55,76 +52,384 @@ main (int argc, char * * argv)
   double _38;
   double _39;
   double _40;
-  unsigned int ivtmp_42;
-  _Bool _48;
-  unsigned int _51;
-  unsigned int _54;
-  unsigned int ivtmp_57;
-  _Bool _134;
+  int write_to_file.30_61;
+  long int PROF_edge_counter_134;
   long int _149;
   int _150;
-  unsigned int ivtmp_152;
+  long int PROF_edge_counter_151;
+  long int PROF_edge_counter_152;
   void (*<T8d0>) (void) _153;
-  unsigned int ivtmp_154;
-  int write_to_file.30_189;
-  int write_to_file.30_190;
-  struct FILE * global_ofile.31_191;
-  struct FILE * global_ofile.31_192;
-  short unsigned int _193;
-  int _194;
-  long unsigned int _195;
-  short unsigned int _196;
-  int _197;
-  long unsigned int _198;
-  long unsigned int _199;
-  long unsigned int _200;
-  long unsigned int _201;
-  long unsigned int _202;
-  long unsigned int _203;
-  long unsigned int _204;
-  long unsigned int _205;
-  long unsigned int _206;
-  long unsigned int _207;
-  long unsigned int _208;
-  long unsigned int _209;
-  long unsigned int _210;
-  int write_to_file.30_211;
-  int write_to_file.30_212;
-  struct FILE * global_ofile.31_213;
-  struct FILE * global_ofile.31_214;
-  int write_to_file.30_215;
-  int write_to_file.30_216;
-  struct FILE * global_ofile.31_217;
-  struct FILE * global_ofile.31_218;
-  int write_to_file.30_219;
-  int write_to_file.30_220;
-  struct FILE * global_ofile.31_221;
-  struct FILE * global_ofile.31_222;
-  int write_to_file.30_223;
-  int write_to_file.30_224;
-  struct FILE * global_ofile.31_225;
-  struct FILE * global_ofile.31_226;
-  int write_to_file.30_227;
-  struct FILE * global_ofile.31_228;
-  int write_to_file.30_229;
-  struct FILE * global_ofile.31_230;
-  int write_to_file.30_231;
-  int write_to_file.30_232;
-  struct FILE * global_ofile.31_233;
-  struct FILE * global_ofile.31_234;
-  int write_to_file.30_235;
-  int write_to_file.30_236;
-  struct FILE * global_ofile.31_237;
-  struct FILE * global_ofile.31_238;
-  int write_to_file.30_239;
-  struct FILE * global_ofile.31_240;
-  int write_to_file.30_241;
-  struct FILE * global_ofile.31_242;
-  long unsigned int _312;
-  long unsigned int _314;
-  _Bool _316;
-  _Bool _318;
-  vector(4) int vect_cst__324;
+  long int PROF_edge_counter_154;
+  unsigned int ivtmp_190;
+  long int PROF_edge_counter_191;
+  long int PROF_edge_counter_192;
+  long int PROF_edge_counter_193;
+  long int PROF_edge_counter_194;
+  long int PROF_edge_counter_195;
+  long int PROF_edge_counter_196;
+  long int PROF_edge_counter_197;
+  long int PROF_edge_counter_198;
+  long int PROF_edge_counter_199;
+  long int PROF_edge_counter_200;
+  long int PROF_edge_counter_201;
+  long int PROF_edge_counter_202;
+  long int PROF_edge_counter_203;
+  long int PROF_edge_counter_204;
+  long int PROF_edge_counter_205;
+  long int PROF_edge_counter_206;
+  long int PROF_edge_counter_207;
+  long int PROF_edge_counter_208;
+  long int PROF_edge_counter_209;
+  long int PROF_edge_counter_210;
+  long int PROF_edge_counter_211;
+  long int PROF_edge_counter_212;
+  long int PROF_edge_counter_213;
+  long int PROF_edge_counter_214;
+  long int PROF_edge_counter_215;
+  long int PROF_edge_counter_216;
+  long int PROF_edge_counter_217;
+  long int PROF_edge_counter_218;
+  long int PROF_edge_counter_219;
+  long int PROF_edge_counter_220;
+  long int PROF_edge_counter_221;
+  long int PROF_edge_counter_222;
+  long int PROF_edge_counter_223;
+  long int PROF_edge_counter_224;
+  long int PROF_edge_counter_225;
+  long int PROF_edge_counter_226;
+  long int PROF_edge_counter_227;
+  long int PROF_edge_counter_228;
+  long int PROF_edge_counter_229;
+  long int PROF_edge_counter_230;
+  long int PROF_edge_counter_231;
+  long int PROF_edge_counter_232;
+  long int PROF_edge_counter_233;
+  long int PROF_edge_counter_234;
+  long int PROF_edge_counter_235;
+  long int PROF_edge_counter_236;
+  long int PROF_edge_counter_237;
+  long int PROF_edge_counter_238;
+  long int PROF_edge_counter_239;
+  long int PROF_edge_counter_240;
+  long int PROF_edge_counter_241;
+  long int PROF_edge_counter_242;
+  long int PROF_edge_counter_243;
+  long int PROF_edge_counter_244;
+  long int PROF_edge_counter_245;
+  long int PROF_edge_counter_246;
+  long int PROF_edge_counter_247;
+  long int PROF_edge_counter_248;
+  long int PROF_edge_counter_249;
+  long int PROF_edge_counter_250;
+  long int PROF_edge_counter_251;
+  long int PROF_edge_counter_252;
+  long int PROF_edge_counter_253;
+  long int PROF_edge_counter_254;
+  long int PROF_edge_counter_255;
+  long int PROF_edge_counter_256;
+  long int PROF_edge_counter_257;
+  long int PROF_edge_counter_258;
+  long int PROF_edge_counter_259;
+  long int PROF_edge_counter_260;
+  long int PROF_edge_counter_261;
+  long int PROF_edge_counter_262;
+  long int PROF_edge_counter_263;
+  long int PROF_edge_counter_264;
+  long int PROF_edge_counter_265;
+  long int PROF_edge_counter_266;
+  long int PROF_edge_counter_267;
+  long int PROF_edge_counter_268;
+  long int PROF_edge_counter_269;
+  long int PROF_edge_counter_270;
+  long int PROF_edge_counter_271;
+  long int PROF_edge_counter_272;
+  long int PROF_edge_counter_273;
+  long int PROF_edge_counter_274;
+  long int PROF_edge_counter_275;
+  long int PROF_edge_counter_276;
+  long int PROF_edge_counter_277;
+  long int PROF_edge_counter_278;
+  long int PROF_edge_counter_279;
+  long int PROF_edge_counter_280;
+  long int PROF_edge_counter_281;
+  long int PROF_edge_counter_282;
+  long int PROF_edge_counter_283;
+  long int PROF_edge_counter_284;
+  long int PROF_edge_counter_285;
+  long int PROF_edge_counter_286;
+  long int PROF_edge_counter_287;
+  long int PROF_edge_counter_288;
+  long int PROF_edge_counter_289;
+  long int PROF_edge_counter_290;
+  long int PROF_edge_counter_291;
+  long int PROF_edge_counter_292;
+  long int PROF_edge_counter_293;
+  long int PROF_edge_counter_294;
+  long int PROF_edge_counter_295;
+  long int PROF_edge_counter_296;
+  long int PROF_edge_counter_354;
+  long int PROF_edge_counter_355;
+  struct FILE * global_ofile.31_356;
+  long int PROF_edge_counter_357;
+  long int PROF_edge_counter_358;
+  long int PROF_edge_counter_359;
+  long int PROF_edge_counter_360;
+  long int PROF_edge_counter_361;
+  long int PROF_edge_counter_362;
+  int write_to_file.30_363;
+  long int PROF_edge_counter_364;
+  long int PROF_edge_counter_365;
+  struct FILE * global_ofile.31_366;
+  long int PROF_edge_counter_367;
+  long int PROF_edge_counter_368;
+  long int PROF_edge_counter_369;
+  long int PROF_edge_counter_370;
+  long int PROF_edge_counter_371;
+  long int PROF_edge_counter_372;
+  short unsigned int _373;
+  int _374;
+  long int PROF_edge_counter_375;
+  long int PROF_edge_counter_376;
+  long unsigned int _377;
+  long int PROF_edge_counter_378;
+  long int PROF_edge_counter_379;
+  long int PROF_edge_counter_380;
+  long int PROF_edge_counter_381;
+  short unsigned int _382;
+  int _383;
+  long int PROF_edge_counter_384;
+  long int PROF_edge_counter_385;
+  long unsigned int _386;
+  long int PROF_edge_counter_387;
+  long int PROF_edge_counter_388;
+  long int PROF_edge_counter_389;
+  long int PROF_edge_counter_390;
+  long unsigned int _391;
+  long int PROF_edge_counter_392;
+  long int PROF_edge_counter_393;
+  long unsigned int _394;
+  long int PROF_edge_counter_395;
+  long int PROF_edge_counter_396;
+  long int PROF_edge_counter_397;
+  long int PROF_edge_counter_398;
+  long unsigned int _399;
+  long int PROF_edge_counter_400;
+  long int PROF_edge_counter_401;
+  long unsigned int _402;
+  long int PROF_edge_counter_403;
+  long int PROF_edge_counter_404;
+  long int PROF_edge_counter_405;
+  long int PROF_edge_counter_406;
+  long unsigned int _407;
+  long int PROF_edge_counter_408;
+  long int PROF_edge_counter_409;
+  long int PROF_edge_counter_410;
+  long int PROF_edge_counter_411;
+  long unsigned int _412;
+  long int PROF_edge_counter_413;
+  long int PROF_edge_counter_414;
+  long int PROF_edge_counter_415;
+  long int PROF_edge_counter_416;
+  long unsigned int _417;
+  long int PROF_edge_counter_418;
+  long int PROF_edge_counter_419;
+  long unsigned int _420;
+  long int PROF_edge_counter_421;
+  long int PROF_edge_counter_422;
+  long int PROF_edge_counter_423;
+  long int PROF_edge_counter_424;
+  long unsigned int _425;
+  long int PROF_edge_counter_426;
+  long int PROF_edge_counter_427;
+  long unsigned int _428;
+  long int PROF_edge_counter_429;
+  long int PROF_edge_counter_430;
+  long int PROF_edge_counter_431;
+  long int PROF_edge_counter_432;
+  long unsigned int _433;
+  long int PROF_edge_counter_434;
+  long int PROF_edge_counter_435;
+  long int PROF_edge_counter_436;
+  long int PROF_edge_counter_437;
+  long unsigned int _438;
+  long int PROF_edge_counter_439;
+  long int PROF_edge_counter_440;
+  long int PROF_edge_counter_441;
+  long int PROF_edge_counter_442;
+  long int PROF_edge_counter_443;
+  long int PROF_edge_counter_444;
+  int write_to_file.30_445;
+  long int PROF_edge_counter_446;
+  long int PROF_edge_counter_447;
+  struct FILE * global_ofile.31_448;
+  long int PROF_edge_counter_449;
+  long int PROF_edge_counter_450;
+  long int PROF_edge_counter_451;
+  long int PROF_edge_counter_452;
+  long int PROF_edge_counter_453;
+  long int PROF_edge_counter_454;
+  int write_to_file.30_455;
+  long int PROF_edge_counter_456;
+  long int PROF_edge_counter_457;
+  struct FILE * global_ofile.31_458;
+  long int PROF_edge_counter_459;
+  long int PROF_edge_counter_460;
+  long int PROF_edge_counter_461;
+  long int PROF_edge_counter_462;
+  long int PROF_edge_counter_463;
+  long int PROF_edge_counter_464;
+  int write_to_file.30_465;
+  long int PROF_edge_counter_466;
+  long int PROF_edge_counter_467;
+  struct FILE * global_ofile.31_468;
+  long int PROF_edge_counter_469;
+  long int PROF_edge_counter_470;
+  long int PROF_edge_counter_471;
+  long int PROF_edge_counter_472;
+  long int PROF_edge_counter_473;
+  long int PROF_edge_counter_474;
+  int write_to_file.30_475;
+  long int PROF_edge_counter_476;
+  long int PROF_edge_counter_477;
+  struct FILE * global_ofile.31_478;
+  long int PROF_edge_counter_479;
+  long int PROF_edge_counter_480;
+  long int PROF_edge_counter_481;
+  long int PROF_edge_counter_482;
+  long int PROF_edge_counter_483;
+  long int PROF_edge_counter_484;
+  int write_to_file.30_485;
+  long int PROF_edge_counter_486;
+  long int PROF_edge_counter_487;
+  struct FILE * global_ofile.31_488;
+  long int PROF_edge_counter_489;
+  long int PROF_edge_counter_490;
+  long int PROF_edge_counter_491;
+  long int PROF_edge_counter_492;
+  long int PROF_edge_counter_493;
+  long int PROF_edge_counter_494;
+  int write_to_file.30_495;
+  long int PROF_edge_counter_496;
+  long int PROF_edge_counter_497;
+  struct FILE * global_ofile.31_498;
+  long int PROF_edge_counter_499;
+  long int PROF_edge_counter_500;
+  long int PROF_edge_counter_501;
+  long int PROF_edge_counter_502;
+  long int PROF_edge_counter_503;
+  long int PROF_edge_counter_504;
+  int write_to_file.30_505;
+  long int PROF_edge_counter_506;
+  long int PROF_edge_counter_507;
+  struct FILE * global_ofile.31_508;
+  long int PROF_edge_counter_509;
+  long int PROF_edge_counter_510;
+  long int PROF_edge_counter_511;
+  long int PROF_edge_counter_512;
+  long int PROF_edge_counter_513;
+  long int PROF_edge_counter_514;
+  int write_to_file.30_515;
+  long int PROF_edge_counter_516;
+  long int PROF_edge_counter_517;
+  struct FILE * global_ofile.31_518;
+  long int PROF_edge_counter_519;
+  long int PROF_edge_counter_520;
+  long int PROF_edge_counter_521;
+  long int PROF_edge_counter_522;
+  long int PROF_edge_counter_523;
+  long int PROF_edge_counter_524;
+  int write_to_file.30_525;
+  long int PROF_edge_counter_526;
+  long int PROF_edge_counter_527;
+  struct FILE * global_ofile.31_528;
+  long int PROF_edge_counter_529;
+  long int PROF_edge_counter_530;
+  long int PROF_edge_counter_531;
+  long int PROF_edge_counter_532;
+  long int PROF_edge_counter_533;
+  long int PROF_edge_counter_534;
+  int write_to_file.30_535;
+  long int PROF_edge_counter_536;
+  long int PROF_edge_counter_537;
+  struct FILE * global_ofile.31_538;
+  long int PROF_edge_counter_539;
+  long int PROF_edge_counter_540;
+  long int PROF_edge_counter_541;
+  long int PROF_edge_counter_542;
+  long int PROF_edge_counter_543;
+  long int PROF_edge_counter_544;
+  int write_to_file.30_545;
+  long int PROF_edge_counter_546;
+  long int PROF_edge_counter_547;
+  struct FILE * global_ofile.31_548;
+  long int PROF_edge_counter_549;
+  long int PROF_edge_counter_550;
+  long int PROF_edge_counter_551;
+  long int PROF_edge_counter_552;
+  long int PROF_edge_counter_553;
+  long int PROF_edge_counter_554;
+  int write_to_file.30_555;
+  long int PROF_edge_counter_556;
+  long int PROF_edge_counter_557;
+  struct FILE * global_ofile.31_558;
+  long int PROF_edge_counter_559;
+  long int PROF_edge_counter_560;
+  long int PROF_edge_counter_561;
+  long int PROF_edge_counter_562;
+  long int PROF_edge_counter_563;
+  long int PROF_edge_counter_564;
+  int write_to_file.30_565;
+  long int PROF_edge_counter_566;
+  long int PROF_edge_counter_567;
+  struct FILE * global_ofile.31_568;
+  long int PROF_edge_counter_569;
+  long int PROF_edge_counter_570;
+  long int PROF_edge_counter_571;
+  long int PROF_edge_counter_572;
+  long int PROF_edge_counter_573;
+  long int PROF_edge_counter_574;
+  int write_to_file.30_575;
+  long int PROF_edge_counter_576;
+  long int PROF_edge_counter_577;
+  struct FILE * global_ofile.31_578;
+  long int PROF_edge_counter_579;
+  long int PROF_edge_counter_580;
+  long int PROF_edge_counter_581;
+  long int PROF_edge_counter_582;
+  long int PROF_edge_counter_583;
+  long int PROF_edge_counter_584;
+  int write_to_file.30_585;
+  long int PROF_edge_counter_586;
+  long int PROF_edge_counter_587;
+  struct FILE * global_ofile.31_588;
+  long int PROF_edge_counter_589;
+  long int PROF_edge_counter_590;
+  long int PROF_edge_counter_591;
+  long int PROF_edge_counter_592;
+  long int PROF_edge_counter_593;
+  long int PROF_edge_counter_594;
+  int write_to_file.30_595;
+  long int PROF_edge_counter_596;
+  long int PROF_edge_counter_597;
+  struct FILE * global_ofile.31_598;
+  long int PROF_edge_counter_599;
+  long int PROF_edge_counter_600;
+  unsigned int _783;
+  unsigned int _784;
+  unsigned int _786;
+  unsigned int ivtmp_796;
+  unsigned int ivtmp_880;
+  unsigned int ivtmp_881;
+  vector(4) int vect_cst__885;
+  unsigned int ivtmp_887;
+  unsigned int ivtmp_891;
+  long int PROF_edge_counter_895;
+  int prephitmp_896;
+  int pretmp_898;
+  int pretmp_899;
+  int prephitmp_900;
+  double pretmp_903;
+  double pretmp_906;
 
   <bb 2> [9.09%]:
   global_min_ticks = 60;
@@ -133,20 +438,31 @@ main (int argc, char * * argv)
   global_custrun = 0;
   global_align = 8;
   write_to_file = 0;
+  # DEBUG lx_memindex => 1.0e+0
+  # DEBUG lx_intindex => 1.0e+0
+  # DEBUG lx_fpindex => 1.0e+0
+  # DEBUG intindex => 1.0e+0
+  # DEBUG fpindex => 1.0e+0
   mem_array_ents = 0;
-  vect_cst__324 = { 1, 1, 1, 1 };
+  # DEBUG i => 0
+  # DEBUG i => 0
+  __gcov0.main_I_lsm.47_10 = __gcov0.main[0];
+  vect_cst__885 = { 1, 1, 1, 1 };
 
   <bb 3> [54.55%]:
-  # i_325 = PHI <i_148(4), 0(2)>
-  # ivtmp_57 = PHI <ivtmp_17(4), 10(2)>
-  # vectp_tests_to_do.48_323 = PHI <vectp_tests_to_do.48_41(4), &tests_to_do(2)>
-  # ivtmp_152 = PHI <ivtmp_154(4), 0(2)>
-  MEM[(int *)vectp_tests_to_do.48_323] = vect_cst__324;
-  i_148 = i_325 + 1;
-  ivtmp_17 = ivtmp_57 - 1;
-  vectp_tests_to_do.48_41 = vectp_tests_to_do.48_323 + 16;
-  ivtmp_154 = ivtmp_152 + 1;
-  if (ivtmp_154 < 2)
+  # i_797 = PHI <i_148(4), 0(2)>
+  # ivtmp_796 = PHI <ivtmp_190(4), 10(2)>
+  # vectp_tests_to_do.52_884 = PHI <vectp_tests_to_do.52_883(4), &tests_to_do(2)>
+  # ivtmp_881 = PHI <ivtmp_880(4), 0(2)>
+  # DEBUG i => i_797
+  MEM[(int *)vectp_tests_to_do.52_884] = vect_cst__885;
+  i_148 = i_797 + 1;
+  # DEBUG i => i_148
+  # DEBUG i => i_148
+  ivtmp_190 = ivtmp_796 - 1;
+  vectp_tests_to_do.52_883 = vectp_tests_to_do.52_884 + 16;
+  ivtmp_880 = ivtmp_881 + 1;
+  if (ivtmp_880 < 2)
     goto <bb 4>; [83.34%]
   else
     goto <bb 5>; [16.66%]
@@ -157,12 +473,15 @@ main (int argc, char * * argv)
   <bb 5> [9.09%]:
 
   <bb 6> [90.91%]:
-  # i_26 = PHI <8(5), i_32(7)>
-  # ivtmp_13 = PHI <2(5), ivtmp_42(7)>
-  tests_to_do[i_26] = 1;
-  i_32 = i_26 + 1;
-  ivtmp_42 = ivtmp_13 - 1;
-  if (ivtmp_42 != 0)
+  # i_893 = PHI <8(5), i_888(7)>
+  # ivtmp_891 = PHI <2(5), ivtmp_887(7)>
+  # DEBUG i => i_893
+  tests_to_do[i_893] = 1;
+  i_888 = i_893 + 1;
+  # DEBUG i => i_888
+  # DEBUG i => i_888
+  ivtmp_887 = ivtmp_891 - 1;
+  if (ivtmp_887 != 0)
     goto <bb 7>; [90.00%]
   else
     goto <bb 8>; [10.00%]
@@ -171,6 +490,11 @@ main (int argc, char * * argv)
   goto <bb 6>; [100.00%]
 
   <bb 8> [9.09%]:
+  PROF_edge_counter_895 = __gcov0.main_I_lsm.47_10 + 10;
+  __gcov0.main[0] = PROF_edge_counter_895;
+  PROF_edge_counter_191 = __gcov0.main[1];
+  PROF_edge_counter_192 = PROF_edge_counter_191 + 1;
+  __gcov0.main[1] = PROF_edge_counter_192;
   global_numsortstruct.request_secs = 5;
   global_strsortstruct.request_secs = 5;
   global_bitopstruct.request_secs = 5;
@@ -203,15 +527,32 @@ main (int argc, char * * argv)
     goto <bb 10>; [79.76%]
 
   <bb 9> [1.84%]:
+  PROF_edge_counter_193 = __gcov0.main[2];
+  PROF_edge_counter_194 = PROF_edge_counter_193 + 1;
+  __gcov0.main[2] = PROF_edge_counter_194;
   _1 = MEM[(char * *)argv_91(D) + 8B];
+  # DEBUG __nptr => _1
   _149 = strtol (_1, 0B, 10);
   _150 = (int) _149;
+  # DEBUG __nptr => NULL
   testnum = _150;
+  PROF_edge_counter_195 = __gcov0.main[3];
+  PROF_edge_counter_196 = PROF_edge_counter_195 + 1;
+  __gcov0.main[3] = PROF_edge_counter_196;
 
   <bb 10> [9.09%]:
   output_string ("\nBYTEmark* Native Mode Benchmark ver. 2 (10/95)\n");
+  PROF_edge_counter_197 = __gcov0.main[4];
+  PROF_edge_counter_198 = PROF_edge_counter_197 + 1;
+  __gcov0.main[4] = PROF_edge_counter_198;
   output_string ("Index-split by Andrew D. Balsa (11/97)\n");
+  PROF_edge_counter_199 = __gcov0.main[5];
+  PROF_edge_counter_200 = PROF_edge_counter_199 + 1;
+  __gcov0.main[5] = PROF_edge_counter_200;
   output_string ("Linux/Unix* port by Uwe F. Mayer (12/96,11/97)\n");
+  PROF_edge_counter_201 = __gcov0.main[6];
+  PROF_edge_counter_202 = PROF_edge_counter_201 + 1;
+  __gcov0.main[6] = PROF_edge_counter_202;
   global_allstats.0_2 = global_allstats;
   if (global_allstats.0_2 != 0)
     goto <bb 11>; [33.00%]
@@ -219,135 +560,319 @@ main (int argc, char * * argv)
     goto <bb 12>; [67.00%]
 
   <bb 11> [3.00%]:
+  PROF_edge_counter_203 = __gcov0.main[7];
+  PROF_edge_counter_204 = PROF_edge_counter_203 + 1;
+  __gcov0.main[7] = PROF_edge_counter_204;
   output_string ("\n");
+  PROF_edge_counter_205 = __gcov0.main[8];
+  PROF_edge_counter_206 = PROF_edge_counter_205 + 1;
+  __gcov0.main[8] = PROF_edge_counter_206;
   output_string ("============================== ALL STATISTICS ===============================\n");
+  PROF_edge_counter_207 = __gcov0.main[9];
+  PROF_edge_counter_208 = PROF_edge_counter_207 + 1;
+  __gcov0.main[9] = PROF_edge_counter_208;
   time (&time_and_date);
+  PROF_edge_counter_209 = __gcov0.main[10];
+  PROF_edge_counter_210 = PROF_edge_counter_209 + 1;
+  __gcov0.main[10] = PROF_edge_counter_210;
   loctime_100 = localtime (&time_and_date);
+  PROF_edge_counter_211 = __gcov0.main[11];
+  PROF_edge_counter_212 = PROF_edge_counter_211 + 1;
+  __gcov0.main[11] = PROF_edge_counter_212;
+  # DEBUG loctime => loctime_100
   _3 = asctime (loctime_100);
+  PROF_edge_counter_213 = __gcov0.main[12];
+  PROF_edge_counter_214 = PROF_edge_counter_213 + 1;
+  __gcov0.main[12] = PROF_edge_counter_214;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "**Date and time of benchmark run: %s"
   __builtin___sprintf_chk (&buffer, 1, 1024, "**Date and time of benchmark run: %s", _3);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
   output_string (&buffer);
+  PROF_edge_counter_215 = __gcov0.main[13];
+  PROF_edge_counter_216 = PROF_edge_counter_215 + 1;
+  __gcov0.main[13] = PROF_edge_counter_216;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "**Sizeof: char:%u short:%u int:%u long:%u u8:%u u16:%u u32:%u int32:%u\n"
   __builtin___sprintf_chk (&buffer, 1, 1024, "**Sizeof: char:%u short:%u int:%u long:%u u8:%u u16:%u u32:%u int32:%u\n", 1, 2, 4, 8, 1, 2, 4, 4);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
   output_string (&buffer);
+  PROF_edge_counter_217 = __gcov0.main[14];
+  PROF_edge_counter_218 = PROF_edge_counter_217 + 1;
+  __gcov0.main[14] = PROF_edge_counter_218;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "**System used for compilation:\n"
   __builtin_memcpy (&buffer, "**System used for compilation:\n", 32);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
   output_string (&buffer);
+  PROF_edge_counter_219 = __gcov0.main[15];
+  PROF_edge_counter_220 = PROF_edge_counter_219 + 1;
+  __gcov0.main[15] = PROF_edge_counter_220;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "**Linux elvenado 4.15.0-112-generic #113-Ubuntu SMP Thu Jul 9 23:41:39 UTC 2020 \n"
   __builtin_memcpy (&buffer, "**Linux elvenado 4.15.0-112-generic #113-Ubuntu SMP Thu Jul 9 23:41:39 UTC 2020 \n", 82);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
   output_string (&buffer);
+  PROF_edge_counter_221 = __gcov0.main[16];
+  PROF_edge_counter_222 = PROF_edge_counter_221 + 1;
+  __gcov0.main[16] = PROF_edge_counter_222;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "**C compiler: gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) \n"
   __builtin_memcpy (&buffer, "**C compiler: gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) \n", 64);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
   output_string (&buffer);
+  PROF_edge_counter_223 = __gcov0.main[17];
+  PROF_edge_counter_224 = PROF_edge_counter_223 + 1;
+  __gcov0.main[17] = PROF_edge_counter_224;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "**libc: libc-2.27.so\n"
   __builtin_memcpy (&buffer, "**libc: libc-2.27.so\n", 22);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
   output_string (&buffer);
-  __builtin_memcpy (&buffer, "**Date of compilation: Tue  1 Sep 18:01:26 BST 2020\n", 53);
+  PROF_edge_counter_225 = __gcov0.main[18];
+  PROF_edge_counter_226 = PROF_edge_counter_225 + 1;
+  __gcov0.main[18] = PROF_edge_counter_226;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "**Date of compilation: Wed  2 Sep 11:13:52 BST 2020\n"
+  __builtin_memcpy (&buffer, "**Date of compilation: Wed  2 Sep 11:13:52 BST 2020\n", 53);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
   output_string (&buffer);
+  PROF_edge_counter_227 = __gcov0.main[19];
+  PROF_edge_counter_228 = PROF_edge_counter_227 + 1;
+  __gcov0.main[19] = PROF_edge_counter_228;
   output_string ("=============================================================================\n");
+  PROF_edge_counter_229 = __gcov0.main[20];
+  PROF_edge_counter_230 = PROF_edge_counter_229 + 1;
+  __gcov0.main[20] = PROF_edge_counter_230;
 
   <bb 12> [9.09%]:
   output_string ("\nTEST                : Iterations/sec.  : Old Index   : New Index\n");
+  PROF_edge_counter_231 = __gcov0.main[21];
+  PROF_edge_counter_232 = PROF_edge_counter_231 + 1;
+  __gcov0.main[21] = PROF_edge_counter_232;
   output_string ("                    :                  : Pentium 90* : AMD K6/233*\n");
+  PROF_edge_counter_233 = __gcov0.main[22];
+  PROF_edge_counter_234 = PROF_edge_counter_233 + 1;
+  __gcov0.main[22] = PROF_edge_counter_234;
   output_string ("--------------------:------------------:-------------:------------\n");
   i_113 = testnum;
+  # DEBUG i => i_113
+  # DEBUG fpindex => 1.0e+0
+  # DEBUG intindex => 1.0e+0
+  # DEBUG lx_fpindex => 1.0e+0
+  # DEBUG lx_intindex => 1.0e+0
+  # DEBUG lx_memindex => 1.0e+0
+  # DEBUG i => i_113
 
   <bb 13> [51.51%]:
-  # i_320 = PHI <i_146(65), i_113(12)>
-  # lx_memindex_319 = PHI <lx_memindex_44(65), 1.0e+0(12)>
-  # lx_intindex_317 = PHI <lx_intindex_47(65), 1.0e+0(12)>
-  # lx_fpindex_315 = PHI <lx_fpindex_50(65), 1.0e+0(12)>
-  # intindex_313 = PHI <intindex_53(65), 1.0e+0(12)>
-  # fpindex_322 = PHI <fpindex_56(65), 1.0e+0(12)>
-  # prephitmp_19 = PHI <prephitmp_23(65), i_113(12)>
-  _4 = tests_to_do[i_320];
+  # i_58 = PHI <i_146(74), i_113(12)>
+  # lx_memindex_793 = PHI <lx_memindex_44(74), 1.0e+0(12)>
+  # lx_intindex_791 = PHI <lx_intindex_47(74), 1.0e+0(12)>
+  # lx_fpindex_789 = PHI <lx_fpindex_50(74), 1.0e+0(12)>
+  # intindex_787 = PHI <intindex_53(74), 1.0e+0(12)>
+  # fpindex_785 = PHI <fpindex_56(74), 1.0e+0(12)>
+  # prephitmp_896 = PHI <prephitmp_900(74), i_113(12)>
+  # DEBUG fpindex => fpindex_785
+  # DEBUG intindex => intindex_787
+  # DEBUG lx_fpindex => lx_fpindex_789
+  # DEBUG lx_intindex => lx_intindex_791
+  # DEBUG lx_memindex => lx_memindex_793
+  # DEBUG i => i_58
+  PROF_edge_counter_265 = __gcov0.main[38];
+  PROF_edge_counter_266 = PROF_edge_counter_265 + 1;
+  __gcov0.main[38] = PROF_edge_counter_266;
+  _4 = tests_to_do[i_58];
   if (_4 != 0)
     goto <bb 14>; [33.00%]
   else
-    goto <bb 64>; [67.00%]
+    goto <bb 73>; [67.00%]
 
   <bb 14> [17.00%]:
-  _5 = ftestnames[i_320];
+  PROF_edge_counter_235 = __gcov0.main[23];
+  PROF_edge_counter_236 = PROF_edge_counter_235 + 1;
+  __gcov0.main[23] = PROF_edge_counter_236;
+  _5 = ftestnames[i_58];
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "%s    :"
   __builtin___sprintf_chk (&buffer, 1, 1024, "%s    :", _5);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
+  # DEBUG buffer => &buffer
+  PROF_edge_counter_359 = __gcov0.output_string[0];
+  PROF_edge_counter_360 = PROF_edge_counter_359 + 1;
+  __gcov0.output_string[0] = PROF_edge_counter_360;
+  # DEBUG __fmt => "%s"
   __printf_chk (1, "%s", &buffer);
-  write_to_file.30_190 = write_to_file;
-  if (write_to_file.30_190 != 0)
+  PROF_edge_counter_361 = __gcov0.output_string[1];
+  PROF_edge_counter_362 = PROF_edge_counter_361 + 1;
+  __gcov0.output_string[1] = PROF_edge_counter_362;
+  # DEBUG __fmt => NULL
+  write_to_file.30_363 = write_to_file;
+  if (write_to_file.30_363 != 0)
     goto <bb 15>; [36.64%]
   else
     goto <bb 16>; [63.36%]
 
   <bb 15> [6.23%]:
-  global_ofile.31_191 = global_ofile;
-  __builtin_fputs (&buffer, global_ofile.31_191);
+  PROF_edge_counter_364 = __gcov0.output_string[2];
+  PROF_edge_counter_365 = PROF_edge_counter_364 + 1;
+  __gcov0.output_string[2] = PROF_edge_counter_365;
+  global_ofile.31_366 = global_ofile;
+  # DEBUG __stream => global_ofile.31_366
+  # DEBUG __fmt => "%s"
+  __builtin_fputs (&buffer, global_ofile.31_366);
+  PROF_edge_counter_367 = __gcov0.output_string[3];
+  PROF_edge_counter_368 = PROF_edge_counter_367 + 1;
+  __gcov0.output_string[3] = PROF_edge_counter_368;
 
   <bb 16> [17.00%]:
-  _153 = funcpointer[i_320];
+  # DEBUG buffer => NULL
+  PROF_edge_counter_237 = __gcov0.main[24];
+  PROF_edge_counter_238 = PROF_edge_counter_237 + 1;
+  __gcov0.main[24] = PROF_edge_counter_238;
+  # DEBUG D#1 => &bmean
+  # DEBUG D#2 => &bstdev
+  # DEBUG fid => i_58
+  # DEBUG numtries => &bnumrun
+  # DEBUG i => 0
+  _153 = funcpointer[i_58];
   _153 ();
-  _6 = lx_bindex[i_320];
+  PROF_edge_counter_239 = __gcov0.main[25];
+  PROF_edge_counter_240 = PROF_edge_counter_239 + 1;
+  __gcov0.main[25] = PROF_edge_counter_240;
+  # DEBUG i => 1
+  # DEBUG i => 1
+  # DEBUG bnumrun => 5
+  # DEBUG fid => NULL
+  # DEBUG numtries => NULL
+  # DEBUG i => NULL
+  _6 = lx_bindex[i_58];
   _7 = bmean_187(D) / _6;
-  _8 = bindex[i_320];
+  _8 = bindex[i_58];
   _9 = bmean_187(D) / _8;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => " %15.5g  :  %9.2f  :  %9.2f\n"
   __builtin___sprintf_chk (&buffer, 1, 1024, " %15.5g  :  %9.2f  :  %9.2f\n", bmean_187(D), _9, _7);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
+  # DEBUG buffer => &buffer
+  PROF_edge_counter_151 = __gcov0.output_string[0];
+  PROF_edge_counter_152 = PROF_edge_counter_151 + 1;
+  __gcov0.output_string[0] = PROF_edge_counter_152;
+  # DEBUG __fmt => "%s"
   __printf_chk (1, "%s", &buffer);
-  write_to_file.30_189 = write_to_file;
-  if (write_to_file.30_189 != 0)
+  PROF_edge_counter_154 = __gcov0.output_string[1];
+  PROF_edge_counter_134 = PROF_edge_counter_154 + 1;
+  __gcov0.output_string[1] = PROF_edge_counter_134;
+  # DEBUG __fmt => NULL
+  write_to_file.30_61 = write_to_file;
+  if (write_to_file.30_61 != 0)
     goto <bb 17>; [36.64%]
   else
     goto <bb 18>; [63.36%]
 
   <bb 17> [6.23%]:
-  global_ofile.31_192 = global_ofile;
-  __builtin_fputs (&buffer, global_ofile.31_192);
+  PROF_edge_counter_354 = __gcov0.output_string[2];
+  PROF_edge_counter_355 = PROF_edge_counter_354 + 1;
+  __gcov0.output_string[2] = PROF_edge_counter_355;
+  global_ofile.31_356 = global_ofile;
+  # DEBUG __stream => global_ofile.31_356
+  # DEBUG __fmt => "%s"
+  __builtin_fputs (&buffer, global_ofile.31_356);
+  PROF_edge_counter_357 = __gcov0.output_string[3];
+  PROF_edge_counter_358 = PROF_edge_counter_357 + 1;
+  __gcov0.output_string[3] = PROF_edge_counter_358;
 
   <bb 18> [17.00%]:
-  _10 = i_320 == 4;
-  _54 = (unsigned int) i_320;
-  _51 = _54 + 4294967288;
-  _48 = _51 <= 1;
-  _134 = _10 | _48;
-  pretmp_12 = bindex[i_320];
-  pretmp_21 = lx_bindex[i_320];
-  if (_134 != 0)
-    goto <bb 19>; [67.00%]
+  # DEBUG buffer => NULL
+  _783 = (unsigned int) i_58;
+  _784 = _783 + 4294967292;
+  _786 = _784 & 4294967291;
+  pretmp_903 = bindex[i_58];
+  pretmp_906 = lx_bindex[i_58];
+  if (_786 == 0)
+    goto <bb 19>; [50.00%]
   else
-    goto <bb 20>; [33.00%]
+    goto <bb 20>; [50.00%]
 
   <bb 19> [11.39%]:
-  _14 = bmean_187(D) / pretmp_12;
-  fpindex_139 = _14 * fpindex_322;
-  _16 = bmean_187(D) / pretmp_21;
-  lx_fpindex_140 = _16 * lx_fpindex_315;
+  _14 = bmean_187(D) / pretmp_903;
+  fpindex_139 = _14 * fpindex_785;
+  # DEBUG fpindex => fpindex_139
+  _16 = bmean_187(D) / pretmp_906;
+  lx_fpindex_140 = _16 * lx_fpindex_789;
+  # DEBUG lx_fpindex => lx_fpindex_140
+  PROF_edge_counter_243 = __gcov0.main[27];
+  PROF_edge_counter_244 = PROF_edge_counter_243 + 1;
+  __gcov0.main[27] = PROF_edge_counter_244;
   goto <bb 25>; [100.00%]
 
-  <bb 20> [5.61%]:
-  _18 = bmean_187(D) / pretmp_12;
-  intindex_136 = _18 * intindex_313;
-  if (_54 > 7)
-    goto <bb 22>; [50.00%]
+  <bb 20> [8.50%]:
+  PROF_edge_counter_241 = __gcov0.main[26];
+  PROF_edge_counter_242 = PROF_edge_counter_241 + 1;
+  __gcov0.main[26] = PROF_edge_counter_242;
+  if (i_58 == 9)
+    goto <bb 19>; [34.00%]
   else
-    goto <bb 21>; [50.00%]
+    goto <bb 21>; [66.00%]
 
   <bb 21> [5.61%]:
-  _312 = 201 >> i_320;
-  _314 = _312 & 1;
-  _316 = _314 == 0;
-
-  <bb 22> [5.61%]:
-  # _318 = PHI <_316(21), 1(20)>
-  if (_318 != 0)
-    goto <bb 23>; [50.00%]
+  _18 = bmean_187(D) / pretmp_903;
+  intindex_136 = _18 * intindex_787;
+  # DEBUG intindex => intindex_136
+  _19 = i_58 == 0;
+  _20 = i_58 == 3;
+  _21 = _19 | _20;
+  if (_21 != 0)
+    goto <bb 22>; [50.00%]
   else
-    goto <bb 24>; [50.00%]
+    goto <bb 23>; [50.00%]
 
-  <bb 23> [2.80%]:
-  _27 = bmean_187(D) / pretmp_21;
-  lx_memindex_137 = _27 * lx_memindex_319;
+  <bb 22> [3.82%]:
+  _25 = bmean_187(D) / pretmp_906;
+  lx_intindex_138 = _25 * lx_intindex_791;
+  # DEBUG lx_intindex => lx_intindex_138
+  PROF_edge_counter_247 = __gcov0.main[29];
+  PROF_edge_counter_248 = PROF_edge_counter_247 + 1;
+  __gcov0.main[29] = PROF_edge_counter_248;
   goto <bb 25>; [100.00%]
 
-  <bb 24> [3.81%]:
-  _25 = bmean_187(D) / pretmp_21;
-  lx_intindex_138 = _25 * lx_intindex_317;
+  <bb 23> [2.80%]:
+  PROF_edge_counter_245 = __gcov0.main[28];
+  PROF_edge_counter_246 = PROF_edge_counter_245 + 1;
+  __gcov0.main[28] = PROF_edge_counter_246;
+  _23 = _783 + 4294967290;
+  if (_23 <= 1)
+    goto <bb 22>; [36.00%]
+  else
+    goto <bb 24>; [64.00%]
+
+  <bb 24> [1.79%]:
+  _27 = bmean_187(D) / pretmp_906;
+  lx_memindex_137 = _27 * lx_memindex_793;
+  # DEBUG lx_memindex => lx_memindex_137
+  PROF_edge_counter_249 = __gcov0.main[30];
+  PROF_edge_counter_250 = PROF_edge_counter_249 + 1;
+  __gcov0.main[30] = PROF_edge_counter_250;
 
   <bb 25> [17.00%]:
-  # lx_memindex_43 = PHI <lx_memindex_319(19), lx_memindex_319(24), lx_memindex_137(23)>
-  # lx_intindex_46 = PHI <lx_intindex_317(19), lx_intindex_138(24), lx_intindex_317(23)>
-  # lx_fpindex_49 = PHI <lx_fpindex_140(19), lx_fpindex_315(24), lx_fpindex_315(23)>
-  # intindex_52 = PHI <intindex_313(19), intindex_136(24), intindex_136(23)>
-  # fpindex_55 = PHI <fpindex_139(19), fpindex_322(24), fpindex_322(23)>
+  # lx_memindex_43 = PHI <lx_memindex_793(19), lx_memindex_793(22), lx_memindex_137(24)>
+  # lx_intindex_46 = PHI <lx_intindex_791(19), lx_intindex_138(22), lx_intindex_791(24)>
+  # lx_fpindex_49 = PHI <lx_fpindex_140(19), lx_fpindex_789(22), lx_fpindex_789(24)>
+  # intindex_52 = PHI <intindex_787(19), intindex_136(22), intindex_136(24)>
+  # fpindex_55 = PHI <fpindex_139(19), fpindex_785(22), fpindex_785(24)>
+  # DEBUG fpindex => fpindex_55
+  # DEBUG intindex => intindex_52
+  # DEBUG lx_fpindex => lx_fpindex_49
+  # DEBUG lx_intindex => lx_intindex_46
+  # DEBUG lx_memindex => lx_memindex_43
   global_allstats.10_28 = global_allstats;
   if (global_allstats.10_28 != 0)
     goto <bb 27>; [33.00%]
@@ -355,331 +880,905 @@ main (int argc, char * * argv)
     goto <bb 26>; [67.00%]
 
   <bb 26> [11.39%]:
-  pretmp_20 = testnum;
-  goto <bb 64>; [100.00%]
+  pretmp_898 = testnum;
+  goto <bb 73>; [100.00%]
 
   <bb 27> [5.61%]:
+  PROF_edge_counter_251 = __gcov0.main[31];
+  PROF_edge_counter_252 = PROF_edge_counter_251 + 1;
+  __gcov0.main[31] = PROF_edge_counter_252;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "  Absolute standard deviation: %g\n"
   __builtin___sprintf_chk (&buffer, 1, 1024, "  Absolute standard deviation: %g\n", bstdev_188(D));
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
   output_string (&buffer);
+  PROF_edge_counter_253 = __gcov0.main[32];
+  PROF_edge_counter_254 = PROF_edge_counter_253 + 1;
+  __gcov0.main[32] = PROF_edge_counter_254;
   if (bmean_187(D) > 1.00000000000000001999189980260288361964776078853415942018e-100)
     goto <bb 28>; [33.00%]
   else
     goto <bb 29>; [67.00%]
 
   <bb 28> [1.85%]:
+  PROF_edge_counter_255 = __gcov0.main[33];
+  PROF_edge_counter_256 = PROF_edge_counter_255 + 1;
+  __gcov0.main[33] = PROF_edge_counter_256;
   _29 = bstdev_188(D) * 1.0e+2;
   _30 = _29 / bmean_187(D);
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "  Relative standard deviation: %g %%\n"
   __builtin___sprintf_chk (&buffer, 1, 1024, "  Relative standard deviation: %g %%\n", _30);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
   output_string (&buffer);
+  PROF_edge_counter_257 = __gcov0.main[34];
+  PROF_edge_counter_258 = PROF_edge_counter_257 + 1;
+  __gcov0.main[34] = PROF_edge_counter_258;
 
   <bb 29> [5.61%]:
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "  Number of runs: %lu\n"
   __builtin___sprintf_chk (&buffer, 1, 1024, "  Number of runs: %lu\n", 5);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
   output_string (&buffer);
-  switch (i_320) <default: <L39> [9.09%], case 0: <L29> [9.09%], case 1: <L30> [9.09%], case 2: <L31> [9.09%], case 3: <L32> [9.09%], case 4: <L33> [9.09%], case 5: <L34> [9.09%], case 6: <L35> [9.09%], case 7: <L36> [9.09%], case 8: <L37> [9.09%], case 9: <L38> [9.09%]>
+  PROF_edge_counter_259 = __gcov0.main[35];
+  PROF_edge_counter_260 = PROF_edge_counter_259 + 1;
+  __gcov0.main[35] = PROF_edge_counter_260;
+  # DEBUG bid => i_58
+  PROF_edge_counter_369 = __gcov0.show_stats[0];
+  PROF_edge_counter_370 = PROF_edge_counter_369 + 1;
+  __gcov0.show_stats[0] = PROF_edge_counter_370;
+  switch (i_58) <default: <L39> [9.09%], case 0: <L29> [9.09%], case 1: <L30> [9.09%], case 2: <L31> [9.09%], case 3: <L32> [9.09%], case 4: <L33> [9.09%], case 5: <L34> [9.09%], case 6: <L35> [9.09%], case 7: <L36> [9.09%], case 8: <L37> [9.09%], case 9: <L38> [9.09%]>
 
 <L29> [0.51%]:
-  _193 = global_numsortstruct.numarrays;
-  _194 = (int) _193;
-  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of arrays: %d\n", _194);
+  PROF_edge_counter_371 = __gcov0.show_stats[1];
+  PROF_edge_counter_372 = PROF_edge_counter_371 + 1;
+  __gcov0.show_stats[1] = PROF_edge_counter_372;
+  _373 = global_numsortstruct.numarrays;
+  _374 = (int) _373;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "  Number of arrays: %d\n"
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of arrays: %d\n", _374);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
+  # DEBUG buffer => &buffer
+  PROF_edge_counter_451 = __gcov0.output_string[0];
+  PROF_edge_counter_452 = PROF_edge_counter_451 + 1;
+  __gcov0.output_string[0] = PROF_edge_counter_452;
+  # DEBUG __fmt => "%s"
   __printf_chk (1, "%s", &buffer);
-  write_to_file.30_212 = write_to_file;
-  if (write_to_file.30_212 != 0)
+  PROF_edge_counter_453 = __gcov0.output_string[1];
+  PROF_edge_counter_454 = PROF_edge_counter_453 + 1;
+  __gcov0.output_string[1] = PROF_edge_counter_454;
+  # DEBUG __fmt => NULL
+  write_to_file.30_455 = write_to_file;
+  if (write_to_file.30_455 != 0)
     goto <bb 31>; [36.64%]
   else
     goto <bb 32>; [63.36%]
 
   <bb 31> [0.19%]:
-  global_ofile.31_213 = global_ofile;
-  __builtin_fputs (&buffer, global_ofile.31_213);
+  PROF_edge_counter_456 = __gcov0.output_string[2];
+  PROF_edge_counter_457 = PROF_edge_counter_456 + 1;
+  __gcov0.output_string[2] = PROF_edge_counter_457;
+  global_ofile.31_458 = global_ofile;
+  # DEBUG __stream => global_ofile.31_458
+  # DEBUG __fmt => "%s"
+  __builtin_fputs (&buffer, global_ofile.31_458);
+  PROF_edge_counter_459 = __gcov0.output_string[3];
+  PROF_edge_counter_460 = PROF_edge_counter_459 + 1;
+  __gcov0.output_string[3] = PROF_edge_counter_460;
 
   <bb 32> [0.51%]:
-  _195 = global_numsortstruct.arraysize;
-  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %ld\n", _195);
+  # DEBUG buffer => NULL
+  PROF_edge_counter_375 = __gcov0.show_stats[11];
+  PROF_edge_counter_376 = PROF_edge_counter_375 + 1;
+  __gcov0.show_stats[11] = PROF_edge_counter_376;
+  _377 = global_numsortstruct.arraysize;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "  Array size: %ld\n"
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %ld\n", _377);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
+  # DEBUG buffer => &buffer
+  PROF_edge_counter_441 = __gcov0.output_string[0];
+  PROF_edge_counter_442 = PROF_edge_counter_441 + 1;
+  __gcov0.output_string[0] = PROF_edge_counter_442;
+  # DEBUG __fmt => "%s"
   __printf_chk (1, "%s", &buffer);
-  write_to_file.30_211 = write_to_file;
-  if (write_to_file.30_211 != 0)
-    goto <bb 34>; [36.64%]
+  PROF_edge_counter_443 = __gcov0.output_string[1];
+  PROF_edge_counter_444 = PROF_edge_counter_443 + 1;
+  __gcov0.output_string[1] = PROF_edge_counter_444;
+  # DEBUG __fmt => NULL
+  write_to_file.30_445 = write_to_file;
+  if (write_to_file.30_445 != 0)
+    goto <bb 33>; [36.64%]
   else
-    goto <bb 33>; [63.36%]
+    goto <bb 34>; [63.36%]
 
-  <bb 33> [3.20%]:
-  goto <bb 63> (<L39>); [100.00%]
+  <bb 33> [0.19%]:
+  PROF_edge_counter_446 = __gcov0.output_string[2];
+  PROF_edge_counter_447 = PROF_edge_counter_446 + 1;
+  __gcov0.output_string[2] = PROF_edge_counter_447;
+  global_ofile.31_448 = global_ofile;
+  # DEBUG __stream => global_ofile.31_448
+  # DEBUG __fmt => "%s"
+  __builtin_fputs (&buffer, global_ofile.31_448);
+  PROF_edge_counter_449 = __gcov0.output_string[3];
+  PROF_edge_counter_450 = PROF_edge_counter_449 + 1;
+  __gcov0.output_string[3] = PROF_edge_counter_450;
 
-  <bb 34> [0.19%]:
-  global_ofile.31_214 = global_ofile;
-  __builtin_fputs (&buffer, global_ofile.31_214);
-  goto <bb 63> (<L39>); [100.00%]
+  <bb 34> [0.51%]:
+  # DEBUG buffer => NULL
+  PROF_edge_counter_378 = __gcov0.show_stats[12];
+  PROF_edge_counter_379 = PROF_edge_counter_378 + 1;
+  __gcov0.show_stats[12] = PROF_edge_counter_379;
+  goto <bb 72> (<L39>); [100.00%]
 
 <L30> [0.51%]:
-  _196 = global_strsortstruct.numarrays;
-  _197 = (int) _196;
-  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of arrays: %d\n", _197);
+  PROF_edge_counter_380 = __gcov0.show_stats[2];
+  PROF_edge_counter_381 = PROF_edge_counter_380 + 1;
+  __gcov0.show_stats[2] = PROF_edge_counter_381;
+  _382 = global_strsortstruct.numarrays;
+  _383 = (int) _382;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "  Number of arrays: %d\n"
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of arrays: %d\n", _383);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
+  # DEBUG buffer => &buffer
+  PROF_edge_counter_471 = __gcov0.output_string[0];
+  PROF_edge_counter_472 = PROF_edge_counter_471 + 1;
+  __gcov0.output_string[0] = PROF_edge_counter_472;
+  # DEBUG __fmt => "%s"
   __printf_chk (1, "%s", &buffer);
-  write_to_file.30_216 = write_to_file;
-  if (write_to_file.30_216 != 0)
+  PROF_edge_counter_473 = __gcov0.output_string[1];
+  PROF_edge_counter_474 = PROF_edge_counter_473 + 1;
+  __gcov0.output_string[1] = PROF_edge_counter_474;
+  # DEBUG __fmt => NULL
+  write_to_file.30_475 = write_to_file;
+  if (write_to_file.30_475 != 0)
     goto <bb 36>; [36.64%]
   else
     goto <bb 37>; [63.36%]
 
   <bb 36> [0.19%]:
-  global_ofile.31_217 = global_ofile;
-  __builtin_fputs (&buffer, global_ofile.31_217);
+  PROF_edge_counter_476 = __gcov0.output_string[2];
+  PROF_edge_counter_477 = PROF_edge_counter_476 + 1;
+  __gcov0.output_string[2] = PROF_edge_counter_477;
+  global_ofile.31_478 = global_ofile;
+  # DEBUG __stream => global_ofile.31_478
+  # DEBUG __fmt => "%s"
+  __builtin_fputs (&buffer, global_ofile.31_478);
+  PROF_edge_counter_479 = __gcov0.output_string[3];
+  PROF_edge_counter_480 = PROF_edge_counter_479 + 1;
+  __gcov0.output_string[3] = PROF_edge_counter_480;
 
   <bb 37> [0.51%]:
-  _198 = global_strsortstruct.arraysize;
-  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %ld\n", _198);
+  # DEBUG buffer => NULL
+  PROF_edge_counter_384 = __gcov0.show_stats[13];
+  PROF_edge_counter_385 = PROF_edge_counter_384 + 1;
+  __gcov0.show_stats[13] = PROF_edge_counter_385;
+  _386 = global_strsortstruct.arraysize;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "  Array size: %ld\n"
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %ld\n", _386);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
+  # DEBUG buffer => &buffer
+  PROF_edge_counter_461 = __gcov0.output_string[0];
+  PROF_edge_counter_462 = PROF_edge_counter_461 + 1;
+  __gcov0.output_string[0] = PROF_edge_counter_462;
+  # DEBUG __fmt => "%s"
   __printf_chk (1, "%s", &buffer);
-  write_to_file.30_215 = write_to_file;
-  if (write_to_file.30_215 != 0)
+  PROF_edge_counter_463 = __gcov0.output_string[1];
+  PROF_edge_counter_464 = PROF_edge_counter_463 + 1;
+  __gcov0.output_string[1] = PROF_edge_counter_464;
+  # DEBUG __fmt => NULL
+  write_to_file.30_465 = write_to_file;
+  if (write_to_file.30_465 != 0)
     goto <bb 38>; [36.64%]
   else
-    goto <bb 33>; [63.36%]
+    goto <bb 39>; [63.36%]
 
   <bb 38> [0.19%]:
-  global_ofile.31_218 = global_ofile;
-  __builtin_fputs (&buffer, global_ofile.31_218);
-  goto <bb 63> (<L39>); [100.00%]
+  PROF_edge_counter_466 = __gcov0.output_string[2];
+  PROF_edge_counter_467 = PROF_edge_counter_466 + 1;
+  __gcov0.output_string[2] = PROF_edge_counter_467;
+  global_ofile.31_468 = global_ofile;
+  # DEBUG __stream => global_ofile.31_468
+  # DEBUG __fmt => "%s"
+  __builtin_fputs (&buffer, global_ofile.31_468);
+  PROF_edge_counter_469 = __gcov0.output_string[3];
+  PROF_edge_counter_470 = PROF_edge_counter_469 + 1;
+  __gcov0.output_string[3] = PROF_edge_counter_470;
+
+  <bb 39> [0.51%]:
+  # DEBUG buffer => NULL
+  PROF_edge_counter_387 = __gcov0.show_stats[14];
+  PROF_edge_counter_388 = PROF_edge_counter_387 + 1;
+  __gcov0.show_stats[14] = PROF_edge_counter_388;
+  goto <bb 72> (<L39>); [100.00%]
 
 <L31> [0.51%]:
-  _199 = global_bitopstruct.bitoparraysize;
-  __builtin___sprintf_chk (&buffer, 1, 80, "  Operations array size: %ld\n", _199);
+  PROF_edge_counter_389 = __gcov0.show_stats[3];
+  PROF_edge_counter_390 = PROF_edge_counter_389 + 1;
+  __gcov0.show_stats[3] = PROF_edge_counter_390;
+  _391 = global_bitopstruct.bitoparraysize;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "  Operations array size: %ld\n"
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Operations array size: %ld\n", _391);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
+  # DEBUG buffer => &buffer
+  PROF_edge_counter_491 = __gcov0.output_string[0];
+  PROF_edge_counter_492 = PROF_edge_counter_491 + 1;
+  __gcov0.output_string[0] = PROF_edge_counter_492;
+  # DEBUG __fmt => "%s"
   __printf_chk (1, "%s", &buffer);
-  write_to_file.30_220 = write_to_file;
-  if (write_to_file.30_220 != 0)
-    goto <bb 40>; [36.64%]
+  PROF_edge_counter_493 = __gcov0.output_string[1];
+  PROF_edge_counter_494 = PROF_edge_counter_493 + 1;
+  __gcov0.output_string[1] = PROF_edge_counter_494;
+  # DEBUG __fmt => NULL
+  write_to_file.30_495 = write_to_file;
+  if (write_to_file.30_495 != 0)
+    goto <bb 41>; [36.64%]
   else
-    goto <bb 41>; [63.36%]
+    goto <bb 42>; [63.36%]
 
-  <bb 40> [0.19%]:
-  global_ofile.31_221 = global_ofile;
-  __builtin_fputs (&buffer, global_ofile.31_221);
+  <bb 41> [0.19%]:
+  PROF_edge_counter_496 = __gcov0.output_string[2];
+  PROF_edge_counter_497 = PROF_edge_counter_496 + 1;
+  __gcov0.output_string[2] = PROF_edge_counter_497;
+  global_ofile.31_498 = global_ofile;
+  # DEBUG __stream => global_ofile.31_498
+  # DEBUG __fmt => "%s"
+  __builtin_fputs (&buffer, global_ofile.31_498);
+  PROF_edge_counter_499 = __gcov0.output_string[3];
+  PROF_edge_counter_500 = PROF_edge_counter_499 + 1;
+  __gcov0.output_string[3] = PROF_edge_counter_500;
 
-  <bb 41> [0.51%]:
-  _200 = global_bitopstruct.bitfieldarraysize;
-  __builtin___sprintf_chk (&buffer, 1, 80, "  Bitfield array size: %ld\n", _200);
+  <bb 42> [0.51%]:
+  # DEBUG buffer => NULL
+  PROF_edge_counter_392 = __gcov0.show_stats[15];
+  PROF_edge_counter_393 = PROF_edge_counter_392 + 1;
+  __gcov0.show_stats[15] = PROF_edge_counter_393;
+  _394 = global_bitopstruct.bitfieldarraysize;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "  Bitfield array size: %ld\n"
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Bitfield array size: %ld\n", _394);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
+  # DEBUG buffer => &buffer
+  PROF_edge_counter_481 = __gcov0.output_string[0];
+  PROF_edge_counter_482 = PROF_edge_counter_481 + 1;
+  __gcov0.output_string[0] = PROF_edge_counter_482;
+  # DEBUG __fmt => "%s"
   __printf_chk (1, "%s", &buffer);
-  write_to_file.30_219 = write_to_file;
-  if (write_to_file.30_219 != 0)
-    goto <bb 42>; [36.64%]
+  PROF_edge_counter_483 = __gcov0.output_string[1];
+  PROF_edge_counter_484 = PROF_edge_counter_483 + 1;
+  __gcov0.output_string[1] = PROF_edge_counter_484;
+  # DEBUG __fmt => NULL
+  write_to_file.30_485 = write_to_file;
+  if (write_to_file.30_485 != 0)
+    goto <bb 43>; [36.64%]
   else
-    goto <bb 33>; [63.36%]
+    goto <bb 44>; [63.36%]
 
-  <bb 42> [0.19%]:
-  global_ofile.31_222 = global_ofile;
-  __builtin_fputs (&buffer, global_ofile.31_222);
-  goto <bb 63> (<L39>); [100.00%]
+  <bb 43> [0.19%]:
+  PROF_edge_counter_486 = __gcov0.output_string[2];
+  PROF_edge_counter_487 = PROF_edge_counter_486 + 1;
+  __gcov0.output_string[2] = PROF_edge_counter_487;
+  global_ofile.31_488 = global_ofile;
+  # DEBUG __stream => global_ofile.31_488
+  # DEBUG __fmt => "%s"
+  __builtin_fputs (&buffer, global_ofile.31_488);
+  PROF_edge_counter_489 = __gcov0.output_string[3];
+  PROF_edge_counter_490 = PROF_edge_counter_489 + 1;
+  __gcov0.output_string[3] = PROF_edge_counter_490;
+
+  <bb 44> [0.51%]:
+  # DEBUG buffer => NULL
+  PROF_edge_counter_395 = __gcov0.show_stats[16];
+  PROF_edge_counter_396 = PROF_edge_counter_395 + 1;
+  __gcov0.show_stats[16] = PROF_edge_counter_396;
+  goto <bb 72> (<L39>); [100.00%]
 
 <L32> [0.51%]:
-  _201 = global_emfloatstruct.loops;
-  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of loops: %lu\n", _201);
+  PROF_edge_counter_397 = __gcov0.show_stats[4];
+  PROF_edge_counter_398 = PROF_edge_counter_397 + 1;
+  __gcov0.show_stats[4] = PROF_edge_counter_398;
+  _399 = global_emfloatstruct.loops;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "  Number of loops: %lu\n"
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of loops: %lu\n", _399);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
+  # DEBUG buffer => &buffer
+  PROF_edge_counter_511 = __gcov0.output_string[0];
+  PROF_edge_counter_512 = PROF_edge_counter_511 + 1;
+  __gcov0.output_string[0] = PROF_edge_counter_512;
+  # DEBUG __fmt => "%s"
   __printf_chk (1, "%s", &buffer);
-  write_to_file.30_224 = write_to_file;
-  if (write_to_file.30_224 != 0)
-    goto <bb 44>; [36.64%]
-  else
-    goto <bb 45>; [63.36%]
-
-  <bb 44> [0.19%]:
-  global_ofile.31_225 = global_ofile;
-  __builtin_fputs (&buffer, global_ofile.31_225);
-
-  <bb 45> [0.51%]:
-  _202 = global_emfloatstruct.arraysize;
-  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %lu\n", _202);
-  __printf_chk (1, "%s", &buffer);
-  write_to_file.30_223 = write_to_file;
-  if (write_to_file.30_223 != 0)
+  PROF_edge_counter_513 = __gcov0.output_string[1];
+  PROF_edge_counter_514 = PROF_edge_counter_513 + 1;
+  __gcov0.output_string[1] = PROF_edge_counter_514;
+  # DEBUG __fmt => NULL
+  write_to_file.30_515 = write_to_file;
+  if (write_to_file.30_515 != 0)
     goto <bb 46>; [36.64%]
   else
-    goto <bb 33>; [63.36%]
+    goto <bb 47>; [63.36%]
 
   <bb 46> [0.19%]:
-  global_ofile.31_226 = global_ofile;
-  __builtin_fputs (&buffer, global_ofile.31_226);
-  goto <bb 63> (<L39>); [100.00%]
+  PROF_edge_counter_516 = __gcov0.output_string[2];
+  PROF_edge_counter_517 = PROF_edge_counter_516 + 1;
+  __gcov0.output_string[2] = PROF_edge_counter_517;
+  global_ofile.31_518 = global_ofile;
+  # DEBUG __stream => global_ofile.31_518
+  # DEBUG __fmt => "%s"
+  __builtin_fputs (&buffer, global_ofile.31_518);
+  PROF_edge_counter_519 = __gcov0.output_string[3];
+  PROF_edge_counter_520 = PROF_edge_counter_519 + 1;
+  __gcov0.output_string[3] = PROF_edge_counter_520;
 
-<L33> [0.51%]:
-  _203 = global_fourierstruct.arraysize;
-  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of coefficients: %lu\n", _203);
+  <bb 47> [0.51%]:
+  # DEBUG buffer => NULL
+  PROF_edge_counter_400 = __gcov0.show_stats[17];
+  PROF_edge_counter_401 = PROF_edge_counter_400 + 1;
+  __gcov0.show_stats[17] = PROF_edge_counter_401;
+  _402 = global_emfloatstruct.arraysize;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "  Array size: %lu\n"
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %lu\n", _402);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
+  # DEBUG buffer => &buffer
+  PROF_edge_counter_501 = __gcov0.output_string[0];
+  PROF_edge_counter_502 = PROF_edge_counter_501 + 1;
+  __gcov0.output_string[0] = PROF_edge_counter_502;
+  # DEBUG __fmt => "%s"
   __printf_chk (1, "%s", &buffer);
-  write_to_file.30_227 = write_to_file;
-  if (write_to_file.30_227 != 0)
+  PROF_edge_counter_503 = __gcov0.output_string[1];
+  PROF_edge_counter_504 = PROF_edge_counter_503 + 1;
+  __gcov0.output_string[1] = PROF_edge_counter_504;
+  # DEBUG __fmt => NULL
+  write_to_file.30_505 = write_to_file;
+  if (write_to_file.30_505 != 0)
     goto <bb 48>; [36.64%]
   else
-    goto <bb 33>; [63.36%]
+    goto <bb 49>; [63.36%]
 
   <bb 48> [0.19%]:
-  global_ofile.31_228 = global_ofile;
-  __builtin_fputs (&buffer, global_ofile.31_228);
-  goto <bb 63> (<L39>); [100.00%]
+  PROF_edge_counter_506 = __gcov0.output_string[2];
+  PROF_edge_counter_507 = PROF_edge_counter_506 + 1;
+  __gcov0.output_string[2] = PROF_edge_counter_507;
+  global_ofile.31_508 = global_ofile;
+  # DEBUG __stream => global_ofile.31_508
+  # DEBUG __fmt => "%s"
+  __builtin_fputs (&buffer, global_ofile.31_508);
+  PROF_edge_counter_509 = __gcov0.output_string[3];
+  PROF_edge_counter_510 = PROF_edge_counter_509 + 1;
+  __gcov0.output_string[3] = PROF_edge_counter_510;
+
+  <bb 49> [0.51%]:
+  # DEBUG buffer => NULL
+  PROF_edge_counter_403 = __gcov0.show_stats[18];
+  PROF_edge_counter_404 = PROF_edge_counter_403 + 1;
+  __gcov0.show_stats[18] = PROF_edge_counter_404;
+  goto <bb 72> (<L39>); [100.00%]
+
+<L33> [0.51%]:
+  PROF_edge_counter_405 = __gcov0.show_stats[5];
+  PROF_edge_counter_406 = PROF_edge_counter_405 + 1;
+  __gcov0.show_stats[5] = PROF_edge_counter_406;
+  _407 = global_fourierstruct.arraysize;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "  Number of coefficients: %lu\n"
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of coefficients: %lu\n", _407);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
+  # DEBUG buffer => &buffer
+  PROF_edge_counter_521 = __gcov0.output_string[0];
+  PROF_edge_counter_522 = PROF_edge_counter_521 + 1;
+  __gcov0.output_string[0] = PROF_edge_counter_522;
+  # DEBUG __fmt => "%s"
+  __printf_chk (1, "%s", &buffer);
+  PROF_edge_counter_523 = __gcov0.output_string[1];
+  PROF_edge_counter_524 = PROF_edge_counter_523 + 1;
+  __gcov0.output_string[1] = PROF_edge_counter_524;
+  # DEBUG __fmt => NULL
+  write_to_file.30_525 = write_to_file;
+  if (write_to_file.30_525 != 0)
+    goto <bb 51>; [36.64%]
+  else
+    goto <bb 52>; [63.36%]
+
+  <bb 51> [0.19%]:
+  PROF_edge_counter_526 = __gcov0.output_string[2];
+  PROF_edge_counter_527 = PROF_edge_counter_526 + 1;
+  __gcov0.output_string[2] = PROF_edge_counter_527;
+  global_ofile.31_528 = global_ofile;
+  # DEBUG __stream => global_ofile.31_528
+  # DEBUG __fmt => "%s"
+  __builtin_fputs (&buffer, global_ofile.31_528);
+  PROF_edge_counter_529 = __gcov0.output_string[3];
+  PROF_edge_counter_530 = PROF_edge_counter_529 + 1;
+  __gcov0.output_string[3] = PROF_edge_counter_530;
+
+  <bb 52> [0.51%]:
+  # DEBUG buffer => NULL
+  PROF_edge_counter_408 = __gcov0.show_stats[19];
+  PROF_edge_counter_409 = PROF_edge_counter_408 + 1;
+  __gcov0.show_stats[19] = PROF_edge_counter_409;
+  goto <bb 72> (<L39>); [100.00%]
 
 <L34> [0.51%]:
-  _204 = global_assignstruct.numarrays;
-  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of arrays: %lu\n", _204);
+  PROF_edge_counter_410 = __gcov0.show_stats[6];
+  PROF_edge_counter_411 = PROF_edge_counter_410 + 1;
+  __gcov0.show_stats[6] = PROF_edge_counter_411;
+  _412 = global_assignstruct.numarrays;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "  Number of arrays: %lu\n"
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of arrays: %lu\n", _412);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
+  # DEBUG buffer => &buffer
+  PROF_edge_counter_531 = __gcov0.output_string[0];
+  PROF_edge_counter_532 = PROF_edge_counter_531 + 1;
+  __gcov0.output_string[0] = PROF_edge_counter_532;
+  # DEBUG __fmt => "%s"
   __printf_chk (1, "%s", &buffer);
-  write_to_file.30_229 = write_to_file;
-  if (write_to_file.30_229 != 0)
-    goto <bb 50>; [36.64%]
-  else
-    goto <bb 33>; [63.36%]
-
-  <bb 50> [0.19%]:
-  global_ofile.31_230 = global_ofile;
-  __builtin_fputs (&buffer, global_ofile.31_230);
-  goto <bb 63> (<L39>); [100.00%]
-
-<L35> [0.51%]:
-  _205 = global_ideastruct.arraysize;
-  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %lu\n", _205);
-  __printf_chk (1, "%s", &buffer);
-  write_to_file.30_232 = write_to_file;
-  if (write_to_file.30_232 != 0)
-    goto <bb 52>; [36.64%]
-  else
-    goto <bb 53>; [63.36%]
-
-  <bb 52> [0.19%]:
-  global_ofile.31_233 = global_ofile;
-  __builtin_fputs (&buffer, global_ofile.31_233);
-
-  <bb 53> [0.51%]:
-  _206 = global_ideastruct.loops;
-  __builtin___sprintf_chk (&buffer, 1, 80, " Number of loops: %lu\n", _206);
-  __printf_chk (1, "%s", &buffer);
-  write_to_file.30_231 = write_to_file;
-  if (write_to_file.30_231 != 0)
+  PROF_edge_counter_533 = __gcov0.output_string[1];
+  PROF_edge_counter_534 = PROF_edge_counter_533 + 1;
+  __gcov0.output_string[1] = PROF_edge_counter_534;
+  # DEBUG __fmt => NULL
+  write_to_file.30_535 = write_to_file;
+  if (write_to_file.30_535 != 0)
     goto <bb 54>; [36.64%]
   else
-    goto <bb 33>; [63.36%]
+    goto <bb 55>; [63.36%]
 
   <bb 54> [0.19%]:
-  global_ofile.31_234 = global_ofile;
-  __builtin_fputs (&buffer, global_ofile.31_234);
-  goto <bb 63> (<L39>); [100.00%]
+  PROF_edge_counter_536 = __gcov0.output_string[2];
+  PROF_edge_counter_537 = PROF_edge_counter_536 + 1;
+  __gcov0.output_string[2] = PROF_edge_counter_537;
+  global_ofile.31_538 = global_ofile;
+  # DEBUG __stream => global_ofile.31_538
+  # DEBUG __fmt => "%s"
+  __builtin_fputs (&buffer, global_ofile.31_538);
+  PROF_edge_counter_539 = __gcov0.output_string[3];
+  PROF_edge_counter_540 = PROF_edge_counter_539 + 1;
+  __gcov0.output_string[3] = PROF_edge_counter_540;
+
+  <bb 55> [0.51%]:
+  # DEBUG buffer => NULL
+  PROF_edge_counter_413 = __gcov0.show_stats[20];
+  PROF_edge_counter_414 = PROF_edge_counter_413 + 1;
+  __gcov0.show_stats[20] = PROF_edge_counter_414;
+  goto <bb 72> (<L39>); [100.00%]
+
+<L35> [0.51%]:
+  PROF_edge_counter_415 = __gcov0.show_stats[7];
+  PROF_edge_counter_416 = PROF_edge_counter_415 + 1;
+  __gcov0.show_stats[7] = PROF_edge_counter_416;
+  _417 = global_ideastruct.arraysize;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "  Array size: %lu\n"
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %lu\n", _417);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
+  # DEBUG buffer => &buffer
+  PROF_edge_counter_551 = __gcov0.output_string[0];
+  PROF_edge_counter_552 = PROF_edge_counter_551 + 1;
+  __gcov0.output_string[0] = PROF_edge_counter_552;
+  # DEBUG __fmt => "%s"
+  __printf_chk (1, "%s", &buffer);
+  PROF_edge_counter_553 = __gcov0.output_string[1];
+  PROF_edge_counter_554 = PROF_edge_counter_553 + 1;
+  __gcov0.output_string[1] = PROF_edge_counter_554;
+  # DEBUG __fmt => NULL
+  write_to_file.30_555 = write_to_file;
+  if (write_to_file.30_555 != 0)
+    goto <bb 57>; [36.64%]
+  else
+    goto <bb 58>; [63.36%]
+
+  <bb 57> [0.19%]:
+  PROF_edge_counter_556 = __gcov0.output_string[2];
+  PROF_edge_counter_557 = PROF_edge_counter_556 + 1;
+  __gcov0.output_string[2] = PROF_edge_counter_557;
+  global_ofile.31_558 = global_ofile;
+  # DEBUG __stream => global_ofile.31_558
+  # DEBUG __fmt => "%s"
+  __builtin_fputs (&buffer, global_ofile.31_558);
+  PROF_edge_counter_559 = __gcov0.output_string[3];
+  PROF_edge_counter_560 = PROF_edge_counter_559 + 1;
+  __gcov0.output_string[3] = PROF_edge_counter_560;
+
+  <bb 58> [0.51%]:
+  # DEBUG buffer => NULL
+  PROF_edge_counter_418 = __gcov0.show_stats[21];
+  PROF_edge_counter_419 = PROF_edge_counter_418 + 1;
+  __gcov0.show_stats[21] = PROF_edge_counter_419;
+  _420 = global_ideastruct.loops;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => " Number of loops: %lu\n"
+  __builtin___sprintf_chk (&buffer, 1, 80, " Number of loops: %lu\n", _420);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
+  # DEBUG buffer => &buffer
+  PROF_edge_counter_541 = __gcov0.output_string[0];
+  PROF_edge_counter_542 = PROF_edge_counter_541 + 1;
+  __gcov0.output_string[0] = PROF_edge_counter_542;
+  # DEBUG __fmt => "%s"
+  __printf_chk (1, "%s", &buffer);
+  PROF_edge_counter_543 = __gcov0.output_string[1];
+  PROF_edge_counter_544 = PROF_edge_counter_543 + 1;
+  __gcov0.output_string[1] = PROF_edge_counter_544;
+  # DEBUG __fmt => NULL
+  write_to_file.30_545 = write_to_file;
+  if (write_to_file.30_545 != 0)
+    goto <bb 59>; [36.64%]
+  else
+    goto <bb 60>; [63.36%]
+
+  <bb 59> [0.19%]:
+  PROF_edge_counter_546 = __gcov0.output_string[2];
+  PROF_edge_counter_547 = PROF_edge_counter_546 + 1;
+  __gcov0.output_string[2] = PROF_edge_counter_547;
+  global_ofile.31_548 = global_ofile;
+  # DEBUG __stream => global_ofile.31_548
+  # DEBUG __fmt => "%s"
+  __builtin_fputs (&buffer, global_ofile.31_548);
+  PROF_edge_counter_549 = __gcov0.output_string[3];
+  PROF_edge_counter_550 = PROF_edge_counter_549 + 1;
+  __gcov0.output_string[3] = PROF_edge_counter_550;
+
+  <bb 60> [0.51%]:
+  # DEBUG buffer => NULL
+  PROF_edge_counter_421 = __gcov0.show_stats[22];
+  PROF_edge_counter_422 = PROF_edge_counter_421 + 1;
+  __gcov0.show_stats[22] = PROF_edge_counter_422;
+  goto <bb 72> (<L39>); [100.00%]
 
 <L36> [0.51%]:
-  _207 = global_huffstruct.arraysize;
-  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %lu\n", _207);
+  PROF_edge_counter_423 = __gcov0.show_stats[8];
+  PROF_edge_counter_424 = PROF_edge_counter_423 + 1;
+  __gcov0.show_stats[8] = PROF_edge_counter_424;
+  _425 = global_huffstruct.arraysize;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "  Array size: %lu\n"
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Array size: %lu\n", _425);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
+  # DEBUG buffer => &buffer
+  PROF_edge_counter_571 = __gcov0.output_string[0];
+  PROF_edge_counter_572 = PROF_edge_counter_571 + 1;
+  __gcov0.output_string[0] = PROF_edge_counter_572;
+  # DEBUG __fmt => "%s"
   __printf_chk (1, "%s", &buffer);
-  write_to_file.30_236 = write_to_file;
-  if (write_to_file.30_236 != 0)
-    goto <bb 56>; [36.64%]
-  else
-    goto <bb 57>; [63.36%]
-
-  <bb 56> [0.19%]:
-  global_ofile.31_237 = global_ofile;
-  __builtin_fputs (&buffer, global_ofile.31_237);
-
-  <bb 57> [0.51%]:
-  _208 = global_huffstruct.loops;
-  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of loops: %lu\n", _208);
-  __printf_chk (1, "%s", &buffer);
-  write_to_file.30_235 = write_to_file;
-  if (write_to_file.30_235 != 0)
-    goto <bb 58>; [36.64%]
-  else
-    goto <bb 33>; [63.36%]
-
-  <bb 58> [0.19%]:
-  global_ofile.31_238 = global_ofile;
-  __builtin_fputs (&buffer, global_ofile.31_238);
-  goto <bb 63> (<L39>); [100.00%]
-
-<L37> [0.51%]:
-  _209 = global_nnetstruct.loops;
-  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of loops: %lu\n", _209);
-  __printf_chk (1, "%s", &buffer);
-  write_to_file.30_239 = write_to_file;
-  if (write_to_file.30_239 != 0)
-    goto <bb 60>; [36.64%]
-  else
-    goto <bb 33>; [63.36%]
-
-  <bb 60> [0.19%]:
-  global_ofile.31_240 = global_ofile;
-  __builtin_fputs (&buffer, global_ofile.31_240);
-  goto <bb 63> (<L39>); [100.00%]
-
-<L38> [0.51%]:
-  _210 = global_lustruct.numarrays;
-  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of arrays: %lu\n", _210);
-  __printf_chk (1, "%s", &buffer);
-  write_to_file.30_241 = write_to_file;
-  if (write_to_file.30_241 != 0)
+  PROF_edge_counter_573 = __gcov0.output_string[1];
+  PROF_edge_counter_574 = PROF_edge_counter_573 + 1;
+  __gcov0.output_string[1] = PROF_edge_counter_574;
+  # DEBUG __fmt => NULL
+  write_to_file.30_575 = write_to_file;
+  if (write_to_file.30_575 != 0)
     goto <bb 62>; [36.64%]
   else
-    goto <bb 33>; [63.36%]
+    goto <bb 63>; [63.36%]
 
   <bb 62> [0.19%]:
-  global_ofile.31_242 = global_ofile;
-  __builtin_fputs (&buffer, global_ofile.31_242);
+  PROF_edge_counter_576 = __gcov0.output_string[2];
+  PROF_edge_counter_577 = PROF_edge_counter_576 + 1;
+  __gcov0.output_string[2] = PROF_edge_counter_577;
+  global_ofile.31_578 = global_ofile;
+  # DEBUG __stream => global_ofile.31_578
+  # DEBUG __fmt => "%s"
+  __builtin_fputs (&buffer, global_ofile.31_578);
+  PROF_edge_counter_579 = __gcov0.output_string[3];
+  PROF_edge_counter_580 = PROF_edge_counter_579 + 1;
+  __gcov0.output_string[3] = PROF_edge_counter_580;
+
+  <bb 63> [0.51%]:
+  # DEBUG buffer => NULL
+  PROF_edge_counter_426 = __gcov0.show_stats[23];
+  PROF_edge_counter_427 = PROF_edge_counter_426 + 1;
+  __gcov0.show_stats[23] = PROF_edge_counter_427;
+  _428 = global_huffstruct.loops;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "  Number of loops: %lu\n"
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of loops: %lu\n", _428);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
+  # DEBUG buffer => &buffer
+  PROF_edge_counter_561 = __gcov0.output_string[0];
+  PROF_edge_counter_562 = PROF_edge_counter_561 + 1;
+  __gcov0.output_string[0] = PROF_edge_counter_562;
+  # DEBUG __fmt => "%s"
+  __printf_chk (1, "%s", &buffer);
+  PROF_edge_counter_563 = __gcov0.output_string[1];
+  PROF_edge_counter_564 = PROF_edge_counter_563 + 1;
+  __gcov0.output_string[1] = PROF_edge_counter_564;
+  # DEBUG __fmt => NULL
+  write_to_file.30_565 = write_to_file;
+  if (write_to_file.30_565 != 0)
+    goto <bb 64>; [36.64%]
+  else
+    goto <bb 65>; [63.36%]
+
+  <bb 64> [0.19%]:
+  PROF_edge_counter_566 = __gcov0.output_string[2];
+  PROF_edge_counter_567 = PROF_edge_counter_566 + 1;
+  __gcov0.output_string[2] = PROF_edge_counter_567;
+  global_ofile.31_568 = global_ofile;
+  # DEBUG __stream => global_ofile.31_568
+  # DEBUG __fmt => "%s"
+  __builtin_fputs (&buffer, global_ofile.31_568);
+  PROF_edge_counter_569 = __gcov0.output_string[3];
+  PROF_edge_counter_570 = PROF_edge_counter_569 + 1;
+  __gcov0.output_string[3] = PROF_edge_counter_570;
+
+  <bb 65> [0.51%]:
+  # DEBUG buffer => NULL
+  PROF_edge_counter_429 = __gcov0.show_stats[24];
+  PROF_edge_counter_430 = PROF_edge_counter_429 + 1;
+  __gcov0.show_stats[24] = PROF_edge_counter_430;
+  goto <bb 72> (<L39>); [100.00%]
+
+<L37> [0.51%]:
+  PROF_edge_counter_431 = __gcov0.show_stats[9];
+  PROF_edge_counter_432 = PROF_edge_counter_431 + 1;
+  __gcov0.show_stats[9] = PROF_edge_counter_432;
+  _433 = global_nnetstruct.loops;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "  Number of loops: %lu\n"
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of loops: %lu\n", _433);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
+  # DEBUG buffer => &buffer
+  PROF_edge_counter_581 = __gcov0.output_string[0];
+  PROF_edge_counter_582 = PROF_edge_counter_581 + 1;
+  __gcov0.output_string[0] = PROF_edge_counter_582;
+  # DEBUG __fmt => "%s"
+  __printf_chk (1, "%s", &buffer);
+  PROF_edge_counter_583 = __gcov0.output_string[1];
+  PROF_edge_counter_584 = PROF_edge_counter_583 + 1;
+  __gcov0.output_string[1] = PROF_edge_counter_584;
+  # DEBUG __fmt => NULL
+  write_to_file.30_585 = write_to_file;
+  if (write_to_file.30_585 != 0)
+    goto <bb 67>; [36.64%]
+  else
+    goto <bb 68>; [63.36%]
+
+  <bb 67> [0.19%]:
+  PROF_edge_counter_586 = __gcov0.output_string[2];
+  PROF_edge_counter_587 = PROF_edge_counter_586 + 1;
+  __gcov0.output_string[2] = PROF_edge_counter_587;
+  global_ofile.31_588 = global_ofile;
+  # DEBUG __stream => global_ofile.31_588
+  # DEBUG __fmt => "%s"
+  __builtin_fputs (&buffer, global_ofile.31_588);
+  PROF_edge_counter_589 = __gcov0.output_string[3];
+  PROF_edge_counter_590 = PROF_edge_counter_589 + 1;
+  __gcov0.output_string[3] = PROF_edge_counter_590;
+
+  <bb 68> [0.51%]:
+  # DEBUG buffer => NULL
+  PROF_edge_counter_434 = __gcov0.show_stats[25];
+  PROF_edge_counter_435 = PROF_edge_counter_434 + 1;
+  __gcov0.show_stats[25] = PROF_edge_counter_435;
+  goto <bb 72> (<L39>); [100.00%]
+
+<L38> [0.51%]:
+  PROF_edge_counter_436 = __gcov0.show_stats[10];
+  PROF_edge_counter_437 = PROF_edge_counter_436 + 1;
+  __gcov0.show_stats[10] = PROF_edge_counter_437;
+  _438 = global_lustruct.numarrays;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "  Number of arrays: %lu\n"
+  __builtin___sprintf_chk (&buffer, 1, 80, "  Number of arrays: %lu\n", _438);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
+  # DEBUG buffer => &buffer
+  PROF_edge_counter_591 = __gcov0.output_string[0];
+  PROF_edge_counter_592 = PROF_edge_counter_591 + 1;
+  __gcov0.output_string[0] = PROF_edge_counter_592;
+  # DEBUG __fmt => "%s"
+  __printf_chk (1, "%s", &buffer);
+  PROF_edge_counter_593 = __gcov0.output_string[1];
+  PROF_edge_counter_594 = PROF_edge_counter_593 + 1;
+  __gcov0.output_string[1] = PROF_edge_counter_594;
+  # DEBUG __fmt => NULL
+  write_to_file.30_595 = write_to_file;
+  if (write_to_file.30_595 != 0)
+    goto <bb 70>; [36.64%]
+  else
+    goto <bb 71>; [63.36%]
+
+  <bb 70> [0.19%]:
+  PROF_edge_counter_596 = __gcov0.output_string[2];
+  PROF_edge_counter_597 = PROF_edge_counter_596 + 1;
+  __gcov0.output_string[2] = PROF_edge_counter_597;
+  global_ofile.31_598 = global_ofile;
+  # DEBUG __stream => global_ofile.31_598
+  # DEBUG __fmt => "%s"
+  __builtin_fputs (&buffer, global_ofile.31_598);
+  PROF_edge_counter_599 = __gcov0.output_string[3];
+  PROF_edge_counter_600 = PROF_edge_counter_599 + 1;
+  __gcov0.output_string[3] = PROF_edge_counter_600;
+
+  <bb 71> [0.51%]:
+  # DEBUG buffer => NULL
+  PROF_edge_counter_439 = __gcov0.show_stats[26];
+  PROF_edge_counter_440 = PROF_edge_counter_439 + 1;
+  __gcov0.show_stats[26] = PROF_edge_counter_440;
 
 <L39> [5.61%]:
   buffer ={v} {CLOBBER};
-  _31 = ftestnames[i_320];
+  # DEBUG bid => NULL
+  PROF_edge_counter_261 = __gcov0.main[36];
+  PROF_edge_counter_262 = PROF_edge_counter_261 + 1;
+  __gcov0.main[36] = PROF_edge_counter_262;
+  _31 = ftestnames[i_58];
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "Done with %s\n\n"
   __builtin___sprintf_chk (&buffer, 1, 1024, "Done with %s\n\n", _31);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
   output_string (&buffer);
-  pretmp_22 = testnum;
+  pretmp_899 = testnum;
 
-  <bb 64> [51.51%]:
-  # lx_memindex_44 = PHI <lx_memindex_319(13), lx_memindex_43(26), lx_memindex_43(63)>
-  # lx_intindex_47 = PHI <lx_intindex_317(13), lx_intindex_46(26), lx_intindex_46(63)>
-  # lx_fpindex_50 = PHI <lx_fpindex_315(13), lx_fpindex_49(26), lx_fpindex_49(63)>
-  # intindex_53 = PHI <intindex_313(13), intindex_52(26), intindex_52(63)>
-  # fpindex_56 = PHI <fpindex_322(13), fpindex_55(26), fpindex_55(63)>
-  # prephitmp_23 = PHI <prephitmp_19(13), pretmp_20(26), pretmp_22(63)>
-  i_146 = i_320 + 1;
-  if (prephitmp_23 >= i_146)
-    goto <bb 65>; [85.00%]
+  <bb 73> [51.51%]:
+  # lx_memindex_44 = PHI <lx_memindex_793(13), lx_memindex_43(26), lx_memindex_43(72)>
+  # lx_intindex_47 = PHI <lx_intindex_791(13), lx_intindex_46(26), lx_intindex_46(72)>
+  # lx_fpindex_50 = PHI <lx_fpindex_789(13), lx_fpindex_49(26), lx_fpindex_49(72)>
+  # intindex_53 = PHI <intindex_787(13), intindex_52(26), intindex_52(72)>
+  # fpindex_56 = PHI <fpindex_785(13), fpindex_55(26), fpindex_55(72)>
+  # prephitmp_900 = PHI <prephitmp_896(13), pretmp_898(26), pretmp_899(72)>
+  # DEBUG fpindex => fpindex_56
+  # DEBUG intindex => intindex_53
+  # DEBUG lx_fpindex => lx_fpindex_50
+  # DEBUG lx_intindex => lx_intindex_47
+  # DEBUG lx_memindex => lx_memindex_44
+  i_146 = i_58 + 1;
+  # DEBUG i => i_146
+  PROF_edge_counter_263 = __gcov0.main[37];
+  PROF_edge_counter_264 = PROF_edge_counter_263 + 1;
+  __gcov0.main[37] = PROF_edge_counter_264;
+  # DEBUG fpindex => fpindex_56
+  # DEBUG intindex => intindex_53
+  # DEBUG lx_fpindex => lx_fpindex_50
+  # DEBUG lx_intindex => lx_intindex_47
+  # DEBUG lx_memindex => lx_memindex_44
+  # DEBUG i => i_146
+  if (i_146 <= prephitmp_900)
+    goto <bb 74>; [85.00%]
   else
-    goto <bb 66>; [15.00%]
+    goto <bb 75>; [15.00%]
 
-  <bb 65> [43.78%]:
+  <bb 74> [43.78%]:
   goto <bb 13>; [100.00%]
 
-  <bb 66> [9.09%]:
-  # lx_memindex_64 = PHI <lx_memindex_44(64)>
-  # lx_intindex_321 = PHI <lx_intindex_47(64)>
-  # lx_fpindex_311 = PHI <lx_fpindex_50(64)>
-  # intindex_61 = PHI <intindex_53(64)>
-  # fpindex_11 = PHI <fpindex_56(64)>
+  <bb 75> [9.09%]:
+  # lx_memindex_788 = PHI <lx_memindex_44(73)>
+  # lx_intindex_12 = PHI <lx_intindex_47(73)>
+  # lx_fpindex_298 = PHI <lx_fpindex_50(73)>
+  # intindex_297 = PHI <intindex_53(73)>
+  # fpindex_897 = PHI <fpindex_56(73)>
+  PROF_edge_counter_267 = __gcov0.main[39];
+  PROF_edge_counter_268 = PROF_edge_counter_267 + 1;
+  __gcov0.main[39] = PROF_edge_counter_268;
   global_custrun.17_33 = global_custrun;
   if (global_custrun.17_33 == 0)
-    goto <bb 67>; [33.00%]
+    goto <bb 76>; [33.00%]
   else
-    goto <bb 68>; [67.00%]
+    goto <bb 77>; [67.00%]
 
-  <bb 67> [3.00%]:
+  <bb 76> [3.00%]:
+  PROF_edge_counter_269 = __gcov0.main[40];
+  PROF_edge_counter_270 = PROF_edge_counter_269 + 1;
+  __gcov0.main[40] = PROF_edge_counter_270;
   output_string ("==========================ORIGINAL BYTEMARK RESULTS==========================\n");
-  _34 = pow (intindex_61, 1.428570000000000117523768494720570743083953857421875e-1);
+  PROF_edge_counter_271 = __gcov0.main[41];
+  PROF_edge_counter_272 = PROF_edge_counter_271 + 1;
+  __gcov0.main[41] = PROF_edge_counter_272;
+  _34 = pow (intindex_297, 1.428570000000000117523768494720570743083953857421875e-1);
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "INTEGER INDEX       : %.3f\n"
   __builtin___sprintf_chk (&buffer, 1, 1024, "INTEGER INDEX       : %.3f\n", _34);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
   output_string (&buffer);
-  _35 = pow (fpindex_11, 3.3333000000000001517008740847813896834850311279296875e-1);
+  PROF_edge_counter_273 = __gcov0.main[42];
+  PROF_edge_counter_274 = PROF_edge_counter_273 + 1;
+  __gcov0.main[42] = PROF_edge_counter_274;
+  _35 = pow (fpindex_897, 3.3333000000000001517008740847813896834850311279296875e-1);
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "FLOATING-POINT INDEX: %.3f\n"
   __builtin___sprintf_chk (&buffer, 1, 1024, "FLOATING-POINT INDEX: %.3f\n", _35);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
   output_string (&buffer);
+  PROF_edge_counter_275 = __gcov0.main[43];
+  PROF_edge_counter_276 = PROF_edge_counter_275 + 1;
+  __gcov0.main[43] = PROF_edge_counter_276;
   output_string ("Baseline (MSDOS*)   : Pentium* 90, 256 KB L2-cache, Watcom* compiler 10.0\n");
+  PROF_edge_counter_277 = __gcov0.main[44];
+  PROF_edge_counter_278 = PROF_edge_counter_277 + 1;
+  __gcov0.main[44] = PROF_edge_counter_278;
   output_string ("==============================LINUX DATA BELOW===============================\n");
+  PROF_edge_counter_279 = __gcov0.main[45];
+  PROF_edge_counter_280 = PROF_edge_counter_279 + 1;
+  __gcov0.main[45] = PROF_edge_counter_280;
   global_ofile.18_36 = global_ofile;
   write_to_file.19_37 = write_to_file;
   hardware (write_to_file.19_37, global_ofile.18_36);
+  PROF_edge_counter_281 = __gcov0.main[46];
+  PROF_edge_counter_282 = PROF_edge_counter_281 + 1;
+  __gcov0.main[46] = PROF_edge_counter_282;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "C compiler          : gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) \n"
   __builtin_memcpy (&buffer, "C compiler          : gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) \n", 72);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
   output_string (&buffer);
+  PROF_edge_counter_283 = __gcov0.main[47];
+  PROF_edge_counter_284 = PROF_edge_counter_283 + 1;
+  __gcov0.main[47] = PROF_edge_counter_284;
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "libc                : libc-2.27.so\n"
   __builtin_memcpy (&buffer, "libc                : libc-2.27.so\n", 36);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
   output_string (&buffer);
-  _38 = pow (lx_memindex_64, 3.33333333299999978738270556277711875736713409423828125e-1);
+  PROF_edge_counter_285 = __gcov0.main[48];
+  PROF_edge_counter_286 = PROF_edge_counter_285 + 1;
+  __gcov0.main[48] = PROF_edge_counter_286;
+  _38 = pow (lx_memindex_788, 3.33333333299999978738270556277711875736713409423828125e-1);
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "MEMORY INDEX        : %.3f\n"
   __builtin___sprintf_chk (&buffer, 1, 1024, "MEMORY INDEX        : %.3f\n", _38);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
   output_string (&buffer);
-  _39 = pow (lx_intindex_321, 2.5e-1);
+  PROF_edge_counter_287 = __gcov0.main[49];
+  PROF_edge_counter_288 = PROF_edge_counter_287 + 1;
+  __gcov0.main[49] = PROF_edge_counter_288;
+  _39 = pow (lx_intindex_12, 2.5e-1);
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "INTEGER INDEX       : %.3f\n"
   __builtin___sprintf_chk (&buffer, 1, 1024, "INTEGER INDEX       : %.3f\n", _39);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
   output_string (&buffer);
-  _40 = pow (lx_fpindex_311, 3.33333333299999978738270556277711875736713409423828125e-1);
+  PROF_edge_counter_289 = __gcov0.main[50];
+  PROF_edge_counter_290 = PROF_edge_counter_289 + 1;
+  __gcov0.main[50] = PROF_edge_counter_290;
+  _40 = pow (lx_fpindex_298, 3.33333333299999978738270556277711875736713409423828125e-1);
+  # DEBUG __s => &buffer
+  # DEBUG __fmt => "FLOATING-POINT INDEX: %.3f\n"
   __builtin___sprintf_chk (&buffer, 1, 1024, "FLOATING-POINT INDEX: %.3f\n", _40);
+  # DEBUG __s => NULL
+  # DEBUG __fmt => NULL
   output_string (&buffer);
+  PROF_edge_counter_291 = __gcov0.main[51];
+  PROF_edge_counter_292 = PROF_edge_counter_291 + 1;
+  __gcov0.main[51] = PROF_edge_counter_292;
   output_string ("Baseline (LINUX)    : AMD K6/233*, 512 KB L2-cache, gcc 2.7.2.3, libc-5.4.38\n");
+  PROF_edge_counter_293 = __gcov0.main[52];
+  PROF_edge_counter_294 = PROF_edge_counter_293 + 1;
+  __gcov0.main[52] = PROF_edge_counter_294;
   output_string ("* Trademarks are property of their respective holder.\n");
+  PROF_edge_counter_295 = __gcov0.main[53];
+  PROF_edge_counter_296 = PROF_edge_counter_295 + 1;
+  __gcov0.main[53] = PROF_edge_counter_296;
 
-  <bb 68> [9.09%]:
+  <bb 77> [9.09%]:
   exit (0);
 
 }

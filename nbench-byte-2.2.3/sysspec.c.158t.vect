@@ -3,6 +3,8 @@
 
 AllocateMemory (long unsigned int nbytes, int * errorcode)
 {
+  _Bool __gcov0.AllocateMemory_I_lsm.40;
+  long int __gcov0.AllocateMemory_I_lsm.39;
   long unsigned int adj_addr;
   long unsigned int true_addr;
   farvoid * returnval;
@@ -17,14 +19,29 @@ AllocateMemory (long unsigned int nbytes, int * errorcode)
   long unsigned int _10;
   long unsigned int _11;
   farvoid * _14;
-  long unsigned int _15;
   long unsigned int _22;
-  int _30;
-  _Bool _31;
+  long unsigned int _23;
   int mem_array_ents.7_33;
   int _34;
   int mem_array_ents.7_35;
   int _36;
+  long int PROF_edge_counter_43;
+  long int PROF_edge_counter_44;
+  long int PROF_edge_counter_45;
+  long int PROF_edge_counter_46;
+  long int PROF_edge_counter_47;
+  long int PROF_edge_counter_48;
+  long int PROF_edge_counter_50;
+  long int PROF_edge_counter_51;
+  long int PROF_edge_counter_52;
+  long int PROF_edge_counter_53;
+  long int PROF_edge_counter_54;
+  long int PROF_edge_counter_55;
+  long int PROF_edge_counter_56;
+  long int PROF_edge_counter_57;
+  long int PROF_edge_counter_58;
+  int cstore_76;
+  long int PROF_edge_counter_82;
 
   <bb 2> [45.45%]:
   global_align.0_1 = global_align;
@@ -33,104 +50,159 @@ AllocateMemory (long unsigned int nbytes, int * errorcode)
   _4 = (long unsigned int) _3;
   _5 = _4 + nbytes_18(D);
   returnval_20 = malloc (_5);
-  _31 = returnval_20 == 0B;
-  _30 = (int) _31;
-  *errorcode_21(D) = _30;
+  # DEBUG returnval => returnval_20
+  if (returnval_20 == 0B)
+    goto <bb 4>; [30.00%]
+  else
+    goto <bb 3>; [70.00%]
+
+  <bb 3> [31.82%]:
+  PROF_edge_counter_43 = __gcov0.AllocateMemory[0];
+  PROF_edge_counter_44 = PROF_edge_counter_43 + 1;
+  __gcov0.AllocateMemory[0] = PROF_edge_counter_44;
+
+  <bb 4> [45.45%]:
+  # cstore_76 = PHI <1(2), 0(3)>
+  *errorcode_21(D) = cstore_76;
   true_addr_24 = (long unsigned int) returnval_20;
+  # DEBUG true_addr => true_addr_24
+  # DEBUG adj_addr => true_addr_24
   global_align.1_6 = global_align;
   if (global_align.1_6 == 0)
-    goto <bb 3>; [50.00%]
+    goto <bb 5>; [50.00%]
   else
-    goto <bb 6>; [50.00%]
+    goto <bb 8>; [50.00%]
 
-  <bb 3> [22.73%]:
+  <bb 5> [22.73%]:
+  # DEBUG true_addr => true_addr_24
+  # DEBUG adj_addr => true_addr_24
   mem_array_ents.7_33 = mem_array_ents;
   if (mem_array_ents.7_33 > 19)
-    goto <bb 4>; [50.00%]
+    goto <bb 6>; [50.00%]
   else
-    goto <bb 5>; [50.00%]
+    goto <bb 7>; [50.00%]
 
-  <bb 4> [11.36%]:
+  <bb 6> [11.36%]:
+  # DEBUG true_addr => NULL
+  # DEBUG adj_addr => NULL
   *errorcode_21(D) = 2;
-  goto <bb 18>; [100.00%]
+  PROF_edge_counter_45 = __gcov0.AllocateMemory[1];
+  PROF_edge_counter_46 = PROF_edge_counter_45 + 1;
+  __gcov0.AllocateMemory[1] = PROF_edge_counter_46;
+  goto <bb 20>; [100.00%]
 
-  <bb 5> [11.36%]:
+  <bb 7> [11.36%]:
   mem_array[0][mem_array_ents.7_33] = true_addr_24;
   mem_array[1][mem_array_ents.7_33] = true_addr_24;
   _34 = mem_array_ents.7_33 + 1;
   mem_array_ents = _34;
-  goto <bb 18>; [100.00%]
+  # DEBUG true_addr => NULL
+  # DEBUG adj_addr => NULL
+  PROF_edge_counter_47 = __gcov0.AllocateMemory[2];
+  PROF_edge_counter_48 = PROF_edge_counter_47 + 1;
+  __gcov0.AllocateMemory[2] = PROF_edge_counter_48;
+  goto <bb 20>; [100.00%]
 
-  <bb 6> [22.73%]:
+  <bb 8> [22.73%]:
   if (global_align.1_6 == 1)
-    goto <bb 8>; [34.00%]
+    goto <bb 10>; [34.00%]
   else
-    goto <bb 7>; [66.00%]
+    goto <bb 9>; [66.00%]
 
-  <bb 7> [15.00%]:
-  _15 = (long unsigned int) global_align.1_6;
-  _22 = true_addr_24 % _15;
-  if (_22 != 0)
-    goto <bb 9>; [85.00%]
+  <bb 9> [15.00%]:
+  # DEBUG adj_addr => true_addr_24
+  _22 = (long unsigned int) global_align.1_6;
+  _23 = true_addr_24 % _22;
+  if (_23 != 0)
+    goto <bb 11>; [85.00%]
   else
-    goto <bb 13>; [15.00%]
+    goto <bb 15>; [15.00%]
 
-  <bb 8> [7.73%]:
+  <bb 10> [7.73%]:
   adj_addr_27 = true_addr_24 + 1;
-  goto <bb 15>; [100.00%]
-
-  <bb 9> [12.75%]:
-
-  <bb 10> [85.00%]:
-  # adj_addr_43 = PHI <adj_addr_26(12), true_addr_24(9)>
-  adj_addr_26 = adj_addr_43 + 1;
-  _8 = adj_addr_26 % _15;
-  if (_8 != 0)
-    goto <bb 12>; [85.00%]
-  else
-    goto <bb 11>; [15.00%]
+  # DEBUG adj_addr => adj_addr_27
+  goto <bb 17>; [100.00%]
 
   <bb 11> [12.75%]:
-  # adj_addr_50 = PHI <adj_addr_26(10)>
-  goto <bb 13>; [100.00%]
+  __gcov0.AllocateMemory_I_lsm.39_30 = __gcov0.AllocateMemory[3];
 
-  <bb 12> [72.25%]:
-  goto <bb 10>; [100.00%]
+  <bb 12> [85.00%]:
+  # adj_addr_75 = PHI <adj_addr_26(13), true_addr_24(11)>
+  # __gcov0.AllocateMemory_I_lsm.39_69 = PHI <PROF_edge_counter_50(13), __gcov0.AllocateMemory_I_lsm.39_30(11)>
+  # DEBUG adj_addr => adj_addr_75
+  PROF_edge_counter_50 = __gcov0.AllocateMemory_I_lsm.39_69 + 1;
+  adj_addr_26 = adj_addr_75 + 1;
+  # DEBUG adj_addr => adj_addr_26
+  # DEBUG adj_addr => adj_addr_26
+  _8 = adj_addr_26 % _22;
+  if (_8 != 0)
+    goto <bb 13>; [85.00%]
+  else
+    goto <bb 14>; [15.00%]
 
-  <bb 13> [15.00%]:
-  # adj_addr_49 = PHI <adj_addr_50(11), true_addr_24(7)>
+  <bb 13> [72.25%]:
+  goto <bb 12>; [100.00%]
+
+  <bb 14> [12.75%]:
+  # adj_addr_7 = PHI <adj_addr_26(12)>
+  # PROF_edge_counter_82 = PHI <PROF_edge_counter_50(12)>
+  __gcov0.AllocateMemory[3] = PROF_edge_counter_82;
+
+  <bb 15> [15.00%]:
+  # adj_addr_74 = PHI <adj_addr_7(14), true_addr_24(9)>
+  PROF_edge_counter_51 = __gcov0.AllocateMemory[4];
+  PROF_edge_counter_52 = PROF_edge_counter_51 + 1;
+  __gcov0.AllocateMemory[4] = PROF_edge_counter_52;
   _9 = global_align.1_6 * 2;
   _10 = (long unsigned int) _9;
-  _11 = adj_addr_49 % _10;
+  _11 = adj_addr_74 % _10;
   if (_11 == 0)
-    goto <bb 14>; [50.00%]
+    goto <bb 16>; [50.00%]
   else
-    goto <bb 15>; [50.00%]
+    goto <bb 17>; [50.00%]
 
-  <bb 14> [7.50%]:
-  adj_addr_25 = _15 + adj_addr_49;
+  <bb 16> [7.50%]:
+  adj_addr_25 = _22 + adj_addr_74;
+  # DEBUG adj_addr => adj_addr_25
+  PROF_edge_counter_53 = __gcov0.AllocateMemory[5];
+  PROF_edge_counter_54 = PROF_edge_counter_53 + 1;
+  __gcov0.AllocateMemory[5] = PROF_edge_counter_54;
 
-  <bb 15> [22.73%]:
-  # adj_addr_13 = PHI <adj_addr_27(8), adj_addr_49(13), adj_addr_25(14)>
+  <bb 17> [22.73%]:
+  # adj_addr_13 = PHI <adj_addr_27(10), adj_addr_74(15), adj_addr_25(16)>
+  # DEBUG adj_addr => adj_addr_13
   returnval_28 = (farvoid *) adj_addr_13;
+  # DEBUG returnval => returnval_28
+  # DEBUG true_addr => true_addr_24
+  # DEBUG adj_addr => adj_addr_13
   mem_array_ents.7_35 = mem_array_ents;
   if (mem_array_ents.7_35 > 19)
-    goto <bb 17>; [54.00%]
+    goto <bb 19>; [54.00%]
   else
-    goto <bb 16>; [46.00%]
+    goto <bb 18>; [46.00%]
 
-  <bb 16> [10.45%]:
+  <bb 18> [10.45%]:
   mem_array[0][mem_array_ents.7_35] = true_addr_24;
   mem_array[1][mem_array_ents.7_35] = adj_addr_13;
   _36 = mem_array_ents.7_35 + 1;
   mem_array_ents = _36;
-  goto <bb 18>; [100.00%]
+  # DEBUG true_addr => NULL
+  # DEBUG adj_addr => NULL
+  PROF_edge_counter_55 = __gcov0.AllocateMemory[6];
+  PROF_edge_counter_56 = PROF_edge_counter_55 + 1;
+  __gcov0.AllocateMemory[6] = PROF_edge_counter_56;
+  goto <bb 20>; [100.00%]
 
-  <bb 17> [12.27%]:
+  <bb 19> [12.27%]:
+  # DEBUG true_addr => NULL
+  # DEBUG adj_addr => NULL
   *errorcode_21(D) = 2;
+  PROF_edge_counter_57 = __gcov0.AllocateMemory[7];
+  PROF_edge_counter_58 = PROF_edge_counter_57 + 1;
+  __gcov0.AllocateMemory[7] = PROF_edge_counter_58;
 
-  <bb 18> [45.45%]:
-  # _14 = PHI <returnval_20(4), returnval_28(17), returnval_28(16), returnval_20(5)>
+  <bb 20> [45.45%]:
+  # _14 = PHI <returnval_20(6), returnval_28(19), returnval_28(18), returnval_20(7)>
   return _14;
 
 }
@@ -141,71 +213,112 @@ AllocateMemory (long unsigned int nbytes, int * errorcode)
 
 FreeMemory (farvoid * mempointer, int * errorcode)
 {
+  _Bool __gcov0.FreeMemory_I_lsm.55;
+  long int __gcov0.FreeMemory_I_lsm.54;
+  _Bool __gcov0.FreeMemory_I_lsm.53;
+  long int __gcov0.FreeMemory_I_lsm.52;
+  _Bool __gcov0.FreeMemory_I_lsm.51;
+  long int __gcov0.FreeMemory_I_lsm.50;
   int i;
   int j;
   long unsigned int adj_addr;
-  int prephitmp_1;
   long unsigned int _13;
   long unsigned int _14;
   int _15;
   long unsigned int _16;
-  int _17;
   long unsigned int _18;
   int _19;
-  long unsigned int _27;
-  int mem_array_ents.13_29;
-  int _32;
+  unsigned int _28;
+  long int PROF_edge_counter_29;
+  long int PROF_edge_counter_31;
+  long int PROF_edge_counter_32;
+  long int PROF_edge_counter_33;
+  long int _36;
+  long int PROF_edge_counter_37;
+  int mem_array_ents.13_40;
+  unsigned int _41;
+  unsigned int _42;
+  long int PROF_edge_counter_43;
+  long int PROF_edge_counter_44;
+  long unsigned int _46;
+  int _49;
+  unsigned int _57;
+  long int _58;
+  long int PROF_edge_counter_82;
+  long int PROF_edge_counter_83;
+  int _84;
+  int prephitmp_85;
+  long int PROF_edge_counter_86;
 
   <bb 2> [14.44%]:
   adj_addr_5 = (long unsigned int) mempointer_4(D);
-  mem_array_ents.13_29 = mem_array_ents;
-  if (mem_array_ents.13_29 > 0)
+  # DEBUG adj_addr => adj_addr_5
+  # DEBUG adj_addr => adj_addr_5
+  # DEBUG true_addr => &true_addr
+  # DEBUG i => 0
+  # DEBUG i => 0
+  mem_array_ents.13_40 = mem_array_ents;
+  if (mem_array_ents.13_40 > 0)
     goto <bb 3>; [92.50%]
   else
-    goto <bb 14>; [7.50%]
+    goto <bb 18>; [7.50%]
 
   <bb 3> [13.32%]:
-  _27 = mem_array[1][0];
-  if (adj_addr_5 == _27)
+  PROF_edge_counter_43 = __gcov0.FreeMemory[2];
+  PROF_edge_counter_44 = PROF_edge_counter_43 + 1;
+  __gcov0.FreeMemory[2] = PROF_edge_counter_44;
+  _46 = mem_array[1][0];
+  if (adj_addr_5 == _46)
     goto <bb 7>; [7.50%]
   else
-    goto <bb 12>; [92.50%]
+    goto <bb 13>; [92.50%]
 
   <bb 4> [79.18%]:
+  PROF_edge_counter_31 = __gcov0.FreeMemory_I_lsm.52_22 + 1;
   _13 = mem_array[1][i_20];
   if (adj_addr_5 == _13)
-    goto <bb 5>; [7.50%]
+    goto <bb 6>; [7.50%]
   else
-    goto <bb 6>; [92.50%]
+    goto <bb 5>; [92.50%]
 
-  <bb 5> [5.94%]:
-  # i_36 = PHI <i_20(4)>
-  _17 = i_36 + 1;
-  goto <bb 7>; [100.00%]
+  <bb 5> [73.24%]:
+  goto <bb 14>; [100.00%]
 
-  <bb 6> [73.24%]:
-  goto <bb 13>; [100.00%]
+  <bb 6> [5.94%]:
+  # i_34 = PHI <i_20(4)>
+  # PROF_edge_counter_83 = PHI <PROF_edge_counter_29(4)>
+  # PROF_edge_counter_37 = PHI <PROF_edge_counter_31(4)>
+  _84 = i_34 + 1;
+  __gcov0.FreeMemory[2] = PROF_edge_counter_37;
+  __gcov0.FreeMemory[1] = PROF_edge_counter_83;
 
   <bb 7> [6.94%]:
-  # i_30 = PHI <i_36(5), 0(3)>
-  # prephitmp_1 = PHI <_17(5), 1(3)>
-  _14 = mem_array[0][i_30];
-  if (prephitmp_1 < mem_array_ents.13_29)
+  # i_47 = PHI <i_34(6), 0(3)>
+  # prephitmp_85 = PHI <_84(6), 1(3)>
+  _14 = mem_array[0][i_47];
+  # DEBUG true_addr => _14
+  # DEBUG j => i_47
+  # DEBUG j => i_47
+  if (mem_array_ents.13_40 > prephitmp_85)
     goto <bb 8>; [85.00%]
   else
-    goto <bb 11>; [15.00%]
+    goto <bb 12>; [15.00%]
 
   <bb 8> [5.90%]:
+  __gcov0.FreeMemory_I_lsm.50_66 = __gcov0.FreeMemory[0];
 
   <bb 9> [39.31%]:
-  # _32 = PHI <_15(10), prephitmp_1(8)>
-  # j_33 = PHI <_32(10), i_30(8)>
-  _16 = mem_array[0][_32];
-  mem_array[0][j_33] = _16;
-  _18 = mem_array[1][_32];
-  mem_array[1][j_33] = _18;
-  _15 = _32 + 1;
-  if (_15 < mem_array_ents.13_29)
+  # _49 = PHI <_15(10), prephitmp_85(8)>
+  # j_50 = PHI <_49(10), i_47(8)>
+  # DEBUG j => j_50
+  _16 = mem_array[0][_49];
+  mem_array[0][j_50] = _16;
+  _18 = mem_array[1][_49];
+  mem_array[1][j_50] = _18;
+  # DEBUG j => _49
+  # DEBUG j => _49
+  _15 = _49 + 1;
+  if (_15 < mem_array_ents.13_40)
     goto <bb 10>; [85.00%]
   else
     goto <bb 11>; [15.00%]
@@ -213,28 +326,77 @@ FreeMemory (farvoid * mempointer, int * errorcode)
   <bb 10> [33.41%]:
   goto <bb 9>; [100.00%]
 
-  <bb 11> [6.94%]:
-  _19 = mem_array_ents.13_29 + -1;
+  <bb 11> [0.00%]:
+  _36 = __gcov0.FreeMemory_I_lsm.50_66 + 1;
+  _42 = (unsigned int) mem_array_ents.13_40;
+  _41 = (unsigned int) prephitmp_85;
+  _57 = _42 - _41;
+  _28 = _57 + 4294967295;
+  _58 = (long int) _28;
+  PROF_edge_counter_86 = _36 + _58;
+  __gcov0.FreeMemory[0] = PROF_edge_counter_86;
+
+  <bb 12> [6.94%]:
+  _19 = mem_array_ents.13_40 + -1;
   mem_array_ents = _19;
+  # DEBUG true_addr => _14
+  # DEBUG adj_addr => NULL
+  # DEBUG true_addr => NULL
+  # DEBUG j => NULL
+  # DEBUG i => NULL
   mempointer_7 = (farvoid *) _14;
+  # DEBUG mempointer => mempointer_7
   free (mempointer_7);
   *errorcode_9(D) = 0;
-  goto <bb 15>; [100.00%]
+  goto <bb 19>; [100.00%]
 
-  <bb 12> [12.32%]:
+  <bb 13> [12.32%]:
+  __gcov0.FreeMemory_I_lsm.54_2 = __gcov0.FreeMemory[1];
 
-  <bb 13> [85.60%]:
-  # i_31 = PHI <i_20(6), 0(12)>
-  i_20 = i_31 + 1;
-  if (i_20 < mem_array_ents.13_29)
+  <bb 14> [85.60%]:
+  # i_48 = PHI <i_20(5), 0(13)>
+  # __gcov0.FreeMemory_I_lsm.52_22 = PHI <PROF_edge_counter_31(5), PROF_edge_counter_44(13)>
+  # __gcov0.FreeMemory_I_lsm.53_17 = PHI <1(5), 0(13)>
+  # __gcov0.FreeMemory_I_lsm.54_1 = PHI <PROF_edge_counter_29(5), __gcov0.FreeMemory_I_lsm.54_2(13)>
+  # DEBUG i => i_48
+  i_20 = i_48 + 1;
+  # DEBUG i => i_20
+  PROF_edge_counter_29 = __gcov0.FreeMemory_I_lsm.54_1 + 1;
+  # DEBUG i => i_20
+  if (i_20 < mem_array_ents.13_40)
     goto <bb 4>; [92.50%]
   else
-    goto <bb 14>; [7.50%]
+    goto <bb 15>; [7.50%]
 
-  <bb 14> [7.50%]:
+  <bb 15> [6.42%]:
+  # __gcov0.FreeMemory_I_lsm.53_21 = PHI <__gcov0.FreeMemory_I_lsm.53_17(14)>
+  # __gcov0.FreeMemory_I_lsm.52_87 = PHI <__gcov0.FreeMemory_I_lsm.52_22(14)>
+  # PROF_edge_counter_82 = PHI <PROF_edge_counter_29(14)>
+  if (__gcov0.FreeMemory_I_lsm.53_21 != 0)
+    goto <bb 16>; [0.00%]
+  else
+    goto <bb 17>; [100.00%]
+
+  <bb 16> [0.00%]:
+  __gcov0.FreeMemory[2] = __gcov0.FreeMemory_I_lsm.52_87;
+
+  <bb 17> [0.00%]:
+  __gcov0.FreeMemory[1] = PROF_edge_counter_82;
+
+  <bb 18> [7.50%]:
+  # DEBUG true_addr => NULL
+  # DEBUG adj_addr => NULL
+  # DEBUG true_addr => NULL
+  # DEBUG j => NULL
+  # DEBUG i => NULL
   *errorcode_9(D) = 3;
+  PROF_edge_counter_32 = __gcov0.FreeMemory[3];
+  PROF_edge_counter_33 = PROF_edge_counter_32 + 1;
+  __gcov0.FreeMemory[3] = PROF_edge_counter_33;
 
-  <bb 15> [14.44%]:
+  <bb 19> [14.44%]:
+  # DEBUG D#1 => {CLOBBER}
+  # DEBUG true_addr => D#1
   return;
 
 }
@@ -245,6 +407,12 @@ FreeMemory (farvoid * mempointer, int * errorcode)
 
 RemoveMemArray (long unsigned int adj_addr, long unsigned int * true_addr)
 {
+  _Bool __gcov0.RemoveMemArray_I_lsm.91;
+  long int __gcov0.RemoveMemArray_I_lsm.90;
+  _Bool __gcov0.RemoveMemArray_I_lsm.89;
+  long int __gcov0.RemoveMemArray_I_lsm.88;
+  _Bool __gcov0.RemoveMemArray_I_lsm.87;
+  long int __gcov0.RemoveMemArray_I_lsm.86;
   int j;
   int i;
   long unsigned int _1;
@@ -253,63 +421,97 @@ RemoveMemArray (long unsigned int adj_addr, long unsigned int * true_addr)
   long unsigned int _4;
   int _5;
   int _7;
-  int prephitmp_9;
   int _11;
-  long unsigned int _25;
-  int mem_array_ents.13_26;
-  int _27;
-  int _28;
+  long int PROF_edge_counter_23;
+  long int PROF_edge_counter_24;
+  unsigned int _27;
+  long int PROF_edge_counter_28;
+  long int PROF_edge_counter_30;
+  long int PROF_edge_counter_33;
+  int _35;
+  long int PROF_edge_counter_36;
+  int mem_array_ents.13_38;
+  long int PROF_edge_counter_40;
+  long int PROF_edge_counter_41;
+  long unsigned int _43;
+  int _44;
+  long int PROF_edge_counter_53;
+  long int _54;
+  unsigned int _55;
+  unsigned int _56;
+  unsigned int _68;
+  long int _70;
+  int prephitmp_79;
+  long int PROF_edge_counter_80;
 
   <bb 2> [14.44%]:
-  mem_array_ents.13_26 = mem_array_ents;
-  if (mem_array_ents.13_26 > 0)
+  # DEBUG i => 0
+  PROF_edge_counter_23 = __gcov0.RemoveMemArray[0];
+  PROF_edge_counter_24 = PROF_edge_counter_23 + 1;
+  __gcov0.RemoveMemArray[0] = PROF_edge_counter_24;
+  # DEBUG i => 0
+  mem_array_ents.13_38 = mem_array_ents;
+  if (mem_array_ents.13_38 > 0)
     goto <bb 3>; [92.50%]
   else
-    goto <bb 14>; [7.50%]
+    goto <bb 18>; [7.50%]
 
   <bb 3> [13.32%]:
-  _25 = mem_array[1][0];
-  if (adj_addr_15(D) == _25)
+  PROF_edge_counter_40 = __gcov0.RemoveMemArray[3];
+  PROF_edge_counter_41 = PROF_edge_counter_40 + 1;
+  __gcov0.RemoveMemArray[3] = PROF_edge_counter_41;
+  _43 = mem_array[1][0];
+  if (adj_addr_15(D) == _43)
     goto <bb 7>; [7.50%]
   else
-    goto <bb 12>; [92.50%]
+    goto <bb 13>; [92.50%]
 
   <bb 4> [79.18%]:
+  PROF_edge_counter_30 = __gcov0.RemoveMemArray_I_lsm.88_10 + 1;
   _1 = mem_array[1][i_16];
   if (_1 == adj_addr_15(D))
-    goto <bb 5>; [7.50%]
+    goto <bb 6>; [7.50%]
   else
-    goto <bb 6>; [92.50%]
+    goto <bb 5>; [92.50%]
 
-  <bb 5> [5.94%]:
-  # i_33 = PHI <i_16(4)>
-  _28 = i_33 + 1;
-  goto <bb 7>; [100.00%]
+  <bb 5> [73.24%]:
+  goto <bb 14>; [100.00%]
 
-  <bb 6> [73.24%]:
-  goto <bb 13>; [100.00%]
+  <bb 6> [5.94%]:
+  # i_9 = PHI <i_16(4)>
+  # PROF_edge_counter_33 = PHI <PROF_edge_counter_28(4)>
+  # PROF_edge_counter_53 = PHI <PROF_edge_counter_30(4)>
+  _35 = i_9 + 1;
+  __gcov0.RemoveMemArray[3] = PROF_edge_counter_53;
+  __gcov0.RemoveMemArray[2] = PROF_edge_counter_33;
 
   <bb 7> [6.94%]:
-  # i_29 = PHI <i_33(5), 0(3)>
-  # prephitmp_9 = PHI <_28(5), 1(3)>
-  _2 = mem_array[0][i_29];
+  # i_46 = PHI <i_9(6), 0(3)>
+  # prephitmp_79 = PHI <_35(6), 1(3)>
+  _2 = mem_array[0][i_46];
   *true_addr_17(D) = _2;
-  if (prephitmp_9 < mem_array_ents.13_26)
+  # DEBUG j => i_46
+  # DEBUG j => i_46
+  if (mem_array_ents.13_38 > prephitmp_79)
     goto <bb 8>; [85.00%]
   else
-    goto <bb 11>; [15.00%]
+    goto <bb 12>; [15.00%]
 
   <bb 8> [5.90%]:
+  __gcov0.RemoveMemArray_I_lsm.86_63 = __gcov0.RemoveMemArray[1];
 
   <bb 9> [39.31%]:
-  # _27 = PHI <_5(10), prephitmp_9(8)>
-  # j_31 = PHI <_27(10), i_29(8)>
-  _3 = mem_array[0][_27];
-  mem_array[0][j_31] = _3;
-  _4 = mem_array[1][_27];
-  mem_array[1][j_31] = _4;
-  _5 = _27 + 1;
-  if (_5 < mem_array_ents.13_26)
+  # _44 = PHI <_5(10), prephitmp_79(8)>
+  # j_48 = PHI <_44(10), i_46(8)>
+  # DEBUG j => j_48
+  _3 = mem_array[0][_44];
+  mem_array[0][j_48] = _3;
+  _4 = mem_array[1][_44];
+  mem_array[1][j_48] = _4;
+  # DEBUG j => _44
+  # DEBUG j => _44
+  _5 = _44 + 1;
+  if (_5 < mem_array_ents.13_38)
     goto <bb 10>; [85.00%]
   else
     goto <bb 11>; [15.00%]
@@ -317,23 +519,58 @@ RemoveMemArray (long unsigned int adj_addr, long unsigned int * true_addr)
   <bb 10> [33.41%]:
   goto <bb 9>; [100.00%]
 
-  <bb 11> [6.94%]:
-  _7 = mem_array_ents.13_26 + -1;
+  <bb 11> [0.00%]:
+  _54 = __gcov0.RemoveMemArray_I_lsm.86_63 + 1;
+  _27 = (unsigned int) mem_array_ents.13_38;
+  _55 = (unsigned int) prephitmp_79;
+  _56 = _27 - _55;
+  _68 = _56 + 4294967295;
+  _70 = (long int) _68;
+  PROF_edge_counter_80 = _54 + _70;
+  __gcov0.RemoveMemArray[1] = PROF_edge_counter_80;
+
+  <bb 12> [6.94%]:
+  _7 = mem_array_ents.13_38 + -1;
   mem_array_ents = _7;
-  goto <bb 14>; [100.00%]
+  goto <bb 19>; [100.00%]
 
-  <bb 12> [12.32%]:
+  <bb 13> [12.32%]:
+  __gcov0.RemoveMemArray_I_lsm.90_39 = __gcov0.RemoveMemArray[2];
 
-  <bb 13> [85.60%]:
-  # i_30 = PHI <i_16(6), 0(12)>
-  i_16 = i_30 + 1;
-  if (i_16 < mem_array_ents.13_26)
+  <bb 14> [85.60%]:
+  # i_47 = PHI <i_16(5), 0(13)>
+  # __gcov0.RemoveMemArray_I_lsm.88_10 = PHI <PROF_edge_counter_30(5), PROF_edge_counter_41(13)>
+  # __gcov0.RemoveMemArray_I_lsm.89_19 = PHI <1(5), 0(13)>
+  # __gcov0.RemoveMemArray_I_lsm.90_6 = PHI <PROF_edge_counter_28(5), __gcov0.RemoveMemArray_I_lsm.90_39(13)>
+  # DEBUG i => i_47
+  i_16 = i_47 + 1;
+  # DEBUG i => i_16
+  PROF_edge_counter_28 = __gcov0.RemoveMemArray_I_lsm.90_6 + 1;
+  # DEBUG i => i_16
+  if (i_16 < mem_array_ents.13_38)
     goto <bb 4>; [92.50%]
   else
-    goto <bb 14>; [7.50%]
+    goto <bb 15>; [7.50%]
 
-  <bb 14> [14.44%]:
-  # _11 = PHI <0(11), -1(13), -1(2)>
+  <bb 15> [6.42%]:
+  # __gcov0.RemoveMemArray_I_lsm.88_45 = PHI <__gcov0.RemoveMemArray_I_lsm.88_10(14)>
+  # __gcov0.RemoveMemArray_I_lsm.89_81 = PHI <__gcov0.RemoveMemArray_I_lsm.89_19(14)>
+  # PROF_edge_counter_36 = PHI <PROF_edge_counter_28(14)>
+  if (__gcov0.RemoveMemArray_I_lsm.89_81 != 0)
+    goto <bb 16>; [0.00%]
+  else
+    goto <bb 17>; [100.00%]
+
+  <bb 16> [0.00%]:
+  __gcov0.RemoveMemArray[3] = __gcov0.RemoveMemArray_I_lsm.88_45;
+
+  <bb 17> [0.00%]:
+  __gcov0.RemoveMemArray[2] = PROF_edge_counter_36;
+
+  <bb 18> [7.50%]:
+
+  <bb 19> [14.44%]:
+  # _11 = PHI <0(12), -1(18)>
   return _11;
 
 }
